@@ -1,0 +1,41 @@
+{
+  "name": "utk-lib-header",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "ajv": "^6.5.2",
+    "dotenv": "^6.0.0",
+    "lodash": "^4.17.10",
+    "moment": "^2.22.1",
+    "node-sass-chokidar": "^1.2.2",
+    "npm-run-all": "^4.1.2",
+    "react": "^16.4.1",
+    "react-aspect-ratio": "^1.0.28",
+    "react-dom": "^16.4.1",
+    "react-keydown": "^1.9.7",
+    "react-onclickoutside": "^6.7.1",
+    "react-scripts": "1.1.4",
+    "replace": "^1.0.0"
+  },
+  "scripts": {
+    "build-css": "node-sass-chokidar src/scss/utk-lib-header.scss -o src/css",
+    "watch-css": "npm run build-css && node-sass-chokidar src/scss/utk-lib-header.scss -o src/css --watch --recursive",
+    "start-js": "react-scripts start",
+    "start": "npm-run-all -p watch-css start-js",
+    "build-js": "react-scripts build",
+    "build": "npm-run-all build-css build-js build-rename build-set-absolutes",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "build-rename": "npm-run-all build-rename-js build-rename-css",
+    "build-rename-js": "renamer --find '/main[.][^.]+[.]js/' --replace 'main.js' build/static/js/*.js",
+    "build-rename-css": "renamer --find '/main[.][^.]+[.]css/' --replace 'main.css' build/static/css/*.css",
+    "build-set-absolutes": "npm-run-all build-set-absolutes-js build-set-absolutes-css",
+    "build-set-absolutes-js": "replace 'static[/]' '/www.lib.utk.edu/assets/tei/polk/react/static/' build/static/js/*.js",
+    "build-set-absolutes-css": "replace '[/]static[/]' '/assets/tei/polk/react/static/' build/static/css/*.css"
+  },
+  "homepage": "https://www.lib.utk.edu/",
+  "publicPath": "",
+  "devDependencies": {
+    "renamer": "^1.0.0"
+  }
+}

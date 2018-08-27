@@ -1,0 +1,77 @@
+/*
+ * colors
+ */
+
+// primary
+$orange:      #FF8200;
+$white:       #FFFFFF;
+$smokey:      #58595B;
+
+// secondary
+$valley:      #00746F;
+$torch:       #E65933;
+$globe:       #006C93;
+$limestone:   #F0EDE3;
+$river:       #517C96;
+$leconte:     #8D2048;
+$regalia:     #754A7E;
+$sunsphere:   #FED535;
+$rock:        #A7A9AC;
+$legacy:      #579584;
+$summitt:     #B9E1E2;
+$energy:      #EE3E80;
+$switchgrass: #ABC178;
+$fountain:    #2197A9;
+$eureka:      #EBEA64;
+
+// generic
+$gray:        #333333;
+$offwhite:    #f6f6f6;
+
+// brand
+$primary: $orange;
+$secondary: $smokey;
+
+/*
+ * typography
+ */
+
+//$sans: 'Gotham Book', sans-serif;
+$sans: "Gotham-Book", 'Gotham SSm 4r','Gotham SSm A','Gotham SSm B', 'Tahoma','Helvetica Neue', Helvetica, Arial, sans-serif;
+$serif: Georgia, Times, 'Times New Roman', serif;
+$script: "bickham-script-pro-3", $serif;
+
+/*
+ * font-size for typography
+ */
+
+$type-0: 11px; // extra extra small
+$type-1: 13px; // extra small
+$type-2: 15px; // small
+$type-3: 18px; // standard
+$type-4: 23px; // medium
+$type-5: 29px; // large
+$type-6: 47px; // extra large
+
+/*
+ * incremental spacers by golden ratio
+ */
+
+$golden-ratio-0: 6px;
+$golden-ratio-1: 11px;
+$golden-ratio-2: 18px;
+$golden-ratio-3: 29px;
+$golden-ratio-4: 47px; // everything is based upon this.
+$golden-ratio-5: 76px;
+$golden-ratio-6: 123px;
+$golden-ratio-7: 199px;
+$golden-ratio-8: 322px;
+$golden-ratio-9: 521px;
+
+
+/*
+ * transitions
+ */
+
+$transition-padding: padding 180ms ease-in-out;
+$transition-all: all 180ms ease-in-out;

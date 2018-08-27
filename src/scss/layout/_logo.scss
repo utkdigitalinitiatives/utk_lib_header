@@ -1,0 +1,89 @@
+.utk-logo-wrapper {
+  z-index: 10;
+  margin-top: -6px;
+  padding: 0;
+  background-color: $white;
+  display: inline-block;
+  width: auto;
+  position: absolute;
+  border-bottom: 6px solid $orange;
+  transition: $transition-all;
+  box-shadow: 1px -1px 3px rgba($smokey, 0.05);
+
+  &::before {
+    left: 0;
+    content: ' ';
+    display: block;
+    height: 6px;
+    position: absolute;
+    background-color: $orange;
+    width: 0;
+    transition: $transition-all;
+  }
+
+  .utk-logo {
+    margin: 47px;
+    height: 70px;
+    transition: $transition-all;
+  }
+}
+
+.utk-logo-shortcut {
+  top: 25px;
+  left: -2000px;
+  height: 25px;
+  transition: $transition-all;
+  position: absolute;
+  z-index: 100;
+}
+
+
+.utk-header.utk-header-expand-menu {
+  .utk-logo-wrapper  {
+    background-color: transparent;
+    .utk-logo {
+      margin-top: 76px;
+    }
+  }
+}
+
+.utk-header:not(.utk-header-expand-menu) .utk-header-main.utk-shortcut:not(.utk-header-expand-menu) {
+
+  height: 81px;
+  box-shadow: 1px 1px 5px rgba($smokey, 0.11);
+  overflow: hidden;
+
+  .utk-logo-wrapper {
+    height: 0;
+    width: 304px;
+    box-shadow: none;
+    border-bottom: 0px solid $white;
+
+    .utk-logo {
+      margin-top: -100px;
+      transform: scale(0);
+      opacity: 1;
+    }
+
+    &::before {
+      width: 100%;
+      display: block;
+      top: 0;
+    }
+  }
+
+  .utk-logo-shortcut {
+    top: 25px;
+    left: 0;
+    display: block;
+
+    @include respond(xs, sm, md) {
+      left: 25px;
+    }
+
+  }
+
+  .utk-header-actions {
+    top: 18px;
+  }
+}

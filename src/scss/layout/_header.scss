@@ -1,0 +1,66 @@
+.utk-header {
+  font-family: $sans;
+  color: $smokey;
+  font-size: 15px;
+  box-shadow: 1px -1px 3px rgba($smokey, 0.05);
+
+  &.utk-header-expand-menu {
+
+    .header-main {
+      background-color: $white;
+    }
+
+    .utk-logo-wrapper {
+      border-bottom: none;
+      box-shadow: none;
+
+      .utk-logo {
+        margin-top: 53px;
+      }
+
+      &::before {
+        width: 100%;
+        display: block;
+        top: 0;
+      }
+    }
+
+  }
+}
+
+.utk-header .utk-header-main {
+  border-top: 6px solid $orange;
+  background-color: $white;
+  height: 47px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 99;
+  transition: $transition-all;
+}
+
+.utk-header-actions {
+  position: absolute;
+  right: 0;
+  display: flex;
+  flex-direction: row;
+  width: auto;
+
+  .utk-header-actions {
+    &--item {
+      display: block;
+      width: auto; /* Or whatever */
+      height: auto; /* Or whatever */
+      margin: auto; /* Magic! */
+      font-weight: 400;
+      line-height: $type-2;
+      font-size: $type-2;
+
+      > a {
+        display: inline-block;
+        padding: calc((#{$golden-ratio-4} - #{$golden-ratio-0} - #{$type-2}) / 2) calc(#{$golden-ratio-3} / 2);
+        transition: $transition-all;
+      }
+    }
+  }
+}
