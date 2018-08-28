@@ -74,21 +74,6 @@
     display: none;
   }
 
-  @keyframes blink {
-    0% {
-      opacity: 1.0;
-    }
-    25% {
-      opacity: 0;
-    }
-    50% {
-      opacity: 1.0;
-    }
-    100% {
-      opacity: 1.0;
-    }
-  }
-
   ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
     color: $rock;
   }
@@ -196,15 +181,15 @@
 }
 
 .utk-header-shrink.utk-search-active .utk-search-options {
-  top: 111px;
+  top:  32px;
 }
 
 .utk-search-active .utk-search-options {
-  top: 81px;
+  top: 32px;
 }
 
 .utk-search-options {
-  position: fixed;
+  position: absolute;
   z-index: 101;
   right: $golden-ratio-7;
   display: flex;

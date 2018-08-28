@@ -23,6 +23,16 @@
  * utilities
  */
 @import url(./../vendor/fontello/css/fontello.css);
+@keyframes blink {
+  0% {
+    opacity: 1.0; }
+  25% {
+    opacity: 0; }
+  50% {
+    opacity: 1.0; }
+  100% {
+    opacity: 1.0; } }
+
 .font-script {
   font-family: "bickham-script-pro-3", Georgia, Times, "Times New Roman", serif; }
 
@@ -201,7 +211,7 @@ body {
   color: #58595B;
   font-size: 15px;
   box-shadow: 1px -1px 3px rgba(88, 89, 91, 0.05); }
-  .utk-header.utk-header-expand-menu .header-main {
+  .utk-header.utk-header-expand-menu .utk-header-main {
     background-color: #FFFFFF; }
   .utk-header.utk-header-expand-menu .utk-logo-wrapper {
     border-bottom: none;
@@ -219,6 +229,7 @@ body {
   height: 47px;
   width: 100%;
   position: fixed;
+  box-shadow: 1px -1px 3px rgba(88, 89, 91, 0.05);
   top: 0;
   z-index: 99;
   transition: all 180ms ease-in-out; }
@@ -521,16 +532,6 @@ a:hover {
     opacity: 1; }
   .utk-search-wrapper input:focus + i {
     display: none; }
-
-@keyframes blink {
-  0% {
-    opacity: 1.0; }
-  25% {
-    opacity: 0; }
-  50% {
-    opacity: 1.0; }
-  100% {
-    opacity: 1.0; } }
   .utk-search-wrapper ::placeholder {
     /* Chrome, Firefox, Opera, Safari 10.1+ */
     color: #A7A9AC; }
@@ -613,13 +614,13 @@ a:hover {
   color: #A7A9AC; }
 
 .utk-header-shrink.utk-search-active .utk-search-options {
-  top: 111px; }
+  top: 32px; }
 
 .utk-search-active .utk-search-options {
-  top: 81px; }
+  top: 32px; }
 
 .utk-search-options {
-  position: fixed;
+  position: absolute;
   z-index: 101;
   right: 199px;
   display: flex;
