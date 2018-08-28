@@ -54,6 +54,21 @@ body {
   margin: 0;
   padding: 0;
   background-color: #f6f6f6; }
+  body.utk-menu-open {
+    overflow: hidden; }
+    body.utk-menu-open .utk-body-overlay {
+      opacity: 1;
+      height: 100%; }
+
+.utk-body-overlay {
+  width: 100%;
+  height: 0;
+  background-color: rgba(167, 169, 172, 0.76);
+  position: fixed;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  transition: opacity 290ms ease-in-out; }
 
 .utk-container {
   max-width: 1199px;
@@ -105,7 +120,7 @@ body {
   overflow: hidden;
   background-color: #333333;
   position: relative;
-  transition: all 180ms ease-in-out; }
+  transition: all 290ms ease-in-out; }
   .utk-header-image::after {
     position: absolute;
     display: block;
@@ -166,7 +181,7 @@ body {
         font-weight: 500;
         text-align: center;
         padding: 0 1rem;
-        transition: all 180ms ease-in-out;
+        transition: all 290ms ease-in-out;
         border-left: 6px solid #FF8200;
         text-transform: uppercase; }
       .utk-header-image .utk-header-title .utk-actions-menu > span {
@@ -181,7 +196,7 @@ body {
         font-weight: 500;
         text-align: center;
         padding: 0 1rem;
-        transition: all 180ms ease-in-out; }
+        transition: all 290ms ease-in-out; }
         .utk-header-image .utk-header-title .utk-actions-menu > span::before {
           margin-top: 1rem; }
   .utk-header-image .utk-header-image-main {
@@ -235,7 +250,7 @@ body {
   box-shadow: 1px 1px 2px rgba(51, 51, 51, 0.11);
   top: 0;
   z-index: 99;
-  transition: all 180ms ease-in-out; }
+  transition: all 290ms ease-in-out; }
 
 .utk-header-actions {
   position: absolute;
@@ -257,7 +272,7 @@ body {
     .utk-header-actions .utk-header-actions--item > a {
       display: inline-block;
       padding: calc((47px - 6px - 15px) / 2) calc(29px / 2);
-      transition: all 180ms ease-in-out; }
+      transition: all 290ms ease-in-out; }
 
 .utk-logo-wrapper {
   z-index: 10;
@@ -268,7 +283,7 @@ body {
   width: auto;
   position: absolute;
   border-bottom: 6px solid #FF8200;
-  transition: all 180ms ease-in-out;
+  transition: all 290ms ease-in-out;
   box-shadow: 1px 1px 2px rgba(51, 51, 51, 0.11); }
   .utk-logo-wrapper::before {
     left: 0;
@@ -278,17 +293,17 @@ body {
     position: absolute;
     background-color: #FF8200;
     width: 0;
-    transition: all 180ms ease-in-out; }
+    transition: all 290ms ease-in-out; }
   .utk-logo-wrapper .utk-logo {
     margin: 47px;
     height: 70px;
-    transition: all 180ms ease-in-out; }
+    transition: all 290ms ease-in-out; }
 
 .utk-logo-shortcut {
   top: 25px;
   left: -2000px;
   height: 25px;
-  transition: all 180ms ease-in-out;
+  transition: all 290ms ease-in-out;
   position: absolute;
   z-index: 100; }
 
@@ -363,7 +378,7 @@ a:hover {
   width: 100%;
   height: 0;
   background-color: #FFFFFF;
-  transition: all 180ms ease-in-out;
+  transition: all 290ms ease-in-out;
   top: -500px;
   opacity: 1;
   z-index: 98;
@@ -449,17 +464,17 @@ a:hover {
   font-size: 15px;
   padding: 1px;
   margin-right: 4px;
-  transition: all 180ms ease-in-out; }
+  transition: all 290ms ease-in-out; }
 
 .utk-header-actions--resources .icon-cancel {
   opacity: 0;
-  transition: all 180ms ease-in-out;
+  transition: all 290ms ease-in-out;
   position: absolute;
   margin-left: -26px; }
 
 .utk-header-actions--resources .utk-header-expand-menu .icon-menu {
   opacity: 0;
-  transition: all 180ms ease-in-out; }
+  transition: all 290ms ease-in-out; }
 
 .utk-header-actions--resources .utk-header-expand-menu .icon-cancel {
   opacity: 1;
@@ -500,7 +515,7 @@ a:hover {
 .utk-header-search {
   position: fixed;
   width: 100%;
-  transition: all 180ms ease-in-out;
+  transition: all 290ms ease-in-out;
   overflow: hidden;
   top: -76px;
   opacity: 0;
@@ -533,7 +548,7 @@ a:hover {
   display: flex;
   flex-direction: row;
   height: 76px;
-  transition: all 180ms ease-in-out; }
+  transition: all 290ms ease-in-out; }
   .utk-search-wrapper--icon {
     position: absolute;
     margin-left: 18px;
@@ -606,7 +621,7 @@ a:hover {
     font-weight: 700;
     letter-spacing: 0.07em;
     cursor: pointer;
-    transition: all 180ms ease-in-out; }
+    transition: all 290ms ease-in-out; }
     .utk-search-wrapper input#utk-search-submit:hover, .utk-search-wrapper input#utk-search-submit:focus {
       background-color: #006C93; }
 
@@ -620,17 +635,17 @@ a:hover {
   opacity: 1;
   font-size: 15px;
   padding: 1px;
-  transition: all 180ms ease-in-out; }
+  transition: all 290ms ease-in-out; }
 
 .utk-header-actions--search .icon-cancel {
   opacity: 0;
-  transition: all 180ms ease-in-out;
+  transition: all 290ms ease-in-out;
   position: absolute;
   margin-left: -23px; }
 
 .utk-header-actions--search .utk-header-expand-search .icon-search {
   opacity: 0;
-  transition: all 180ms ease-in-out; }
+  transition: all 290ms ease-in-out; }
 
 .utk-header-actions--search .utk-header-expand-search .icon-cancel {
   opacity: 1;
@@ -648,7 +663,7 @@ a:hover {
   right: 149px;
   display: flex;
   height: 47px;
-  transition: all 180ms ease-in-out;
+  transition: all 290ms ease-in-out;
   top: -76px; }
   .utk-search-options .utk-search-toggle {
     width: 47px;

@@ -38,6 +38,7 @@ class Header extends Component {
         e.stopPropagation();
         this.setState({showResources: true}, () => {
             document.addEventListener('click', this.closeResources);
+            document.body.classList.add('utk-menu-open');
         });
     };
 
@@ -50,6 +51,7 @@ class Header extends Component {
         if (isHeader === -1 || isClose !== -1 || isMenuButton !== -1) {
             this.setState({showResources: false}, () => {
                 document.removeEventListener('click', this.closeResources);
+                document.body.classList.remove('utk-menu-open');
             });
         }
     };
@@ -106,7 +108,7 @@ class Header extends Component {
         const {showResources, showSearch, shortcutLogo} = this.state;
 
         let resourcesClass = '';
-        let rolloutClass = '';
+        let rolloutClass = 'utk-rollin';
         if (showResources === true) {
             resourcesClass = ' utk-header-expand-menu';
             rolloutClass = 'utk-rollout';
@@ -180,6 +182,7 @@ class Header extends Component {
                 {/*<Polk/>*/}
             </header>
             <Body/>
+            <div className="utk-body-overlay"></div>
             </div>
         );
     }

@@ -12,6 +12,26 @@ body {
   margin: 0;
   padding: 0;
   background-color: $offwhite;
+
+  &.utk-menu-open {
+    overflow: hidden;
+
+    .utk-body-overlay {
+      opacity: 1;
+      height: 100%;
+    }
+  }
+}
+
+.utk-body-overlay {
+  width: 100%;
+  height: 0;
+  background-color: rgba($rock, 0.76);
+  position: fixed;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  transition: $transition-opacity;
 }
 
 .utk-container {
