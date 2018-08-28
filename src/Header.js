@@ -53,7 +53,6 @@ class Header extends Component {
         let isHeader = findIndex(e.path, {'className': 'utk-header utk-header-expand-menu'});
         let isClose = findIndex(e.path, {'className': 'utk-resources-close'});
         let isMenuButton = findIndex(e.path, {'className': 'utk-menu-trigger utk-header-expand-menu'});
-        console.log(isClose);
         if (isHeader === -1 || isClose !== -1 || isMenuButton !== -1) {
             this.setState({showResources: false}, () => {
                 document.removeEventListener('click', this.closeResources);
