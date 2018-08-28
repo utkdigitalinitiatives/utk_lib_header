@@ -2,10 +2,6 @@ import React, {Component} from 'react';
 
 export class Menu extends Component {
 
-    constructor(props) {
-        super(props);
-    }
-
     render() {
 
         const {active} = this.props;

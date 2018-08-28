@@ -7,16 +7,11 @@ import findIndex from "lodash/findIndex"
 /* components */
 import {Menu} from "./components/Menu";
 import {Search} from "./components/Search";
-import {Body} from "./components/Body";
 
 /* assets */
 import './css/utk-lib-header.css';
 import primary_logo from './media/utk-libraries-primary-white.svg';
 import shortcut_logo from './media/utk-libraries-shortcut-white.svg';
-
-/* polk */
-import hero from './media/polk-hero.jpg';
-import {Polk} from "./components/polk/Polk";
 
 /* header component */
 class Header extends Component {
@@ -47,7 +42,7 @@ class Header extends Component {
         let isHeader = findIndex(e.path, {'className': 'utk-header utk-header-expand-menu'});
         let isClose = findIndex(e.path, {'className': 'utk-resources-close'});
         let isMenuButton = findIndex(e.path, {'className': 'utk-menu-trigger utk-header-expand-menu'});
-        console.log(isClose);
+
         if (isHeader === -1 || isClose !== -1 || isMenuButton !== -1) {
             this.setState({showResources: false}, () => {
                 document.removeEventListener('click', this.closeResources);
@@ -181,7 +176,6 @@ class Header extends Component {
                 <Search active={searchClass} showSearch={showSearch} ref="search" />
                 {/*<Polk/>*/}
             </header>
-            <Body/>
             <div className="utk-body-overlay"></div>
             </div>
         );
