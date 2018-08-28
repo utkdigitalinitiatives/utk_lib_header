@@ -2,7 +2,7 @@
   font-family: $sans;
   color: $smokey;
   font-size: 15px;
-  box-shadow: 1px -1px 3px rgba($smokey, 0.05);
+  box-shadow: $box-shadow;
 
   &.utk-header-expand-menu {
 
@@ -34,7 +34,7 @@
   height: 47px;
   width: 100%;
   position: fixed;
-  box-shadow: 1px -1px 3px rgba($smokey, 0.05);
+  box-shadow: $box-shadow;
   top: 0;
   z-index: 99;
   transition: $transition-all;

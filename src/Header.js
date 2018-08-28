@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 
 /* libraries */
 import debounce from "lodash/debounce"
+import findIndex from "lodash/findIndex"
 
 /* components */
 import {Menu} from "./components/Menu";
@@ -10,11 +11,11 @@ import {Body} from "./components/Body";
 
 /* assets */
 import './css/utk-lib-header.css';
-import hero from './media/polk-hero.jpg';
 import primary_logo from './media/utk-libraries-primary-white.svg';
 import shortcut_logo from './media/utk-libraries-shortcut-white.svg';
 
 /* polk */
+import hero from './media/polk-hero.jpg';
 import {Polk} from "./components/polk/Polk";
 
 /* header component */
@@ -42,23 +43,34 @@ class Header extends Component {
 
     closeResources = (e) => {
         e.stopPropagation();
-        this.setState({showResources: false}, () => {
-            document.removeEventListener('click', this.closeResources);
-        });
+        let isHeader = findIndex(e.path, {'className': 'utk-header utk-header-expand-menu'});
+        let isClose = findIndex(e.path, {'className': 'utk-resources-close'});
+        let isMenuButton = findIndex(e.path, {'className': 'utk-menu-trigger utk-header-expand-menu'});
+        console.log(isClose);
+        if (isHeader === -1 || isClose !== -1 || isMenuButton !== -1) {
+            this.setState({showResources: false}, () => {
+                document.removeEventListener('click', this.closeResources);
+            });
+        }
     };
 
     toggleSearch (e) {
         e.stopPropagation();
         this.setState({showSearch: true}, () => {
             document.addEventListener('click', this.closeSearch);
+            this.refs.search.utkSearchField.focus();
+            this.refs.search.utkSearchField.value = '';
         });
     };
 
     closeSearch = (e) => {
         e.stopPropagation();
-        this.setState({showSearch: false}, () => {
-            document.removeEventListener('click', this.closeSearch);
-        });
+        let isSearch = findIndex(e.path, {'className': 'utk-search-wrapper'});
+        if (isSearch === -1) {
+            this.setState({showSearch: false}, () => {
+                document.removeEventListener('click', this.closeSearch);
+            });
+        }
     };
 
     isTop(el) {
@@ -145,7 +157,7 @@ class Header extends Component {
                             </div>
 
                             <div className="utk-header-actions--item utk-header-actions--resources">
-                                <a onClick={this.toggleResources} className={resourcesClass}>
+                                <a onClick={this.toggleResources} className={`utk-menu-trigger${resourcesClass}`}>
                                     <span className="icon-menu"></span>
                                     <span className="icon-cancel"></span>
                                     Menu
@@ -164,7 +176,7 @@ class Header extends Component {
                     </div>
                 </div>
                 <Menu active={resourcesClass} />
-                <Search active={searchClass}/>
+                <Search active={searchClass} showSearch={showSearch} ref="search" />
                 {/*<Polk/>*/}
             </header>
             <Body/>

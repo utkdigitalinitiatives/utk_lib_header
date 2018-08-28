@@ -12,6 +12,9 @@ export class Menu extends Component {
 
         return (
             <div className={`utk-header-resources ${active}`}>
+                <a className="utk-resources-close">
+                    <span className="icon-cancel"></span>
+                </a>
                 <div className="utk-container">
                     <div className="utk-resources-contact">
 

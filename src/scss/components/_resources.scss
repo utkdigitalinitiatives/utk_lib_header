@@ -3,17 +3,18 @@
   height: 0;
   background-color: $white;
   transition: $transition-all;
-  overflow: hidden;
   top: -500px;
   opacity: 1;
   z-index: 98;
   position: fixed;
-  box-shadow: 1px -1px 3px rgba($smokey, 0.05);
+  position: fixed;
+  box-shadow: $box-shadow;
 
   &.utk-header-expand-menu {
     top: 47px;
     opacity: 1;
-    height: 500px;
+    background-color: $white;
+    height: auto;
   }
 }
 
@@ -22,14 +23,13 @@
 }
 
 .utk-resources-menu {
-  position: fixed;
+  position: relative;
   width: 100%;
   max-width: 819px;
   margin-left: 380px;
   display: flex;
   flex-direction: row;
-  padding: 1.5rem 0 3rem;
-  background-color: $white;
+  padding: $golden-ratio-4 0 3rem;
 
   &--col {
     width: 33%;
@@ -162,5 +162,27 @@
       display: block;
       top: 0;
     }
+  }
+}
+
+.utk-resources-close {
+  display: block;
+  width: $golden-ratio-4;
+  height: $golden-ratio-4;
+  background-color: $torch;
+  position: absolute;
+  left: 50%;
+  margin-left: calc(-#{$golden-ratio-4 / 2});
+  bottom: calc(-#{$golden-ratio-4 / 2});
+  border-radius: $golden-ratio-4;
+  text-align: center;
+  padding-top: 15px;
+  box-shadow: $box-shadow;
+  cursor: pointer;
+  z-index: 1;
+
+  span {
+    font-size: $type-3;
+    color: $white;
   }
 }

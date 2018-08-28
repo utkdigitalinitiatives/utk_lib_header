@@ -8,7 +8,7 @@
   position: absolute;
   border-bottom: 6px solid $orange;
   transition: $transition-all;
-  box-shadow: 1px -1px 3px rgba($smokey, 0.05);
+  box-shadow: $box-shadow;
 
   &::before {
     left: 0;
@@ -42,7 +42,7 @@
   .utk-logo-wrapper  {
     background-color: transparent;
     .utk-logo {
-      margin-top: 76px;
+      margin-top: 94px;
     }
   }
 }
@@ -50,7 +50,7 @@
 .utk-header:not(.utk-header-expand-menu) .utk-header-main.utk-shortcut:not(.utk-header-expand-menu) {
 
   height: 81px;
-  box-shadow: 1px 1px 5px rgba($smokey, 0.11);
+  box-shadow: $box-shadow;
   overflow: hidden;
 
   .utk-logo-wrapper {
