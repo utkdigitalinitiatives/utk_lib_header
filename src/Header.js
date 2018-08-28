@@ -7,12 +7,16 @@ import findIndex from "lodash/findIndex"
 /* components */
 import {Menu} from "./components/Menu";
 import {Search} from "./components/Search";
-import {Body} from "./components/Body";
 
 /* assets */
 import './css/utk-lib-header.css';
 import primary_logo from './media/utk-libraries-primary-white.svg';
 import shortcut_logo from './media/utk-libraries-shortcut-white.svg';
+
+/* concept*/
+import {Hero} from "./components/concept/Hero";
+import {Body} from "./components/concept/Body";
+import {Subfooter} from "./components/concept/Subfooter";
 
 /* polk */
 import hero from './media/polk-hero.jpg';
@@ -28,6 +32,8 @@ class Header extends Component {
             showResources: false,
             showSearch: false,
             shortcutLogo: false,
+            stickyMenu: false,
+            stickyMenuAnchored: false
         };
 
         this.toggleResources = this.toggleResources.bind(this);
@@ -83,29 +89,95 @@ class Header extends Component {
         return el.getBoundingClientRect().bottom;
     }
 
+    /* scroll tracking, concepting @todo: cleanup in wp */
+
     componentDidMount() {
-        document.addEventListener('scroll', this.trackScrolling);
+        document.addEventListener('scroll', this.trackStickyMenu);
     }
 
     componentWillUnmount() {
-        document.removeEventListener('scroll', this.trackScrolling);
+        document.removeEventListener('scroll', this.trackStickyMenu);
     }
 
-    trackScrolling = debounce((e) => {
+    trackStickyMenu = (e) => {
         const collapseWatch = document.getElementById('utk-header-watch');
+        const stickyMenuTrigger = document.getElementById('utk-menu-sticky-trigger');
+
+        if (this.isTop(collapseWatch) >= this.isBottom(stickyMenuTrigger)) {
+            this.setState({stickyMenu: true});
+            document.removeEventListener('scroll', this.trackStickyMenu);
+            document.addEventListener('scroll', this.trackNormalizeMenu);
+            document.addEventListener('scroll', this.trackShortcutMenu);
+        } else {
+            this.setState({stickyMenu: false});
+            document.removeEventListener('scroll', this.trackNormalizeMenu);
+            document.removeEventListener('scroll', this.trackShortcutMenu);
+            document.addEventListener('scroll', this.trackStickyMenu);
+        }
+    };
+
+    trackNormalizeMenu = (e) => {
+        const menuNormalizeTrigger = document.getElementById('utk-menu-normalize-trigger');
+        const stickyMenuTrigger = document.getElementById('utk-menu-sticky-trigger');
+
+        if (this.isTop(menuNormalizeTrigger) > this.isBottom(stickyMenuTrigger)) {
+            this.setState({stickyMenu: false});
+            document.removeEventListener('scroll', this.trackNormalizeMenu);
+            document.removeEventListener('scroll', this.trackShortcutMenu);
+            document.addEventListener('scroll', this.trackStickyMenu);
+        } else {
+            this.setState({stickyMenu: true});
+            document.removeEventListener('scroll', this.trackResetStickyMenu);
+            document.addEventListener('scroll', this.trackShortcutMenu);
+            document.addEventListener('scroll', this.trackNormalizeMenu);
+        }
+    };
+
+    trackShortcutMenu = (e) => {
+        const sidebarMenu = document.getElementById('utk-sticky-menu');
         const collapseTrigger = document.getElementById('utk-header-trigger');
 
-        if (this.isTop(collapseWatch) >= this.isBottom(collapseTrigger)) {
+        if (this.isBottom(sidebarMenu) > this.isBottom(collapseTrigger)) {
+            document.removeEventListener('scroll', this.trackNormalizeMenu);
+            document.removeEventListener('scroll', this.trackShortcutMenu);
+            document.addEventListener('scroll', this.trackResetStickyMenu);
             this.setState({shortcutLogo: true});
-            // document.removeEventListener('scroll', this.trackScrolling);
+            this.setState({stickyMenu: true});
+            this.setState({stickyMenuAnchored: true});
         } else {
             this.setState({shortcutLogo: false});
+            this.setState({stickyMenu: true});
+            this.setState({stickyMenuAnchored: false});
+            document.removeEventListener('scroll', this.trackResetStickyMenu);
+            document.addEventListener('scroll', this.trackShortcutMenu);
+            document.addEventListener('scroll', this.trackNormalizeMenu);
         }
-    }, 5);
+    };
+
+    trackResetStickyMenu = (e) => {
+        const sidebarMenu = document.getElementById('utk-sticky-menu');
+        const collapseTrigger = document.getElementById('utk-header-trigger');
+
+        if (this.isTop(sidebarMenu) > 100) {
+            document.removeEventListener('scroll', this.trackResetStickyMenu);
+            document.addEventListener('scroll', this.trackShortcutMenu);
+            document.addEventListener('scroll', this.trackNormalizeMenu);
+            this.setState({stickyMenu: true});
+            this.setState({stickyMenuAnchored: false});
+            this.setState({shortcutLogo: false});
+        } else {
+            document.addEventListener('scroll', this.trackResetStickyMenu);
+            document.removeEventListener('scroll', this.trackShortcutMenu);
+            document.removeEventListener('scroll', this.trackNormalizeMenu);
+            this.setState({shortcutLogo: true});
+            this.setState({stickyMenu: true});
+            this.setState({stickyMenuAnchored: true});
+        }
+    };
 
     render() {
 
-        const {showResources, showSearch, shortcutLogo} = this.state;
+        const {showResources, showSearch, shortcutLogo, stickyMenu, stickyMenuAnchored} = this.state;
 
         let resourcesClass = '';
         let rolloutClass = 'utk-rollin';
@@ -131,7 +203,6 @@ class Header extends Component {
         return (
             <div className={rolloutClass}>
             <div id="utk-header-watch"></div>
-            <div id="utk-header-trigger"></div>
             <header className={`utk-header${resourcesClass}${searchClassHeader}${headerHero}`}>
                 <div className={`utk-header-main${headerShortcutClass}`}>
                     <div className="utk-container">
@@ -181,7 +252,10 @@ class Header extends Component {
                 <Search active={searchClass} showSearch={showSearch} ref="search" />
                 {/*<Polk/>*/}
             </header>
-            <Body/>
+            <Hero shortcut={shortcutLogo} stickyMenu={stickyMenu} />
+            <Body shortcut={shortcutLogo} stickyMenu={stickyMenu} stickyMenuAnchored={stickyMenuAnchored} />
+            <div id="utk-header-trigger"></div>
+            <Subfooter/>
             <div className="utk-body-overlay"></div>
             </div>
         );

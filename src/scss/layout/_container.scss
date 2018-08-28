@@ -12,6 +12,7 @@ body {
   margin: 0;
   padding: 0;
   background-color: $offwhite;
+  font-family: $sans;
 
   &.utk-menu-open {
     overflow: hidden;
@@ -44,12 +45,12 @@ body {
   }
 }
 
-#utk-header-trigger {
+#utk-menu-trigger {
   width: 1px;
   height: 1px;
   position: absolute;
   left: 0;
-  top: 400px;
+  background: $torch;
 }
 
 #utk-header-watch {
@@ -58,6 +59,17 @@ body {
   position: fixed;
   left: 0;
   top: 170px;
+}
+
+#utk-header-trigger {
+}
+
+#utk-menu-normalize-trigger {
+  width: 1px;
+  height: 1px;
+  position: absolute;
+  left: 0;
+  background: $river;
 }
 
 .utk-header-image {

@@ -64,8 +64,9 @@
 
 }
 
-  .utk-header-expand-menu .utk-resources-contact {
+.utk-header-expand-menu .utk-resources-contact {
   opacity: 1;
+  left: auto;
 }
 
 .utk-resources-contact {
@@ -73,7 +74,8 @@
   max-width: 360px;
   margin: 0 47px;
   top: 205px;
-  transition: $transition-all;
+  left: -360px;
+  transition: $transition-opacity;
   opacity: 0;
 
   p {

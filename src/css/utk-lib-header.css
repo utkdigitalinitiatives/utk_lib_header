@@ -53,7 +53,8 @@ html {
 body {
   margin: 0;
   padding: 0;
-  background-color: #f6f6f6; }
+  background-color: #f6f6f6;
+  font-family: "Gotham-Book", "Gotham SSm 4r", "Gotham SSm A", "Gotham SSm B", "Tahoma", "Helvetica Neue", Helvetica, Arial, sans-serif; }
   body.utk-menu-open {
     overflow: hidden; }
     body.utk-menu-open .utk-body-overlay {
@@ -99,12 +100,12 @@ body {
     .utk-container {
       padding: 0 2rem; } }
 
-#utk-header-trigger {
+#utk-menu-trigger {
   width: 1px;
   height: 1px;
   position: absolute;
   left: 0;
-  top: 400px; }
+  background: #E65933; }
 
 #utk-header-watch {
   width: 1px;
@@ -112,6 +113,13 @@ body {
   position: fixed;
   left: 0;
   top: 170px; }
+
+#utk-menu-normalize-trigger {
+  width: 1px;
+  height: 1px;
+  position: absolute;
+  left: 0;
+  background: #517C96; }
 
 .utk-header-image {
   width: 100%;
@@ -427,14 +435,16 @@ a:hover {
       color: #8D2048; }
 
 .utk-header-expand-menu .utk-resources-contact {
-  opacity: 1; }
+  opacity: 1;
+  left: auto; }
 
 .utk-resources-contact {
   position: fixed;
   max-width: 360px;
   margin: 0 47px;
   top: 205px;
-  transition: all 290ms ease-in-out;
+  left: -360px;
+  transition: opacity 290ms ease-in-out;
   opacity: 0; }
   .utk-resources-contact p {
     margin: 0;
@@ -726,6 +736,242 @@ a:hover {
 
 .utk-search-libraries .utk-search-options .utk-search-toggle .utk-search-toggle-button {
   left: calc(23.5px); }
+
+/*
+ * custom
+ */
+aside.utk-sidebar-menu.utk-menu-sticky {
+  position: fixed;
+  top: 199px;
+  transition: all 290ms ease-in-out; }
+  aside.utk-sidebar-menu.utk-menu-sticky.utk-menu-sticky-anchored {
+    position: absolute;
+    top: auto;
+    bottom: calc(94px); }
+
+aside.utk-sidebar-menu {
+  width: 304px;
+  position: absolute; }
+  aside.utk-sidebar-menu > ul {
+    margin: 0;
+    padding: 0;
+    background-color: #58595B;
+    margin-bottom: 2rem; }
+    aside.utk-sidebar-menu > ul > li {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      font-size: 18px;
+      font-weight: 500;
+      border-bottom: 1px solid rgba(167, 169, 172, 0.125); }
+      aside.utk-sidebar-menu > ul > li:last-of-type {
+        border-bottom: none; }
+      aside.utk-sidebar-menu > ul > li > a,
+      aside.utk-sidebar-menu > ul > li > a:visited {
+        color: #f6f6f6;
+        display: block;
+        padding: 18px;
+        background-color: #58595B;
+        position: relative;
+        transition: all 290ms ease-in-out;
+        overflow: hidden; }
+        aside.utk-sidebar-menu > ul > li > a::before,
+        aside.utk-sidebar-menu > ul > li > a:visited::before {
+          position: absolute;
+          right: 0;
+          height: 100%;
+          background-color: #FF8200;
+          top: 0;
+          padding: 0;
+          content: '';
+          width: 0;
+          transition: all 290ms ease-in-out;
+          opacity: 0;
+          display: table-cell;
+          vertical-align: middle; }
+        aside.utk-sidebar-menu > ul > li > a:after,
+        aside.utk-sidebar-menu > ul > li > a:visited:after {
+          font-family: "fontello";
+          font-style: normal;
+          font-weight: normal;
+          speak: none;
+          display: inline-block;
+          text-decoration: inherit;
+          width: 1em;
+          margin-right: .2em;
+          text-align: center;
+          /* opacity: .8; */
+          /* For safety - reset parent styles, that can break glyph codes*/
+          font-variant: normal;
+          text-transform: none;
+          /* fix buttons height, for twitter bootstrap */
+          line-height: 1em;
+          /* Animation center compensation - margins should be symmetric */
+          /* remove if not needed */
+          margin-left: .2em;
+          /* you can be more comfortable with increased icons size */
+          /* font-size: 120%; */
+          /* Font smoothing. That was taken from TWBS */
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
+          /* Uncomment for 3D effect */
+          /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+          content: '\f107';
+          color: #A7A9AC;
+          transform: rotate(-90deg);
+          display: inline-block;
+          left: 0;
+          transition: all 290ms ease-in-out;
+          position: relative; }
+      aside.utk-sidebar-menu > ul > li > a:hover,
+      aside.utk-sidebar-menu > ul > li > a:focus {
+        color: #FFFFFF;
+        background-color: #333333; }
+        aside.utk-sidebar-menu > ul > li > a:hover::before,
+        aside.utk-sidebar-menu > ul > li > a:focus::before {
+          width: 1rem;
+          padding: 0;
+          text-align: center;
+          opacity: 1; }
+        aside.utk-sidebar-menu > ul > li > a:hover:after,
+        aside.utk-sidebar-menu > ul > li > a:focus:after {
+          left: 5px; }
+
+aside > .utk-cta a,
+aside > .utk-cta a:visited {
+  display: block;
+  height: 3rem;
+  padding: 1rem;
+  background-color: #FFFFFF;
+  color: #58595B;
+  font-size: 1rem;
+  font-size: 15px;
+  font-weight: 400;
+  text-transform: uppercase;
+  padding-left: 4rem;
+  position: relative;
+  margin-bottom: 1rem;
+  letter-spacing: 0.08em;
+  overflow: hidden; }
+  aside > .utk-cta a:after,
+  aside > .utk-cta a:visited:after {
+    font-family: "fontello";
+    font-style: normal;
+    font-weight: normal;
+    speak: none;
+    display: inline-block;
+    text-decoration: inherit;
+    width: 1em;
+    margin-right: .2em;
+    text-align: center;
+    /* opacity: .8; */
+    /* For safety - reset parent styles, that can break glyph codes*/
+    font-variant: normal;
+    text-transform: none;
+    /* fix buttons height, for twitter bootstrap */
+    line-height: 1em;
+    /* Animation center compensation - margins should be symmetric */
+    /* remove if not needed */
+    margin-left: .2em;
+    /* you can be more comfortable with increased icons size */
+    /* font-size: 120%; */
+    /* Font smoothing. That was taken from TWBS */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    /* Uncomment for 3D effect */
+    /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+    content: '\f107';
+    color: #A7A9AC;
+    transform: rotate(-90deg);
+    right: -15px;
+    opacity: 0;
+    transition: all 290ms ease-in-out;
+    position: absolute; }
+  aside > .utk-cta a svg,
+  aside > .utk-cta a:visited svg {
+    position: absolute;
+    left: 1.05rem;
+    top: 1.1rem;
+    color: #FFFFFF;
+    transition: all 290ms ease-in-out; }
+  aside > .utk-cta a::before,
+  aside > .utk-cta a:visited::before {
+    width: 3rem;
+    height: 3rem;
+    display: block;
+    background-color: #FF8200;
+    content: ' ';
+    position: absolute;
+    left: 0;
+    top: 0; }
+  aside > .utk-cta a:hover svg,
+  aside > .utk-cta a:visited:hover svg {
+    transform: scale(1.2); }
+  aside > .utk-cta a:hover:after,
+  aside > .utk-cta a:visited:hover:after {
+    right: 15px;
+    opacity: 1; }
+
+#utk-menu-sticky-trigger {
+  width: 1px;
+  height: 1px;
+  display: block;
+  position: absolute;
+  z-index: 999;
+  background-color: #E65933;
+  margin-top: -29px; }
+
+.utk-body {
+  margin-left: calc(333px);
+  background-color: #FFFFFF;
+  min-height: 1200px; }
+
+.utk-hero {
+  background-color: #A7A9AC;
+  width: 100%;
+  height: calc(474px);
+  margin-top: 47px;
+  position: relative; }
+  .utk-hero .utk-container {
+    width: 100%;
+    height: 100%; }
+
+.utk-title-row {
+  top: 47px;
+  transition: all 290ms ease-in-out; }
+
+.utk-title-text {
+  position: absolute;
+  bottom: 123px;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 29px;
+  font-size: 47px;
+  font-weight: 400;
+  color: #FFFFFF; }
+
+.utk-hero-shrink .utk-title-row {
+  position: fixed;
+  z-index: 97;
+  top: 81px;
+  background-color: #58595B;
+  height: 47px;
+  width: 100%;
+  box-shadow: 1px 1px 2px rgba(51, 51, 51, 0.11); }
+  .utk-hero-shrink .utk-title-row .utk-title-text {
+    bottom: 0;
+    margin-bottom: 0;
+    line-height: 47px;
+    font-size: 18px; }
+
+.utk-main {
+  margin-top: -123px;
+  margin-bottom: -76px; }
+
+.utk-subfooter {
+  background-color: #FED535;
+  width: 100%;
+  height: 2000px; }
 
 /*
  * vendor

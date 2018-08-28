@@ -1,0 +1,228 @@
+aside.utk-sidebar-menu.utk-menu-sticky {
+  position: fixed;
+  top: 199px;
+  transition: $transition-all;
+
+  &.utk-menu-sticky-anchored {
+    position: absolute;
+    top: auto;
+    bottom: calc(#{$golden-ratio-2 + $golden-ratio-5});
+  }
+}
+
+aside.utk-sidebar-menu {
+  width: 304px;
+  position: absolute;
+
+  > ul {
+    margin: 0;
+    padding: 0;
+    background-color: $smokey;
+    margin-bottom: 2rem;
+
+    > li {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      font-size: $type-3;
+      font-weight: 500;
+      border-bottom: 1px solid rgba($rock, 0.125);
+
+      &:last-of-type {
+        border-bottom: none;
+      }
+
+      > a,
+      > a:visited {
+        color: $offwhite;
+        display: block;
+        padding: $type-3;
+        background-color: $smokey;
+        position: relative;
+        transition: $transition-all;
+        overflow: hidden;
+
+        &::before {
+          position: absolute;
+          right: 0;
+          height: 100%;
+          background-color: $orange;
+          top: 0;
+          padding: 0;
+          content: '';
+          width: 0;
+          transition: $transition-all;
+          opacity: 0;
+          display: table-cell;
+          vertical-align: middle;
+        }
+
+        &:after {
+          font-family: "fontello";
+          font-style: normal;
+          font-weight: normal;
+          speak: none;
+
+          display: inline-block;
+          text-decoration: inherit;
+          width: 1em;
+          margin-right: .2em;
+          text-align: center;
+          /* opacity: .8; */
+
+          /* For safety - reset parent styles, that can break glyph codes*/
+          font-variant: normal;
+          text-transform: none;
+
+          /* fix buttons height, for twitter bootstrap */
+          line-height: 1em;
+
+          /* Animation center compensation - margins should be symmetric */
+          /* remove if not needed */
+          margin-left: .2em;
+
+          /* you can be more comfortable with increased icons size */
+          /* font-size: 120%; */
+
+          /* Font smoothing. That was taken from TWBS */
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
+
+          /* Uncomment for 3D effect */
+          /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+
+          content: '\f107';
+          color: $rock;
+          transform: rotate(-90deg);
+          display: inline-block;
+          left: 0;
+          transition: $transition-all;
+          position: relative;
+        }
+      }
+
+      > a:hover,
+      > a:focus {
+        color: $white;
+        background-color: $gray;
+
+        &::before {
+          width: 1rem;
+          padding: 0;
+          text-align: center;
+          opacity: 1;
+        }
+
+        &:after {
+          left: 5px;
+        }
+      }
+    }
+  }
+}
+
+aside > .utk-cta {
+
+  a,
+  a:visited {
+    display: block;
+    height: 3rem;
+    padding: 1rem;
+    background-color: $white;
+    color: $smokey;
+    font-size: 1rem;
+    font-size: 15px;
+    font-weight: 400;
+    text-transform: uppercase;
+    padding-left: 4rem;
+    position: relative;
+    margin-bottom: 1rem;
+    letter-spacing: 0.08em;
+    overflow: hidden;
+
+    &:after {
+      font-family: "fontello";
+      font-style: normal;
+      font-weight: normal;
+      speak: none;
+
+      display: inline-block;
+      text-decoration: inherit;
+      width: 1em;
+      margin-right: .2em;
+      text-align: center;
+      /* opacity: .8; */
+
+      /* For safety - reset parent styles, that can break glyph codes*/
+      font-variant: normal;
+      text-transform: none;
+
+      /* fix buttons height, for twitter bootstrap */
+      line-height: 1em;
+
+      /* Animation center compensation - margins should be symmetric */
+      /* remove if not needed */
+      margin-left: .2em;
+
+      /* you can be more comfortable with increased icons size */
+      /* font-size: 120%; */
+
+      /* Font smoothing. That was taken from TWBS */
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+
+      /* Uncomment for 3D effect */
+      /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+
+      content: '\f107';
+      color: $rock;
+      transform: rotate(-90deg);
+      right: -15px;
+      opacity: 0;
+      transition: $transition-all;
+      position: absolute;
+    }
+
+    svg {
+      position: absolute;
+      left: 1.05rem;
+      top: 1.1rem;
+      color: $white;
+      transition: $transition-all;
+    }
+
+    &::before {
+      width: 3rem;
+      height: 3rem;
+      display: block;
+      background-color: $orange;
+      content: ' ';
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+
+    &:hover {
+      svg {
+        transform: scale(1.2);
+      }
+
+      &:after {
+        right: 15px;
+        opacity: 1;
+      }
+    }
+  }
+
+}
+
+
+#utk-menu-sticky-trigger {
+  width: 1px;
+  height: 1px;
+  display: block;
+  position: absolute;
+  z-index: 999;
+  background-color: $torch;
+  margin-top: -$golden-ratio-3;
+}

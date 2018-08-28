@@ -25,6 +25,15 @@
 @import "components/search";
 
 /*
+ * custom
+ */
+@import "custom/concept/aside";
+@import "custom/concept/body";
+@import "custom/concept/hero";
+@import "custom/concept/main";
+@import "custom/concept/subfooter";
+
+/*
  * vendor
  */
 @import "./../vendor/fontello/css/fontello.css";
