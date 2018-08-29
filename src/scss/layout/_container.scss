@@ -40,7 +40,7 @@ body {
   position: relative;
 
   @include respond(xs, sm, md) {
-    padding: 0 2rem;
+    padding: 0 $golden-ratio-2;
   }
 }
 

@@ -157,7 +157,7 @@ class Header extends Component {
                                 <a onClick={this.toggleResources} className={`utk-menu-trigger${resourcesClass}`}>
                                     <span className="icon-menu"></span>
                                     <span className="icon-cancel"></span>
-                                    Menu
+                                    <em>Menu</em>
                                 </a>
                             </div>
 

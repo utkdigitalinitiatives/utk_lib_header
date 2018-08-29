@@ -46,6 +46,27 @@
     .utk-logo {
       margin-top: 49px;
       padding-top: 45px;
+
+      @include respond(xs, sm, md) {
+        margin-top: -100px;
+        transform: scale(0);
+        opacity: 1;
+      }
+    }
+  }
+
+  @include respond(xs, sm, md) {
+    .utk-header-main {
+      height: 81px;
+      box-shadow: $box-shadow;
+      overflow: hidden;
+
+      .utk-logo-shortcut {
+        top: 25px;
+        left: 25px;
+        display: block;
+
+      }
     }
   }
 }

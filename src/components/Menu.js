@@ -33,9 +33,9 @@ export class Menu extends Component {
         const {active} = this.props;
         const {menuDrawer} = this.state;
 
-        const menuColumns = Object.entries(menuDrawer).map((items, index) => {
+        const menuColumns = Object.entries(menuDrawer).map((columns, index) => {
             return (
-                <MenuColumns items={items[1].data} />
+                <MenuColumns items={columns[1].data} />
             );
         });
 

@@ -91,13 +91,13 @@ body {
   /* desktop and large desktop */ }
   @media (max-width: 767px) {
     .utk-container {
-      padding: 0 2rem; } }
+      padding: 0 18px; } }
   @media (min-width: 768px) and (max-width: 991px) {
     .utk-container {
-      padding: 0 2rem; } }
+      padding: 0 18px; } }
   @media (min-width: 992px) and (max-width: 1199px) {
     .utk-container {
-      padding: 0 2rem; } }
+      padding: 0 18px; } }
 
 #utk-header-trigger {
   width: 1px;
@@ -252,12 +252,43 @@ body {
   z-index: 99;
   transition: all 290ms ease-in-out; }
 
+/* Mobile Devices for Mice */
+/* Landscape phones and down */
+@media (max-width: 767px) {
+  .utk-header.utk-header-expand-menu .utk-header-actions {
+    right: 25px;
+    margin-top: 16px; } }
+
+/* Landscape phone to portrait tablet */
+/* Portrait tablet to landscape and desktop */
+/* desktop and large desktop */
+/* Mobile Devices for Mice */
+/* Landscape phones and down */
+/* Landscape phone to portrait tablet */
+@media (min-width: 768px) and (max-width: 991px) {
+  .utk-header.utk-header-expand-menu .utk-header-actions {
+    right: 25px;
+    margin-top: 16px; } }
+
+/* Portrait tablet to landscape and desktop */
+/* desktop and large desktop */
+/* Mobile Devices for Mice */
+/* Landscape phones and down */
+/* Landscape phone to portrait tablet */
+/* Portrait tablet to landscape and desktop */
+@media (min-width: 992px) and (max-width: 1199px) {
+  .utk-header.utk-header-expand-menu .utk-header-actions {
+    right: 25px;
+    margin-top: 16px; } }
+
+/* desktop and large desktop */
 .utk-header-actions {
   position: absolute;
   right: 0;
   display: flex;
   flex-direction: row;
-  width: auto; }
+  width: auto;
+  transition: all 290ms ease-in-out; }
   .utk-header-actions .utk-header-actions--item {
     display: block;
     width: auto;
@@ -268,11 +299,39 @@ body {
     /* Magic! */
     font-weight: 400;
     line-height: 15px;
-    font-size: 15px; }
+    font-size: 15px;
+    /* Mobile Devices for Mice */
+    /* Landscape phones and down */
+    /* Landscape phone to portrait tablet */
+    /* Portrait tablet to landscape and desktop */
+    /* desktop and large desktop */ }
+    @media (max-width: 767px) {
+      .utk-header-actions .utk-header-actions--item.utk-header-actions--utk {
+        display: none; }
+      .utk-header-actions .utk-header-actions--item.utk-header-actions--home {
+        display: none; } }
+    .utk-header-actions .utk-header-actions--item em {
+      font-style: normal;
+      /* Mobile Devices for Mice */
+      /* Landscape phones and down */
+      /* Landscape phone to portrait tablet */
+      /* Portrait tablet to landscape and desktop */
+      /* desktop and large desktop */ }
+      @media (max-width: 767px) {
+        .utk-header-actions .utk-header-actions--item em {
+          display: none; } }
     .utk-header-actions .utk-header-actions--item > a {
       display: inline-block;
       padding: calc((47px - 6px - 15px) / 2) calc(29px / 2);
-      transition: all 290ms ease-in-out; }
+      transition: all 290ms ease-in-out;
+      /* Mobile Devices for Mice */
+      /* Landscape phones and down */
+      /* Landscape phone to portrait tablet */
+      /* Portrait tablet to landscape and desktop */
+      /* desktop and large desktop */ }
+      @media (max-width: 767px) {
+        .utk-header-actions .utk-header-actions--item > a > span {
+          font-size: 23px; } }
 
 .utk-logo-wrapper {
   z-index: 10;
@@ -310,9 +369,82 @@ body {
   position: absolute;
   z-index: 100; }
 
-.utk-header.utk-header-expand-menu .utk-logo-wrapper .utk-logo {
-  margin-top: 49px;
-  padding-top: 45px; }
+.utk-header.utk-header-expand-menu {
+  /* Mobile Devices for Mice */
+  /* Landscape phones and down */
+  /* Landscape phone to portrait tablet */
+  /* Portrait tablet to landscape and desktop */
+  /* desktop and large desktop */
+  /* Mobile Devices for Mice */
+  /* Landscape phones and down */
+  /* Landscape phone to portrait tablet */
+  /* Portrait tablet to landscape and desktop */
+  /* desktop and large desktop */
+  /* Mobile Devices for Mice */
+  /* Landscape phones and down */
+  /* Landscape phone to portrait tablet */
+  /* Portrait tablet to landscape and desktop */
+  /* desktop and large desktop */ }
+  .utk-header.utk-header-expand-menu .utk-logo-wrapper .utk-logo {
+    margin-top: 49px;
+    padding-top: 45px;
+    /* Mobile Devices for Mice */
+    /* Landscape phones and down */
+    /* Landscape phone to portrait tablet */
+    /* Portrait tablet to landscape and desktop */
+    /* desktop and large desktop */
+    /* Mobile Devices for Mice */
+    /* Landscape phones and down */
+    /* Landscape phone to portrait tablet */
+    /* Portrait tablet to landscape and desktop */
+    /* desktop and large desktop */
+    /* Mobile Devices for Mice */
+    /* Landscape phones and down */
+    /* Landscape phone to portrait tablet */
+    /* Portrait tablet to landscape and desktop */
+    /* desktop and large desktop */ }
+    @media (max-width: 767px) {
+      .utk-header.utk-header-expand-menu .utk-logo-wrapper .utk-logo {
+        margin-top: -100px;
+        transform: scale(0);
+        opacity: 1; } }
+    @media (min-width: 768px) and (max-width: 991px) {
+      .utk-header.utk-header-expand-menu .utk-logo-wrapper .utk-logo {
+        margin-top: -100px;
+        transform: scale(0);
+        opacity: 1; } }
+    @media (min-width: 992px) and (max-width: 1199px) {
+      .utk-header.utk-header-expand-menu .utk-logo-wrapper .utk-logo {
+        margin-top: -100px;
+        transform: scale(0);
+        opacity: 1; } }
+  @media (max-width: 767px) {
+    .utk-header.utk-header-expand-menu .utk-header-main {
+      height: 81px;
+      box-shadow: 1px 1px 2px rgba(51, 51, 51, 0.11);
+      overflow: hidden; }
+      .utk-header.utk-header-expand-menu .utk-header-main .utk-logo-shortcut {
+        top: 25px;
+        left: 25px;
+        display: block; } }
+  @media (min-width: 768px) and (max-width: 991px) {
+    .utk-header.utk-header-expand-menu .utk-header-main {
+      height: 81px;
+      box-shadow: 1px 1px 2px rgba(51, 51, 51, 0.11);
+      overflow: hidden; }
+      .utk-header.utk-header-expand-menu .utk-header-main .utk-logo-shortcut {
+        top: 25px;
+        left: 25px;
+        display: block; } }
+  @media (min-width: 992px) and (max-width: 1199px) {
+    .utk-header.utk-header-expand-menu .utk-header-main {
+      height: 81px;
+      box-shadow: 1px 1px 2px rgba(51, 51, 51, 0.11);
+      overflow: hidden; }
+      .utk-header.utk-header-expand-menu .utk-header-main .utk-logo-shortcut {
+        top: 25px;
+        left: 25px;
+        display: block; } }
 
 .utk-header:not(.utk-header-expand-menu) .utk-header-main.utk-shortcut:not(.utk-header-expand-menu) {
   height: 81px;
@@ -385,11 +517,99 @@ a:hover {
   z-index: 98;
   position: fixed;
   position: fixed;
-  box-shadow: 1px 1px 2px rgba(51, 51, 51, 0.11); }
+  box-shadow: 1px 1px 2px rgba(51, 51, 51, 0.11);
+  /*
+   * menu on tablet and down
+   */
+  /* Mobile Devices for Mice */
+  /* Landscape phones and down */
+  /* Landscape phone to portrait tablet */
+  /* Portrait tablet to landscape and desktop */
+  /* desktop and large desktop */
+  /* Mobile Devices for Mice */
+  /* Landscape phones and down */
+  /* Landscape phone to portrait tablet */
+  /* Portrait tablet to landscape and desktop */
+  /* desktop and large desktop */
+  /* Mobile Devices for Mice */
+  /* Landscape phones and down */
+  /* Landscape phone to portrait tablet */
+  /* Portrait tablet to landscape and desktop */
+  /* desktop and large desktop */ }
+  @media (max-width: 767px) {
+    .utk-header-resources {
+      height: 100vh;
+      max-width: 100%;
+      width: 322px;
+      right: 0;
+      top: 0;
+      padding-top: 81px;
+      right: -322px; } }
+  @media (min-width: 768px) and (max-width: 991px) {
+    .utk-header-resources {
+      height: 100vh;
+      max-width: 100%;
+      width: 322px;
+      right: 0;
+      top: 0;
+      padding-top: 81px;
+      right: -322px; } }
+  @media (min-width: 992px) and (max-width: 1199px) {
+    .utk-header-resources {
+      height: 100vh;
+      max-width: 100%;
+      width: 322px;
+      right: 0;
+      top: 0;
+      padding-top: 81px;
+      right: -322px; } }
   .utk-header-resources.utk-header-expand-menu {
     top: 47px;
     opacity: 1;
-    background-color: #FFFFFF; }
+    background-color: #FFFFFF;
+    /* Mobile Devices for Mice */
+    /* Landscape phones and down */
+    /* Landscape phone to portrait tablet */
+    /* Portrait tablet to landscape and desktop */
+    /* desktop and large desktop */
+    /* Mobile Devices for Mice */
+    /* Landscape phones and down */
+    /* Landscape phone to portrait tablet */
+    /* Portrait tablet to landscape and desktop */
+    /* desktop and large desktop */
+    /* Mobile Devices for Mice */
+    /* Landscape phones and down */
+    /* Landscape phone to portrait tablet */
+    /* Portrait tablet to landscape and desktop */
+    /* desktop and large desktop */
+    /* Mobile Devices for Mice */
+    /* Landscape phones and down */
+    /* Landscape phone to portrait tablet */
+    /* Portrait tablet to landscape and desktop */
+    /* desktop and large desktop */ }
+    @media (max-width: 767px) {
+      .utk-header-resources.utk-header-expand-menu {
+        height: 100vh;
+        right: 0;
+        top: 0;
+        padding-top: 81px; } }
+    @media (min-width: 768px) and (max-width: 991px) {
+      .utk-header-resources.utk-header-expand-menu {
+        height: 100vh;
+        right: 0;
+        top: 0;
+        padding-top: 81px; } }
+    @media (min-width: 992px) and (max-width: 1199px) {
+      .utk-header-resources.utk-header-expand-menu {
+        height: 100vh;
+        right: 0;
+        top: 0;
+        padding-top: 81px; } }
+    @media (max-width: 767px) {
+      .utk-header-resources.utk-header-expand-menu {
+        width: 100% !important;
+        margin-left: 25px;
+        right: calc(-25px); } }
 
 .utk-header.utk-header-shrink:not(.utk-header-expand-menu) .utk-header-expand-menu {
   top: 81px; }
@@ -401,7 +621,22 @@ a:hover {
   margin-left: 380px;
   display: flex;
   flex-direction: row;
-  padding: 47px 0 3rem; }
+  padding: 47px 0 3rem;
+  /* Mobile Devices for Mice */
+  /* Landscape phones and down */
+  /* Landscape phone to portrait tablet */
+  /* Portrait tablet to landscape and desktop */
+  /* desktop and large desktop */
+  /* Mobile Devices for Mice */
+  /* Landscape phones and down */
+  /* Landscape phone to portrait tablet */
+  /* Portrait tablet to landscape and desktop */
+  /* desktop and large desktop */
+  /* Mobile Devices for Mice */
+  /* Landscape phones and down */
+  /* Landscape phone to portrait tablet */
+  /* Portrait tablet to landscape and desktop */
+  /* desktop and large desktop */ }
   .utk-resources-menu--col {
     width: 33%;
     display: block; }
@@ -435,17 +670,62 @@ a:hover {
   margin: 0 47px;
   top: 205px;
   transition: all 290ms ease-in-out;
-  opacity: 0; }
+  opacity: 0;
+  /* Mobile Devices for Mice */
+  /* Landscape phones and down */
+  /* Landscape phone to portrait tablet */
+  /* Portrait tablet to landscape and desktop */
+  /* desktop and large desktop */
+  /* Mobile Devices for Mice */
+  /* Landscape phones and down */
+  /* Landscape phone to portrait tablet */
+  /* Portrait tablet to landscape and desktop */
+  /* desktop and large desktop */
+  /* Mobile Devices for Mice */
+  /* Landscape phones and down */
+  /* Landscape phone to portrait tablet */
+  /* Portrait tablet to landscape and desktop */
+  /* desktop and large desktop */ }
   .utk-resources-contact p {
     margin: 0;
     padding: 0;
     line-height: 1.5rem;
     font-size: 15px;
-    font-weight: 300; }
+    font-weight: 300;
+    /* Mobile Devices for Mice */
+    /* Landscape phones and down */
+    /* Landscape phone to portrait tablet */
+    /* Portrait tablet to landscape and desktop */
+    /* desktop and large desktop */
+    /* Mobile Devices for Mice */
+    /* Landscape phones and down */
+    /* Landscape phone to portrait tablet */
+    /* Portrait tablet to landscape and desktop */
+    /* desktop and large desktop */
+    /* Mobile Devices for Mice */
+    /* Landscape phones and down */
+    /* Landscape phone to portrait tablet */
+    /* Portrait tablet to landscape and desktop */
+    /* desktop and large desktop */ }
     .utk-resources-contact p > a {
       display: inline-block; }
   .utk-resources-contact--social {
-    margin-top: 47px; }
+    margin-top: 47px;
+    /* Mobile Devices for Mice */
+    /* Landscape phones and down */
+    /* Landscape phone to portrait tablet */
+    /* Portrait tablet to landscape and desktop */
+    /* desktop and large desktop */
+    /* Mobile Devices for Mice */
+    /* Landscape phones and down */
+    /* Landscape phone to portrait tablet */
+    /* Portrait tablet to landscape and desktop */
+    /* desktop and large desktop */
+    /* Mobile Devices for Mice */
+    /* Landscape phones and down */
+    /* Landscape phone to portrait tablet */
+    /* Portrait tablet to landscape and desktop */
+    /* desktop and large desktop */ }
     .utk-resources-contact--social > a,
     .utk-resources-contact--social > a:visited {
       color: #A7A9AC;
@@ -499,6 +779,39 @@ a:hover {
     display: block;
     top: 0; }
 
+/* Mobile Devices for Mice */
+/* Landscape phones and down */
+@media (max-width: 767px) {
+  .utk-header.utk-header-expand-menu .utk-resources-close {
+    left: 0;
+    top: calc(106px);
+    bottom: auto; } }
+
+/* Landscape phone to portrait tablet */
+/* Portrait tablet to landscape and desktop */
+/* desktop and large desktop */
+/* Mobile Devices for Mice */
+/* Landscape phones and down */
+/* Landscape phone to portrait tablet */
+@media (min-width: 768px) and (max-width: 991px) {
+  .utk-header.utk-header-expand-menu .utk-resources-close {
+    left: 0;
+    top: calc(106px);
+    bottom: auto; } }
+
+/* Portrait tablet to landscape and desktop */
+/* desktop and large desktop */
+/* Mobile Devices for Mice */
+/* Landscape phones and down */
+/* Landscape phone to portrait tablet */
+/* Portrait tablet to landscape and desktop */
+@media (min-width: 992px) and (max-width: 1199px) {
+  .utk-header.utk-header-expand-menu .utk-resources-close {
+    left: 0;
+    top: calc(106px);
+    bottom: auto; } }
+
+/* desktop and large desktop */
 .utk-resources-close {
   display: block;
   width: 47px;
