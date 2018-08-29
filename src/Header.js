@@ -18,10 +18,6 @@ import {Hero} from "./components/concept/Hero";
 import {Body} from "./components/concept/Body";
 import {Subfooter} from "./components/concept/Subfooter";
 
-/* polk */
-import hero from './media/polk-hero.jpg';
-import {Polk} from "./components/polk/Polk";
-
 /* header component */
 class Header extends Component {
 
@@ -53,6 +49,7 @@ class Header extends Component {
         let isHeader = findIndex(e.path, {'className': 'utk-header utk-header-expand-menu'});
         let isClose = findIndex(e.path, {'className': 'utk-resources-close'});
         let isMenuButton = findIndex(e.path, {'className': 'utk-menu-trigger utk-header-expand-menu'});
+
         if (isHeader === -1 || isClose !== -1 || isMenuButton !== -1) {
             this.setState({showResources: false}, () => {
                 document.removeEventListener('click', this.closeResources);
