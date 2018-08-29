@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import {MenuColumns} from "./MenuColumns";
-import _ from "lodash";
 
 // const URL = 'https://www-staging.lib.utk.edu';
 const URL = 'https://www-staging.lib.utk.edu';

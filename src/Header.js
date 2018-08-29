@@ -7,7 +7,6 @@ import findIndex from "lodash/findIndex"
 /* components */
 import {Menu} from "./components/Menu";
 import {Search} from "./components/Search";
-import {MenuColumns} from "./components/MenuColumns";
 
 /* assets */
 import './css/utk-lib-header.css';
