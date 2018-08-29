@@ -1,10 +1,44 @@
 import React, {Component} from 'react';
+import {MenuColumns} from "./MenuColumns";
+import _ from "lodash";
+
+// const URL = 'https://www-staging.lib.utk.edu';
+const URL = 'https://www-staging.lib.utk.edu';
+const ENDPOINT = '/assets/wp-json/libmenu';
+const ROUTE = '/drawer';
+
 
 export class Menu extends Component {
+
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            menuDrawer: [],
+        };
+    }
+
+    componentDidMount() {
+        fetch(URL + ENDPOINT + ROUTE)
+            .then(response => response.json())
+            .then(data => {
+                this.setState({ menuDrawer: data })
+            })
+            .catch(err => console.error(this.props.url, err.toString()));
+
+        return null
+    }
 
     render() {
 
         const {active} = this.props;
+        const {menuDrawer} = this.state;
+
+        const menuColumns = Object.entries(menuDrawer).map((items, index) => {
+            return (
+                <MenuColumns items={items[1].data} />
+            );
+        });
 
         return (
             <div className={`utk-header-resources ${active}`}>
@@ -39,45 +73,7 @@ export class Menu extends Component {
                         </div>
                     </div>
                     <div className="utk-resources-menu">
-                        <div className="utk-resources-menu--col">
-
-                            <h3>Find Materials</h3>
-                            <a>One Search</a>
-                            <a>Articles and Databases</a>
-                            <a>E-Journals</a>
-                            <a>Course Reserves</a>
-                            <a>Digital Collections</a>
-                            <a>Special Collections</a>
-                            <a>Government Information</a>
-                            <a>UT Dissertations</a>
-                            <a>Streaming Video</a>
-
-                        </div>
-                        <div className="utk-resources-menu--col">
-
-                            <h3>Quick Links</h3>
-                            <a>Undergraduates</a>
-                            <a>Graduate Students</a>
-                            <a>Distance Students</a>
-                            <a>Faculty & Instructors</a>
-                            <a>Patrons with Disabilities</a>
-                            <a>Community</a>
-
-                            <h3>Research Help</h3>
-                            <a>By Subject</a>
-                            <a>By Librarian</a>
-                            <a>Frequently Asked Questions</a>
-
-                        </div>
-                        <div className="utk-resources-menu--col">
-                            <h3>About</h3>
-                            <a>Library Hours</a>
-                            <a>Libraries and Locations</a>
-                            <a>Maps & Directions</a>
-                            <a>Libraries and Locations</a>
-                            <a>Staff Directory</a>
-                            <a>Libraries A-Z</a>
-                        </div>
+                        {menuColumns}
                     </div>
                 </div>
             </div>
