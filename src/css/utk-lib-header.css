@@ -405,16 +405,16 @@ a:hover {
   .utk-resources-menu--col {
     width: 33%;
     display: block; }
-    .utk-resources-menu--col > h3 {
-      margin: 1rem 0 0.75rem;
+    .utk-resources-menu--col .utk-resources-menu--section > h3 {
+      margin: 1rem 0 0.25rem;
       font-weight: 300;
       font-family: "Gotham-Book", "Gotham SSm 4r", "Gotham SSm A", "Gotham SSm B", "Tahoma", "Helvetica Neue", Helvetica, Arial, sans-serif;
       padding: 0;
       font-size: 18px; }
-      .utk-resources-menu--col > h3:first-child {
-        margin-top: 0; }
-    .utk-resources-menu--col a,
-    .utk-resources-menu--col a:visited {
+    .utk-resources-menu--col .utk-resources-menu--section:first-child > h3 {
+      margin-top: 0; }
+    .utk-resources-menu--col .utk-resources-menu--section a,
+    .utk-resources-menu--col .utk-resources-menu--section a:visited {
       color: #006C93;
       display: block;
       line-height: 1.6rem;
@@ -422,8 +422,8 @@ a:hover {
       padding: 0.25rem 0 0.125rem;
       font-weight: 700;
       font-family: "Gotham-Book", "Gotham SSm 4r", "Gotham SSm A", "Gotham SSm B", "Tahoma", "Helvetica Neue", Helvetica, Arial, sans-serif; }
-    .utk-resources-menu--col a:focus,
-    .utk-resources-menu--col a:hover {
+    .utk-resources-menu--col .utk-resources-menu--section a:focus,
+    .utk-resources-menu--col .utk-resources-menu--section a:hover {
       color: #8D2048; }
 
 .utk-header-expand-menu .utk-resources-contact {

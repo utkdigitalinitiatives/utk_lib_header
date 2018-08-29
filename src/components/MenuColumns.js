@@ -27,7 +27,7 @@ export class MenuColumns extends Component {
                 });
 
                 return (
-                    <div>
+                    <div className="utk-resources-menu--section">
                         <h3>{title}</h3>
                         {dropdownItems}
                     </div>
