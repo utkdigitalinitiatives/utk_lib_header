@@ -23,15 +23,9 @@
     "start-js": "react-scripts start",
     "start": "npm-run-all -p watch-css start-js",
     "build-js": "react-scripts build",
-    "build": "npm-run-all build-css build-js build-rename build-set-absolutes",
+    "build": "npm-run-all build-css build-js",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject",
-    "build-rename": "npm-run-all build-rename-js build-rename-css",
-    "build-rename-js": "renamer --find '/main[.][^.]+[.]js/' --replace 'main.js' build/static/js/*.js",
-    "build-rename-css": "renamer --find '/main[.][^.]+[.]css/' --replace 'main.css' build/static/css/*.css",
-    "build-set-absolutes": "npm-run-all build-set-absolutes-js build-set-absolutes-css",
-    "build-set-absolutes-js": "replace 'static[/]' '/www.lib.utk.edu/assets/tei/polk/react/static/' build/static/js/*.js",
-    "build-set-absolutes-css": "replace '[/]static[/]' '/assets/tei/polk/react/static/' build/static/css/*.css"
+    "eject": "react-scripts eject"
   },
   "homepage": "https://www.lib.utk.edu/",
   "publicPath": "",
