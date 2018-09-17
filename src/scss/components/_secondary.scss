@@ -23,11 +23,13 @@
 
 .utk-menu-depth--0 {
   .utk-secondary-menu {
+    display: none;
   }
 }
 
 .utk-menu-depth--1 {
   .utk-secondary-menu {
+    display: block;
   }
 }
 
@@ -39,6 +41,7 @@
   margin-right: -25px;
   padding: 25px;
   box-shadow: $box-shadow;
+  transition: $transition-all;
 
   .utk-resources-menu--section {
     h3 {

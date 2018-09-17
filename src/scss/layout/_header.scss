@@ -23,6 +23,10 @@
         display: block;
         top: 0;
       }
+
+      &::after {
+        width: 100% !important;
+      }
     }
 
   }

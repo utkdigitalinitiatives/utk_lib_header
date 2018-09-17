@@ -102,3 +102,15 @@
     }
   }
 }
+
+.utk-menu-help--help-me {
+  .utk-menu-help--item--icon {
+    background-color: $globe;
+  }
+}
+
+.utk-menu-help--chat {
+  .utk-menu-help--item--icon {
+    background-color: $switchgrass;
+  }
+}

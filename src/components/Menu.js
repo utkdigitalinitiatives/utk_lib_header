@@ -50,7 +50,7 @@ export class Menu extends Component {
         const {active} = this.props;
         const {menuDrawer, activeMenu, activeDepth} = this.state;
 
-        let menuColumns = {};
+        let menuColumns, menuSecondary = {};
         let depthClass = 'utk-menu-depth--' + activeDepth;
 
         if (activeMenu === 0) {
@@ -60,10 +60,11 @@ export class Menu extends Component {
                     <MenuColumns items={columns[1].data} activeMenu={this.setMenu}/>
                 );
             })
+            menuSecondary = <div className="utk-secondary-menu"></div>;
 
         } else {
 
-            let secondaryMenu = Object.entries(menuDrawer).map((columns, index) => {
+            let secondary = Object.entries(menuDrawer).map((columns, index) => {
                 return Object.entries(columns[1].data).map((secondary, index) => {
                     if (secondary[1].id === activeMenu) {
                         let {id, title, url, classes, target, dropdown} = secondary[1];
@@ -93,7 +94,8 @@ export class Menu extends Component {
                 });
             });
 
-            menuColumns = secondaryMenu;
+            menuColumns = <div></div>;
+            menuSecondary = secondary;
         }
 
         return (
@@ -146,6 +148,7 @@ export class Menu extends Component {
                     </div>
                     <div className="utk-resources-menu">
                         {menuColumns}
+                        {menuSecondary}
                     </div>
                 </div>
             </div>
