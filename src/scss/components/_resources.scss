@@ -24,6 +24,10 @@
     padding-top: 81px;
     right: -$golden-ratio-8;
 
+    &.utk-menu-depth--1 {
+      background-color: darken($offwhite, 8) !important;
+    }
+
     > .utk-container {
       padding: 0;
     }

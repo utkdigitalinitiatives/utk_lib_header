@@ -2,6 +2,9 @@ import React, {Component} from 'react';
 import {MenuColumns} from "./MenuColumns";
 import {MenuItems} from "./MenuItems";
 
+import _ from "lodash";
+import {MenuSecondary} from "./MenuSecondary";
+
 // const URL = 'https://www-staging.lib.utk.edu';
 const URL = 'https://www-staging.lib.utk.edu';
 const ENDPOINT = '/assets/wp-json/libmenu';
@@ -15,7 +18,8 @@ export class Menu extends Component {
 
         this.state = {
             menuDrawer: [],
-            activeMenu: 0
+            activeMenu: 0,
+            activeDepth: 0
         };
     }
 
@@ -23,7 +27,7 @@ export class Menu extends Component {
         fetch(URL + ENDPOINT + ROUTE)
             .then(response => response.json())
             .then(data => {
-                this.setState({ menuDrawer: data })
+                this.setState({menuDrawer: data})
             })
             .catch(err => console.error(this.props.url, err.toString()));
 
@@ -31,24 +35,69 @@ export class Menu extends Component {
     }
 
     setMenu = (passedMenuId) => {
-        this.setState({ activeMenu: passedMenuId })
-    }
+        this.setState({activeMenu: passedMenuId});
+        this.setState({activeDepth: 1});
+    };
+
+    resetMenu = () => {
+        this.setState({activeMenu: 0});
+        this.setState({activeDepth: 0});
+    };
 
     render() {
 
 
         const {active} = this.props;
-        const {menuDrawer, activeMenu} = this.state;
+        const {menuDrawer, activeMenu, activeDepth} = this.state;
 
-        const menuColumns = Object.entries(menuDrawer).map((columns, index) => {
+        let menuColumns = {};
+        let depthClass = 'utk-menu-depth--' + activeDepth;
 
-            return (
-                <MenuColumns items={columns[1].data} activeMenu={this.setMenu}  />
-            );
-        });
+        if (activeMenu === 0) {
+
+            menuColumns = Object.entries(menuDrawer).map((columns, index) => {
+                return (
+                    <MenuColumns items={columns[1].data} activeMenu={this.setMenu}/>
+                );
+            })
+
+        } else {
+
+            let secondaryMenu = Object.entries(menuDrawer).map((columns, index) => {
+                return Object.entries(columns[1].data).map((secondary, index) => {
+                    if (secondary[1].id === activeMenu) {
+                        let {id, title, url, classes, target, dropdown} = secondary[1];
+                        let dropdownItems = '';
+                        if (dropdown) {
+                            dropdownItems = Object.entries(dropdown).map((link, index) => {
+
+                                let {title, url, classes, target} = link[1];
+
+                                return (
+                                    <a href={url}>{title}</a>
+                                );
+
+                            });
+                        }
+                        return (
+                            <div className="utk-secondary-menu">
+                                <div className="utk-secondary-menu--options">
+                                    <a className="utk-menu-back" onClick={this.resetMenu}>
+                                        <span className="icon-left-open"></span>
+                                    </a>
+                                </div>
+                                <MenuSecondary menuId={id} title={title} dropdownItems={dropdownItems}/>
+                            </div>
+                        );
+                    }
+                });
+            });
+
+            menuColumns = secondaryMenu;
+        }
 
         return (
-            <div className={`utk-header-resources ${active}`}>
+            <div className={`utk-header-resources ${active} ${depthClass}`}>
                 <div className="utk-container">
                     <div className='utk-menu-options'>
                         <div className='utk-menu-help'>

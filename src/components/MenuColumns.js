@@ -31,16 +31,18 @@ export class MenuColumns extends Component {
             const menuSection = Object.entries(items).map((section, index) => {
 
                 let {id, title, url, classes, target, dropdown} = section[1];
+                let dropdownItems = '';
+                if (dropdown) {
+                    dropdownItems = Object.entries(dropdown).map((link, index) => {
 
-                let dropdownItems = Object.entries(dropdown).map((link, index) => {
+                        let {title, url, classes, target} = link[1];
 
-                    let {title, url, classes, target} = link[1];
+                        return (
+                            <a href={url}>{title}</a>
+                        );
 
-                    return (
-                        <a href={url}>{title}</a>
-                    );
-
-                });
+                    });
+                }
 
                 return (
                     <MenuItems menuId={id} title={title} dropdownItems={dropdownItems} setMenuAs={this.updateMenu} />
