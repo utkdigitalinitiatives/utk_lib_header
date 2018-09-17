@@ -63,7 +63,7 @@ body {
 .utk-body-overlay {
   width: 100%;
   height: 0;
-  background-color: rgba(167, 169, 172, 0.76);
+  background-color: rgba(167, 169, 172, 0.92);
   position: fixed;
   z-index: 97;
   left: 0;
