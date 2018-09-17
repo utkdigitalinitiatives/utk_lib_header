@@ -28,6 +28,7 @@ body {
   height: 0;
   background-color: rgba($rock, 0.76);
   position: fixed;
+  z-index: 97;
   left: 0;
   top: 0;
   opacity: 0;
