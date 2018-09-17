@@ -1,7 +1,7 @@
 .utk-header-resources {
   width: 100%;
   background-color: $white;
-  transition: $transition-all;
+  transition: none !important;
   top: -600px;
   opacity: 1;
   z-index: 98;
@@ -15,24 +15,30 @@
 
   @include respond(xs, sm, md) {
     height: 100vh;
+    background-color: $offwhite;
     max-width: 100%;
+    transition: none !important;
     width: $golden-ratio-8;
     right: 0;
     top: 0;
     padding-top: 81px;
     right: -$golden-ratio-8;
+
+    > .utk-container {
+      padding: 0;
+    }
   }
 
   &.utk-header-expand-menu {
     top: 47px;
     opacity: 1;
-    background-color: $white;
 
     @include respond(xs, sm, md) {
       height: 100vh;
       right: 0;
       top: 0;
       padding-top: 81px;
+      background-color: $offwhite;
     }
 
     @include respond(xs) {
@@ -57,23 +63,45 @@
   padding: $golden-ratio-4 0 3rem;
 
   @include respond(md, sm, xs) {
+    margin-left: 0;
+    display: block;
+    padding: 25px;
   }
 
   &--col {
     width: 33%;
     display: block;
 
+    @include respond(md, sm, xs) {
+      width: 100%;
+
+      .utk-resources-menu--submenu {
+        display: none;
+      }
+
+    }
+
     .utk-resources-menu--section {
       > h3 {
         margin: 1rem 0 0.25rem;
-        font-weight: 300;
+        font-weight: 700;
+        text-transform: uppercase;
         font-family: $sans;
         padding: 0;
-        font-size: $type-3;
+        font-size: $type-2;
+
+        @include respond(md, sm, xs) {
+          margin-top: 0;
+          margin-bottom: $type-4;
+          cursor: pointer;
+
+        }
       }
 
-      &:first-child > h3 {
-        margin-top: 0;
+      @include respond(lg, xl, xxl) {
+        &:first-child > h3 {
+          margin-top: 0;
+        }
       }
 
       a,
@@ -109,6 +137,7 @@
   opacity: 0;
 
   @include respond(xs, sm, md) {
+    display: none;
     //top: 88px;
     //left: 33%;
     //max-width: 66%;
@@ -223,9 +252,17 @@
 
 @include respond(xs, sm, md) {
   .utk-header.utk-header-expand-menu .utk-resources-close {
-    left: 0;
-    top: calc(#{81px + 25px});
-    bottom: auto;
+    width: $golden-ratio-3;
+    height: $golden-ratio-3;
+    bottom: 27px;
+    right: 27px;
+    padding-top: 7px;
+    padding-left: 1px;
+    left: auto;
+
+    > span {
+      font-size: $type-2;
+    }
   }
 }
 
@@ -235,7 +272,7 @@
   height: $golden-ratio-4;
   background-color: $torch;
   position: absolute;
-  left: 50%;
+  right: 50%;
   margin-left: calc(-#{$golden-ratio-4 / 2});
   bottom: calc(-#{$golden-ratio-4 / 2});
   border-radius: $golden-ratio-4;

@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {MenuColumns} from "./MenuColumns";
+import {MenuItems} from "./MenuItems";
 
 // const URL = 'https://www-staging.lib.utk.edu';
 const URL = 'https://www-staging.lib.utk.edu';
@@ -14,6 +15,7 @@ export class Menu extends Component {
 
         this.state = {
             menuDrawer: [],
+            activeMenu: 0
         };
     }
 
@@ -28,23 +30,45 @@ export class Menu extends Component {
         return null
     }
 
+    setMenu = (passedMenuId) => {
+        this.setState({ activeMenu: passedMenuId })
+    }
+
     render() {
 
+
         const {active} = this.props;
-        const {menuDrawer} = this.state;
+        const {menuDrawer, activeMenu} = this.state;
 
         const menuColumns = Object.entries(menuDrawer).map((columns, index) => {
+
             return (
-                <MenuColumns items={columns[1].data} />
+                <MenuColumns items={columns[1].data} activeMenu={this.setMenu}  />
             );
         });
 
         return (
             <div className={`utk-header-resources ${active}`}>
-                <a className="utk-resources-close">
-                    <span className="icon-cancel"></span>
-                </a>
                 <div className="utk-container">
+                    <div className='utk-menu-options'>
+                        <div className='utk-menu-help'>
+                            <a className="utk-menu-help--item utk-menu-help--chat">
+                                <h4>Chat</h4>
+                                <div className="utk-menu-help--item--icon">
+                                    <span className="icon-chat"></span>
+                                </div>
+                            </a>
+                            <a className="utk-menu-help--item utk-menu-help--help-me">
+                                <h4>Help Me<em>...</em></h4>
+                                <div className="utk-menu-help--item--icon">
+                                    <span className="icon-chat"></span>
+                                </div>
+                            </a>
+                        </div>
+                        <a className="utk-resources-close">
+                            <span className="icon-cancel"></span>
+                        </a>
+                    </div>
                     <div className="utk-resources-contact">
 
                         <p>
