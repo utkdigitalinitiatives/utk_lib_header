@@ -5,8 +5,8 @@ import {MenuItems} from "./MenuItems";
 import _ from "lodash";
 import {MenuSecondary} from "./MenuSecondary";
 
-// const URL = 'https://www-staging.lib.utk.edu';
-const URL = 'https://www-staging.lib.utk.edu';
+const URL = 'https://www.lib.utk.edu';
+// const URL = 'https://utklibrary.test';
 const ENDPOINT = '/assets/wp-json/libmenu';
 const ROUTE = '/drawer';
 
@@ -24,9 +24,15 @@ export class Menu extends Component {
     }
 
     componentDidMount() {
-        fetch(URL + ENDPOINT + ROUTE)
+        fetch(URL + ENDPOINT + ROUTE, {
+                headers : {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                }
+            })
             .then(response => response.json())
             .then(data => {
+                console.log(data);
                 this.setState({menuDrawer: data})
             })
             .catch(err => console.error(this.props.url, err.toString()));
