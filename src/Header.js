@@ -229,7 +229,7 @@ class Header extends Component {
                                 <a onClick={this.toggleResources} className={`utk-menu-trigger${resourcesClass}`}>
                                     <span className="icon-menu"></span>
                                     <span className="icon-cancel"></span>
-                                    Menu
+                                    <em>Menu</em>
                                 </a>
                             </div>
 
@@ -246,7 +246,6 @@ class Header extends Component {
                 </div>
                 <Menu active={resourcesClass} />
                 <Search active={searchClass} showSearch={showSearch} ref="search" />
-                {/*<Polk/>*/}
             </header>
             <Hero shortcut={shortcutLogo} stickyMenu={stickyMenu} />
             <Body shortcut={shortcutLogo} stickyMenu={stickyMenu} stickyMenuAnchored={stickyMenuAnchored} />

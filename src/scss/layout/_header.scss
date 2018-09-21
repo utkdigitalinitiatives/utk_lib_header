@@ -23,6 +23,10 @@
         display: block;
         top: 0;
       }
+
+      &::after {
+        width: 100% !important;
+      }
     }
 
   }
@@ -40,12 +44,22 @@
   transition: $transition-all;
 }
 
+
+
+@include respond(xs, sm, md) {
+  .utk-header.utk-header-expand-menu .utk-header-actions {
+    right: 25px;
+    margin-top: 16px;
+  }
+}
+
 .utk-header-actions {
   position: absolute;
   right: 0;
   display: flex;
   flex-direction: row;
   width: auto;
+  transition: $transition-all;
 
   .utk-header-actions {
     &--item {
@@ -57,10 +71,34 @@
       line-height: $type-2;
       font-size: $type-2;
 
+      @include respond(xs) {
+        &.utk-header-actions--utk {
+          display: none;
+        }
+
+        &.utk-header-actions--home {
+          display: none;
+        }
+      }
+
+      em {
+        font-style: normal;
+
+        @include respond(xs) {
+          display: none;
+        }
+      }
+
       > a {
         display: inline-block;
         padding: calc((#{$golden-ratio-4} - #{$golden-ratio-0} - #{$type-2}) / 2) calc(#{$golden-ratio-3} / 2);
         transition: $transition-all;
+
+        @include respond(xs) {
+          > span {
+            font-size: $type-4;
+          }
+        }
       }
     }
   }

@@ -1,9 +1,25 @@
 import React, {Component} from 'react';
+import {MenuItems} from './MenuItems';
+
+import uniqueId from "lodash/uniqueId"
+import debounce from "lodash/debounce";
 
 export class MenuColumns extends Component {
 
     constructor(props) {
         super(props);
+
+        this.state = {
+            updateMenuId: null
+        };
+    }
+
+    updateMenu = (setMenuId) => {
+        let {activeMenu} = this.props;
+        this.setState({ updateMenuId: setMenuId });
+        if (setMenuId !== activeMenu) {
+            this.props.activeMenu(setMenuId);
+        }
     }
 
     render() {
@@ -14,26 +30,24 @@ export class MenuColumns extends Component {
 
             const menuSection = Object.entries(items).map((section, index) => {
 
-                let {title, url, classes, target, dropdown} = section[1];
+                let {id, title, url, classes, target, dropdown} = section[1];
+                let dropdownItems = '';
+                if (dropdown) {
+                    dropdownItems = Object.entries(dropdown).map((link, index) => {
 
-                let dropdownItems = Object.entries(dropdown).map((link, index) => {
+                        let {title, url, classes, target} = link[1];
 
-                    let {title, url, classes, target} = link[1];
+                        return (
+                            <a href={url}>{title}</a>
+                        );
 
-                    return (
-                        <a href={url}>{title}</a>
-                    );
-
-                });
+                    });
+                }
 
                 return (
-                    <div className="utk-resources-menu--section">
-                        <h3>{title}</h3>
-                        {dropdownItems}
-                    </div>
-                );
+                    <MenuItems menuId={id} title={title} dropdownItems={dropdownItems} setMenuAs={this.updateMenu} />
+                )
             });
-
             return (
                 <div className="utk-resources-menu--col">
                     {menuSection}
