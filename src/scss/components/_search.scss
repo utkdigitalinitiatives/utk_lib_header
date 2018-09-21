@@ -296,6 +296,10 @@
     top: 81px;
     height: 322px;
 
+    @include respond(sm) {
+      top: 47px;
+    }
+
     .utk-search-wrapper {
       display: block;
       max-width: 100%;
@@ -311,13 +315,13 @@
         flex-direction: row;
         justify-content: center;
         position: absolute;
-        margin-top: $golden-ratio-4;
+        margin-top: $golden-ratio-1;
         width: 100%;
 
         @include respond(sm, md) {
           left: 304px;
           width: calc(100% - 304px);
-          margin-top: $golden-ratio-4;
+          margin-top: $golden-ratio-2;
         }
       }
     }

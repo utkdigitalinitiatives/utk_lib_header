@@ -300,6 +300,11 @@
     right: auto;
     position: fixed;
     width: auto;
+
+    @include respond(sm, md, lg, xl) {
+      left: auto;
+      right: 15px;
+    }
   }
   .utk-resources-close {
     width: 29px;
@@ -313,6 +318,10 @@
     bottom: 24px !important;
     right: 25px !important;
     z-index: 11;
+
+    @include respond(sm, md, lg, xl) {
+      right: -200px !important;
+    }
 
     > span {
       font-size: 15px;
