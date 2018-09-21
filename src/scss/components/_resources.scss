@@ -291,3 +291,32 @@
     color: $white;
   }
 }
+
+.utk-search-active {
+  .utk-menu-help {
+    opacity: 1;
+    bottom: 15px;
+    left: -5px;
+    right: auto;
+    position: fixed;
+    width: auto;
+  }
+  .utk-resources-close {
+    width: 29px;
+    height: 29px;
+    bottom: 27px;
+    right: 27px;
+    padding-top: 7px;
+    padding-left: 1px;
+    left: auto;
+    position: fixed;
+    bottom: 24px !important;
+    right: 25px !important;
+    z-index: 11;
+
+    > span {
+      font-size: 15px;
+      color: #FFFFFF;
+    }
+  }
+}
