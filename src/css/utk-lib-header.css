@@ -666,7 +666,6 @@ body {
 .utk-menu-help {
   position: absolute;
   width: 100%;
-  top: 309px;
   bottom: auto;
   display: flex;
   flex-direction: row-reverse;
@@ -2082,7 +2081,26 @@ aside > .utk-cta a:visited {
 .utk-menu-help-hero .utk-menu-help {
   bottom: 123px;
   margin-bottom: 29px;
-  top: auto; }
+  top: auto;
+  /* Mobile Devices for Mice */
+  /* Landscape phones and down */
+  /* Landscape phone to portrait tablet */
+  /* Portrait tablet to landscape and desktop */
+  /* desktop and large desktop */
+  /* Mobile Devices for Mice */
+  /* Landscape phones and down */
+  /* Landscape phone to portrait tablet */
+  /* Portrait tablet to landscape and desktop */
+  /* desktop and large desktop */ }
+  @media (max-width: 767px) {
+    .utk-menu-help-hero .utk-menu-help {
+      display: none; } }
+  @media (min-width: 768px) and (max-width: 991px) {
+    .utk-menu-help-hero .utk-menu-help {
+      display: none; } }
+
+.utk-menu-open .utk-menu-help-hero .utk-menu-help {
+  display: none; }
 
 .utk-main {
   margin-top: -123px;

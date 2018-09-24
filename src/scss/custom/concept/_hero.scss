@@ -116,4 +116,12 @@
   bottom: 123px;
   margin-bottom: 29px;
   top: auto;
+
+  @include respond(xs, sm) {
+    display: none;
+  }
+}
+
+.utk-menu-open .utk-menu-help-hero  .utk-menu-help {
+  display: none;
 }
