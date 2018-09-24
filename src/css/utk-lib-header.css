@@ -2032,6 +2032,11 @@ aside > .utk-cta a:visited {
     line-height: 47px;
     font-size: 18px; }
 
+.utk-menu-help-hero .utk-menu-help {
+  bottom: 123px;
+  margin-bottom: 29px;
+  top: auto; }
+
 .utk-main {
   margin-top: -123px;
   margin-bottom: -76px;
