@@ -5,6 +5,11 @@
   margin-top: $golden-ratio-4;
   position: relative;
 
+  @include respond(xs, sm) {
+    bottom: 0;
+    height: calc(#{$golden-ratio-8 - $golden-ratio-4});
+  }
+
   .utk-container {
     width: 100%;
     height: 100%;
@@ -25,6 +30,11 @@
   font-size: $type-6;
   font-weight: 400;
   color: $white;
+
+  @include respond(xs, sm) {
+    bottom: 0;
+    margin-bottom: $golden-ratio-2;
+  }
 }
 
 .utk-hero-shrink {

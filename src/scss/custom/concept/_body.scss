@@ -2,4 +2,11 @@
   margin-left: calc(#{$golden-ratio-3 + 304px});
   background-color: $white;
   min-height: 1200px;
+  width: calc(100% - #{$golden-ratio-3 + 304px});
+
+  @include respond(xs, sm) {
+    margin-left: 0;
+    width: calc(100% + 36px);
+    margin-left: -18px;
+  }
 }

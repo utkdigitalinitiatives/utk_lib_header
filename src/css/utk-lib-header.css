@@ -664,12 +664,13 @@ body {
       z-index: 11; } }
 
 .utk-menu-help {
-  position: fixed;
+  position: absolute;
   width: 100%;
-  bottom: -200px;
+  top: 309px;
+  bottom: auto;
   display: flex;
   flex-direction: row-reverse;
-  opacity: 0;
+  opacity: 1;
   transition: all 290ms ease-in-out;
   max-width: 1199px;
   z-index: 10; }
@@ -1725,7 +1726,43 @@ aside.utk-sidebar-menu.utk-menu-sticky {
 
 aside.utk-sidebar-menu {
   width: 304px;
-  position: absolute; }
+  position: absolute;
+  /* Mobile Devices for Mice */
+  /* Landscape phones and down */
+  /* Landscape phone to portrait tablet */
+  /* Portrait tablet to landscape and desktop */
+  /* desktop and large desktop */
+  /* Mobile Devices for Mice */
+  /* Landscape phones and down */
+  /* Landscape phone to portrait tablet */
+  /* Portrait tablet to landscape and desktop */
+  /* desktop and large desktop */ }
+  @media (max-width: 767px) {
+    aside.utk-sidebar-menu {
+      position: relative;
+      width: calc(100% + 36px);
+      margin-left: -18px; }
+      aside.utk-sidebar-menu .utk-sidebar-menu--items {
+        margin: 0; }
+        aside.utk-sidebar-menu .utk-sidebar-menu--items li {
+          display: none; }
+          aside.utk-sidebar-menu .utk-sidebar-menu--items li:first-child {
+            display: block; }
+      aside.utk-sidebar-menu .utk-cta {
+        display: none; } }
+  @media (min-width: 768px) and (max-width: 991px) {
+    aside.utk-sidebar-menu {
+      position: relative;
+      width: calc(100% + 36px);
+      margin-left: -18px; }
+      aside.utk-sidebar-menu .utk-sidebar-menu--items {
+        margin: 0; }
+        aside.utk-sidebar-menu .utk-sidebar-menu--items li {
+          display: none; }
+          aside.utk-sidebar-menu .utk-sidebar-menu--items li:first-child {
+            display: block; }
+      aside.utk-sidebar-menu .utk-cta {
+        display: none; } }
   aside.utk-sidebar-menu > ul {
     margin: 0;
     padding: 0;
@@ -1898,14 +1935,53 @@ aside > .utk-cta a:visited {
 .utk-body {
   margin-left: calc(333px);
   background-color: #FFFFFF;
-  min-height: 1200px; }
+  min-height: 1200px;
+  width: calc(100% - 333px);
+  /* Mobile Devices for Mice */
+  /* Landscape phones and down */
+  /* Landscape phone to portrait tablet */
+  /* Portrait tablet to landscape and desktop */
+  /* desktop and large desktop */
+  /* Mobile Devices for Mice */
+  /* Landscape phones and down */
+  /* Landscape phone to portrait tablet */
+  /* Portrait tablet to landscape and desktop */
+  /* desktop and large desktop */ }
+  @media (max-width: 767px) {
+    .utk-body {
+      margin-left: 0;
+      width: calc(100% + 36px);
+      margin-left: -18px; } }
+  @media (min-width: 768px) and (max-width: 991px) {
+    .utk-body {
+      margin-left: 0;
+      width: calc(100% + 36px);
+      margin-left: -18px; } }
 
 .utk-hero {
   background-color: #A7A9AC;
   width: 100%;
   height: calc(474px);
   margin-top: 47px;
-  position: relative; }
+  position: relative;
+  /* Mobile Devices for Mice */
+  /* Landscape phones and down */
+  /* Landscape phone to portrait tablet */
+  /* Portrait tablet to landscape and desktop */
+  /* desktop and large desktop */
+  /* Mobile Devices for Mice */
+  /* Landscape phones and down */
+  /* Landscape phone to portrait tablet */
+  /* Portrait tablet to landscape and desktop */
+  /* desktop and large desktop */ }
+  @media (max-width: 767px) {
+    .utk-hero {
+      bottom: 0;
+      height: calc(275px); } }
+  @media (min-width: 768px) and (max-width: 991px) {
+    .utk-hero {
+      bottom: 0;
+      height: calc(275px); } }
   .utk-hero .utk-container {
     width: 100%;
     height: 100%; }
@@ -1922,7 +1998,25 @@ aside > .utk-cta a:visited {
   margin-bottom: 29px;
   font-size: 47px;
   font-weight: 400;
-  color: #FFFFFF; }
+  color: #FFFFFF;
+  /* Mobile Devices for Mice */
+  /* Landscape phones and down */
+  /* Landscape phone to portrait tablet */
+  /* Portrait tablet to landscape and desktop */
+  /* desktop and large desktop */
+  /* Mobile Devices for Mice */
+  /* Landscape phones and down */
+  /* Landscape phone to portrait tablet */
+  /* Portrait tablet to landscape and desktop */
+  /* desktop and large desktop */ }
+  @media (max-width: 767px) {
+    .utk-title-text {
+      bottom: 0;
+      margin-bottom: 18px; } }
+  @media (min-width: 768px) and (max-width: 991px) {
+    .utk-title-text {
+      bottom: 0;
+      margin-bottom: 18px; } }
 
 .utk-hero-shrink .utk-title-row {
   position: fixed;
@@ -1940,12 +2034,54 @@ aside > .utk-cta a:visited {
 
 .utk-main {
   margin-top: -123px;
-  margin-bottom: -76px; }
+  margin-bottom: -76px;
+  /* Mobile Devices for Mice */
+  /* Landscape phones and down */
+  /* Landscape phone to portrait tablet */
+  /* Portrait tablet to landscape and desktop */
+  /* desktop and large desktop */
+  /* Mobile Devices for Mice */
+  /* Landscape phones and down */
+  /* Landscape phone to portrait tablet */
+  /* Portrait tablet to landscape and desktop */
+  /* desktop and large desktop */ }
+  @media (max-width: 767px) {
+    .utk-main {
+      margin: 0; } }
+  @media (min-width: 768px) and (max-width: 991px) {
+    .utk-main {
+      margin: 0; } }
+
+.utk-splash {
+  background-color: #58595B;
+  width: 100%;
+  height: 322px; }
+
+.utk-events-news {
+  background-color: #FFFFFF;
+  width: 100%;
+  height: 521px; }
+
+.utk-social-slider {
+  background-color: #f6f6f6;
+  width: 100%;
+  height: 521px; }
 
 .utk-subfooter {
-  background-color: #FED535;
+  background-color: #58595B;
   width: 100%;
-  height: 2000px; }
+  height: 521px; }
+
+.utk-footer {
+  background-color: #FFFFFF;
+  width: 100%;
+  height: 322px;
+  border-top: 18px solid #FF8200; }
+
+.utk-superfooter {
+  background-color: #333333;
+  width: 100%;
+  height: 47px; }
 
 /*
  * vendor

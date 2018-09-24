@@ -50,12 +50,13 @@
 }
 
 .utk-menu-help {
-  position: fixed;
+  position: absolute;
   width: 100%;
-  bottom: -200px;
+  top: 309px;
+  bottom: auto;
   display: flex;
   flex-direction: row-reverse;
-  opacity: 0;
+  opacity: 1;
   transition: $transition-all;
   max-width:  1199px;
   z-index: 10;
