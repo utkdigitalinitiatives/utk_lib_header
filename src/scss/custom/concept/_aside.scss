@@ -49,6 +49,13 @@ aside.utk-sidebar-menu {
       font-weight: 500;
       border-bottom: 1px solid rgba($rock, 0.125);
 
+      &.active {
+        > a,
+        > a:visited {
+          font-weight: 700;
+        }
+      }
+
       &:last-of-type {
         border-bottom: none;
       }

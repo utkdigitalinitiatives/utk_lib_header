@@ -24,7 +24,9 @@ export class Hero extends Component {
             <div className={`utk-hero${headerHero}${stickyMenuClass}`}>
                 <div className="utk-title-row">
                     <div className="utk-container">
-                        <h2 className="utk-title-text">Page Header</h2>
+                        <div className="utk-title-wrap">
+                            <h2 className="utk-title-text">Subsite Header</h2>
+                        </div>
                         <div className='utk-menu-help-hero'>
                             <div className='utk-menu-help'>
                                 <a className="utk-menu-help--item utk-menu-help--chat">

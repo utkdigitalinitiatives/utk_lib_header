@@ -30,33 +30,27 @@ export class Body extends Component {
                     <aside className={`utk-sidebar-menu${stickyMenuClass}`} id="utk-sticky-menu">
                         <div id="utk-menu-sticky-trigger"></div>
                         <ul className="utk-sidebar-menu--items">
-                            <li>
-                                <a href="#">Lorem Pequam</a>
+                            <li className="active">
+                                <a href="#">Current Menu Item</a>
                             </li>
                             <li>
-                                <a href="#">Ipsum</a>
+                                <a href="#">Menu Item</a>
                             </li>
                             <li>
-                                <a href="#">Aliquam</a>
+                                <a href="#">Menu Item</a>
                             </li>
                             <li>
-                                <a href="#">Amet Sum Laude</a>
+                                <a href="#">Menu Item</a>
                             </li>
                             <li>
-                                <a href="#">Maxum Semper</a>
-                            </li>
-                            <li>
-                                <a href="#">Baquet</a>
+                                <a href="#">Menu Item</a>
                             </li>
                         </ul>
                         <div className='utk-cta'>
-                            <a href="#">Dolor Amet </a>
+                            <a href="#">Call to Action</a>
                         </div>
                         <div className='utk-cta'>
-                            <a href="#">Aliquam Copa </a>
-                        </div>
-                        <div className='utk-cta'>
-                            <a href="#">Corpus Amet</a>
+                            <a href="#">Call to Action</a>
                         </div>
                     </aside>
                     <main className='utk-body'>

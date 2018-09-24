@@ -95,7 +95,7 @@ class Header extends Component {
         document.removeEventListener('scroll', this.trackStickyMenu);
     }
 
-    trackStickyMenu = (e) => {
+    trackStickyMenu = debounce((e) => {
         const collapseWatch = document.getElementById('utk-header-watch');
         const stickyMenuTrigger = document.getElementById('utk-menu-sticky-trigger');
 
@@ -110,9 +110,9 @@ class Header extends Component {
             document.removeEventListener('scroll', this.trackShortcutMenu);
             document.addEventListener('scroll', this.trackStickyMenu);
         }
-    };
+    }, 25);
 
-    trackNormalizeMenu = (e) => {
+    trackNormalizeMenu =  debounce((e) => {
         const menuNormalizeTrigger = document.getElementById('utk-menu-normalize-trigger');
         const stickyMenuTrigger = document.getElementById('utk-menu-sticky-trigger');
 
@@ -127,9 +127,9 @@ class Header extends Component {
             document.addEventListener('scroll', this.trackShortcutMenu);
             document.addEventListener('scroll', this.trackNormalizeMenu);
         }
-    };
+    }, 25);
 
-    trackShortcutMenu = (e) => {
+    trackShortcutMenu = debounce((e) => {
         const sidebarMenu = document.getElementById('utk-sticky-menu');
         const collapseTrigger = document.getElementById('utk-header-trigger');
 
@@ -148,9 +148,9 @@ class Header extends Component {
             document.addEventListener('scroll', this.trackShortcutMenu);
             document.addEventListener('scroll', this.trackNormalizeMenu);
         }
-    };
+    }, 25);
 
-    trackResetStickyMenu = (e) => {
+    trackResetStickyMenu = debounce((e) => {
         const sidebarMenu = document.getElementById('utk-sticky-menu');
         const collapseTrigger = document.getElementById('utk-header-trigger');
 
@@ -169,7 +169,7 @@ class Header extends Component {
             this.setState({stickyMenu: true});
             this.setState({stickyMenuAnchored: true});
         }
-    };
+    }, 25);
 
     render() {
 
