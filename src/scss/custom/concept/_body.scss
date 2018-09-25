@@ -3,6 +3,8 @@
   background-color: $white;
   min-height: 1200px;
   width: calc(100% - #{$golden-ratio-3 + 304px});
+  position: relative;
+  z-index: 1;
 
   @include respond(xs, sm) {
     margin-left: 0;

@@ -26,11 +26,39 @@
   background-color: $white;
   width: 100%;
   height: $golden-ratio-8;
-  border-top: $golden-ratio-2 solid $orange;
 }
 
 .utk-superfooter {
   background-color: $gray;
   width: 100%;
   height: $golden-ratio-4;
+}
+
+.utk-hero,
+.utk-body,
+.utk-splash,
+.utk-events-news,
+.utk-social-slider,
+.utk-subfooter,
+.utk-footer,
+.utk-superfooter {
+  position: relative;
+
+  > span {
+    position: absolute;
+    height: $type-3;
+    font-size: $type-3;
+    line-height: $type-3;
+    margin-top: calc(#{-$type-3 / 2});
+    display: block;
+    top: 50%;
+    width: 100%;
+    text-align: center;
+    color: $rock;
+    opacity: 0.5;
+  }
+}
+
+.utk-hero > span {
+   color: $smokey;
 }

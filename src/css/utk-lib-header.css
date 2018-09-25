@@ -1853,15 +1853,14 @@ aside.utk-sidebar-menu {
 aside > .utk-cta a,
 aside > .utk-cta a:visited {
   display: block;
-  height: 3rem;
-  padding: 1rem;
+  height: 47px;
+  line-height: 47px;
   background-color: #FFFFFF;
   color: #58595B;
-  font-size: 1rem;
   font-size: 15px;
   font-weight: 400;
   text-transform: uppercase;
-  padding-left: 4rem;
+  padding-left: 65px;
   position: relative;
   margin-bottom: 1rem;
   letter-spacing: 0.08em;
@@ -1909,8 +1908,8 @@ aside > .utk-cta a:visited {
     transition: all 290ms ease-in-out; }
   aside > .utk-cta a::before,
   aside > .utk-cta a:visited::before {
-    width: 3rem;
-    height: 3rem;
+    width: 47px;
+    height: 47px;
     display: block;
     background-color: #FF8200;
     content: ' ';
@@ -1939,6 +1938,8 @@ aside > .utk-cta a:visited {
   background-color: #FFFFFF;
   min-height: 1200px;
   width: calc(100% - 333px);
+  position: relative;
+  z-index: 1;
   /* Mobile Devices for Mice */
   /* Landscape phones and down */
   /* Landscape phone to portrait tablet */
@@ -2145,13 +2146,44 @@ aside > .utk-cta a:visited {
 .utk-footer {
   background-color: #FFFFFF;
   width: 100%;
-  height: 322px;
-  border-top: 18px solid #FF8200; }
+  height: 322px; }
 
 .utk-superfooter {
   background-color: #333333;
   width: 100%;
   height: 47px; }
+
+.utk-hero,
+.utk-body,
+.utk-splash,
+.utk-events-news,
+.utk-social-slider,
+.utk-subfooter,
+.utk-footer,
+.utk-superfooter {
+  position: relative; }
+  .utk-hero > span,
+  .utk-body > span,
+  .utk-splash > span,
+  .utk-events-news > span,
+  .utk-social-slider > span,
+  .utk-subfooter > span,
+  .utk-footer > span,
+  .utk-superfooter > span {
+    position: absolute;
+    height: 18px;
+    font-size: 18px;
+    line-height: 18px;
+    margin-top: calc(-9px);
+    display: block;
+    top: 50%;
+    width: 100%;
+    text-align: center;
+    color: #A7A9AC;
+    opacity: 0.5; }
+
+.utk-hero > span {
+  color: #58595B; }
 
 /*
  * vendor

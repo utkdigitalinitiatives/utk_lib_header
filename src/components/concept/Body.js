@@ -54,6 +54,7 @@ export class Body extends Component {
                         </div>
                     </aside>
                     <main className='utk-body'>
+                        <span>Content Body</span>
                     </main>
                 </div>
             </section>
