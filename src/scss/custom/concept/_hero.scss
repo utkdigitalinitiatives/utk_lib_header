@@ -120,6 +120,10 @@
   @include respond(xs, sm) {
     display: none;
   }
+
+  @include respond(md) {
+    right: 18px;
+  }
 }
 
 .utk-menu-open .utk-menu-help-hero  .utk-menu-help {

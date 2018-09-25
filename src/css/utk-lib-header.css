@@ -2092,6 +2092,11 @@ aside > .utk-cta a:visited {
   /* Landscape phones and down */
   /* Landscape phone to portrait tablet */
   /* Portrait tablet to landscape and desktop */
+  /* desktop and large desktop */
+  /* Mobile Devices for Mice */
+  /* Landscape phones and down */
+  /* Landscape phone to portrait tablet */
+  /* Portrait tablet to landscape and desktop */
   /* desktop and large desktop */ }
   @media (max-width: 767px) {
     .utk-menu-help-hero .utk-menu-help {
@@ -2099,6 +2104,9 @@ aside > .utk-cta a:visited {
   @media (min-width: 768px) and (max-width: 991px) {
     .utk-menu-help-hero .utk-menu-help {
       display: none; } }
+  @media (min-width: 992px) and (max-width: 1199px) {
+    .utk-menu-help-hero .utk-menu-help {
+      right: 18px; } }
 
 .utk-menu-open .utk-menu-help-hero .utk-menu-help {
   display: none; }
