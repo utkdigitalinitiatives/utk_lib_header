@@ -101,11 +101,13 @@ class Header extends Component {
 
         if (this.isTop(collapseWatch) >= this.isBottom(stickyMenuTrigger)) {
             this.setState({stickyMenu: true});
+            console.log('set sticky 1');
             document.removeEventListener('scroll', this.trackStickyMenu);
             document.addEventListener('scroll', this.trackNormalizeMenu);
             document.addEventListener('scroll', this.trackShortcutMenu);
         } else {
             this.setState({stickyMenu: false});
+            console.log('unset sticky 1');
             document.removeEventListener('scroll', this.trackNormalizeMenu);
             document.removeEventListener('scroll', this.trackShortcutMenu);
             document.addEventListener('scroll', this.trackStickyMenu);
@@ -118,11 +120,13 @@ class Header extends Component {
 
         if (this.isTop(menuNormalizeTrigger) > this.isBottom(stickyMenuTrigger)) {
             this.setState({stickyMenu: false});
+            console.log('unset sticky 2');
             document.removeEventListener('scroll', this.trackNormalizeMenu);
             document.removeEventListener('scroll', this.trackShortcutMenu);
             document.addEventListener('scroll', this.trackStickyMenu);
         } else {
             this.setState({stickyMenu: true});
+            console.log('set sticky 2');
             document.removeEventListener('scroll', this.trackResetStickyMenu);
             document.addEventListener('scroll', this.trackShortcutMenu);
             document.addEventListener('scroll', this.trackNormalizeMenu);
@@ -137,10 +141,12 @@ class Header extends Component {
             document.removeEventListener('scroll', this.trackNormalizeMenu);
             document.removeEventListener('scroll', this.trackShortcutMenu);
             document.addEventListener('scroll', this.trackResetStickyMenu);
+            console.log('set shortcut w/ sticky 3');
             this.setState({shortcutLogo: true});
             this.setState({stickyMenu: true});
             this.setState({stickyMenuAnchored: true});
         } else {
+            console.log('unset shortcut from 3');
             this.setState({shortcutLogo: false});
             this.setState({stickyMenu: true});
             this.setState({stickyMenuAnchored: false});
@@ -158,6 +164,7 @@ class Header extends Component {
             document.removeEventListener('scroll', this.trackResetStickyMenu);
             document.addEventListener('scroll', this.trackShortcutMenu);
             document.addEventListener('scroll', this.trackNormalizeMenu);
+            console.log('unset sticky as anchored 4');
             this.setState({stickyMenu: true});
             this.setState({stickyMenuAnchored: false});
             this.setState({shortcutLogo: false});
@@ -165,6 +172,7 @@ class Header extends Component {
             document.addEventListener('scroll', this.trackResetStickyMenu);
             document.removeEventListener('scroll', this.trackShortcutMenu);
             document.removeEventListener('scroll', this.trackNormalizeMenu);
+            console.log('set sticky as anchored 4');
             this.setState({shortcutLogo: true});
             this.setState({stickyMenu: true});
             this.setState({stickyMenuAnchored: true});
