@@ -35,14 +35,8 @@ body {
   transition: $transition-opacity;
 }
 
-.utk-container {
-  max-width:  1199px;
-  margin: 0 auto;
+#utk-lib-header .container {
   position: relative;
-
-  @include respond(xs, sm, md) {
-    padding: 0 $golden-ratio-2;
-  }
 }
 
 #utk-header-trigger {

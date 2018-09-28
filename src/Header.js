@@ -129,7 +129,7 @@ class Header extends Component {
             <div id="utk-header-trigger"></div>
             <header className={`utk-header${resourcesClass}${searchClassHeader}${headerHero}`}>
                 <div className={`utk-header-main${headerShortcutClass}`}>
-                    <div className="utk-container">
+                    <div className="container">
 
                         <div className="utk-logo-wrapper">
                             <a href="http://lib.utk.edu">

@@ -30,8 +30,8 @@
     "build-rename-js": "renamer --find '/main[.][^.]+[.]js/' --replace 'main.js' build/static/js/*.js",
     "build-rename-css": "renamer --find '/main[.][^.]+[.]css/' --replace 'main.css' build/static/css/*.css",
     "build-set-absolutes": "npm-run-all build-set-absolutes-js build-set-absolutes-css",
-    "build-set-absolutes-js": "replace 'static[/]' '/www.lib.utk.edu/assets/tei/polk/react/static/' build/static/js/*.js",
-    "build-set-absolutes-css": "replace '[/]static[/]' '/assets/tei/polk/react/static/' build/static/css/*.css"
+    "build-set-absolutes-js": "replace 'static[/]' '/www.lib.utk.edu/assets/global/head/react/static/' build/static/js/*.js",
+    "build-set-absolutes-css": "replace '[/]static[/]' '/assets/global/head/react/static/' build/static/css/*.css"
   },
   "homepage": "https://www.lib.utk.edu/",
   "publicPath": "",

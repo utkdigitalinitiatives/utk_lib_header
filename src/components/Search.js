@@ -57,7 +57,7 @@ export class Search extends Component {
 
         return (
             <div className={`utk-header-search ${active}${searchOptionClass}`}>
-                <div className="utk-container">
+                <div className="container">
                     <div className="utk-search-wrapper">
                         <div className="utk-search-options">
                             <label id="utk-search-toggle-onesearch" onClick={this.setSearchOptionOnesearch}><img src={primary_logo} className="utk-logo" alt="University of Tennessee Libraries" /></label>

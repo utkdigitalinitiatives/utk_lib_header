@@ -106,7 +106,7 @@ export class Menu extends Component {
 
         return (
             <div className={`utk-header-resources ${active} ${depthClass}`}>
-                <div className="utk-container">
+                <div className="container">
                     <div className='utk-menu-options'>
                         <div className='utk-menu-help'>
                             <a className="utk-menu-help--item utk-menu-help--chat">
