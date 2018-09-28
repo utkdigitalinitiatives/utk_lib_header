@@ -2111,6 +2111,13 @@ aside > .utk-cta a:visited {
 .utk-menu-open .utk-menu-help-hero .utk-menu-help {
   display: none; }
 
+.utk-hero-overlay {
+  width: 100%;
+  height: 322px;
+  display: block;
+  position: absolute;
+  bottom: 0; }
+
 .utk-main {
   margin-top: -123px;
   margin-bottom: -76px;

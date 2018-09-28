@@ -23,6 +23,7 @@ export class Hero extends Component {
         return (
             <div className={`utk-hero${headerHero}${stickyMenuClass}`}>
                 <span>Hero</span>
+                <div className='utk-hero-overlay'></div>
                 <div className="utk-title-row">
                     <div className="utk-container">
                         <div className="utk-title-wrap">

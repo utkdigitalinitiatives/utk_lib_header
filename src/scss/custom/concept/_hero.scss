@@ -129,3 +129,11 @@
 .utk-menu-open .utk-menu-help-hero  .utk-menu-help {
   display: none;
 }
+
+.utk-hero-overlay {
+  width: 100%;
+  height: $golden-ratio-8;
+  display: block;
+  position: absolute;
+  bottom: 0;
+}
