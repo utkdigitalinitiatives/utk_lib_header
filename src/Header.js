@@ -11,7 +11,7 @@ import {Search} from "./components/Search";
 /* assets */
 import './css/utk-lib-header.css';
 import primary_logo from './media/ut-knoxville.svg';
-import shortcut_logo from './media/utk-libraries-shortcut-white.svg';
+import shortcut_logo from './media/ut-square.svg';
 
 /* header component */
 class Header extends Component {

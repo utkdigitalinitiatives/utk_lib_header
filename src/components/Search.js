@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import primary_logo from "../media/utk-onesearch.svg";
+import primary_logo from "../media/ut-onesearch.svg";
 
 export class Search extends Component {
 
