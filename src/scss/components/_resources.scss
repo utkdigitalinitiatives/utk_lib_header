@@ -15,7 +15,7 @@
 
   @include respond(xs, sm, md) {
     height: 100vh;
-    background-color: $offwhite;
+    background-color: $gray-0;
     max-width: 100%;
     transition: none !important;
     width: $golden-ratio-8;
@@ -25,7 +25,7 @@
     right: -$golden-ratio-8;
 
     &.utk-menu-depth--1 {
-      background-color: darken($offwhite, 8) !important;
+      background-color: $gray-2;
     }
 
     > .container {
@@ -42,7 +42,7 @@
       right: 0;
       top: 0;
       padding-top: 81px;
-      background-color: $offwhite;
+      background-color: $gray-0;
     }
 
     @include respond(xs) {
@@ -205,8 +205,7 @@
   .icon-menu {
     opacity: 1;
     font-size: 15px;
-    padding: 1px;
-    margin-right: 4px;
+    margin-right: 2px;
     transition: $transition-all;
   }
 

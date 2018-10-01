@@ -11,7 +11,6 @@ html {
 body {
   margin: 0;
   padding: 0;
-  background-color: $offwhite;
 
   &.utk-menu-open {
     overflow: hidden;
@@ -60,7 +59,7 @@ body {
   margin-top: 47px;
   height: 521px;
   overflow: hidden;
-  background-color: $gray;
+  background-color: $smokeyx;
   position: relative;
   transition: $transition-all;
 
@@ -74,9 +73,9 @@ body {
     top: 0;
     z-index: 0;
     opacity: 1;
-    background: -moz-linear-gradient(top, rgba($gray,0) 70%, rgba($smokey,0.35) 100%); /* FF3.6-15 */
-    background: -webkit-linear-gradient(top, rgba($gray,0) 70%,rgba($smokey,0.35) 100%); /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(to bottom, rgba($gray,0) 70%,rgba($smokey,0.35) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    background: -moz-linear-gradient(top, rgba($smokeyx,0) 70%, rgba($smokey,0.35) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, rgba($smokeyx,0) 70%,rgba($smokey,0.35) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, rgba($smokeyx,0) 70%,rgba($smokey,0.35) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   }
 
   .utk-header-title {
@@ -119,7 +118,7 @@ body {
       &:focus {
 
         > span {
-          background-color: $gray;
+          background-color: $smokeyx;
         }
       }
 
@@ -128,7 +127,7 @@ body {
         height: 3rem;
         background-color: $smokey;
         cursor: pointer;
-        color: $offwhite;
+        color: $gray-0;
         font-size: 0.85rem;
         letter-spacing: 0.05em;
         line-height: 3rem;
@@ -146,7 +145,7 @@ body {
         height: 3rem;
         background-color: $smokey;
         cursor: pointer;
-        color: $offwhite;
+        color: $gray-0;
         font-size: 1rem;
         line-height: 3rem;
         font-weight: 500;

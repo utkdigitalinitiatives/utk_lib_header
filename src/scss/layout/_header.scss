@@ -1,47 +1,31 @@
 .utk-header {
   font-family: $sans;
-  color: $smokey;
+  color: $smokeyx;
   font-size: 15px;
   box-shadow: $box-shadow;
-
-  &.utk-header-expand-menu {
-
-    .utk-header-main {
-      background-color: $white;
-    }
-
-    .utk-logo-wrapper {
-      border-bottom: none;
-      box-shadow: none;
-
-      .utk-logo {
-        margin-top: 53px;
-      }
-
-      &::before {
-        width: 100%;
-        display: block;
-        top: 0;
-      }
-
-      &::after {
-        width: 100% !important;
-      }
-    }
-
-  }
-}
-
-.utk-header .utk-header-main {
+  height: 129px;
   border-top: 6px solid $orange;
-  background-color: $white;
-  height: 47px;
-  width: 100%;
   position: fixed;
-  box-shadow: $box-shadow;
-  top: 0;
-  z-index: 99;
-  transition: $transition-all;
+  width: 100%;
+
+  .utk-header-main {
+    background-color: $white;
+    height: 76px;
+    width: 100%;
+    box-shadow: $box-shadow;
+    top: 0;
+    z-index: 99;
+    transition: $transition-all;
+    margin-top: $golden-ratio-4;
+  }
+  .utk-header-super {
+    width: 100%;
+    background-color: $gray-1;
+    height: $golden-ratio-4;
+    position: absolute;
+    top: 0px;
+    overflow: hidden;
+  }
 }
 
 
@@ -60,6 +44,8 @@
   flex-direction: row;
   width: auto;
   transition: $transition-all;
+  padding-top: 3px;
+  height: $golden-ratio-5;
 
   .utk-header-actions {
     &--item {
@@ -68,8 +54,8 @@
       height: auto; /* Or whatever */
       margin: auto; /* Magic! */
       font-weight: 400;
-      line-height: $type-2;
-      font-size: $type-2;
+      line-height: $type-3;
+      font-size: $type-3;
 
       @include respond(xs) {
         &.utk-header-actions--utk {

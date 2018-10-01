@@ -1,0 +1,28 @@
+.utk-header-super {
+  &--menu {
+    float: right;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    position: relative;
+    margin-right: -$golden-ratio-1;
+
+
+    > li {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+
+      a,
+      a:visited {
+        height: $golden-ratio-4;
+        line-height: $golden-ratio-4;
+        padding: 0 $golden-ratio-1;
+        font-size: $type-1;
+        font-weight: 700;
+        text-transform: uppercase;
+        display: block;
+      }
+    }
+  }
+}

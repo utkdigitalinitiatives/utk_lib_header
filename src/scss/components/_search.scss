@@ -6,13 +6,13 @@
   top: -$golden-ratio-5;
   opacity: 0;
   z-index: 97;
-  background-color: rgba($gray, 0);
+  background-color: rgba($smokeyx, 0);
   height: $golden-ratio-5;
 
   &.utk-header-expand-search {
     opacity: 1;
     top: 47px;
-    background-color: $gray;
+    background-color: $smokeyx;
   }
 }
 
@@ -213,7 +213,7 @@
       position: absolute;
       width: $golden-ratio-2;
       height: $golden-ratio-2;
-      background-color: $offwhite;
+      background-color: $gray-0;
       border-radius: inherit;
       top: calc(#{($golden-ratio-3 - $golden-ratio-2) / 2});
       left: calc(#{($golden-ratio-3 - $golden-ratio-2) / 2});
