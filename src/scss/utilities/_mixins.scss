@@ -112,3 +112,21 @@
     opacity: 1.0;
   }
 }
+
+@mixin gradient-vertical($start, $start-percent, $end, $end-percent) {
+  background: -moz-linear-gradient(top, $start $start-percent, $end $end-percent);
+  background: -webkit-gradient(linear, top, bottom, color-stop($start-percent, $start), color-stop($end-percent, $end));
+  background: -webkit-linear-gradient(top, $start $start-percent, $end $end-percent);
+  background: -o-linear-gradient(top, $start $start-percent, $end $end-percent);
+  background: -ms-linear-gradient(top, $start $start-percent, $end $end-percent);
+  background: linear-gradient(to bottom, $start $start-percent, $end $end-percent);
+}
+
+@mixin gradient-horizontal($start, $start-percent, $end, $end-percent) {
+  background: -moz-linear-gradient(left, $start $start-percent, $end $end-percent);
+  background: -webkit-gradient(linear, left, right, color-stop($start-percent, $start), color-stop($end-percent, $end));
+  background: -webkit-linear-gradient(left, $start $start-percent, $end $end-percent);
+  background: -o-linear-gradient(left, $start $start-percent, $end $end-percent);
+  background: -ms-linear-gradient(left, $start $start-percent, $end $end-percent);
+  background: linear-gradient(to right, $start $start-percent, $end $end-percent);
+}

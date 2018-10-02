@@ -1,12 +1,15 @@
 .utk-header {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 129px;
+  z-index: 997;
+  width: 100%;
+  border-top: 6px solid $orange;
+  box-shadow: $box-shadow;
   font-family: $sans;
   color: $smokeyx;
   font-size: 15px;
-  box-shadow: $box-shadow;
-  height: 129px;
-  border-top: 6px solid $orange;
-  position: fixed;
-  width: 100%;
 
   .utk-header-main {
     background-color: $white;
@@ -23,8 +26,26 @@
     background-color: $gray-1;
     height: $golden-ratio-4;
     position: absolute;
+    z-index: 99;
     top: 0px;
     overflow: hidden;
+  }
+}
+
+body.utk-menu-open {
+  .utk-header-super {
+    background-color: $white;
+
+    &--url {
+      left: 20px;
+    }
+
+    .utk-header-super--menu--options {
+      right: 0;
+      opacity: 1;
+      width: auto;
+      margin-left: $golden-ratio-2;
+    }
   }
 }
 
@@ -75,10 +96,11 @@
         }
       }
 
-      > a {
+      a {
         display: inline-block;
         padding: calc((#{$golden-ratio-4} - #{$golden-ratio-0} - #{$type-2}) / 2) calc(#{$golden-ratio-3} / 2);
         transition: $transition-all;
+        color: $smokeyx !important;;
 
         @include respond(xs) {
           > span {

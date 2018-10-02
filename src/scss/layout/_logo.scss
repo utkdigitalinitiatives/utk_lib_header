@@ -1,5 +1,5 @@
 .utk-logo-wrapper {
-  z-index: 10;
+  z-index: 998;
   padding: 0;
   display: inline-block;
   width: auto;
@@ -10,12 +10,22 @@
   .utk-logo {
     padding: 47px;
     height: 47px;
+    opacity: 1;
     box-sizing: content-box;
     transition: $transition-all;
     position: relative;
     background-color: $white;
     top: 0;
     box-shadow: $box-shadow;
+  }
+
+  .utk-logo-square {
+    width: 47px;
+    padding: 0;
+    box-shadow: none;
+    position: absolute;
+    left: -2000px;
+    top: 47px;
   }
 
   .utk-logo-unit {
@@ -27,16 +37,26 @@
     font-weight: 400;
     padding: 3px $golden-ratio-3 0;
     letter-spacing: -0.02em;
+    left: 303px;
+    transition: $transition-all;
   }
 }
 
-.utk-logo-shortcut {
-  top: 25px;
-  left: -2000px;
-  height: 25px;
-  transition: $transition-all;
-  position: absolute;
-  z-index: 100;
+body.utk-menu-open {
+  .utk-logo-wrapper {
+    .utk-logo-primary {
+      top: -3000px;
+      box-shadow: none;
+    }
+
+    .utk-logo-square {;
+      left: 47px;
+    }
+
+    .utk-logo-unit {
+      left: 76px;
+    }
+  }
 }
 
 .utk-header.utk-header-expand-menu {
