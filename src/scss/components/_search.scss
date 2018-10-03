@@ -1,7 +1,6 @@
 .utk-header-search {
   position: fixed;
   width: 100%;
-  height: 0px;
   overflow: hidden;
   top: 129px;
   opacity: 0;
@@ -13,28 +12,6 @@ body.utk-search-open {
   .utk-header-search {
     opacity: 1;
     height: $golden-ratio-5;
-  }
-}
-
-.utk-header-shrink .utk-header-expand-search {
-  top: 75px + $golden-ratio-0;
-
-  .utk-search-wrapper {
-    left: 0px;
-    max-width: 100%;
-
-    .utk-cursor {
-      left: 0;
-    }
-
-    &--icon {
-      margin-left: 0;
-    }
-
-    input#utk-search-field {
-      width: 100%;
-      padding-left: calc(#{$golden-ratio-4 - $golden-ratio-3});
-    }
   }
 }
 
@@ -61,39 +38,39 @@ body.utk-search-open {
   }
 
   input:focus + i {
-    display: none;
+    //display: none;
   }
 
   ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-    color: $rock;
+    //color: $rock;
   }
 
   input#utk-search-field {
     border: none;
     background-color: transparent;
-    width: 894px;
+    width: 375px;
     font-weight: 300;
     height: auto;
-    font-size: $type-4;
+    font-size: $type-3;
     line-height: 2rem;
-    height: $golden-ratio-5;
-    padding: 1rem calc(#{$golden-ratio-3} + 4px);
-    margin: 0;
+    height: $golden-ratio-4;
+    padding: 6px 15px;
+    margin: 15px;
     color: $white;
+    background-color: $smokeyx;
+    box-shadow: inset $box-shadow;
+    transition: $transition-all;
+    outline-offset: -1px;
+    outline: $smokeyx auto 2px;
 
-    &:focus {
-      outline: none;
-    }
-
-    ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    &::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+      font-size: $type-3;
       color: $rock;
-      margin-left: 5px;
     }
 
     &:focus {
       outline-offset: -1px;
-      outline: $rock auto 5px;
-      outline: none;
+      outline: $smokey auto 2px;
       color: $white !important;
       text-shadow: 0 0 0 $white;
 
@@ -119,7 +96,7 @@ body.utk-search-open {
     text-transform: uppercase;
     letter-spacing: 0.08em;
     right: 0;
-    top: 2px;
+    top: 0;
     font-weight: 700;
     cursor: pointer;
     transition: $transition-all;
@@ -168,10 +145,6 @@ body.utk-search-open {
   }
 }
 
-.utk-header-shrink.utk-search-active .utk-search-options {
-  top:  32px;
-}
-
 .utk-search-open .utk-search-options {
   top: 34px;
 }
@@ -185,38 +158,54 @@ body.utk-search-open {
   transition: $transition-all;
   top: 34px;
 
+  img {
+    height: $type-1 - 2px;
+    margin-top: 2px;
+  }
+
   .utk-search-toggle {
     width: $golden-ratio-4;
     height: $golden-ratio-3;
     border-radius: $golden-ratio-4;
-    background-color: $gray-2;
+    background-color: $smokey;
     position: relative;
     cursor: pointer;
-    margin-top: -8px;
+    margin-top: -10px;
+    box-shadow: inset $box-shadow;
 
     .utk-search-toggle-button {
       position: absolute;
       width: $golden-ratio-2;
       height: $golden-ratio-2;
-      background-color: $smokeyx;
+      background-color: $gray-3;
       border-radius: inherit;
       top: calc(#{($golden-ratio-3 - $golden-ratio-2) / 2});
       left: calc(#{($golden-ratio-3 - $golden-ratio-2) / 2});
       transition: $transition-all-fast;
+      box-shadow: $box-shadow;
     }
 
     &:hover .utk-search-toggle-button {
-      background-color: $smokey;
+      background-color: $gray-1;
+    }
+  }
+  #utk-search-toggle-onesearch {
+
+    img.utk-onesearch {
+      opacity: 1;
+      position: absolute;
+      transition: $transition-all;
+    }
+
+    img.utk-onesearch-mono {
+      opacity: 0;
+      transition: $transition-all;
     }
   }
 
-
-  #utk-search-toggle-onesearch {
-    opacity: 1;
-  }
-
   #utk-search-toggle-libraries {
-    opacity: 0.47;
+    color: $rock;
+    transition: $transition-all;
   }
 
   label {
@@ -226,29 +215,31 @@ body.utk-search-open {
     font-weight: 700;
     display: block;
     transition: $transition-all-fast;
+    margin-top: -2px;
 
     &:first-child {
-      margin-right: $golden-ratio-2;
+      margin-right: $golden-ratio-1;
     }
 
     &:last-child {
-      margin-left: $golden-ratio-2;
+      margin-left: $golden-ratio-1;
     }
-  }
-
-  img {
-    height: $type-2 - 2;
   }
 }
 
-
 .utk-search-onesearch {
   #utk-search-toggle-onesearch {
-    opacity: 1;
+    img.utk-onesearch {
+      opacity: 1;
+    }
+
+    img.utk-onesearch-mono {
+      opacity: 0;
+    }
   }
 
   #utk-search-toggle-libraries {
-    opacity: 0.47;
+    color: $rock;
   }
 
   .utk-search-options .utk-search-toggle {
@@ -259,77 +250,23 @@ body.utk-search-open {
 }
 
 .utk-search-libraries {
-
   #utk-search-toggle-onesearch {
-    opacity: 0.47;
+    img.utk-onesearch {
+      opacity: 0;
+    }
+
+    img.utk-onesearch-mono {
+      opacity: 1;
+    }
   }
 
   #utk-search-toggle-libraries {
-    opacity: 1;
     color: $white;
   }
 
   .utk-search-options .utk-search-toggle {
     .utk-search-toggle-button {
       left: calc(#{(($golden-ratio-3 - $golden-ratio-2) / 2) + $golden-ratio-2});
-    }
-  }
-}
-
-@include respond(xs, sm) {
-  .utk-header-search.utk-header-expand-search {
-    top: 81px;
-    height: 322px;
-
-    @include respond(sm) {
-      top: 47px;
-    }
-
-    .utk-search-wrapper {
-      display: block;
-      max-width: 100%;
-      width: 100%;
-      height: 100%;
-      left: auto;
-      position: relative;
-
-      .utk-search-options {
-        position: relative;
-        right: auto;
-        text-align: center;
-        flex-direction: row;
-        justify-content: center;
-        position: absolute;
-        margin-top: $golden-ratio-1;
-        width: 100%;
-
-        @include respond(sm, md) {
-          left: 304px;
-          width: calc(100% - 304px);
-          margin-top: $golden-ratio-2;
-        }
-      }
-    }
-
-    .utk-search-wrapper--form-item {
-      input#utk-search-field {
-        height: 47px;
-        padding: 18px;
-        text-align: left;
-        margin-top: 190px;
-
-        @include respond(sm, md) {
-        }
-      }
-      input#utk-search-submit {
-        position: absolute;
-        margin: 0;
-        top: auto;
-        left: 7px;
-        bottom: 25px;
-        height: 47px;
-        width: calc(100% - 13px);
-      }
     }
   }
 }
