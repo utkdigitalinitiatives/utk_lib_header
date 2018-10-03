@@ -58,6 +58,7 @@ class Header extends Component {
             document.addEventListener('click', this.closeSearch);
             this.refs.search.utkSearchField.focus();
             this.refs.search.utkSearchField.value = '';
+            document.body.classList.add('utk-search-open');
         });
     };
 
@@ -67,6 +68,7 @@ class Header extends Component {
         if (isSearch === -1) {
             this.setState({showSearch: false}, () => {
                 document.removeEventListener('click', this.closeSearch);
+                document.body.classList.remove('utk-search-open');
             });
         }
     };
@@ -191,7 +193,7 @@ class Header extends Component {
                     </div>
                 </div>
                 <Menu active={resourcesClass} />
-                <Search active={searchClass} showSearch={showSearch} ref="search" />
+                <Search showSearch={showSearch} ref="search" />
             </header>
             <div className="utk-body-overlay"></div>
             <Placeholder/>

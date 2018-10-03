@@ -77,6 +77,11 @@
       transition: none !important;
     }
 
+    .utk-header-actions--search .icon-search,
+    .utk-header-actions--search .icon-cancel {
+      transition: none !important;
+    }
+
     a,
     a:visited {
       color: $smokeyx !important;

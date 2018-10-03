@@ -3,7 +3,7 @@
   left: 0;
   top: 0;
   height: 129px;
-  z-index: 997;
+  z-index: 100;
   width: 100%;
   border-top: 6px solid $orange;
   box-shadow: $box-shadow;
@@ -17,16 +17,19 @@
     width: 100%;
     box-shadow: $box-shadow;
     top: 0;
-    z-index: 99;
+    z-index: 97;
     transition: $transition-all;
     margin-top: $golden-ratio-4;
+
+    > .container {
+    }
   }
   .utk-header-super {
     width: 100%;
     background-color: $gray-1;
     height: $golden-ratio-4;
     position: absolute;
-    z-index: 99;
+    z-index: 96;
     top: 0px;
     overflow: hidden;
   }

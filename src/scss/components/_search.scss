@@ -1,18 +1,18 @@
 .utk-header-search {
   position: fixed;
   width: 100%;
-  transition: $transition-all;
+  height: 0px;
   overflow: hidden;
-  top: -$golden-ratio-5;
+  top: 129px;
   opacity: 0;
-  z-index: 97;
-  background-color: rgba($smokeyx, 0);
-  height: $golden-ratio-5;
+  z-index: 1;
+  background-color: $smokeyx;
+}
 
-  &.utk-header-expand-search {
+body.utk-search-open {
+  .utk-header-search {
     opacity: 1;
-    top: 47px;
-    background-color: $smokeyx;
+    height: $golden-ratio-5;
   }
 }
 
@@ -58,21 +58,6 @@
 
   &--form-item {
     width: 100%;
-  }
-
-  .utk-cursor {
-    position: absolute;
-    width: 2px;
-    height: $golden-ratio-3;
-    background-color: $rock;
-    left: $golden-ratio-3;
-    top: calc(#{($golden-ratio-5 - $golden-ratio-3)} / 2);
-    animation: blink 1s ease-in-out;
-    animation-iteration-count: infinite;
-    -webkit-animation: blink 1s ease-in-out;
-    -webkit-animation-iteration-count: infinite;
-    opacity: 1;
-    display: none;
   }
 
   input:focus + i {
@@ -127,15 +112,15 @@
     color: $white;
     width: auto;
     height: auto;
-    font-size: 15px;
+    font-size: $type-2;
     line-height: 1.5rem;
     padding: 0.35rem 1rem;
-    margin: $golden-ratio-2;
+    margin: $golden-ratio-2 0;
     text-transform: uppercase;
+    letter-spacing: 0.08em;
     right: 0;
     top: 2px;
     font-weight: 700;
-    letter-spacing: 0.07em;
     cursor: pointer;
     transition: $transition-all;
 
@@ -187,8 +172,8 @@
   top:  32px;
 }
 
-.utk-search-active .utk-search-options {
-  top: 32px;
+.utk-search-open .utk-search-options {
+  top: 34px;
 }
 
 .utk-search-options {
@@ -198,13 +183,13 @@
   display: flex;
   height: $golden-ratio-4;
   transition: $transition-all;
-  top: -$golden-ratio-5;
+  top: 34px;
 
   .utk-search-toggle {
     width: $golden-ratio-4;
     height: $golden-ratio-3;
     border-radius: $golden-ratio-4;
-    background-color: $smokey;
+    background-color: $gray-2;
     position: relative;
     cursor: pointer;
     margin-top: -8px;
@@ -213,7 +198,7 @@
       position: absolute;
       width: $golden-ratio-2;
       height: $golden-ratio-2;
-      background-color: $gray-0;
+      background-color: $smokeyx;
       border-radius: inherit;
       top: calc(#{($golden-ratio-3 - $golden-ratio-2) / 2});
       left: calc(#{($golden-ratio-3 - $golden-ratio-2) / 2});
@@ -221,7 +206,7 @@
     }
 
     &:hover .utk-search-toggle-button {
-      background-color: $white;
+      background-color: $smokey;
     }
   }
 

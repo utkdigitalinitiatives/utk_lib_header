@@ -1,7 +1,6 @@
 .utk-logo-wrapper {
   z-index: 998;
   padding: 0;
-  display: inline-block;
   width: auto;
   position: absolute;
   transition: $transition-all;
@@ -28,7 +27,10 @@
     top: 47px;
   }
 
-  .utk-logo-unit {
+  a.utk-logo-unit,
+  a.utk-logo-unit:visited,
+  a.utk-logo-unit:hover,
+  a.utk-logo-unit:focus {
     position: absolute;
     top: calc(63px / 2);
     height: $golden-ratio-5;
@@ -39,6 +41,7 @@
     letter-spacing: -0.02em;
     left: 303px;
     transition: $transition-all;
+    color: $smokey !important;
   }
 }
 
