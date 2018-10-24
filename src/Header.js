@@ -134,7 +134,7 @@ class Header extends Component {
                 <div className={`utk-header-main`}>
                     <div className="container">
 
-                        <div className="utk-logo-wrapper">
+                        <div id="utk-logo" className="utk-logo-wrapper">
                             <a href="https://www.utk.edu">
                                 <img src={primary_logo} className="utk-logo utk-logo-primary" alt="University of Tennessee Libraries" />
                                 <img src={square_logo} className="utk-logo utk-logo-square" alt="University of Tennessee Libraries" />
