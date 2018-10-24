@@ -373,15 +373,21 @@ body.utk-menu-open .utk-header-super {
     transition: all 290ms ease-in-out;
     color: #58595b !important; }
 
+body.utk-menu-open .utk-header-super {
+  height: 47px !important; }
+
+body.utk-menu-open .utk-header-main {
+  margin-top: 47px !important; }
+
 body.utk-menu-open .utk-logo-wrapper .utk-logo-primary {
   top: -3000px;
   box-shadow: none; }
 
 body.utk-menu-open .utk-logo-wrapper .utk-logo-square {
-  left: 47px; }
+  left: 47px !important; }
 
 body.utk-menu-open .utk-logo-wrapper .utk-logo-unit {
-  left: 76px; }
+  left: 65px !important; }
 
 .utk-header.utk-header-expand-menu {
   /* Mobile Devices for Mice */
