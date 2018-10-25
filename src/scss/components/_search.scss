@@ -2,14 +2,15 @@
   position: fixed;
   width: 100%;
   overflow: hidden;
-  top: 129px;
+  top: -76px;
   opacity: 0;
-  z-index: 1;
+  z-index: 3;
   background-color: $smokeyx;
 }
 
 body.utk-search-open {
   .utk-header-search {
+    top: 129px;
     opacity: 1;
     height: $golden-ratio-5;
   }
