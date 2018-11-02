@@ -5,8 +5,7 @@ import {MenuItems} from "./MenuItems";
 import _ from "lodash";
 import {MenuSecondary} from "./MenuSecondary";
 
-const URL = 'https://www.lib.utk.edu';
-// const URL = 'https://utklibrary.test';
+const URL = null; // left null to force relative endpoint to wp instance
 const ENDPOINT = '/assets/wp-json/libmenu';
 const ROUTE = '/drawer';
 
