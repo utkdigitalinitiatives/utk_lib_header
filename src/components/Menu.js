@@ -5,8 +5,13 @@ import {MenuItems} from "./MenuItems";
 import _ from "lodash";
 import {MenuSecondary} from "./MenuSecondary";
 
-const URL = null; // left null to force relative endpoint to wp instance
-const ENDPOINT = '/assets/wp-json/libmenu';
+const menuContainerElement = document.getElementById('utk-lib-header');
+const SubsiteGlobals = {
+    'siteURL': menuContainerElement.getAttribute('data-url'),
+};
+
+const URL = SubsiteGlobals.siteURL; // left null to force relative endpoint to wp instance
+const ENDPOINT = 'assets/wp-json/libmenu';
 const ROUTE = '/drawer';
 
 
