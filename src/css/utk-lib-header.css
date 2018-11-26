@@ -349,13 +349,13 @@ body.utk-menu-open .utk-header-super {
     top: 0;
     box-shadow: 0 5px 10px rgba(51, 51, 51, 0.05); }
   .utk-logo-wrapper .utk-logo-square {
-    width: 30px;
-    height: 30px;
+    width: 47px;
+    height: 47px;
     padding: 0;
     box-shadow: none;
     position: absolute;
     left: -2000px;
-    top: 55px; }
+    top: 46px; }
   .utk-logo-wrapper a.utk-logo-unit,
   .utk-logo-wrapper a.utk-logo-unit:visited,
   .utk-logo-wrapper a.utk-logo-unit:hover,
