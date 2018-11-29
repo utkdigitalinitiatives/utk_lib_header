@@ -63,11 +63,12 @@ body.utk-menu-open {
     }
 
     .utk-logo-square {;
-      left: 47px !important;
+      left: 0px !important;
     }
 
     .utk-logo-unit {
-      left: 65px !important;
+      left: 47px !important;
+      padding-left: 18px !important;
     }
   }
 }
@@ -76,7 +77,7 @@ body.utk-menu-open {
   .utk-logo-wrapper {
     .utk-logo {
       margin-top: 0;
-      padding: 88px 47px 47px;
+      padding: 0;
 
       @include respond(xs, sm, md) {
         margin-top: -100px;

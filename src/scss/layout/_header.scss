@@ -35,22 +35,22 @@
   }
 }
 
-body.utk-menu-open {
-  .utk-header-super {
-    background-color: $white;
-
-    &--url {
-      left: 20px;
-    }
-
-    .utk-header-super--menu--options {
-      right: 0;
-      opacity: 1;
-      width: auto;
-      margin-left: $golden-ratio-2;
-    }
-  }
-}
+//
+//body.utk-menu-open {
+//  .utk-header-super {
+//
+//    &--url {
+//      left: 20px;
+//    }
+//
+//    .utk-header-super--menu--options {
+//      right: 0;
+//      opacity: 1;
+//      width: auto;
+//      margin-left: $golden-ratio-2;
+//    }
+//  }
+//}
 
 
 

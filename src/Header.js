@@ -135,21 +135,21 @@ class Header extends Component {
                     <div className="container">
 
                         <div id="utk-logo" className="utk-logo-wrapper">
-                            <a href="https://www.utk.edu">
+                            <a href="https://www.utk.edu" tabIndex="1">
                                 <img src={primary_logo} className="utk-logo utk-logo-primary" alt="University of Tennessee Libraries" />
                                 <img src={square_logo} className="utk-logo utk-logo-square" alt="University of Tennessee Libraries" />
                             </a>
-                            <a href="https://www.lib.utk.edu" className="utk-logo-unit">Libraries</a>
+                            <a href="https://www.lib.utk.edu" className="utk-logo-unit" tabIndex="1">Libraries</a>
                         </div>
 
                         <div className="utk-header-actions">
 
                             <div className="utk-header-actions--item utk-header-actions--home">
-                                <a href="https://lib.utk.edu">lib.utk.edu</a>
+                                <a href="https://lib.utk.edu" tabIndex="3">lib.utk.edu</a>
                             </div>
 
                             <div className="utk-header-actions--item utk-header-actions--resources">
-                                <a onClick={this.toggleResources} className={`utk-menu-trigger${resourcesClass}`}>
+                                <a href="#menu" onClick={this.toggleResources} className={`utk-menu-trigger${resourcesClass}`}  tabIndex="4">
                                     <span className="icon-menu"></span>
                                     <span className="icon-cancel"></span>
                                     <em>Menu</em>
@@ -157,9 +157,10 @@ class Header extends Component {
                             </div>
 
                             <div className="utk-header-actions--item utk-header-actions--search">
-                                <a onClick={this.toggleSearch} className={searchClass}>
+                                <a href="#search" onClick={this.toggleSearch} className={searchClass}  tabIndex="5">
                                     <span className="icon-search"></span>
                                     <span className="icon-cancel"></span>
+                                    <em>Search</em>
                                 </a>
                             </div>
 
@@ -169,26 +170,10 @@ class Header extends Component {
                 <div className="utk-header-super">
                     <div className="container">
                         <ul className="utk-header-super--menu">
-                            <li><a href="#">Hours</a></li>
-                            <li><a href="#">Locations</a></li>
-                            <li><a href="#">Databases</a></li>
-                            <li><a href="#">Services</a></li>
-                            <li className="utk-header-super--menu--options">
-                            <div className="utk-header-actions--item utk-header-actions--resources">
-                                <a onClick={this.toggleResources} className={`utk-menu-trigger${resourcesClass}`}>
-                                    <span className="icon-menu"></span>
-                                    <span className="icon-cancel"></span>
-                                    <em>Menu</em>
-                                </a>
-                            </div>
-
-                            <div className="utk-header-actions--item utk-header-actions--search">
-                                <a onClick={this.toggleSearch} className={searchClass}>
-                                    <span className="icon-search"></span>
-                                    <span className="icon-cancel"></span>
-                                </a>
-                            </div>
-                            </li>
+                            <li><a href="#" tabIndex="2">Hours</a></li>
+                            <li><a href="#" tabIndex="2">Locations</a></li>
+                            <li><a href="#" tabIndex="2">Databases</a></li>
+                            <li><a href="#" tabIndex="2">Services</a></li>
                         </ul>
                     </div>
                 </div>

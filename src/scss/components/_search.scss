@@ -115,21 +115,24 @@ body.utk-search-open {
   a:visited,
   a:hover,
   a:focus {
-    color: $smokey !important;
+    color: $smokeyx !important;
+    font-weight: 700;
   }
 
   .icon-search {
     opacity: 1;
-    font-size: 15px;
+    font-size: 18px;
     padding: 1px;
     transition: $transition-all;
+    margin-right: 6px;
   }
 
   .icon-cancel {
     opacity: 0;
+    font-size: 18px;
     transition: $transition-all;
     position: absolute;
-    margin-left: -23px;
+    margin-left: -34px;
   }
 
   .utk-header-expand-search {
@@ -141,7 +144,7 @@ body.utk-search-open {
 
     .icon-cancel {
       opacity: 1;
-      color: $rock;
+      color: $torch;
     }
   }
 }

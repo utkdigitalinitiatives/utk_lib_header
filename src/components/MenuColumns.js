@@ -38,7 +38,7 @@ export class MenuColumns extends Component {
                         let {title, url, classes, target} = link[1];
 
                         return (
-                            <a href={url}>{title}</a>
+                            <a href={url} tabIndex="4">{title}</a>
                         );
 
                     });

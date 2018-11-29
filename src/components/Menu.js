@@ -84,7 +84,7 @@ export class Menu extends Component {
                                 let {title, url, classes, target} = link[1];
 
                                 return (
-                                    <a href={url}>{title}</a>
+                                    <a href={url} tabIndex="4">{title}</a>
                                 );
 
                             });
@@ -92,7 +92,7 @@ export class Menu extends Component {
                         return (
                             <div className="utk-secondary-menu">
                                 <div className="utk-secondary-menu--options">
-                                    <a className="utk-menu-back" onClick={this.resetMenu}>
+                                    <a className="utk-menu-back" tabIndex="4" onClick={this.resetMenu}>
                                         <span className="icon-left-open"></span>
                                     </a>
                                 </div>
