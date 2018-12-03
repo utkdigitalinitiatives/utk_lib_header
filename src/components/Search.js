@@ -75,9 +75,9 @@ export class Search extends Component {
                             </div>
                             <label id="utk-search-toggle-libraries"
                                    onClick={this.setSearchOptionLibraries}><span>lib.utk.edu</span></label>
+                            <div className="utk-triangle"></div>
                         </div>
                         <div className="utk-search-wrapper--form-item">
-                            <div className="utk-search-wrapper--icon"><span className="icon-search"></span></div>
                             <input id="utk-search-field" ref={(searchFocus) => this.utkSearchField = searchFocus}
                                    placeholder={searchPlaceholder}/>
                             <span className="utk-cursor"></span>

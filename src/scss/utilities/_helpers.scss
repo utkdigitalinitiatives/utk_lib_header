@@ -1,3 +1,36 @@
 .font-script {
   font-family: $script;
 }
+
+.utk-triangle {
+  position: relative;
+  background-color: $orange;
+  text-align: left;
+  font-size: $type-3;
+  display: none;
+}
+
+.utk-triangle:before,
+.utk-triangle:after {
+  content: '';
+  position: absolute;
+  background-color: inherit;
+}
+
+.utk-triangle,
+.utk-triangle:before,
+.utk-triangle:after {
+  width:  1em;
+  height: 1em;
+  border-top-right-radius: 30%;
+}
+
+.utk-triangle {
+  transform: rotate(-60deg) skewX(-30deg) scale(1,.866);
+}
+.utk-triangle:before {
+  transform: rotate(-135deg) skewX(-45deg) scale(1.414,.707) translate(0,-50%);
+}
+.utk-triangle:after {
+  transform: rotate(135deg) skewY(-45deg) scale(.707,1.414) translate(50%);
+}
