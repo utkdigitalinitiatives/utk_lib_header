@@ -155,9 +155,10 @@ body.utk-search-open {
   margin: 12px 0;
   position: relative;
 
-  img {
-    height: $type-1 - 2px;
+  svg {
+    height: 11px;
     margin-top: 2px;
+    fill: $white;
   }
 
   .utk-triangle {
@@ -190,32 +191,19 @@ body.utk-search-open {
     }
 
     &:hover .utk-search-toggle-button {
-      background-color: $gray-1;
-    }
-  }
-  #utk-search-toggle-onesearch {
-
-    img.utk-onesearch {
-      opacity: 1;
-      position: absolute;
-      transition: $transition-all;
-    }
-
-    img.utk-onesearch-mono {
-      opacity: 0;
-      transition: $transition-all;
+      background-color: $white;
     }
   }
 
   #utk-search-toggle-libraries {
-    color: $rock;
+    color: $gray-1;
     transition: $transition-all;
   }
 
   label {
     cursor: pointer;
     font-size: $type-2;
-    color: $rock;
+    color: $gray-1;
     font-weight: 700;
     display: block;
     transition: $transition-all-fast;
@@ -243,6 +231,11 @@ body.utk-search-open {
 }
 
 .utk-search-onesearch {
+
+  .svg {
+    color: $white;
+  }
+
   #utk-search-toggle-onesearch {
 
     &::after {
@@ -261,7 +254,7 @@ body.utk-search-open {
   }
 
   #utk-search-toggle-libraries {
-    color: $rock;
+    color: $gray-1;
   }
 
   .utk-search-options .utk-search-toggle {
@@ -272,6 +265,11 @@ body.utk-search-open {
 }
 
 .utk-search-libraries {
+
+  svg {
+    fill: $gray-1;
+  }
+
   #utk-search-toggle-onesearch {
     img.utk-onesearch {
       opacity: 0;
