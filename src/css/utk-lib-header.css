@@ -609,6 +609,9 @@ body.utk-menu-open .utk-logo-wrapper .utk-logo-unit {
 /* Landscape phone to portrait tablet */
 /* Portrait tablet to landscape and desktop */
 /* desktop and large desktop */
+body.utk-search-open .utk-search {
+  z-index: 999; }
+
 .utk-header-super--url {
   position: absolute;
   left: -2000px;
@@ -1427,7 +1430,7 @@ body.utk-search-open .utk-header-search {
     flex-grow: 1;
     font-weight: 700;
     height: auto;
-    font-size: 15px;
+    font-size: 18px;
     line-height: 2rem;
     height: 47px;
     padding: 0 13px;
@@ -1439,7 +1442,7 @@ body.utk-search-open .utk-header-search {
     position: relative; }
     .utk-search-wrapper input#utk-search-field::placeholder {
       /* Chrome, Firefox, Opera, Safari 10.1+ */
-      font-size: 15px; }
+      font-size: 18px; }
     .utk-search-wrapper input#utk-search-field:focus {
       z-index: 1; }
       .utk-search-wrapper input#utk-search-field:focus ::placeholder {

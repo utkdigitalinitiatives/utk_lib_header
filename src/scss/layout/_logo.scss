@@ -218,3 +218,9 @@ body.utk-menu-open {
 
   }
 }
+
+body.utk-search-open {
+  .utk-search {
+    z-index: 999;
+  }
+}

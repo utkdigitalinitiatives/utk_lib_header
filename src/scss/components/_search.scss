@@ -58,7 +58,7 @@ body.utk-search-open {
     flex-grow: 1;
     font-weight: 700;
     height: auto;
-    font-size: $type-2;
+    font-size: $type-3;
     line-height: 2rem;
     height: $golden-ratio-4;
     padding: 0 $type-1;
@@ -70,7 +70,7 @@ body.utk-search-open {
     position: relative;
 
     &::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-      font-size: $type-2;
+      font-size: $type-3;
     }
 
     &:focus {
