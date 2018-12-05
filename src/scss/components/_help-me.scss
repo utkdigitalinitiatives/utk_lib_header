@@ -5,6 +5,11 @@
     position: fixed;
   }
 
+  .utk-menu-options {
+    display: flex;
+    flex-direction: row-reverse;
+  }
+
   @include respond(sm, md) {
 
     .utk-menu-options {
@@ -89,15 +94,14 @@
       top: 9px;
       width: $golden-ratio-3;
       height: $golden-ratio-3;
+      line-height: $golden-ratio-3;
+      text-align: center;
       border-radius: $golden-ratio-3;
       background-color: $rock;
-      text-align: center;
 
       > span {
         color: $white;
         display: block;
-        margin-top: 6px;
-        margin-left: 1px;
       }
     }
   }

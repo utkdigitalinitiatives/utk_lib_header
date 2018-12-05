@@ -2,7 +2,7 @@
   width: 100%;
   background-color: $white;
   transition: none !important;
-  z-index: 98;
+  z-index: 999;
   position: fixed;
   display: none;
   box-shadow: $box-shadow;
@@ -65,10 +65,10 @@
   position: relative;
   width: 100%;
   max-width: 819px;
-  margin-left: 380px;
+  margin-left: 332px;
   display: flex;
   flex-direction: row;
-  padding: 33px 0 3rem;
+  padding: $golden-ratio-2 0 $golden-ratio-4;
 
   @include respond(md, sm, xs) {
     margin-left: 0;
@@ -90,13 +90,16 @@
     }
 
     .utk-resources-menu--section {
+      margin-bottom: $golden-ratio-2;
+
       > h3 {
-        margin: 1rem 0 0.25rem;
-        font-weight: 400;
+        margin: 0 0 6px;
+        font-weight: 700;
         font-family: $sans;
+        text-transform: uppercase;
         padding: 0;
-        font-size: $type-3;
-        color: $smokey;
+        font-size: $type-2;
+        color: $smokeyx;
 
         @include respond(md, sm, xs) {
           margin-top: 0;
@@ -116,16 +119,17 @@
       a:visited {
         color: $globe;
         display: block;
-        line-height: 1.6rem;
         font-size: $type-2;
-        padding: 0.25rem 0 0.125rem;
-        font-weight: 700;
         font-family: $sans;
       }
 
       a:focus,
       a:hover {
         color: $leconte;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
       }
     }
   }
@@ -138,13 +142,13 @@
 
 .utk-resources-contact {
   position: fixed;
-  max-width: 360px;
-  margin: 0 47px;
-  top: 170px;
+  max-width: 303px;
+  margin: 0 0;
+  top: 148px;
   transition: $transition-all;
   opacity: 0;
   z-index: 1;
-  height: 0;
+  height: auto;
   overflow: hidden;
 
   @include respond(xs, sm, md) {
@@ -160,9 +164,8 @@
   p {
     margin: 0;
     padding: 0;
-    line-height: 1.5rem;
+    line-height: 1.6em;
     font-size: $type-2;
-    font-weight: 300;
 
     @include respond(xs, sm, md) {
       //width: 50%;
@@ -184,12 +187,12 @@
 
     > a,
     > a:visited {
-      color: $smokey;
-      padding: 0.35rem;
+      color: $smokeyx;
+      padding: $golden-ratio-1;
       font-size: $type-4;
 
       &:first-child {
-        margin-left: -0.5rem;
+        margin-left: -$golden-ratio-1;
       }
     }
 
@@ -283,6 +286,7 @@
   display: block;
   width: $golden-ratio-4;
   height: $golden-ratio-4;
+  line-height: $golden-ratio-4;
   background-color: $torch;
   position: absolute;
   right: 50%;
@@ -290,7 +294,6 @@
   bottom: calc(-#{$golden-ratio-4 / 2});
   border-radius: $golden-ratio-4;
   text-align: center;
-  padding-top: 15px;
   box-shadow: $box-shadow-float;
   cursor: pointer;
   z-index: 1;

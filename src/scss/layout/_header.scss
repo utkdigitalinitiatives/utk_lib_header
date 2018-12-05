@@ -25,7 +25,7 @@
   }
   .utk-header-super {
     width: 100%;
-    background-color: $gray-1;
+    background-color: $gray-0;
     height: $golden-ratio-4;
     position: absolute;
     z-index: 96;
@@ -74,9 +74,9 @@
   .utk-header-actions {
     &--item {
       display: block;
-      width: auto; /* Or whatever */
-      height: auto; /* Or whatever */
-      margin: auto; /* Magic! */
+      width: auto;
+      height: auto;
+      margin: auto;
       font-weight: 400;
       line-height: $type-3;
       font-size: $type-3;
