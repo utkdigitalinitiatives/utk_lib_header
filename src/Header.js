@@ -170,6 +170,10 @@ class Header extends Component {
                 <div className="utk-header-super">
                     <div className="container">
                         <ul className="utk-header-super--menu">
+                            {/*<li><a><strong>Today's Hours <span className='icon-angle-right'></span></strong></a></li>*/}
+                            {/*<li><a>Hodges: 24 Hours</a></li>*/}
+                            {/*<li><a>Pendergrass: 8pm-6pm</a></li>*/}
+                            {/*<li><a>DeVine: 8pm-5pm</a></li>*/}
                             <li><a href="#" tabIndex="2">Hours</a></li>
                             <li><a href="#" tabIndex="2">Locations</a></li>
                             <li><a href="#" tabIndex="2">Databases</a></li>

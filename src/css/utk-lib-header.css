@@ -276,7 +276,7 @@ body {
     margin-top: 47px; }
   .utk-header .utk-header-super {
     width: 100%;
-    background-color: #f6f6f6;
+    background-color: #e0e0e0;
     height: 47px;
     position: absolute;
     z-index: 96;
@@ -656,8 +656,7 @@ body.utk-search-open .utk-search {
       line-height: 47px;
       padding: 0 11px;
       font-size: 15px;
-      font-weight: 700;
-      text-transform: uppercase;
+      font-weight: 400;
       display: block;
       color: #58595b;
       text-decoration: none !important;
