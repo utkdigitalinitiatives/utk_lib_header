@@ -215,17 +215,17 @@
 
   .icon-menu {
     opacity: 1;
-    font-size: 18px;
     margin-right: 6px;
     transition: $transition-all;
+    font-size: 15px;
   }
 
   .icon-cancel {
     opacity: 0;
     transition: $transition-all;
     position: absolute;
-    margin-left: -34px;
-    font-size: 18px;
+    margin-left: -27px;
+    font-size: 15px;
   }
 
   .utk-header-expand-menu {
@@ -237,7 +237,7 @@
 
     .icon-cancel {
       opacity: 1;
-      font-size: 18px;
+      font-size: 15px;
       color: $torch;
     }
   }

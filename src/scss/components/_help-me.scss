@@ -1,7 +1,7 @@
 .utk-menu-open  {
   .utk-menu-help {
     opacity: 1;
-    bottom: $golden-ratio-2;
+    bottom: $golden-ratio-4;
     position: fixed;
   }
 
@@ -59,28 +59,30 @@
   width: 100%;
   bottom: -200px;
   display: flex;
-  flex-direction: row-reverse;
+  justify-content: flex-end;
   opacity: 0;
   transition: $transition-all;
   max-width:  1199px;
   z-index: 10;
 
   &--item {
-    display: block;
+    display: flex;
     height: $golden-ratio-4;
-    background-color: $white;
     box-shadow: $box-shadow-float;
     border-radius: $golden-ratio-4;
     margin-left: $golden-ratio-2;
     position: relative;
     line-height: $golden-ratio-4;
-    padding: 0 $golden-ratio-4 0 $golden-ratio-2;
+    border-radius: $golden-ratio-4;
+    overflow: hidden;
+    background-color: $white;
 
     > h4 {
-      text-transform: uppercase;
       margin: 0;
-      padding: 0;
+      padding: 0 $golden-ratio-2;
       font-size: $type-2;
+      color: $smokeyx;
+      text-transform: none !important;
 
       > em {
         font-weight: 400;
@@ -89,19 +91,20 @@
     }
 
     &--icon {
-      position: absolute;
-      right: 9px;
-      top: 9px;
-      width: $golden-ratio-3;
-      height: $golden-ratio-3;
-      line-height: $golden-ratio-3;
+      width: $golden-ratio-4;
+      height: $golden-ratio-4;
+      line-height: $golden-ratio-4;
       text-align: center;
-      border-radius: $golden-ratio-3;
       background-color: $rock;
+      clip-path: polygon(6px 0,100% 0,100% 100%,0 100%);
+
 
       > span {
-        color: $white;
         display: block;
+        color: $white;
+        align-content: center;
+        text-align: center;
+        font-size: 18px;
       }
     }
   }
@@ -109,7 +112,7 @@
 
 .utk-menu-help--help-me {
   .utk-menu-help--item--icon {
-    background-color: $globe;
+    background-color: $orange;
   }
 }
 

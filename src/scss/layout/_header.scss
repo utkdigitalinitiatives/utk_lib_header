@@ -35,25 +35,6 @@
   }
 }
 
-//
-//body.utk-menu-open {
-//  .utk-header-super {
-//
-//    &--url {
-//      left: 20px;
-//    }
-//
-//    .utk-header-super--menu--options {
-//      right: 0;
-//      opacity: 1;
-//      width: auto;
-//      margin-left: $golden-ratio-2;
-//    }
-//  }
-//}
-
-
-
 @include respond(xs, sm, md) {
   .utk-header.utk-header-expand-menu .utk-header-actions {
     right: 25px;
@@ -79,7 +60,12 @@
       margin: auto;
       font-weight: 400;
       line-height: $type-3;
-      font-size: $type-3;
+      font-size: $type-2;
+      text-transform: uppercase;
+
+      &.utk-header-actions--home {
+        text-transform: none;
+      }
 
       @include respond(xs) {
         &.utk-header-actions--utk {
