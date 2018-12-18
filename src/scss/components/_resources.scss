@@ -6,6 +6,11 @@
   position: fixed;
   display: none;
   box-shadow: $box-shadow;
+  padding: $golden-ratio-3 0 0;
+
+  > .container {
+    display: flex;
+  }
 
   &::before {
     width: 100%;
@@ -62,13 +67,12 @@
 }
 
 .utk-resources-menu {
-  position: relative;
-  width: 100%;
-  max-width: 819px;
-  margin-left: 332px;
+  width: auto;
   display: flex;
+  flex-grow: 1;
   flex-direction: row;
-  padding: $golden-ratio-2 0 $golden-ratio-4;
+  padding: 0;
+  padding-bottom: $golden-ratio-4;
 
   @include respond(md, sm, xs) {
     margin-left: 0;
@@ -77,8 +81,8 @@
   }
 
   &--col {
-    width: 33%;
     display: block;
+    flex-grow: 1;
 
     @include respond(md, sm, xs) {
       width: 100%;
@@ -141,15 +145,14 @@
 }
 
 .utk-resources-contact {
-  position: fixed;
   max-width: 303px;
-  margin: 0 0;
-  top: 148px;
   transition: $transition-all;
   opacity: 0;
   z-index: 1;
   height: auto;
   overflow: hidden;
+  padding: 0 0 $golden-ratio-4 $golden-ratio-4;
+  border-left: 1px solid #e0e0e0;
 
   @include respond(xs, sm, md) {
     display: none;
@@ -164,8 +167,8 @@
   p {
     margin: 0;
     padding: 0;
-    line-height: 1.6em;
-    font-size: $type-2;
+    line-height: 1.65em;
+    font-size: $type-1;
 
     @include respond(xs, sm, md) {
       //width: 50%;

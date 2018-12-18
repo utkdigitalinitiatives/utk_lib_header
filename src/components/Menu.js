@@ -110,6 +110,35 @@ export class Menu extends Component {
         return (
             <div className={`utk-header-resources ${active} ${depthClass}`}>
                 <div className="container">
+                    <div className="utk-resources-menu">
+                        {menuColumns}
+                        {menuSecondary}
+                    </div>
+                    <div className="utk-resources-contact">
+                        <div className="utk-hours">
+                            <h4>Hours Today</h4>
+                            <ul className="utk-hours--listing">
+                                <li className="utk-hours--listing--item">
+                                    <a href="#" className="library-open">
+                                        <h5>John C. Hodges Library</h5>
+                                        <span className="utk-hours--listing--item--hours">24 Hours</span>
+                                    </a>
+                                </li>
+                                <li className="utk-hours--listing--item">
+                                    <a href="#" className="library-open">
+                                        <h5>Pendergrass Agriculture & Veterinary Medicine Library</h5>
+                                        <span className="utk-hours--listing--item--hours">8am-6pm</span>
+                                    </a>
+                                </li>
+                                <li className="utk-hours--listing--item">
+                                    <a href="#" className="library-closed">
+                                        <h5>George F. DeVine Music Library</h5>
+                                        <span className="utk-hours--listing--item--hours">8am-5pm</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                     <div className='utk-menu-options'>
                         <div className='utk-menu-help'>
                             <a className="utk-menu-help--item utk-menu-help--help-me">
@@ -128,36 +157,6 @@ export class Menu extends Component {
                         <a className="utk-resources-close">
                             <span className="icon-cancel"></span>
                         </a>
-                    </div>
-                    <div className="utk-resources-contact">
-
-                        <p>
-                            1015 Volunteer Boulevard<br/>
-                            Knoxville, TN 37996-1000<br/>
-                            <a href="tel:865-974-4351">865-974-4351</a>
-                        </p>
-
-                        <div className="utk-resources-contact--social">
-                            <a>
-                                <span className="icon-facebook"></span>
-                            </a>
-                            <a>
-                                <span className="icon-instagram"></span>
-                            </a>
-                            <a>
-                                <span className="icon-twitter"></span>
-                            </a>
-                            <a>
-                                <span className="icon-pinterest-circled"></span>
-                            </a>
-                            <a>
-                                <span className="icon-youtube-play"></span>
-                            </a>
-                        </div>
-                    </div>
-                    <div className="utk-resources-menu">
-                        {menuColumns}
-                        {menuSecondary}
                     </div>
                 </div>
             </div>
