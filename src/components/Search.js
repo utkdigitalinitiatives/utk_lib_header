@@ -98,8 +98,8 @@ export class Search extends Component {
                             <input id="utk-search-field" ref={(searchFocus) => this.utkSearchField = searchFocus}
                                    placeholder={searchPlaceholder}/>
                             <span className="utk-cursor"></span>
-                            <button id="utk-search-submit" type="button">
-                                Submit
+                            <button id="utk-search-submit" aria-label="Submit search" type="button">
+                                Go
                             </button>
                         </div>
                     </div>

@@ -63,8 +63,8 @@ body.utk-search-open {
     height: $golden-ratio-4;
     padding: 0 $type-1 0 $type-3;
     margin: 15px 0 14px;
-    color: $smokeyx;
-    background-color: $white;
+    color: $white;
+    background-color: $smokeyx;
     box-shadow: inset $box-shadow;
     outline-offset: -1px;
     position: relative;
@@ -74,6 +74,7 @@ body.utk-search-open {
 
     &::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
       font-size: $type-3;
+      color: $rock;
       text-indent: -5px;
     }
 
@@ -89,8 +90,8 @@ body.utk-search-open {
   button#utk-search-submit {
     display: block;
     border: none;
-    background-color: $gray-1;
-    color: $smokeyx;
+    background-color: $smokeyx;
+    color: $rock;
     width: auto;
     height: $golden-ratio-4;
     font-size: $type-2;
@@ -102,7 +103,6 @@ body.utk-search-open {
     font-weight: 700;
     cursor: pointer;
     position: relative;
-    clip-path: polygon(6px 0,100% 0,100% 100%,0 100%);
 
     &:hover,
     &:focus {
