@@ -5,13 +5,8 @@ import {MenuItems} from "./MenuItems";
 import _ from "lodash";
 import {MenuSecondary} from "./MenuSecondary";
 import {Hours} from "./Hours";
+import Globals from "./Globals";
 
-const menuContainerElement = document.getElementById('utk-lib-header');
-const SubsiteGlobals = {
-    'siteURL': menuContainerElement.getAttribute('data-url'),
-};
-
-const URL = SubsiteGlobals.siteURL; // left null to force relative endpoint to wp instance
 const ENDPOINT = 'assets/wp-json/libmenu';
 const ROUTE = '/drawer';
 
@@ -29,7 +24,7 @@ export class Menu extends Component {
     }
 
     componentDidMount() {
-        fetch(URL + ENDPOINT + ROUTE, {
+        fetch(Globals.URL + ENDPOINT + ROUTE, {
                 headers : {
                     'Content-Type': 'application/json',
                     'Accept': 'application/json'
