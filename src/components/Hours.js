@@ -9,9 +9,15 @@ export class Hours extends Component {
 
     constructor(props) {
         super(props);
+
+        this.state = {
+            locations: {},
+            timestamp: 0
+        };
     }
 
     componentDidMount() {
+
         fetch(Globals.URL + ENDPOINT + ROUTE, {
             headers : {
                 'Content-Type': 'application/json',
@@ -20,21 +26,40 @@ export class Hours extends Component {
         })
             .then(response => response.json())
             .then(data => {
-                console.log(data);
+                this.setState({
+                    locations: data.locations,
+                    timestamp: data.timestamp
+                });
             })
             .catch(err => console.error(this.props.url, err.toString()));
 
         return null
+
     }
 
     render() {
-        return (
-            <div className="utk-hours">
-                <h4>Hours Today</h4>
-                <ul className="utk-hours--listing">
-                    <HoursLocation/>
-                </ul>
-            </div>
-        )
+
+        const {locations} = this.state;
+
+        if (Object.keys(locations).length !== 0)
+            return (
+                <div className="utk-hours">
+                    <h4>Hours Today</h4>
+                    <ul className="utk-hours--listing">
+                        <HoursLocation
+                            data={locations[52]}
+                            label="John C. Hodges Library"/>
+                        <HoursLocation
+                            data={locations[225]}
+                            label="Pendergrass Agriculture & Veterinary Medicine Library"/>
+                        <HoursLocation
+                            data={locations[226]}
+                            label="George F. DeVine Music Library"/>
+                    </ul>
+                </div>
+            );
+
+        else
+            return null
     }
 }
