@@ -4,6 +4,7 @@ import {MenuItems} from "./MenuItems";
 
 import _ from "lodash";
 import {MenuSecondary} from "./MenuSecondary";
+import {Hours} from "./Hours";
 
 const menuContainerElement = document.getElementById('utk-lib-header');
 const SubsiteGlobals = {
@@ -115,29 +116,7 @@ export class Menu extends Component {
                         {menuSecondary}
                     </div>
                     <div className="utk-resources-contact">
-                        <div className="utk-hours">
-                            <h4>Hours Today</h4>
-                            <ul className="utk-hours--listing">
-                                <li className="utk-hours--listing--item">
-                                    <a href="#" className="library-open">
-                                        <h5>John C. Hodges Library</h5>
-                                        <span className="utk-hours--listing--item--hours">24 Hours</span>
-                                    </a>
-                                </li>
-                                <li className="utk-hours--listing--item">
-                                    <a href="#" className="library-open">
-                                        <h5>Pendergrass Agriculture & Veterinary Medicine Library</h5>
-                                        <span className="utk-hours--listing--item--hours">8am-6pm</span>
-                                    </a>
-                                </li>
-                                <li className="utk-hours--listing--item">
-                                    <a href="#" className="library-closed">
-                                        <h5>George F. DeVine Music Library</h5>
-                                        <span className="utk-hours--listing--item--hours">8am-5pm</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
+                        <Hours/>
                     </div>
                     <div className='utk-menu-options'>
                         <div className='utk-menu-help'>
