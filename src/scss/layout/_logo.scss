@@ -26,6 +26,14 @@
     position: absolute;
     left: -2000px;
     top: 46px;
+
+    @include respond(xs) {
+      width: 30px;
+      height: 30px;
+      left: 0;
+      margin-top: 0 !important;
+      transform: scale(1) !important;
+    }
   }
 
   a.utk-logo-unit,
@@ -43,6 +51,13 @@
     left: 303px;
     transition: $transition-all;
     color: $smokey !important;
+
+    @include respond(xs) {
+      left: $golden-ratio-2;
+      font-size: $type-4;
+      height: 60px;
+      line-height: 60px;
+    }
   }
 }
 
@@ -54,6 +69,10 @@ body.utk-menu-open {
 
   .utk-header-main {
     margin-top: 47px !important;
+
+    @include respond(xs) {
+      margin-top: 0 !important;
+    }
   }
 
   .utk-logo-wrapper {
@@ -173,6 +192,10 @@ body.utk-menu-open {
 
       .utk-menu-trigger {
         padding: calc((47px - 6px - 15px) / 2) 11px;
+
+        @include respond(xs, sm, md) {
+          padding: calc((47px - 6px - 15px) / 2) 3px;
+        }
 
         .icon-cancel {
           margin-left: -38px;

@@ -7,9 +7,21 @@
   display: none;
   box-shadow: $box-shadow;
   padding: $golden-ratio-3 0 0;
+  overflow: scroll;
+  height: calc(100vh  - 66px);
+  padding-bottom: 100px;
+
+  @include respond(xs, sm) {
+    background-color: $white;
+    box-shadow: inset 0 5px 10px rgba($smokeyx, 0.05);
+  }
 
   > .container {
     display: flex;
+
+    @include respond(md, xs) {
+      flex-direction: column;
+    }
   }
 
   &::before {
@@ -23,42 +35,27 @@
    * menu on tablet and down
    */
 
-  @include respond(xs, sm, md) {
-    height: 100vh;
-    background-color: $gray-0;
-    max-width: 100%;
-    transition: none !important;
-    width: $golden-ratio-8;
-    right: 0;
-    top: 0;
-    padding-top: 81px;
-    right: -$golden-ratio-8;
-
-    &.utk-menu-depth--1 {
-      background-color: $gray-2;
-    }
-
-    > .container {
-      padding: 0;
-    }
-  }
+  //@include respond(xs, sm, md) {
+  //  height: 100vh;
+  //  background-color: $gray-0;
+  //  max-width: 100%;
+  //  transition: none !important;
+  //  right: 0;
+  //  top: 0;
+  //  padding-top: 81px;
+  //  right: -$golden-ratio-8;
+  //
+  //  &.utk-menu-depth--1 {
+  //    background-color: $gray-2;
+  //  }
+  //
+  //  > .container {
+  //    padding: 0;
+  //  }
+  //}
 
   &.utk-header-expand-menu {
     display: block;
-
-    @include respond(xs, sm, md) {
-      height: 100vh;
-      right: 0;
-      top: 0;
-      padding-top: 81px;
-      background-color: $gray-0;
-    }
-
-    @include respond(xs) {
-      width: 100% !important;
-      margin-left: 25px;
-      right: calc(-25px);
-    }
   }
 }
 
@@ -74,17 +71,19 @@
   padding: 0;
   padding-bottom: $golden-ratio-4;
 
-  @include respond(md, sm, xs) {
-    margin-left: 0;
+  @include respond(md) {
+    width: 100%;
+  }
+
+  @include respond(sm, xs) {
     display: block;
-    padding: 25px;
   }
 
   &--col {
     display: block;
     flex-grow: 1;
 
-    @include respond(md, sm, xs) {
+    @include respond(sm, xs) {
       width: 100%;
 
       .utk-resources-menu--submenu {
@@ -146,7 +145,6 @@
 
 .utk-resources-contact {
   max-width: 303px;
-  transition: $transition-all;
   opacity: 0;
   z-index: 1;
   height: auto;
@@ -154,14 +152,16 @@
   padding: 0 0 $golden-ratio-4 $golden-ratio-4;
   border-left: 1px solid #e0e0e0;
 
-  @include respond(xs, sm, md) {
-    display: none;
-    //top: 88px;
-    //left: 33%;
-    //max-width: 66%;
-    //width: 66%;
-    //display: flex;
-    //flex-direction: row;
+  @include respond(md, xs) {
+    width: 100%;
+    padding: 0;
+    border-left: 0;
+    flex: 1;
+    max-width: 100%;
+  }
+
+  @include respond(xs) {
+    padding: 0;
   }
 
   p {
@@ -169,10 +169,6 @@
     padding: 0;
     line-height: 1.65em;
     font-size: $type-1;
-
-    @include respond(xs, sm, md) {
-      //width: 50%;
-    }
 
     > a {
       display: inline-block;
@@ -182,11 +178,6 @@
   &--social {
     margin-top: $golden-ratio-4;
     margin-left: -0.35rem;
-
-    @include respond(xs, sm, md) {
-      //margin-top: $golden-ratio-2;
-      //width: 50%;
-    }
 
     > a,
     > a:visited {

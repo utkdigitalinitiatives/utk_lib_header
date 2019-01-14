@@ -1,4 +1,8 @@
 .utk-header-super {
+  @include respond(xs) {
+    display: none;
+  }
+
   &--url {
     position: absolute;
     left: -2000px;
