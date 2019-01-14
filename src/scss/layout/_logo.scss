@@ -82,12 +82,17 @@ body.utk-menu-open {
     }
 
     .utk-logo-square {;
-      left: 0px !important;
+      left: 0 !important;
     }
 
     .utk-logo-unit {
       left: 47px !important;
       padding-left: 18px !important;
+
+      @include respond(xs) {
+        left: 30px !important;
+        padding-left: 17px !important;
+      }
     }
   }
 }

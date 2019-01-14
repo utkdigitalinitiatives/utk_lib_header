@@ -9,11 +9,15 @@
   padding: $golden-ratio-3 0 0;
   overflow: scroll;
   height: calc(100vh  - 66px);
-  padding-bottom: 100px;
+  padding-bottom: $golden-ratio-6;
 
-  @include respond(xs, sm) {
+  @include respond(xs, sm, md, lg, xl) {
     background-color: $white;
     box-shadow: inset 0 5px 10px rgba($smokeyx, 0.05);
+  }
+
+  @include respond(xs) {
+    padding-bottom: $golden-ratio-5;
   }
 
   > .container {
@@ -30,29 +34,6 @@
     content: ' ';
     position: absolute;
   }
-
-  /*
-   * menu on tablet and down
-   */
-
-  //@include respond(xs, sm, md) {
-  //  height: 100vh;
-  //  background-color: $gray-0;
-  //  max-width: 100%;
-  //  transition: none !important;
-  //  right: 0;
-  //  top: 0;
-  //  padding-top: 81px;
-  //  right: -$golden-ratio-8;
-  //
-  //  &.utk-menu-depth--1 {
-  //    background-color: $gray-2;
-  //  }
-  //
-  //  > .container {
-  //    padding: 0;
-  //  }
-  //}
 
   &.utk-header-expand-menu {
     display: block;
@@ -93,22 +74,26 @@
     }
 
     .utk-resources-menu--section {
+      margin-top: $golden-ratio-2;
       margin-bottom: $golden-ratio-2;
+
+      @include respond(xs) {
+        margin-top: 0;
+        margin-bottom: 20px !important;
+      }
 
       > h3 {
         margin: 0 0 6px;
+        padding: 0;
         font-weight: 700;
         font-family: $sans;
-        text-transform: uppercase;
-        padding: 0;
-        font-size: $type-2;
+        text-transform: none;
+        font-size: $type-3;
         color: $smokeyx;
 
         @include respond(md, sm, xs) {
           margin-top: 0;
-          margin-bottom: $type-4;
           cursor: pointer;
-
         }
       }
 
@@ -150,7 +135,12 @@
   height: auto;
   overflow: hidden;
   padding: 0 0 $golden-ratio-4 $golden-ratio-4;
-  border-left: 1px solid #e0e0e0;
+  border-left: 2px solid $gray-0;
+  margin-top: $golden-ratio-2;
+
+  @include respond(xs) {
+    margin-top: 0;
+  }
 
   @include respond(md, xs) {
     width: 100%;
