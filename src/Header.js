@@ -65,6 +65,10 @@ class Header extends Component {
             this.refs.search.utkSearchField.value = '';
             document.body.classList.add('utk-search-open');
         });
+        this.setState({showResources: false}, () => {
+            document.removeEventListener('click', this.closeResources);
+            document.body.classList.remove('utk-menu-open');
+        });
     };
 
     closeSearch = (e) => {
