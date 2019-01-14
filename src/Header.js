@@ -40,16 +40,21 @@ class Header extends Component {
 
     closeResources = (e) => {
         e.stopPropagation();
-        let isHeader = findIndex(e.path, {'className': 'utk-header utk-header-expand-menu'});
-        let isClose = findIndex(e.path, {'className': 'utk-resources-close'});
-        let isMenuButton = findIndex(e.path, {'className': 'utk-menu-trigger utk-header-expand-menu'});
-
-        if (isHeader === -1 || isClose !== -1 || isMenuButton !== -1) {
+        let footerClose = findIndex(e.path, {'className': 'utk-resources-close'});
+        if (footerClose === 1) {
             this.setState({showResources: false}, () => {
                 document.removeEventListener('click', this.closeResources);
                 document.body.classList.remove('utk-menu-open');
             });
         }
+    };
+
+    closeResourcesMenu = (e) => {
+        e.stopPropagation();
+        this.setState({showResources: false}, () => {
+            document.removeEventListener('click', this.closeResources);
+            document.body.classList.remove('utk-menu-open');
+        });
     };
 
     toggleSearch (e) {
@@ -149,8 +154,12 @@ class Header extends Component {
                             </div>
 
                             <div className="utk-header-actions--item utk-header-actions--resources">
-                                <a href="#menu" onClick={this.toggleResources} className={`utk-menu-trigger${resourcesClass}`}  tabIndex="4">
+                                <a href="#menuopen" onClick={this.toggleResources} className={`utk-menu-trigger utk-header-expand`}  tabIndex="4">
                                     <span className="icon-menu"></span>
+                                    <em>Menu</em>
+                                </a>
+
+                                <a href="#menuclose" onClick={this.closeResourcesMenu} className={`utk-menu-trigger utk-header-collapse`}  tabIndex="4">
                                     <span className="icon-cancel"></span>
                                     <em>Menu</em>
                                 </a>

@@ -820,7 +820,7 @@ body.utk-search-open .utk-search {
   position: fixed;
   right: 0;
   z-index: 10;
-  background-color: #e0e0e0;
+  background-color: #333;
   width: 100%;
   height: 69px; }
   .utk-menu-open .utk-menu-options .utk-resources-close {
@@ -1265,18 +1265,24 @@ a:hover {
 .utk-header-actions--resources .icon-cancel {
   opacity: 0;
   transition: all 290ms ease-in-out;
-  position: absolute;
-  margin-left: -27px;
+  margin-right: 6px;
   font-size: 15px; }
 
-.utk-header-actions--resources .utk-header-expand-menu .icon-menu {
-  opacity: 0;
-  transition: all 290ms ease-in-out; }
+.utk-header-actions--resources .utk-header-collapse {
+  display: none !important; }
+  .utk-header-actions--resources .utk-header-collapse .icon-menu {
+    opacity: 0;
+    transition: all 290ms ease-in-out; }
+  .utk-header-actions--resources .utk-header-collapse .icon-cancel {
+    opacity: 1;
+    font-size: 15px;
+    color: #e65933; }
 
-.utk-header-actions--resources .utk-header-expand-menu .icon-cancel {
-  opacity: 1;
-  font-size: 15px;
-  color: #e65933; }
+.utk-menu-open .utk-header-collapse {
+  display: inline-block !important; }
+
+.utk-menu-open .utk-header-expand {
+  display: none !important; }
 
 .utk-header.active .utk-header-main {
   background-color: #fff; }
@@ -1359,7 +1365,10 @@ a:hover {
   z-index: 1; }
   .utk-resources-close span {
     font-size: 18px;
-    color: #fff; }
+    color: #fff;
+    display: block;
+    width: 47px;
+    height: 47px; }
 
 .utk-search-active .utk-menu-help {
   opacity: 1;

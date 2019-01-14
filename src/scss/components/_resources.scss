@@ -217,12 +217,12 @@
   .icon-cancel {
     opacity: 0;
     transition: $transition-all;
-    position: absolute;
-    margin-left: -27px;
+    margin-right: 6px;
     font-size: 15px;
   }
 
-  .utk-header-expand-menu {
+  .utk-header-collapse {
+    display: none !important;
 
     .icon-menu {
       opacity: 0;
@@ -234,6 +234,16 @@
       font-size: 15px;
       color: $torch;
     }
+  }
+}
+
+.utk-menu-open {
+  .utk-header-collapse {
+    display: inline-block !important;
+  }
+
+  .utk-header-expand {
+    display: none !important;
   }
 }
 
@@ -295,6 +305,9 @@
   span {
     font-size: $type-3;
     color: $white;
+    display: block;
+    width: $golden-ratio-4;
+    height: $golden-ratio-4;
   }
 }
 
