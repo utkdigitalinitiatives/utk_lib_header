@@ -206,3 +206,9 @@ body {
     }
   }
 }
+
+@include respond(xs) {
+  .container {
+    max-width: 100% !important;
+  }
+}

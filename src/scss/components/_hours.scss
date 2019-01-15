@@ -6,6 +6,11 @@
     border-top: 2px solid $gray-0;
   }
 
+  @include respond(xs) {
+    padding-top: $golden-ratio-2;
+    margin-bottom: $golden-ratio-3;
+  }
+
   h4 {
     margin: 0 0 $golden-ratio-2;
     text-transform: uppercase;
@@ -59,12 +64,16 @@
           width: 100%;
           flex-grow: 0;
           flex-shrink: 1;
-          font-size: $type-1;
+          font-size: $type-2;
           line-height: 1.5em;
           font-weight: 400;
           margin: 0;
           padding: 0;
           color: $smokey;
+
+          @include respond(sm, xs) {
+            font-size: $type-2;
+          }
         }
       }
 

@@ -45,6 +45,7 @@
 
   @include respond(xs) {
     padding-top: 0;
+    padding-bottom: $golden-ratio-2;
   }
 
   .utk-resources-menu--section {
