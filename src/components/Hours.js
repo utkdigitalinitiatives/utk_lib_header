@@ -41,6 +41,8 @@ export class Hours extends Component {
 
         const {locations} = this.state;
 
+        console.log(locations);
+
         if (Object.keys(locations).length !== 0)
             return (
                 <div className="utk-hours">
@@ -55,6 +57,9 @@ export class Hours extends Component {
                         <HoursLocation
                             data={locations[226]}
                             label="George F. DeVine Music Library"/>
+                        <HoursLocation
+                            data={locations[227]}
+                            label="Hoskins Storage & Reading Room"/>
                     </ul>
                 </div>
             );
