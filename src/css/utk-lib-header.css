@@ -280,7 +280,6 @@ body {
     background-color: #fff;
     height: 76px;
     width: 100%;
-    box-shadow: 0 5px 10px rgba(51, 51, 51, 0.05);
     top: 0;
     z-index: 97;
     transition: all 290ms ease-in-out;
@@ -424,7 +423,19 @@ body {
     position: relative;
     background-color: #fff;
     top: 0;
-    box-shadow: 0 5px 10px rgba(51, 51, 51, 0.05); }
+    box-shadow: 0 5px 10px rgba(51, 51, 51, 0.05);
+    /* Mobile Devices for Mice */
+    /* Landscape phones and down */
+    /* Landscape phone to portrait tablet */
+    /* Portrait tablet to landscape and desktop */
+    /* desktop and large desktop */ }
+    @media (min-width: 768px) and (max-width: 991px) {
+      .utk-logo-wrapper .utk-logo {
+        margin-top: -100px;
+        -webkit-transform: scale(0);
+        -ms-transform: scale(0);
+        transform: scale(0);
+        opacity: 1; } }
   .utk-logo-wrapper .utk-logo-square {
     width: 47px;
     height: 47px;
@@ -437,11 +448,23 @@ body {
     /* Landscape phones and down */
     /* Landscape phone to portrait tablet */
     /* Portrait tablet to landscape and desktop */
+    /* desktop and large desktop */
+    /* Mobile Devices for Mice */
+    /* Landscape phones and down */
+    /* Landscape phone to portrait tablet */
+    /* Portrait tablet to landscape and desktop */
     /* desktop and large desktop */ }
     @media (max-width: 767px) {
       .utk-logo-wrapper .utk-logo-square {
         width: 30px;
         height: 30px;
+        left: 0;
+        margin-top: 0 !important;
+        transform: scale(1) !important; } }
+    @media (min-width: 768px) and (max-width: 991px) {
+      .utk-logo-wrapper .utk-logo-square {
+        width: 47px;
+        height: 47px;
         left: 0;
         margin-top: 0 !important;
         transform: scale(1) !important; } }
@@ -464,6 +487,11 @@ body {
     /* Landscape phones and down */
     /* Landscape phone to portrait tablet */
     /* Portrait tablet to landscape and desktop */
+    /* desktop and large desktop */
+    /* Mobile Devices for Mice */
+    /* Landscape phones and down */
+    /* Landscape phone to portrait tablet */
+    /* Portrait tablet to landscape and desktop */
     /* desktop and large desktop */ }
     @media (max-width: 767px) {
       .utk-logo-wrapper a.utk-logo-unit,
@@ -474,6 +502,12 @@ body {
         font-size: 23px;
         height: 60px;
         line-height: 60px; } }
+    @media (min-width: 768px) and (max-width: 991px) {
+      .utk-logo-wrapper a.utk-logo-unit,
+      .utk-logo-wrapper a.utk-logo-unit:visited,
+      .utk-logo-wrapper a.utk-logo-unit:hover,
+      .utk-logo-wrapper a.utk-logo-unit:focus {
+        left: 36px; } }
 
 body.utk-menu-open .utk-header-super {
   height: 47px !important; }

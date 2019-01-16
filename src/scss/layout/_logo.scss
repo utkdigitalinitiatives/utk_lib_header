@@ -16,6 +16,14 @@
     background-color: $white;
     top: 0;
     box-shadow: $box-shadow;
+
+    @include respond(sm) {
+      margin-top: -100px;
+      -webkit-transform: scale(0);
+      -ms-transform: scale(0);
+      transform: scale(0);
+      opacity: 1;
+    }
   }
 
   .utk-logo-square {
@@ -30,6 +38,14 @@
     @include respond(xs) {
       width: 30px;
       height: 30px;
+      left: 0;
+      margin-top: 0 !important;
+      transform: scale(1) !important;
+    }
+
+    @include respond(sm) {
+      width: $golden-ratio-4;
+      height: $golden-ratio-4;
       left: 0;
       margin-top: 0 !important;
       transform: scale(1) !important;
@@ -57,6 +73,10 @@
       font-size: $type-4;
       height: 60px;
       line-height: 60px;
+    }
+
+    @include respond(sm) {
+      left: 36px;
     }
   }
 }
