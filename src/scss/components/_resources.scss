@@ -5,7 +5,6 @@
   z-index: 999;
   position: fixed;
   display: none;
-  box-shadow: $box-shadow;
   padding: $golden-ratio-3 0 0;
   overflow: scroll;
   height: calc(100vh  - 66px);
@@ -13,7 +12,7 @@
 
   @include respond(xs, sm, md, lg, xl) {
     background-color: $white;
-    box-shadow: inset 0 5px 10px rgba($smokeyx, 0.05);
+    box-shadow: inset $box-shadow;
   }
 
   @include respond(xs) {
@@ -291,7 +290,7 @@
   bottom: calc(-#{$golden-ratio-4 / 2});
   border-radius: $golden-ratio-4;
   text-align: center;
-  box-shadow: $box-shadow-float;
+  box-shadow: $box-shadow;
   cursor: pointer;
   z-index: 1;
 

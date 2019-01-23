@@ -9,6 +9,7 @@
   @include respond(xs) {
     padding-top: $golden-ratio-2;
     margin-bottom: $golden-ratio-3;
+    border-top: none;
   }
 
   h4 {

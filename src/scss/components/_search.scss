@@ -25,6 +25,11 @@ body.utk-search-open {
     top: 129px;
     opacity: 1;
     height: $golden-ratio-5;
+
+    @include respond(xs) {
+      top: 66px;
+      height: auto !important;
+    }
   }
 }
 
@@ -39,9 +44,25 @@ body.utk-search-open {
   transition: $transition-all;
   flex-grow: 1;
 
+  @include respond(sm, xs) {
+    left: 0;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  @include respond(xs) {
+    flex-direction: column;
+    height: 100% !important;
+  }
+
   &--form-item {
     width: 100%;
     display: flex;
+
+    @include respond(xs) {
+      width: auto;
+      margin: $golden-ratio-1 0 15px;
+    }
   }
 
   input:focus + i {
@@ -71,6 +92,10 @@ body.utk-search-open {
     border-radius: 47px;
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
+
+    @include respond(xs) {
+      margin: 0;
+    }
 
     &::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
       font-size: $type-3;
@@ -103,6 +128,12 @@ body.utk-search-open {
     font-weight: 700;
     cursor: pointer;
     position: relative;
+
+    @include respond(xs) {
+      margin: 0;
+      color: $white;
+      min-width: 76px;
+    }
 
     &:hover,
     &:focus {
@@ -165,6 +196,12 @@ body.utk-search-open {
   padding: $golden-ratio-2 $golden-ratio-3 0;
   margin: 15px 0 14px;
   position: relative;
+
+  @include respond(xs) {
+    padding: $golden-ratio-2 0 0 0;
+    margin: 15px auto 25px;
+    height: 39px;
+  }
 
   svg {
     height: 11px;
