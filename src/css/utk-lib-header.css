@@ -1598,14 +1598,16 @@ a:hover {
   overflow: hidden;
   top: -76px;
   opacity: 0;
-  z-index: 99;
+  z-index: 0;
   background-color: #58595b;
-  box-shadow: 3px 3px 7px rgba(51, 51, 51, 0.15); }
+  box-shadow: 3px 3px 7px rgba(51, 51, 51, 0.15);
+  height: 0; }
 
 body.utk-search-open .utk-header-search {
   top: 129px;
   opacity: 1;
   height: 76px;
+  z-index: 99;
   /* Mobile Devices for Mice */
   /* Landscape phones and down */
   /* Landscape phone to portrait tablet */
@@ -1722,6 +1724,7 @@ body.utk-search-open .utk-header-search {
     font-weight: 700;
     cursor: pointer;
     position: relative;
+    border-left: 1px solid #404040;
     /* Mobile Devices for Mice */
     /* Landscape phones and down */
     /* Landscape phone to portrait tablet */
@@ -1730,7 +1733,6 @@ body.utk-search-open .utk-header-search {
     @media (max-width: 767px) {
       .utk-search-wrapper button#utk-search-submit {
         margin: 0;
-        color: #fff;
         min-width: 76px; } }
     .utk-search-wrapper button#utk-search-submit:hover, .utk-search-wrapper button#utk-search-submit:focus {
       /*
@@ -1744,7 +1746,18 @@ body.utk-search-open .utk-header-search {
 .utk-header-actions--search a:hover,
 .utk-header-actions--search a:focus {
   color: #333 !important;
-  font-weight: 700; }
+  font-weight: 700;
+  /* Mobile Devices for Mice */
+  /* Landscape phones and down */
+  /* Landscape phone to portrait tablet */
+  /* Portrait tablet to landscape and desktop */
+  /* desktop and large desktop */ }
+  @media (max-width: 767px) {
+    .utk-header-actions--search a,
+    .utk-header-actions--search a:visited,
+    .utk-header-actions--search a:hover,
+    .utk-header-actions--search a:focus {
+      padding-right: 0 !important; } }
 
 .utk-header-actions--search .icon-search {
   opacity: 1;

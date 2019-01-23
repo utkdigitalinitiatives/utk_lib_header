@@ -4,9 +4,10 @@
   overflow: hidden;
   top: -76px;
   opacity: 0;
-  z-index: 99;
+  z-index: 0;
   background-color: $smokey;
   box-shadow: $box-shadow;
+  height: 0;
 
   //&::after {
   //  width: 100%;
@@ -25,6 +26,7 @@ body.utk-search-open {
     top: 129px;
     opacity: 1;
     height: $golden-ratio-5;
+    z-index: 99;
 
     @include respond(xs) {
       top: 66px;
@@ -128,10 +130,10 @@ body.utk-search-open {
     font-weight: 700;
     cursor: pointer;
     position: relative;
+    border-left: 1px solid lighten($smokeyx, 5);
 
     @include respond(xs) {
       margin: 0;
-      color: $white;
       min-width: 76px;
     }
 
@@ -156,6 +158,11 @@ body.utk-search-open {
   a:focus {
     color: $smokeyx !important;
     font-weight: 700;
+
+
+    @include respond(xs) {
+      padding-right: 0 !important;
+    }
   }
 
   .icon-search {
