@@ -34,9 +34,33 @@ export class Menu extends Component {
 
     }
 
+    optionListener = (e) => {
+        if (e.srcElement.dataset.event === 'option-help-expand') {
+            e.stopPropagation();
+            this.setState({activeHelp: 1});
+        }
+    }
+
+    getParameterByName = (name, url) => {
+        if (!url) url = window.location.href;
+        name = name.replace(/[\[\]]/g, '\\$&');
+        var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+            results = regex.exec(url);
+        if (!results) return null;
+        if (!results[2]) return '';
+        return decodeURIComponent(results[2].replace(/\+/g, ' '));
+    }
+
     componentDidMount() {
 
         window.addEventListener("resize", this.updateDimensions);
+        window.addEventListener("click", this.optionListener);
+
+        const help = this.getParameterByName('help');
+
+        if (help) {
+            this.setState({activeHelp: 1});
+        }
 
         fetch(Globals.URL + ENDPOINT + ROUTE, {
                 headers : {
