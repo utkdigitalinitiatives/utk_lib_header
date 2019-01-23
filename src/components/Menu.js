@@ -23,7 +23,18 @@ export class Menu extends Component {
         };
     }
 
+    updateDimensions = () => {
+
+        if (window.matchMedia("(min-width: 992px)").matches) {
+            this.setState({activeMenu: 0})
+        }
+
+    }
+
     componentDidMount() {
+
+        window.addEventListener("resize", this.updateDimensions);
+
         fetch(Globals.URL + ENDPOINT + ROUTE, {
                 headers : {
                     'Content-Type': 'application/json',
@@ -37,6 +48,10 @@ export class Menu extends Component {
             .catch(err => console.error(this.props.url, err.toString()));
 
         return null
+    }
+
+    componentWillUnmount () {
+        window.removeEventListener("resize", this.updateDimensions);
     }
 
     setMenu = (passedMenuId) => {
@@ -58,13 +73,12 @@ export class Menu extends Component {
         let menuColumns, menuSecondary = {};
         let depthClass = 'utk-menu-depth--' + activeDepth;
 
-        if (activeMenu === 0) {
-
+        if (activeMenu === 0 || window.matchMedia("(min-width: 992px)").matches) {
             menuColumns = Object.entries(menuDrawer).map((columns, index) => {
                 return (
                     <MenuColumns items={columns[1].data} activeMenu={this.setMenu}/>
                 );
-            })
+            });
             menuSecondary = <div className="utk-secondary-menu"></div>;
 
         } else {

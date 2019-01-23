@@ -43,6 +43,10 @@
   padding-left: $golden-ratio-4;
   padding-top: $golden-ratio-2;
 
+  @include respond(md, lg, xl) {
+    display: none !important;
+  }
+
   @include respond(xs) {
     padding-top: 0;
     padding-bottom: $golden-ratio-2;

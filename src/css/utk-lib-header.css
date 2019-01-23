@@ -1980,7 +1980,31 @@ body.utk-search-open .utk-header-search {
   /* Landscape phones and down */
   /* Landscape phone to portrait tablet */
   /* Portrait tablet to landscape and desktop */
+  /* desktop and large desktop */
+  /* Mobile Devices for Mice */
+  /* Landscape phones and down */
+  /* Landscape phone to portrait tablet */
+  /* Portrait tablet to landscape and desktop */
+  /* desktop and large desktop */
+  /* Mobile Devices for Mice */
+  /* Landscape phones and down */
+  /* Landscape phone to portrait tablet */
+  /* Portrait tablet to landscape and desktop */
+  /* desktop and large desktop */
+  /* Mobile Devices for Mice */
+  /* Landscape phones and down */
+  /* Landscape phone to portrait tablet */
+  /* Portrait tablet to landscape and desktop */
   /* desktop and large desktop */ }
+  @media (min-width: 992px) and (max-width: 1199px) {
+    .utk-secondary-menu {
+      display: none !important; } }
+  @media (min-width: 1200px) and (max-width: 1439px) {
+    .utk-secondary-menu {
+      display: none !important; } }
+  @media (min-width: 1440px) and (max-width: 4200px) {
+    .utk-secondary-menu {
+      display: none !important; } }
   @media (max-width: 767px) {
     .utk-secondary-menu {
       padding-top: 0;
