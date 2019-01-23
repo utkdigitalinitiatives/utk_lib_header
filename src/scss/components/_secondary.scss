@@ -1,7 +1,7 @@
 .utk-menu-back {
   display: block;
-  width: $golden-ratio-3;
-  height: $golden-ratio-3;
+  width: 30px;
+  height: 30px;
   background-color: $globe;
   position: absolute;
   left: 0;
@@ -18,9 +18,9 @@
     color: $white;
     display: block;
     margin-left: -1px;
-    margin-top: -4px;
-    width: $golden-ratio-3;
-    height: $golden-ratio-3;
+    margin-top: -3px;
+    width: 30px;
+    height: 30px;
   }
 }
 
@@ -68,6 +68,11 @@
       padding: 0.5rem 0 0.125rem;
       font-weight: 400;
       font-family: $sans;
+
+      @include respond(xs) {
+        padding-top: 0;
+        padding-bottom: $golden-ratio-2;
+      }
     }
 
     a:focus,

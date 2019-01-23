@@ -962,7 +962,15 @@ body.utk-search-open .utk-search {
         color: #fff;
         align-content: center;
         text-align: center;
-        font-size: 18px; }
+        font-size: 18px;
+        /* Mobile Devices for Mice */
+        /* Landscape phones and down */
+        /* Landscape phone to portrait tablet */
+        /* Portrait tablet to landscape and desktop */
+        /* desktop and large desktop */ }
+        @media (max-width: 767px) {
+          .utk-menu-help--item--icon > span {
+            font-size: 15px !important; } }
 
 .utk-menu-help--help-me .utk-menu-help--item--icon {
   background-color: #ff8200; }
@@ -1933,8 +1941,8 @@ body.utk-search-open .utk-header-search {
 
 .utk-menu-back {
   display: block;
-  width: 29px;
-  height: 29px;
+  width: 30px;
+  height: 30px;
   background-color: #006c93;
   position: absolute;
   left: 0;
@@ -1950,9 +1958,9 @@ body.utk-search-open .utk-header-search {
     color: #fff;
     display: block;
     margin-left: -1px;
-    margin-top: -4px;
-    width: 29px;
-    height: 29px; }
+    margin-top: -3px;
+    width: 30px;
+    height: 30px; }
 
 .utk-menu-depth--0 .utk-secondary-menu {
   display: none; }
@@ -1991,7 +1999,17 @@ body.utk-search-open .utk-header-search {
     font-size: 15px;
     padding: 0.5rem 0 0.125rem;
     font-weight: 400;
-    font-family: "Gotham SSm 2r", "Gotham SSm A", "Gotham SSm B", "Gotham-Book", "Helvetica Neue", Helvetica, Arial, sans-serif; }
+    font-family: "Gotham SSm 2r", "Gotham SSm A", "Gotham SSm B", "Gotham-Book", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    /* Mobile Devices for Mice */
+    /* Landscape phones and down */
+    /* Landscape phone to portrait tablet */
+    /* Portrait tablet to landscape and desktop */
+    /* desktop and large desktop */ }
+    @media (max-width: 767px) {
+      .utk-secondary-menu .utk-resources-menu--section a,
+      .utk-secondary-menu .utk-resources-menu--section a:visited {
+        padding-top: 0;
+        padding-bottom: 18px; } }
   .utk-secondary-menu .utk-resources-menu--section a:focus,
   .utk-secondary-menu .utk-resources-menu--section a:hover {
     color: #8d2048; }

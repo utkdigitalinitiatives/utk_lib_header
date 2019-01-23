@@ -102,7 +102,11 @@
         color: $white;
         align-content: center;
         text-align: center;
-        font-size: 18px;
+        font-size: $type-3;
+
+        @include respond(xs) {
+          font-size: $type-2 !important;
+        }
       }
     }
   }
