@@ -8,7 +8,7 @@
   padding: $golden-ratio-3 0 0;
   overflow: scroll;
   height: calc(100vh  - 66px);
-  padding-bottom: $golden-ratio-6;
+  padding-bottom: 176px;
 
   @include respond(xs, sm, md, lg, xl) {
     background-color: $white;
@@ -49,10 +49,10 @@
   flex-grow: 1;
   flex-direction: row;
   padding: 0;
-  padding-bottom: $golden-ratio-4;
 
   @include respond(md) {
     width: 100%;
+    padding-bottom: $golden-ratio-3;
   }
 
   @include respond(sm, xs) {
@@ -137,7 +137,7 @@
   z-index: 1;
   height: auto;
   overflow: hidden;
-  padding: 0 0 $golden-ratio-4 $golden-ratio-4;
+  padding: 0 0 0 $golden-ratio-4;
   border-left: 2px solid $gray-1;
   margin-top: $golden-ratio-2;
 
