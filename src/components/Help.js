@@ -1,16 +1,27 @@
 import React, {Component} from 'react';
+import PropTypes from 'prop-types';
 
 export class Help extends Component {
 
+    constructor(props) {
+        super(props);
+
+        this.activeHelp = this.activeHelp.bind(this);
+    }
+
+    activeHelp = (status) => {
+        this.props.activeHelp(status);
+    }
+
     render() {
 
-        let {active} = this.props;
+        let {activeHelp} = this.props;
 
-        if (active) {
+        if (activeHelp) {
 
             return (
                 <div className="utk-help">
-                    <a className="utk-menu-help--item utk-menu-help--help-me--back">
+                    <a className="utk-menu-help--item utk-menu-help--help-me--back" onClick={() => this.activeHelp(false)}>
                         <span className="icon-up-open"></span>
                     </a>
                     <div>
@@ -26,3 +37,7 @@ export class Help extends Component {
         }
     }
 }
+
+Help.propTypes = {
+    activeHelp: PropTypes.func
+};

@@ -184,7 +184,7 @@ export class Menu extends Component {
                             <a className="utk-resources-close">
                                 <span className="icon-cancel"></span>
                             </a>
-                            <Help active={activeHelp} />
+                            <Help activeHelp={this.state.activeHelp} />
                         </div>
                     </div>
                 </div>
