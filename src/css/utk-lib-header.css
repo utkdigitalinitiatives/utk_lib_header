@@ -936,8 +936,7 @@ body.utk-search-open .utk-search {
       /* desktop and large desktop */ }
       @media (max-width: 767px) {
         .utk-menu-help--item > h4 {
-          padding: 0 11px 0 18px;
-          font-size: 13px; } }
+          padding: 0 11px 0 18px; } }
       .utk-menu-help--item > h4 > em {
         font-weight: 400;
         font-style: normal; }

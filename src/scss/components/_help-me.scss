@@ -75,7 +75,6 @@
 
       @include respond(xs) {
         padding: 0 $golden-ratio-1 0 $golden-ratio-2;
-        font-size: $type-1;
       }
 
       > em {
