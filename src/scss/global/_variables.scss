@@ -85,8 +85,8 @@ $transition-all-fast: all 110ms ease-in-out;
  * box-shadows
  */
 
-$box-shadow: 3px 3px 7px rgba($smokeyx, 0.15);
-$box-shadow-float: 4px 4px 10px rgba($smokeyx, 0.15);
+$box-shadow: 0 3px 7px rgba($smokeyx, 0.15);
+$box-shadow-float: 0 4px 10px rgba($smokeyx, 0.15);
 
 /*
  * bootstrap 4 overrides

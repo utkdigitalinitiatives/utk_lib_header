@@ -3,7 +3,7 @@
 
   @include respond(md, xs) {
     padding-top: $golden-ratio-4;
-    border-top: 2px solid $gray-0;
+    border-top: 2px solid $gray-1;
   }
 
   @include respond(xs) {
@@ -16,7 +16,6 @@
     margin: 0 0 $golden-ratio-2;
     text-transform: uppercase;
     font-size: $type-2;
-
     display: block;
   }
 

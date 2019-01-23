@@ -11,14 +11,14 @@
   box-shadow: $box-shadow-float;
   cursor: pointer;
   z-index: 1;
-  margin-top: -4px;
+  margin-top: -2px;
 
   span {
     font-size: $type-2;
     color: $white;
     display: block;
     margin-left: -1px;
-    margin-top: -2px;
+    margin-top: -4px;
     width: $golden-ratio-3;
     height: $golden-ratio-3;
   }

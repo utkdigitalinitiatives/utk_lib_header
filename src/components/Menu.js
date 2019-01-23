@@ -114,23 +114,25 @@ export class Menu extends Component {
                         <Hours/>
                     </div>
                     <div className='utk-menu-options'>
-                        <div className='utk-menu-help'>
-                            <a className="utk-menu-help--item utk-menu-help--help-me">
-                                <h4>Quick Help</h4>
-                                <div className="utk-menu-help--item--icon">
-                                    <span className="icon-chat"></span>
-                                </div>
-                            </a>
-                            <a className="utk-menu-help--item utk-menu-help--chat">
-                                <h4>Chat</h4>
-                                <div className="utk-menu-help--item--icon">
-                                    <span className="icon-chat"></span>
-                                </div>
+                        <div className='container'>
+                            <div className='utk-menu-help'>
+                                <a className="utk-menu-help--item utk-menu-help--help-me">
+                                    <h4>Quick Help</h4>
+                                    <div className="utk-menu-help--item--icon">
+                                        <span className="icon-chat"></span>
+                                    </div>
+                                </a>
+                                <a className="utk-menu-help--item utk-menu-help--chat">
+                                    <h4>Chat</h4>
+                                    <div className="utk-menu-help--item--icon">
+                                        <span className="icon-chat"></span>
+                                    </div>
+                                </a>
+                            </div>
+                            <a className="utk-resources-close">
+                                <span className="icon-cancel"></span>
                             </a>
                         </div>
-                        <a className="utk-resources-close">
-                            <span className="icon-cancel"></span>
-                        </a>
                     </div>
                 </div>
             </div>
