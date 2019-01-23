@@ -1104,8 +1104,8 @@ body.utk-search-open .utk-search {
           display: inline-block;
           border-radius: 100%;
           background-color: transparent;
-          border: 2px solid #e0e0e0;
-          margin-right: 6px; }
+          border: 2px solid #a7a9ac;
+          margin-right: 11px; }
 
 a,
 a:visited {
@@ -2035,7 +2035,7 @@ body.utk-search-open .utk-header-search {
       .utk-secondary-menu .utk-resources-menu--section a,
       .utk-secondary-menu .utk-resources-menu--section a:visited {
         padding-top: 0;
-        padding-bottom: 18px; } }
+        padding-bottom: 6px; } }
   .utk-secondary-menu .utk-resources-menu--section a:focus,
   .utk-secondary-menu .utk-resources-menu--section a:hover {
     color: #8d2048; }
