@@ -61,6 +61,10 @@
       font-size: $type-3;
       margin-bottom: $golden-ratio-1;
       color: $smokeyx;
+
+      @include respond(sm, xs) {
+        font-size: $type-3;
+      }
     }
 
     a,
@@ -73,9 +77,10 @@
       font-weight: 400;
       font-family: $sans;
 
-      @include respond(xs) {
+      @include respond(sm, xs) {
         padding-top: 0;
         padding-bottom: $golden-ratio-0;
+        font-size: $type-2;
       }
     }
 

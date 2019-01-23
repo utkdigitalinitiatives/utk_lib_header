@@ -9,6 +9,7 @@
     background-color: $smokeyx;
     width: 100%;
     height: 69px;
+    transition: $transition-all;
 
     .container {
 
@@ -121,5 +122,64 @@
 .utk-menu-help--chat {
   .utk-menu-help--item--icon {
     background-color: $switchgrass;
+  }
+}
+
+.utk-menu-help--help-me--back {
+  display: none;
+  width: 47px;
+  text-align: center;
+  background-color: $globe;
+  color: $white;
+  position: absolute;
+  top: -23.5px;
+  margin-left: -23.5px;
+  left: 50%;
+
+  @include respond(xs) {
+    width: 40px;
+    top: -20px;
+    margin-left: -20px;
+  }
+}
+
+.utk-header-resources.utk-help-expand {
+  .utk-menu-options {
+    height: calc(100vh - 129px);
+    padding-top: $golden-ratio-2;
+
+    @include respond(xs) {
+      height: calc(100vh - 66px);
+      padding-top: 0;
+    }
+
+    .utk-menu-help--help-me--back {
+      display: block;
+    }
+
+    .container {
+      flex-wrap: wrap;
+    }
+  }
+}
+
+.utk-help {
+  position: relative;
+  width: 100%;
+  margin: $golden-ratio-3 0;
+  background-color: $smokey;
+  padding: $golden-ratio-4;
+  border-radius: $golden-ratio-1;
+  color: $white;
+
+  @include respond(xs) {
+    margin: $golden-ratio-4 0;
+  }
+
+  h3 {
+    color: inherit;
+    text-align: center;
+    font-size: $type-4;
+    margin: 0;
   }
 }

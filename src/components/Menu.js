@@ -5,7 +5,9 @@ import {MenuItems} from "./MenuItems";
 import _ from "lodash";
 import {MenuSecondary} from "./MenuSecondary";
 import {Hours} from "./Hours";
+import {Help} from "./Help";
 import Globals from "./Globals";
+import {Search} from "./Search";
 
 const ENDPOINT = 'assets/wp-json/libmenu';
 const ROUTE = '/drawer';
@@ -19,7 +21,8 @@ export class Menu extends Component {
         this.state = {
             menuDrawer: [],
             activeMenu: 0,
-            activeDepth: 0
+            activeDepth: 0,
+            activeHelp: 0
         };
     }
 
@@ -57,21 +60,33 @@ export class Menu extends Component {
     setMenu = (passedMenuId) => {
         this.setState({activeMenu: passedMenuId});
         this.setState({activeDepth: 1});
+        this.setState({activeHelp: 0});
     };
 
     resetMenu = () => {
         this.setState({activeMenu: 0});
         this.setState({activeDepth: 0});
+        this.setState({activeHelp: 0});
+    };
+
+    enableHelp = () => {
+        this.setState({activeHelp: 1});
     };
 
     render() {
 
 
         const {active} = this.props;
-        const {menuDrawer, activeMenu, activeDepth} = this.state;
+        const {menuDrawer, activeMenu, activeDepth, activeHelp} = this.state;
 
         let menuColumns, menuSecondary = {};
         let depthClass = 'utk-menu-depth--' + activeDepth;
+
+        let helpClass = null;
+
+        if (activeHelp) {
+            helpClass = 'utk-help-expand';
+        }
 
         if (activeMenu === 0 || window.matchMedia("(min-width: 992px)").matches) {
             menuColumns = Object.entries(menuDrawer).map((columns, index) => {
@@ -80,7 +95,6 @@ export class Menu extends Component {
                 );
             });
             menuSecondary = <div className="utk-secondary-menu"></div>;
-
         } else {
 
             let secondary = Object.entries(menuDrawer).map((columns, index) => {
@@ -118,7 +132,7 @@ export class Menu extends Component {
         }
 
         return (
-            <div className={`utk-header-resources ${active} ${depthClass}`}>
+            <div className={`utk-header-resources ${active} ${helpClass} ${depthClass}`}>
                 <div className="container">
                     <div className="utk-resources-menu">
                         {menuColumns}
@@ -130,10 +144,10 @@ export class Menu extends Component {
                     <div className='utk-menu-options'>
                         <div className='container'>
                             <div className='utk-menu-help'>
-                                <a className="utk-menu-help--item utk-menu-help--help-me">
-                                    <h4>Quick Help</h4>
+                                <a className="utk-menu-help--item utk-menu-help--help-me" onClick={this.enableHelp}>
+                                    <h4>Help</h4>
                                     <div className="utk-menu-help--item--icon">
-                                        <span className="icon-chat"></span>
+                                        <span className="icon-shuffle"></span>
                                     </div>
                                 </a>
                                 <a className="utk-menu-help--item utk-menu-help--chat">
@@ -146,6 +160,7 @@ export class Menu extends Component {
                             <a className="utk-resources-close">
                                 <span className="icon-cancel"></span>
                             </a>
+                            <Help active={activeHelp} />
                         </div>
                     </div>
                 </div>

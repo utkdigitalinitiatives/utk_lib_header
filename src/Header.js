@@ -24,6 +24,8 @@ class Header extends Component {
             showResources: false,
             showSearch: false,
             shortcutLogo: false,
+            showHelp: false,
+            showChat: false
         };
 
         this.toggleResources = this.toggleResources.bind(this);
@@ -40,6 +42,7 @@ class Header extends Component {
 
     closeResources = (e) => {
         e.stopPropagation();
+        this.setState({showHelp: false});
         let footerClose = findIndex(e.path, {'className': 'utk-resources-close'});
         if (footerClose === 1) {
             this.setState({showResources: false}, () => {
@@ -112,7 +115,7 @@ class Header extends Component {
 
     render() {
 
-        const {showResources, showSearch, shortcutLogo} = this.state;
+        const {showResources, showSearch, shortcutLogo, showHelp} = this.state;
 
         let resourcesClass = '';
         let rolloutClass = 'utk-rollin';
@@ -194,7 +197,7 @@ class Header extends Component {
                         </ul>
                     </div>
                 </div>
-                <Menu active={resourcesClass} />
+                <Menu active={resourcesClass} helpExpand={showHelp} />
                 <Search showSearch={showSearch} ref="search" />
             </header>
             <div className="utk-body-overlay"></div>
