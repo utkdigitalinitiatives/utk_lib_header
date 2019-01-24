@@ -20,6 +20,10 @@ export class Help extends Component {
 
     componentDidMount() {
 
+        window.addEventListener("resize", this.checkHelpHeight);
+
+        this.checkHelpHeight();
+
         fetch(Globals.URL + ENDPOINT + ROUTE, {
             headers : {
                 'Content-Type': 'application/json',
@@ -35,6 +39,16 @@ export class Help extends Component {
         return null
 
     }
+
+    componentWillUnmount () {
+        window.removeEventListener("resize", this.checkHelpHeight);
+    }
+
+    checkHelpHeight = () => {
+
+        console.log('check help box height, set state, and apply class if necessary');
+
+    };
 
     buildDecisions = (helpData) => {
 
@@ -67,7 +81,7 @@ export class Help extends Component {
                     <a className="utk-menu-help--item utk-menu-help--help-me--back" onClick={closeHelp}>
                         <span className="icon-down-open"></span>
                     </a>
-                    <div>
+                    <div className="utk-help-content">
                         <h3>Need help with something?</h3>
                         <p>We'll try to find that for you.</p>
                         {decisionTree}

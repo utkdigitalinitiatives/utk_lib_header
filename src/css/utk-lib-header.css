@@ -1069,7 +1069,7 @@ a.utk-help-decision:visited {
   /* Landscape phone to portrait tablet */
   /* Portrait tablet to landscape and desktop */
   /* desktop and large desktop */ }
-  .utk-help > div {
+  .utk-help > div.utk-help-content {
     width: 100%; }
   @media (max-width: 767px) {
     .utk-help {
