@@ -1,0 +1,27 @@
+a.utk-help-decision,
+a.utk-help-decision:visited {
+  display: block;
+  color: $white;
+  height: $golden-ratio-4;
+  line-height: $golden-ratio-4;
+  text-align: center;
+  border: 2px solid $smokey;
+  margin: $golden-ratio-2 auto 0;
+  font-size: $type-3;
+  font-weight: 400;
+  max-width: 240px;
+
+  @include respond(xs) {
+    max-width: 100%;
+    margin-top: 15px;
+  }
+
+  &:first-of-type {
+    margin-top: $golden-ratio-3;
+  }
+
+  &:hover,
+  &:focus {
+    background-color: $smokey;
+  }
+}

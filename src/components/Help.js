@@ -68,7 +68,8 @@ export class Help extends Component {
                         <span className="icon-down-open"></span>
                     </a>
                     <div>
-                        <h3>Need Help?</h3>
+                        <h3>Need help with something?</h3>
+                        <p>We'll try to find that for you.</p>
                         {decisionTree}
                     </div>
                 </div>

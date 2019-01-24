@@ -10,10 +10,11 @@ export class HelpDecision extends Component {
 
         const {branch} = this.props;
 
-        console.log(branch);
+        let hasChildren = false;
+        if (branch.wpse_children) { hasChildren = true; }
 
         return (
-            <a href='#'>Decision</a>
+            <a href={branch.url} className='utk-help-decision'>{branch.title}</a>
         );
 
     }
