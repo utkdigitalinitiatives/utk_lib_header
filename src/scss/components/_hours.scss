@@ -44,7 +44,7 @@
 
       @include respond(md) {
         flex: 1 1 0;
-        padding-right: $golden-ratio-5;
+        padding-right: $golden-ratio-3;
       }
 
       &:last-child {

@@ -1109,7 +1109,7 @@ body.utk-search-open .utk-search {
       @media (min-width: 992px) and (max-width: 1199px) {
         .utk-hours--listing--item {
           flex: 1 1 0;
-          padding-right: 76px; } }
+          padding-right: 29px; } }
       .utk-hours--listing--item:last-child {
         margin-bottom: 0; }
       .utk-hours--listing--item a,
