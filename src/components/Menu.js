@@ -81,6 +81,18 @@ export class Menu extends Component {
         window.removeEventListener("resize", this.updateDimensions);
     }
 
+    componentWillReceiveProps(propUpdate) {
+
+        /*
+         * Updates help to ensure it is not expanded on menu retoggle.
+         */
+
+        if (propUpdate.active == '') {
+            this.setState({activeHelp: 0});
+        }
+
+    }
+
     setMenu = (passedMenuId) => {
         this.setState({activeMenu: passedMenuId});
         this.setState({activeDepth: 1});
@@ -97,8 +109,11 @@ export class Menu extends Component {
         this.setState({activeHelp: 1});
     };
 
-    render() {
+    closeHelp() {
+        this.setState({activeHelp: 0});
+    };
 
+    render() {
 
         const {active} = this.props;
         const {menuDrawer, activeMenu, activeDepth, activeHelp} = this.state;
@@ -184,7 +199,9 @@ export class Menu extends Component {
                             <a className="utk-resources-close">
                                 <span className="icon-cancel"></span>
                             </a>
-                            <Help activeHelp={this.state.activeHelp} />
+                            <Help activeHelp={this.state.activeHelp} closeHelp={() => {
+                                this.closeHelp();
+                            }} />
                         </div>
                     </div>
                 </div>
