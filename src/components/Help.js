@@ -24,6 +24,10 @@ export class Help extends Component {
 
         this.checkHelpHeight();
 
+        /*
+         * @todo: add browser variable to store menu data in session.
+         */
+
         fetch(Globals.URL + ENDPOINT + ROUTE, {
             headers : {
                 'Content-Type': 'application/json',
