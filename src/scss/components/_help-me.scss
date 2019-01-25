@@ -130,13 +130,13 @@
   background-color: $smokey;
   color: $white;
   position: fixed;
-  margin-top: -$golden-ratio-4;
-  top: 205px;
+  top: 158px;
 
   @include respond(xs) {
     width: 40px;
     height: 40px;
-    margin-top: -$golden-ratio-4;
+    margin-top: 0;
+    top: 81px;
   }
 }
 
@@ -184,12 +184,17 @@
   align-items: center;
   height: 100%;
 
-  > div.utk-help-content {
-    width: 100%;
+  &.utk-help-align-top {
+    align-items: flex-start;
   }
 
-  @include respond(xs) {
-    padding-bottom: 15px;
+  > div.utk-help-content {
+    width: 100%;
+    padding-bottom: $golden-ratio-4;
+
+    @include respond(xs) {
+      padding-bottom: 15px;
+    }
   }
 
   h3 {

@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import {HelpDecision} from "./HelpDecision";
 import Globals from "./Globals";
-import {MenuColumns} from "./MenuColumns";
 
 const ENDPOINT = 'assets/wp-json/libmenu';
 const ROUTE = '/action';
@@ -12,8 +11,12 @@ export class Help extends Component {
 
         super(props);
 
+        this.utkHelp = React.createRef();
+        this.utkHelpContent = React.createRef();
+
         this.state = {
-            menuHelp: []
+            menuHelp: [],
+            menuHelpCenter: true
         };
 
     }
@@ -50,42 +53,69 @@ export class Help extends Component {
 
     checkHelpHeight = () => {
 
-        console.log('check help box height, set state, and apply class if necessary');
+        if (this.utkHelp.current && this.utkHelpContent.current) {
+
+            console.log(this.utkHelp.current.offsetHeight);
+            console.log(this.utkHelpContent.current.offsetHeight);
+
+            let helpOffset = 100;
+
+            if (this.utkHelp.current.offsetHeight - helpOffset < this.utkHelpContent.current.offsetHeight) {
+                this.setState({menuHelpCenter: false})
+            } else {
+                this.setState({menuHelpCenter: true})
+            }
+
+        }
 
     };
 
     buildDecisions = (helpData) => {
 
-        const decisions = Object.entries(helpData).map((help, index) => {
+        if (helpData) {
 
-            return (
+            const decisions = Object.entries(helpData).map((help, index) => {
 
-                <HelpDecision branch={help[1]} />
+                return (
 
-            )
+                    <HelpDecision key={index} branch={help[1]} />
 
-        });
+                )
 
-        return decisions;
+            });
+
+            return decisions;
+
+        } else {
+
+            return null
+
+        }
 
     };
 
     render() {
 
         const {activeHelp, closeHelp} = this.props;
-        const helpData = this.state.menuHelp;
+        const {menuHelp, menuHelpCenter} = this.state;
 
-        let decisionTree = this.buildDecisions(helpData);
+        let decisionTree = this.buildDecisions(menuHelp);
+        let utkHelpAlignClass = null;
+
+        if (menuHelpCenter === false)
+            utkHelpAlignClass = 'utk-help-align-top';
+        else
+            utkHelpAlignClass = 'utk-help-align-center';
 
         if (activeHelp) {
 
             return (
 
-                <div className="utk-help">
+                <div ref={this.utkHelp} className={`utk-help ${utkHelpAlignClass}`}>
                     <a className="utk-menu-help--item utk-menu-help--help-me--back" onClick={closeHelp}>
                         <span className="icon-down-open"></span>
                     </a>
-                    <div className="utk-help-content">
+                    <div ref={this.utkHelpContent} className="utk-help-content" id="utk-help-content">
                         <h3>Need help with something?</h3>
                         <p>We'll try to find that for you.</p>
                         {decisionTree}

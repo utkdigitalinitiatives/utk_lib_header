@@ -1014,8 +1014,7 @@ a.utk-help-decision:visited {
   background-color: #58595b;
   color: #fff;
   position: fixed;
-  margin-top: -47px;
-  top: 205px;
+  top: 158px;
   /* Mobile Devices for Mice */
   /* Landscape phones and down */
   /* Landscape phone to portrait tablet */
@@ -1025,7 +1024,8 @@ a.utk-help-decision:visited {
     .utk-menu-help--help-me--back {
       width: 40px;
       height: 40px;
-      margin-top: -47px; } }
+      margin-top: 0;
+      top: 81px; } }
 
 .utk-header-resources.utk-help-expand .utk-menu-help {
   display: none; }
@@ -1063,17 +1063,20 @@ a.utk-help-decision:visited {
   padding: 47px 0 47px;
   display: flex;
   align-items: center;
-  height: 100%;
-  /* Mobile Devices for Mice */
-  /* Landscape phones and down */
-  /* Landscape phone to portrait tablet */
-  /* Portrait tablet to landscape and desktop */
-  /* desktop and large desktop */ }
+  height: 100%; }
+  .utk-help.utk-help-align-top {
+    align-items: flex-start; }
   .utk-help > div.utk-help-content {
-    width: 100%; }
-  @media (max-width: 767px) {
-    .utk-help {
-      padding-bottom: 15px; } }
+    width: 100%;
+    padding-bottom: 47px;
+    /* Mobile Devices for Mice */
+    /* Landscape phones and down */
+    /* Landscape phone to portrait tablet */
+    /* Portrait tablet to landscape and desktop */
+    /* desktop and large desktop */ }
+    @media (max-width: 767px) {
+      .utk-help > div.utk-help-content {
+        padding-bottom: 15px; } }
   .utk-help h3 {
     color: inherit;
     font-size: 23px;
