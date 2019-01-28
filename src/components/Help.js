@@ -27,21 +27,31 @@ export class Help extends Component {
 
         this.checkHelpHeight();
 
-        /*
-         * @todo: add browser variable to store menu data in session.
-         */
+        const sessionHelp = 'utk_lib_header_help';
 
-        fetch(Globals.URL + ENDPOINT + ROUTE, {
-            headers : {
-                'Content-Type': 'application/json',
-                'Accept': 'application/json'
-            }
-        })
-            .then(response => response.json())
-            .then(data => {
-                this.setState({menuHelp: data})
+        if (sessionStorage.getItem(sessionHelp) === null) {
+
+            fetch(Globals.URL + ENDPOINT + ROUTE, {
+                headers : {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                }
             })
-            .catch(err => console.error(this.props.url, err.toString()));
+                .then(response => response.json())
+                .then(data => {
+
+                    sessionStorage.setItem(sessionHelp, JSON.stringify(data));
+                    this.setState({menuHelp: data})
+
+                })
+                .catch(err => console.error(this.props.url, err.toString()));
+
+        } else {
+
+            const sessionData = sessionStorage.getItem(sessionHelp);
+            this.setState({menuHelp: JSON.parse(sessionData)});
+
+        }
 
         return null
 

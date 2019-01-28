@@ -62,17 +62,31 @@ export class Menu extends Component {
             this.setState({activeHelp: 1});
         }
 
-        fetch(Globals.URL + ENDPOINT + ROUTE, {
-                headers : {
-                    'Content-Type': 'application/json',
-                    'Accept': 'application/json'
-                }
-            })
-            .then(response => response.json())
-            .then(data => {
-                this.setState({menuDrawer: data})
-            })
-            .catch(err => console.error(this.props.url, err.toString()));
+        const sessionMenu = 'utk_lib_header_drawer';
+
+        if (sessionStorage.getItem(sessionMenu) === null) {
+
+            fetch(Globals.URL + ENDPOINT + ROUTE, {
+                    headers : {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    }
+                })
+                .then(response => response.json())
+                .then(data => {
+
+                    sessionStorage.setItem(sessionMenu, JSON.stringify(data));
+                    this.setState({menuDrawer: data})
+
+                })
+                .catch(err => console.error(this.props.url, err.toString()));
+
+        } else {
+
+            const sessionData = sessionStorage.getItem(sessionMenu);
+            this.setState({menuDrawer: JSON.parse(sessionData)});
+
+        }
 
         return null
     }
