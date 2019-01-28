@@ -17,7 +17,7 @@ export class Help extends Component {
 
         this.state = {
             menuHelp: [],
-            menuHelpCenter: true
+            menuHelpCenter: false
         };
 
     }
@@ -66,9 +66,6 @@ export class Help extends Component {
 
         if (this.utkHelp.current && this.utkHelpContent.current) {
 
-            console.log(this.utkHelp.current.offsetHeight);
-            console.log(this.utkHelpContent.current.offsetHeight);
-
             let helpOffset = 100;
 
             if (this.utkHelp.current.offsetHeight - helpOffset < this.utkHelpContent.current.offsetHeight) {
@@ -91,7 +88,7 @@ export class Help extends Component {
         if (menuHelpCenter === false)
             utkHelpAlignClass = 'utk-help-align-top';
         else
-            utkHelpAlignClass = 'utk-help-align-center';
+            utkHelpAlignClass = 'utk-help-align-top';
 
         if (activeHelp) {
 
