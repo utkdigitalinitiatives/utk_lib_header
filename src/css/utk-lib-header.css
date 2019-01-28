@@ -860,16 +860,14 @@ body.utk-search-open .utk-search {
  */
 a.utk-help-decision,
 a.utk-help-decision:visited {
-  display: block;
+  display: flex;
   color: #fff;
-  height: 47px;
-  line-height: 47px;
-  text-align: center;
+  min-height: 47px;
   border: 2px solid #58595b;
   margin: 18px auto 0;
   font-size: 18px;
   font-weight: 400;
-  max-width: 240px;
+  align-items: center;
   /* Mobile Devices for Mice */
   /* Landscape phones and down */
   /* Landscape phone to portrait tablet */

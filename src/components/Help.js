@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {HelpDecision} from "./HelpDecision";
 import Globals from "./Globals";
+import {HelpLevel} from "./HelpLevel";
 
 const ENDPOINT = 'assets/wp-json/libmenu';
 const ROUTE = '/action';
@@ -80,36 +81,11 @@ export class Help extends Component {
 
     };
 
-    buildDecisions = (helpData) => {
-
-        if (helpData) {
-
-            const decisions = Object.entries(helpData).map((help, index) => {
-
-                return (
-
-                    <HelpDecision key={index} branch={help[1]} />
-
-                )
-
-            });
-
-            return decisions;
-
-        } else {
-
-            return null
-
-        }
-
-    };
-
     render() {
 
         const {activeHelp, closeHelp} = this.props;
         const {menuHelp, menuHelpCenter} = this.state;
 
-        let decisionTree = this.buildDecisions(menuHelp);
         let utkHelpAlignClass = null;
 
         if (menuHelpCenter === false)
@@ -128,7 +104,11 @@ export class Help extends Component {
                     <div ref={this.utkHelpContent} className="utk-help-content" id="utk-help-content">
                         <h3>Need help with something?</h3>
                         <p>We'll try to find that for you.</p>
-                        {decisionTree}
+                        <HelpLevel key="0:0"
+                                   data={menuHelp}
+                                   root={true}
+                                   depth={0}
+                                   parent={0} />
                     </div>
                 </div>
 

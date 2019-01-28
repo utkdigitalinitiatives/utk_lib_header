@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {HelpLevel} from "./HelpLevel";
 
 export class HelpDecision extends Component {
 
@@ -6,15 +7,36 @@ export class HelpDecision extends Component {
         super(props);
     }
 
-    render() {
-
-        const {branch} = this.props;
-
-        let hasChildren = false;
-        if (branch.wpse_children) { hasChildren = true; }
+    buildChildLevel = (childData) => {
 
         return (
-            <a href={branch.url} className='utk-help-decision'>{branch.title}</a>
+
+            <HelpLevel key="0:0"
+                       data={childData}
+                       root={false}
+                       depth={0}
+                       parent={0} />
+
+        )
+
+    };
+
+    render() {
+
+        const {decision} = this.props;
+        let childLevel = null;
+
+        if (decision.wpse_children) {
+
+            childLevel = this.buildChildLevel(decision.wpse_children)
+
+        }
+
+        return (
+            <div>
+                <a href={decision.url} className='utk-help-decision'>{decision.title}</a>
+                {childLevel}
+            </div>
         );
 
     }
