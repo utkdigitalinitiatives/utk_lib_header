@@ -1,13 +1,10 @@
 import React, {Component} from 'react';
 import {MenuColumns} from "./MenuColumns";
-import {MenuItems} from "./MenuItems";
 
-import _ from "lodash";
 import {MenuSecondary} from "./MenuSecondary";
 import {Hours} from "./Hours";
 import {Help} from "./Help";
 import Globals from "./Globals";
-import {Search} from "./Search";
 
 const ENDPOINT = 'assets/wp-json/libmenu';
 const ROUTE = '/drawer';
