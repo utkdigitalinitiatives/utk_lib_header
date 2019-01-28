@@ -10,6 +10,7 @@
     padding-top: $golden-ratio-2;
     margin-bottom: $golden-ratio-3;
     border-top: none;
+    text-align: center;
   }
 
   h4 {
@@ -31,7 +32,7 @@
     }
 
     @include respond(xs) {
-      padding: 0;
+      padding: 0 $golden-ratio-3;
     }
 
 
@@ -73,7 +74,7 @@
           font-weight: 400;
           margin: 0;
           padding: 0;
-          color: $smokey;
+          color: $smokeyx;
 
           @include respond(sm, xs) {
             font-size: $type-2;
@@ -87,6 +88,13 @@
 
       &--hours {
         font-weight: 700;
+        font-size: $type-2;
+        text-transform: uppercase;
+
+        @include respond(xs) {
+          display: block;
+          margin: 0 auto;
+        }
 
         &::before {
           width: 0.6em;

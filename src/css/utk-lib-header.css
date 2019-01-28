@@ -1123,7 +1123,8 @@ a.utk-help-decision:visited {
     .utk-hours {
       padding-top: 18px;
       margin-bottom: 29px;
-      border-top: none; } }
+      border-top: none;
+      text-align: center; } }
   .utk-hours h4 {
     margin: 0 0 18px;
     text-transform: uppercase;
@@ -1150,7 +1151,7 @@ a.utk-help-decision:visited {
         padding: 0; } }
     @media (max-width: 767px) {
       .utk-hours--listing {
-        padding: 0; } }
+        padding: 0 29px; } }
     .utk-hours--listing--item {
       list-style: none;
       margin: 0;
@@ -1189,7 +1190,7 @@ a.utk-help-decision:visited {
           font-weight: 400;
           margin: 0;
           padding: 0;
-          color: #58595b;
+          color: #333;
           /* Mobile Devices for Mice */
           /* Landscape phones and down */
           /* Landscape phone to portrait tablet */
@@ -1211,7 +1212,18 @@ a.utk-help-decision:visited {
       .utk-hours--listing--item--simple {
         margin-right: 1em; }
       .utk-hours--listing--item--hours {
-        font-weight: 700; }
+        font-weight: 700;
+        font-size: 15px;
+        text-transform: uppercase;
+        /* Mobile Devices for Mice */
+        /* Landscape phones and down */
+        /* Landscape phone to portrait tablet */
+        /* Portrait tablet to landscape and desktop */
+        /* desktop and large desktop */ }
+        @media (max-width: 767px) {
+          .utk-hours--listing--item--hours {
+            display: block;
+            margin: 0 auto; } }
         .utk-hours--listing--item--hours::before {
           width: 0.6em;
           height: 0.6em;
@@ -1499,8 +1511,8 @@ a:hover {
   @media (max-width: 767px) {
     .utk-resources-contact {
       margin-top: 0;
-      padding: 0 15px !important;
-      background-color: #f6f6f6;
+      padding: 18px 15px !important;
+      background-color: #e0e0e0;
       border-top: 2px solid #e0e0e0;
       margin: -15px;
       width: calc(100% + 30px) !important; } }

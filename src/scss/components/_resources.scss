@@ -143,8 +143,8 @@
 
   @include respond(xs) {
     margin-top: 0;
-    padding: 0 15px !important;
-    background-color: $gray-0;
+    padding: $golden-ratio-2 15px !important;
+    background-color: $gray-1;
     border-top: 2px solid $gray-1;
     margin: -15px;
     width: calc(100% + 30px) !important;
