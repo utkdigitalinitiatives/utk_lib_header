@@ -1,27 +1,50 @@
 import React, {Component} from 'react';
+import PropTypes from 'prop-types';
 import {HelpDecision} from "./HelpDecision";
 
 export class HelpLevel extends Component {
 
     constructor(props) {
         super(props);
+        this.activeItem = this.activeItem.bind(this);
     }
 
-    buildDecisions = (data, root, depth, parent) => {
+    activeItem(activeData) {
+
+        this.setState({
+            activeItem: activeData
+        });
+
+        this.props.activeItem({
+            ID: activeData.ID,
+            depth: activeData.depth
+        });
+    }
+
+    buildDecisions = (data, root, depth, parent, activeTrail) => {
+
+        /*
+         * if activeComponent and has data
+         */
 
         if (data) {
 
-            const decisions = Object.entries(data).map((decision, index) => {
+            return Object.entries(data).map((decision, index) => {
 
                 return (
 
-                    <HelpDecision key={`${depth}:${parent}:${decision[1].ID}`} decision={decision[1]} />
+                    <HelpDecision
+                        key={`${depth}:${parent}:${decision[1].ID}`}
+                        decisionID={decision[1].ID}
+                        depth={depth}
+                        parent={parent}
+                        decision={decision[1]}
+                        activeItem={this.activeItem}
+                        activeTrail={activeTrail} />
 
                 )
 
             });
-
-            return decisions;
 
         } else {
 
@@ -33,16 +56,19 @@ export class HelpLevel extends Component {
 
     render() {
 
-        const {data, root, parent, depth} = this.props;
+        const {data, root, parent, depth, activeTrail} = this.props;
 
-        let decisionTree = this.buildDecisions(data, root, depth, parent);
+        let decisionTree = this.buildDecisions(data, root, depth, parent, activeTrail);
 
         return (
-            <div>
-                <h3>This is a level.</h3>
+            <div className={`utk-help-level utk-help-level-${depth}`}>
                 {decisionTree}
             </div>
         );
 
     }
 }
+
+HelpLevel.propTypes = {
+    activeItem: PropTypes.func
+};

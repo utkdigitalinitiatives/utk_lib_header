@@ -886,6 +886,12 @@ a.utk-help-decision:visited {
   a.utk-help-decision:visited:focus {
     background-color: #58595b; }
 
+.utk-help-level.utk-help-level-0 > .utk-help-wrapper {
+  display: block; }
+
+.utk-help-wrapper {
+  display: flex; }
+
 .utk-menu-open .utk-menu-options {
   opacity: 1;
   bottom: 0;

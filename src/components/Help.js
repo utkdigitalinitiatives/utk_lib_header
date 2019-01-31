@@ -1,7 +1,10 @@
 import React, {Component} from 'react';
-import {HelpDecision} from "./HelpDecision";
 import Globals from "./Globals";
 import {HelpLevel} from "./HelpLevel";
+
+import assign from "lodash/assign"
+import pick from "lodash/pick"
+import keys from "lodash/keys"
 
 const ENDPOINT = 'assets/wp-json/libmenu';
 const ROUTE = '/action';
@@ -17,9 +20,17 @@ export class Help extends Component {
 
         this.state = {
             menuHelp: [],
-            menuHelpCenter: false
+            menuHelpCenter: false,
+            activeTrail: {
+                0: 0
+            },
+            activeItem: {
+                ID: 0,
+                depth: 0
+            }
         };
 
+        this.activeItem = this.activeItem.bind(this);
     }
 
     componentDidMount() {
@@ -78,10 +89,44 @@ export class Help extends Component {
 
     };
 
+    pruneActiveTrail = (activeTrail, depth) => {
+
+        let count = 0;
+        const model = {};
+
+        do {
+
+            let iteration = {
+                [count]: null
+            };
+            assign(model, iteration);
+            count++;
+
+        } while (depth >= count);
+
+        return pick(activeTrail, keys(model));
+
+    };
+
+    activeItem(activeItem) {
+
+        let {depth, ID} = activeItem;
+        let updateActiveTrail = {
+            [depth] : ID
+        };
+
+        let renderTrail = this.pruneActiveTrail(assign(this.state.activeTrail, updateActiveTrail), depth);
+
+        this.setState({
+            activeTrail: renderTrail
+        });
+
+    }
+
     render() {
 
         const {activeHelp, closeHelp} = this.props;
-        const {menuHelp, menuHelpCenter} = this.state;
+        const {menuHelp, menuHelpCenter, activeTrail} = this.state;
 
         let utkHelpAlignClass = null;
 
@@ -105,7 +150,9 @@ export class Help extends Component {
                                    data={menuHelp}
                                    root={true}
                                    depth={0}
-                                   parent={0} />
+                                   parent={0}
+                                   activeItem={this.activeItem}
+                                   activeTrail={activeTrail} />
                     </div>
                 </div>
 
