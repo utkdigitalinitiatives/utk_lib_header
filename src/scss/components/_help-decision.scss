@@ -47,6 +47,19 @@ a.utk-help-decision:visited {
   }
 }
 
+.utk-help-root-prefix {
+  display: flex;
+  min-height: $golden-ratio-4;
+  margin: 0 0 $golden-ratio-2;
+  width: 288px;
+  max-width: 288px;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: $white;
+}
+
 .utk-help-back {
   @extend .utk-help-decision;
 
@@ -57,8 +70,19 @@ a.utk-help-decision:visited {
   text-transform: uppercase !important;
   font-size: $type-2 !important;
 
+  @include respond(xs, sm) {
+    flex-direction: column;
+    padding-right: 0 !important;
+  }
+
   span {
     color: $orange !important;
+
+    @include respond(xs, sm) {
+      transform: rotate(90deg);
+      display: block;
+      padding: 0 !important;
+    }
   }
 
   &:hover,

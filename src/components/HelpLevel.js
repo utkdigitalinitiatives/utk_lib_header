@@ -80,20 +80,31 @@ export class HelpLevel extends Component {
 
     }
 
+    renderPrefixRoot = () =>{
+
+        return (
+            <div className="utk-help-root-prefix">
+                Start Here
+            </div>
+        )
+
+    }
+
+
     render() {
 
         const {data, root, parent, depth, activeTrail} = this.props;
 
         let decisionTree = this.buildDecisions(data, root, depth, parent, activeTrail);
-        let back = null;
+        let prefix = this.renderPrefixRoot();
 
         if (depth !== 0)
-            back = this.renderBack(parent, depth, activeTrail);
+            prefix = this.renderBack(parent, depth, activeTrail);
 
         return (
             <div className={`utk-help-level utk-help-level-${depth}`}>
+                {prefix}
                 {decisionTree}
-                {back}
             </div>
         );
 
