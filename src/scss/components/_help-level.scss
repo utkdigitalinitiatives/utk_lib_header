@@ -1,9 +1,147 @@
-.utk-help-level {
-  &.utk-help-level-0 > .utk-help-wrapper {
-    display: block;
-  }
-}
+.utk-help {
 
-.utk-help-wrapper {
-  display: flex;
+  .utk-help-level {
+    margin: auto;
+
+    &.utk-help-level-0 {
+      position: relative;
+      margin: $golden-ratio-4 auto;
+    }
+  }
+
+  .utk-help-wrapper {
+
+    > .utk-help-level {
+      position: absolute;
+      top: 0;
+
+      @include respond(xs, sm) {
+        position: relative;
+      }
+    }
+  }
+
+  &.utk-help-columns-1 {
+
+    .utk-help-level-0 {
+      max-width: 288px;
+    }
+  }
+
+  &.utk-help-columns-2 {
+
+    .utk-help-level-0 {
+      max-width: 623px;
+
+      @include respond(md) {
+        width: 605px;
+      }
+
+      @include respond(xs, sm) {
+        width: 100%;
+        max-width: 100%;
+        margin: 47px auto;
+        max-width: 288px;
+      }
+
+      > .utk-help-wrapper {
+
+        .utk-help-level-1 {
+          width: 288px;
+          left: 335px;
+
+          @include respond(md) {
+            left: 317px;
+          }
+
+          @include respond(xs, sm) {
+            width: 100%;
+            left: auto;
+          }
+
+          > .utk-help-wrapper {
+
+            .utk-help-decision {
+              max-width: 288px;
+            }
+          }
+
+          .utk-help-level-2 {
+            width: 288px;
+            left: 335px;
+
+            @include respond(md) {
+              left: 317px;
+            }
+
+            @include respond(xs, sm) {
+              width: 100%;
+              left: auto;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &.utk-help-columns-3 {
+
+    .utk-help-level-0 {
+      max-width: 958px;
+
+      @include respond(md) {
+        max-width: 922px;
+      }
+
+      @include respond(xs, sm) {
+        width: 100%;
+        max-width: 100%;
+        margin: 47px auto;
+        max-width: 288px;
+      }
+
+      > .utk-help-wrapper {
+
+        .utk-help-level-1 {
+          width: 623px;
+          left: 335px;
+
+          @include respond(md) {
+            width: 605px;
+            left: 317px;
+          }
+
+          @include respond(xs, sm) {
+            width: 100%;
+            left: auto;
+
+            > .utk-help-back {
+              display: none;
+            }
+          }
+
+          > .utk-help-wrapper {
+
+            .utk-help-decision {
+              max-width: 288px;
+            }
+          }
+
+          .utk-help-level-2 {
+            width: 288px;
+            left: 335px;
+
+            @include respond(md) {
+              left: 317px;
+            }
+
+            @include respond(xs, sm) {
+              width: 100%;
+              left: auto;
+            }
+          }
+        }
+      }
+    }
+  }
 }

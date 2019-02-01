@@ -89,6 +89,17 @@ export class Help extends Component {
 
     };
 
+    objectSize (obj) {
+
+        let size = 0, key;
+        for (key in obj) {
+            if (obj.hasOwnProperty(key)) size++;
+        }
+
+        return size;
+
+    }
+
     pruneActiveTrail = (activeTrail, depth) => {
 
         let count = 0;
@@ -135,11 +146,13 @@ export class Help extends Component {
         else
             utkHelpAlignClass = 'utk-help-align-top';
 
+        let helpSizeClass = 'utk-help-columns-' + this.objectSize(activeTrail);
+
         if (activeHelp) {
 
             return (
 
-                <div ref={this.utkHelp} className={`utk-help ${utkHelpAlignClass}`}>
+                <div ref={this.utkHelp} className={`utk-help ${helpSizeClass} ${utkHelpAlignClass}`}>
                     <a className="utk-menu-help--item utk-menu-help--help-me--back" onClick={closeHelp}>
                         <span className="icon-down-open"></span>
                     </a>

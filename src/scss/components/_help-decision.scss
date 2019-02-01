@@ -3,24 +3,103 @@ a.utk-help-decision:visited {
   display: flex;
   color: $white;
   min-height: $golden-ratio-4;
-  border: 2px solid $smokey;
-  margin: $golden-ratio-2 auto 0;
+  border: 2px solid $globe;
+  background-color: $globe;
+  margin: 0 0 $golden-ratio-2;
   font-size: $type-3;
+  line-height: 1.3em;
   font-weight: 400;
   align-items: center;
+  justify-content: center;
+  width: 288px;
+  max-width: 288px;
+  transition: $transition-all;
 
+  &.utk-help-decision--active {
+    background-color: $smokey !important;
+    border-color: $smokey !important;
+    color: $white;
+
+    &:hover,
+    &:focus {
+      background-color: $smokey !important;
+      border-color: $smokey !important;
+      color: $white !important;
+    }
+  }
+
+  > span {
+    width: auto;
+    display: block;
+    padding: 11px;
+  }
 
   @include respond(xs) {
     max-width: 100%;
     margin-top: 15px;
   }
 
-  &:first-of-type {
-    margin-top: $golden-ratio-3;
+  &:hover,
+  &:focus {
+    background-color: $leconte;
+    border-color: $leconte;
+    color: $white !important;
+  }
+}
+
+.utk-help-back {
+  @extend .utk-help-decision;
+
+  background-color: transparent !important;
+  border-color: transparent !important;
+  padding-right: 40px !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  font-size: $type-2 !important;
+
+  span {
+    color: $orange !important;
   }
 
   &:hover,
   &:focus {
-    background-color: $smokey;
+    background-color: transparent !important;
+    border-color: transparent !important;
+    color: $white !important;
+  }
+}
+
+.utk-help-columns-2 {
+
+  .utk-help-level-0 {
+
+    > .utk-help-wrapper > .utk-help-decision:not(.utk-help-decision--active) {
+      color: $rock;
+      border-color: lighten($smokeyx, 8);
+      background-color: transparent;
+      transform: scale(0.94);
+
+      @include respond(xs, sm) {
+        display: none;
+      }
+    }
+  }
+}
+
+.utk-help-columns-3 {
+
+  .utk-help-level-0,
+  .utk-help-level-1 {
+
+    > .utk-help-wrapper > .utk-help-decision:not(.utk-help-decision--active) {
+      color: $rock;
+      border-color: lighten($smokeyx, 8);
+      background-color: transparent;
+      transform: scale(0.94);
+
+      @include respond(xs, sm) {
+        display: none;
+      }
+    }
   }
 }

@@ -35,18 +35,41 @@ export class HelpDecision extends Component {
 
     handleClick(data, e) {
 
-        e.preventDefault();
+        if (data.url !== '#') {
 
-        this.setState({expanded: true});
+            /*
+             * do default link behavior
+             */
 
-        this.props.activeItem({
-            ID: data.ID,
-            depth: this.props.depth + 1
-        });
+        } else if (data.url !== '#' && this.props.depth === 2 || data.wpse_children == null) {
+
+            /*
+             * do nada
+             */
+
+            e.preventDefault();
+
+        } else {
+
+            /*
+             * do react passing
+             */
+
+            e.preventDefault();
+
+            this.setState({expanded: true});
+
+            this.props.activeItem({
+                ID: data.ID,
+                depth: this.props.depth + 1
+            });
+
+        }
 
     }
 
-    activeItem(activeItem){
+    activeItem(activeItem) {
+
         this.setState({
             activeItem: activeItem
         });
@@ -55,12 +78,14 @@ export class HelpDecision extends Component {
             ID: activeItem.ID,
             depth: activeItem.depth
         });
+
     }
 
     render() {
 
         const {decision, depth, activeTrail} = this.props;
         let childLevel = null;
+        let activeComponentClass = '';
 
 
         /*
@@ -82,9 +107,15 @@ export class HelpDecision extends Component {
 
         }
 
+        if (activeComponent)
+            activeComponentClass = 'utk-help-decision--active';
+
+
         return (
             <div className="utk-help-wrapper">
-                <a href={decision.url} className='utk-help-decision' onClick={(e) => this.handleClick(decision, e)}>{decision.title}</a>
+                <a href={decision.url} className={`utk-help-decision ${activeComponentClass}`} onClick={(e) => this.handleClick(decision, e)}>
+                    <span>{decision.title}</span>
+                </a>
                 {childLevel}
             </div>
         );

@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import {HelpDecision} from "./HelpDecision";
 
+import sortBy from "lodash/sortBy";
+
 export class HelpLevel extends Component {
 
     constructor(props) {
@@ -19,6 +21,7 @@ export class HelpLevel extends Component {
             ID: activeData.ID,
             depth: activeData.depth
         });
+
     }
 
     buildDecisions = (data, root, depth, parent, activeTrail) => {
@@ -29,7 +32,7 @@ export class HelpLevel extends Component {
 
         if (data) {
 
-            return Object.entries(data).map((decision, index) => {
+            return Object.entries(sortBy(data, ['menu_order'])).map((decision, index) => {
 
                 return (
 
@@ -54,15 +57,43 @@ export class HelpLevel extends Component {
 
     };
 
+    handleBack (parent, depth, activeTrail, e) {
+
+        e.preventDefault();
+
+        this.props.activeItem({
+            ID: activeTrail[depth - 1],
+            depth: depth - 1
+        });
+
+        return null
+
+    }
+
+    renderBack (parent, depth, activeTrail) {
+
+        return (
+            <a href="#back" className="utk-help-back" onClick={(e) => this.handleBack(parent, depth, activeTrail, e)}>
+                <span className="icon-left-open"></span> Back
+            </a>
+        )
+
+    }
+
     render() {
 
         const {data, root, parent, depth, activeTrail} = this.props;
 
         let decisionTree = this.buildDecisions(data, root, depth, parent, activeTrail);
+        let back = null;
+
+        if (depth !== 0)
+            back = this.renderBack(parent, depth, activeTrail);
 
         return (
             <div className={`utk-help-level utk-help-level-${depth}`}>
                 {decisionTree}
+                {back}
             </div>
         );
 
