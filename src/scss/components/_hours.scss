@@ -10,7 +10,6 @@
     padding-top: $golden-ratio-0;
     margin-bottom: $golden-ratio-2;
     border-top: none;
-    text-align: center;
   }
 
   h4 {
@@ -79,7 +78,6 @@
           @include respond(xs) {
             font-size: $type-2;
             font-weight: 400;
-            text-align: center;
           }
         }
       }
@@ -96,7 +94,7 @@
         @include respond(xs) {
           display: block;
           font-size: $type-2;
-          margin: $golden-ratio-0 auto 0;
+          margin: $golden-ratio-0 0 0;
         }
 
         &::before {

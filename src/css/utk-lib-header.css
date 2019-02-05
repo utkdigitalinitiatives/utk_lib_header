@@ -1512,8 +1512,7 @@ a.utk-help-back:visited {
     .utk-hours {
       padding-top: 6px;
       margin-bottom: 18px;
-      border-top: none;
-      text-align: center; } }
+      border-top: none; } }
   .utk-hours h4 {
     margin: 0 0 18px;
     text-transform: uppercase;
@@ -1589,8 +1588,7 @@ a.utk-help-back:visited {
             .utk-hours--listing--item a h5,
             .utk-hours--listing--item a:visited h5 {
               font-size: 15px;
-              font-weight: 400;
-              text-align: center; } }
+              font-weight: 400; } }
       .utk-hours--listing--item--simple {
         margin-right: 1em; }
       .utk-hours--listing--item--hours {
@@ -1606,7 +1604,7 @@ a.utk-help-back:visited {
           .utk-hours--listing--item--hours {
             display: block;
             font-size: 15px;
-            margin: 6px auto 0; } }
+            margin: 6px 0 0; } }
         .utk-hours--listing--item--hours::before {
           width: 0.6em;
           height: 0.6em;
