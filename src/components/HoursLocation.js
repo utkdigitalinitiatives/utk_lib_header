@@ -27,7 +27,7 @@ export class HoursLocation extends Component {
      * builds indicator dependent on many differing cases
      */
 
-    getHoursIndicator = (data) => {
+    getHoursIndicator = (data, id) => {
 
         let indicator = '';
 
@@ -36,7 +36,7 @@ export class HoursLocation extends Component {
             indicator = 'library-closed';
 
         // checks for open state
-        if (data.open)
+        if (id != 227)
             indicator = 'library-open';
         else
             indicator = 'library-closed';
@@ -47,15 +47,17 @@ export class HoursLocation extends Component {
 
     render() {
 
-        const {data, label} = this.props;
+        const {data, label, id} = this.props;
 
-        let hoursClass = this.getHoursIndicator(data);
+        console.log(data)
+
+        let hoursClass = this.getHoursIndicator(data, id);
         let hoursLabel = this.getHoursLabel(data.hours);
 
         return (
             <li className="utk-hours--listing--item">
                 <a href="#" className={hoursClass}>
-                    <h5>{label}</h5>
+                    <h5>{data.name}</h5>
                     <span className="utk-hours--listing--item--hours">{ hoursLabel }</span>
                 </a>
             </li>

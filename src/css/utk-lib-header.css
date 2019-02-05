@@ -773,6 +773,10 @@ body.utk-menu-open .utk-logo-wrapper .utk-logo-unit {
 body.utk-search-open .utk-search {
   z-index: 999; }
 
+body.utk-menu-open .utk-header-super {
+  display: none;
+  height: auto !important; }
+
 .utk-header-super {
   /* Mobile Devices for Mice */
   /* Landscape phones and down */
@@ -781,7 +785,22 @@ body.utk-search-open .utk-search {
   /* desktop and large desktop */ }
   @media (max-width: 767px) {
     .utk-header-super {
-      display: none; } }
+      position: relative !important;
+      display: none;
+      width: 100%;
+      overflow: scroll !important;
+      background-color: #e0e0e0 !important; }
+      .utk-header-super--menu {
+        float: none !important;
+        width: 100%; }
+        .utk-header-super--menu a,
+        .utk-header-super--menu a:visited,
+        .utk-header-super--menu a:hover,
+        .utk-header-super--menu a:focus {
+          color: #333 !important;
+          font-weight: 400 !important; }
+        .utk-header-super--menu > li:first-child > a {
+          padding-left: 0; } }
   .utk-header-super--url {
     position: absolute;
     left: -2000px;
@@ -1491,8 +1510,8 @@ a.utk-help-back:visited {
       border-top: 2px solid #e0e0e0; } }
   @media (max-width: 767px) {
     .utk-hours {
-      padding-top: 18px;
-      margin-bottom: 29px;
+      padding-top: 6px;
+      margin-bottom: 18px;
       border-top: none;
       text-align: center; } }
   .utk-hours h4 {
@@ -1521,7 +1540,7 @@ a.utk-help-back:visited {
         padding: 0; } }
     @media (max-width: 767px) {
       .utk-hours--listing {
-        padding: 0 29px; } }
+        padding: 0 0; } }
     .utk-hours--listing--item {
       list-style: none;
       margin: 0;
@@ -1565,20 +1584,13 @@ a.utk-help-back:visited {
           /* Landscape phones and down */
           /* Landscape phone to portrait tablet */
           /* Portrait tablet to landscape and desktop */
-          /* desktop and large desktop */
-          /* Mobile Devices for Mice */
-          /* Landscape phones and down */
-          /* Landscape phone to portrait tablet */
-          /* Portrait tablet to landscape and desktop */
           /* desktop and large desktop */ }
-          @media (min-width: 768px) and (max-width: 991px) {
-            .utk-hours--listing--item a h5,
-            .utk-hours--listing--item a:visited h5 {
-              font-size: 15px; } }
           @media (max-width: 767px) {
             .utk-hours--listing--item a h5,
             .utk-hours--listing--item a:visited h5 {
-              font-size: 15px; } }
+              font-size: 15px;
+              font-weight: 400;
+              text-align: center; } }
       .utk-hours--listing--item--simple {
         margin-right: 1em; }
       .utk-hours--listing--item--hours {
@@ -1593,7 +1605,8 @@ a.utk-help-back:visited {
         @media (max-width: 767px) {
           .utk-hours--listing--item--hours {
             display: block;
-            margin: 0 auto; } }
+            font-size: 15px;
+            margin: 6px auto 0; } }
         .utk-hours--listing--item--hours::before {
           width: 0.6em;
           height: 0.6em;
