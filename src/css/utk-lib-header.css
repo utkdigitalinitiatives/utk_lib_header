@@ -1413,7 +1413,16 @@ a.utk-help-back:visited {
     height: 100%; }
 
 .utk-header-resources.utk-help-expand .utk-resources-close {
-  position: fixed !important; }
+  position: relative !important;
+  top: 47px;
+  /* Mobile Devices for Mice */
+  /* Landscape phones and down */
+  /* Landscape phone to portrait tablet */
+  /* Portrait tablet to landscape and desktop */
+  /* desktop and large desktop */ }
+  @media (max-width: 767px) {
+    .utk-header-resources.utk-help-expand .utk-resources-close {
+      top: 40px; } }
 
 .utk-help {
   position: relative;

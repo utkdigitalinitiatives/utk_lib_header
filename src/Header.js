@@ -42,6 +42,7 @@ class Header extends Component {
     };
 
     closeResources = (e) => {
+        console.log(e);
         e.stopPropagation();
         this.setState({showHelp: false});
         let footerClose = findIndex(e.path, {'className': 'utk-resources-close'});
@@ -104,6 +105,14 @@ class Header extends Component {
         }
     }
 
+    closeResourcesListener = (e) => {
+        console.log(e.srcElement.dataset);
+        if (e.srcElement.dataset.event === 'option-resources-close') {
+            e.stopPropagation();
+            this.closeResourcesMenu(e);
+        }
+    }
+
     getParameterByName = (name, url) => {
         if (!url) url = window.location.href;
         name = name.replace(/[\[\]]/g, '\\$&');
@@ -117,6 +126,7 @@ class Header extends Component {
     componentDidMount() {
         document.addEventListener('scroll', this.trackScrolling);
         window.addEventListener("click", this.optionListener);
+        document.addEventListener("click", this.closeResourcesListener);
 
         const help = this.getParameterByName('help');
 

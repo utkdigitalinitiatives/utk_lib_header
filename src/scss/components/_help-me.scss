@@ -169,7 +169,12 @@
   }
 
   .utk-resources-close {
-    position: fixed !important;
+    position: relative !important;
+    top: $golden-ratio-4;
+
+    @include respond(xs) {
+      top: 40px;
+    }
   }
 }
 
