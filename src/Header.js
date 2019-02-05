@@ -42,7 +42,6 @@ class Header extends Component {
     };
 
     closeResources = (e) => {
-        console.log(e);
         e.stopPropagation();
         this.setState({showHelp: false});
         let footerClose = findIndex(e.path, {'className': 'utk-resources-close'});
@@ -77,6 +76,12 @@ class Header extends Component {
     };
 
     closeSearch = (e) => {
+
+        /*
+         * refine closing of search to not use findIndex on e.path
+         * to make compatible with Safari/Firefox
+         */
+
         e.stopPropagation();
         let isSearch = findIndex(e.path, {'className': 'utk-search-wrapper'});
         if (isSearch === -1) {

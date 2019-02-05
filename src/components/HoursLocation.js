@@ -49,8 +49,6 @@ export class HoursLocation extends Component {
 
         const {data, label, id} = this.props;
 
-        console.log(data)
-
         let hoursClass = this.getHoursIndicator(data, id);
         let hoursLabel = this.getHoursLabel(data.hours);
 
