@@ -1,10 +1,10 @@
 body.utk-menu-open .utk-header-super {
-  display: none;
   height: auto !important;
 }
 
 .utk-header-super {
   @include respond(xs) {
+    display: none;
     position: relative !important;
     display: none;
     width: 100%;
