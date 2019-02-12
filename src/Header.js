@@ -14,6 +14,7 @@ import primary_logo from './media/ut-knoxville.svg';
 import square_logo from './media/ut-square.svg';
 import {Placeholder} from "./components/Placeholder";
 import {Help} from "./components/Help";
+import {Digital} from "./components/custom/Digital";
 
 /* header component */
 class Header extends Component {
@@ -252,7 +253,7 @@ class Header extends Component {
                     <Search showSearch={showSearch} ref="search"/>
                 </header>
                 <div className="utk-body-overlay"></div>
-                <Placeholder/>
+                <Digital/>
             </div>
         );
     }

@@ -2578,6 +2578,29 @@ body.utk-search-open .utk-header-search {
     color: #8d2048; }
 
 /*
+ * custom
+ */
+.utk-digital-header {
+  display: block;
+  background-color: #333;
+  min-height: 181px;
+  color: #fff;
+  position: relative; }
+  .utk-digital-header .container {
+    position: static !important; }
+  .utk-digital-header h1 {
+    position: absolute;
+    bottom: 0;
+    line-height: 47px;
+    color: #fff;
+    font-weight: 400; }
+
+.utk-digital-bar {
+  background-color: #333;
+  height: 76px;
+  position: relative; }
+
+/*
  * vendor
  */
 /*!

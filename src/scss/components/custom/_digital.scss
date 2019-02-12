@@ -1,0 +1,33 @@
+.utk-digital {
+
+}
+
+.utk-digital-header {
+  display: block;
+  background-color: $smokeyx;
+  min-height: 181px;
+  color: $white;
+  position: relative;
+
+  .container {
+    position: static !important;
+  }
+
+  h1 {
+    position: absolute;
+    bottom: 0;
+    line-height: $golden-ratio-4;
+    color: $white;
+    font-weight: 400;
+  }
+}
+
+.utk-digital-bar {
+  background-color: $smokeyx;
+  height: $golden-ratio-5;
+  position: relative;
+
+  form {
+
+  }
+}
