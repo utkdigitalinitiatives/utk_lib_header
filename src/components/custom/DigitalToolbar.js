@@ -13,19 +13,17 @@ export class DigitalToolbar extends Component {
 
         return (
             <div className="utk-digital-bar utk-digital-toolbar">
-                <div className="container">
-                    <form>
-                        <div>
-                            <Input type='text' placeholder='Searching digital.lib.utk.edu' action>
-                                <input style={{ width: 240 }} />
-                                <Select options={options} defaultValue='collections' />
-                                <Button type='submit'>Go</Button>
-                            </Input>
-                        </div>
-                        <div>
-                        </div>
-                    </form>
-                </div>
+                <form>
+                    <div>
+                        <Input type='text' placeholder='Searching digital.lib.utk.edu' fluid action>
+                            <input />
+                            <Select compact options={options} defaultValue='collections' />
+                            <Button type='submit'>Go</Button>
+                        </Input>
+                    </div>
+                    <div>
+                    </div>
+                </form>
             </div>
         )
     }

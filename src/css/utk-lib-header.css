@@ -11,6 +11,9 @@
  * font-size for typography
  */
 /*
+ * golden ratio
+ */
+/*
  * incremental spacers by golden ratio
  */
 /*
@@ -2580,25 +2583,107 @@ body.utk-search-open .utk-header-search {
 /*
  * custom
  */
+.utk-digital {
+  font-size: 18px; }
+
 .utk-digital-header {
   display: block;
-  background-color: #333;
-  min-height: 181px;
+  background-color: #58595b;
+  height: calc(61.8034vw);
+  min-height: 500px;
+  max-height: calc(100vh - 129px);
   color: #fff;
   position: relative; }
-  .utk-digital-header .container {
-    position: static !important; }
-  .utk-digital-header h1 {
+  .utk-digital-header .utk-digital-header-background {
+    width: 100%;
+    height: 100%;
+    background-color: #a7a9ac; }
+    .utk-digital-header .utk-digital-header-background .utk-digital-header-background-image {
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: 50% 50%; }
+    .utk-digital-header .utk-digital-header-background::after {
+      background: -moz-linear-gradient(top, rgba(88, 89, 91, 0) 0%, rgba(0, 0, 0, 0.85) 61.8%);
+      background: -webkit-gradient(linear, top, bottom, color-stop(0%, rgba(88, 89, 91, 0)), color-stop(61.8%, rgba(0, 0, 0, 0.85)));
+      background: -webkit-linear-gradient(top, rgba(88, 89, 91, 0) 0%, rgba(0, 0, 0, 0.85) 61.8%);
+      background: -o-linear-gradient(top, rgba(88, 89, 91, 0) 0%, rgba(0, 0, 0, 0.85) 61.8%);
+      background: -ms-linear-gradient(top, rgba(88, 89, 91, 0) 0%, rgba(0, 0, 0, 0.85) 61.8%);
+      background: linear-gradient(to bottom, rgba(88, 89, 91, 0) 0%, rgba(0, 0, 0, 0.85) 61.8%);
+      display: block;
+      width: 100%;
+      height: calc(100% / 1.618);
+      position: absolute;
+      bottom: 0;
+      content: ' ';
+      z-index: 1; }
+  .utk-digital-header .utk-digital-header-wrap {
+    bottom: 76px;
+    width: 100%;
     position: absolute;
-    bottom: 0;
-    line-height: 47px;
+    z-index: 2; }
+  .utk-digital-header .utk-digital-header-flex {
+    display: flex;
+    align-items: flex-end; }
+  .utk-digital-header h1 {
+    font-size: 39px;
+    text-shadow: 0 4px 10px rgba(51, 51, 51, 0.15);
+    margin-bottom: 18px;
     color: #fff;
     font-weight: 400; }
+  .utk-digital-header .utk-digital-header-actions {
+    width: calc(61.8034%);
+    display: flex;
+    flex-direction: column;
+    padding-right: 47px; }
+  .utk-digital-header .utk-digital-header-featured {
+    text-align: right;
+    width: calc(38.1966%); }
 
-.utk-digital-bar {
-  background-color: #333;
-  height: 76px;
-  position: relative; }
+.utk-digital-header-featured-credit h2 {
+  font-size: 15px;
+  text-transform: uppercase;
+  color: #fff;
+  display: inline-block;
+  border-bottom: 6px solid #58595b;
+  padding-bottom: 11px; }
+
+.utk-digital-header-featured-credit h3 {
+  font-size: 23px; }
+  .utk-digital-header-featured-credit h3 a,
+  .utk-digital-header-featured-credit h3 a:visited,
+  .utk-digital-header-featured-credit h3 a:hover,
+  .utk-digital-header-featured-credit h3 a:focus {
+    color: #fff !important; }
+
+.utk-digital-header-featured-credit p {
+  font-size: 18px; }
+  .utk-digital-header-featured-credit p a,
+  .utk-digital-header-featured-credit p a:visited,
+  .utk-digital-header-featured-credit p a:hover,
+  .utk-digital-header-featured-credit p a:focus {
+    color: #ff8200 !important; }
+  .utk-digital-header-featured-credit p > span {
+    display: block;
+    font-size: 13px;
+    color: #e0e0e0; }
+
+.utk-digital-all {
+  padding: 47px 0;
+  min-height: 50vh; }
+  .utk-digital-all .utk-digital-all-header {
+    display: flex; }
+    .utk-digital-all .utk-digital-all-header > h2 {
+      margin-right: 47px;
+      font-size: 29px;
+      font-weight: 700; }
+    .utk-digital-all .utk-digital-all-header .utk-digital-all-sort {
+      margin-top: 3px; }
+      .utk-digital-all .utk-digital-all-header .utk-digital-all-sort span {
+        font-size: 15px;
+        text-transform: uppercase;
+        color: #58595b;
+        margin-right: 11px; }
 
 /*
  * vendor

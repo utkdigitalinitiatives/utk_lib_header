@@ -1,12 +1,11 @@
 import React, {Component} from 'react';
-import {DigitalToolbar} from "./DigitalToolbar";
 
-export class DigitalBody extends Component {
+export class DigitalCollection extends Component {
 
     render () {
         return (
             <div>
-                <DigitalToolbar/>
+                collection name
             </div>
         )
     }
