@@ -28,7 +28,7 @@
 
       display: block;
       width: 100%;
-      height: calc(100% / 1.618);
+      height: calc(100% / 1.1);
       position: absolute;
       bottom: 0;
       content: ' ';
@@ -49,7 +49,7 @@
   }
 
   h1 {
-    font-size: $type-6;
+    font-size: $type-5;
     text-shadow: $box-shadow-float;
     margin-bottom: $golden-ratio-2;
     color: $white;
@@ -61,6 +61,19 @@
     display: flex;
     flex-direction: column;
     padding-right: $golden-ratio-4;
+
+    p {
+      font-size: $type-3;
+      font-family: $sans;
+      margin-bottom: $golden-ratio-3;
+
+      a,
+      a:visited,
+      a:hover,
+      a:focus {
+        color: $orange !important;
+      }
+    }
   }
 
   .utk-digital-header-featured {
@@ -133,4 +146,11 @@
       }
     }
   }
+}
+
+
+
+.utk-digital-date-slider {
+  width: 300px;
+  max-width: 100%;
 }

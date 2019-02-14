@@ -5378,6 +5378,19 @@ normalize-url@^1.4.0:
     query-string "^4.1.0"
     sort-keys "^1.0.0"
 
+nouislider-react@^2.2.0:
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/nouislider-react/-/nouislider-react-2.2.0.tgz#d01b8cfe63e9b7e1463949249d9e32a46662cc6b"
+  integrity sha512-/yxJ3Vi6xlhniXp4vNEex+rgD+x/7fzbhUdlcP9JOdNFgupZniyfYutHOkF3CWCCMduWk6GuHDju2qZzpv0q9Q==
+  dependencies:
+    nouislider "^13.1.0"
+    react "^16.8.1"
+
+nouislider@^13.1.0:
+  version "13.1.1"
+  resolved "https://registry.yarnpkg.com/nouislider/-/nouislider-13.1.1.tgz#fc6b38de65385579774887468bee00b138447854"
+  integrity sha512-PYXfMYYZA2F7QzMSEANocyIr8OgeMBrQBCre5wHsZiyha0DSrt9i5weEV2oWaJDYnG2qDKb6GwmKAkczqTzvAQ==
+
 npm-bundled@^1.0.1:
   version "1.0.5"
   resolved "https://registry.yarnpkg.com/npm-bundled/-/npm-bundled-1.0.5.tgz#3c1732b7ba936b3a10325aef616467c0ccbcc979"
@@ -6491,6 +6504,16 @@ react@^16.4.1:
     object-assign "^4.1.1"
     prop-types "^15.6.0"
 
+react@^16.8.1:
+  version "16.8.2"
+  resolved "https://registry.yarnpkg.com/react/-/react-16.8.2.tgz#83064596feaa98d9c2857c4deae1848b542c9c0c"
+  integrity sha512-aB2ctx9uQ9vo09HVknqv3DGRpI7OIGJhCx3Bt0QqoRluEjHSaObJl+nG12GDdYH6sTgE7YiPJ6ZUyMx9kICdXw==
+  dependencies:
+    loose-envify "^1.1.0"
+    object-assign "^4.1.1"
+    prop-types "^15.6.2"
+    scheduler "^0.13.2"
+
 read-pkg-up@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/read-pkg-up/-/read-pkg-up-1.0.1.tgz#9d63c13276c065918d57f002a57f40a1b643fb02"
@@ -6947,6 +6970,14 @@ sass-graph@^2.1.1, sass-graph@^2.2.4:
 sax@^1.2.1, sax@^1.2.4, sax@~1.2.1:
   version "1.2.4"
   resolved "https://registry.yarnpkg.com/sax/-/sax-1.2.4.tgz#2816234e2378bddc4e5354fab5caa895df7100d9"
+
+scheduler@^0.13.2:
+  version "0.13.2"
+  resolved "https://registry.yarnpkg.com/scheduler/-/scheduler-0.13.2.tgz#969eaee2764a51d2e97b20a60963b2546beff8fa"
+  integrity sha512-qK5P8tHS7vdEMCW5IPyt8v9MJOHqTrOUgPXib7tqm9vh834ibBX5BNhwkplX/0iOzHW5sXyluehYfS9yrkz9+w==
+  dependencies:
+    loose-envify "^1.1.0"
+    object-assign "^4.1.1"
 
 schema-utils@^0.3.0:
   version "0.3.0"

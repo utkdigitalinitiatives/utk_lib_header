@@ -1,0 +1,121 @@
+.utk-digital-toolbar {
+
+  .ui {
+    border-radius: 0 !important;
+  }
+
+  .ui.button {
+    font-size: $type-2 !important;
+    border-radius: 0 !important;
+  }
+
+  .ui.action.input {
+    margin-bottom: $golden-ratio-3;
+
+    > input {
+      border-radius: 0 !important;
+      font-size: $type-3 !important;
+    }
+
+    .ui.button  {
+      background-color: $globe !important;
+      color: $white;
+      font-size: $type-3 !important;
+    }
+  }
+
+  .ui.dropdown {
+    margin-right: $golden-ratio-3;
+    background-color: $smokey !important;
+    color: $white !important;
+    font-size: $type-2 !important;
+  }
+
+  .ui.buttons {
+
+    button.ui.button {
+      /*
+
+       */
+    }
+
+    button.ui.button.active {
+      background-color: $smokey !important;
+      color: $white !important;
+      font-weight: 400 !important;
+      border: 2px solid $smokey !important;
+    }
+
+    button.ui.button.basic {
+      border: 2px solid $smokey !important;
+      color: $gray-3 !important;
+      background-color: rgba($smokeyx, 0.85) !important;
+
+      &:hover,
+      &:focus {
+        border: 2px solid $smokey !important;
+        color: $white !important;
+        background-color: $smokeyx !important;
+      }
+    }
+
+    button.ui.button.active,
+    button.ui.button.basic {
+
+      &:first-child {
+        border-right: none !important;
+      }
+
+      &:last-child {
+        border-left: none !important;
+      }
+    }
+  }
+
+}
+
+.ui.popup {
+  background-color: $gray-2 !important;
+  border: none !important;
+  padding: $golden-ratio-2 $golden-ratio-3 !important;
+  box-shadow: $box-shadow-float;
+
+  &::before {
+    background-color: $gray-2 !important;
+    box-shadow: none !important;
+  }
+}
+
+.noUi-horizontal {
+  box-shadow: none !important;
+  border: none !important;
+
+  .noUi-base {
+    border: none !important;
+  }
+
+  .noUi-connects {
+    background-color: $rock !important;
+    box-shadow: none !important;
+    border: none !important;
+  }
+
+  .noUi-connect {
+    background-color: $smokey !important;
+    box-shadow: inset $box-shadow-float;
+  }
+
+  .noUi-handle {
+    cursor: pointer;
+    border: none;
+    background-color: $smokeyx;
+    box-shadow: none !important;
+    border: none !important;
+
+    &::before,
+    &::after {
+      background-color: $smokey;
+    }
+
+  }
+}
