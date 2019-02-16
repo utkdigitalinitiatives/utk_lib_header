@@ -15,7 +15,8 @@ export class DigitalAll extends Component {
         super(props);
 
         this.state = {
-            sortby: 'title'
+            sortby: 'title',
+            data: sortBy(Collections, ['title'])
         };
 
     }
@@ -24,36 +25,41 @@ export class DigitalAll extends Component {
 
         let sortID = e.target.id;
 
-        if (sortID === 'sort_alpha')
+        if (sortID === 'sort_alpha') {
             this.setState({sortby: 'title'});
-        else if  (sortID === 'sort_recent')
+            this.setState({data: sortBy(Collections, ['title'])});
+        } else if (sortID === 'sort_recent') {
             this.setState({sortby: 'recent'});
-        else if  (sortID === 'sort_count')
+            this.setState({data: Collections});
+        } else if (sortID === 'sort_count') {
             this.setState({sortby: 'count'});
+            this.setState({data: Collections});
+        }
 
-        return
+        return;
 
     }
 
-    buildCollections = (collections) => {
+    buildCollections = () => {
 
-        let {sortby} = this.state
+        let {sortby, data} = this.state;
 
         /*
          * if collections exist
          */
 
-        if (collections) {
+        if (data) {
 
-            return Object.entries(sortBy(collections, [sortby])).map((collection, index) => {
-
-                let {title, src} = collection[1];
-
-                return (
-                    <DigitalCollection key={index} image={src} title={title} />
-                )
-
-            });
+            return (
+            <div className="utk-digital-flex-all">
+                {
+                    Object.entries(data).map(collection => (
+                            <DigitalCollection image={collection[1].src} title={collection[1].title} />
+                        )
+                    )
+                }
+            </div>
+            )
 
         } else {
 

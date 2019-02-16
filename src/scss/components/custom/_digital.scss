@@ -1,5 +1,9 @@
 .utk-digital {
   font-size: $type-3;
+
+  figure {
+    margin: 0;
+  }
 }
 
 .utk-digital-header {
@@ -184,11 +188,15 @@
 }
 
 .utk-digital-all-collections {
-  display: flex;
   flex-wrap: wrap;
   margin-top: $golden-ratio-3;
 
-  &--block {
+  div.utk-digital-flex-all {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .utk-digital-all-collections--block {
     width: calc((100% - (47px * 3)) / 4);
     margin-right: $golden-ratio-4;
     margin-bottom: $golden-ratio-4;

@@ -16,14 +16,14 @@ export class DigitalHeader extends Component {
                 <div className="utk-digital-header-wrap">
                     <div className="container">
                         <div className="utk-digital-header-flex">
-                            <div className="utk-digital-header-actions">
-                                <h1>Digital Collections</h1>
-                                <p>Explore items digitized from our collections.</p>
-                                <DigitalToolbar/>
-                            </div>
-                            <div className="utk-digital-header-featured">
-                                <DigitalFeaturedCollection/>
-                            </div>
+                                <div className="utk-digital-header-actions">
+                                    <h1>Digital Collections</h1>
+                                    <p>Explore items digitized from our collections.</p>
+                                    <DigitalToolbar/>
+                                </div>
+                                <div className="utk-digital-header-featured">
+                                        <DigitalFeaturedCollection/>
+                                </div>
                         </div>
                     </div>
                 </div>
