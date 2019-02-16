@@ -53,7 +53,7 @@
     text-shadow: $box-shadow-float;
     margin-bottom: $golden-ratio-2;
     color: $white;
-    font-weight: 400;
+    font-weight: 700;
   }
 
   .utk-digital-header-actions {
@@ -65,13 +65,14 @@
     p {
       font-size: $type-3;
       font-family: $sans;
+      color: $white;
       margin-bottom: $golden-ratio-3;
 
       a,
       a:visited,
       a:hover,
       a:focus {
-        color: $orange !important;
+        color: $white !important;
       }
     }
   }
@@ -128,21 +129,48 @@
 
   .utk-digital-all-header {
     display: flex;
+    justify-content: space-between;
 
     > h2 {
       margin-right: $golden-ratio-4;
-      font-size: $type-5;
-      font-weight: 700;
+      font-size: $type-4;
+      line-height: $golden-ratio-4;
+      margin-top: -2px;
+      font-weight: 400;
+      color: $smokeyx;
     }
 
     .utk-digital-all-sort {
-      margin-top: 3px;
+
+      .ui.button {
+        background-color: transparent;
+        font-weight: 700;
+        color: $smokey !important;
+        font-size: $type-2;
+        border-radius: 0 !important;
+        border: 2px solid $gray-1 !important;
+        border-radius: $golden-ratio-3 !important;
+        margin-left: $golden-ratio-1;
+        padding: $golden-ratio-1 $golden-ratio-2;
+
+        &.active {
+          background-color: $globe !important;
+          color: $white !important;
+          border: 2px solid $globe !important;
+        }
+
+        &:hover,
+        &:focus {
+          background-color: transparent;
+        }
+      }
 
       span {
-        font-size: $type-2;
+        font-size: $type-1;
+        font-weight: 700;
+        color: $smokeyx;
         text-transform: uppercase;
-        color: $smokey;
-        margin-right: $golden-ratio-1;
+        margin: 0 $golden-ratio-2 0 $golden-ratio-4;
       }
     }
   }
@@ -153,4 +181,96 @@
 .utk-digital-date-slider {
   width: 300px;
   max-width: 100%;
+}
+
+.utk-digital-all-collections {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: $golden-ratio-3;
+
+  &--block {
+    width: calc((100% - (47px * 3)) / 4);
+    margin-right: $golden-ratio-4;
+    margin-bottom: $golden-ratio-4;
+
+    &:nth-child(4n) {
+      margin-right: 0;
+    }
+
+    &:hover,
+    &:focus {
+      h3 {
+        color: $globe;
+      }
+    }
+
+    h3 {
+      font-size: $type-3;
+      font-weight: 700;
+      padding: $golden-ratio-2 $golden-ratio-2 0 0;
+      margin: 0;
+      overflow-wrap: break-word;
+      color: $smokey;
+    }
+
+    /*
+     for comparison
+     */
+
+    width: calc((100% - (47px * 2)) / 3);
+
+    &:nth-child(4n) {
+      margin-right: $golden-ratio-4;
+    }
+
+    &:nth-child(3n) {
+      margin-right: 0;
+    }
+
+    /*
+     end compare
+     */
+
+    @include respond(md) {
+      width: calc((100% - (47px * 2)) / 3);
+
+      &:nth-child(4n) {
+        margin-right: $golden-ratio-4 !important;
+      }
+
+      &:nth-child(3n) {
+        margin-right: 0 !important;
+      }
+    }
+
+    @include respond(sm) {
+      width: calc((100% - (47px * 1)) / 2);
+
+      &:nth-child(4n) {
+        margin-right: $golden-ratio-4 !important;
+      }
+
+      &:nth-child(2n) {
+        margin-right: 0 !important;
+      }
+    }
+
+    @include respond(xs) {
+      width: 100%;
+      margin-right: 0 !important;
+
+      img {
+        position: relative !important;
+        margin-left: -15px;
+        width: calc(100% + 30px) !important;
+        max-width: none !important;
+      }
+
+      h3 {
+        text-align: center !important;
+        font-size: $type-4 !important;
+        padding: $golden-ratio-2 $golden-ratio-2 !important;
+      }
+    }
+  }
 }

@@ -15,6 +15,10 @@
     > input {
       border-radius: 0 !important;
       font-size: $type-3 !important;
+
+      &::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+        color: $rock;
+      }
     }
 
     .ui.button  {

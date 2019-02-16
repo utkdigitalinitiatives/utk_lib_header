@@ -18,7 +18,7 @@ export class DigitalHeader extends Component {
                         <div className="utk-digital-header-flex">
                             <div className="utk-digital-header-actions">
                                 <h1>Digital Collections</h1>
-                                <p>Explore items digitized from <a href="https://www.lib.utk.edu">UT Libraries</a> collections.</p>
+                                <p>Explore items digitized from our collections.</p>
                                 <DigitalToolbar/>
                             </div>
                             <div className="utk-digital-header-featured">

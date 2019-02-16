@@ -2630,7 +2630,7 @@ body.utk-search-open .utk-header-search {
     text-shadow: 0 4px 10px rgba(51, 51, 51, 0.15);
     margin-bottom: 18px;
     color: #fff;
-    font-weight: 400; }
+    font-weight: 700; }
   .utk-digital-header .utk-digital-header-actions {
     width: calc(61.8034%);
     display: flex;
@@ -2639,12 +2639,13 @@ body.utk-search-open .utk-header-search {
     .utk-digital-header .utk-digital-header-actions p {
       font-size: 18px;
       font-family: "Gotham SSm 2r", "Gotham SSm A", "Gotham SSm B", "Gotham-Book", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      color: #fff;
       margin-bottom: 29px; }
       .utk-digital-header .utk-digital-header-actions p a,
       .utk-digital-header .utk-digital-header-actions p a:visited,
       .utk-digital-header .utk-digital-header-actions p a:hover,
       .utk-digital-header .utk-digital-header-actions p a:focus {
-        color: #ff8200 !important; }
+        color: #fff !important; }
   .utk-digital-header .utk-digital-header-featured {
     text-align: right;
     width: calc(38.1966%); }
@@ -2681,22 +2682,114 @@ body.utk-search-open .utk-header-search {
   padding: 47px 0;
   min-height: 50vh; }
   .utk-digital-all .utk-digital-all-header {
-    display: flex; }
+    display: flex;
+    justify-content: space-between; }
     .utk-digital-all .utk-digital-all-header > h2 {
       margin-right: 47px;
-      font-size: 29px;
-      font-weight: 700; }
-    .utk-digital-all .utk-digital-all-header .utk-digital-all-sort {
-      margin-top: 3px; }
-      .utk-digital-all .utk-digital-all-header .utk-digital-all-sort span {
-        font-size: 15px;
-        text-transform: uppercase;
-        color: #58595b;
-        margin-right: 11px; }
+      font-size: 23px;
+      line-height: 47px;
+      margin-top: -2px;
+      font-weight: 400;
+      color: #333; }
+    .utk-digital-all .utk-digital-all-header .utk-digital-all-sort .ui.button {
+      background-color: transparent;
+      font-weight: 700;
+      color: #58595b !important;
+      font-size: 15px;
+      border-radius: 0 !important;
+      border: 2px solid #e0e0e0 !important;
+      border-radius: 29px !important;
+      margin-left: 11px;
+      padding: 11px 18px; }
+      .utk-digital-all .utk-digital-all-header .utk-digital-all-sort .ui.button.active {
+        background-color: #006c93 !important;
+        color: #fff !important;
+        border: 2px solid #006c93 !important; }
+      .utk-digital-all .utk-digital-all-header .utk-digital-all-sort .ui.button:hover, .utk-digital-all .utk-digital-all-header .utk-digital-all-sort .ui.button:focus {
+        background-color: transparent; }
+    .utk-digital-all .utk-digital-all-header .utk-digital-all-sort span {
+      font-size: 13px;
+      font-weight: 700;
+      color: #333;
+      text-transform: uppercase;
+      margin: 0 18px 0 47px; }
 
 .utk-digital-date-slider {
   width: 300px;
   max-width: 100%; }
+
+.utk-digital-all-collections {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 29px; }
+  .utk-digital-all-collections--block {
+    width: calc((100% - (47px * 3)) / 4);
+    margin-right: 47px;
+    margin-bottom: 47px;
+    /*
+     for comparison
+     */
+    width: calc((100% - (47px * 2)) / 3);
+    /*
+     end compare
+     */
+    /* Mobile Devices for Mice */
+    /* Landscape phones and down */
+    /* Landscape phone to portrait tablet */
+    /* Portrait tablet to landscape and desktop */
+    /* desktop and large desktop */
+    /* Mobile Devices for Mice */
+    /* Landscape phones and down */
+    /* Landscape phone to portrait tablet */
+    /* Portrait tablet to landscape and desktop */
+    /* desktop and large desktop */
+    /* Mobile Devices for Mice */
+    /* Landscape phones and down */
+    /* Landscape phone to portrait tablet */
+    /* Portrait tablet to landscape and desktop */
+    /* desktop and large desktop */ }
+    .utk-digital-all-collections--block:nth-child(4n) {
+      margin-right: 0; }
+    .utk-digital-all-collections--block:hover h3, .utk-digital-all-collections--block:focus h3 {
+      color: #006c93; }
+    .utk-digital-all-collections--block h3 {
+      font-size: 18px;
+      font-weight: 700;
+      padding: 18px 18px 0 0;
+      margin: 0;
+      overflow-wrap: break-word;
+      color: #58595b; }
+    .utk-digital-all-collections--block:nth-child(4n) {
+      margin-right: 47px; }
+    .utk-digital-all-collections--block:nth-child(3n) {
+      margin-right: 0; }
+    @media (min-width: 992px) and (max-width: 1199px) {
+      .utk-digital-all-collections--block {
+        width: calc((100% - (47px * 2)) / 3); }
+        .utk-digital-all-collections--block:nth-child(4n) {
+          margin-right: 47px !important; }
+        .utk-digital-all-collections--block:nth-child(3n) {
+          margin-right: 0 !important; } }
+    @media (min-width: 768px) and (max-width: 991px) {
+      .utk-digital-all-collections--block {
+        width: calc((100% - (47px * 1)) / 2); }
+        .utk-digital-all-collections--block:nth-child(4n) {
+          margin-right: 47px !important; }
+        .utk-digital-all-collections--block:nth-child(2n) {
+          margin-right: 0 !important; } }
+    @media (max-width: 767px) {
+      .utk-digital-all-collections--block {
+        width: 100%;
+        margin-right: 0 !important; }
+        .utk-digital-all-collections--block img {
+          position: relative !important;
+          margin-left: -15px;
+          width: calc(100% + 30px) !important;
+          max-width: none !important; }
+        .utk-digital-all-collections--block h3 {
+          text-align: center !important;
+          font-size: 23px !important;
+          padding: 18px 18px !important; } }
 
 .utk-digital-toolbar .ui {
   border-radius: 0 !important; }
@@ -2710,6 +2803,9 @@ body.utk-search-open .utk-header-search {
   .utk-digital-toolbar .ui.action.input > input {
     border-radius: 0 !important;
     font-size: 18px !important; }
+    .utk-digital-toolbar .ui.action.input > input::placeholder {
+      /* Chrome, Firefox, Opera, Safari 10.1+ */
+      color: #a7a9ac; }
   .utk-digital-toolbar .ui.action.input .ui.button {
     background-color: #006c93 !important;
     color: #fff;

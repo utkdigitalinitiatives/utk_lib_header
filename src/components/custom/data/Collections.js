@@ -1,62 +1,77 @@
 const collections = [
     {
-        'title': 'Albert "Dutch" Roth Photograph Collection',
-        'src': 'http://digital.lib.utk.edu/images/coll/Roth-new.jpg',
+        'title': 'Nineteenth and Early Twentieth Century Images of Egypt',
+        'src': 'http://assets.test/dc/egypt.jpg',
         'group': 1
     },
     {
-        'title': 'Blount County Historical and Architectural Inventory',
-        'src': 'http://digital.lib.utk.edu/images/coll/bcplchurch_thumbnail.jpg',
+        'title': 'Postcards from the Great Smoky Mountains',
+        'src': 'http://assets.test/dc/gsmrc.jpg',
         'group': 3
     },
     {
-        'title': 'Charlie Daniel Editorial Cartoon Collection',
-        'src': 'http://digital.lib.utk.edu/images/coll/charliedaniel.jpg',
+        'title': 'Photographs from the Life and Career of Howard Baker',
+        'src': 'http://assets.test/dc/howard2.jpg',
         'group': 3
     },
     {
-        'title': 'Commencement Programs',
-        'src': 'http://digital.lib.utk.edu/images/coll/commencement.jpg',
+        'title': 'Knoxville Gardens Slides',
+        'src': 'http://assets.test/dc/knoxville-garden.jpg',
         'group': 4
+    },
+    {
+        'title': 'Sanborn Fire Insurance Maps Collection',
+        'src': 'http://assets.test/dc/sanborn.jpg',
+        'group': 1
+    },
+    {
+        'title': 'Virginia P. Moore Collection ',
+        'src': 'http://assets.test/dc/sealing.jpg',
+        'group': 1
+    },
+    {
+        'title': 'The Volunteer Yearbooks ',
+        'src': 'http://assets.test/dc/tn-yearbook.jpg',
+        'group': 3
+    },
+    {
+        'title': 'Anna Catherine Wiley Sketches',
+        'src': 'http://assets.test/dc/wiley.jpg',
+        'group': 4
+    },
+    {
+        'title': 'Druid: A Humanities Magazine',
+        'src': 'http://assets.test/dc/druid.jpg',
+        'group': 1
     },
     {
         'title': 'Fifty Years in Cades Cove',
-        'src': 'http://digital.lib.utk.edu/images/coll/gsmrc_50yrcove-sq.jpg',
-        'group': 1
-    },
-    {
-        'title': 'From Pi Beta Phi to Arrowmont',
-        'src': 'http://digital.lib.utk.edu/images/coll/Arrowmont-new.jpg',
-        'group': 1
-    },
-    {
-        'title': 'Henry Pippitt Diaries',
-        'src': 'http://dlc.lib.utk.edu/pippitt/images/pippitt-2.jpg',
-        'group': 3
-    },
-    {
-        'title': 'Humming Humbug',
-        'src': 'http://digital.lib.utk.edu/images/coll/humming.jpg',
-        'group': 4
-    },
-    {
-        'title': 'Panoramic Images of Elgin P. Kintner, M.D.',
-        'src': 'http://digital.lib.utk.edu/images/coll/kintner.jpg',
-        'group': 1
-    },
-    {
-        'title': 'Phoenix',
-        'src': 'http://digital.lib.utk.edu/images/coll/phoenix2.jpg',
+        'src': 'http://assets.test/dc/dun-oliver.jpg',
         'group': 2
     },
     {
-        'title': 'Publications By Students',
-        'src': 'http://digital.lib.utk.edu/images/coll/druid2.jpg',
+        'title': 'William Cox Cochran Photographic Collection',
+        'src': 'http://assets.test/dc/cochran.jpg',
         'group': 3
     },
     {
-        'title': 'Tennessee Football Programs',
-        'src': 'http://digital.lib.utk.edu/images/coll/football.jpg',
+        'title': 'Albert "Dutch" Roth Photograph Collection',
+        'src': 'http://assets.test/dc/dutch-roth.jpg',
+        'group': 4
+    },
+    {
+        'title': 'Digital Civil War Collection',
+        'src': 'http://assets.test/dc/civil-war.jpg',
+        'group': 4
+    },
+    {
+        'title': 'David Van Vactor Music Collection ',
+        'src': 'http://assets.test/dc/vanvactor.jpg',
+        'group': 4
+    },
+    {
+        'title': 'World War II Oral Histories',
+        'src': 'http://assets.test/dc/ww2.jpg',
         'group': 4
     }
 ];
