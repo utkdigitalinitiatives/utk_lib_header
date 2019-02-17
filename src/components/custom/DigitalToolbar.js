@@ -51,6 +51,10 @@ export class DigitalToolbar extends Component {
 
     };
 
+    getNotches = () => {
+        return 'note: build notches';
+    }
+
     setActive = (e) => {
         if (e.target.id === 'all')
             this.setState({rangeAll: 1})
@@ -61,6 +65,8 @@ export class DigitalToolbar extends Component {
     render () {
 
         let { rangeAll, rangeValues, rangeSelectContent } = this.state;
+
+        const rangeNotches = this.getNotches();
 
         return (
             <div className="utk-digital-bar utk-digital-toolbar">
@@ -86,6 +92,9 @@ export class DigitalToolbar extends Component {
                             connect
                             onChange={debounce(this.onChange, 25, { 'maxWait': 100 })}
                         />
+                        <div>
+                            {rangeNotches}
+                        </div>
                     </Popup>
                 </Button.Group>
 
