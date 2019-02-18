@@ -18,7 +18,7 @@ export class DigitalHeader extends Component {
                         <div className="utk-digital-header-flex">
                                 <div className="utk-digital-header-actions">
                                     <h1>Digital Collections</h1>
-                                    <p>Explore items digitized from our collections.</p>
+                                    <p>Explore items digitized from our collections. &nbsp; <span>|</span> &nbsp; <a href="#">Learn More</a></p>
                                     <DigitalToolbar rangeStep={25} rangeMin={1775} rangeMax={2025} />
                                 </div>
                                 <div className="utk-digital-header-featured">

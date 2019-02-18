@@ -76,7 +76,11 @@
       a:visited,
       a:hover,
       a:focus {
-        color: $white !important;
+        color: $orange !important;
+      }
+
+      span {
+        color: $smokey;
       }
     }
   }
@@ -116,7 +120,7 @@
     a:visited,
     a:hover,
     a:focus {
-      color: $orange !important;
+      color: $summitt !important;
     }
 
     > span {
@@ -208,7 +212,7 @@
 
           p {
             margin-top: $golden-ratio-1;
-            font-size: $type-3;
+            font-size: $type-2;
             color: $smokeyx;
           }
         }
@@ -226,7 +230,6 @@
 
         h3 {
           font-size: $type-4 !important;
-          padding-top: 0;
         }
       }
     }
