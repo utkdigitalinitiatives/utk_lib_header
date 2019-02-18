@@ -81,7 +81,7 @@
 .ui.visible.popup {
   background-color: $white!important;
   border: none !important;
-  padding: $golden-ratio-2 $golden-ratio-5 $golden-ratio-2 $golden-ratio-2 !important;
+  padding: $golden-ratio-2 60px $golden-ratio-2 $golden-ratio-2 !important;
   box-shadow: 0 0 18px rgba($smokeyx, 0.29)!important;
   position: relative;
   border-bottom: $golden-ratio-0 solid $orange !important;
@@ -104,21 +104,24 @@
   margin-left: $golden-ratio-3;
   position: absolute;
   top: calc(#{$golden-ratio-2 + ($type-3 / 2)});
-  right: $golden-ratio-2;
+  right: $golden-ratio-3;
   width: $golden-ratio-1;
 
   .noUi-base {
     border: none !important;
+    background-color: $gray-1 !important;
+    border-radius: 0 !important;
   }
 
   .noUi-connects {
     background-color: $gray-1 !important;
     border: none !important;
     box-shadow: inset $box-shadow;
+    border-radius: 0 !important;
   }
 
   .noUi-connect {
-    background-color: $smokey !important;
+    background-color: $smokeyx !important;
     box-shadow: inset $box-shadow-float;
   }
 
@@ -129,13 +132,15 @@
     top: -14.5px;
     cursor: pointer;
     border: none;
-    background-color: $rock;
+    background-color: $globe;
     box-shadow: $box-shadow-float !important;
     border: none !important;
+    border-radius: $golden-ratio-3 !important;
 
     &::before,
     &::after {
-      background-color: $gray-2;
+      background-color: desaturate(lighten($globe, 15), 35);
+      background-color: $summitt;
       width: $golden-ratio-1;
       left: 9px;
     }
@@ -190,7 +195,7 @@
       background-color: $gray-1;
       position: absolute;
       right: -29px;
-      margin-top: -9.5px;
+      margin-top: -10px;
     }
 
     &:last-child {
