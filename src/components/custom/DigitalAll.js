@@ -69,7 +69,49 @@ export class DigitalAll extends Component {
 
     };
 
+    getSortOptions = (sortby, sortOptions) => {
+
+        let active = null;
+
+        return (
+            Object.entries(sortOptions).map((sort) => {
+
+                    if (sortby === sort[1].state)
+                        active = "active";
+                    else
+                        active = null;
+
+                    return <Button id={sort[1].id} className={active} onClick={this.toggleSort.bind(this)}>{sort[1].title}</Button>
+                }
+            )
+        )
+
+    };
+
     render () {
+
+        const sortOptions = {
+            0: {
+                state: 'title',
+                id: 'sort_alpha',
+                title: 'A-Z'
+            },
+            1: {
+                state: 'recent',
+                id: 'sort_recent',
+                title: 'Most Recent'
+            },
+            2: {
+                state: 'count',
+                id: 'sort_count',
+                title: 'Item Count'
+            }
+        };
+
+        let {sortby} = this.state;
+
+        const renderOptions = this.getSortOptions(sortby, sortOptions);
+
         return (
             <section className="utk-digital-all">
                 <div className="container">
@@ -83,9 +125,7 @@ export class DigitalAll extends Component {
                             </Button.Group>
                             <span>Sort By</span>
                             <Button.Group color="blue">
-                                <Button id="sort_alpha" onClick={this.toggleSort.bind(this)} active>A-Z</Button>
-                                <Button id="sort_recent" onClick={this.toggleSort.bind(this)}>Most Recent</Button>
-                                <Button id="sort_count" onClick={this.toggleSort.bind(this)}>Item Count</Button>
+                                {renderOptions}
                             </Button.Group>
                         </div>
                     </div>
