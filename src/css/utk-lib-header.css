@@ -2730,6 +2730,7 @@ body.utk-search-open .utk-header-search {
     width: calc((100% - (47px * 3)) / 4);
     margin-right: 47px;
     margin-bottom: 47px;
+    position: relative;
     /*
      for comparison
      */
@@ -2767,6 +2768,28 @@ body.utk-search-open .utk-header-search {
       margin-right: 47px; }
     .utk-digital-all-collections .utk-digital-all-collections--block:nth-child(3n) {
       margin-right: 0; }
+    .utk-digital-all-collections .utk-digital-all-collections--block .utk-digital-all-collections--block--featured {
+      background-color: #e0e0e0;
+      color: #333;
+      display: flex;
+      flex-direction: row-reverse;
+      position: absolute;
+      right: 0;
+      top: 0;
+      z-index: 1;
+      font-size: 13px;
+      font-weight: 400;
+      height: 29px;
+      padding: 0 0 0 11px; }
+      .utk-digital-all-collections .utk-digital-all-collections--block .utk-digital-all-collections--block--featured em {
+        font-size: 13px;
+        display: block;
+        height: 29px;
+        width: 29px;
+        background-color: #ff8200;
+        text-align: center;
+        margin-left: 11px;
+        color: #fff; }
     @media (min-width: 992px) and (max-width: 1199px) {
       .utk-digital-all-collections .utk-digital-all-collections--block {
         width: calc((100% - (47px * 2)) / 3); }

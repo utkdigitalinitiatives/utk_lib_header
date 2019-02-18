@@ -200,6 +200,7 @@
     width: calc((100% - (47px * 3)) / 4);
     margin-right: $golden-ratio-4;
     margin-bottom: $golden-ratio-4;
+    position: relative;
 
     &:nth-child(4n) {
       margin-right: 0;
@@ -233,6 +234,32 @@
 
     &:nth-child(3n) {
       margin-right: 0;
+    }
+
+    .utk-digital-all-collections--block--featured {
+      background-color: $gray-1;
+      color: $smokeyx;
+      display: flex;
+      flex-direction: row-reverse;
+      position: absolute;
+      right: 0;
+      top: 0;
+      z-index: 1;
+      font-size: $type-1;
+      font-weight: 400;
+      height: $golden-ratio-3;
+      padding: 0 0 0 $golden-ratio-1;
+
+      em {
+        font-size: $type-1;
+        display: block;
+        height: $golden-ratio-3;
+        width: $golden-ratio-3;
+        background-color: $orange;
+        text-align: center;
+        margin-left : $golden-ratio-1;
+        color: $white;
+      }
     }
 
     /*

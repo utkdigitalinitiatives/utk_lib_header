@@ -54,7 +54,7 @@ export class DigitalAll extends Component {
             <div className="utk-digital-flex-all">
                 {
                     Object.entries(data).map(collection => (
-                            <DigitalCollection image={collection[1].src} title={collection[1].title} />
+                            <DigitalCollection image={collection[1].src} title={collection[1].title} featured={collection[1].featured} />
                         )
                     )
                 }
