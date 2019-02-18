@@ -2938,6 +2938,13 @@ body.utk-search-open .utk-header-search {
     .utk-digital-date-slider-notches span:last-child {
       margin-bottom: 0; }
 
+body {
+  line-height: 2em !important; }
+
+.utk-menu-help--item h4 {
+  line-height: inherit !important;
+  font-family: "Gotham SSm 2r", "Gotham SSm A", "Gotham SSm B", "Gotham-Book", "Helvetica Neue", Helvetica, Arial, sans-serif !important; }
+
 /*
  * vendor
  */
