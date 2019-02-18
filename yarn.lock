@@ -407,6 +407,16 @@ async@^2.1.2, async@^2.1.4, async@^2.4.1:
   dependencies:
     lodash "^4.17.10"
 
+async@~0.9.2:
+  version "0.9.2"
+  resolved "https://registry.yarnpkg.com/async/-/async-0.9.2.tgz#aea74d5e61c1f899613bf64bda66d4c78f2fd17d"
+  integrity sha1-rqdNXmHB+JlhO/ZL2mbUx48v0X0=
+
+async@~1.4.0:
+  version "1.4.2"
+  resolved "https://registry.yarnpkg.com/async/-/async-1.4.2.tgz#6c9edcb11ced4f0dd2f2d40db0d49a109c088aab"
+  integrity sha1-bJ7csRztTw3S8tQNsNSaEJwIiqs=
+
 asynckit@^0.4.0:
   version "0.4.0"
   resolved "https://registry.yarnpkg.com/asynckit/-/asynckit-0.4.0.tgz#c79ed97f7f34cb8f2ba1bc9790bcc366474b4b79"
@@ -1460,7 +1470,7 @@ camelcase-keys@^2.0.0:
     camelcase "^2.0.0"
     map-obj "^1.0.0"
 
-camelcase@^1.0.2:
+camelcase@^1.0.2, camelcase@~1.2.1:
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/camelcase/-/camelcase-1.2.1.tgz#9bb5304d2e0b56698b2c758b08a3eaa9daa58a39"
 
@@ -1612,6 +1622,11 @@ circular-json@^0.3.1:
   version "0.3.3"
   resolved "https://registry.yarnpkg.com/circular-json/-/circular-json-0.3.3.tgz#815c99ea84f6809529d2f45791bdf82711352d66"
 
+circular@^1.0.5, circular@~1.0.5:
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/circular/-/circular-1.0.5.tgz#7da77af98bbde9ce4b5b358cd556b5dded2d3149"
+  integrity sha1-fad6+Yu96c5LWzWM1Va13e0tMUk=
+
 clap@^1.0.9:
   version "1.2.3"
   resolved "https://registry.yarnpkg.com/clap/-/clap-1.2.3.tgz#4f36745b32008492557f46412d66d50cb99bce51"
@@ -1638,15 +1653,428 @@ clean-css@4.2.x:
   dependencies:
     source-map "~0.6.0"
 
+cli-argparse@~1.0.6:
+  version "1.0.9"
+  resolved "https://registry.yarnpkg.com/cli-argparse/-/cli-argparse-1.0.9.tgz#afbab2c8bce36df5c9d821d60d8a5b60ce99e21d"
+  integrity sha1-r7qyyLzjbfXJ2CHWDYpbYM6Z4h0=
+  dependencies:
+    camelcase "~1.2.1"
+
 cli-boxes@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/cli-boxes/-/cli-boxes-1.0.0.tgz#4fa917c3e59c94a004cd61f8ee509da651687143"
+
+cli-command@^0.8.279, cli-command@~0.8.299:
+  version "0.8.302"
+  resolved "https://registry.yarnpkg.com/cli-command/-/cli-command-0.8.302.tgz#738ec5d255c7147c9012417e1a6367d601063786"
+  integrity sha1-c47F0lXHFHyQEkF+GmNn1gEGN4Y=
+  dependencies:
+    cli-conflict "~0.1.0"
+    cli-define "~0.6.13"
+    cli-error "~0.5.7"
+    cli-logger "~0.5.40"
+    cli-mid-color "~1.0.10"
+    cli-mid-logger "~1.0.10"
+    cli-mid-manual "~1.0.16"
+    cli-middleware "~1.0.0"
+    cli-system "~0.1.67"
+    cli-types "~0.1.2"
+    cli-util "~1.1.27"
+
+cli-compiler@~0.1.34:
+  version "0.1.35"
+  resolved "https://registry.yarnpkg.com/cli-compiler/-/cli-compiler-0.1.35.tgz#41ddf141228153e8b09936d476bcd05b0a8dfe6a"
+  integrity sha1-Qd3xQSKBU+iwmTbUdrzQWwqN/mo=
+  dependencies:
+    async "~0.9.2"
+    circular "^1.0.5"
+    cli-converter-util "^1.0.1"
+    cli-define "^0.6.13"
+    cli-env "^1.0.9"
+    cli-error "^0.5.7"
+    cli-flag-util "^1.0.0"
+    cli-middleware "~1.0.0"
+    cli-util "^1.1.26"
+    escodegen "~1.6.1"
+    esprima "~2.4.1"
+    markzero "^0.1.29"
+
+cli-conflict@~0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/cli-conflict/-/cli-conflict-0.1.0.tgz#90c06ca28fb459c553240ee7803cde5076fb9d2c"
+  integrity sha1-kMBsoo+0WcVTJA7ngDzeUHb7nSw=
+  dependencies:
+    cli-util "^1.1.23"
+
+cli-converter-util@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/cli-converter-util/-/cli-converter-util-1.0.1.tgz#579c50def8d19879da60bc5d5e7b25add9a210fa"
+  integrity sha1-V5xQ3vjRmHnaYLxdXnslrdmiEPo=
 
 cli-cursor@^2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/cli-cursor/-/cli-cursor-2.1.0.tgz#b35dac376479facc3e94747d41d0d0f5238ffcb5"
   dependencies:
     restore-cursor "^2.0.0"
+
+cli-define@^0.6.13, cli-define@~0.6.13:
+  version "0.6.13"
+  resolved "https://registry.yarnpkg.com/cli-define/-/cli-define-0.6.13.tgz#9c077c7406e0f9fd0ae13d77f1324712885f0d4e"
+  integrity sha1-nAd8dAbg+f0K4T138TJHEohfDU4=
+  dependencies:
+    cli-description "^1.0.3"
+    cli-util "^1.1.26"
+
+cli-description@^1.0.3, cli-description@~1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/cli-description/-/cli-description-1.0.3.tgz#1adc3c841745fe5f68f9850af3559a3aa5a8c0bc"
+  integrity sha1-Gtw8hBdF/l9o+YUK81WaOqWowLw=
+  dependencies:
+    markzero "^0.1.29"
+
+cli-env@^1.0.9, cli-env@~1.0.10:
+  version "1.0.10"
+  resolved "https://registry.yarnpkg.com/cli-env/-/cli-env-1.0.10.tgz#c8e38e8bd5561189ee9477bd02f969bf2b4c5609"
+  integrity sha1-yOOOi9VWEYnulHe9AvlpvytMVgk=
+  dependencies:
+    cli-native "~1.0.0"
+    cli-util "^1.1.17"
+
+cli-error@^0.5.7, cli-error@~0.5.7:
+  version "0.5.7"
+  resolved "https://registry.yarnpkg.com/cli-error/-/cli-error-0.5.7.tgz#bf926f142377aeeb6d6ec3fb721e565e7230144a"
+  integrity sha1-v5JvFCN3ruttbsP7ch5WXnIwFEo=
+  dependencies:
+    cli-locale "~0.2.0"
+
+cli-flag-util@^1.0.0, cli-flag-util@~1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/cli-flag-util/-/cli-flag-util-1.0.0.tgz#248e13034289eb9121fe547eda514ee7690a9ea6"
+  integrity sha1-JI4TA0KJ65Eh/lR+2lFO52kKnqY=
+
+cli-fs@~1.0.4:
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/cli-fs/-/cli-fs-1.0.4.tgz#236bdef45c98f6daa1de57473e708141daa6c016"
+  integrity sha1-I2ve9FyY9tqh3ldHPnCBQdqmwBY=
+
+cli-help@0.0.12:
+  version "0.0.12"
+  resolved "https://registry.yarnpkg.com/cli-help/-/cli-help-0.0.12.tgz#6f07977ee81bad7663e6408cc670ea21ca7db706"
+  integrity sha1-bweXfugbrXZj5kCMxnDqIcp9twY=
+  dependencies:
+    cli-description "^1.0.3"
+    cli-flag-util "^1.0.0"
+    cli-util "^1.1.26"
+    markzero "^0.1.29"
+    moment "^2.8.3"
+
+cli-help@~1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/cli-help/-/cli-help-1.0.2.tgz#4120e07a7f161332d0327d21e4c735c741414cd6"
+  integrity sha1-QSDgen8WEzLQMn0h5Mc1x0FBTNY=
+  dependencies:
+    cli-description "~1.0.3"
+    cli-flag-util "~1.0.0"
+    cli-util "~1.1.27"
+    markzero "~0.1.29"
+    moment "~2.10.3"
+
+cli-interface@^1.0.16:
+  version "1.0.19"
+  resolved "https://registry.yarnpkg.com/cli-interface/-/cli-interface-1.0.19.tgz#9b69ad8e24d73fc19bfd9205edd712b891f89d2a"
+  integrity sha1-m2mtjiTXP8Gb/ZIF7dcSuJH4nSo=
+  dependencies:
+    cli-command "~0.8.299"
+
+cli-locale@~0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/cli-locale/-/cli-locale-0.2.0.tgz#bb0533dab15a3bd8e3c92410ddcd35790d19d6d8"
+  integrity sha1-uwUz2rFaO9jjySQQ3c01eQ0Z1tg=
+
+cli-logger@^0.5.31, cli-logger@~0.5.40:
+  version "0.5.40"
+  resolved "https://registry.yarnpkg.com/cli-logger/-/cli-logger-0.5.40.tgz#097f0e11b072c7c698a26c47f588a29c20b48b0b"
+  integrity sha1-CX8OEbByx8aYomxH9YiinCC0iws=
+  dependencies:
+    circular "^1.0.5"
+    cli-util "~1.1.27"
+
+cli-mid-action@~1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/cli-mid-action/-/cli-mid-action-1.0.2.tgz#5e5fbaf7f0ca488286d55c7b34131a5138176df1"
+  integrity sha1-Xl+69/DKSIKG1Vx7NBMaUTgXbfE=
+
+cli-mid-boot@~1.0.0:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/cli-mid-boot/-/cli-mid-boot-1.0.1.tgz#91a79134e52fed96dea3af61f36c0fa468f45e00"
+  integrity sha1-kaeRNOUv7Zbeo69h82wPpGj0XgA=
+
+cli-mid-color@^1.0.7, cli-mid-color@~1.0.10:
+  version "1.0.12"
+  resolved "https://registry.yarnpkg.com/cli-mid-color/-/cli-mid-color-1.0.12.tgz#4c037245ba1c33724468ed7a99f5c1a144367bdd"
+  integrity sha1-TANyRbocM3JEaO16mfXBoUQ2e90=
+  dependencies:
+    ttycolor "~1.1.0"
+
+cli-mid-command@~1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/cli-mid-command/-/cli-mid-command-1.0.3.tgz#f97284a483db1385f1a0f3e4a7cfda4d96e3beb8"
+  integrity sha1-+XKEpIPbE4XxoPPkp8/aTZbjvrg=
+  dependencies:
+    cli-error "^0.5.7"
+
+cli-mid-compiler@~1.0.24:
+  version "1.0.24"
+  resolved "https://registry.yarnpkg.com/cli-mid-compiler/-/cli-mid-compiler-1.0.24.tgz#4c4f7021ddb07f29bb509527bc825a0bca87d6c0"
+  integrity sha1-TE9wId2wfym7UJUnvIJaC8qH1sA=
+  dependencies:
+    cli-compiler "~0.1.34"
+
+cli-mid-convert@~1.0.4:
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/cli-mid-convert/-/cli-mid-convert-1.0.4.tgz#846cfb0273651821c2f0a138d83ca5556139f810"
+  integrity sha1-hGz7AnNlGCHC8KE42DylVWE5+BA=
+  dependencies:
+    cli-types "~0.1.2"
+
+cli-mid-debug@^1.0.3, cli-mid-debug@~1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/cli-mid-debug/-/cli-mid-debug-1.0.3.tgz#d6601474c5b80cb30dc1c5aac3942feff956f626"
+  integrity sha1-1mAUdMW4DLMNwcWqw5Qv7/lW9iY=
+
+cli-mid-defaults@~1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/cli-mid-defaults/-/cli-mid-defaults-1.0.0.tgz#85e4addc9df7e9c2a03a9a91c9401376766ee603"
+  integrity sha1-heSt3J336cKgOpqRyUATdnZu5gM=
+
+cli-mid-ecommand@~1.0.0:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/cli-mid-ecommand/-/cli-mid-ecommand-1.0.1.tgz#8f5555fb2c00092e0ab365c7581953cdfdfb9ea3"
+  integrity sha1-j1VV+ywACS4Ks2XHWBlTzf37nqM=
+
+cli-mid-empty@~1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/cli-mid-empty/-/cli-mid-empty-1.0.1.tgz#d7b7e372a305e4ba159d92cda0cb4260d1f37f46"
+  integrity sha1-17fjcqMF5LoVnZLNoMtCYNHzf0Y=
+  dependencies:
+    cli-mid-help "^1.0.0"
+    cli-mid-version "^1.0.0"
+
+cli-mid-emultiple@~1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/cli-mid-emultiple/-/cli-mid-emultiple-1.0.1.tgz#b5bc7ff1a2e34153b279e6b6e95870bb21c00e0b"
+  integrity sha1-tbx/8aLjQVOyeea26VhwuyHADgs=
+
+cli-mid-env@~1.0.4:
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/cli-mid-env/-/cli-mid-env-1.0.4.tgz#4e149da86548a75fdce0b82ee4d3854edabaf5a4"
+  integrity sha1-ThSdqGVIp1/c4Lgu5NOFTtq69aQ=
+  dependencies:
+    cli-conflict "~0.1.0"
+    cli-env "^1.0.9"
+    cli-util "^1.1.24"
+
+cli-mid-erequired@~1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/cli-mid-erequired/-/cli-mid-erequired-1.0.0.tgz#55fcda38ffe1473fc57f348377bd96e656925361"
+  integrity sha1-VfzaOP/hRz/FfzSDd72W5laSU2E=
+
+cli-mid-error@~1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/cli-mid-error/-/cli-mid-error-1.0.0.tgz#078cedbc554d19240340d11327c8bbc0a18b0846"
+  integrity sha1-B4ztvFVNGSQDQNETJ8i7wKGLCEY=
+
+cli-mid-eunknown@~1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/cli-mid-eunknown/-/cli-mid-eunknown-1.0.0.tgz#23db4951ebc5947bb26efbc2f2fb2c76a442545d"
+  integrity sha1-I9tJUevFlHuybvvC8vssdqRCVF0=
+
+cli-mid-events@~1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/cli-mid-events/-/cli-mid-events-1.0.0.tgz#c20a2d08ae9a2d97d584b689bf5284812b06b7d1"
+  integrity sha1-wgotCK6aLZfVhLaJv1KEgSsGt9E=
+
+cli-mid-exec@~1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/cli-mid-exec/-/cli-mid-exec-1.0.1.tgz#3e3a8a4863df6ffb38041a56d8c127d8a1b35acc"
+  integrity sha1-PjqKSGPfb/s4BBpW2MEn2KGzWsw=
+  dependencies:
+    cli-error "^0.5.7"
+
+cli-mid-help@^1.0.0, cli-mid-help@~1.0.17, cli-mid-help@~1.0.19:
+  version "1.0.19"
+  resolved "https://registry.yarnpkg.com/cli-mid-help/-/cli-mid-help-1.0.19.tgz#19f53414879b0ee68bd6877465886df1149528dc"
+  integrity sha1-GfU0FIebDuaL1od0ZYht8RSVKNw=
+  dependencies:
+    cli-env "~1.0.10"
+    cli-help "~1.0.2"
+
+cli-mid-logger@^1.0.3, cli-mid-logger@~1.0.10:
+  version "1.0.11"
+  resolved "https://registry.yarnpkg.com/cli-mid-logger/-/cli-mid-logger-1.0.11.tgz#0fe2fbbbdb8a70e0c3365e6f1d001a259462d419"
+  integrity sha1-D+L7u9uKcODDNl5vHQAaJZRi1Bk=
+  dependencies:
+    cli-logger "~0.5.40"
+    cli-util "~1.1.27"
+
+cli-mid-manual@^1.0.6, cli-mid-manual@~1.0.16:
+  version "1.0.16"
+  resolved "https://registry.yarnpkg.com/cli-mid-manual/-/cli-mid-manual-1.0.16.tgz#3b1b41d8961e56d86bca105c0f28f968c3ff1aef"
+  integrity sha1-OxtB2JYeVthryhBcDyj5aMP/Gu8=
+  dependencies:
+    cli-mid-help "~1.0.17"
+
+cli-mid-merge@~1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/cli-mid-merge/-/cli-mid-merge-1.0.0.tgz#992df68f6c73abe3fe514f3f1d11d7ffa398c49c"
+  integrity sha1-mS32j2xzq+P+UU8/HRHX/6OYxJw=
+
+cli-mid-multiple@~1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/cli-mid-multiple/-/cli-mid-multiple-1.0.0.tgz#8dbfa0f3ee64b28c0643e924c48478de7c8a5725"
+  integrity sha1-jb+g8+5ksowGQ+kkxIR43nyKVyU=
+
+cli-mid-notify@~1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/cli-mid-notify/-/cli-mid-notify-1.0.1.tgz#64eb8721f04b841ec3ff08245ab977221b39e1f1"
+  integrity sha1-ZOuHIfBLhB7D/wgkWrl3Ihs54fE=
+
+cli-mid-parser@~1.0.10:
+  version "1.0.10"
+  resolved "https://registry.yarnpkg.com/cli-mid-parser/-/cli-mid-parser-1.0.10.tgz#b5e3879f2d239aa824843a896b86f06f54710a0d"
+  integrity sha1-teOHny0jmqgkhDqJa4bwb1RxCg0=
+  dependencies:
+    cli-argparse "~1.0.6"
+    cli-util "~1.1.27"
+
+cli-mid-rc@~1.0.4:
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/cli-mid-rc/-/cli-mid-rc-1.0.4.tgz#7a31f700c8e0b6f027338f42d3ba74f837529ecc"
+  integrity sha1-ejH3AMjgtvAnM49C07p0+DdSnsw=
+  dependencies:
+    cli-rc "~1.0.12"
+
+cli-mid-ready@~1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/cli-mid-ready/-/cli-mid-ready-1.0.0.tgz#86c5e6ce94242bc510ad1aaba1ccc73433c217b0"
+  integrity sha1-hsXmzpQkK8UQrRqroczHNDPCF7A=
+
+cli-mid-run@~1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/cli-mid-run/-/cli-mid-run-1.0.0.tgz#d6f8d92acc84b48627dbe68e84a11df747fb79fb"
+  integrity sha1-1vjZKsyEtIYn2+aOhKEd90f7efs=
+
+cli-mid-stdin@~1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/cli-mid-stdin/-/cli-mid-stdin-1.0.0.tgz#860d7a745708d56c1ca251091c3147c79a4fad8f"
+  integrity sha1-hg16dFcI1WwcolEJHDFHx5pPrY8=
+
+cli-mid-unparsed@~1.0.5:
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/cli-mid-unparsed/-/cli-mid-unparsed-1.0.5.tgz#45a72d04e5b9a1208ff936a6e822740ba94daff4"
+  integrity sha1-RactBOW5oSCP+Tam6CJ0C6lNr/Q=
+  dependencies:
+    cli-types "~0.1.2"
+
+cli-mid-variables@~1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/cli-mid-variables/-/cli-mid-variables-1.0.0.tgz#dc687b2d278175bbde14a205958e016bdcdce1bb"
+  integrity sha1-3Gh7LSeBdbveFKIFlY4Ba9zc4bs=
+  dependencies:
+    cli-native "^1.0.0"
+
+cli-mid-verbose@~1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/cli-mid-verbose/-/cli-mid-verbose-1.0.1.tgz#d6069dc7937d5196431ca0c01137cfac2ada5025"
+  integrity sha1-1gadx5N9UZZDHKDAETfPrCraUCU=
+
+cli-mid-version@^1.0.0, cli-mid-version@~1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/cli-mid-version/-/cli-mid-version-1.0.2.tgz#68f0c8daad370334b0e43a3278b5723bd9c42168"
+  integrity sha1-aPDI2q03AzSw5DoyeLVyO9nEIWg=
+  dependencies:
+    cli-util "^1.1.24"
+
+cli-middleware@~1.0.0:
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/cli-middleware/-/cli-middleware-1.0.4.tgz#276692e251ec9ca67934c3122ddd3380fc6b8b75"
+  integrity sha1-J2aS4lHsnKZ5NMMSLd0zgPxri3U=
+
+cli-native@^1.0.0, cli-native@~1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/cli-native/-/cli-native-1.0.0.tgz#1feec9ba22bbd212e896f2db5590e27d72144a4e"
+  integrity sha1-H+7JuiK70hLolvLbVZDifXIUSk4=
+
+cli-rc@~1.0.12:
+  version "1.0.12"
+  resolved "https://registry.yarnpkg.com/cli-rc/-/cli-rc-1.0.12.tgz#c89c3f1589cb7533789721ee75bee12dfa5ef795"
+  integrity sha1-yJw/FYnLdTN4lyHudb7hLfpe95U=
+  dependencies:
+    async "~1.4.0"
+    cli-fs "~1.0.4"
+    cli-util "~1.1.27"
+    ini "~1.3.4"
+
+cli-regexp@~0.1.0:
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/cli-regexp/-/cli-regexp-0.1.2.tgz#6bcd93b09fb2ed1025d30a1155d5997954a53512"
+  integrity sha1-a82TsJ+y7RAl0woRVdWZeVSlNRI=
+
+cli-system@~0.1.67:
+  version "0.1.67"
+  resolved "https://registry.yarnpkg.com/cli-system/-/cli-system-0.1.67.tgz#166a41dd3d33ac803a07dc98ecc79a1997881cbc"
+  integrity sha1-FmpB3T0zrIA6B9yY7MeaGZeIHLw=
+  dependencies:
+    cli-mid-action "~1.0.2"
+    cli-mid-boot "~1.0.0"
+    cli-mid-color "~1.0.10"
+    cli-mid-command "~1.0.3"
+    cli-mid-compiler "~1.0.24"
+    cli-mid-convert "~1.0.4"
+    cli-mid-debug "~1.0.3"
+    cli-mid-defaults "~1.0.0"
+    cli-mid-ecommand "~1.0.0"
+    cli-mid-empty "~1.0.1"
+    cli-mid-emultiple "~1.0.1"
+    cli-mid-env "~1.0.4"
+    cli-mid-erequired "~1.0.0"
+    cli-mid-error "~1.0.0"
+    cli-mid-eunknown "~1.0.0"
+    cli-mid-events "~1.0.0"
+    cli-mid-exec "~1.0.1"
+    cli-mid-help "~1.0.19"
+    cli-mid-logger "~1.0.10"
+    cli-mid-manual "~1.0.16"
+    cli-mid-merge "~1.0.0"
+    cli-mid-multiple "~1.0.0"
+    cli-mid-notify "~1.0.1"
+    cli-mid-parser "~1.0.10"
+    cli-mid-rc "~1.0.4"
+    cli-mid-ready "~1.0.0"
+    cli-mid-run "~1.0.0"
+    cli-mid-stdin "~1.0.0"
+    cli-mid-unparsed "~1.0.5"
+    cli-mid-variables "~1.0.0"
+    cli-mid-verbose "~1.0.1"
+    cli-mid-version "~1.0.2"
+
+cli-types@~0.1.2:
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/cli-types/-/cli-types-0.1.2.tgz#0c36bc6af53a56f61d391656e30456930ed7e365"
+  integrity sha1-DDa8avU6VvYdORZW4wRWkw7X42U=
+  dependencies:
+    cli-conflict "~0.1.0"
+    cli-error "^0.5.7"
+    cli-fs "~1.0.4"
+    cli-native "^1.0.0"
+    cli-util "~1.1.26"
+
+cli-util@^1.1.17, cli-util@^1.1.19, cli-util@^1.1.23, cli-util@^1.1.24, cli-util@^1.1.26, cli-util@~1.1.26, cli-util@~1.1.27:
+  version "1.1.27"
+  resolved "https://registry.yarnpkg.com/cli-util/-/cli-util-1.1.27.tgz#42d69e36a040a321fc9cf851c1513cadc5093054"
+  integrity sha1-QtaeNqBAoyH8nPhRwVE8rcUJMFQ=
+  dependencies:
+    cli-regexp "~0.1.0"
 
 cli-width@^2.0.0:
   version "2.2.0"
@@ -1976,6 +2404,15 @@ create-hmac@^1.1.0, create-hmac@^1.1.2, create-hmac@^1.1.4:
     safe-buffer "^5.0.1"
     sha.js "^2.4.8"
 
+create-react-class@^15.5.3:
+  version "15.6.3"
+  resolved "https://registry.yarnpkg.com/create-react-class/-/create-react-class-15.6.3.tgz#2d73237fb3f970ae6ebe011a9e66f46dbca80036"
+  integrity sha512-M+/3Q6E6DLO6Yx3OwrWjwHBnvfXXYA7W+dFjt/ZDBemHO1DDZhsalX/NUtnTYclN6GfnBDRh4qRHjcDHmlJBJg==
+  dependencies:
+    fbjs "^0.8.9"
+    loose-envify "^1.3.1"
+    object-assign "^4.1.1"
+
 cross-spawn@5.1.0, cross-spawn@^5.0.1, cross-spawn@^5.1.0:
   version "5.1.0"
   resolved "https://registry.yarnpkg.com/cross-spawn/-/cross-spawn-5.1.0.tgz#e8bd0efee58fcff6f8f94510a0a554bbfa235449"
@@ -2197,7 +2634,7 @@ deep-extend@^0.6.0, deep-extend@~0.6.0:
   version "0.6.0"
   resolved "https://registry.yarnpkg.com/deep-extend/-/deep-extend-0.6.0.tgz#c4fa7c95404a17a9c3e8ca7e1537312b736330ac"
 
-deep-is@~0.1.3:
+deep-is@~0.1.2, deep-is@~0.1.3:
   version "0.1.3"
   resolved "https://registry.yarnpkg.com/deep-is/-/deep-is-0.1.3.tgz#b369d6fb5dbc13eecf524f91b070feedc357cf34"
 
@@ -2605,6 +3042,18 @@ escodegen@^1.6.1:
   optionalDependencies:
     source-map "~0.6.1"
 
+escodegen@~1.6.1:
+  version "1.6.1"
+  resolved "https://registry.yarnpkg.com/escodegen/-/escodegen-1.6.1.tgz#367de17d8510540d12bc6dcb8b3f918391265815"
+  integrity sha1-Nn3hfYUQVA0SvG3Liz+Rg5EmWBU=
+  dependencies:
+    esprima "^1.2.2"
+    estraverse "^1.9.1"
+    esutils "^1.1.6"
+    optionator "^0.5.0"
+  optionalDependencies:
+    source-map "~0.1.40"
+
 escope@^3.6.0:
   version "3.6.0"
   resolved "https://registry.yarnpkg.com/escope/-/escope-3.6.0.tgz#e01975e812781a163a6dadfdd80398dc64c889c3"
@@ -2740,6 +3189,11 @@ espree@^3.5.1:
     acorn "^5.5.0"
     acorn-jsx "^3.0.0"
 
+esprima@^1.2.2:
+  version "1.2.5"
+  resolved "https://registry.yarnpkg.com/esprima/-/esprima-1.2.5.tgz#0993502feaf668138325756f30f9a51feeec11e9"
+  integrity sha1-CZNQL+r2aBODJXVvMPmlH+7sEek=
+
 esprima@^2.6.0:
   version "2.7.3"
   resolved "https://registry.yarnpkg.com/esprima/-/esprima-2.7.3.tgz#96e3b70d5779f6ad49cd032673d1c312767ba581"
@@ -2751,6 +3205,11 @@ esprima@^3.1.3:
 esprima@^4.0.0:
   version "4.0.1"
   resolved "https://registry.yarnpkg.com/esprima/-/esprima-4.0.1.tgz#13b04cdb3e6c5d19df91ab6987a8695619b0aa71"
+
+esprima@~2.4.1:
+  version "2.4.1"
+  resolved "https://registry.yarnpkg.com/esprima/-/esprima-2.4.1.tgz#83059c751e9e9c41d228a41aaa1eef0ccce384ba"
+  integrity sha1-gwWcdR6enEHSKKQaqh7vDMzjhLo=
 
 esquery@^1.0.0:
   version "1.0.1"
@@ -2764,9 +3223,19 @@ esrecurse@^4.1.0:
   dependencies:
     estraverse "^4.1.0"
 
+estraverse@^1.9.1:
+  version "1.9.3"
+  resolved "https://registry.yarnpkg.com/estraverse/-/estraverse-1.9.3.tgz#af67f2dc922582415950926091a4005d29c9bb44"
+  integrity sha1-r2fy3JIlgkFZUJJgkaQAXSnJu0Q=
+
 estraverse@^4.0.0, estraverse@^4.1.0, estraverse@^4.1.1, estraverse@^4.2.0:
   version "4.2.0"
   resolved "https://registry.yarnpkg.com/estraverse/-/estraverse-4.2.0.tgz#0dee3fed31fcd469618ce7342099fc1afa0bdb13"
+
+esutils@^1.1.6:
+  version "1.1.6"
+  resolved "https://registry.yarnpkg.com/esutils/-/esutils-1.1.6.tgz#c01ccaa9ae4b897c6d0c3e210ae52f3c7a844375"
+  integrity sha1-wBzKqa5LiXxtDD4hCuUvPHqEQ3U=
 
 esutils@^2.0.2:
   version "2.0.2"
@@ -2981,6 +3450,11 @@ fast-json-stable-stringify@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/fast-json-stable-stringify/-/fast-json-stable-stringify-2.0.0.tgz#d5142c0caee6b1189f87d3a76111064f86c8bbf2"
 
+fast-levenshtein@~1.0.0:
+  version "1.0.7"
+  resolved "https://registry.yarnpkg.com/fast-levenshtein/-/fast-levenshtein-1.0.7.tgz#0178dcdee023b92905193af0959e8a7639cfdcb9"
+  integrity sha1-AXjc3uAjuSkFGTrwlZ6KdjnP3Lk=
+
 fast-levenshtein@~2.0.4:
   version "2.0.6"
   resolved "https://registry.yarnpkg.com/fast-levenshtein/-/fast-levenshtein-2.0.6.tgz#3d8a5c66883a16a30ca8643e851f19baa7797917"
@@ -3013,7 +3487,7 @@ fb-watchman@^2.0.0:
   dependencies:
     bser "^2.0.0"
 
-fbjs@^0.8.16:
+fbjs@^0.8.16, fbjs@^0.8.9:
   version "0.8.17"
   resolved "https://registry.yarnpkg.com/fbjs/-/fbjs-0.8.17.tgz#c4d598ead6949112653d6588b01a5cdcd9f90fdd"
   dependencies:
@@ -3813,7 +4287,7 @@ inherits@2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/inherits/-/inherits-2.0.1.tgz#b17d08d326b4423e568eff719f91b0b1cbdf69f1"
 
-ini@^1.3.4, ini@~1.3.0:
+ini@^1.3.4, ini@~1.3.0, ini@~1.3.4:
   version "1.3.5"
   resolved "https://registry.yarnpkg.com/ini/-/ini-1.3.5.tgz#eee25f56db1c9ec6085e0c22778083f596abf927"
 
@@ -4691,6 +5165,30 @@ levn@^0.3.0, levn@~0.3.0:
     prelude-ls "~1.1.2"
     type-check "~0.3.2"
 
+levn@~0.2.5:
+  version "0.2.5"
+  resolved "https://registry.yarnpkg.com/levn/-/levn-0.2.5.tgz#ba8d339d0ca4a610e3a3f145b9caf48807155054"
+  integrity sha1-uo0znQykphDjo/FFucr0iAcVUFQ=
+  dependencies:
+    prelude-ls "~1.1.0"
+    type-check "~0.3.1"
+
+lipsum@^0.1.15:
+  version "0.1.15"
+  resolved "https://registry.yarnpkg.com/lipsum/-/lipsum-0.1.15.tgz#c85f95aedbcb2083e071753d60402c11bb380e89"
+  integrity sha1-yF+VrtvLIIPgcXU9YEAsEbs4Dok=
+  dependencies:
+    cli-command "^0.8.279"
+    cli-help "0.0.12"
+    cli-interface "^1.0.16"
+    cli-logger "^0.5.31"
+    cli-mid-color "^1.0.7"
+    cli-mid-debug "^1.0.3"
+    cli-mid-logger "^1.0.3"
+    cli-mid-manual "^1.0.6"
+    cli-native "^1.0.0"
+    ttycolor "^0.8.13"
+
 load-json-file@^1.0.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/load-json-file/-/load-json-file-1.1.0.tgz#956905708d58b4bab4c2261b04f59f31c99374c0"
@@ -4840,6 +5338,13 @@ loose-envify@^1.0.0, loose-envify@^1.1.0, loose-envify@^1.3.1, loose-envify@^1.4
   dependencies:
     js-tokens "^3.0.0 || ^4.0.0"
 
+lorem-ipsum@^1.0.3, lorem-ipsum@^1.0.6:
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/lorem-ipsum/-/lorem-ipsum-1.0.6.tgz#69e9ab02bbb0991915d71b5559fe016d526f013f"
+  integrity sha512-Rx4XH8X4KSDCKAVvWGYlhAfNqdUP5ZdT4rRyf0jjrvWgtViZimDIlopWNfn/y3lGM5K4uuiAoY28TaD+7YKFrQ==
+  dependencies:
+    minimist "~1.2.0"
+
 loud-rejection@^1.0.0:
   version "1.6.0"
   resolved "https://registry.yarnpkg.com/loud-rejection/-/loud-rejection-1.6.0.tgz#5b46f80147edee578870f086d04821cf998e551f"
@@ -4879,6 +5384,11 @@ makeerror@1.0.x:
   dependencies:
     tmpl "1.0.x"
 
+manual@0.0.8:
+  version "0.0.8"
+  resolved "https://registry.yarnpkg.com/manual/-/manual-0.0.8.tgz#408b65d388c5e4c5d3028e7d82afaa47b395d8d4"
+  integrity sha1-QItl04jF5MXTAo59gq+qR7OV2NQ=
+
 map-cache@^0.2.2:
   version "0.2.2"
   resolved "https://registry.yarnpkg.com/map-cache/-/map-cache-0.2.2.tgz#c32abd0bd6525d9b051645bb4f26ac5dc98a0dbf"
@@ -4896,6 +5406,14 @@ map-visit@^1.0.0:
   resolved "https://registry.yarnpkg.com/map-visit/-/map-visit-1.0.0.tgz#ecdca8f13144e660f1b5bd41f12f3479d98dfb8f"
   dependencies:
     object-visit "^1.0.0"
+
+markzero@^0.1.29, markzero@~0.1.29:
+  version "0.1.31"
+  resolved "https://registry.yarnpkg.com/markzero/-/markzero-0.1.31.tgz#10c7f5841420388caf396b23cdd86adc078690bc"
+  integrity sha1-EMf1hBQgOIyvOWsjzdhq3AeGkLw=
+  dependencies:
+    cli-util "^1.1.19"
+    manual "0.0.8"
 
 math-expression-evaluator@^1.2.14:
   version "1.2.17"
@@ -5059,7 +5577,7 @@ minimist@0.0.8:
   version "0.0.8"
   resolved "https://registry.yarnpkg.com/minimist/-/minimist-0.0.8.tgz#857fcabfc3397d2625b8228262e86aa7a011b05d"
 
-minimist@^1.1.1, minimist@^1.1.3, minimist@^1.2.0:
+minimist@^1.1.1, minimist@^1.1.3, minimist@^1.2.0, minimist@~1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/minimist/-/minimist-1.2.0.tgz#a35008b20f41383eec1fb914f4cd5df79a264284"
 
@@ -5113,6 +5631,16 @@ mocha@^5.2.0:
 moment@^2.22.1:
   version "2.22.2"
   resolved "https://registry.yarnpkg.com/moment/-/moment-2.22.2.tgz#3c257f9839fc0e93ff53149632239eb90783ff66"
+
+moment@^2.8.3:
+  version "2.24.0"
+  resolved "https://registry.yarnpkg.com/moment/-/moment-2.24.0.tgz#0d055d53f5052aa653c9f6eb68bb5d12bf5c2b5b"
+  integrity sha512-bV7f+6l2QigeBBZSM/6yTNq4P2fNpSWj/0e7jQcy87A8e7o2nAfP/34/2ky5Vw4B9S446EtIhodAzkFCcR4dQg==
+
+moment@~2.10.3:
+  version "2.10.6"
+  resolved "https://registry.yarnpkg.com/moment/-/moment-2.10.6.tgz#6cb21967c79cba7b0ca5e66644f173662b3efa77"
+  integrity sha1-bLIZZ8ecunsMpeZmRPFzZis++nc=
 
 ms@2.0.0:
   version "2.0.0"
@@ -5539,6 +6067,18 @@ optimist@^0.6.1:
   resolved "https://registry.yarnpkg.com/optimist/-/optimist-0.6.1.tgz#da3ea74686fa21a19a111c326e90eb15a0196686"
   dependencies:
     minimist "~0.0.1"
+    wordwrap "~0.0.2"
+
+optionator@^0.5.0:
+  version "0.5.0"
+  resolved "https://registry.yarnpkg.com/optionator/-/optionator-0.5.0.tgz#b75a8995a2d417df25b6e4e3862f50aa88651368"
+  integrity sha1-t1qJlaLUF98ltuTjhi9QqohlE2g=
+  dependencies:
+    deep-is "~0.1.2"
+    fast-levenshtein "~1.0.0"
+    levn "~0.2.5"
+    prelude-ls "~1.1.1"
+    type-check "~0.3.1"
     wordwrap "~0.0.2"
 
 optionator@^0.8.1, optionator@^0.8.2:
@@ -6127,7 +6667,7 @@ postcss@^6.0.0, postcss@^6.0.1, postcss@^6.0.13:
     source-map "^0.6.1"
     supports-color "^5.4.0"
 
-prelude-ls@~1.1.2:
+prelude-ls@~1.1.0, prelude-ls@~1.1.1, prelude-ls@~1.1.2:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/prelude-ls/-/prelude-ls-1.1.2.tgz#21932a549f5e52ffd9a827f570e04be62a97da54"
 
@@ -6435,6 +6975,16 @@ react-keydown@^1.9.7:
 react-lifecycles-compat@^3.0.0, react-lifecycles-compat@^3.0.4:
   version "3.0.4"
   resolved "https://registry.yarnpkg.com/react-lifecycles-compat/-/react-lifecycles-compat-3.0.4.tgz#4f1a273afdfc8f3488a8c516bfda78f872352362"
+
+react-lorem-component@^0.13.0:
+  version "0.13.0"
+  resolved "https://registry.yarnpkg.com/react-lorem-component/-/react-lorem-component-0.13.0.tgz#c0ddf3ae75ea6e01f7fd03d7586a24a621202039"
+  integrity sha512-4mWjxmcG/DJJwdxdKwXWyP2N9zohbJg/yYaC+7JffQNrKj3LYDpA/A4u/Dju1v1ZF6Jew2gbFKGb5Z6CL+UNTw==
+  dependencies:
+    create-react-class "^15.5.3"
+    lorem-ipsum "^1.0.3"
+    object-assign "^4.1.0"
+    seedable-random "0.0.1"
 
 react-onclickoutside@^6.7.1:
   version "6.7.1"
@@ -7017,6 +7567,11 @@ scss-tokenizer@^0.2.3:
     js-base64 "^2.1.8"
     source-map "^0.4.2"
 
+seedable-random@0.0.1:
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/seedable-random/-/seedable-random-0.0.1.tgz#0b30cea79e4399688c5a067503a066b7c41e8316"
+  integrity sha1-CzDOp55DmWiMWgZ1A6Bmt8QegxY=
+
 select-hose@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/select-hose/-/select-hose-2.0.0.tgz#625d8658f865af43ec962bfc376a37359a4994ca"
@@ -7303,6 +7858,13 @@ source-map@^0.7.2:
   version "0.7.3"
   resolved "https://registry.yarnpkg.com/source-map/-/source-map-0.7.3.tgz#5302f8169031735226544092e64981f751750383"
   integrity sha512-CkCj6giN3S+n9qrYiBTX5gystlENnRW5jZeNLHpe6aue+SrHcG5VYwujhW9s4dY31mEGsxBDrHR6oI69fTXsaQ==
+
+source-map@~0.1.40:
+  version "0.1.43"
+  resolved "https://registry.yarnpkg.com/source-map/-/source-map-0.1.43.tgz#c24bc146ca517c1471f5dacbe2571b2b7f9e3346"
+  integrity sha1-wkvBRspRfBRx9drL4lcbK3+eM0Y=
+  dependencies:
+    amdefine ">=0.0.4"
 
 spdx-correct@^3.0.0:
   version "3.0.0"
@@ -7799,6 +8361,20 @@ tty-browserify@0.0.0:
   version "0.0.0"
   resolved "https://registry.yarnpkg.com/tty-browserify/-/tty-browserify-0.0.0.tgz#a157ba402da24e9bf957f9aa69d524eed42901a6"
 
+ttycolor@^0.8.13:
+  version "0.8.17"
+  resolved "https://registry.yarnpkg.com/ttycolor/-/ttycolor-0.8.17.tgz#26b5c568de4ac1beafe2d5a8c6fc4b84c6e8af54"
+  integrity sha1-JrXFaN5Kwb6v4tWoxvxLhMbor1Q=
+  dependencies:
+    circular "~1.0.5"
+
+ttycolor@~1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/ttycolor/-/ttycolor-1.1.0.tgz#7ea2fa3476baec44e4b65b811eb8867060b8919f"
+  integrity sha1-fqL6NHa67ETktluBHriGcGC4kZ8=
+  dependencies:
+    circular "~1.0.5"
+
 tunnel-agent@^0.6.0:
   version "0.6.0"
   resolved "https://registry.yarnpkg.com/tunnel-agent/-/tunnel-agent-0.6.0.tgz#27a5dea06b36b04a0a9966774b290868f0fc40fd"
@@ -7809,7 +8385,7 @@ tweetnacl@^0.14.3, tweetnacl@~0.14.0:
   version "0.14.5"
   resolved "https://registry.yarnpkg.com/tweetnacl/-/tweetnacl-0.14.5.tgz#5ae68177f192d4456269d108afa93ff8743f4f64"
 
-type-check@~0.3.2:
+type-check@~0.3.1, type-check@~0.3.2:
   version "0.3.2"
   resolved "https://registry.yarnpkg.com/type-check/-/type-check-0.3.2.tgz#5884cab512cf1d355e3fb784f30804b2b520db72"
   dependencies:

@@ -2726,6 +2726,28 @@ body.utk-search-open .utk-header-search {
   .utk-digital-all-collections div.utk-digital-flex-all {
     display: flex;
     flex-wrap: wrap; }
+    .utk-digital-all-collections div.utk-digital-flex-all.utk-digital-all-view-list {
+      flex-direction: column; }
+      .utk-digital-all-collections div.utk-digital-flex-all.utk-digital-all-view-list .utk-digital-all-collections--block {
+        width: 100%;
+        display: flex;
+        margin-bottom: 47px; }
+        .utk-digital-all-collections div.utk-digital-flex-all.utk-digital-all-view-list .utk-digital-all-collections--block--desc {
+          display: block; }
+          .utk-digital-all-collections div.utk-digital-flex-all.utk-digital-all-view-list .utk-digital-all-collections--block--desc p {
+            margin-top: 11px;
+            font-size: 18px;
+            color: #333; }
+        .utk-digital-all-collections div.utk-digital-flex-all.utk-digital-all-view-list .utk-digital-all-collections--block .utk-digital-all-collections--block--featured {
+          left: 0;
+          right: auto; }
+        .utk-digital-all-collections div.utk-digital-flex-all.utk-digital-all-view-list .utk-digital-all-collections--block img {
+          width: 199px;
+          height: 123px;
+          margin-right: 29px; }
+        .utk-digital-all-collections div.utk-digital-flex-all.utk-digital-all-view-list .utk-digital-all-collections--block h3 {
+          font-size: 23px !important;
+          padding-top: 0; }
   .utk-digital-all-collections .utk-digital-all-collections--block {
     width: calc((100% - (47px * 3)) / 4);
     margin-right: 47px;
@@ -2753,6 +2775,8 @@ body.utk-search-open .utk-header-search {
     /* Landscape phone to portrait tablet */
     /* Portrait tablet to landscape and desktop */
     /* desktop and large desktop */ }
+    .utk-digital-all-collections .utk-digital-all-collections--block--desc {
+      display: none; }
     .utk-digital-all-collections .utk-digital-all-collections--block:nth-child(4n) {
       margin-right: 0; }
     .utk-digital-all-collections .utk-digital-all-collections--block:hover h3, .utk-digital-all-collections .utk-digital-all-collections--block:focus h3 {

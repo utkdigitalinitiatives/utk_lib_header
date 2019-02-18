@@ -194,6 +194,42 @@
   div.utk-digital-flex-all {
     display: flex;
     flex-wrap: wrap;
+
+    &.utk-digital-all-view-list {
+      flex-direction: column;
+
+      .utk-digital-all-collections--block {
+        width: 100%;
+        display: flex;
+        margin-bottom: $golden-ratio-4;
+
+        &--desc {
+          display: block;
+
+          p {
+            margin-top: $golden-ratio-1;
+            font-size: $type-3;
+            color: $smokeyx;
+          }
+        }
+
+        .utk-digital-all-collections--block--featured {
+          left: 0;
+          right: auto;
+        }
+
+        img {
+          width: $golden-ratio-7;
+          height: $golden-ratio-6;
+          margin-right: $golden-ratio-3;
+        }
+
+        h3 {
+          font-size: $type-4 !important;
+          padding-top: 0;
+        }
+      }
+    }
   }
 
   .utk-digital-all-collections--block {
@@ -201,6 +237,10 @@
     margin-right: $golden-ratio-4;
     margin-bottom: $golden-ratio-4;
     position: relative;
+
+    &--desc {
+      display: none;
+    }
 
     &:nth-child(4n) {
       margin-right: 0;

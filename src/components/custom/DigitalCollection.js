@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import { Image } from 'semantic-ui-react'
+import Lorem from 'react-lorem-component';
 
 export class DigitalCollection extends Component {
 
@@ -14,7 +15,7 @@ export class DigitalCollection extends Component {
 
     render () {
 
-        const {title, image, featured} = this.props;
+        const {title, image, featured, dataKey} = this.props;
 
         return (
             <a href="#" className="utk-digital-all-collections--block">
@@ -23,7 +24,12 @@ export class DigitalCollection extends Component {
                     src={image}
                     alt={title}
                 />
-                <h3>{title}</h3>
+                <div>
+                    <h3>{title}</h3>
+                    <div className="utk-digital-all-collections--block--desc">
+                        <Lorem seed={dataKey} count={1} paragraphLowerBound={1} paragraphUpperBound={2} />
+                    </div>
+                </div>
             </a>
         )
     }

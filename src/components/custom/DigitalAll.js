@@ -15,9 +15,23 @@ export class DigitalAll extends Component {
         super(props);
 
         this.state = {
+            view: 'grid',
             sortby: 'title',
             data: sortBy(Collections, ['title'])
         };
+
+    }
+
+    toggleView = (e) => {
+
+        let sortID = e.target.id;
+
+        if (sortID === 'view_grid')
+            this.setState({view: 'grid'});
+        else if (sortID === 'view_list')
+            this.setState({view: 'list'});
+
+        return;
 
     }
 
@@ -42,7 +56,14 @@ export class DigitalAll extends Component {
 
     buildCollections = () => {
 
-        let {sortby, data} = this.state;
+        let {view, sortby, data} = this.state;
+
+        let viewClass = null
+
+        if (view == 'grid')
+            viewClass = 'utk-digital-all-view-grid';
+        else if (view == 'list')
+            viewClass = 'utk-digital-all-view-list';
 
         /*
          * if collections exist
@@ -51,10 +72,10 @@ export class DigitalAll extends Component {
         if (data) {
 
             return (
-            <div className="utk-digital-flex-all">
+            <div className={`utk-digital-flex-all ${viewClass}`}>
                 {
-                    Object.entries(data).map(collection => (
-                            <DigitalCollection image={collection[1].src} title={collection[1].title} featured={collection[1].featured} />
+                    Object.entries(data).map((collection, index) => (
+                            <DigitalCollection key={index} dataKey={index} image={collection[1].src} title={collection[1].title} featured={collection[1].featured} />
                         )
                     )
                 }
@@ -69,19 +90,23 @@ export class DigitalAll extends Component {
 
     };
 
-    getSortOptions = (sortby, sortOptions) => {
+    getOptions = (type, state, options) => {
 
         let active = null;
 
         return (
-            Object.entries(sortOptions).map((sort) => {
+            Object.entries(options).map((option) => {
 
-                    if (sortby === sort[1].state)
+                    if (state === option[1].state)
                         active = "active";
                     else
                         active = null;
 
-                    return <Button id={sort[1].id} className={active} onClick={this.toggleSort.bind(this)}>{sort[1].title}</Button>
+                    if (type == 'sort')
+                        return <Button id={option[1].id} className={active} onClick={this.toggleSort.bind(this)}>{option[1].title}</Button>
+                    else if (type == 'view')
+                        return <Button id={option[1].id} className={active} onClick={this.toggleView.bind(this)}>{option[1].title}</Button>
+
                 }
             )
         )
@@ -89,6 +114,19 @@ export class DigitalAll extends Component {
     };
 
     render () {
+
+        const viewOptions = {
+            0: {
+                state: 'grid',
+                id: 'view_grid',
+                title: 'Grid'
+            },
+            1: {
+                state: 'list',
+                id: 'view_list',
+                title: 'List'
+            }
+        };
 
         const sortOptions = {
             0: {
@@ -108,9 +146,10 @@ export class DigitalAll extends Component {
             }
         };
 
-        let {sortby} = this.state;
+        let {view, sortby} = this.state;
 
-        const renderOptions = this.getSortOptions(sortby, sortOptions);
+        const renderViews = this.getOptions('view', view, viewOptions);
+        const renderSorts = this.getOptions('sort', sortby, sortOptions);
 
         return (
             <section className="utk-digital-all">
@@ -120,12 +159,11 @@ export class DigitalAll extends Component {
                         <div className="utk-digital-all-sort">
                             <span>View</span>
                             <Button.Group color="blue">
-                                <Button active>Grid</Button>
-                                <Button>List</Button>
+                                {renderViews}
                             </Button.Group>
                             <span>Sort By</span>
                             <Button.Group color="blue">
-                                {renderOptions}
+                                {renderSorts}
                             </Button.Group>
                         </div>
                     </div>
