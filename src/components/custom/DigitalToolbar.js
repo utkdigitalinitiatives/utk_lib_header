@@ -116,6 +116,13 @@ export class DigitalToolbar extends Component {
 
         const rangeNotches = this.getNotches(rangeStep, rangeMin, rangeMax);
 
+        let rangeOr = null;
+        if (rangeAll)
+            rangeOr = "range-or-all";
+        else
+            rangeOr = "range-or-custom";
+
+
         return (
             <div className="utk-digital-bar utk-digital-toolbar">
                 <Input
@@ -130,6 +137,7 @@ export class DigitalToolbar extends Component {
                 <Select compact defaultValue="all" options={collectionSubjects} />
                 <Button.Group>
                     <Button id="all" basic={!rangeAll} active={rangeAll} onClick={this.setActive.bind(this)}>All Dates</Button>
+                    <Button.Or className={rangeOr} text="" />
                     <Popup trigger={<Button id="range" basic={rangeAll} active={!rangeAll} onClick={this.setActive.bind(this)}>{rangeSelectContent}</Button>} on='click'>
                         <div className="utk-digital-date-slider-notches">
                             {rangeNotches}

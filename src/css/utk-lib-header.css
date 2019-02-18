@@ -2832,9 +2832,35 @@ body.utk-search-open .utk-header-search {
   font-weight: 400 !important;
   border: 2px solid #58595b !important; }
 
+.utk-digital-toolbar .ui.buttons div.or {
+  width: 0;
+  margin-top: 4px;
+  transform: rotate(0deg);
+  transition: all 290ms ease-in-out; }
+  .utk-digital-toolbar .ui.buttons div.or:before {
+    margin-left: -9px;
+    margin-top: -9px;
+    width: 18px;
+    height: 18px;
+    background-color: #e0e0e0;
+    box-shadow: 0 3px 7px rgba(51, 51, 51, 0.15); }
+  .utk-digital-toolbar .ui.buttons div.or:after {
+    position: absolute;
+    display: block;
+    margin-left: -3px;
+    margin-top: 13px;
+    content: ' ';
+    width: 0;
+    height: 0;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-right: 5px solid #333; }
+  .utk-digital-toolbar .ui.buttons div.or.range-or-custom {
+    transform: rotate(180deg); }
+
 .utk-digital-toolbar .ui.buttons button.ui.button.basic {
-  border: 2px solid #58595b !important;
-  color: #b6b6b6 !important;
+  border: 2px solid #333 !important;
+  color: #a7a9ac !important;
   background-color: rgba(51, 51, 51, 0.85) !important; }
   .utk-digital-toolbar .ui.buttons button.ui.button.basic:hover, .utk-digital-toolbar .ui.buttons button.ui.button.basic:focus {
     border: 2px solid #58595b !important;
