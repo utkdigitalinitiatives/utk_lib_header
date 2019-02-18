@@ -78,30 +78,43 @@
 
 }
 
-.ui.popup {
-  background-color: $gray-2 !important;
+.ui.visible.popup {
+  background-color: $white!important;
   border: none !important;
-  padding: $golden-ratio-2 $golden-ratio-3 !important;
-  box-shadow: $box-shadow-float;
+  padding: $golden-ratio-2 $golden-ratio-5 $golden-ratio-2 $golden-ratio-2 !important;
+  box-shadow: 0 0 18px rgba($smokeyx, 0.29)!important;
+  position: relative;
+  border-bottom: $golden-ratio-0 solid $orange !important;
 
   &::before {
-    background-color: $gray-2 !important;
+    background-color: $white!important;
     box-shadow: none !important;
+    width: $golden-ratio-3;
+    height: $golden-ratio-3;
+    margin-top: 4px;
+    left: $golden-ratio-3 !important;
+    z-index: 0;
   }
 }
 
-.noUi-horizontal {
+.utk-digital-date-slider.noUi-vertical {
   box-shadow: none !important;
   border: none !important;
+  height: calc(100% - #{(($golden-ratio-2 * 2) + $type-3)}) !important;
+  margin-left: $golden-ratio-3;
+  position: absolute;
+  top: calc(#{$golden-ratio-2 + ($type-3 / 2)});
+  right: $golden-ratio-2;
+  width: $golden-ratio-1;
 
   .noUi-base {
     border: none !important;
   }
 
   .noUi-connects {
-    background-color: $rock !important;
-    box-shadow: none !important;
+    background-color: $gray-1 !important;
     border: none !important;
+    box-shadow: inset $box-shadow;
   }
 
   .noUi-connect {
@@ -110,16 +123,78 @@
   }
 
   .noUi-handle {
+    width: $golden-ratio-3;
+    height: $golden-ratio-3;
+    left: -9px;
+    top: -14.5px;
     cursor: pointer;
     border: none;
-    background-color: $smokeyx;
-    box-shadow: none !important;
+    background-color: $rock;
+    box-shadow: $box-shadow-float !important;
     border: none !important;
 
     &::before,
     &::after {
-      background-color: $smokey;
+      background-color: $gray-2;
+      width: $golden-ratio-1;
+      left: 9px;
     }
 
+    &:before {
+      top: 12px;
+    }
+
+    &:after {
+      top: 16px;
+    }
+
+  }
+}
+
+.utk-digital-date-slider-notches {
+  display: flex;
+  flex-direction: column;
+  z-index: 1;
+  position: relative;
+
+  span {
+    color: $rock;
+    line-height: $type-3;
+    font-size: $type-1;
+    font-weight: 700;
+    margin-bottom: $golden-ratio-0;
+    text-align: right;
+
+    &.activeNotch {
+      font-weight: 700;
+      color: $globe;
+
+      &::after {
+        background-color: $globe;
+      }
+    }
+
+    &.in-range {
+      font-weight: 700;
+      color: $smokey;
+
+      &::after {
+      }
+    }
+
+    &::after {
+      width: $golden-ratio-2;
+      height: 2px;
+      display: block;
+      content: ' ';
+      background-color: $gray-1;
+      position: absolute;
+      right: -29px;
+      margin-top: -9.5px;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
 }

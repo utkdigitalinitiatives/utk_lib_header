@@ -25,7 +25,7 @@ export class DigitalToolbar extends Component {
 
     state = {
         rangeAll: 1,
-        rangeValues: [1800, 2025],
+        rangeValues: [1775, 2025],
         rangeSelectContent: 'Select Dates'
     };
 
@@ -44,15 +44,60 @@ export class DigitalToolbar extends Component {
 
     updateRangeSelect = (range) => {
 
-        let selectContentString = range[0] + '-' + range[1];
+        let minString = null
+        let maxString = null
+
+        const {rangeMin, rangeMax} = this.props;
+
+        if (rangeMin == range[0])
+            minString = 'Oldest';
+        else
+            minString = range[0];
+
+        if (rangeMax == range[1])
+            maxString = 'Today';
+        else
+            maxString = range[1];
+
+        let selectContentString = minString + '-' + maxString;
+
         this.setState({rangeSelectContent: selectContentString});
 
         return
 
     };
 
-    getNotches = () => {
-        return 'note: build notches';
+    getNotches = (step, min, max) => {
+
+        let notches = [];
+        let notchString = null;
+        let notchClass = null;
+        const num = (max - min ) / step;
+
+        for (let i = 0; i <= num; i++) {
+
+            let notchVal = max - (step * i)
+
+            if (notchVal == min)
+                notchString = 'Oldest';
+            else if (notchVal == max)
+                notchString = 'Today';
+            else
+                notchString = notchVal;
+
+            if (this.state.rangeValues.includes(notchVal))
+                notchClass = 'activeNotch';
+           else if (notchVal > this.state.rangeValues[0] && notchVal < this.state.rangeValues[1])
+                notchClass = 'in-range';
+            else
+                notchClass = null;
+
+            notches.push(<span className={notchClass}><em></em>{notchString}</span>)
+
+        }
+
+        return notches
+
     }
 
     setActive = (e) => {
@@ -60,13 +105,16 @@ export class DigitalToolbar extends Component {
             this.setState({rangeAll: 1})
         else
             this.setState({rangeAll: 0})
+
+        return
     }
 
     render () {
 
+        const {rangeStep, rangeMin, rangeMax} = this.props;
         let { rangeAll, rangeValues, rangeSelectContent } = this.state;
 
-        const rangeNotches = this.getNotches();
+        const rangeNotches = this.getNotches(rangeStep, rangeMin, rangeMax);
 
         return (
             <div className="utk-digital-bar utk-digital-toolbar">
@@ -83,18 +131,20 @@ export class DigitalToolbar extends Component {
                 <Button.Group>
                     <Button id="all" basic={!rangeAll} active={rangeAll} onClick={this.setActive.bind(this)}>All Dates</Button>
                     <Popup trigger={<Button id="range" basic={rangeAll} active={!rangeAll} onClick={this.setActive.bind(this)}>{rangeSelectContent}</Button>} on='click'>
+                        <div className="utk-digital-date-slider-notches">
+                            {rangeNotches}
+                        </div>
                         <Nouislider
                             className="utk-digital-date-slider"
                             accessibility
-                            step={20}
-                            range={{ min: 1800, max: 2020 }}
+                            step={rangeStep}
+                            orientation="vertical"
+                            direction="rtl"
+                            range={{ min: rangeMin, max: rangeMax }}
                             start={rangeValues}
                             connect
-                            onChange={debounce(this.onChange, 25, { 'maxWait': 100 })}
+                            onUpdate={debounce(this.onChange, 50, { 'maxWait': 100 })}
                         />
-                        <div>
-                            {rangeNotches}
-                        </div>
                     </Popup>
                 </Button.Group>
 
