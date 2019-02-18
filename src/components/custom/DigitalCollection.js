@@ -6,7 +6,7 @@ export class DigitalCollection extends Component {
     isFeatured = (featured) => {
 
         if (featured)
-            return <span className="utk-digital-all-collections--block--featured"><em className="icon-star"></em>Featured</span>
+            return <span className="utk-digital-all-collections--block--featured"><em className="icon-star"></em></span>
         else
             return null
 

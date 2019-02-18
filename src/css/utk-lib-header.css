@@ -2779,16 +2779,15 @@ body.utk-search-open .utk-header-search {
       z-index: 1;
       font-size: 13px;
       font-weight: 400;
-      height: 29px;
-      padding: 0 0 0 11px; }
+      height: 29px; }
       .utk-digital-all-collections .utk-digital-all-collections--block .utk-digital-all-collections--block--featured em {
         font-size: 13px;
+        line-height: 29px;
         display: block;
         height: 29px;
         width: 29px;
         background-color: #ff8200;
         text-align: center;
-        margin-left: 11px;
         color: #fff; }
     @media (min-width: 992px) and (max-width: 1199px) {
       .utk-digital-all-collections .utk-digital-all-collections--block {

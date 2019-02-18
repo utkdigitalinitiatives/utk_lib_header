@@ -248,16 +248,15 @@
       font-size: $type-1;
       font-weight: 400;
       height: $golden-ratio-3;
-      padding: 0 0 0 $golden-ratio-1;
 
       em {
         font-size: $type-1;
+        line-height: $golden-ratio-3;
         display: block;
         height: $golden-ratio-3;
         width: $golden-ratio-3;
         background-color: $orange;
         text-align: center;
-        margin-left : $golden-ratio-1;
         color: $white;
       }
     }
