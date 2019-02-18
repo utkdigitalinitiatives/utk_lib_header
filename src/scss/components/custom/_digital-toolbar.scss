@@ -85,6 +85,7 @@
   box-shadow: 0 0 18px rgba($smokeyx, 0.29)!important;
   position: relative;
   border-bottom: $golden-ratio-0 solid $orange !important;
+  z-index: 99;
 
   &::before {
     background-color: $white!important;
@@ -111,12 +112,12 @@
     border: none !important;
     background-color: $gray-1 !important;
     border-radius: 0 !important;
+    box-shadow: inset $box-shadow;
   }
 
   .noUi-connects {
-    background-color: $gray-1 !important;
+    background-color: transparent !important;
     border: none !important;
-    box-shadow: inset $box-shadow;
     border-radius: 0 !important;
   }
 
@@ -173,18 +174,11 @@
     &.activeNotch {
       font-weight: 700;
       color: $globe;
-
-      &::after {
-        background-color: $globe;
-      }
     }
 
     &.in-range {
       font-weight: 700;
       color: $smokey;
-
-      &::after {
-      }
     }
 
     &::after {
@@ -194,7 +188,7 @@
       content: ' ';
       background-color: $gray-1;
       position: absolute;
-      right: -29px;
+      right: -31px;
       margin-top: -10px;
     }
 
