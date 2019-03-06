@@ -111,7 +111,6 @@ class Header extends Component {
     }
 
     closeResourcesListener = (e) => {
-        console.log(e.srcElement.dataset);
         if (e.srcElement.dataset.event === 'option-resources-close') {
             e.stopPropagation();
             this.closeResourcesMenu(e);
@@ -248,7 +247,7 @@ class Header extends Component {
                             </ul>
                         </div>
                     </div>
-                    <Menu active={resourcesClass} helpExpand={showHelp}/>
+                    <Menu expanded={showResources} active={resourcesClass} helpExpand={showHelp}/>
                     <Search showSearch={showSearch} ref="search"/>
                 </header>
                 <div className="utk-body-overlay"></div>

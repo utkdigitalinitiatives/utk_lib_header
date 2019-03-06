@@ -1518,6 +1518,17 @@ a.utk-help-back:visited {
     text-transform: uppercase;
     font-size: 15px;
     display: block; }
+  .utk-hours--loading {
+    margin: 0;
+    padding: 0;
+    padding-left: 47px !important;
+    line-height: 29px;
+    width: 300px;
+    font-family: "Gotham SSm 2r", "Gotham SSm A", "Gotham SSm B", "Gotham-Book", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    color: #58595b;
+    position: relative; }
   .utk-hours--listing {
     margin: 0;
     padding: 0 47px 0 0;
@@ -1615,6 +1626,23 @@ a.utk-help-back:visited {
           background-color: transparent;
           border: 2px solid #a7a9ac;
           margin-right: 11px; }
+
+.spinner::before {
+  content: '';
+  box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 29px;
+  height: 29px;
+  border-radius: 50%;
+  border: 2px solid #e0e0e0;
+  border-top-color: #a7a9ac;
+  animation: spinner 1s linear infinite; }
+
+@keyframes spinner {
+  to {
+    transform: rotate(360deg); } }
 
 a,
 a:visited {
