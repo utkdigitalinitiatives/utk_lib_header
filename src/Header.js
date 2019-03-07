@@ -12,8 +12,6 @@ import {Search} from "./components/Search";
 import './css/utk-lib-header.css';
 import primary_logo from './media/ut-knoxville.svg';
 import square_logo from './media/ut-square.svg';
-import {Placeholder} from "./components/Placeholder";
-import {Help} from "./components/Help";
 
 /* header component */
 class Header extends Component {
@@ -236,10 +234,6 @@ class Header extends Component {
                     <div className="utk-header-super">
                         <div className="container">
                             <ul className="utk-header-super--menu">
-                                {/*<li><a><strong>Today's Hours <span className='icon-angle-right'></span></strong></a></li>*/}
-                                {/*<li><a>Hodges: 24 Hours</a></li>*/}
-                                {/*<li><a>Pendergrass: 8pm-6pm</a></li>*/}
-                                {/*<li><a>DeVine: 8pm-5pm</a></li>*/}
                                 <li><a href="#" tabIndex="2">Hours</a></li>
                                 <li><a href="#" tabIndex="2">Locations</a></li>
                                 <li><a href="#" tabIndex="2">Databases</a></li>
@@ -251,7 +245,7 @@ class Header extends Component {
                     <Search showSearch={showSearch} ref="search"/>
                 </header>
                 <div className="utk-body-overlay"></div>
-                <Placeholder/>
+                <div id="utk-custom-subheader"></div>
             </div>
         );
     }
