@@ -33,6 +33,7 @@ class Header extends Component {
 
     toggleResources(e) {
         e.stopPropagation();
+        e.preventDefault();
         this.setState({showResources: true}, () => {
             document.addEventListener('click', this.closeResources);
             document.body.classList.add('utk-menu-open');
@@ -41,6 +42,7 @@ class Header extends Component {
 
     closeResources = (e) => {
         e.stopPropagation();
+        e.preventDefault();
         this.setState({showHelp: false});
         let footerClose = findIndex(e.path, {'className': 'utk-resources-close'});
         if (footerClose === 1) {
@@ -53,6 +55,7 @@ class Header extends Component {
 
     closeResourcesMenu = (e) => {
         e.stopPropagation();
+        e.preventDefault();
         this.setState({showResources: false}, () => {
             document.removeEventListener('click', this.closeResources);
             document.body.classList.remove('utk-menu-open');
@@ -61,6 +64,7 @@ class Header extends Component {
 
     toggleSearch(e) {
         e.stopPropagation();
+        e.preventDefault();
         this.setState({showSearch: true}, () => {
             document.addEventListener('click', this.closeSearch);
             this.refs.search.utkSearchField.focus();
@@ -81,6 +85,7 @@ class Header extends Component {
          */
 
         e.stopPropagation();
+        e.preventDefault();
         let isSearch = findIndex(e.path, {'className': 'utk-search-wrapper'});
         if (isSearch === -1) {
             this.setState({showSearch: false}, () => {
@@ -101,6 +106,7 @@ class Header extends Component {
     optionListener = (e) => {
         if (e.srcElement.dataset.event === 'option-help-expand') {
             e.stopPropagation();
+            e.preventDefault();
             this.setState({showResources: true}, () => {
                 document.addEventListener('click', this.closeResources);
                 document.body.classList.add('utk-menu-open');
@@ -111,6 +117,7 @@ class Header extends Component {
     closeResourcesListener = (e) => {
         if (e.srcElement.dataset.event === 'option-resources-close') {
             e.stopPropagation();
+            e.preventDefault();
             this.closeResourcesMenu(e);
         }
     }
