@@ -47,7 +47,7 @@
     "build-polk-rename-js": "renamer --find '/main[.][^.]+[.]js/' --replace 'header.js' build/static/js/*.js",
     "build-polk-rename-css": "renamer --find '/main[.][^.]+[.]css/' --replace 'header.css' build/static/css/*.css",
     "build-polk-set-absolutes": "npm-run-all build-polk-set-absolutes-js build-polk-set-absolutes-css",
-    "build-polk-set-absolutes-js": "replace 'static[/]' 'resources/ut-tei/src/vendor/utk_lib_header' build/static/js/*.js",
+    "build-polk-set-absolutes-js": "replace 'static[/]' 'resources/ut-tei/src/vendor/utk_lib_header/' build/static/js/*.js",
     "build-polk-set-absolutes-css": "replace '[/]static[/]' '/resources/ut-tei/src/vendor/utk_lib_header/' build/static/css/*.css",
     "ship-polk": "./ship/ship-polk.sh"
   },
