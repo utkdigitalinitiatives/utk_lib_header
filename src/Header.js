@@ -12,8 +12,6 @@ import {Search} from "./components/Search";
 import './css/utk-lib-header.css';
 import primary_logo from './media/ut-knoxville.svg';
 import square_logo from './media/ut-square.svg';
-import {Placeholder} from "./components/Placeholder";
-import {Help} from "./components/Help";
 import {Digital} from "./components/custom/Digital";
 
 /* header component */
@@ -36,6 +34,7 @@ class Header extends Component {
 
     toggleResources(e) {
         e.stopPropagation();
+        e.preventDefault();
         this.setState({showResources: true}, () => {
             document.addEventListener('click', this.closeResources);
             document.body.classList.add('utk-menu-open');
@@ -44,6 +43,7 @@ class Header extends Component {
 
     closeResources = (e) => {
         e.stopPropagation();
+        e.preventDefault();
         this.setState({showHelp: false});
         let footerClose = findIndex(e.path, {'className': 'utk-resources-close'});
         if (footerClose === 1) {
@@ -56,6 +56,7 @@ class Header extends Component {
 
     closeResourcesMenu = (e) => {
         e.stopPropagation();
+        e.preventDefault();
         this.setState({showResources: false}, () => {
             document.removeEventListener('click', this.closeResources);
             document.body.classList.remove('utk-menu-open');
@@ -64,6 +65,7 @@ class Header extends Component {
 
     toggleSearch(e) {
         e.stopPropagation();
+        e.preventDefault();
         this.setState({showSearch: true}, () => {
             document.addEventListener('click', this.closeSearch);
             this.refs.search.utkSearchField.focus();
@@ -84,6 +86,7 @@ class Header extends Component {
          */
 
         e.stopPropagation();
+        e.preventDefault();
         let isSearch = findIndex(e.path, {'className': 'utk-search-wrapper'});
         if (isSearch === -1) {
             this.setState({showSearch: false}, () => {
@@ -104,6 +107,7 @@ class Header extends Component {
     optionListener = (e) => {
         if (e.srcElement.dataset.event === 'option-help-expand') {
             e.stopPropagation();
+            e.preventDefault();
             this.setState({showResources: true}, () => {
                 document.addEventListener('click', this.closeResources);
                 document.body.classList.add('utk-menu-open');
@@ -112,9 +116,9 @@ class Header extends Component {
     }
 
     closeResourcesListener = (e) => {
-        console.log(e.srcElement.dataset);
         if (e.srcElement.dataset.event === 'option-resources-close') {
             e.stopPropagation();
+            e.preventDefault();
             this.closeResourcesMenu(e);
         }
     }
@@ -238,10 +242,6 @@ class Header extends Component {
                     <div className="utk-header-super">
                         <div className="container">
                             <ul className="utk-header-super--menu">
-                                {/*<li><a><strong>Today's Hours <span className='icon-angle-right'></span></strong></a></li>*/}
-                                {/*<li><a>Hodges: 24 Hours</a></li>*/}
-                                {/*<li><a>Pendergrass: 8pm-6pm</a></li>*/}
-                                {/*<li><a>DeVine: 8pm-5pm</a></li>*/}
                                 <li><a href="#" tabIndex="2">Hours</a></li>
                                 <li><a href="#" tabIndex="2">Locations</a></li>
                                 <li><a href="#" tabIndex="2">Databases</a></li>
@@ -249,11 +249,12 @@ class Header extends Component {
                             </ul>
                         </div>
                     </div>
-                    <Menu active={resourcesClass} helpExpand={showHelp}/>
+                    <Menu expanded={showResources} active={resourcesClass} helpExpand={showHelp}/>
                     <Search showSearch={showSearch} ref="search"/>
                 </header>
                 <div className="utk-body-overlay"></div>
                 <Digital/>
+                <div id="utk-custom-subheader"></div>
             </div>
         );
     }

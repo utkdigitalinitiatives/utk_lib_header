@@ -19,7 +19,8 @@ export class Menu extends Component {
             menuDrawer: [],
             activeMenu: 0,
             activeDepth: 0,
-            activeHelp: 0
+            activeHelp: 0,
+            grabHours: null
         };
     }
 
@@ -127,7 +128,7 @@ export class Menu extends Component {
     render() {
 
         const {active} = this.props;
-        const {menuDrawer, activeMenu, activeDepth, activeHelp} = this.state;
+        const {menuDrawer, activeMenu, activeDepth, activeHelp, grabHours} = this.state;
 
         let menuColumns, menuSecondary = {};
         let depthClass = 'utk-menu-depth--' + activeDepth;
@@ -189,7 +190,7 @@ export class Menu extends Component {
                         {menuSecondary}
                     </div>
                     <div className="utk-resources-contact">
-                        <Hours/>
+                        <Hours expanded={this.props.expanded}/>
                     </div>
                     <div className='utk-menu-options'>
                         <div className='container'>

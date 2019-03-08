@@ -12,11 +12,12 @@ export class Hours extends Component {
 
         this.state = {
             locations: {},
-            timestamp: 0
+            timestamp: 0,
+            grab: false
         };
     }
 
-    componentDidMount() {
+    fetchLibCalHours () {
 
         fetch(Globals.URL + ENDPOINT + ROUTE, {
             headers : {
@@ -28,12 +29,20 @@ export class Hours extends Component {
             .then(data => {
                 this.setState({
                     locations: data.locations,
-                    timestamp: data.timestamp
+                    timestamp: data.timestamp,
+                    grab: true
                 });
             })
             .catch(err => console.error(this.props.url, err.toString()));
 
         return null
+
+    }
+
+    componentDidUpdate() {
+
+        if (this.props.expanded && !this.state.grab)
+            this.fetchLibCalHours()
 
     }
 
@@ -67,6 +76,13 @@ export class Hours extends Component {
             );
 
         else
-            return null
+            return (
+                <div className="utk-hours">
+                    <h4>Hours Today</h4>
+                    <ul className="utk-hours--listing">
+                        <h5 className="utk-hours--loading spinner">Loading...</h5>
+                    </ul>
+                </div>
+            )
     }
 }
