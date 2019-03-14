@@ -241,10 +241,16 @@ class Header extends Component {
                     <div className="utk-header-super">
                         <div className="container">
                             <ul className="utk-header-super--menu">
-                                <li><a href="#" tabIndex="2">Hours</a></li>
-                                <li><a href="#" tabIndex="2">Locations</a></li>
-                                <li><a href="#" tabIndex="2">Databases</a></li>
-                                <li><a href="#" tabIndex="2">Services</a></li>
+                                <li><a href="https://www.lib.utk.edu/hours/"
+                                       tabIndex="2">Hours</a></li>
+                                <li><a href="https://libguides.utk.edu/"
+                                       tabIndex="2">Locations</a></li>
+                                <li><a href="https://libguides.utk.edu/databases"
+                                       tabIndex="2">Articles & Databases</a></li>
+                                <li><a href="https://www.lib.utk.edu/askusnow/"
+                                       tabIndex="2">Help</a></li>
+                                <li><a href="https://utk-almaprimo.hosted.exlibrisgroup.com/primo-explore/search?vid=01UTK"
+                                       tabIndex="2">OneSearch</a></li>
                             </ul>
                         </div>
                     </div>
