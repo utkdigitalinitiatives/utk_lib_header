@@ -22,7 +22,7 @@ body {
     overflow: hidden;
 
     .utk-body-overlay {
-      opacity: 1;
+      opacity: 0.76;
       height: 100%;
     }
 
@@ -35,7 +35,7 @@ body {
 .utk-body-overlay {
   width: 100%;
   height: 0;
-  background-color: rgba($smokey, 1);
+  background-color: $smokeyx;
   position: fixed;
   z-index: 99;
   left: 0;

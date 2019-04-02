@@ -190,10 +190,7 @@ export class Menu extends Component {
                         {menuSecondary}
                     </div>
                     <div className="utk-resources-contact">
-                        <Hours expanded={this.props.expanded}/>
-                    </div>
-                    <div className='utk-menu-options'>
-                        <div className='container'>
+                        <div className='utk-menu-options'>
                             <div className='utk-menu-help'>
                                 <a className="utk-menu-help--item utk-menu-help--help-me" onClick={this.enableHelp}>
                                     <h4>Help</h4>
@@ -208,15 +205,17 @@ export class Menu extends Component {
                                     </div>
                                 </a>
                             </div>
-                            <a className="utk-resources-close" data-event="option-resources-close">
-                                <span className="icon-cancel" data-event="option-resources-close"></span>
-                            </a>
                             <Help activeHelp={this.state.activeHelp} closeHelp={() => {
                                 this.closeHelp();
                             }} />
                         </div>
+                        <Hours expanded={this.props.expanded}/>
                     </div>
+                    <a className="utk-resources-close" data-event="option-resources-close">
+                        <span className="icon-cancel" data-event="option-resources-close"></span>
+                    </a>
                 </div>
+
             </div>
         )
     }

@@ -55,7 +55,7 @@ export class HoursLocation extends Component {
         return (
             <li className="utk-hours--listing--item">
                 <a href="#" className={hoursClass}>
-                    <h5>{data.name}</h5>
+                    <span className="library-label">{label}</span>
                     <span className="utk-hours--listing--item--hours">{ hoursLabel }</span>
                 </a>
             </li>

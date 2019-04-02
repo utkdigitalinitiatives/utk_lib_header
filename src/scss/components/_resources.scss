@@ -6,12 +6,11 @@
   position: fixed;
   display: none;
   padding: $golden-ratio-3 0 0;
-  overflow: scroll;
-  height: calc(100vh  - 66px);
-  padding-bottom: 176px;
+  padding-bottom: $golden-ratio-4;
+  box-shadow: $box-shadow-float;
 
   @include respond(xs, sm, md, lg, xl) {
-    background-color: $white;
+    @include gradient-vertical($gray-1, 0, $white, 18%);
     box-shadow: inset $box-shadow;
   }
 
@@ -137,8 +136,7 @@
   z-index: 1;
   height: auto;
   overflow: hidden;
-  padding: 0 0 0 $golden-ratio-4;
-  border-left: 2px solid $gray-1;
+  padding: 0;
   margin-top: $golden-ratio-2;
 
   @include respond(xs) {
@@ -288,12 +286,13 @@
   position: absolute;
   right: 50%;
   margin-left: calc(-#{$golden-ratio-4 / 2});
-  bottom: calc(-#{$golden-ratio-4 / 2});
+  bottom: -71px;
   border-radius: $golden-ratio-4;
   text-align: center;
   box-shadow: $box-shadow;
   cursor: pointer;
   z-index: 1;
+  box-shadow: $box-shadow-float;
 
   span {
     font-size: $type-3;

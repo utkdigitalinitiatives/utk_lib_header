@@ -13,6 +13,26 @@
   filter: progid:dximagetransform.microsoft.gradient(startColorstr='$start', endColorstr='$end', GradientType=0);
 }
 
+@mixin standard-body-link() {
+  a,
+  a:visited {
+    color: $globe !important;
+  }
+
+  a:hover,
+  a:focus {
+    color: $leconte !important;
+  }
+}
+
+@mixin serif-body-rendering() {
+  font-family: $serif;
+  font-size: 21px;
+  line-height: 1.58;
+  word-break: break-word;
+  letter-spacing: -0.003em;
+}
+
 @mixin background-2x($path, $ext: "png", $w: auto, $h: auto, $pos: left top, $repeat: no-repeat) {
   $at1x_path: "#{$path}.#{$ext}";
   $at2x_path: "#{$path}@2x.#{$ext}";
