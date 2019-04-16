@@ -525,7 +525,9 @@ body.utk-menu-open .utk-header-main {
 
 body.utk-menu-open .utk-logo-wrapper .utk-logo-primary {
   top: -3000px;
-  box-shadow: none; }
+  box-shadow: none;
+  padding: 0;
+  height: 0; }
 
 body.utk-menu-open .utk-logo-wrapper .utk-logo-square {
   left: 0 !important; }
@@ -932,7 +934,7 @@ a.utk-help-back:visited {
   a.utk-help-back:visited:focus {
     background-color: #8d2048;
     border-color: #8d2048;
-    color: #fff !important; }
+    color: #fff; }
 
 .utk-help-root-prefix {
   display: flex;
@@ -953,6 +955,7 @@ a.utk-help-back:visited {
   font-weight: 700 !important;
   text-transform: uppercase !important;
   font-size: 15px !important;
+  color: #333 !important;
   /* Mobile Devices for Mice */
   /* Landscape phones and down */
   /* Landscape phone to portrait tablet */
@@ -996,11 +999,11 @@ a.utk-help-back:visited {
   .utk-help-back:hover, .utk-help-back:focus {
     background-color: transparent !important;
     border-color: transparent !important;
-    color: #fff !important; }
+    color: #333 !important; }
 
 .utk-help-columns-2 .utk-help-level-0 > .utk-help-wrapper > .utk-help-decision:not(.utk-help-decision--active), .utk-help-columns-2 .utk-help-level-0 > .utk-help-wrapper > .utk-help-back:not(.utk-help-decision--active) {
-  color: #a7a9ac;
-  border-color: #474747;
+  color: #58595b;
+  border-color: #e0e0e0;
   background-color: transparent;
   transform: scale(0.94);
   /* Mobile Devices for Mice */
@@ -1013,6 +1016,10 @@ a.utk-help-back:visited {
   /* Landscape phone to portrait tablet */
   /* Portrait tablet to landscape and desktop */
   /* desktop and large desktop */ }
+  .utk-help-columns-2 .utk-help-level-0 > .utk-help-wrapper > .utk-help-decision:not(.utk-help-decision--active):hover, .utk-help-columns-2 .utk-help-level-0 > .utk-help-wrapper > .utk-help-back:not(.utk-help-decision--active):hover, .utk-help-columns-2 .utk-help-level-0 > .utk-help-wrapper > .utk-help-decision:not(.utk-help-decision--active):focus, .utk-help-columns-2 .utk-help-level-0 > .utk-help-wrapper > .utk-help-back:not(.utk-help-decision--active):focus {
+    background-color: #e0e0e0 !important;
+    border-color: #e0e0e0 !important;
+    color: #333 !important; }
   @media (max-width: 767px) {
     .utk-help-columns-2 .utk-help-level-0 > .utk-help-wrapper > .utk-help-decision:not(.utk-help-decision--active), .utk-help-columns-2 .utk-help-level-0 > .utk-help-wrapper > .utk-help-back:not(.utk-help-decision--active) {
       display: none; } }
@@ -1023,8 +1030,8 @@ a.utk-help-back:visited {
 .utk-help-columns-3 .utk-help-level-0 > .utk-help-wrapper > .utk-help-decision:not(.utk-help-decision--active), .utk-help-columns-3 .utk-help-level-0 > .utk-help-wrapper > .utk-help-back:not(.utk-help-decision--active),
 .utk-help-columns-3 .utk-help-level-1 > .utk-help-wrapper > .utk-help-decision:not(.utk-help-decision--active),
 .utk-help-columns-3 .utk-help-level-1 > .utk-help-wrapper > .utk-help-back:not(.utk-help-decision--active) {
-  color: #a7a9ac;
-  border-color: #474747;
+  color: #58595b;
+  border-color: #e0e0e0;
   background-color: transparent;
   transform: scale(0.94);
   /* Mobile Devices for Mice */
@@ -1037,6 +1044,14 @@ a.utk-help-back:visited {
   /* Landscape phone to portrait tablet */
   /* Portrait tablet to landscape and desktop */
   /* desktop and large desktop */ }
+  .utk-help-columns-3 .utk-help-level-0 > .utk-help-wrapper > .utk-help-decision:not(.utk-help-decision--active):hover, .utk-help-columns-3 .utk-help-level-0 > .utk-help-wrapper > .utk-help-back:not(.utk-help-decision--active):hover, .utk-help-columns-3 .utk-help-level-0 > .utk-help-wrapper > .utk-help-decision:not(.utk-help-decision--active):focus, .utk-help-columns-3 .utk-help-level-0 > .utk-help-wrapper > .utk-help-back:not(.utk-help-decision--active):focus,
+  .utk-help-columns-3 .utk-help-level-1 > .utk-help-wrapper > .utk-help-decision:not(.utk-help-decision--active):hover,
+  .utk-help-columns-3 .utk-help-level-1 > .utk-help-wrapper > .utk-help-back:not(.utk-help-decision--active):hover,
+  .utk-help-columns-3 .utk-help-level-1 > .utk-help-wrapper > .utk-help-decision:not(.utk-help-decision--active):focus,
+  .utk-help-columns-3 .utk-help-level-1 > .utk-help-wrapper > .utk-help-back:not(.utk-help-decision--active):focus {
+    background-color: #e0e0e0 !important;
+    border-color: #e0e0e0 !important;
+    color: #333 !important; }
   @media (max-width: 767px) {
     .utk-help-columns-3 .utk-help-level-0 > .utk-help-wrapper > .utk-help-decision:not(.utk-help-decision--active), .utk-help-columns-3 .utk-help-level-0 > .utk-help-wrapper > .utk-help-back:not(.utk-help-decision--active),
     .utk-help-columns-3 .utk-help-level-1 > .utk-help-wrapper > .utk-help-decision:not(.utk-help-decision--active),
@@ -1052,7 +1067,7 @@ a.utk-help-back:visited {
   margin: auto; }
   .utk-help .utk-help-level.utk-help-level-0 {
     position: relative;
-    margin: 47px auto; }
+    margin: 29px auto; }
 
 .utk-help .utk-help-wrapper > .utk-help-level {
   position: absolute;
@@ -1385,7 +1400,6 @@ a.utk-help-back:visited {
   text-align: center;
   background-color: #58595b;
   color: #fff;
-  position: fixed;
   top: 158px;
   /* Mobile Devices for Mice */
   /* Landscape phones and down */
@@ -1399,41 +1413,18 @@ a.utk-help-back:visited {
       margin-top: 0;
       top: 81px; } }
 
-.utk-header-resources.utk-help-expand .utk-menu-help {
+.utk-header-resources.utk-help-expand .utk-resources-menu,
+.utk-header-resources.utk-help-expand .utk-resources-contact {
   display: none; }
 
-.utk-header-resources.utk-help-expand .utk-menu-options {
-  height: calc(100vh - 129px);
-  padding-top: 18px;
-  overflow: scroll;
-  /* Mobile Devices for Mice */
-  /* Landscape phones and down */
-  /* Landscape phone to portrait tablet */
-  /* Portrait tablet to landscape and desktop */
-  /* desktop and large desktop */ }
-  @media (max-width: 767px) {
-    .utk-header-resources.utk-help-expand .utk-menu-options {
-      height: calc(100vh - 66px);
-      padding-top: 0; } }
-  .utk-header-resources.utk-help-expand .utk-menu-options .utk-menu-help--help-me--back {
-    display: block; }
-  .utk-header-resources.utk-help-expand .utk-menu-options .container {
-    flex-wrap: wrap;
-    flex-direction: row-reverse;
-    align-content: flex-end;
-    height: 100%; }
+.utk-header-resources.utk-help-expand .utk-menu-options .utk-menu-help--help-me--back {
+  display: block; }
 
-.utk-header-resources.utk-help-expand .utk-resources-close {
-  position: relative !important;
-  top: 47px;
-  /* Mobile Devices for Mice */
-  /* Landscape phones and down */
-  /* Landscape phone to portrait tablet */
-  /* Portrait tablet to landscape and desktop */
-  /* desktop and large desktop */ }
-  @media (max-width: 767px) {
-    .utk-header-resources.utk-help-expand .utk-resources-close {
-      top: 40px; } }
+.utk-header-resources.utk-help-expand .utk-menu-options .container {
+  flex-wrap: wrap;
+  flex-direction: row-reverse;
+  align-content: flex-end;
+  height: 100%; }
 
 .utk-help {
   position: relative;
@@ -1441,7 +1432,7 @@ a.utk-help-back:visited {
   margin: 0;
   color: #fff;
   text-align: center;
-  padding: 47px 0 47px;
+  padding: 18px 0 47px;
   display: flex;
   align-items: center;
   height: 100%; }
@@ -1461,11 +1452,11 @@ a.utk-help-back:visited {
   .utk-help h3 {
     color: inherit;
     font-size: 23px;
-    margin: 18px auto 0;
-    color: #fff; }
+    margin: 0 auto 0;
+    color: #58595b; }
   .utk-help p {
     font-size: 15px;
-    color: #e0e0e0; }
+    color: #333; }
     .utk-help p::after {
       display: block;
       width: 100%;
@@ -2080,8 +2071,7 @@ a:hover {
   line-height: 47px;
   background-color: #e65933;
   position: absolute;
-  right: 50%;
-  margin-left: calc(-23.5px);
+  right: calc(50% - 23.5px);
   bottom: -71px;
   border-radius: 47px;
   text-align: center;
@@ -2101,7 +2091,6 @@ a:hover {
   bottom: 15px;
   left: -5px;
   right: auto;
-  position: fixed;
   width: auto;
   /* Mobile Devices for Mice */
   /* Landscape phones and down */
@@ -2148,7 +2137,6 @@ a:hover {
   padding-top: 7px;
   padding-left: 1px;
   left: auto;
-  position: fixed;
   bottom: 24px !important;
   right: 25px !important;
   z-index: 11;

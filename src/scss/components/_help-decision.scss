@@ -43,7 +43,7 @@ a.utk-help-decision:visited {
   &:focus {
     background-color: $leconte;
     border-color: $leconte;
-    color: $white !important;
+    color: $white;
   }
 }
 
@@ -69,6 +69,7 @@ a.utk-help-decision:visited {
   font-weight: 700 !important;
   text-transform: uppercase !important;
   font-size: $type-2 !important;
+  color: $smokeyx !important;
 
   @include respond(xs, sm) {
     flex-direction: column;
@@ -89,7 +90,7 @@ a.utk-help-decision:visited {
   &:focus {
     background-color: transparent !important;
     border-color: transparent !important;
-    color: $white !important;
+    color: $smokeyx !important;
   }
 }
 
@@ -98,10 +99,17 @@ a.utk-help-decision:visited {
   .utk-help-level-0 {
 
     > .utk-help-wrapper > .utk-help-decision:not(.utk-help-decision--active) {
-      color: $rock;
-      border-color: lighten($smokeyx, 8);
+      color: $smokey;
+      border-color: $gray-1;
       background-color: transparent;
       transform: scale(0.94);
+
+      &:hover,
+      &:focus {
+        background-color: $gray-1 !important;
+        border-color:  $gray-1 !important;
+        color: $smokeyx !important;
+      }
 
       @include respond(xs, sm) {
         display: none;
@@ -116,10 +124,17 @@ a.utk-help-decision:visited {
   .utk-help-level-1 {
 
     > .utk-help-wrapper > .utk-help-decision:not(.utk-help-decision--active) {
-      color: $rock;
-      border-color: lighten($smokeyx, 8);
+      color: $smokey;
+      border-color: $gray-1;
       background-color: transparent;
       transform: scale(0.94);
+
+      &:hover,
+      &:focus {
+        background-color: $gray-1 !important;
+        border-color:  $gray-1 !important;
+        color: $smokeyx !important;
+      }
 
       @include respond(xs, sm) {
         display: none;

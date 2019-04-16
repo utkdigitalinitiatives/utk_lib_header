@@ -205,17 +205,16 @@ export class Menu extends Component {
                                     </div>
                                 </a>
                             </div>
-                            <Help activeHelp={this.state.activeHelp} closeHelp={() => {
-                                this.closeHelp();
-                            }} />
                         </div>
                         <Hours expanded={this.props.expanded}/>
                     </div>
+                    <Help activeHelp={this.state.activeHelp} closeHelp={() => {
+                        this.closeHelp();
+                    }} />
                     <a className="utk-resources-close" data-event="option-resources-close">
                         <span className="icon-cancel" data-event="option-resources-close"></span>
                     </a>
                 </div>
-
             </div>
         )
     }

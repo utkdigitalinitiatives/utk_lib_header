@@ -284,8 +284,7 @@
   line-height: $golden-ratio-4;
   background-color: $torch;
   position: absolute;
-  right: 50%;
-  margin-left: calc(-#{$golden-ratio-4 / 2});
+  right:  calc(50% - #{$golden-ratio-4 / 2});
   bottom: -71px;
   border-radius: $golden-ratio-4;
   text-align: center;
@@ -309,7 +308,6 @@
     bottom: 15px;
     left: -5px;
     right: auto;
-    position: fixed;
     width: auto;
 
     @include respond(sm, md, lg, xl) {
@@ -325,7 +323,6 @@
     padding-top: 7px;
     padding-left: 1px;
     left: auto;
-    position: fixed;
     bottom: 24px !important;
     right: 25px !important;
     z-index: 11;
