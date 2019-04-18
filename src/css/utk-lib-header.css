@@ -1362,7 +1362,7 @@ a.utk-help-back:visited {
       line-height: 47px;
       text-align: center;
       background-color: #a7a9ac;
-      clip-path: polygon(6px 0, 100% 0, 100% 100%, 0 100%);
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 6px 100%);
       /* Mobile Devices for Mice */
       /* Landscape phones and down */
       /* Landscape phone to portrait tablet */

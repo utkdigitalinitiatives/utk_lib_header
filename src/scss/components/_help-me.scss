@@ -80,7 +80,7 @@
       line-height: $golden-ratio-4;
       text-align: center;
       background-color: $rock;
-      clip-path: polygon(6px 0,100% 0,100% 100%,0 100%);
+      clip-path: polygon(0 0,100% 0,100% 100%,6px 100%);
 
       @include respond(xs) {
         height: 40px;
