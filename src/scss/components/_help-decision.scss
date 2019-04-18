@@ -13,7 +13,7 @@ a.utk-help-decision:visited {
   justify-content: center;
   width: 288px;
   max-width: 288px;
-  transition: $transition-all;
+  transition: $transition-all-fast;
 
   &.utk-help-decision--active {
     background-color: $smokey !important;

@@ -895,7 +895,7 @@ a.utk-help-back:visited {
   justify-content: center;
   width: 288px;
   max-width: 288px;
-  transition: all 290ms ease-in-out;
+  transition: all 110ms ease-in-out;
   /* Mobile Devices for Mice */
   /* Landscape phones and down */
   /* Landscape phone to portrait tablet */
@@ -1464,7 +1464,7 @@ a.utk-help-back:visited {
       background-color: #ff8200;
       content: ' ';
       margin: 29px auto 0;
-      max-width: 120px; }
+      max-width: 123px; }
 
 .utk-hours {
   margin-bottom: 0;
