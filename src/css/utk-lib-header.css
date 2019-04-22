@@ -288,7 +288,15 @@ body {
     /* Landscape phones and down */
     /* Landscape phone to portrait tablet */
     /* Portrait tablet to landscape and desktop */
+    /* desktop and large desktop */
+    /* Mobile Devices for Mice */
+    /* Landscape phones and down */
+    /* Landscape phone to portrait tablet */
+    /* Portrait tablet to landscape and desktop */
     /* desktop and large desktop */ }
+    @media (min-width: 768px) and (max-width: 991px) {
+      .utk-header .utk-header-main {
+        margin-top: 0; } }
     @media (max-width: 767px) {
       .utk-header .utk-header-main {
         margin-top: 0;
@@ -518,8 +526,16 @@ body.utk-menu-open .utk-header-main {
   /* Landscape phones and down */
   /* Landscape phone to portrait tablet */
   /* Portrait tablet to landscape and desktop */
+  /* desktop and large desktop */
+  /* Mobile Devices for Mice */
+  /* Landscape phones and down */
+  /* Landscape phone to portrait tablet */
+  /* Portrait tablet to landscape and desktop */
   /* desktop and large desktop */ }
   @media (max-width: 767px) {
+    body.utk-menu-open .utk-header-main {
+      margin-top: 0 !important; } }
+  @media (min-width: 768px) and (max-width: 991px) {
     body.utk-menu-open .utk-header-main {
       margin-top: 0 !important; } }
 
@@ -783,8 +799,32 @@ body.utk-menu-open .utk-header-super {
   /* Landscape phones and down */
   /* Landscape phone to portrait tablet */
   /* Portrait tablet to landscape and desktop */
+  /* desktop and large desktop */
+  /* Mobile Devices for Mice */
+  /* Landscape phones and down */
+  /* Landscape phone to portrait tablet */
+  /* Portrait tablet to landscape and desktop */
   /* desktop and large desktop */ }
   @media (max-width: 767px) {
+    .utk-header-super {
+      display: none;
+      position: relative !important;
+      display: none;
+      width: 100%;
+      overflow: scroll !important;
+      background-color: #e0e0e0 !important; }
+      .utk-header-super--menu {
+        float: none !important;
+        width: 100%; }
+        .utk-header-super--menu a,
+        .utk-header-super--menu a:visited,
+        .utk-header-super--menu a:hover,
+        .utk-header-super--menu a:focus {
+          color: #333 !important;
+          font-weight: 400 !important; }
+        .utk-header-super--menu > li:first-child > a {
+          padding-left: 0; } }
+  @media (min-width: 768px) and (max-width: 991px) {
     .utk-header-super {
       display: none;
       position: relative !important;

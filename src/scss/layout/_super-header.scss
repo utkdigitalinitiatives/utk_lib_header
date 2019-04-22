@@ -3,7 +3,7 @@ body.utk-menu-open .utk-header-super {
 }
 
 .utk-header-super {
-  @include respond(xs) {
+  @include respond(xs, sm) {
     display: none;
     position: relative !important;
     display: none;

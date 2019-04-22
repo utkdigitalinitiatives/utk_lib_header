@@ -90,7 +90,7 @@ body.utk-menu-open {
   .utk-header-main {
     margin-top: 47px !important;
 
-    @include respond(xs) {
+    @include respond(xs, sm) {
       margin-top: 0 !important;
     }
   }
