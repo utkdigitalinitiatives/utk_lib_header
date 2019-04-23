@@ -158,11 +158,6 @@ body.utk-search-open {
   a:focus {
     color: $smokeyx !important;
     font-weight: 700;
-
-
-    @include respond(xs) {
-      padding-right: 0 !important;
-    }
   }
 
   .icon-search {

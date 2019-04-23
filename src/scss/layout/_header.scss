@@ -60,6 +60,10 @@
   padding-top: 3px;
   height: $golden-ratio-5;
 
+  @include respond(xs, sm) {
+    padding-top: 0;
+  }
+
   @include respond(xs) {
     right: 0;
     margin-top: 0 !important;
@@ -67,6 +71,7 @@
   }
 
   .utk-header-actions {
+
     &--item {
       display: block;
       width: auto;
@@ -91,24 +96,33 @@
         }
       }
 
+      @include respond(xs) {
+        &.utk-header-actions--search {
+          em {
+            display: none;
+          }
+        }
+      }
+
       em {
         font-style: normal;
-
-        @include respond(xs) {
-          display: none;
-        }
       }
 
       a {
         display: inline-block;
         padding: calc((#{$golden-ratio-4} - #{$golden-ratio-0} - #{$type-2}) / 2) calc(#{$golden-ratio-3} / 2);
         transition: $transition-all;
-        color: $smokeyx !important;;
+        color: $smokeyx !important;
+
+        @include respond(xs, sm) {
+          height: 60px;
+          border-left: 2px solid $gray-0;
+          padding: 24px 20px 20px 17px !important;
+        }
 
         @include respond(xs) {
-          > span {
-            font-size: $type-4;
-          }
+          min-width: 60px;
+          padding: 24px 12px 20px 17px !important;
         }
       }
     }
