@@ -522,6 +522,7 @@ body {
     left: 303px;
     transition: all 290ms ease-in-out;
     color: #58595b !important;
+    letter-spacing: -0.03em;
     /* Mobile Devices for Mice */
     /* Landscape phones and down */
     /* Landscape phone to portrait tablet */

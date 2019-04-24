@@ -66,6 +66,7 @@
     left: 303px;
     transition: $transition-all;
     color: $smokey !important;
+    letter-spacing: -0.03em;
 
     @include respond(xs) {
       left: 30px;
