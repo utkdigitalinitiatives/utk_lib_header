@@ -52,6 +52,7 @@
   transition: $transition-all;
   padding-top: 3px;
   height: $golden-ratio-5;
+  z-index: 999;
 
   @include respond(xs, sm) {
     padding-top: 0;
@@ -89,8 +90,20 @@
         }
       }
 
-      @include respond(xs) {
+      @media only screen and (max-width: 400px) {
         &.utk-header-actions--search {
+          em {
+            display: none;
+          }
+
+          > a > span {
+            margin-right: 0;
+          }
+        }
+      }
+
+      @media only screen and (max-width: 330px) {
+        &.utk-header-actions--resources {
           em {
             display: none;
           }
@@ -105,30 +118,31 @@
         font-style: normal;
 
         @include respond(xs) {
-          font-size: $type-1;
+          font-size: $type-2;
         }
       }
 
       a {
         display: inline-block;
         padding: calc((#{$golden-ratio-4} - #{$golden-ratio-0} - #{$type-2}) / 2) calc(#{$golden-ratio-3} / 2);
-        transition: $transition-all;
         color: $smokeyx !important;
 
         @include respond(xs, sm) {
           height: 60px;
-          border-left: 2px solid $gray-0;
+          border-left: 1px solid $gray-1;
+          box-shadow: inset 1px 1px 2px $white;
           padding: 24px 20px 20px 17px !important;
+          background-color: $gray-0;
         }
 
         @include respond(xs) {
-          padding: 24px 16px 20px 16px !important;
+          padding: 24px 15px 20px 15px !important;
           min-width: 60px;
           text-align: center;
 
           > span {
             @include respond(xs) {
-              font-size: $type-1;
+              font-size: $type-2;
               margin-right: 5px;
             }
           }

@@ -202,13 +202,11 @@
   .icon-menu {
     opacity: 1;
     margin-right: 6px;
-    transition: $transition-all;
     font-size: 15px;
   }
 
   .icon-cancel {
     opacity: 0;
-    transition: $transition-all;
     margin-right: 6px;
     font-size: 15px;
   }
@@ -218,7 +216,6 @@
 
     .icon-menu {
       opacity: 0;
-      transition: $transition-all;
     }
 
     .icon-cancel {

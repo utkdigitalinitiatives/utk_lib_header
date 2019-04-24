@@ -164,14 +164,12 @@ body.utk-search-open {
     opacity: 1;
     font-size: 15px;
     padding: 1px;
-    transition: $transition-all;
     margin-right: 6px;
   }
 
   .icon-cancel {
     opacity: 0;
     font-size: 15px;
-    transition: $transition-all;
     position: absolute;
     margin-left: -28px;
   }
@@ -180,7 +178,6 @@ body.utk-search-open {
 
     .icon-search {
       opacity: 0;
-      transition: $transition-all;
     }
 
     .icon-cancel {
