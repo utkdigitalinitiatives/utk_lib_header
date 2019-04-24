@@ -49,7 +49,6 @@
   display: flex;
   flex-direction: row;
   width: auto;
-  transition: $transition-all;
   padding-top: 3px;
   height: $golden-ratio-5;
   z-index: 999;
@@ -80,13 +79,27 @@
         text-transform: none;
       }
 
-      @include respond(xs, sm) {
+      @include respond(xs) {
         &.utk-header-actions--utk {
           display: none;
         }
 
         &.utk-header-actions--home {
           display: none;
+        }
+      }
+
+      @include respond(sm) {
+        &.utk-header-actions--utk {
+          display: none;
+        }
+
+        &.utk-header-actions--home {
+          > a {
+            border: none;
+            background: none;
+            box-shadow: none;
+          }
         }
       }
 
@@ -128,14 +141,15 @@
         color: $smokeyx !important;
 
         @include respond(xs, sm) {
-          height: 60px;
+          height: 76px;
           border-left: 1px solid $gray-1;
           box-shadow: inset 1px 1px 2px $white;
-          padding: 24px 20px 20px 17px !important;
+          padding: 33px !important;
           background-color: $gray-0;
         }
 
         @include respond(xs) {
+          height: 60px;
           padding: 24px 15px 20px 15px !important;
           min-width: 60px;
           text-align: center;

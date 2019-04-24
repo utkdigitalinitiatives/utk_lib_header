@@ -256,6 +256,20 @@
   }
 }
 
+@include respond(md, lg, xl) {
+   .utk-menu-open {
+     .utk-header-actions--resources {
+       .utk-header-collapse {
+         display: inline-block !important;
+       }
+
+       .utk-header-expand {
+         display: none !important;
+       }
+     }
+   }
+ }
+
 .utk-header.active {
 
   .utk-header-main {

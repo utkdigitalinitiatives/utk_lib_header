@@ -18,18 +18,24 @@ body.utk-search-open {
     box-shadow: none;
     position: relative;
 
-    &::after {
-      width: 12px;
-      height: 12px;
-      display: block;
-      position: absolute;
-      right: 50%;
-      top: 0;
-      margin-right: -12px;
-      content: ' ';
-      border-left: 12px solid transparent;
-      border-right: 12px solid transparent;
-      border-top: 8px solid $orange;
+    @include respond(xs, sm) {
+      > a {
+        background: $white;
+      }
+
+      &::after {
+        width: 12px;
+        height: 12px;
+        display: block;
+        position: absolute;
+        right: 50%;
+        top: 0;
+        margin-right: -12px;
+        content: ' ';
+        border-left: 12px solid transparent;
+        border-right: 12px solid transparent;
+        border-top: 8px solid $orange;
+      }
     }
   }
 
@@ -54,7 +60,6 @@ body.utk-search-open {
   display: flex;
   flex-direction: row;
   height: $golden-ratio-5;
-  transition: $transition-all;
   flex-grow: 1;
 
   @include respond(sm, xs) {
@@ -180,6 +185,10 @@ body.utk-search-open {
 
   .icon-cancel {
     display: none;
+    opacity: 1;
+    font-size: 15px;
+    padding: 1px;
+    margin-right: 6px;
   }
 
   .utk-header-expand-search {

@@ -210,7 +210,7 @@ class Header extends Component {
                             <div className="utk-header-actions">
 
                                 <div className="utk-header-actions--item utk-header-actions--home">
-                                    <a href="https://lib.utk.edu" tabIndex="3">lib.utk.edu</a>
+                                    <a href="https://www.lib.utk.edu" tabIndex="3">lib.utk.edu</a>
                                 </div>
 
                                 <div className="utk-header-actions--item utk-header-actions--search">
