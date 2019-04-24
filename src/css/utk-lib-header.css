@@ -95,7 +95,23 @@
  */
 html {
   margin-top: 129px;
-  font-size: 18px; }
+  font-size: 18px;
+  /* Mobile Devices for Mice */
+  /* Landscape phones and down */
+  /* Landscape phone to portrait tablet */
+  /* Portrait tablet to landscape and desktop */
+  /* desktop and large desktop */
+  /* Mobile Devices for Mice */
+  /* Landscape phones and down */
+  /* Landscape phone to portrait tablet */
+  /* Portrait tablet to landscape and desktop */
+  /* desktop and large desktop */ }
+  @media (min-width: 768px) and (max-width: 991px) {
+    html {
+      margin-top: 82px; } }
+  @media (max-width: 767px) {
+    html {
+      margin-top: 66px; } }
 
 * {
   -webkit-box-sizing: border-box;

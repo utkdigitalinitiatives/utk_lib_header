@@ -1,6 +1,14 @@
 html {
   margin-top: 129px;
   font-size: $type-3;
+
+  @include respond(sm) {
+    margin-top: 82px;
+  }
+
+  @include respond(xs) {
+    margin-top: 66px;
+  }
 }
 
 * {
