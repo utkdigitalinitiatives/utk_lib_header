@@ -79,21 +79,13 @@
         text-transform: none;
       }
 
-      @include respond(xs) {
-        &.utk-header-actions--utk {
-          display: none;
-        }
-
+      @media only screen and (max-width: 500px) {
         &.utk-header-actions--home {
           display: none;
         }
       }
 
-      @include respond(sm) {
-        &.utk-header-actions--utk {
-          display: none;
-        }
-
+      @include respond(xs, sm) {
         &.utk-header-actions--home {
           > a {
             border: none;

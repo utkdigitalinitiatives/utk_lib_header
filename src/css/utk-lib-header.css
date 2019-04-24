@@ -367,14 +367,15 @@ body {
     /* desktop and large desktop */ }
     .utk-header-actions .utk-header-actions--item.utk-header-actions--home {
       text-transform: none; }
-    @media (max-width: 767px) {
-      .utk-header-actions .utk-header-actions--item.utk-header-actions--utk {
-        display: none; }
+    @media only screen and (max-width: 500px) {
       .utk-header-actions .utk-header-actions--item.utk-header-actions--home {
         display: none; } }
+    @media (max-width: 767px) {
+      .utk-header-actions .utk-header-actions--item.utk-header-actions--home > a {
+        border: none;
+        background: none;
+        box-shadow: none; } }
     @media (min-width: 768px) and (max-width: 991px) {
-      .utk-header-actions .utk-header-actions--item.utk-header-actions--utk {
-        display: none; }
       .utk-header-actions .utk-header-actions--item.utk-header-actions--home > a {
         border: none;
         background: none;
