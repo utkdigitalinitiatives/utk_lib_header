@@ -114,7 +114,7 @@ body.utk-menu-open {
 
       @include respond(xs) {
         left: 30px !important;
-        padding-left: 17px !important;
+        padding-left: 15px !important;
       }
     }
   }
@@ -218,10 +218,6 @@ body.utk-menu-open {
 
         @include respond(xs, sm, md) {
           padding: calc((47px - 6px - 15px) / 2) 3px;
-        }
-
-        .icon-cancel {
-          margin-left: -32px;
         }
       }
 

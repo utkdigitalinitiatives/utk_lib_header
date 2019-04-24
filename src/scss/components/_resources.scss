@@ -225,13 +225,34 @@
   }
 }
 
-.utk-menu-open {
-  .utk-header-collapse {
-    display: inline-block !important;
-  }
+@include respond(xs, sm) {
+  .utk-menu-open {
+    .utk-header-actions--resources {
+      .utk-header-collapse {
+        display: inline-block !important;
+        background-color: $white;
+        box-shadow: none;
+        position: relative;
 
-  .utk-header-expand {
-    display: none !important;
+        &::after {
+          width: 12px;
+          height: 12px;
+          display: block;
+          position: absolute;
+          right: 50%;
+          top: 0;
+          margin-right: -12px;
+          content: ' ';
+          border-left: 12px solid transparent;
+          border-right: 12px solid transparent;
+          border-top: 8px solid $orange;
+        }
+      }
+
+      .utk-header-expand {
+        display: none !important;
+      }
+    }
   }
 }
 
