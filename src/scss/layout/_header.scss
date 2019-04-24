@@ -43,13 +43,6 @@
   }
 }
 
-@include respond(xs, sm, md) {
-  .utk-header.utk-header-expand-menu .utk-header-actions {
-    right: 25px;
-    margin-top: 16px;
-  }
-}
-
 .utk-header-actions {
   position: absolute;
   right: 0;
@@ -101,11 +94,19 @@
           em {
             display: none;
           }
+
+          > a > span {
+            margin-right: 0;
+          }
         }
       }
 
       em {
         font-style: normal;
+
+        @include respond(xs) {
+          font-size: $type-1;
+        }
       }
 
       a {
@@ -121,8 +122,16 @@
         }
 
         @include respond(xs) {
+          padding: 24px 16px 20px 16px !important;
           min-width: 60px;
-          padding: 24px 12px 20px 17px !important;
+          text-align: center;
+
+          > span {
+            @include respond(xs) {
+              font-size: $type-1;
+              margin-right: 5px;
+            }
+          }
         }
       }
     }

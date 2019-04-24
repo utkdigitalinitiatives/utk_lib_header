@@ -311,36 +311,6 @@ body {
     overflow: hidden;
     transition: all 290ms ease-in-out; }
 
-/* Mobile Devices for Mice */
-/* Landscape phones and down */
-@media (max-width: 767px) {
-  .utk-header.utk-header-expand-menu .utk-header-actions {
-    right: 25px;
-    margin-top: 16px; } }
-
-/* Landscape phone to portrait tablet */
-/* Portrait tablet to landscape and desktop */
-/* desktop and large desktop */
-/* Mobile Devices for Mice */
-/* Landscape phones and down */
-/* Landscape phone to portrait tablet */
-@media (min-width: 768px) and (max-width: 991px) {
-  .utk-header.utk-header-expand-menu .utk-header-actions {
-    right: 25px;
-    margin-top: 16px; } }
-
-/* Portrait tablet to landscape and desktop */
-/* desktop and large desktop */
-/* Mobile Devices for Mice */
-/* Landscape phones and down */
-/* Landscape phone to portrait tablet */
-/* Portrait tablet to landscape and desktop */
-@media (min-width: 992px) and (max-width: 1199px) {
-  .utk-header.utk-header-expand-menu .utk-header-actions {
-    right: 25px;
-    margin-top: 16px; } }
-
-/* desktop and large desktop */
 .utk-header-actions {
   position: absolute;
   right: 0;
@@ -414,9 +384,19 @@ body {
         display: none; } }
     @media (max-width: 767px) {
       .utk-header-actions .utk-header-actions--item.utk-header-actions--search em {
-        display: none; } }
+        display: none; }
+      .utk-header-actions .utk-header-actions--item.utk-header-actions--search > a > span {
+        margin-right: 0; } }
     .utk-header-actions .utk-header-actions--item em {
-      font-style: normal; }
+      font-style: normal;
+      /* Mobile Devices for Mice */
+      /* Landscape phones and down */
+      /* Landscape phone to portrait tablet */
+      /* Portrait tablet to landscape and desktop */
+      /* desktop and large desktop */ }
+      @media (max-width: 767px) {
+        .utk-header-actions .utk-header-actions--item em {
+          font-size: 13px; } }
     .utk-header-actions .utk-header-actions--item a {
       display: inline-block;
       padding: calc((47px - 6px - 15px) / 2) calc(29px / 2);
@@ -449,8 +429,19 @@ body {
           padding: 24px 20px 20px 17px !important; } }
       @media (max-width: 767px) {
         .utk-header-actions .utk-header-actions--item a {
+          padding: 24px 16px 20px 16px !important;
           min-width: 60px;
-          padding: 24px 12px 20px 17px !important; } }
+          text-align: center; }
+          .utk-header-actions .utk-header-actions--item a > span {
+            /* Mobile Devices for Mice */
+            /* Landscape phones and down */
+            /* Landscape phone to portrait tablet */
+            /* Portrait tablet to landscape and desktop */
+            /* desktop and large desktop */ } }
+    @media (max-width: 767px) and (max-width: 767px) {
+      .utk-header-actions .utk-header-actions--item a > span {
+        font-size: 13px;
+        margin-right: 5px; } }
 
 .utk-logo-wrapper {
   z-index: 998;
@@ -543,10 +534,11 @@ body {
       .utk-logo-wrapper a.utk-logo-unit:visited,
       .utk-logo-wrapper a.utk-logo-unit:hover,
       .utk-logo-wrapper a.utk-logo-unit:focus {
-        left: 18px;
+        left: 30px;
         font-size: 23px;
         height: 60px;
-        line-height: 60px; } }
+        line-height: 60px;
+        padding: 3px 15px 0; } }
     @media (min-width: 768px) and (max-width: 991px) {
       .utk-logo-wrapper a.utk-logo-unit,
       .utk-logo-wrapper a.utk-logo-unit:visited,
@@ -765,9 +757,6 @@ body.utk-menu-open .utk-logo-wrapper .utk-logo-unit {
     height: 81px;
     box-shadow: 0 3px 7px rgba(51, 51, 51, 0.15);
     overflow: hidden; }
-    .utk-header .utk-header-main .utk-header-actions {
-      right: 11px;
-      margin-top: 13px; }
     .utk-header .utk-header-main .utk-menu-trigger {
       padding: calc((47px - 6px - 15px) / 2) 11px;
       /* Mobile Devices for Mice */
@@ -798,9 +787,6 @@ body.utk-menu-open .utk-logo-wrapper .utk-logo-unit {
 @media (max-width: 767px) {
       .utk-header .utk-header-main .utk-menu-trigger .icon-cancel {
         margin-left: -32px; }
-    .utk-header .utk-header-main .utk-header-actions--search > a .icon-cancel,
-    .utk-header .utk-header-main .utk-header-actions--search > a:visited .icon-cancel {
-      margin-left: -40px; }
     .utk-header .utk-header-main .utk-logo-wrapper {
       height: 0;
       width: 304px;

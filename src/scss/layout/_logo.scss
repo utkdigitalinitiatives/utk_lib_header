@@ -69,10 +69,11 @@
     color: $smokey !important;
 
     @include respond(xs) {
-      left: $golden-ratio-2;
+      left: 30px;
       font-size: $type-4;
       height: 60px;
       line-height: 60px;
+      padding: 3px 15px 0;
     }
 
     @include respond(sm) {
@@ -212,11 +213,6 @@ body.utk-menu-open {
       box-shadow: $box-shadow;
       overflow: hidden;
 
-      .utk-header-actions {
-        right: 11px;
-        margin-top: 13px;
-      }
-
       .utk-menu-trigger {
         padding: calc((47px - 6px - 15px) / 2) 11px;
 
@@ -226,13 +222,6 @@ body.utk-menu-open {
 
         .icon-cancel {
           margin-left: -32px;
-        }
-      }
-
-      .utk-header-actions--search > a,
-      .utk-header-actions--search > a:visited {
-        .icon-cancel {
-          margin-left: -40px;
         }
       }
 
