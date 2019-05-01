@@ -14,15 +14,10 @@ body.utk-search-open {
 
   .utk-header-actions--search {
     display: inline-block !important;
-    background-color: $white;
     box-shadow: none;
     position: relative;
 
     @include respond(xs, sm) {
-      > a {
-        background: $white;
-      }
-
       &::after {
         width: 12px;
         height: 12px;
@@ -192,13 +187,27 @@ body.utk-search-open {
   }
 
   .utk-header-expand-search {
+    @media only screen and (max-width: 414px) {
+      box-shadow: inset $box-shadow !important;
+
+      @include filter-gradient($white, 0%, $gray-0, 100%);
+    }
+
     .icon-search {
-      display: none;
+      display: none !important;
     }
 
     .icon-cancel {
       display: inline;
       color: $torch;
+
+      @media only screen and (max-width: 414px) {
+        display: flex;
+        align-items: flex-end;
+        flex-grow: 1;
+        font-size: $type-3;
+        margin: 0;
+      }
     }
   }
 }

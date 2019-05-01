@@ -10,7 +10,6 @@
   box-shadow: $box-shadow-float;
 
   @include respond(xs, sm, md, lg, xl) {
-    @include gradient-vertical($gray-1, 0, $white, 18%);
     box-shadow: inset $box-shadow;
   }
 
@@ -234,6 +233,13 @@
         box-shadow: none;
         position: relative;
 
+        @media only screen and (max-width: 414px) {
+          display: flex !important;
+          box-shadow: inset $box-shadow;
+
+          @include filter-gradient($white, 0%, $gray-0, 100%);
+        }
+
         &::after {
           width: 12px;
           height: 12px;
@@ -246,6 +252,17 @@
           border-left: 12px solid transparent;
           border-right: 12px solid transparent;
           border-top: 8px solid $orange;
+        }
+
+
+        @media only screen and (max-width: 414px) {
+          > span {
+            display: flex;
+            align-items: flex-end;
+            flex-grow: 1;
+            font-size: $type-3;
+            margin: 0;
+          }
         }
       }
 
