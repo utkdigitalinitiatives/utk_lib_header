@@ -235,9 +235,6 @@
 
         @media only screen and (max-width: 414px) {
           display: flex !important;
-          box-shadow: inset $box-shadow;
-
-          @include filter-gradient($white, 0%, $gray-0, 100%);
         }
 
         &::after {

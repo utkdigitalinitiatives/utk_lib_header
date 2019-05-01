@@ -187,12 +187,6 @@ body.utk-search-open {
   }
 
   .utk-header-expand-search {
-    @media only screen and (max-width: 414px) {
-      box-shadow: inset $box-shadow !important;
-
-      @include filter-gradient($white, 0%, $gray-0, 100%);
-    }
-
     .icon-search {
       display: none !important;
     }
