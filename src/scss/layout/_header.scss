@@ -18,6 +18,7 @@
     z-index: 97;
     transition: $transition-all;
     margin-top: $golden-ratio-4;
+    position: relative;
 
     @include respond(sm) {
       margin-top: 0;

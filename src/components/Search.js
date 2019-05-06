@@ -95,11 +95,14 @@ export class Search extends Component {
                                    onClick={this.setSearchOptionLibraries}><span>lib.utk.edu</span></label>
                         </div>
                         <div className="utk-search-wrapper--form-item">
+                            <span className="utk-search-wrapper--form-item--icon">
+                                <span className="icon-search"></span>
+                            </span>
                             <input id="utk-search-field" ref={(searchFocus) => this.utkSearchField = searchFocus}
                                    placeholder={searchPlaceholder}/>
                             <span className="utk-cursor"></span>
                             <button id="utk-search-submit" aria-label="Submit search" type="button">
-                                Go
+                                Submit
                             </button>
                         </div>
                     </div>
