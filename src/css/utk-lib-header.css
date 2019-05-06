@@ -2348,7 +2348,7 @@ a:hover {
   opacity: 0;
   z-index: 0;
   background-color: #58595b;
-  box-shadow: inset 0 2px 5px rgba(51, 51, 51, 0.29);
+  box-shadow: 0 2px 5px rgba(51, 51, 51, 0.29);
   height: 0;
   transition: all 290ms ease-in-out; }
 
@@ -2478,8 +2478,8 @@ body.utk-search-open .utk-header-search {
       .utk-search-wrapper--form-item--icon:focus::placeholder {
         opacity: 0;
         color: #a7a9ac; }
-    .utk-search-wrapper--form-item:focus-within--icon > span {
-      color: #a7a9ac;
+    .utk-search-wrapper--form-item:focus-within .utk-search-wrapper--form-item--icon > span {
+      color: #006c93;
       font-size: 15px;
       transition: all 290ms ease-in-out; }
     @media (max-width: 767px) {
@@ -2489,7 +2489,7 @@ body.utk-search-open .utk-header-search {
   .utk-search-wrapper ::placeholder {
     /* Chrome, Firefox, Opera, Safari 10.1+ */ }
   .utk-search-wrapper input#utk-search-field {
-    width: calc(100% - 6px);
+    width: calc(100% - 2px);
     height: 47px;
     border-radius: 29px;
     font-size: 15px;
@@ -2501,10 +2501,13 @@ body.utk-search-open .utk-header-search {
     outline: none;
     color: #333;
     border: none; }
+    .utk-search-wrapper input#utk-search-field:focus {
+      z-index: 1; }
     .utk-search-wrapper input#utk-search-field::placeholder {
       color: #a7a9ac;
       opacity: 1;
       transition: opacity 290ms ease-in-out;
+      text-indent: -5px;
       /* Mobile Devices for Mice */
       /* Landscape phones and down */
       /* Landscape phone to portrait tablet */
@@ -2513,9 +2516,10 @@ body.utk-search-open .utk-header-search {
       @media (max-width: 767px) {
         .utk-search-wrapper input#utk-search-field::placeholder {
           opacity: 0 !important; } }
-    .utk-search-wrapper input#utk-search-field:focus::placeholder {
-      opacity: 0;
-      color: #a7a9ac; }
+    .utk-search-wrapper input#utk-search-field:focus {
+      box-shadow: 0 2px 5px rgba(51, 51, 51, 0.29); }
+      .utk-search-wrapper input#utk-search-field:focus::placeholder {
+        color: #a7a9ac; }
   .utk-search-wrapper button#utk-search-submit {
     background-color: #006c93;
     font-family: "Gotham SSm 2r", "Gotham SSm A", "Gotham SSm B", "Gotham-Book", "Helvetica Neue", Helvetica, Arial, sans-serif;

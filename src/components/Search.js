@@ -7,7 +7,7 @@ export class Search extends Component {
 
         this.state = {
             searchOption: 'onesearch',
-            searchPlaceholder: ' Search media, books, etc...'
+            searchPlaceholder: ' Search books, articles, media, digital collections, etc...'
         };
 
         this.toggleSearchOption = this.toggleSearchOption.bind(this);

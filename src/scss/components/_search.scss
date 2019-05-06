@@ -6,7 +6,7 @@
   opacity: 0;
   z-index: 0;
   background-color: $smokey;
-  box-shadow: inset $box-shadow-float;
+  box-shadow: $box-shadow-float;
   height: 0;
   transition: $transition-all;
 }
@@ -106,8 +106,8 @@ body.utk-search-open {
     }
 
     &:focus-within {
-      &--icon > span {
-        color: $rock;
+      .utk-search-wrapper--form-item--icon > span {
+        color: $globe;
         font-size: $type-2;
         transition: $transition-all;
       }
@@ -119,16 +119,17 @@ body.utk-search-open {
     }
   }
 
-  input:focus + i {
-    //display: none;
-  }
+  //input:focus + i {
+  //  display: none;
+  //}
 
   ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
     //color: $rock;
   }
 
+
   input#utk-search-field {
-    width: calc(100% - 6px);
+    width: calc(100% - 2px);
     height: $golden-ratio-4;
     border-radius: $golden-ratio-3;
     font-size: $type-2;
@@ -141,10 +142,15 @@ body.utk-search-open {
     color: $smokeyx;
     border: none;
 
+    &:focus {
+      z-index: 1;
+    }
+
     &::placeholder {
       color: $rock;
       opacity: 1;
       transition: $transition-opacity;
+      text-indent: -5px;
 
       @include respond(xs) {
         opacity: 0 !important;
@@ -152,8 +158,9 @@ body.utk-search-open {
     }
 
     &:focus {
+      box-shadow: $box-shadow-float;
+
       &::placeholder {
-        opacity: 0;
         color: $rock;
       }
     }
