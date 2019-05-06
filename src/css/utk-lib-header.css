@@ -285,7 +285,7 @@ body {
   z-index: 100;
   width: 100%;
   border-top: 6px solid #ff8200;
-  box-shadow: 0 3px 7px rgba(51, 51, 51, 0.15);
+  box-shadow: 0 2px 5px rgba(51, 51, 51, 0.15);
   font-family: "Gotham SSm 2r", "Gotham SSm A", "Gotham SSm B", "Gotham-Book", "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #333;
   font-size: 15px; }
@@ -490,7 +490,7 @@ body {
     position: relative;
     background-color: #fff;
     top: 0;
-    box-shadow: 0 3px 7px rgba(51, 51, 51, 0.15);
+    box-shadow: 0 2px 5px rgba(51, 51, 51, 0.15);
     /* Mobile Devices for Mice */
     /* Landscape phones and down */
     /* Landscape phone to portrait tablet */
@@ -698,7 +698,7 @@ body.utk-menu-open .utk-logo-wrapper .utk-logo-unit {
   @media (max-width: 767px) {
     .utk-header.utk-header-expand-menu .utk-header-main {
       height: 81px;
-      box-shadow: 0 3px 7px rgba(51, 51, 51, 0.15);
+      box-shadow: 0 2px 5px rgba(51, 51, 51, 0.15);
       overflow: hidden; }
       .utk-header.utk-header-expand-menu .utk-header-main .utk-logo-shortcut {
         top: 25px;
@@ -707,7 +707,7 @@ body.utk-menu-open .utk-logo-wrapper .utk-logo-unit {
   @media (min-width: 768px) and (max-width: 991px) {
     .utk-header.utk-header-expand-menu .utk-header-main {
       height: 81px;
-      box-shadow: 0 3px 7px rgba(51, 51, 51, 0.15);
+      box-shadow: 0 2px 5px rgba(51, 51, 51, 0.15);
       overflow: hidden; }
       .utk-header.utk-header-expand-menu .utk-header-main .utk-logo-shortcut {
         top: 25px;
@@ -716,7 +716,7 @@ body.utk-menu-open .utk-logo-wrapper .utk-logo-unit {
   @media (min-width: 992px) and (max-width: 1199px) {
     .utk-header.utk-header-expand-menu .utk-header-main {
       height: 81px;
-      box-shadow: 0 3px 7px rgba(51, 51, 51, 0.15);
+      box-shadow: 0 2px 5px rgba(51, 51, 51, 0.15);
       overflow: hidden; }
       .utk-header.utk-header-expand-menu .utk-header-main .utk-logo-shortcut {
         top: 25px;
@@ -725,7 +725,7 @@ body.utk-menu-open .utk-logo-wrapper .utk-logo-unit {
 
 .utk-header:not(.utk-header-expand-menu) .utk-header-main.utk-shortcut:not(.utk-header-expand-menu) {
   height: 81px;
-  box-shadow: 0 3px 7px rgba(51, 51, 51, 0.15);
+  box-shadow: 0 2px 5px rgba(51, 51, 51, 0.15);
   overflow: hidden; }
   .utk-header:not(.utk-header-expand-menu) .utk-header-main.utk-shortcut:not(.utk-header-expand-menu) .utk-logo-wrapper {
     height: 0;
@@ -786,7 +786,7 @@ body.utk-menu-open .utk-logo-wrapper .utk-logo-unit {
 @media (max-width: 767px) {
   .utk-header .utk-header-main {
     height: 81px;
-    box-shadow: 0 3px 7px rgba(51, 51, 51, 0.15);
+    box-shadow: 0 2px 5px rgba(51, 51, 51, 0.15);
     overflow: hidden; }
     .utk-header .utk-header-main .utk-menu-trigger {
       padding: calc((47px - 6px - 15px) / 2) 11px;
@@ -1410,7 +1410,7 @@ a.utk-help-back:visited {
   .utk-menu-help--item {
     display: flex;
     height: 47px;
-    box-shadow: 0 4px 10px rgba(51, 51, 51, 0.15);
+    box-shadow: 0 2px 5px rgba(51, 51, 51, 0.29);
     border-radius: 47px;
     position: relative;
     line-height: 47px;
@@ -1735,7 +1735,7 @@ a:hover {
   display: none;
   padding: 29px 0 0;
   padding-bottom: 47px;
-  box-shadow: 0 4px 10px rgba(51, 51, 51, 0.15);
+  box-shadow: 0 2px 5px rgba(51, 51, 51, 0.29);
   /* Mobile Devices for Mice */
   /* Landscape phones and down */
   /* Landscape phone to portrait tablet */
@@ -1768,19 +1768,19 @@ a:hover {
   /* desktop and large desktop */ }
   @media (max-width: 767px) {
     .utk-header-resources {
-      box-shadow: inset 0 3px 7px rgba(51, 51, 51, 0.15); } }
+      box-shadow: inset 0 2px 5px rgba(51, 51, 51, 0.15); } }
   @media (min-width: 768px) and (max-width: 991px) {
     .utk-header-resources {
-      box-shadow: inset 0 3px 7px rgba(51, 51, 51, 0.15); } }
+      box-shadow: inset 0 2px 5px rgba(51, 51, 51, 0.15); } }
   @media (min-width: 992px) and (max-width: 1199px) {
     .utk-header-resources {
-      box-shadow: inset 0 3px 7px rgba(51, 51, 51, 0.15); } }
+      box-shadow: inset 0 2px 5px rgba(51, 51, 51, 0.15); } }
   @media (min-width: 1200px) and (max-width: 1439px) {
     .utk-header-resources {
-      box-shadow: inset 0 3px 7px rgba(51, 51, 51, 0.15); } }
+      box-shadow: inset 0 2px 5px rgba(51, 51, 51, 0.15); } }
   @media (min-width: 1440px) and (max-width: 4200px) {
     .utk-header-resources {
-      box-shadow: inset 0 3px 7px rgba(51, 51, 51, 0.15); } }
+      box-shadow: inset 0 2px 5px rgba(51, 51, 51, 0.15); } }
   @media (max-width: 767px) {
     .utk-header-resources {
       padding-bottom: 76px; } }
@@ -2238,10 +2238,10 @@ a:hover {
   bottom: -71px;
   border-radius: 47px;
   text-align: center;
-  box-shadow: 0 3px 7px rgba(51, 51, 51, 0.15);
+  box-shadow: 0 2px 5px rgba(51, 51, 51, 0.15);
   cursor: pointer;
   z-index: 1;
-  box-shadow: 0 4px 10px rgba(51, 51, 51, 0.15); }
+  box-shadow: 0 2px 5px rgba(51, 51, 51, 0.29); }
   .utk-resources-close span {
     font-size: 18px;
     color: #fff;
@@ -2347,7 +2347,7 @@ a:hover {
   opacity: 0;
   z-index: 0;
   background-color: #58595b;
-  box-shadow: 0 3px 7px rgba(51, 51, 51, 0.15);
+  box-shadow: 0 2px 5px rgba(51, 51, 51, 0.29);
   height: 0; }
 
 body.utk-search-open .utk-header-actions--search {
@@ -2471,7 +2471,7 @@ body.utk-search-open .utk-header-search {
     margin: 15px 0 14px;
     color: #fff;
     background-color: #333;
-    box-shadow: inset 0 3px 7px rgba(51, 51, 51, 0.15);
+    box-shadow: inset 0 2px 5px rgba(51, 51, 51, 0.15);
     outline-offset: -1px;
     position: relative;
     border-radius: 47px;
@@ -2597,7 +2597,7 @@ body.utk-search-open .utk-header-search {
     position: relative;
     cursor: pointer;
     margin-top: -8px;
-    box-shadow: inset 0 3px 7px rgba(51, 51, 51, 0.15); }
+    box-shadow: inset 0 2px 5px rgba(51, 51, 51, 0.15); }
     .utk-search-options .utk-search-toggle .utk-search-toggle-button {
       position: absolute;
       width: 18px;
@@ -2607,7 +2607,7 @@ body.utk-search-open .utk-header-search {
       top: calc(5.5px);
       left: calc(5.5px);
       transition: all 110ms ease-in-out;
-      box-shadow: 0 3px 7px rgba(51, 51, 51, 0.15); }
+      box-shadow: 0 2px 5px rgba(51, 51, 51, 0.15); }
     .utk-search-options .utk-search-toggle:hover .utk-search-toggle-button {
       background-color: #fff; }
   .utk-search-options #utk-search-toggle-libraries {
@@ -2688,7 +2688,7 @@ body.utk-search-open .utk-header-search {
   border-radius: 29px;
   text-align: center;
   padding-top: 5px;
-  box-shadow: 0 4px 10px rgba(51, 51, 51, 0.15);
+  box-shadow: 0 2px 5px rgba(51, 51, 51, 0.29);
   cursor: pointer;
   z-index: 1;
   margin-top: -2px; }
