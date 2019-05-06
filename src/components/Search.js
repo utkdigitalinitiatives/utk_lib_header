@@ -34,7 +34,7 @@ export class Search extends Component {
                 });
             } else {
                 this.setState({searchOption: 'onesearch'}, () => {
-                    this.setState({searchPlaceholder: ' Search media, books, etc...'})
+                    this.setState({searchPlaceholder: ' Search books, articles, media, digital collections, etc...'})
                     this.utkSearchField.focus();
                 });
             }
@@ -52,7 +52,7 @@ export class Search extends Component {
     setSearchOptionLibraries(e) {
         e.stopPropagation();
         this.setState({searchOption: 'libraries'}, () => {
-            this.setState({searchPlaceholder: ' Search hours, services, etc...'});
+            this.setState({searchPlaceholder: ' Search books, articles, media, digital collections, etc...'});
             this.utkSearchField.focus();
         });
     };
