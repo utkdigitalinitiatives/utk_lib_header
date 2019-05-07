@@ -1,5 +1,10 @@
 import React, {Component} from 'react';
 
+const labelOnesearch = 'search one search catalog';
+const labelUTLibraries = 'search libraries website';
+const placeholderOnesearch = ' Search books, articles, media, collections, etc...';
+const placeholderUTLibraries = ' Search hours, services, news, etc...';
+
 export class Search extends Component {
 
     constructor(props) {
@@ -7,7 +12,8 @@ export class Search extends Component {
 
         this.state = {
             searchOption: 'onesearch',
-            searchPlaceholder: ' Search books, articles, media, digital collections, etc...'
+            searchPlaceholder: placeholderOnesearch,
+            searchLabel: labelOnesearch
         };
 
         this.toggleSearchOption = this.toggleSearchOption.bind(this);
@@ -29,12 +35,14 @@ export class Search extends Component {
             let searchOption = this.state.searchOption;
             if (searchOption === 'onesearch') {
                 this.setState({searchOption: 'libraries'}, () => {
-                    this.setState({searchPlaceholder: ' Search hours, services, etc...'})
+                    this.setState({searchPlaceholder: placeholderUTLibraries})
+                    this.setState({searchLabel: labelUTLibraries});
                     this.utkSearchField.focus();
                 });
             } else {
                 this.setState({searchOption: 'onesearch'}, () => {
-                    this.setState({searchPlaceholder: ' Search books, articles, media, digital collections, etc...'})
+                    this.setState({searchPlaceholder: placeholderOnesearch})
+                    this.setState({searchLabel: labelOnesearch});
                     this.utkSearchField.focus();
                 });
             }
@@ -44,7 +52,8 @@ export class Search extends Component {
     setSearchOptionOnesearch(e) {
         e.stopPropagation();
         this.setState({searchOption: 'onesearch'}, () => {
-            this.setState({searchPlaceholder: ' Search media, books, etc...'});
+            this.setState({searchPlaceholder: placeholderOnesearch});
+            this.setState({searchLabel: labelOnesearch});
             this.utkSearchField.focus();
         });
     };
@@ -52,25 +61,28 @@ export class Search extends Component {
     setSearchOptionLibraries(e) {
         e.stopPropagation();
         this.setState({searchOption: 'libraries'}, () => {
-            this.setState({searchPlaceholder: ' Search books, articles, media, digital collections, etc...'});
+            this.setState({searchPlaceholder: placeholderUTLibraries});
+            this.setState({searchLabel: labelUTLibraries});
             this.utkSearchField.focus();
         });
     };
 
     render() {
 
-        const {active} = this.props;
-        const {searchOption, searchPlaceholder} = this.state;
+        const {searchOption, searchPlaceholder, searchLabel} = this.state;
 
         let searchOptionClass = ' utk-search-' + searchOption;
 
         return (
-            <div className={`utk-header-search ${active}${searchOptionClass}`}>
+            <div className={`utk-header-search ${searchOptionClass}`}>
                 <div className="container">
                     <div className="utk-search-wrapper">
                         <div className="utk-search-options">
                             <label id="utk-search-toggle-onesearch" onClick={this.setSearchOptionOnesearch}>
-                                <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 24.46">
+                                <svg id="utk-onesearch"
+                                     data-name="utk-onesearch"
+                                     xmlns="http://www.w3.org/2000/svg"
+                                     viewBox="0 0 200 24.46">
                                     <title>UT Libraries - OneSearch</title>
                                     <path d="M47.63.81V14.89L36.92.81H32.18a11.51,11.51,0,0,1-1.68,1.9c-.62.44-1.28.81-1.92,1.22a23.15,23.15,0,0,1-3.26,1.41v4.4A18.81,18.81,0,0,0,31,6.38V19.45H25.71v4.14H41.65V19.45H37.24V9.14L48.32,23.68H52.6V.81Z"/>
                                     <path d="M0,12.7v-.06A11.82,11.82,0,0,1,12.19.81,11.72,11.72,0,0,1,24.31,12.57v.07A11.82,11.82,0,0,1,12.12,24.46,11.71,11.71,0,0,1,0,12.7Zm19.05,0v-.06a7,7,0,0,0-6.93-7.19,6.84,6.84,0,0,0-6.86,7.12v.07a6.94,6.94,0,0,0,6.93,7.18A6.84,6.84,0,0,0,19.05,12.7Z"/>
@@ -82,7 +94,7 @@ export class Search extends Component {
                                     <path d="M158.69,12.15v-.07A11.77,11.77,0,0,1,170.5,0a12.15,12.15,0,0,1,9.11,3.7l-1.8,1.94a10.14,10.14,0,0,0-7.34-3.2c-5.17,0-9,4.2-9,9.57v.07c0,5.41,3.9,9.64,9,9.64,3.2,0,5.31-1.23,7.54-3.37l1.74,1.71a12.21,12.21,0,0,1-9.35,4.1A11.65,11.65,0,0,1,158.69,12.15Z"/>
                                     <path d="M181.25.4h2.63V10.78h13.48V.4H200V23.76h-2.64V13.25H183.88V23.76h-2.63Z"/>
                                 </svg>
-                                <span className="sr-only">One Search</span>
+                                <span className="sr-only">Search within One Search catalog</span>
                             </label>
                             <div tabIndex="5"
                                  id="utk-search-toggle"
@@ -92,19 +104,27 @@ export class Search extends Component {
                                 <div className="utk-search-toggle-button"></div>
                             </div>
                             <label id="utk-search-toggle-libraries"
-                                   onClick={this.setSearchOptionLibraries}><span>lib.utk.edu</span></label>
+                                   onClick={this.setSearchOptionLibraries}>
+                                <span className="sr-only">Search within UT Libraries website</span>
+                                <span>lib.utk.edu</span>
+                            </label>
                         </div>
-                        <div className="utk-search-wrapper--form-item">
+                        <form className="utk-search-wrapper--form-item">
                             <span className="utk-search-wrapper--form-item--icon">
                                 <span className="icon-search"></span>
                             </span>
-                            <input id="utk-search-field" ref={(searchFocus) => this.utkSearchField = searchFocus}
-                                   placeholder={searchPlaceholder}/>
-                            <span className="utk-cursor"></span>
+                            <input id="utk-search-input"
+                                   ref={(searchFocus) => this.utkSearchField = searchFocus}
+                                   placeholder={searchPlaceholder}
+                                   aria-label={searchLabel}/>
+                            <input id="utk-search-method"
+                                   type="hidden"
+                                   value={searchOption}
+                                   aria-label={searchOption}/>
                             <button id="utk-search-submit" aria-label="Submit search" type="button">
                                 Submit
                             </button>
-                        </div>
+                        </form>
                     </div>
                 </div>
             </div>
