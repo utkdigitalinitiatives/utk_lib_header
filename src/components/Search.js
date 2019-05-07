@@ -121,7 +121,9 @@ export class Search extends Component {
                                    type="hidden"
                                    value={searchOption}
                                    aria-label={searchOption}/>
-                            <button id="utk-search-submit" aria-label="Submit search" type="button">
+                            <button id="utk-search-submit"
+                                    type="button"
+                                    aria-label="Submit search">
                                 Submit
                             </button>
                         </form>
