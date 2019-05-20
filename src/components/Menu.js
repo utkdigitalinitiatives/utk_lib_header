@@ -5,6 +5,7 @@ import {MenuSecondary} from "./MenuSecondary";
 import {Hours} from "./Hours";
 import {Help} from "./Help";
 import Globals from "./Globals";
+import {Chat} from "./Chat";
 
 const ENDPOINT = 'assets/wp-json/libmenu';
 const ROUTE = '/drawer';
@@ -198,6 +199,7 @@ export class Menu extends Component {
                                         <span className="icon-shuffle"></span>
                                     </div>
                                 </a>
+                                <Chat libchat={Globals.libChat} />
                                 <a className="utk-menu-help--item utk-menu-help--chat">
                                     <h4>Chat</h4>
                                     <div className="utk-menu-help--item--icon">

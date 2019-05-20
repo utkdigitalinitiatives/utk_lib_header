@@ -29,17 +29,15 @@ export class HoursLocation extends Component {
 
     getHoursIndicator = (data, id) => {
 
+        console.log(data)
+
         let indicator = '';
 
         // checks for null hours
-        if (!data.hours)
+        if (!data.open)
             indicator = 'library-closed';
-
-        // checks for open state
-        if (id != 227)
-            indicator = 'library-open';
         else
-            indicator = 'library-closed';
+            indicator = 'library-open';
 
         return indicator;
 
