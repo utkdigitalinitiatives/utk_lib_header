@@ -41,7 +41,15 @@ export class HelpDecision extends Component {
              * do default link behavior
              */
 
-        } else if (data.url !== '#' && this.props.depth === 2 || data.wpse_children == null) {
+        } else if (data.url !== '#' && this.props.depth === 2) {
+
+            /*
+             * do nada
+             */
+
+            e.preventDefault();
+
+        } else if (data.wpse_children == null) {
 
             /*
              * do nada

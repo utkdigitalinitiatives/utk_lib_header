@@ -20,8 +20,7 @@ export class Menu extends Component {
             menuDrawer: [],
             activeMenu: 0,
             activeDepth: 0,
-            activeHelp: 0,
-            grabHours: null
+            activeHelp: 0
         };
     }
 
@@ -129,7 +128,7 @@ export class Menu extends Component {
     render() {
 
         const {active} = this.props;
-        const {menuDrawer, activeMenu, activeDepth, activeHelp, grabHours} = this.state;
+        const {menuDrawer, activeMenu, activeDepth, activeHelp} = this.state;
 
         let menuColumns, menuSecondary = {};
         let depthClass = 'utk-menu-depth--' + activeDepth;
@@ -143,7 +142,7 @@ export class Menu extends Component {
         if (activeMenu === 0 || window.matchMedia("(min-width: 992px)").matches) {
             menuColumns = Object.entries(menuDrawer).map((columns, index) => {
                 return (
-                    <MenuColumns items={columns[1].data} activeMenu={this.setMenu}/>
+                    <MenuColumns key={index} items={columns[1].data} activeMenu={this.setMenu}/>
                 );
             });
             menuSecondary = <div className="utk-secondary-menu"></div>;
@@ -152,17 +151,14 @@ export class Menu extends Component {
             let secondary = Object.entries(menuDrawer).map((columns, index) => {
                 return Object.entries(columns[1].data).map((secondary, index) => {
                     if (secondary[1].id === activeMenu) {
-                        let {id, title, url, classes, target, dropdown} = secondary[1];
+                        let {id, title, dropdown} = secondary[1];
                         let dropdownItems = '';
                         if (dropdown) {
                             dropdownItems = Object.entries(dropdown).map((link, index) => {
-
-                                let {title, url, classes, target} = link[1];
-
+                                let {title, url} = link[1];
                                 return (
                                     <a href={url} tabIndex="4">{title}</a>
                                 );
-
                             });
                         }
                         return (
@@ -172,7 +168,7 @@ export class Menu extends Component {
                                         <span className="icon-left-open"></span>
                                     </a>
                                 </div>
-                                <MenuSecondary menuId={id} title={title} dropdownItems={dropdownItems}/>
+                                <MenuSecondary key={index} menuId={id} title={title} dropdownItems={dropdownItems}/>
                             </div>
                         );
                     }

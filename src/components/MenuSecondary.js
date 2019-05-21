@@ -14,7 +14,7 @@ export class MenuSecondary extends Component {
 
     render() {
 
-        const {title, menuId, dropdownItems} = this.props;
+        const {title, dropdownItems} = this.props;
 
         return (
             <div className="utk-resources-menu--section">

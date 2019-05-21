@@ -22,7 +22,6 @@ class Header extends Component {
         this.state = {
             showResources: false,
             showSearch: false,
-            shortcutLogo: false,
             showHelp: false,
             showChat: false
         };
@@ -124,7 +123,7 @@ class Header extends Component {
 
     getParameterByName = (name, url) => {
         if (!url) url = window.location.href;
-        name = name.replace(/[\[\]]/g, '\\$&');
+        name = name.replace(/[[\]]/g, '\\$&');
         var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
             results = regex.exec(url);
         if (!results) return null;
@@ -166,27 +165,16 @@ class Header extends Component {
 
     render() {
 
-        const {showResources, showSearch, shortcutLogo, showHelp} = this.state;
+        const {showResources, showSearch, showHelp} = this.state;
 
         let resourcesClass = '';
-        let rolloutClass = 'utk-rollin';
         if (showResources === true) {
             resourcesClass = ' utk-header-expand-menu';
-            rolloutClass = 'utk-rollout';
         }
 
         let searchClass = '';
-        let searchClassHeader = '';
         if (showSearch === true) {
             searchClass = ' utk-header-expand-search';
-            searchClassHeader = ' utk-search-active';
-        }
-
-        let headerShortcutClass = '';
-        let headerHero = '';
-        if (shortcutLogo === true) {
-            headerShortcutClass = ' utk-shortcut';
-            headerHero = ' utk-header-shrink';
         }
 
         return (

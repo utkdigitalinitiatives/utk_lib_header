@@ -53,7 +53,7 @@ export class Hours extends Component {
         if (Object.keys(locations).length !== 0)
             return (
                 <div className="utk-hours">
-                    <h4>Hours Today</h4>
+                    <h4>Libraries &amp; Locations</h4>
                     <ul className="utk-hours--listing">
                         <HoursLocation
                             data={locations[52]}
@@ -78,7 +78,7 @@ export class Hours extends Component {
         else
             return (
                 <div className="utk-hours">
-                    <h4>Hours Today</h4>
+                    <h4>Libraries &amp; Locations</h4>
                     <ul className="utk-hours--listing">
                         <h5 className="utk-hours--loading spinner">Loading...</h5>
                     </ul>

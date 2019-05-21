@@ -29,8 +29,6 @@ export class HoursLocation extends Component {
 
     getHoursIndicator = (data, id) => {
 
-        console.log(data)
-
         let indicator = '';
 
         // checks for null hours
