@@ -8,6 +8,9 @@
  * typography
  */
 /*
+ * relative sizing
+ */
+/*
  * font-size for typography
  */
 /*
@@ -21,6 +24,12 @@
  */
 /*
  * bootstrap 4 overrides
+ */
+/*
+ * WordPress vars
+ */
+/*
+ * Misc
  */
 /** Bootstrap navbar fix (https://git.io/fADqW) */
 /*
@@ -41,7 +50,7 @@
     opacity: 1.0; } }
 
 .font-script {
-  font-family: "bickham-script-pro-3", Georgia, Times, "Times New Roman", serif; }
+  font-family: "bickham-script-pro-3", "clarendon-text-pro", Georgia, Times, "Times New Roman", serif; }
 
 .utk-triangle {
   position: relative;
@@ -197,7 +206,7 @@ body {
       font-weight: 400;
       margin: 0;
       padding: 0;
-      font-family: Georgia, Times, "Times New Roman", serif;
+      font-family: "clarendon-text-pro", Georgia, Times, "Times New Roman", serif;
       text-align: center;
       max-width: 50vw;
       text-transform: uppercase;
@@ -286,7 +295,7 @@ body {
   width: 100%;
   border-top: 6px solid #ff8200;
   box-shadow: 0 2px 5px rgba(51, 51, 51, 0.15);
-  font-family: "Gotham SSm 2r", "Gotham SSm A", "Gotham SSm B", "Gotham-Book", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Gotham SSm 2r", "Gotham SSm A", "Gotham SSm B", "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #333;
   font-size: 15px; }
   .utk-header .utk-header-main {
@@ -920,35 +929,34 @@ body.utk-menu-open .utk-header-super {
         height: 47px;
         line-height: 47px;
         padding: 0 11px;
-        font-size: 15px;
-        font-weight: 400;
+        font-size: 13px;
+        font-weight: 700;
         display: block;
-        color: #58595b;
+        color: #58595b !important;
         text-decoration: none !important;
-        transition: all 290ms ease-in-out;
         position: relative; }
-        .utk-header-super--menu > li a:after,
-        .utk-header-super--menu > li a:visited:after {
-          background-color: #ff8200;
-          opacity: 0;
-          padding: 0;
-          height: 2px;
-          content: ' ';
+        .utk-header-super--menu > li a:before,
+        .utk-header-super--menu > li a:visited:before {
+          width: 12px;
+          height: 12px;
           display: block;
           position: absolute;
-          bottom: 13px;
-          width: 0;
-          transition: all 290ms ease-in-out; }
+          right: 50%;
+          top: 0;
+          margin-right: -12px;
+          content: " ";
+          border-left: 12px solid transparent;
+          border-right: 12px solid transparent;
+          border-top: 8px solid #ff8200;
+          opacity: 0; }
         .utk-header-super--menu > li a:hover, .utk-header-super--menu > li a:focus,
         .utk-header-super--menu > li a:visited:hover,
         .utk-header-super--menu > li a:visited:focus {
           color: #333 !important; }
-          .utk-header-super--menu > li a:hover::after, .utk-header-super--menu > li a:focus::after,
-          .utk-header-super--menu > li a:visited:hover::after,
-          .utk-header-super--menu > li a:visited:focus::after {
-            opacity: 1;
-            padding: 0 11px;
-            width: calc(100% - 22px); }
+          .utk-header-super--menu > li a:hover::before, .utk-header-super--menu > li a:focus::before,
+          .utk-header-super--menu > li a:visited:hover::before,
+          .utk-header-super--menu > li a:visited:focus::before {
+            opacity: 1; }
   .utk-header-super .utk-header-super--menu--options .utk-header-actions--resources .icon-menu,
   .utk-header-super .utk-header-super--menu--options .utk-header-actions--resources .icon-cancel {
     margin-top: 15px;
@@ -976,7 +984,7 @@ body.utk-menu-open .utk-header-super {
   padding: 0 !important;
   font-size: 15px !important;
   font-weight: 700 !important;
-  font-family: "Gotham SSm 2r", "Gotham SSm A", "Gotham SSm B", "Gotham-Book", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+  font-family: "Gotham SSm 2r", "Gotham SSm A", "Gotham SSm B", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
   box-shadow: 0 2px 5px rgba(51, 51, 51, 0.29);
   background-color: #fff !important;
   color: #333 !important;
@@ -996,11 +1004,15 @@ body.utk-menu-open .utk-header-super {
     top: -1px;
     height: 47px !important;
     width: 47px !important;
-    background-color: #abc178;
+    background-color: #a7a9ac;
     clip-path: polygon(0 0, 100% 0, 100% 100%, 6px 100%) !important;
     border-top-right-radius: 47px !important;
     border-bottom-right-radius: 47px !important;
     -webkit-font-smoothing: antialiased; }
+  .utk-libchat button.libchat_online::after {
+    background-color: #abc178 !important; }
+  .utk-libchat button.libchat_offline::after {
+    background-color: #a7a9ac !important; }
 
 a.utk-help-decision, a.utk-help-back,
 a.utk-help-decision:visited,
@@ -1630,7 +1642,7 @@ a.utk-help-back:visited {
     padding-left: 47px !important;
     line-height: 29px;
     width: 300px;
-    font-family: "Gotham SSm 2r", "Gotham SSm A", "Gotham SSm B", "Gotham-Book", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: "Gotham SSm 2r", "Gotham SSm A", "Gotham SSm B", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 15px;
     font-weight: 400;
     color: #58595b;
@@ -1940,7 +1952,7 @@ a:hover {
         margin: 0 0 6px;
         padding: 0;
         font-weight: 700;
-        font-family: "Gotham SSm 2r", "Gotham SSm A", "Gotham SSm B", "Gotham-Book", "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-family: "Gotham SSm 2r", "Gotham SSm A", "Gotham SSm B", "Helvetica Neue", Helvetica, Arial, sans-serif;
         text-transform: none;
         font-size: 18px;
         color: #333;
@@ -1982,7 +1994,7 @@ a:hover {
         color: #006c93;
         display: block;
         font-size: 15px;
-        font-family: "Gotham SSm 2r", "Gotham SSm A", "Gotham SSm B", "Gotham-Book", "Helvetica Neue", Helvetica, Arial, sans-serif; }
+        font-family: "Gotham SSm 2r", "Gotham SSm A", "Gotham SSm B", "Helvetica Neue", Helvetica, Arial, sans-serif; }
       .utk-resources-menu--col .utk-resources-menu--section a:focus,
       .utk-resources-menu--col .utk-resources-menu--section a:hover {
         color: #8d2048; }
@@ -1993,11 +2005,10 @@ a:hover {
   opacity: 1; }
 
 .utk-resources-contact {
-  max-width: 303px;
+  max-width: calc(100% - (100% / 1.61803));
   opacity: 0;
   z-index: 1;
   height: auto;
-  overflow: hidden;
   padding: 0;
   margin-top: 18px;
   /* Mobile Devices for Mice */
@@ -2530,7 +2541,7 @@ body.utk-search-open .utk-header-search {
     background-color: #fff;
     padding: 0 18px 0 47px;
     margin: 15px 0 0;
-    font-family: "Gotham SSm 2r", "Gotham SSm A", "Gotham SSm B", "Gotham-Book", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: "Gotham SSm 2r", "Gotham SSm A", "Gotham SSm B", "Helvetica Neue", Helvetica, Arial, sans-serif;
     outline: none;
     color: #333;
     border: none; }
@@ -2555,7 +2566,7 @@ body.utk-search-open .utk-header-search {
         color: #a7a9ac; }
   .utk-search-wrapper button#utk-search-submit {
     background-color: #006c93;
-    font-family: "Gotham SSm 2r", "Gotham SSm A", "Gotham SSm B", "Gotham-Book", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: "Gotham SSm 2r", "Gotham SSm A", "Gotham SSm B", "Helvetica Neue", Helvetica, Arial, sans-serif;
     text-transform: uppercase;
     font-size: 15px;
     font-weight: 700;
@@ -2790,7 +2801,7 @@ body.utk-search-open .utk-header-search {
   .utk-secondary-menu .utk-resources-menu--section h3 {
     margin: 0;
     font-weight: 700;
-    font-family: "Gotham SSm 2r", "Gotham SSm A", "Gotham SSm B", "Gotham-Book", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: "Gotham SSm 2r", "Gotham SSm A", "Gotham SSm B", "Helvetica Neue", Helvetica, Arial, sans-serif;
     padding: 0;
     font-size: 18px;
     margin-bottom: 11px;
@@ -2819,7 +2830,7 @@ body.utk-search-open .utk-header-search {
     font-size: 15px;
     padding: 0.5rem 0 0.125rem;
     font-weight: 400;
-    font-family: "Gotham SSm 2r", "Gotham SSm A", "Gotham SSm B", "Gotham-Book", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: "Gotham SSm 2r", "Gotham SSm A", "Gotham SSm B", "Helvetica Neue", Helvetica, Arial, sans-serif;
     /* Mobile Devices for Mice */
     /* Landscape phones and down */
     /* Landscape phone to portrait tablet */

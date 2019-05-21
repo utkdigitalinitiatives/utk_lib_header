@@ -7,7 +7,7 @@ $orange:      #ff8200;
 $white:       #fff;
 $smokey:      #58595b;
 
-// secondary4
+// secondary
 $valley:      #00746f;
 $torch:       #e65933;
 $globe:       #006c93;
@@ -40,10 +40,17 @@ $accent:      $orange;
  * typography
  */
 
-$sans: "Gotham SSm 2r", "Gotham SSm A", "Gotham SSm B", "Gotham-Book", "Helvetica Neue", Helvetica, Arial, sans-serif;
-$serif: Georgia, Times, 'Times New Roman', serif;
-$serif-generic: $serif;
+$sans: "Gotham SSm 2r", "Gotham SSm A", "Gotham SSm B", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$serif: "clarendon-text-pro", Georgia, Times, 'Times New Roman', serif;
 $script: "bickham-script-pro-3", $serif;
+
+/*
+ * relative sizing
+ */
+
+$gr       : 1.6180339887;
+$gr-long  : calc(100% / #{$gr});
+$gr-short : calc(100% - (100% / #{$gr}));
 
 /*
  * font-size for typography
@@ -79,6 +86,7 @@ $golden-ratio-9: 521px;
 
 $transition-padding: padding 290ms ease-in-out;
 $transition-all: all 290ms ease-in-out;
+$transition-top: top 290ms ease-in-out;
 $transition-opacity: opacity 290ms ease-in-out;
 $transition-all-fast: all 110ms ease-in-out;
 
@@ -99,10 +107,19 @@ $theme-colors: (
         primary:    $globe
 );
 
+/*
+ * WordPress vars
+ */
+
+$admin-default : 32px;
+$admin-mobile : 46px;
+
+/*
+ * Misc
+ */
+
 $font-family-sans-serif:  $sans !default;
 $font-family-serif:       $serif !default;
-////** Default monospace fonts for `<code>`, `<kbd>`, and `<pre>`.
-//$font-family-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace !default;
 $font-family-base:        $font-family-sans-serif !default;
 
 /** Bootstrap navbar fix (https://git.io/fADqW) */

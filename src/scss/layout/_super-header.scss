@@ -65,35 +65,34 @@ body.utk-menu-open .utk-header-super {
         height: $golden-ratio-4;
         line-height: $golden-ratio-4;
         padding: 0 $golden-ratio-1;
-        font-size: $type-2;
-        font-weight: 400;
+        font-size: $type-1;
+        font-weight: 700;
         display: block;
-        color: $smokey;
+        color: $smokey !important;
         text-decoration: none !important;
-        transition: $transition-all;
         position: relative;
 
-        &:after {
-          background-color: $orange;
-          opacity: 0;
-          padding: 0;
-          height: 2px;
-          content: ' ';
+        &:before {
+          width: 12px;
+          height: 12px;
           display: block;
           position: absolute;
-          bottom: 13px;
-          width: 0;
-          transition: $transition-all;
+          right: 50%;
+          top: 0;
+          margin-right: -12px;
+          content: " ";
+          border-left: 12px solid transparent;
+          border-right: 12px solid transparent;
+          border-top: 8px solid #ff8200;
+          opacity: 0;
         }
 
         &:hover,
         &:focus {
           color: $smokeyx !important;
 
-          &::after {
+          &::before {
             opacity: 1;
-            padding: 0 $golden-ratio-1;
-            width: calc(100% - 22px);
           }
         }
       }

@@ -27,15 +27,19 @@
       top: -1px;
       height: $golden-ratio-4 !important;
       width: $golden-ratio-4 !important;
-      background-color: $switchgrass;
+      background-color: $rock;
       clip-path: polygon(0 0, 100% 0, 100% 100%, 6px 100%) !important;
       border-top-right-radius: $golden-ratio-4 !important;
       border-bottom-right-radius: $golden-ratio-4 !important;
       -webkit-font-smoothing: antialiased;
     }
 
-    &.libchat_online {
+    &.libchat_online::after {
+      background-color: $switchgrass !important;
+    }
 
+    &.libchat_offline::after {
+      background-color: $rock !important;
     }
   }
 }

@@ -130,11 +130,10 @@
 }
 
 .utk-resources-contact {
-  max-width: 303px;
+  max-width: $gr-short;
   opacity: 0;
   z-index: 1;
   height: auto;
-  overflow: hidden;
   padding: 0;
   margin-top: $golden-ratio-2;
 
