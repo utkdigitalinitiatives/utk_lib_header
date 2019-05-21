@@ -34,7 +34,6 @@ class Header extends Component {
         e.stopPropagation();
         e.preventDefault();
         this.setState({showResources: true}, () => {
-            document.addEventListener('click', this.closeResources);
             document.body.classList.add('utk-menu-open');
         });
     };
@@ -46,7 +45,6 @@ class Header extends Component {
         let footerClose = findIndex(e.path, {'className': 'utk-resources-close'});
         if (footerClose === 1) {
             this.setState({showResources: false}, () => {
-                document.removeEventListener('click', this.closeResources);
                 document.body.classList.remove('utk-menu-open');
             });
         }
@@ -56,7 +54,6 @@ class Header extends Component {
         e.stopPropagation();
         e.preventDefault();
         this.setState({showResources: false}, () => {
-            document.removeEventListener('click', this.closeResources);
             document.body.classList.remove('utk-menu-open');
         });
     };
@@ -71,7 +68,6 @@ class Header extends Component {
             document.body.classList.add('utk-search-open');
         });
         this.setState({showResources: false}, () => {
-            document.removeEventListener('click', this.closeResources);
             document.body.classList.remove('utk-menu-open');
         });
     };
@@ -107,7 +103,6 @@ class Header extends Component {
             e.stopPropagation();
             e.preventDefault();
             this.setState({showResources: true}, () => {
-                document.addEventListener('click', this.closeResources);
                 document.body.classList.add('utk-menu-open');
             });
         }
@@ -140,7 +135,6 @@ class Header extends Component {
 
         if (help) {
             this.setState({showResources: true}, () => {
-                document.addEventListener('click', this.closeResources);
                 document.body.classList.add('utk-menu-open');
             });
         }

@@ -48,7 +48,7 @@ export class HelpDecision extends Component {
              */
 
             e.preventDefault();
-
+            
         } else if (data.wpse_children == null) {
 
             /*
