@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import Globals from "./Globals";
 
-const defaultHash = 'cbb3e39658d3f35979d91f22200d30f3'
+const defaultHash = 'e98ae2539f2bd5d1659cc53d7de2812b'
 
 export class Chat extends Component {
 
