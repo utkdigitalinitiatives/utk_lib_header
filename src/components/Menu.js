@@ -41,7 +41,7 @@ export class Menu extends Component {
 
     getParameterByName = (name, url) => {
         if (!url) url = window.location.href;
-        name = name.replace(/[\[\]]/g, '\\$&');
+        name = name.replace(/[[\]]/g, '\\$&');
         var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
             results = regex.exec(url);
         if (!results) return null;
@@ -99,7 +99,7 @@ export class Menu extends Component {
          * Updates help to ensure it is not expanded on menu retoggle.
          */
 
-        if (propUpdate.active == '') {
+        if (propUpdate.active === '') {
             this.setState({activeHelp: 0});
         }
 
@@ -172,6 +172,7 @@ export class Menu extends Component {
                             </div>
                         );
                     }
+                    return null
                 });
             });
 

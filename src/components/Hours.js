@@ -56,18 +56,22 @@ export class Hours extends Component {
                     <h4>Libraries &amp; Locations</h4>
                     <ul className="utk-hours--listing">
                         <HoursLocation
+                            url="/"
                             data={locations[52]}
                             id={52}
                             label="John C. Hodges Library"/>
                         <HoursLocation
+                            url="/agvet"
                             data={locations[225]}
                             id={225}
                             label="Pendergrass Agriculture & Veterinary Medicine Library"/>
                         <HoursLocation
+                            url="/music"
                             data={locations[226]}
                             id={226}
                             label="George F. DeVine Music Library"/>
                         <HoursLocation
+                            url="/request/storage"
                             data={locations[227]}
                             id={227}
                             label="Hoskins Storage & Reading Room"/>

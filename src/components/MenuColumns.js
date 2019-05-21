@@ -1,9 +1,6 @@
 import React, {Component} from 'react';
 import {MenuItems} from './MenuItems';
 
-import uniqueId from "lodash/uniqueId"
-import debounce from "lodash/debounce";
-
 export class MenuColumns extends Component {
 
     constructor(props) {

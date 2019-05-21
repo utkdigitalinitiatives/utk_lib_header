@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import Globals from "./Globals";
 
 const defaultHash = 'e98ae2539f2bd5d1659cc53d7de2812b'
 

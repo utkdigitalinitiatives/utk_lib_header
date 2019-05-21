@@ -2,11 +2,6 @@ import React, {Component} from 'react';
 
 export class HoursLocation extends Component {
 
-    constructor(props) {
-        super(props);
-    }
-
-
     /*
      * returns hours, 'Closed' if null.
      */
@@ -27,7 +22,7 @@ export class HoursLocation extends Component {
      * builds indicator dependent on many differing cases
      */
 
-    getHoursIndicator = (data, id) => {
+    getHoursIndicator = (data) => {
 
         let indicator = '';
 
@@ -43,14 +38,14 @@ export class HoursLocation extends Component {
 
     render() {
 
-        const {data, label, id} = this.props;
+        const {url, data, label, id} = this.props;
 
         let hoursClass = this.getHoursIndicator(data, id);
         let hoursLabel = this.getHoursLabel(data.hours);
 
         return (
             <li className="utk-hours--listing--item">
-                <a href="#" className={hoursClass}>
+                <a href={url}className={hoursClass}>
                     <span className="library-label">{label}</span>
                     <span className="utk-hours--listing--item--hours">{ hoursLabel }</span>
                 </a>
