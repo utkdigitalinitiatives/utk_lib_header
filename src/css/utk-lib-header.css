@@ -981,7 +981,6 @@ body.utk-menu-open .utk-header-super {
   height: 47px !important;
   line-height: 47px !important;
   border-radius: 47px !important;
-  padding: 0 !important;
   font-size: 15px !important;
   font-weight: 700 !important;
   font-family: "Gotham SSm 2r", "Gotham SSm A", "Gotham SSm B", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
@@ -992,7 +991,7 @@ body.utk-menu-open .utk-header-super {
   position: relative !important; }
   .utk-libchat button::after {
     content: "\E808";
-    font-family: fontello;
+    font-family: fontello, monospace;
     color: #fff !important;
     font-style: normal;
     font-size: 18px;
