@@ -200,12 +200,6 @@ export class Menu extends Component {
                                     </div>
                                 </a>
                                 <Chat libchat={Globals.libChat} />
-                                <a className="utk-menu-help--item utk-menu-help--chat">
-                                    <h4>Chat</h4>
-                                    <div className="utk-menu-help--item--icon">
-                                        <span className="icon-chat"></span>
-                                    </div>
-                                </a>
                             </div>
                         </div>
                         <Hours expanded={this.props.expanded}/>

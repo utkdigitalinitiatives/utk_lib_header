@@ -969,6 +969,39 @@ body.utk-menu-open .utk-header-super {
 /*
  * components
  */
+.utk-libchat button {
+  height: 47px !important;
+  line-height: 47px !important;
+  border-radius: 47px !important;
+  padding: 0 !important;
+  font-size: 15px !important;
+  font-weight: 700 !important;
+  font-family: "Gotham SSm 2r", "Gotham SSm A", "Gotham SSm B", "Gotham-Book", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+  box-shadow: 0 2px 5px rgba(51, 51, 51, 0.29);
+  background-color: #fff !important;
+  color: #333 !important;
+  padding: 0 calc(64px) 0 18px !important;
+  position: relative !important; }
+  .utk-libchat button::after {
+    content: "\E808";
+    font-family: fontello;
+    color: #fff !important;
+    font-style: normal;
+    font-size: 18px;
+    speak: none;
+    font-weight: 400;
+    display: block;
+    position: absolute;
+    right: -1px;
+    top: -1px;
+    height: 47px !important;
+    width: 47px !important;
+    background-color: #abc178;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 6px 100%) !important;
+    border-top-right-radius: 47px !important;
+    border-bottom-right-radius: 47px !important;
+    -webkit-font-smoothing: antialiased; }
+
 a.utk-help-decision, a.utk-help-back,
 a.utk-help-decision:visited,
 a.utk-help-back:visited {
