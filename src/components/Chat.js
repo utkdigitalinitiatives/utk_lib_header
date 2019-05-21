@@ -38,7 +38,7 @@ export class Chat extends Component {
         const container = 'libchat_' + this.state.hash
 
         return (
-            <div id={container}></div>
+            <div id={container} className="utk-libchat"></div>
         )
     }
 }
