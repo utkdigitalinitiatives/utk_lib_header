@@ -1,9 +1,6 @@
 import React, {Component} from 'react';
-import {MenuColumns} from "./MenuColumns";
-import {MenuSecondary} from "./MenuSecondary";
-import {HoursLocationChild} from "./HoursLocationChild";
 
-export class HoursLocation extends Component {
+export class HoursLocationChild extends Component {
 
     /*
      * returns hours, 'Closed' if null.
@@ -39,36 +36,24 @@ export class HoursLocation extends Component {
 
     };
 
-    getChildren(children) {
-        if (children) {
-            return children.map((item, index) => {
-                return <HoursLocationChild key={index} data={item}/>
-            })
-        } else {
-            return null
-        }
-    }
-
     render() {
 
-        const {id, url, data, title, subtitle, formal, children, thumbnail} = this.props;
+        console.log(this.props.data);
+
+        const {id, data, title, subtitle} = this.props;
+        const {name, url} = this.props.data;
 
         let hoursClass = this.getHoursIndicator(data, id);
         let hoursLabel = this.getHoursLabel(data.hours);
 
         return (
-            <li className="utk-hours--listing--item">
+            <li className="utk-hours--listing--item utk-hours--listing--item--child">
                 <a href={url} className={hoursClass}>
-                    <figure>
-                        <img src={thumbnail} alt={formal} />
-                    </figure>
                     <div className="utk-hours--listing--item--meta">
-                        <span className="library-title">{title}</span>
-                        <span className="library-subtitle">{subtitle}</span>
+                        <span className="library-title">{name}</span>
                         <span className="utk-hours--listing--item--hours">{ hoursLabel }</span>
                     </div>
                 </a>
-                {this.getChildren(children)}
             </li>
         )
     }

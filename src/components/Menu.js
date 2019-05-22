@@ -188,6 +188,7 @@ export class Menu extends Component {
                         {menuSecondary}
                     </div>
                     <div className="utk-resources-contact">
+                        <Hours expanded={this.props.expanded}/>
                         <div className='utk-menu-options'>
                             <div className='utk-menu-help'>
                                 <a className="utk-menu-help--item utk-menu-help--help-me" onClick={this.enableHelp}>
@@ -199,7 +200,6 @@ export class Menu extends Component {
                                 <Chat libchat={Globals.libChat} />
                             </div>
                         </div>
-                        <Hours expanded={this.props.expanded}/>
                     </div>
                     <Help activeHelp={this.state.activeHelp} closeHelp={() => {
                         this.closeHelp();

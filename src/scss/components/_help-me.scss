@@ -1,6 +1,10 @@
 .utk-menu-open  {
 
   .utk-menu-options {
+    display: flex;
+    justify-content: flex-end;
+
+
     .container {
 
       display: flex;
@@ -37,7 +41,6 @@
 
 .utk-menu-help {
   display: flex;
-  margin-bottom: $golden-ratio-3;
 
   &--item {
     display: flex;

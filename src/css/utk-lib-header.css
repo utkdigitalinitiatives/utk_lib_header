@@ -1417,41 +1417,43 @@ a.utk-help-back:visited {
           width: 100%;
           left: auto; } }
 
-.utk-menu-open .utk-menu-options .container {
+.utk-menu-open .utk-menu-options {
   display: flex;
-  padding-top: 11px;
-  /* Mobile Devices for Mice */
-  /* Landscape phones and down */
-  /* Landscape phone to portrait tablet */
-  /* Portrait tablet to landscape and desktop */
-  /* desktop and large desktop */ }
-  @media (max-width: 767px) {
-    .utk-menu-open .utk-menu-options .container {
-      padding-top: 15px; } }
-  .utk-menu-open .utk-menu-options .container .utk-menu-help {
-    flex-grow: 1; }
-  .utk-menu-open .utk-menu-options .container .utk-resources-close {
-    position: static;
-    right: auto;
-    bottom: auto;
-    margin-left: 0;
+  justify-content: flex-end; }
+  .utk-menu-open .utk-menu-options .container {
+    display: flex;
+    padding-top: 11px;
     /* Mobile Devices for Mice */
     /* Landscape phones and down */
     /* Landscape phone to portrait tablet */
     /* Portrait tablet to landscape and desktop */
     /* desktop and large desktop */ }
     @media (max-width: 767px) {
-      .utk-menu-open .utk-menu-options .container .utk-resources-close {
-        width: 40px;
-        height: 40px;
-        line-height: 40px; }
-        .utk-menu-open .utk-menu-options .container .utk-resources-close > span {
+      .utk-menu-open .utk-menu-options .container {
+        padding-top: 15px; } }
+    .utk-menu-open .utk-menu-options .container .utk-menu-help {
+      flex-grow: 1; }
+    .utk-menu-open .utk-menu-options .container .utk-resources-close {
+      position: static;
+      right: auto;
+      bottom: auto;
+      margin-left: 0;
+      /* Mobile Devices for Mice */
+      /* Landscape phones and down */
+      /* Landscape phone to portrait tablet */
+      /* Portrait tablet to landscape and desktop */
+      /* desktop and large desktop */ }
+      @media (max-width: 767px) {
+        .utk-menu-open .utk-menu-options .container .utk-resources-close {
           width: 40px;
-          height: 40px; } }
+          height: 40px;
+          line-height: 40px; }
+          .utk-menu-open .utk-menu-options .container .utk-resources-close > span {
+            width: 40px;
+            height: 40px; } }
 
 .utk-menu-help {
-  display: flex;
-  margin-bottom: 29px; }
+  display: flex; }
   .utk-menu-help--item {
     display: flex;
     height: 47px;
@@ -1601,40 +1603,14 @@ a.utk-help-back:visited {
       max-width: 123px; }
 
 .utk-hours {
-  margin-bottom: 0;
-  /* Mobile Devices for Mice */
-  /* Landscape phones and down */
-  /* Landscape phone to portrait tablet */
-  /* Portrait tablet to landscape and desktop */
-  /* desktop and large desktop */
-  /* Mobile Devices for Mice */
-  /* Landscape phones and down */
-  /* Landscape phone to portrait tablet */
-  /* Portrait tablet to landscape and desktop */
-  /* desktop and large desktop */
-  /* Mobile Devices for Mice */
-  /* Landscape phones and down */
-  /* Landscape phone to portrait tablet */
-  /* Portrait tablet to landscape and desktop */
-  /* desktop and large desktop */ }
-  @media (min-width: 992px) and (max-width: 1199px) {
-    .utk-hours {
-      padding-top: 47px;
-      border-top: 2px solid #e0e0e0; } }
-  @media (max-width: 767px) {
-    .utk-hours {
-      padding-top: 47px;
-      border-top: 2px solid #e0e0e0; } }
-  @media (max-width: 767px) {
-    .utk-hours {
-      padding-top: 6px;
-      margin-bottom: 18px;
-      border-top: none; } }
-  .utk-hours h4 {
-    color: #58595b;
-    font-size: 13px;
-    text-transform: uppercase;
-    margin-bottom: 11px; }
+  margin-bottom: 47px; }
+  .utk-hours h3 {
+    margin: 0 0 11px;
+    padding: 0;
+    font-weight: 700;
+    text-transform: none;
+    font-size: 18px;
+    color: #333; }
   .utk-hours--loading {
     margin: 0;
     padding: 0;
@@ -1648,100 +1624,123 @@ a.utk-help-back:visited {
     position: relative; }
   .utk-hours--listing {
     margin: 0;
-    padding: 0 47px 0 0;
-    /* Mobile Devices for Mice */
-    /* Landscape phones and down */
-    /* Landscape phone to portrait tablet */
-    /* Portrait tablet to landscape and desktop */
-    /* desktop and large desktop */
-    /* Mobile Devices for Mice */
-    /* Landscape phones and down */
-    /* Landscape phone to portrait tablet */
-    /* Portrait tablet to landscape and desktop */
-    /* desktop and large desktop */ }
-    @media (min-width: 992px) and (max-width: 1199px) {
-      .utk-hours--listing {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-        padding: 0; } }
-    @media (max-width: 767px) {
-      .utk-hours--listing {
-        padding: 0 0; } }
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    padding: 0; }
+    .utk-hours--listing--col {
+      width: 50%; }
     .utk-hours--listing--item {
       list-style: none;
       margin: 0;
       padding: 0;
-      margin-bottom: 18px;
       width: auto;
-      /* Mobile Devices for Mice */
-      /* Landscape phones and down */
-      /* Landscape phone to portrait tablet */
-      /* Portrait tablet to landscape and desktop */
-      /* desktop and large desktop */ }
-      @media (min-width: 992px) and (max-width: 1199px) {
-        .utk-hours--listing--item {
-          flex: 1 1 0;
-          padding-right: 29px; } }
+      margin-bottom: 18px; }
       .utk-hours--listing--item:last-child {
         margin-bottom: 0; }
       .utk-hours--listing--item a,
       .utk-hours--listing--item a:visited {
         display: flex;
-        flex-flow: row wrap;
+        flex-direction: row;
         font-size: 15px;
-        color: #333; }
-        .utk-hours--listing--item a.library-open .utk-hours--listing--item--hours::before,
-        .utk-hours--listing--item a:visited.library-open .utk-hours--listing--item--hours::before {
-          border-color: #abc178;
-          background-color: #abc178; }
-        .utk-hours--listing--item a span.library-label,
-        .utk-hours--listing--item a:visited span.library-label {
-          width: 100%;
-          flex-grow: 0;
-          flex-shrink: 1;
+        color: #006c93; }
+        .utk-hours--listing--item a figure,
+        .utk-hours--listing--item a:visited figure {
           margin: 0;
-          padding: 0;
-          color: #58595b;
-          font-size: 15px !important;
-          line-height: 1.5em;
-          word-break: break-word;
-          /* Mobile Devices for Mice */
-          /* Landscape phones and down */
-          /* Landscape phone to portrait tablet */
-          /* Portrait tablet to landscape and desktop */
-          /* desktop and large desktop */ }
-          @media (max-width: 767px) {
-            .utk-hours--listing--item a span.library-label,
-            .utk-hours--listing--item a:visited span.library-label {
-              font-size: 15px;
-              font-weight: 400; } }
+          width: 47px;
+          height: 47px;
+          border-radius: 29px;
+          margin-top: 3px;
+          position: relative;
+          background-color: #e0e0e0;
+          z-index: 1; }
+          .utk-hours--listing--item a figure img,
+          .utk-hours--listing--item a:visited figure img {
+            filter: grayscale(1);
+            z-index: 0;
+            opacity: 0.47;
+            background-color: #a7a9ac;
+            border-radius: 29px;
+            box-shadow: 0 2px 5px rgba(51, 51, 51, 0.15);
+            width: 100%;
+            height: 100%;
+            position: relative; }
+        .utk-hours--listing--item a .utk-hours--listing--item--meta,
+        .utk-hours--listing--item a:visited .utk-hours--listing--item--meta {
+          padding-left: 18px;
+          flex-shrink: 1;
+          flex-grow: 0;
+          display: flex;
+          flex-direction: column; }
+          .utk-hours--listing--item a .utk-hours--listing--item--meta span.library-title,
+          .utk-hours--listing--item a:visited .utk-hours--listing--item--meta span.library-title {
+            margin: 0;
+            padding: 0;
+            display: block;
+            font-size: 15px !important;
+            font-weight: 700;
+            line-height: 1.5em;
+            word-break: break-word; }
+          .utk-hours--listing--item a .utk-hours--listing--item--meta span.library-subtitle,
+          .utk-hours--listing--item a:visited .utk-hours--listing--item--meta span.library-subtitle {
+            margin: 0;
+            padding: 0;
+            display: block;
+            color: #58595b !important;
+            font-size: 13px;
+            line-height: 1.5em; }
+        .utk-hours--listing--item a.library-open figure img,
+        .utk-hours--listing--item a:visited.library-open figure img {
+          filter: grayscale(0);
+          opacity: 1; }
+      .utk-hours--listing--item--child {
+        padding-left: 47px;
+        margin-top: 18px;
+        position: relative;
+        z-index: 0; }
+        .utk-hours--listing--item--child::before {
+          position: absolute;
+          left: 22px;
+          top: 8px;
+          content: '';
+          background-color: #e0e0e0;
+          height: 2px;
+          width: 23px;
+          position: absolute; }
+        .utk-hours--listing--item--child::after {
+          position: absolute;
+          left: 22px;
+          top: -66px;
+          content: '';
+          background-color: #e0e0e0;
+          height: 76px;
+          width: 2px;
+          position: absolute; }
+        .utk-hours--listing--item--child a .utk-hours--listing--item--meta span.library-title {
+          font-size: 13px !important;
+          font-weight: 700; }
       .utk-hours--listing--item--simple {
         margin-right: 1em; }
       .utk-hours--listing--item--hours {
+        display: flex;
         font-weight: 700;
-        font-size: 15px;
-        text-transform: uppercase;
-        /* Mobile Devices for Mice */
-        /* Landscape phones and down */
-        /* Landscape phone to portrait tablet */
-        /* Portrait tablet to landscape and desktop */
-        /* desktop and large desktop */ }
-        @media (max-width: 767px) {
-          .utk-hours--listing--item--hours {
-            display: block;
-            font-size: 15px;
-            margin: 6px 0 0; } }
+        font-size: 13px;
+        color: #333 !important;
+        align-items: center; }
         .utk-hours--listing--item--hours::before {
-          width: 0.6em;
-          height: 0.6em;
-          margin-top: 0.2em;
-          content: ' ';
-          display: inline-block;
-          border-radius: 100%;
-          background-color: transparent;
-          border: 2px solid #a7a9ac;
-          margin-right: 11px; }
+          margin-right: 6px;
+          z-index: 1;
+          display: block;
+          content: '';
+          width: 9px;
+          height: 9px;
+          border-radius: 11px;
+          border: 2px solid #e0e0e0;
+          background-color: #fff; }
+
+.utk-hours--listing--item a.library-open .utk-hours--listing--item--hours::before {
+  background-color: #abc178;
+  border: 2px solid #abc178; }
 
 .spinner::before {
   content: '';
