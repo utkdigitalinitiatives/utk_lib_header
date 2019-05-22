@@ -913,6 +913,12 @@ body.utk-menu-open .utk-header-super {
     display: flex;
     position: relative;
     margin-right: -11px; }
+    .utk-header-super--menu::before {
+      height: 47px;
+      line-height: 47px;
+      font-size: 11px;
+      text-transform: uppercase;
+      font-weight: 700; }
     .utk-header-super--menu > li {
       margin: 0;
       padding: 0;
@@ -928,9 +934,9 @@ body.utk-menu-open .utk-header-super {
       .utk-header-super--menu > li a:visited {
         height: 47px;
         line-height: 47px;
-        padding: 0 11px;
+        padding: 0 18px 0 0;
         font-size: 13px;
-        font-weight: 700;
+        font-weight: 400;
         display: block;
         color: #58595b !important;
         text-decoration: none !important;
@@ -944,7 +950,6 @@ body.utk-menu-open .utk-header-super {
           right: 50%;
           top: 0;
           margin-right: -12px;
-          content: " ";
           border-left: 12px solid transparent;
           border-right: 12px solid transparent;
           border-top: 8px solid #ff8200;

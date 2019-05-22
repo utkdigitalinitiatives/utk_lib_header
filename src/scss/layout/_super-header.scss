@@ -45,6 +45,14 @@ body.utk-menu-open .utk-header-super {
     position: relative;
     margin-right: -$golden-ratio-1;
 
+    &::before {
+      height: $golden-ratio-4;
+      line-height: $golden-ratio-4;
+      font-size: $type-0;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
 
     > li {
       margin: 0;
@@ -64,9 +72,9 @@ body.utk-menu-open .utk-header-super {
       a:visited {
         height: $golden-ratio-4;
         line-height: $golden-ratio-4;
-        padding: 0 $golden-ratio-1;
+        padding: 0 $golden-ratio-2 0 0;
         font-size: $type-1;
-        font-weight: 700;
+        font-weight: 400;
         display: block;
         color: $smokey !important;
         text-decoration: none !important;
@@ -80,7 +88,6 @@ body.utk-menu-open .utk-header-super {
           right: 50%;
           top: 0;
           margin-right: -12px;
-          content: " ";
           border-left: 12px solid transparent;
           border-right: 12px solid transparent;
           border-top: 8px solid #ff8200;

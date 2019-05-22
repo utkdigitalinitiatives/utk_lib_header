@@ -218,13 +218,15 @@ class Header extends Component {
                         <div className="container">
                             <ul className="utk-header-super--menu">
                                 <li><a href="https://www.lib.utk.edu/hours/"
-                                       tabIndex="2">Hours</a></li>
+                                       tabIndex="2">Undergraduates</a></li>
                                 <li><a href="https://libguides.utk.edu/"
-                                       tabIndex="2">Locations</a></li>
+                                       tabIndex="2">Graduate Students</a></li>
                                 <li><a href="https://libguides.utk.edu/databases"
-                                       tabIndex="2">Articles &amp; Databases</a></li>
+                                       tabIndex="2">Distance Students</a></li>
                                 <li><a href="https://www.lib.utk.edu/about/"
-                                       tabIndex="2">About</a></li>
+                                       tabIndex="2">Faculty</a></li>
+                                <li><a href="https://www.lib.utk.edu/about/"
+                                       tabIndex="2">Patrons with Disabilities</a></li>
                             </ul>
                         </div>
                     </div>
