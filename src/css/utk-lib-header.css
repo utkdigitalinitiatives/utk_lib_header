@@ -1705,22 +1705,24 @@ a.utk-help-back:visited {
         z-index: 0; }
         .utk-hours--listing--item--child::before {
           position: absolute;
-          left: 22px;
+          left: 23px;
           top: 8px;
           content: '';
           background-color: #e0e0e0;
           height: 2px;
           width: 23px;
-          position: absolute; }
+          position: absolute;
+          border-radius: 2px; }
         .utk-hours--listing--item--child::after {
           position: absolute;
-          left: 22px;
+          left: 23px;
           top: -66px;
           content: '';
           background-color: #e0e0e0;
           height: 76px;
           width: 2px;
-          position: absolute; }
+          position: absolute;
+          border-radius: 2px; }
         .utk-hours--listing--item--child a .utk-hours--listing--item--meta span.library-title {
           font-size: 13px !important;
           font-weight: 700; }
@@ -1740,7 +1742,7 @@ a.utk-help-back:visited {
           width: 9px;
           height: 9px;
           border-radius: 11px;
-          border: 2px solid #e0e0e0;
+          border: 2px solid #a7a9ac;
           background-color: #fff; }
 
 .utk-hours--listing--item a.library-open .utk-hours--listing--item--hours::before {

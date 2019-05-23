@@ -122,24 +122,26 @@
 
         &::before {
           position: absolute;
-          left: 22px;
+          left: 23px;
           top: 8px;
           content: '';
           background-color: $gray-1;
           height: 2px;
           width: 23px;
           position: absolute;
+          border-radius: 2px;
         }
 
         &::after {
           position: absolute;
-          left: 22px;
+          left: 23px;
           top: -66px;
           content: '';
           background-color: $gray-1;
           height: $golden-ratio-5;
           width: 2px;
           position: absolute;
+          border-radius: 2px;
         }
 
         a .utk-hours--listing--item--meta  {
@@ -169,7 +171,7 @@
           width: 9px;
           height: 9px;
           border-radius: $golden-ratio-1;
-          border: 2px solid $gray-1;
+          border: 2px solid $rock;
           background-color: $white;
         }
       }
