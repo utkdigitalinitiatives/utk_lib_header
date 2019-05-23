@@ -154,9 +154,6 @@ body {
   opacity: 0;
   transition: opacity 290ms ease-in-out; }
 
-#utk-lib-header .container {
-  position: relative; }
-
 #utk-header-trigger {
   width: 1px;
   height: 1px;
@@ -324,6 +321,9 @@ body {
       .utk-header .utk-header-main {
         margin-top: 0;
         height: 60px !important; } }
+    .utk-header .utk-header-main > .container {
+      display: flex;
+      justify-content: space-between; }
   .utk-header .utk-header-super {
     width: 100%;
     background-color: #e0e0e0;
@@ -335,14 +335,13 @@ body {
     transition: all 290ms ease-in-out; }
 
 .utk-header-actions {
-  position: absolute;
-  right: 0;
   display: flex;
   flex-direction: row;
   width: auto;
   padding-top: 3px;
   height: 76px;
-  z-index: 999;
+  flex-shrink: 1;
+  align-items: flex-end;
   /* Mobile Devices for Mice */
   /* Landscape phones and down */
   /* Landscape phone to portrait tablet */
@@ -370,6 +369,8 @@ body {
       margin-top: 0 !important;
       height: 60px; } }
   .utk-header-actions .utk-header-actions--item {
+    flex-grow: 0;
+    flex-shrink: 1;
     display: block;
     width: auto;
     height: auto;
@@ -993,7 +994,8 @@ body.utk-menu-open .utk-header-super {
   background-color: #fff !important;
   color: #333 !important;
   padding: 0 calc(64px) 0 18px !important;
-  position: relative !important; }
+  position: relative !important;
+  z-index: 0; }
   .utk-libchat button::after {
     content: "\E808";
     font-family: fontello, monospace;
@@ -1465,6 +1467,7 @@ a.utk-help-back:visited {
     box-shadow: 0 2px 5px rgba(51, 51, 51, 0.29);
     border-radius: 47px;
     position: relative;
+    z-index: 0;
     line-height: 47px;
     border-radius: 47px;
     overflow: hidden;
@@ -1609,13 +1612,22 @@ a.utk-help-back:visited {
 
 .utk-hours {
   margin-bottom: 47px; }
-  .utk-hours h3 {
-    margin: 0 0 11px;
-    padding: 0;
-    font-weight: 700;
-    text-transform: none;
-    font-size: 18px;
-    color: #333; }
+  .utk-hours.utk-hours-map {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%; }
+  .utk-hours .utk-hours-header {
+    display: flex;
+    justify-content: space-between; }
+    .utk-hours .utk-hours-header h3 {
+      margin: 0 0 29px;
+      padding: 0;
+      font-weight: 700;
+      text-transform: none;
+      font-size: 18px;
+      color: #333; }
   .utk-hours--loading {
     margin: 0;
     padding: 0;
@@ -2284,7 +2296,7 @@ a:hover {
   background-color: #e65933;
   position: absolute;
   right: calc(50% - 23.5px);
-  bottom: -71px;
+  bottom: calc(-23.5px);
   border-radius: 47px;
   text-align: center;
   box-shadow: 0 2px 5px rgba(51, 51, 51, 0.15);
@@ -2624,13 +2636,11 @@ body.utk-search-open .utk-header-search {
       margin: 0; } }
 
 .utk-search-options {
-  z-index: 101;
   display: flex;
   height: 47px;
   transition: all 290ms ease-in-out;
   padding: 18px 29px 0;
   margin: 15px 0 14px;
-  position: relative;
   /* Mobile Devices for Mice */
   /* Landscape phones and down */
   /* Landscape phone to portrait tablet */
@@ -2860,6 +2870,71 @@ body.utk-search-open .utk-header-search {
   .utk-secondary-menu .utk-resources-menu--section a:focus,
   .utk-secondary-menu .utk-resources-menu--section a:hover {
     color: #8d2048; }
+
+.utk-resources-toggle {
+  float: right;
+  display: flex;
+  font-size: 13px;
+  font-weight: 700; }
+  .utk-resources-toggle > a:first-child {
+    margin-right: 11px; }
+
+.utk-hours.utk-hours-map .container {
+  width: 100%; }
+
+.utk-hours.utk-hours-map .utk-hours-header {
+  width: 100%;
+  background-color: #fed535; }
+  .utk-hours.utk-hours-map .utk-hours-header .utk-resources-toggle {
+    width: 100%;
+    float: none;
+    display: flex;
+    justify-content: flex-end; }
+    .utk-hours.utk-hours-map .utk-hours-header .utk-resources-toggle > a:first-child {
+      margin-right: 11px; }
+    .utk-hours.utk-hours-map .utk-hours-header .utk-resources-toggle > a.utk-resources-toggle--default {
+      position: absolute;
+      color: #fff;
+      float: right;
+      z-index: 9999999;
+      margin-top: 29px;
+      background-color: #e65933;
+      padding: 11px 18px;
+      border-radius: 47px;
+      box-shadow: 0 2px 5px rgba(51, 51, 51, 0.29); }
+
+.utk-header-map {
+  height: 521px;
+  max-height: 100%;
+  width: 100%;
+  margin-bottom: -47px;
+  position: absolute;
+  z-index: 1; }
+  .utk-header-map--marker {
+    display: flex;
+    width: 100px;
+    border-radius: 47px; }
+    .utk-header-map--marker > a {
+      display: flex;
+      align-content: flex-start;
+      align-items: center;
+      color: #fff;
+      border-radius: 29px;
+      padding-right: 11px;
+      text-shadow: 0 2px 5px rgba(51, 51, 51, 0.29); }
+      .utk-header-map--marker > a figure {
+        width: 29px;
+        height: 29px;
+        margin: 0 6px 0 0; }
+        .utk-header-map--marker > a figure > img {
+          border: 2px solid #58595b;
+          display: block;
+          width: 100%;
+          border-radius: 29px;
+          box-shadow: 0 2px 5px rgba(51, 51, 51, 0.29); }
+    .utk-header-map--marker--meta {
+      font-size: 15px;
+      font-weight: 700; }
 
 /*
  * vendor

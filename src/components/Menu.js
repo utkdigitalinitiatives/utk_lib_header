@@ -6,6 +6,7 @@ import {Hours} from "./Hours";
 import {Help} from "./Help";
 import Globals from "./Globals";
 import {Chat} from "./Chat";
+import {Locations} from "./Locations";
 
 const ENDPOINT = 'assets/wp-json/libmenu';
 const ROUTE = '/drawer';
@@ -22,6 +23,10 @@ export class Menu extends Component {
             activeDepth: 0,
             activeHelp: 0
         };
+    }
+
+    setLayout() {
+
     }
 
     updateDimensions = () => {
@@ -128,7 +133,7 @@ export class Menu extends Component {
     render() {
 
         const {active} = this.props;
-        const {menuDrawer, activeMenu, activeDepth, activeHelp} = this.state;
+        const {menuDrawer, activeMenu, activeDepth, activeHelp, status} = this.state;
 
         let menuColumns, menuSecondary = {};
         let depthClass = 'utk-menu-depth--' + activeDepth;
@@ -180,35 +185,50 @@ export class Menu extends Component {
             menuSecondary = secondary;
         }
 
-        return (
-            <div className={`utk-header-resources ${active} ${helpClass} ${depthClass}`}>
-                <div className="container">
-                    <div className="utk-resources-menu">
-                        {menuColumns}
-                        {menuSecondary}
-                    </div>
-                    <div className="utk-resources-contact">
-                        <Hours expanded={this.props.expanded}/>
-                        <div className='utk-menu-options'>
-                            <div className='utk-menu-help'>
-                                <a className="utk-menu-help--item utk-menu-help--help-me" onClick={this.enableHelp}>
-                                    <h4>Help</h4>
-                                    <div className="utk-menu-help--item--icon">
-                                        <span className="icon-shuffle"></span>
-                                    </div>
-                                </a>
-                                <Chat libchat={Globals.libChat} />
+        // if (status === 'default') {
+            return (
+                <div className={`utk-header-resources ${active} ${helpClass} ${depthClass}`}>
+                    <div className="container">
+                        <div className="utk-resources-menu">
+                            {menuColumns}
+                            {menuSecondary}
+                        </div>
+                        <div className="utk-resources-contact">
+                            <Hours layout={this.setLayout()} expanded={this.props.expanded}/>
+                            <div className='utk-menu-options'>
+                                <div className='utk-menu-help'>
+                                    <a className="utk-menu-help--item utk-menu-help--help-me" onClick={this.enableHelp}>
+                                        <h4>Help</h4>
+                                        <div className="utk-menu-help--item--icon">
+                                            <span className="icon-shuffle"></span>
+                                        </div>
+                                    </a>
+                                    <Chat libchat={Globals.libChat} />
+                                </div>
                             </div>
                         </div>
+                        <Help activeHelp={this.state.activeHelp} closeHelp={() => {
+                            this.closeHelp();
+                        }} />
+                        <a className="utk-resources-close" data-event="option-resources-close">
+                            <span className="icon-cancel" data-event="option-resources-close"></span>
+                        </a>
                     </div>
-                    <Help activeHelp={this.state.activeHelp} closeHelp={() => {
-                        this.closeHelp();
-                    }} />
-                    <a className="utk-resources-close" data-event="option-resources-close">
-                        <span className="icon-cancel" data-event="option-resources-close"></span>
-                    </a>
                 </div>
-            </div>
-        )
+            )
+        // } else if (status === 'map') {
+        //     return (
+        //         <div className={`utk-header-resources ${active} ${helpClass} ${depthClass}`}>
+        //             <div className="container">
+        //                 <div className="utk-resources-toggle">
+        //                     <a className="utk-resources-toggle--default" onClick={this.toggleDefault}>Close Map</a>
+        //                 </div>
+        //             </div>
+        //         </div>
+        //     )
+        // }
+
+
+
     }
 }

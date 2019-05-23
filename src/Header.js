@@ -12,6 +12,7 @@ import {Search} from "./components/Search";
 import './css/utk-lib-header.css';
 import primary_logo from './media/ut-knoxville.svg';
 import square_logo from './media/ut-square.svg';
+import {Locations} from "./components/Locations";
 
 /* header component */
 class Header extends Component {
@@ -178,15 +179,16 @@ class Header extends Component {
                 <header className={`utk-header`}>
                     <div className={`utk-header-main`}>
                         <div className="container">
-
-                            <div id="utk-logo" className="utk-logo-wrapper">
-                                <a href="https://www.utk.edu" tabIndex="1">
-                                    <img src={primary_logo} className="utk-logo utk-logo-primary"
-                                         alt="University of Tennessee Libraries"/>
-                                    <img src={square_logo} className="utk-logo utk-logo-square"
-                                         alt="University of Tennessee Libraries"/>
-                                </a>
-                                <a href="https://www.lib.utk.edu" className="utk-logo-unit" tabIndex="1">Libraries</a>
+                            <div className="utk-logo-flex">
+                                <div id="utk-logo" className="utk-logo-wrapper">
+                                    <a href="https://www.utk.edu" tabIndex="1">
+                                        <img src={primary_logo} className="utk-logo utk-logo-primary"
+                                             alt="University of Tennessee Libraries"/>
+                                        <img src={square_logo} className="utk-logo utk-logo-square"
+                                             alt="University of Tennessee Libraries"/>
+                                    </a>
+                                    <a href="https://www.lib.utk.edu" className="utk-logo-unit" tabIndex="1">Libraries</a>
+                                </div>
                             </div>
                             <div className="utk-header-actions">
                                 <div className="utk-header-actions--item utk-header-actions--home">

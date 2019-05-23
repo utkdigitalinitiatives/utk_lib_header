@@ -11,6 +11,7 @@
     color: $smokeyx !important;
     padding: 0 calc(#{$golden-ratio-2 - 1px + $golden-ratio-4}) 0 $golden-ratio-2 !important;
     position: relative !important;
+    z-index: 0;
 
     &::after {
       content: "\E808";

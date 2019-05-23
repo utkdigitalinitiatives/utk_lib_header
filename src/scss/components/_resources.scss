@@ -329,7 +329,7 @@
   background-color: $torch;
   position: absolute;
   right:  calc(50% - #{$golden-ratio-4 / 2});
-  bottom: -71px;
+  bottom: calc(-#{$golden-ratio-4 / 2});
   border-radius: $golden-ratio-4;
   text-align: center;
   box-shadow: $box-shadow;

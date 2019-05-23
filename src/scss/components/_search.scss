@@ -235,13 +235,11 @@ body.utk-search-open {
 }
 
 .utk-search-options {
-  z-index: 101;
   display: flex;
   height: $golden-ratio-4;
   transition: $transition-all;
   padding: $golden-ratio-2 $golden-ratio-3 0;
   margin: 15px 0 14px;
-  position: relative;
 
   @include respond(xs) {
     padding: $golden-ratio-2 0 0 0;
