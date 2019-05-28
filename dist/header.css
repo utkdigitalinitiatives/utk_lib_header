@@ -579,6 +579,12 @@ body {
         -ms-transform: scale(0);
         transform: scale(0);
         opacity: 1; } }
+    .utk-logo-wrapper .utk-logo--orange {
+      fill: #ff8200; }
+    .utk-logo-wrapper .utk-logo--white {
+      fill: #fff; }
+    .utk-logo-wrapper .utk-logo--smokey {
+      fill: #58595b; }
   .utk-logo-wrapper .utk-logo-square {
     width: 47px;
     height: 47px;
