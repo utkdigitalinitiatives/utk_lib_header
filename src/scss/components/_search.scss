@@ -11,12 +11,28 @@
   transition: $transition-all;
 }
 
+.utk-search-trigger.utk-search-expand {
+  display: inline-block !important;
+}
+
+.utk-search-trigger.utk-search-collapse {
+  display: none !important;
+}
+
 body.utk-search-open {
 
   .utk-header-actions--search {
     display: inline-block !important;
     box-shadow: none;
     position: relative;
+
+    .utk-search-trigger.utk-search-expand {
+      display: none !important;
+    }
+
+    .utk-search-trigger.utk-search-collapse {
+      display: inline-block !important;
+    }
 
     @include respond(xs, sm) {
       &::after {
@@ -204,22 +220,15 @@ body.utk-search-open {
   }
 
   .icon-cancel {
-    display: none;
     opacity: 1;
     font-size: 15px;
     padding: 1px;
     margin-right: 6px;
+    color: $torch !important;
   }
 
   .utk-header-expand-search {
-    .icon-search {
-      display: none !important;
-    }
-
     .icon-cancel {
-      display: inline;
-      color: $torch;
-
       @media only screen and (max-width: 414px) {
         display: flex;
         align-items: flex-end;
