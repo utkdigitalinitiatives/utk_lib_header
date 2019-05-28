@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-const searchEndpoint = "https://utklibrary.test/search/submit?go=1"
+const searchEndpoint = "https://www.lib.utk.edu/search/submit?go=1"
 
 export class SearchForm extends Component {
 
