@@ -8,10 +8,6 @@ import findIndex from "lodash/findIndex"
 import {Menu} from "./components/Menu";
 import {Search} from "./components/Search";
 
-/* assets */
-import primary_logo from './media/ut-knoxville.svg';
-import square_logo from './media/ut-square.svg';
-
 /* header component */
 class Header extends Component {
 
@@ -35,18 +31,9 @@ class Header extends Component {
         this.setState({showResources: true}, () => {
             document.body.classList.add('utk-menu-open');
         });
-    };
-
-    closeResources = (e) => {
-        e.stopPropagation();
-        e.preventDefault();
-        this.setState({showHelp: false});
-        let footerClose = findIndex(e.path, {'className': 'utk-resources-close'});
-        if (footerClose === 1) {
-            this.setState({showResources: false}, () => {
-                document.body.classList.remove('utk-menu-open');
-            });
-        }
+        this.setState({showSearch: false}, () => {
+            document.body.classList.remove('utk-search-open');
+        });
     };
 
     closeResourcesMenu = (e) => {
@@ -151,12 +138,6 @@ class Header extends Component {
             this.setState({shortcutLogo: false});
         }
     }, 5);
-
-    handleSubmit = (event) => {
-        console.log(event)
-        // event.preventDefault();
-        // this.setState({ companyName: '' });
-    };
 
     render() {
 
