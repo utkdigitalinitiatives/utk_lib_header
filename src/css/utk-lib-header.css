@@ -588,10 +588,12 @@ body {
       .utk-logo-wrapper a.utk-logo-unit:focus {
         left: 36px; } }
 
-body.utk-menu-open .utk-header-super {
+body.utk-menu-open .utk-header-super,
+body.utk-search-open .utk-header-super {
   height: 47px !important; }
 
-body.utk-menu-open .utk-header-main {
+body.utk-menu-open .utk-header-main,
+body.utk-search-open .utk-header-main {
   margin-top: 47px !important;
   /* Mobile Devices for Mice */
   /* Landscape phones and down */
@@ -604,22 +606,27 @@ body.utk-menu-open .utk-header-main {
   /* Portrait tablet to landscape and desktop */
   /* desktop and large desktop */ }
   @media (max-width: 767px) {
-    body.utk-menu-open .utk-header-main {
+    body.utk-menu-open .utk-header-main,
+    body.utk-search-open .utk-header-main {
       margin-top: 0 !important; } }
   @media (min-width: 768px) and (max-width: 991px) {
-    body.utk-menu-open .utk-header-main {
+    body.utk-menu-open .utk-header-main,
+    body.utk-search-open .utk-header-main {
       margin-top: 0 !important; } }
 
-body.utk-menu-open .utk-logo-wrapper .utk-logo-primary {
+body.utk-menu-open .utk-logo-wrapper .utk-logo-primary,
+body.utk-search-open .utk-logo-wrapper .utk-logo-primary {
   top: -3000px;
   box-shadow: none;
   padding: 0;
   height: 0; }
 
-body.utk-menu-open .utk-logo-wrapper .utk-logo-square {
+body.utk-menu-open .utk-logo-wrapper .utk-logo-square,
+body.utk-search-open .utk-logo-wrapper .utk-logo-square {
   left: 0 !important; }
 
-body.utk-menu-open .utk-logo-wrapper .utk-logo-unit {
+body.utk-menu-open .utk-logo-wrapper .utk-logo-unit,
+body.utk-search-open .utk-logo-wrapper .utk-logo-unit {
   left: 47px !important;
   padding-left: 18px !important;
   /* Mobile Devices for Mice */
@@ -628,7 +635,8 @@ body.utk-menu-open .utk-logo-wrapper .utk-logo-unit {
   /* Portrait tablet to landscape and desktop */
   /* desktop and large desktop */ }
   @media (max-width: 767px) {
-    body.utk-menu-open .utk-logo-wrapper .utk-logo-unit {
+    body.utk-menu-open .utk-logo-wrapper .utk-logo-unit,
+    body.utk-search-open .utk-logo-wrapper .utk-logo-unit {
       left: 30px !important;
       padding-left: 15px !important; } }
 
@@ -2472,9 +2480,8 @@ body.utk-search-open .utk-header-search {
 
 .utk-search-wrapper {
   position: relative;
-  width: calc(100% - 304px);
+  width: 100%;
   max-width: 100%;
-  left: 304px;
   display: flex;
   flex-direction: row;
   height: 76px;
@@ -2554,7 +2561,7 @@ body.utk-search-open .utk-header-search {
     height: 47px;
     border-radius: 29px;
     font-size: 15px;
-    font-weight: 700;
+    font-weight: 400;
     background-color: #fff;
     padding: 0 18px 0 47px;
     margin: 15px 0 0;
@@ -2639,7 +2646,7 @@ body.utk-search-open .utk-header-search {
   display: flex;
   height: 47px;
   transition: all 290ms ease-in-out;
-  padding: 18px 29px 0;
+  padding: 18px 29px 0 0;
   margin: 15px 0 14px;
   /* Mobile Devices for Mice */
   /* Landscape phones and down */

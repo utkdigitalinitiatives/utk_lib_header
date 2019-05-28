@@ -50,9 +50,8 @@ body.utk-search-open {
 
 .utk-search-wrapper {
   position: relative;
-  width: calc(100% - 304px);
+  width: 100%;
   max-width: 100%;
-  left: 304px;
   display: flex;
   flex-direction: row;
   height: $golden-ratio-5;
@@ -132,7 +131,7 @@ body.utk-search-open {
     height: $golden-ratio-4;
     border-radius: $golden-ratio-3;
     font-size: $type-2;
-    font-weight: 700;
+    font-weight: 400;
     background-color: $white;
     padding: 0 $golden-ratio-2 0 $golden-ratio-4;
     margin: 15px 0 0;
@@ -236,7 +235,7 @@ body.utk-search-open {
   display: flex;
   height: $golden-ratio-4;
   transition: $transition-all;
-  padding: $golden-ratio-2 $golden-ratio-3 0;
+  padding: $golden-ratio-2 $golden-ratio-3 0 0;
   margin: 15px 0 14px;
 
   @include respond(xs) {

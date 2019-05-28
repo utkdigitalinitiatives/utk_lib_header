@@ -2,8 +2,8 @@ import React, {Component} from 'react';
 
 const labelOnesearch = 'search one search catalog';
 const labelUTLibraries = 'search libraries website';
-const placeholderOnesearch = ' Search books, articles, media, collections, etc...';
-const placeholderUTLibraries = ' Search hours, services, news, etc...';
+const placeholderOnesearch = ' Search books, articles, and more...';
+const placeholderUTLibraries = ' Search hours, services, and more...';
 
 export class Search extends Component {
 
