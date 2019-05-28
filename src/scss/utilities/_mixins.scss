@@ -126,21 +126,6 @@
   }
 }
 
-@keyframes blink {
-  0% {
-    opacity: 1.0;
-  }
-  25% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 1.0;
-  }
-  100% {
-    opacity: 1.0;
-  }
-}
-
 @mixin gradient-vertical($start, $start-percent, $end, $end-percent) {
   background: -moz-linear-gradient(top, $start $start-percent, $end $end-percent);
   background: -webkit-gradient(linear, top, bottom, color-stop($start-percent, $start), color-stop($end-percent, $end));

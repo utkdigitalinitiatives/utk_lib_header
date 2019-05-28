@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {SearchForm} from "./SearchForm";
 
 const labelOnesearch = 'search one search catalog';
 const labelUTLibraries = 'search libraries website';
@@ -109,24 +110,10 @@ export class Search extends Component {
                                 <span>lib.utk.edu</span>
                             </label>
                         </div>
-                        <form className="utk-search-wrapper--form-item">
-                            <span className="utk-search-wrapper--form-item--icon">
-                                <span className="icon-search"></span>
-                            </span>
-                            <input id="utk-search-input"
-                                   ref={(searchFocus) => this.utkSearchField = searchFocus}
-                                   placeholder={searchPlaceholder}
-                                   aria-label={searchLabel}/>
-                            <input id="utk-search-method"
-                                   type="hidden"
-                                   value={searchOption}
-                                   aria-label={searchOption}/>
-                            <button id="utk-search-submit"
-                                    type="button"
-                                    aria-label="Submit search">
-                                Submit
-                            </button>
-                        </form>
+                        <SearchForm inputRef={(searchFocus) => this.utkSearchField = searchFocus}
+                                    placeholder={searchPlaceholder}
+                                    label={searchLabel}
+                                    option={searchOption} />
                     </div>
                 </div>
             </div>

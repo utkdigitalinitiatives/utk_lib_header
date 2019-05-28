@@ -9,10 +9,8 @@ import {Menu} from "./components/Menu";
 import {Search} from "./components/Search";
 
 /* assets */
-import './css/utk-lib-header.css';
 import primary_logo from './media/ut-knoxville.svg';
 import square_logo from './media/ut-square.svg';
-import {Locations} from "./components/Locations";
 
 /* header component */
 class Header extends Component {
@@ -64,8 +62,6 @@ class Header extends Component {
         e.preventDefault();
         this.setState({showSearch: true}, () => {
             document.addEventListener('click', this.closeSearch);
-            this.refs.search.utkSearchField.focus();
-            this.refs.search.utkSearchField.value = '';
             document.body.classList.add('utk-search-open');
         });
         this.setState({showResources: false}, () => {
