@@ -61,7 +61,6 @@ class Header extends Component {
         e.stopPropagation();
         e.preventDefault();
         this.setState({showSearch: true}, () => {
-            document.addEventListener('click', this.closeSearch);
             document.body.classList.add('utk-search-open');
         });
         this.setState({showResources: false}, () => {
@@ -81,7 +80,6 @@ class Header extends Component {
         let isSearch = findIndex(e.path, {'className': 'utk-search-wrapper'});
         if (isSearch === -1) {
             this.setState({showSearch: false}, () => {
-                document.removeEventListener('click', this.closeSearch);
                 document.body.classList.remove('utk-search-open');
             });
         }
@@ -153,6 +151,12 @@ class Header extends Component {
             this.setState({shortcutLogo: false});
         }
     }, 5);
+
+    handleSubmit = (event) => {
+        console.log(event)
+        // event.preventDefault();
+        // this.setState({ companyName: '' });
+    };
 
     render() {
 

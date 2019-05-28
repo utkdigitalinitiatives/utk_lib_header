@@ -1,33 +1,32 @@
 import React, {Component} from 'react';
 
+const searchEndpoint = "https://utklibrary.test/search/submit?go=1"
+
 export class SearchForm extends Component {
 
     constructor (props) {
         super(props);
     }
 
-    handleSubmit = (event) => {
-        console.log(event)
-        // event.preventDefault();
-        // this.setState({ companyName: '' });
-    };
-
     render () {
         const {inputRef, placeholder, label, option} = this.props
 
         return (
             <form className="utk-search-wrapper--form-item"
-                  onSubmit={this.handleSubmit.bind(this)}>
+                  method="post"
+                  action={searchEndpoint}>
                 <span className="utk-search-wrapper--form-item--icon">
                     <span className="icon-search"></span>
                 </span>
                 <input id="utk-search-input"
                        type="text"
+                       name="value"
                        ref={inputRef}
                        placeholder={placeholder}
                        aria-label={label}/>
                 <input id="utk-search-method"
                        type="hidden"
+                       name="method"
                        value={option}
                        aria-label={option}/>
                 <button id="utk-search-submit"
