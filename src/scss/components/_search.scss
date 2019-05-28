@@ -107,7 +107,6 @@ body.utk-search-open {
 
     &:focus-within {
       .utk-search-wrapper--form-item--icon > span {
-        color: $globe;
         font-size: $type-2;
         transition: $transition-all;
       }
@@ -133,7 +132,7 @@ body.utk-search-open {
     height: $golden-ratio-4;
     border-radius: $golden-ratio-3;
     font-size: $type-2;
-    font-weight: 400;
+    font-weight: 700;
     background-color: $white;
     padding: 0 $golden-ratio-2 0 $golden-ratio-4;
     margin: 15px 0 0;
@@ -167,13 +166,12 @@ body.utk-search-open {
   }
 
   button#utk-search-submit {
-    background-color: $globe;
+    background-color: $white;
     font-family: $sans;
-    text-transform: uppercase;
-    font-size: $type-2;
+    font-size: $type-1;
     font-weight: 700;
     padding: 0 18px;
-    color: $white;
+    color: $smokey;
     position: absolute;
     right: 0;
     top: 15px;

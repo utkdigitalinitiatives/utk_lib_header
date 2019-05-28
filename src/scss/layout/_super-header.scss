@@ -72,7 +72,7 @@ body.utk-menu-open .utk-header-super {
       a:visited {
         height: $golden-ratio-4;
         line-height: $golden-ratio-4;
-        padding: 0 $golden-ratio-2 0 0;
+        padding: 0 calc(#{$golden-ratio-2} / 2) 0;
         font-size: $type-1;
         font-weight: 400;
         display: block;
@@ -102,6 +102,10 @@ body.utk-menu-open .utk-header-super {
             opacity: 1;
           }
         }
+      }
+
+      &:last-child > a {
+        margin-right: calc(#{$golden-ratio-2} / 2);
       }
     }
   }

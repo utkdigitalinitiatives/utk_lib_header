@@ -935,7 +935,7 @@ body.utk-menu-open .utk-header-super {
       .utk-header-super--menu > li a:visited {
         height: 47px;
         line-height: 47px;
-        padding: 0 18px 0 0;
+        padding: 0 calc(18px / 2) 0;
         font-size: 13px;
         font-weight: 400;
         display: block;
@@ -963,6 +963,8 @@ body.utk-menu-open .utk-header-super {
           .utk-header-super--menu > li a:visited:hover::before,
           .utk-header-super--menu > li a:visited:focus::before {
             opacity: 1; }
+      .utk-header-super--menu > li:last-child > a {
+        margin-right: calc(18px / 2); }
   .utk-header-super .utk-header-super--menu--options .utk-header-actions--resources .icon-menu,
   .utk-header-super .utk-header-super--menu--options .utk-header-actions--resources .icon-cancel {
     margin-top: 15px;
@@ -2539,7 +2541,6 @@ body.utk-search-open .utk-header-search {
         opacity: 0;
         color: #a7a9ac; }
     .utk-search-wrapper--form-item:focus-within .utk-search-wrapper--form-item--icon > span {
-      color: #006c93;
       font-size: 15px;
       transition: all 290ms ease-in-out; }
     @media (max-width: 767px) {
@@ -2553,7 +2554,7 @@ body.utk-search-open .utk-header-search {
     height: 47px;
     border-radius: 29px;
     font-size: 15px;
-    font-weight: 400;
+    font-weight: 700;
     background-color: #fff;
     padding: 0 18px 0 47px;
     margin: 15px 0 0;
@@ -2581,13 +2582,12 @@ body.utk-search-open .utk-header-search {
       .utk-search-wrapper input#utk-search-input:focus::placeholder {
         color: #a7a9ac; }
   .utk-search-wrapper button#utk-search-submit {
-    background-color: #006c93;
+    background-color: #fff;
     font-family: "Gotham SSm 2r", "Gotham SSm A", "Gotham SSm B", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    text-transform: uppercase;
-    font-size: 15px;
+    font-size: 13px;
     font-weight: 700;
     padding: 0 18px;
-    color: #fff;
+    color: #58595b;
     position: absolute;
     right: 0;
     top: 15px;
