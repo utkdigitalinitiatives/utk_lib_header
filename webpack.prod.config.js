@@ -59,13 +59,17 @@ module.exports = {
                 ]
             },
             {
-                test: /\.(svg|png|gif|jpg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+                test: /\.(png|gif|jpg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
                 include: path.resolve(__dirname, 'src/media'),
                 use: [
                     {
                         loader: 'file-loader'
                     }
                 ]
+            },
+            {
+                test: /\.svg$/,
+                loader: 'svg-inline-loader'
             }
         ]
     },
