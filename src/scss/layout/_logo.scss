@@ -24,6 +24,18 @@
       transform: scale(0);
       opacity: 1;
     }
+
+    &--orange {
+      fill: $orange;
+    }
+
+    &--white {
+      fill: $white;
+    }
+
+    &--smokey {
+      fill: $smokey;
+    }
   }
 
   .utk-logo-square {
