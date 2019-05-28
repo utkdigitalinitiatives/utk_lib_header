@@ -3,8 +3,8 @@ import {SearchForm} from "./SearchForm";
 
 const labelOnesearch = 'search one search catalog';
 const labelUTLibraries = 'search libraries website';
-const placeholderOnesearch = ' Search books, articles, and more...';
-const placeholderUTLibraries = ' Search hours, services, and more...';
+const placeholderOnesearch = ' Search catalog for books and more...';
+const placeholderUTLibraries = ' Find hours, services, and more...';
 
 export class Search extends Component {
 
