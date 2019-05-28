@@ -7,7 +7,7 @@ body.utk-search-open .utk-header-super {
   @include respond(xs, sm) {
     display: none;
     position: relative !important;
-    display: none;
+    transition: $transition-all;
     width: 100%;
     overflow: scroll !important;
     background-color: $gray-1 !important;
