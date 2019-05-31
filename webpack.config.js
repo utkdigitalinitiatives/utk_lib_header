@@ -1,3 +1,4 @@
+require("@babel/polyfill");
 const path = require('path');
 const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
@@ -6,13 +7,11 @@ const HtmlWebPackPlugin = require("html-webpack-plugin");
 module.exports = {
     context: path.resolve(__dirname, 'src'),
     externals: {
-        // Use external version of React
         "react": "React",
         "react-dom": "ReactDOM"
     },
     entry: [
         './index.js'
-        // the entry point of our app
     ],
     output: {
         filename: 'header.js',

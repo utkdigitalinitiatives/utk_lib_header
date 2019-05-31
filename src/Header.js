@@ -141,6 +141,8 @@ class Header extends Component {
 
     render() {
 
+        console.log(0);
+
         const {showResources, showSearch, showHelp} = this.state;
 
         let resourcesClass = '';
