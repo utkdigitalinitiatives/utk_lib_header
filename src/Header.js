@@ -7,6 +7,7 @@ import findIndex from "lodash/findIndex"
 /* components */
 import {Menu} from "./components/Menu";
 import {Search} from "./components/Search";
+import {Skip} from "./components/Skip";
 
 /* header component */
 class Header extends Component {
@@ -151,7 +152,7 @@ class Header extends Component {
         }
 
         return (
-            <div>
+            <React.Fragment>
                 <div id="utk-header-watch"></div>
                 <div id="utk-header-trigger"></div>
                 <header className={`utk-header`}>
@@ -159,7 +160,7 @@ class Header extends Component {
                         <div className="container">
                             <div className="utk-logo-flex">
                                 <div id="utk-logo" className="utk-logo-wrapper">
-                                    <a href="https://www.utk.edu" tabIndex="1">
+                                    <a href="https://www.utk.edu">
                                         <svg xmlns="http://www.w3.org/2000/svg"
                                              viewBox="0 0 216 48.24"
                                              className="utk-logo utk-logo-primary">
@@ -185,36 +186,33 @@ class Header extends Component {
                                                   d="M41.941,6.054V18.165H37.456c0-2.231-2.208-4.037-4.934-4.037a5.088,5.088,0,0,0-4.485,2.355V31.62a5.721,5.721,0,0,0,5.592,5.83h.014v4.486H14.357V37.45h.013a5.721,5.721,0,0,0,5.593-5.83V16.483a5.089,5.089,0,0,0-4.485-2.355c-2.725,0-4.934,1.806-4.934,4.037H6.058V6.054Z"/>
                                         </svg>
                                     </a>
-                                    <a href="https://www.lib.utk.edu" className="utk-logo-unit"
-                                       tabIndex="1">Libraries</a>
+                                    <a href="https://www.lib.utk.edu" className="utk-logo-unit">Libraries</a>
                                 </div>
                             </div>
                             <div className="utk-header-actions">
                                 <div className="utk-header-actions--item utk-header-actions--home">
-                                    <a href="https://www.lib.utk.edu" tabIndex="3">lib.utk.edu</a>
+                                    <a href="https://www.lib.utk.edu">lib.utk.edu</a>
                                 </div>
                                 <div className="utk-header-actions--item utk-header-actions--search">
                                     <a href="#search" onClick={this.toggleSearch}
-                                       className={`utk-search-trigger utk-search-expand`}
-                                       tabIndex="4">
+                                       className={`utk-search-trigger utk-search-expand`}>
                                         <span className="icon-search"></span>
                                         <em>Search</em>
                                     </a>
                                     <a href="#search" onClick={this.closeSearch}
-                                       className={`utk-search-trigger utk-search-collapse`}
-                                       tabIndex="4">
+                                       className={`utk-search-trigger utk-search-collapse`}>
                                         <span className="icon-cancel"></span>
                                         <em>Search</em>
                                     </a>
                                 </div>
                                 <div className="utk-header-actions--item utk-header-actions--resources">
                                     <a href="#menuopen" onClick={this.toggleResources}
-                                       className={`utk-menu-trigger utk-header-expand`} tabIndex="5">
+                                       className={`utk-menu-trigger utk-header-expand`}>
                                         <span className="icon-menu"></span>
                                         <em>Menu</em>
                                     </a>
                                     <a href="#menuclose" onClick={this.closeResourcesMenu}
-                                       className={`utk-menu-trigger utk-header-collapse`} tabIndex="5">
+                                       className={`utk-menu-trigger utk-header-collapse`}>
                                         <span className="icon-cancel"></span>
                                         <em>Menu</em>
                                     </a>
@@ -225,16 +223,11 @@ class Header extends Component {
                     <div className="utk-header-super">
                         <div className="container">
                             <ul className="utk-header-super--menu">
-                                <li><a href="https://www.lib.utk.edu/hours/"
-                                       tabIndex="2">Hours</a></li>
-                                <li><a href="https://libguides.utk.edu/databases"
-                                       tabIndex="2">Articles &amp; Databases</a></li>
-                                <li><a href="https://www.lib.utk.edu/about/"
-                                       tabIndex="2">A-Z</a></li>
-                                <li><a href="https://www.lib.utk.edu/about/"
-                                       tabIndex="2">About</a></li>
-                                <li><a href="https://www.lib.utk.edu/about/"
-                                       tabIndex="2">Give</a></li>
+                                <li><a href="https://www.lib.utk.edu/hours/">Hours</a></li>
+                                <li><a href="https://libguides.utk.edu/databases">Articles &amp; Databases</a></li>
+                                <li><a href="https://www.lib.utk.edu/about/">A-Z</a></li>
+                                <li><a href="https://www.lib.utk.edu/about/">About</a></li>
+                                <li><a href="https://www.lib.utk.edu/about/">Give</a></li>
                             </ul>
                         </div>
                     </div>
@@ -243,7 +236,7 @@ class Header extends Component {
                 </header>
                 <div className="utk-body-overlay"></div>
                 <div id="utk-custom-subheader"></div>
-            </div>
+            </React.Fragment>
         );
     }
 }
