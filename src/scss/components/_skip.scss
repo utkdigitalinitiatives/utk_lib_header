@@ -28,6 +28,8 @@
 
     @include respond(xs, sm) {
       flex-direction: column;
+      padding-top: $golden-ratio-1;
+      padding-bottom: $golden-ratio-1;
     }
 
     > li {
