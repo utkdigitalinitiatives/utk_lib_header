@@ -4,7 +4,7 @@
   z-index: 999;
   position: fixed;
   display: none;
-  padding: $golden-ratio-1 0 $golden-ratio-4;
+  padding: 0 0 $golden-ratio-4;
   box-shadow: $box-shadow-float;
 
   @include respond(xs, sm, md, lg, xl) {

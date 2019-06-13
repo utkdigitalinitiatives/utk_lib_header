@@ -187,7 +187,36 @@ export class Menu extends Component {
 
         // if (status === 'default') {
             return (
+                <React.Fragment>
                 <div className={`utk-header-resources ${active} ${helpClass} ${depthClass}`}>
+                    <div className="utk-header-super">
+                        <div className="container">
+                            <ul className="utk-header-super--menu">
+                                <li><span className="icon-right-big"></span></li>
+                                <li><a href="https://www.lib.utk.edu/hours/">Reserve a Room</a></li>
+                                <li><a href="https://libguides.utk.edu/databases">Request Items</a></li>
+                                <li><a href="https://www.lib.utk.edu/about/">Talk with a Librarian</a></li>
+                                <li><a href="https://www.lib.utk.edu/about/">Disability Services</a></li>
+                            </ul>
+                            <div className='utk-menu-options'>
+                                <div className='utk-menu-help'>
+                                    {/*<a className="utk-menu-help--item utk-menu-help--help-me" onClick={this.enableHelp}>*/}
+                                        {/*<h4>Help</h4>*/}
+                                        {/*<div className="utk-menu-help--item--icon">*/}
+                                            {/*<span className="icon-shuffle"></span>*/}
+                                        {/*</div>*/}
+                                    {/*</a>*/}
+                                    <a className="utk-menu-help--item utk-menu-help--give">
+                                        <h4>Give</h4>
+                                        <div className="utk-menu-help--item--icon">
+                                            <span className="icon-heart"></span>
+                                        </div>
+                                    </a>
+                                    <Chat libchat={Globals.libChat} />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <div className="container">
                         <div className="utk-resources-menu">
                             {menuColumns}
@@ -195,26 +224,16 @@ export class Menu extends Component {
                         </div>
                         <div className="utk-resources-contact">
                             <Hours layout={this.setLayout()} expanded={this.props.expanded}/>
-                            <div className='utk-menu-options'>
-                                <div className='utk-menu-help'>
-                                    <a className="utk-menu-help--item utk-menu-help--help-me" onClick={this.enableHelp}>
-                                        <h4>Help</h4>
-                                        <div className="utk-menu-help--item--icon">
-                                            <span className="icon-shuffle"></span>
-                                        </div>
-                                    </a>
-                                    <Chat libchat={Globals.libChat} />
-                                </div>
-                            </div>
                         </div>
-                        <Help activeHelp={this.state.activeHelp} closeHelp={() => {
-                            this.closeHelp();
-                        }} />
+                        {/*<Help activeHelp={this.state.activeHelp} closeHelp={() => {*/}
+                            {/*this.closeHelp();*/}
+                        {/*}} />*/}
                         <a className="utk-resources-close" data-event="option-resources-close">
                             <span className="icon-cancel" data-event="option-resources-close"></span>
                         </a>
                     </div>
                 </div>
+                </React.Fragment>
             )
         // } else if (status === 'map') {
         //     return (

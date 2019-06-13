@@ -96,13 +96,7 @@ body.utk-menu-open,
 body.utk-search-open,
 body.utk-skip-open {
 
-  .utk-header-super {
-    height: 47px !important;
-  }
-
   .utk-header-main {
-    margin-top: 47px !important;
-
     @include respond(xs, sm) {
       margin-top: 0 !important;
     }

@@ -220,17 +220,6 @@ class Header extends Component {
                             </div>
                         </div>
                     </div>
-                    <div className="utk-header-super">
-                        <div className="container">
-                            <ul className="utk-header-super--menu">
-                                <li><a href="https://www.lib.utk.edu/hours/">Hours</a></li>
-                                <li><a href="https://libguides.utk.edu/databases">Articles &amp; Databases</a></li>
-                                <li><a href="https://www.lib.utk.edu/about/">A-Z</a></li>
-                                <li><a href="https://www.lib.utk.edu/about/">About</a></li>
-                                <li><a href="https://www.lib.utk.edu/about/">Give</a></li>
-                            </ul>
-                        </div>
-                    </div>
                     <Menu expanded={showResources} active={resourcesClass} helpExpand={showHelp}/>
                     <Search showSearch={showSearch} ref="search"/>
                 </header>

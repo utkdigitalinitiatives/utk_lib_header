@@ -1,19 +1,22 @@
-body.utk-menu-open .utk-header-super,
-body.utk-search-open .utk-header-super {
-  height: auto !important;
-}
-
 .utk-header-super {
+  width: 100%;
+  box-shadow: inset $box-shadow;
+  background-color: $gray-0;
+  padding: $golden-ratio-2 0;
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+  }
+
   @include respond(xs, sm) {
     display: none;
     position: relative !important;
     transition: $transition-all;
     width: 100%;
     overflow: scroll !important;
-    background-color: $gray-1 !important;
 
     &--menu {
-      float: none !important;
       width: 100%;
 
       a,
@@ -34,17 +37,14 @@ body.utk-search-open .utk-header-super {
 
   &--url {
     position: absolute;
-    left: -2000px;
     transition: $transition-all;
   }
 
   &--menu {
-    float: right;
     margin: 0;
     padding: 0;
     display: flex;
     position: relative;
-    margin-right: -$golden-ratio-1;
 
     &::before {
       height: $golden-ratio-4;
@@ -69,15 +69,21 @@ body.utk-search-open .utk-header-super {
         display: flex;
       }
 
+      > span {
+        color: $rock;
+        line-height: $golden-ratio-4;
+        margin-right: $golden-ratio-2;
+      }
+
       a,
       a:visited {
         height: $golden-ratio-4;
         line-height: $golden-ratio-4;
-        padding: 0 calc(#{$golden-ratio-2} / 2) 0;
-        font-size: $type-1;
-        font-weight: 400;
+        margin-right: $golden-ratio-3;
+        font-size: $type-2;
+        font-weight: 700;
         display: block;
-        color: $smokey !important;
+        color: $globe !important;
         text-decoration: none !important;
         position: relative;
 

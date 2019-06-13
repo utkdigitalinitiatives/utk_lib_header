@@ -16,8 +16,7 @@
     width: 100%;
     top: 0;
     z-index: 97;
-    transition: $transition-all;
-    margin-top: $golden-ratio-4;
+    transition: $transition-all-fast;
     position: relative;
 
     @include respond(sm) {
@@ -33,16 +32,6 @@
       display: flex;
       justify-content: space-between;
     }
-  }
-  .utk-header-super {
-    width: 100%;
-    background-color: $gray-1;
-    height: $golden-ratio-4;
-    position: absolute;
-    z-index: 96;
-    top: 0px;
-    overflow: hidden;
-    transition: $transition-all;
   }
 }
 
