@@ -6,14 +6,12 @@
   margin-top: calc(-63px / 2);
 
   .utk-logo {
-    padding: 47px;
+    margin: 46px 0 0;
     height: 47px;
     opacity: 1;
     box-sizing: content-box;
     position: relative;
-    background-color: $white;
     top: 0;
-    box-shadow: $box-shadow;
     transition: $transition-all;
 
     @include respond(sm) {
@@ -44,7 +42,6 @@
     box-shadow: none;
     position: absolute;
     left: -2000px;
-    top: 46px;
 
     @include respond(xs) {
       width: 30px;
@@ -68,16 +65,18 @@
   a.utk-logo-unit:hover,
   a.utk-logo-unit:focus {
     position: absolute;
-    top: calc(63px / 2);
+    display: block;
+    top: calc(60px / 2);
     height: $golden-ratio-5;
     line-height: $golden-ratio-5;
-    font-size: $type-5;
-    font-weight: 400;
+    font-size: $type-4;
+    font-weight: 700;
     padding: 3px $golden-ratio-3 0;
-    left: 303px;
+    left: 100%;
     color: $smokey !important;
     letter-spacing: -0.03em;
     transition: $transition-all;
+    white-space: nowrap;
 
     @include respond(xs) {
       left: 30px;

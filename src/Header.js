@@ -186,7 +186,7 @@ class Header extends Component {
                                                   d="M41.941,6.054V18.165H37.456c0-2.231-2.208-4.037-4.934-4.037a5.088,5.088,0,0,0-4.485,2.355V31.62a5.721,5.721,0,0,0,5.592,5.83h.014v4.486H14.357V37.45h.013a5.721,5.721,0,0,0,5.593-5.83V16.483a5.089,5.089,0,0,0-4.485-2.355c-2.725,0-4.934,1.806-4.934,4.037H6.058V6.054Z"/>
                                         </svg>
                                     </a>
-                                    <a href="https://www.lib.utk.edu" className="utk-logo-unit">Libraries</a>
+                                    <a href="https://www.lib.utk.edu" className="utk-logo-unit">University Libraries</a>
                                 </div>
                             </div>
                             <div className="utk-header-actions">
