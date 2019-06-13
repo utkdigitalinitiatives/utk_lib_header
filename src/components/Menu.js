@@ -193,10 +193,11 @@ export class Menu extends Component {
                         <div className="container">
                             <ul className="utk-header-super--menu">
                                 <li><span className="icon-right-big"></span></li>
+                                <li><a href="https://www.lib.utk.edu/hours/">Hours</a></li>
                                 <li><a href="https://www.lib.utk.edu/hours/">Reserve a Room</a></li>
                                 <li><a href="https://libguides.utk.edu/databases">Request Items</a></li>
                                 <li><a href="https://www.lib.utk.edu/about/">Talk with a Librarian</a></li>
-                                <li><a href="https://www.lib.utk.edu/about/">Disability Services</a></li>
+                                <li><a href="https://www.lib.utk.edu/about/">A-Z</a></li>
                             </ul>
                             <div className='utk-menu-options'>
                                 <div className='utk-menu-help'>
