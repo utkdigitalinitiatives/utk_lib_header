@@ -207,12 +207,12 @@ export class Menu extends Component {
                                             {/*<span className="icon-shuffle"></span>*/}
                                         {/*</div>*/}
                                     {/*</a>*/}
-                                    <a className="utk-menu-help--item utk-menu-help--give">
-                                        <h4>Give</h4>
-                                        <div className="utk-menu-help--item--icon">
-                                            <span className="icon-heart"></span>
-                                        </div>
-                                    </a>
+                                    {/*<a className="utk-menu-help--item utk-menu-help--give">*/}
+                                        {/*<h4>Give</h4>*/}
+                                        {/*<div className="utk-menu-help--item--icon">*/}
+                                            {/*<span className="icon-heart"></span>*/}
+                                        {/*</div>*/}
+                                    {/*</a>*/}
                                     <Chat libchat={Globals.libChat} />
                                 </div>
                             </div>
