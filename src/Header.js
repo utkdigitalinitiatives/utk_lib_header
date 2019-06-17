@@ -191,7 +191,7 @@ class Header extends Component {
                             </div>
                             <div className="utk-header-actions">
                                 <div className="utk-header-actions--item utk-header-actions--home">
-                                    <a href="https://www.lib.utk.edu">lib.utk.edu</a>
+                                    <a href="https://www.lib.utk.edu">Libraries Home</a>
                                 </div>
                                 <div className="utk-header-actions--item utk-header-actions--search">
                                     <a href="#search" onClick={this.toggleSearch}

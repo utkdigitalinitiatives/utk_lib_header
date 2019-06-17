@@ -1,20 +1,19 @@
 .utk-skip {
-  background-color: $smokey;
-  border-top: 6px solid $orange;
+  background-color: $sunsphere;
   width: 100%;
   margin: 0;
   list-style: none;
   position: fixed;
   left: -5000px;
   z-index: 99998;
-  min-height: 52px;
+  min-height: 47px;
   display: flex;
   align-items: center;
   align-content: flex-end;
-  top: 0;
+  top: 50px;
 
   &:focus-within {
-    top: 0;
+    top: 82px;
     left: auto;
   }
 ;
@@ -34,6 +33,7 @@
 
     > li {
       font-size: $type-2;
+      font-weight: 700;
       list-style: none;
       margin-right:  $golden-ratio-3;
 
@@ -42,12 +42,12 @@
       }
 
       a, a:visited {
-        color: $gray-1;
+        color: $smokeyx;
         text-decoration: none;
 
         &:hover,
         &:focus {
-          color: $white;
+          color: $smokeyx;
         }
       }
     }

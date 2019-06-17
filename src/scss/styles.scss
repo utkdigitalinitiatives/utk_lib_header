@@ -5,6 +5,11 @@
 @import "global/bootstrap-vars";
 
 /*
+ * vendor
+ */
+@import "../vendor/typography/gotham.css";
+
+/*
  * utilities
  */
 @import "utilities/mixins";

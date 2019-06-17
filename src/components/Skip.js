@@ -39,6 +39,13 @@ class Skip extends Component {
                             Skip to Main Content
                         </a>
                     </li>
+                    <li>
+                        <a onFocus={this._onFocus.bind(this)}
+                           onBlur={this._onBlur.bind(this)}
+                           href='#'>
+                            Skip to the Accessibility Link
+                        </a>
+                    </li>
                 </ul>
             </React.Fragment>
         )
