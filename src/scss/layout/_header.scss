@@ -41,8 +41,8 @@
   width: auto;
   padding-top: 3px;
   height: $golden-ratio-5;
-  flex-shrink: 1;
   align-items: flex-end;
+  flex-shrink: 1;
 
   @include respond(xs, sm) {
     padding-top: 0;
