@@ -19,7 +19,7 @@
       font-weight: 700;
       text-transform: none;
       font-size: $type-3;
-      color: $smokeyx;
+      color: $smokey;
     }
   }
 
@@ -45,6 +45,10 @@
 
     &--col {
       width: 50%;
+
+      &:last-child {
+        padding-left: $golden-ratio-1;
+      }
     }
 
 
@@ -53,7 +57,7 @@
       margin: 0;
       padding: 0;
       width: auto;
-      margin-bottom: $golden-ratio-2;
+      margin-bottom: $golden-ratio-1;
 
       &:last-child {
         margin-bottom: 0;
@@ -75,6 +79,7 @@
           position: relative;
           background-color: $gray-1;
           z-index: 1;
+          flex-shrink: 0;
 
           img {
             filter: grayscale(1);
@@ -90,7 +95,7 @@
         }
 
         .utk-hours--listing--item--meta {
-          padding-left: $golden-ratio-2;
+          padding-left: $golden-ratio-1;
           flex-shrink: 1;
           flex-grow: 0;
           display: flex;
@@ -136,7 +141,7 @@
 
       &--child {
         padding-left: $golden-ratio-4;
-        margin-top: $golden-ratio-2;
+        margin-top: $golden-ratio-1;
         position: relative;
         z-index: 0;
 

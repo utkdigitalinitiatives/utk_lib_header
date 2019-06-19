@@ -96,7 +96,7 @@ export class Hours extends Component {
                                         thumbnail={hodges}
                                     />
                                 </div>
-                                <div className="utk-hours--listing-col">
+                                <div className="utk-hours--listing--col">
                                     <HoursLocation
                                         url="https://lib.utk.edu/agvet"
                                         data={locations[225]}
@@ -147,9 +147,11 @@ export class Hours extends Component {
         else
             return (
                 <div className="utk-hours">
-                    <h4>Libraries &amp; Locations</h4>
+                    <div className="utk-hours-header">
+                        <h3>Libraries &amp; Locations</h3>
+                    </div>
                     <ul className="utk-hours--listing">
-                        <h5 className="utk-hours--loading spinner">Loading...</h5>
+                        <h5 className="utk-hours--loading spinner">Loading today's hours...</h5>
                     </ul>
                 </div>
             )

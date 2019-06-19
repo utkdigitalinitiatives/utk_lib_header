@@ -73,7 +73,7 @@
     }
 
     .utk-resources-menu--section {
-      margin-top: $golden-ratio-2;
+      margin-top: $golden-ratio-3;
       margin-bottom: $golden-ratio-2;
 
       @include respond(xs) {
@@ -88,7 +88,7 @@
         font-family: $sans;
         text-transform: none;
         font-size: $type-3;
-        color: $smokeyx;
+        color: $smokey;
 
         @include respond(md, sm, xs) {
           margin-top: 0;
@@ -133,7 +133,7 @@
   z-index: 1;
   height: auto;
   padding: 0;
-  margin-top: $golden-ratio-2;
+  margin-top: $golden-ratio-3;
 
   @include respond(xs) {
     margin-top: 0;
