@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {MenuColumns} from "./MenuColumns";
+import {MenuSingle} from "./MenuSingle";
 
-import {MenuSecondary} from "./MenuSecondary";
 import {Hours} from "./Hours";
 import {Help} from "./Help";
 import Globals from "./Globals";
@@ -131,7 +131,7 @@ export class Menu extends Component {
         const {active} = this.props;
         const {menuHeader, activeMenu, activeDepth, activeHelp, status} = this.state;
 
-        let menuColumns = {};
+        let menuColumns, menuHelp = {};
         let depthClass = 'utk-menu-depth--' + activeDepth;
 
         let helpClass = null;
@@ -152,14 +152,17 @@ export class Menu extends Component {
                 <div className={`utk-header-resources ${active} ${helpClass} ${depthClass}`}>
                     <div className="utk-header-super">
                         <div className="container">
-                            <ul className="utk-header-super--menu">
-                                <li><span className="icon-right-big"></span></li>
-                                <li><a href="https://www.lib.utk.edu/hours/">Hours</a></li>
-                                <li><a href="https://www.lib.utk.edu/hours/">Reserve a Room</a></li>
-                                <li><a href="https://libguides.utk.edu/databases">Request Items</a></li>
-                                <li><a href="https://www.lib.utk.edu/about/">Talk with a Librarian</a></li>
-                                <li><a href="https://www.lib.utk.edu/about/">A-Z</a></li>
-                            </ul>
+                            <MenuSingle title={null}
+                                        items={menuHeader.services_primary}
+                                        className="utk-resources-menu--services-primary" />
+                            {/*<ul className="utk-header-super--menu">*/}
+                                {/*<li><span className="icon-right-big"></span></li>*/}
+                                {/*<li><a href="https://www.lib.utk.edu/hours/">Hours</a></li>*/}
+                                {/*<li><a href="https://www.lib.utk.edu/hours/">Reserve a Room</a></li>*/}
+                                {/*<li><a href="https://libguides.utk.edu/databases">Request Items</a></li>*/}
+                                {/*<li><a href="https://www.lib.utk.edu/about/">Talk with a Librarian</a></li>*/}
+                                {/*<li><a href="https://www.lib.utk.edu/about/">A-Z</a></li>*/}
+                            {/*</ul>*/}
                             <div className='utk-menu-options'>
                                 <div className='utk-menu-help'>
                                     {/*<a className="utk-menu-help--item utk-menu-help--help-me" onClick={this.enableHelp}>*/}
@@ -185,11 +188,19 @@ export class Menu extends Component {
                                 {menuColumns}
                             </div>
                             <div className="utk-resources-menu--row">
-                                more...
+                                <MenuSingle title="Get Help"
+                                            items={menuHeader.help}
+                                            className="utk-resources-menu--help" />
+                                <MenuSingle title={null}
+                                            items={menuHeader.services_speciality}
+                                            className="utk-resources-menu--services-speciality" />
                             </div>
                         </div>
                         <div className="utk-resources-contact">
                             <Hours layout={this.setLayout()} expanded={this.props.expanded}/>
+                            <MenuSingle title="About University Libraries"
+                                        items={menuHeader.about}
+                                        className="utk-resources-menu--about" />
                         </div>
                         {/*<Help activeHelp={this.state.activeHelp} closeHelp={() => {*/}
                             {/*this.closeHelp();*/}
