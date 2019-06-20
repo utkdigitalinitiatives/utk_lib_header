@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import {MenuItemsSingle} from './MenuItemsSingle';
-import {MenuItems} from "./MenuItems";
 
 export class MenuSingle extends Component {
 

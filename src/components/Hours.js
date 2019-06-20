@@ -6,7 +6,7 @@ import hodges from '../media/hodges.jpg';
 import pendergrass from '../media/pendergrass.jpg';
 import devine from '../media/devine.jpg';
 import hoskins from '../media/hoskins.jpg';
-import {Locations} from "./Locations";
+// import {Locations} from "./Locations";
 
 const ENDPOINT = 'wp-json/libcal';
 const ROUTE = '/hours';
@@ -60,28 +60,28 @@ export class Hours extends Component {
         return(commons)
     }
 
-    toggleDefault = () => {
-        this.setState({layout: 'default'});
-    }
-
-    toggleMap = () => {
-        this.setState({layout: 'map'});
-    }
+    // toggleDefault = () => {
+    //     this.setState({layout: 'default'});
+    // }
+    //
+    // toggleMap = () => {
+    //     this.setState({layout: 'map'});
+    // }
 
     render() {
 
         const {locations} = this.state;
 
         if (Object.keys(locations).length !== 0)
-            if (this.state.layout === 'default')
+            // if (this.state.layout === 'default')
                 return (
                     <div>
                         <div className="utk-hours">
                             <div className="utk-hours-header">
                                 <h3>Libraries &amp; Locations</h3>
-                                <div className="utk-resources-toggle">
-                                    <a className="utk-resources-toggle--map" onClick={this.toggleMap}>Show on Map</a>
-                                </div>
+                                {/*<div className="utk-resources-toggle">*/}
+                                    {/*<a className="utk-resources-toggle--map" onClick={this.toggleMap}>Show on Map</a>*/}
+                                {/*</div>*/}
                             </div>
                             <ul className="utk-hours--listing">
                                 <div className="utk-hours--listing--col">
@@ -129,21 +129,21 @@ export class Hours extends Component {
                         </div>
                     </div>
                 )
-            else if (this.state.layout === 'map')
-                return (
-                    <div className="utk-hours utk-hours-map">
-                        <div className="container">
-                            <div className="utk-hours-header">
-                                <div className="utk-resources-toggle">
-                                    <a className="utk-resources-toggle--default" onClick={this.toggleDefault}>Close Map</a>
-                                </div>
-                            </div>
-                        </div>
-                        <Locations locations={locations} />
-                    </div>
-                )
-            else
-                return
+            // else if (this.state.layout === 'map')
+            //     return (
+            //         <div className="utk-hours utk-hours-map">
+            //             <div className="container">
+            //                 <div className="utk-hours-header">
+            //                     <div className="utk-resources-toggle">
+            //                         <a className="utk-resources-toggle--default" onClick={this.toggleDefault}>Close Map</a>
+            //                     </div>
+            //                 </div>
+            //             </div>
+            //             <Locations locations={locations} />
+            //         </div>
+            //     )
+            // else
+            //     return
         else
             return (
                 <div className="utk-hours">

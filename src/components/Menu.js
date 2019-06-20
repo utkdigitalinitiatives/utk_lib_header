@@ -3,10 +3,10 @@ import {MenuColumns} from "./MenuColumns";
 import {MenuSingle} from "./MenuSingle";
 
 import {Hours} from "./Hours";
-import {Help} from "./Help";
+// import {Help} from "./Help";
 import Globals from "./Globals";
 import {Chat} from "./Chat";
-import {Locations} from "./Locations";
+// import {Locations} from "./Locations";
 
 const ENDPOINT = 'assets/wp-json/libmenu';
 const ROUTE = '/header';
