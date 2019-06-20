@@ -76,11 +76,11 @@
   }
 
   &--services-speciality {
-    width: calc(67.777777% - #{$golden-ratio-4});
-    margin-right: $golden-ratio-4;
+    width: calc(67.777777% - #{$golden-ratio-3});
     border: 2px solid $gray-0;
     border-radius: $golden-ratio-0;
     padding: $golden-ratio-2 0 0 $golden-ratio-2;
+    margin-right: $golden-ratio-3;
 
     h3 {
       display: none;

@@ -1,5 +1,5 @@
 .utk-hours {
-  margin-bottom: $golden-ratio-2;
+  margin-bottom: $golden-ratio-3;
 
   &.utk-hours-map {
     position: absolute;
@@ -150,7 +150,7 @@
           left: 23px;
           top: 8px;
           content: '';
-          background-color: $gray-1;
+          background-color: $gray-0;
           height: 2px;
           width: 23px;
           position: absolute;
@@ -162,7 +162,7 @@
           left: 23px;
           top: -66px;
           content: '';
-          background-color: $gray-1;
+          background-color: $gray-0;
           height: $golden-ratio-5;
           width: 2px;
           position: absolute;
