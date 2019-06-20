@@ -1,6 +1,39 @@
 .utk-resources-menu {
   &--services-primary {
-    background-color: red;
+    display: flex;
+    align-items: center;
+
+    h3 {
+      display: none;
+    }
+
+    ul {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+
+      li {
+        padding: 0;
+        list-style: none;
+        font-size: $type-2;
+        font-weight: 700;
+        margin: 0 $golden-ratio-3 0 0;
+        display: flex;
+        align-items: center;
+
+        a,
+        a:visited {
+          color: $globe;
+        }
+
+        a:hover,
+        a:focus {
+          color: $leconte;
+        }
+      }
+    }
   }
 
   &--help {
@@ -15,6 +48,7 @@
       font-weight: 700;
       color: $smokey;
       margin: 0 0 $golden-ratio-0;
+      line-height: 1.47em;
     }
 
     ul {
@@ -42,14 +76,15 @@
   }
 
   &--services-speciality {
-    width: 67.777777%;
+    width: calc(67.777777% - #{$golden-ratio-4});
     margin-right: $golden-ratio-4;
     border: 2px solid $gray-0;
     border-radius: $golden-ratio-0;
-    padding: $golden-ratio-2;
+    padding: $golden-ratio-2 0 0 $golden-ratio-2;
 
     h3 {
       display: none;
+      line-height: 1.47em;
     }
 
     ul {
@@ -71,14 +106,14 @@
           color: $globe;
           padding-right: $golden-ratio-2;
           font-weight: 700;
+          line-height: 1.47em;
 
           span {
             display: block;
-            font-size: $type-1;
             font-weight: 400;
             color: $smokeyx !important;
             font-size: $type-1;
-            line-height: 1.47em;
+            margin-top: $golden-ratio-0;
           }
         }
 
@@ -91,6 +126,37 @@
   }
 
   &--about {
-    background-color: purple;
+    h3 {
+      font-size: $type-2;
+      font-weight: 700;
+      color: $smokey;
+      margin: 0 0 $golden-ratio-0;
+      line-height: 1.47em;
+    }
+
+    ul {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+
+      li {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        font-size: $type-1;
+        width: 50%;
+
+        a,
+        a:visited {
+          color: $globe;
+        }
+
+        a:hover,
+        a:focus {
+          color: $leconte;
+        }
+      }
+    }
   }
 }

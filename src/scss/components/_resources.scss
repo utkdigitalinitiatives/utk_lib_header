@@ -4,7 +4,7 @@
   z-index: 999;
   position: fixed;
   display: none;
-  padding: 0 0 $golden-ratio-4;
+  padding: 0 0 $golden-ratio-2;
   box-shadow: $box-shadow-float;
 
   @include respond(xs, sm, md, lg, xl) {
@@ -45,6 +45,7 @@
   flex-grow: 1;
   flex-direction: column;
   padding: 0;
+  width: $gr-long;
 
   &--row {
     display: flex;
@@ -83,8 +84,8 @@
     }
 
     .utk-resources-menu--section {
-      margin-top: $golden-ratio-3;
-      margin-bottom: $golden-ratio-2;
+      margin-top: $golden-ratio-2;
+      margin-bottom: $golden-ratio-1;
 
       @include respond(xs) {
         margin-top: 0;
@@ -143,7 +144,7 @@
   z-index: 1;
   height: auto;
   padding: 0;
-  margin-top: $golden-ratio-3;
+  margin-top: $golden-ratio-2;
 
   @include respond(xs) {
     margin-top: 0;
