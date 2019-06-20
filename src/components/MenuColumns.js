@@ -23,14 +23,14 @@ export class MenuColumns extends Component {
 
         const {items} = this.props || {};
 
-        if (items) {
+        if (items.wpse_children) {
 
-            const menuSection = Object.entries(items).map((section, index) => {
+            const menuSection = Object.entries(items.wpse_children).map((section, index) => {
 
-                let {id, title, dropdown} = section[1];
+                let {id, title, wpse_children} = section[1];
                 let dropdownItems = '';
-                if (dropdown) {
-                    dropdownItems = Object.entries(dropdown).map((link, index) => {
+                if (wpse_children) {
+                    dropdownItems = Object.entries(wpse_children).map((link, index) => {
                         let {title, url} = link[1];
                         return (
                             <a key={index} href={url} tabIndex="4">{title}</a>

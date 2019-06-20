@@ -9,7 +9,7 @@ import {Chat} from "./Chat";
 import {Locations} from "./Locations";
 
 const ENDPOINT = 'assets/wp-json/libmenu';
-const ROUTE = '/drawer';
+const ROUTE = '/header';
 
 
 export class Menu extends Component {
@@ -18,7 +18,13 @@ export class Menu extends Component {
         super(props);
 
         this.state = {
-            menuDrawer: [],
+            menuHeader : {
+                about : {},
+                drawer : {},
+                help : {},
+                services_primary : {},
+                services_speciality : {}
+            },
             activeMenu: 0,
             activeDepth: 0,
             activeHelp: 0
@@ -65,7 +71,7 @@ export class Menu extends Component {
             this.setState({activeHelp: 1});
         }
 
-        const sessionMenu = 'utk_lib_header_drawer';
+        const sessionMenu = 'utk_lib_header_menu';
 
         if (sessionStorage.getItem(sessionMenu) === null) {
 
@@ -79,7 +85,7 @@ export class Menu extends Component {
                 .then(data => {
 
                     sessionStorage.setItem(sessionMenu, JSON.stringify(data));
-                    this.setState({menuDrawer: data})
+                    this.setState({menuHeader: data})
 
                 })
                 .catch(err => console.error(this.props.url, err.toString()));
@@ -87,7 +93,7 @@ export class Menu extends Component {
         } else {
 
             const sessionData = sessionStorage.getItem(sessionMenu);
-            this.setState({menuDrawer: JSON.parse(sessionData)});
+            this.setState({menuHeader: JSON.parse(sessionData)});
 
         }
 
@@ -116,16 +122,6 @@ export class Menu extends Component {
         this.setState({activeHelp: 0});
     };
 
-    resetMenu = () => {
-        this.setState({activeMenu: 0});
-        this.setState({activeDepth: 0});
-        this.setState({activeHelp: 0});
-    };
-
-    enableHelp = () => {
-        this.setState({activeHelp: 1});
-    };
-
     closeHelp() {
         this.setState({activeHelp: 0});
     };
@@ -133,9 +129,9 @@ export class Menu extends Component {
     render() {
 
         const {active} = this.props;
-        const {menuDrawer, activeMenu, activeDepth, activeHelp, status} = this.state;
+        const {menuHeader, activeMenu, activeDepth, activeHelp, status} = this.state;
 
-        let menuColumns, menuSecondary = {};
+        let menuColumns = {};
         let depthClass = 'utk-menu-depth--' + activeDepth;
 
         let helpClass = null;
@@ -144,9 +140,9 @@ export class Menu extends Component {
             helpClass = 'utk-help-expand';
         }
 
-        menuColumns = Object.entries(menuDrawer).map((columns, index) => {
+        menuColumns = Object.entries(menuHeader.drawer).map((columns, index) => {
             return (
-                <MenuColumns key={index} items={columns[1].data} activeMenu={this.setMenu}/>
+                <MenuColumns key={index} items={columns[1]} activeMenu={this.setMenu}/>
             );
         });
 
@@ -216,8 +212,5 @@ export class Menu extends Component {
         //         </div>
         //     )
         // }
-
-
-
     }
 }

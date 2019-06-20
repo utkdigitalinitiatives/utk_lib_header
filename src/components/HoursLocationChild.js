@@ -38,8 +38,6 @@ export class HoursLocationChild extends Component {
 
     render() {
 
-        console.log(this.props.data);
-
         const {id, data, title, subtitle} = this.props;
         const {name, url} = this.props.data;
 
