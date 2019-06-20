@@ -239,6 +239,18 @@
       "css": "up-big",
       "code": 59411,
       "src": "fontawesome"
+    },
+    {
+      "uid": "17ebadd1e3f274ff0205601eef7b9cc4",
+      "css": "help-circled",
+      "code": 59412,
+      "src": "fontawesome"
+    },
+    {
+      "uid": "e82cedfa1d5f15b00c5a81c9bd731ea2",
+      "css": "info-circled",
+      "code": 59413,
+      "src": "fontawesome"
     }
   ]
 }

@@ -14,6 +14,25 @@
       flex-direction: row;
       flex-wrap: wrap;
 
+      &:before {
+        content: "\E812";
+        font-family: fontello;
+        font-style: normal;
+        speak: none;
+        text-decoration: inherit;
+        text-align: center;
+        font-variant: normal;
+        text-transform: none;
+        -webkit-font-smoothing: antialiased;
+        margin-right: $golden-ratio-3;
+        color: $rock;
+        font-size: 15px;
+        display: inline-flex;
+        align-content: center;
+        align-items: center;
+        margin-top: -2px;
+      }
+
       li {
         padding: 0;
         list-style: none;
@@ -49,6 +68,25 @@
       color: $smokey;
       margin: 0 0 $golden-ratio-0;
       line-height: 1.47em;
+      display: flex;
+      justify-content: space-between;
+
+      &:after {
+        content: "\E814";
+        font-family: fontello;
+        font-style: normal;
+        speak: none;
+        text-decoration: inherit;
+        text-align: center;
+        font-variant: normal;
+        text-transform: none;
+        -webkit-font-smoothing: antialiased;
+        color: $rock;
+        font-size: $type-4;
+        display: inline-flex;
+        align-content: center;
+        align-items: center;
+      }
     }
 
     ul {
@@ -126,6 +164,17 @@
   }
 
   &--about {
+    margin-left: calc(#{$golden-ratio-4 + $golden-ratio-1});
+
+    &:before {
+      display: block;
+      width: $golden-ratio-5;
+      height: $golden-ratio-0;
+      content: '';
+      background-color: $orange;
+      margin: 0 0 $golden-ratio-1;
+    }
+
     h3 {
       font-size: $type-2;
       font-weight: 700;

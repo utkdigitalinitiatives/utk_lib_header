@@ -19,6 +19,8 @@
 .icon-left-big:before { content: '\e811'; } /* '' */
 .icon-right-big:before { content: '\e812'; } /* '' */
 .icon-up-big:before { content: '\e813'; } /* '' */
+.icon-help-circled:before { content: '\e814'; } /* '' */
+.icon-info-circled:before { content: '\e815'; } /* '' */
 .icon-twitter:before { content: '\f099'; } /* '' */
 .icon-facebook:before { content: '\f09a'; } /* '' */
 .icon-rss:before { content: '\f09e'; } /* '' */
