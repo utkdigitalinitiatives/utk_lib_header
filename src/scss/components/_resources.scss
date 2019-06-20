@@ -19,7 +19,7 @@
     display: flex;
 
     @include respond(md, xs) {
-      flex-direction: column;
+      flex-direction: column-reverse;
     }
   }
 

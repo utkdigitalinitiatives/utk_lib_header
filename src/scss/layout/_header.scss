@@ -76,7 +76,8 @@
         text-transform: none;
       }
 
-      @media only screen and (max-width: 500px) {
+      //@media only screen and (max-width: 500px) {
+      @include respond(xs) {
         &.utk-header-actions--home {
           display: none;
         }

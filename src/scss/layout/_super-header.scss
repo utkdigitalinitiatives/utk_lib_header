@@ -10,11 +10,8 @@
   }
 
   @include respond(xs, sm) {
-    display: none;
     position: relative !important;
-    transition: $transition-all;
     width: 100%;
-    overflow: scroll !important;
 
     &--menu {
       width: 100%;

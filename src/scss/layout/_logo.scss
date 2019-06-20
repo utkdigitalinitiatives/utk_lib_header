@@ -19,7 +19,6 @@
     transition: $transition-all;
 
     @include respond(sm) {
-      margin-top: -100px;
       -webkit-transform: scale(0);
       -ms-transform: scale(0);
       transform: scale(0);
@@ -51,7 +50,6 @@
       width: 30px;
       height: 30px;
       left: 0;
-      margin-top: 0 !important;
       transform: scale(1) !important;
     }
 
@@ -59,7 +57,6 @@
       width: $golden-ratio-4;
       height: $golden-ratio-4;
       left: 0;
-      margin-top: 0 !important;
       transform: scale(1) !important;
     }
   }
@@ -84,7 +81,7 @@
 
     @include respond(xs) {
       left: 30px;
-      font-size: $type-4;
+      font-size: $type-3;
       height: 60px;
       line-height: 60px;
       padding: 3px 15px 0;
@@ -137,7 +134,6 @@ body.utk-skip-open {
       padding: 0;
 
       @include respond(xs, sm, md) {
-        margin-top: -100px;
         transform: scale(0);
         opacity: 1;
       }
@@ -179,7 +175,6 @@ body.utk-skip-open {
     border-bottom: 0px solid $white;
 
     .utk-logo {
-      margin-top: -100px;
       transform: scale(0);
       opacity: 1;
     }
@@ -238,7 +233,6 @@ body.utk-skip-open {
         border-bottom: 0px solid $white;
 
         .utk-logo {
-          margin-top: -100px;
           transform: scale(0);
           opacity: 1;
         }
