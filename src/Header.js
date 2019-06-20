@@ -224,7 +224,6 @@ class Header extends Component {
                     <Search showSearch={showSearch} ref="search"/>
                 </header>
                 <div className="utk-body-overlay"></div>
-                <div id="utk-custom-subheader"></div>
             </React.Fragment>
         );
     }
