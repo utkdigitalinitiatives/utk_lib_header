@@ -10,7 +10,8 @@ module.exports = {
     externals: {
         // Use external version of React
         "react": "React",
-        "react-dom": "ReactDOM"
+        "react-dom": "ReactDOM",
+        "lodash": "_"
     },
     entry: [
         './index.js'

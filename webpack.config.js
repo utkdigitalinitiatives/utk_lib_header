@@ -8,7 +8,8 @@ module.exports = {
     context: path.resolve(__dirname, 'src'),
     externals: {
         "react": "React",
-        "react-dom": "ReactDOM"
+        "react-dom": "ReactDOM",
+        "lodash": "_"
     },
     entry: [
         './index.js'
