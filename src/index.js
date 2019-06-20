@@ -1,5 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import 'whatwg-fetch';
+
 import Skip from './components/Skip';
 import Header from './Header';
 
