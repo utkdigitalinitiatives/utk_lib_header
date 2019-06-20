@@ -71,7 +71,7 @@
 
   &--col {
     display: block;
-    flex-grow: 1;
+    width: 33.333333%;
 
     @include respond(sm, xs) {
       width: 100%;
