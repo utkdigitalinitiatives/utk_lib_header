@@ -46,6 +46,13 @@ export class Hours extends Component {
 
     }
 
+    componentDidMount() {
+
+        if (this.props.expanded && !this.state.grab)
+            this.fetchLibCalHours()
+
+    }
+
     componentDidUpdate() {
 
         if (this.props.expanded && !this.state.grab)
