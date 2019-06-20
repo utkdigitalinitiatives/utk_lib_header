@@ -43,8 +43,18 @@
   width: auto;
   display: flex;
   flex-grow: 1;
-  flex-direction: row;
+  flex-direction: column;
   padding: 0;
+
+  &--row {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: $golden-ratio-2;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
 
   @include respond(md) {
     width: 100%;

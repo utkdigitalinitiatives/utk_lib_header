@@ -144,46 +144,11 @@ export class Menu extends Component {
             helpClass = 'utk-help-expand';
         }
 
-        if (activeMenu === 0 || window.matchMedia("(min-width: 992px)").matches) {
-            menuColumns = Object.entries(menuDrawer).map((columns, index) => {
-                return (
-                    <MenuColumns key={index} items={columns[1].data} activeMenu={this.setMenu}/>
-                );
-            });
-            menuSecondary = <div className="utk-secondary-menu"></div>;
-        } else {
-
-            let secondary = Object.entries(menuDrawer).map((columns, index) => {
-                return Object.entries(columns[1].data).map((secondary, index) => {
-                    if (secondary[1].id === activeMenu) {
-                        let {id, title, dropdown} = secondary[1];
-                        let dropdownItems = '';
-                        if (dropdown) {
-                            dropdownItems = Object.entries(dropdown).map((link, index) => {
-                                let {title, url} = link[1];
-                                return (
-                                    <a href={url} tabIndex="4">{title}</a>
-                                );
-                            });
-                        }
-                        return (
-                            <div className="utk-secondary-menu">
-                                <div className="utk-secondary-menu--options">
-                                    <a className="utk-menu-back" tabIndex="4" onClick={this.resetMenu}>
-                                        <span className="icon-left-open"></span>
-                                    </a>
-                                </div>
-                                <MenuSecondary key={index} menuId={id} title={title} dropdownItems={dropdownItems}/>
-                            </div>
-                        );
-                    }
-                    return null
-                });
-            });
-
-            menuColumns = <div></div>;
-            menuSecondary = secondary;
-        }
+        menuColumns = Object.entries(menuDrawer).map((columns, index) => {
+            return (
+                <MenuColumns key={index} items={columns[1].data} activeMenu={this.setMenu}/>
+            );
+        });
 
         // if (status === 'default') {
             return (
@@ -220,8 +185,12 @@ export class Menu extends Component {
                     </div>
                     <div className="container">
                         <div className="utk-resources-menu">
-                            {menuColumns}
-                            {menuSecondary}
+                            <div className="utk-resources-menu--row">
+                                {menuColumns}
+                            </div>
+                            <div className="utk-resources-menu--row">
+                                more...
+                            </div>
                         </div>
                         <div className="utk-resources-contact">
                             <Hours layout={this.setLayout()} expanded={this.props.expanded}/>
