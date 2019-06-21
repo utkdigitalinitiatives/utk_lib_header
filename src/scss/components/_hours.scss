@@ -225,7 +225,6 @@
   animation: spinner 1s linear infinite;
 }
 
-
 @include respond(xs, sm) {
   #utk-lib-header .utk-hours {
     margin-bottom: 0;
@@ -254,8 +253,17 @@
           margin-top: 0;
           margin-bottom: 0;
 
+          @include respond(xs) {
+            display: none;
+          }
+
           > a {
             min-width: auto;
+
+            .library-title {
+              font-weight: 700;
+              font-size: $type-2 !important;
+            }
           }
 
           &::before,
@@ -297,8 +305,8 @@
             padding-left: 0;
 
             .library-title {
-              font-size: 15px !important;
               white-space: nowrap;
+              line-height: 18px;
             }
 
             .library-subtitle {
