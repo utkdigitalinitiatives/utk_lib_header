@@ -79,16 +79,23 @@
     transition: $transition-all;
     white-space: nowrap;
 
+    @include respond(sm) {
+      padding: 3px $golden-ratio-2 0;
+      left: 47px;
+    }
+
     @include respond(xs) {
       left: 30px;
       font-size: $type-3;
       height: 60px;
       line-height: 60px;
-      padding: 3px 15px 0;
+      padding: 3px $golden-ratio-1 0;
     }
 
-    @include respond(sm) {
-      left: 36px;
+    @media only screen and (max-width: 365px) {
+      > span {
+        display: none;
+      }
     }
   }
 }
@@ -117,11 +124,11 @@ body.utk-skip-open {
 
     .utk-logo-unit {
       left: 47px !important;
-      padding-left: 18px !important;
+      padding-left: $golden-ratio-2 !important;
 
       @include respond(xs) {
         left: 30px !important;
-        padding-left: 15px !important;
+        padding-left: $golden-ratio-1 !important;
       }
     }
   }
@@ -156,7 +163,6 @@ body.utk-skip-open {
         top: 25px;
         left: 25px;
         display: block;
-
       }
     }
   }
