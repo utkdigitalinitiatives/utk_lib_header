@@ -166,6 +166,10 @@
   &--about {
     margin-left: calc(#{$golden-ratio-4 + $golden-ratio-1});
 
+    @include respond(xs, sm) {
+      display: none;
+    }
+
     &:before {
       display: block;
       width: $golden-ratio-5;

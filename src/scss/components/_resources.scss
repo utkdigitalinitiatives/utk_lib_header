@@ -5,23 +5,27 @@
   display: none;
   max-height: calc(100% - 82px);
   overflow: scroll;
+  padding: 0 0 $golden-ratio-2;
+  background-color: $white;
 
-  @include respond(xs) {
-    padding-bottom: $golden-ratio-5;
+  @include respond(md) {
+    max-height: calc(100% - 66px);
+  }
+
+  @include respond(xs, sm) {
+    height: calc(100% - 66px);
+    padding-bottom: $golden-ratio-6;
   }
 
   &--inner {
-    position: relative;
-    height: 100%;
-    padding: 0 0 $golden-ratio-2;
-    background-color: $white;
   }
 
   .utk-header-main-menu > .container {
     display: flex;
 
-    @include respond(md, xs) {
-      flex-direction: column-reverse;
+    @include respond(xs, sm, md) {
+      flex-wrap: wrap;
+      flex-direction: column;
     }
   }
 
@@ -59,17 +63,9 @@
     }
   }
 
-  @include respond(md) {
+  @include respond(xs, sm, md) {
     width: 100%;
     padding-bottom: $golden-ratio-3;
-  }
-
-  @include respond(sm, xs) {
-    display: block;
-  }
-
-  @include respond(xs) {
-    padding-bottom: $golden-ratio-2;
   }
 
   &--col {
@@ -150,21 +146,19 @@
   display: flex;
   flex-direction: column;
 
-  @include respond(xs) {
+  @include respond(xs, sm) {
+    background: $white;
     margin-top: 0;
-    padding: $golden-ratio-2 15px !important;
-    background-color: $gray-1;
-    border-top: 2px solid $gray-1;
-    margin: -15px;
-    width: calc(100% + 30px) !important;
-  }
-
-  @include respond(md, xs) {
-    width: 100%;
-    padding: 0;
     border-left: 0;
-    flex: 1;
-    max-width: 200%;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    width: calc(100%);
+    padding: 18px;
+    height: $golden-ratio-6;
+    box-shadow: $box-shadow;
+    position: fixed;
+    bottom: 0;
+    left: 0;
   }
 
   p {

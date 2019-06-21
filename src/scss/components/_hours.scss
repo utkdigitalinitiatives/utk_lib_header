@@ -224,3 +224,23 @@
   border-top-color: $rock;
   animation: spinner 1s linear infinite;
 }
+
+
+@include respond(xs, sm) {
+  #utk-lib-header .utk-hours {
+    .utk-hours-header {
+      display: none;
+    }
+    .utk-hours--listing {
+      &--col {
+        display: flex;
+        flex-direction: row;
+        width: auto;
+      }
+
+      &--item {
+        display: flex;
+      }
+    }
+  }
+}
