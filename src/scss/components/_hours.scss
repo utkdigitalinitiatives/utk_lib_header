@@ -313,6 +313,19 @@
               white-space: nowrap;
               top: 0;
               left: 0;
+
+              &::before {
+                display: block;
+                width: 0;
+                height: 0;
+                position: absolute;
+                content: ' ';
+                top: 23px;
+                margin-left: 4px;
+                border-left: 11px solid transparent;
+                border-right: 11px solid transparent;
+                border-bottom: 6px solid $gray-0;
+              }
             }
           }
 
