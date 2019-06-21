@@ -245,10 +245,18 @@
         display: flex;
         margin-bottom: 0;
 
+        > a {
+          min-width: 175px;
+        }
+
         &--child {
           padding-left: 0 !important;
           margin-top: 0;
           margin-bottom: 0;
+
+          > a {
+            min-width: auto;
+          }
 
           &::before,
           &::after {
@@ -289,7 +297,7 @@
             padding-left: 0;
 
             .library-title {
-              font-size: 13px !important;
+              font-size: 15px !important;
               white-space: nowrap;
             }
 
@@ -298,8 +306,9 @@
               padding: 6px 18px;
               position: absolute;
               background-color: $gray-1;
+              color: $smokeyx;
               width: 100%;
-              font-weight: 700;
+              font-weight: 400;
               font-size: 11px !important;
               white-space: nowrap;
               top: 0;
@@ -308,7 +317,7 @@
           }
 
           .utk-hours--listing--item--hours {
-            font-size: $type-0;
+            font-size: $type-1;
             white-space: nowrap;
           }
         }
