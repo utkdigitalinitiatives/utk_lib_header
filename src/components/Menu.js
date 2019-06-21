@@ -150,65 +150,69 @@ export class Menu extends Component {
             return (
                 <React.Fragment>
                 <div className={`utk-header-resources ${active} ${helpClass} ${depthClass}`}>
-                    <div className="utk-header-super">
-                        <div className="container">
-                            <MenuSingle title={null}
-                                        items={menuHeader.services_primary}
-                                        className="utk-resources-menu--services-primary" />
-                            {/*<ul className="utk-header-super--menu">*/}
-                                {/*<li><span className="icon-right-big"></span></li>*/}
-                                {/*<li><a href="https://www.lib.utk.edu/hours/">Hours</a></li>*/}
-                                {/*<li><a href="https://www.lib.utk.edu/hours/">Reserve a Room</a></li>*/}
-                                {/*<li><a href="https://libguides.utk.edu/databases">Request Items</a></li>*/}
-                                {/*<li><a href="https://www.lib.utk.edu/about/">Talk with a Librarian</a></li>*/}
-                                {/*<li><a href="https://www.lib.utk.edu/about/">A-Z</a></li>*/}
-                            {/*</ul>*/}
-                            <div className='utk-menu-options'>
-                                <div className='utk-menu-help'>
-                                    {/*<a className="utk-menu-help--item utk-menu-help--help-me" onClick={this.enableHelp}>*/}
-                                        {/*<h4>Help</h4>*/}
-                                        {/*<div className="utk-menu-help--item--icon">*/}
-                                            {/*<span className="icon-shuffle"></span>*/}
-                                        {/*</div>*/}
-                                    {/*</a>*/}
-                                    {/*<a className="utk-menu-help--item utk-menu-help--give">*/}
-                                        {/*<h4>Give</h4>*/}
-                                        {/*<div className="utk-menu-help--item--icon">*/}
-                                            {/*<span className="icon-heart"></span>*/}
-                                        {/*</div>*/}
-                                    {/*</a>*/}
-                                    <Chat libchat={Globals.libChat} />
+                    <div className="utk-header-resources--inner">
+                        <div className="utk-header-super">
+                            <div className="container">
+                                <MenuSingle title={null}
+                                            items={menuHeader.services_primary}
+                                            className="utk-resources-menu--services-primary" />
+                                {/*<ul className="utk-header-super--menu">*/}
+                                    {/*<li><span className="icon-right-big"></span></li>*/}
+                                    {/*<li><a href="https://www.lib.utk.edu/hours/">Hours</a></li>*/}
+                                    {/*<li><a href="https://www.lib.utk.edu/hours/">Reserve a Room</a></li>*/}
+                                    {/*<li><a href="https://libguides.utk.edu/databases">Request Items</a></li>*/}
+                                    {/*<li><a href="https://www.lib.utk.edu/about/">Talk with a Librarian</a></li>*/}
+                                    {/*<li><a href="https://www.lib.utk.edu/about/">A-Z</a></li>*/}
+                                {/*</ul>*/}
+                                <div className='utk-menu-options'>
+                                    <div className='utk-menu-help'>
+                                        {/*<a className="utk-menu-help--item utk-menu-help--help-me" onClick={this.enableHelp}>*/}
+                                            {/*<h4>Help</h4>*/}
+                                            {/*<div className="utk-menu-help--item--icon">*/}
+                                                {/*<span className="icon-shuffle"></span>*/}
+                                            {/*</div>*/}
+                                        {/*</a>*/}
+                                        {/*<a className="utk-menu-help--item utk-menu-help--give">*/}
+                                            {/*<h4>Give</h4>*/}
+                                            {/*<div className="utk-menu-help--item--icon">*/}
+                                                {/*<span className="icon-heart"></span>*/}
+                                            {/*</div>*/}
+                                        {/*</a>*/}
+                                        <Chat libchat={Globals.libChat} />
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div className="container">
-                        <div className="utk-resources-menu">
-                            <div className="utk-resources-menu--row">
-                                {menuColumns}
-                            </div>
-                            <div className="utk-resources-menu--row">
-                                <MenuSingle title="Get Help"
-                                            items={menuHeader.help}
-                                            className="utk-resources-menu--help" />
-                                <MenuSingle title={null}
-                                            items={menuHeader.services_speciality}
-                                            className="utk-resources-menu--services-speciality" />
+                        <div className="utk-header-main-menu">
+                            <div className="container">
+                                <div className="utk-resources-menu">
+                                    <div className="utk-resources-menu--row">
+                                        {menuColumns}
+                                    </div>
+                                    <div className="utk-resources-menu--row">
+                                        <MenuSingle title="Get Help"
+                                                    items={menuHeader.help}
+                                                    className="utk-resources-menu--help" />
+                                        <MenuSingle title={null}
+                                                    items={menuHeader.services_speciality}
+                                                    className="utk-resources-menu--services-speciality" />
+                                    </div>
+                                </div>
+                                <div className="utk-resources-contact">
+                                    <Hours layout={this.setLayout()} expanded={this.props.expanded}/>
+                                    <MenuSingle title="About University Libraries"
+                                                items={menuHeader.about}
+                                                className="utk-resources-menu--about" />
+                                </div>
+                                {/*<Help activeHelp={this.state.activeHelp} closeHelp={() => {*/}
+                                    {/*this.closeHelp();*/}
+                                {/*}} />*/}
                             </div>
                         </div>
-                        <div className="utk-resources-contact">
-                            <Hours layout={this.setLayout()} expanded={this.props.expanded}/>
-                            <MenuSingle title="About University Libraries"
-                                        items={menuHeader.about}
-                                        className="utk-resources-menu--about" />
-                        </div>
-                        {/*<Help activeHelp={this.state.activeHelp} closeHelp={() => {*/}
-                            {/*this.closeHelp();*/}
-                        {/*}} />*/}
-                        <a className="utk-resources-close" data-event="option-resources-close">
-                            <span className="icon-cancel" data-event="option-resources-close"></span>
-                        </a>
                     </div>
+                    <a className="utk-resources-close" data-event="option-resources-close">
+                        <span className="icon-cancel" data-event="option-resources-close"></span>
+                    </a>
                 </div>
                 </React.Fragment>
             )

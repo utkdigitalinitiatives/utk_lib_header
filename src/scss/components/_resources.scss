@@ -1,21 +1,23 @@
 .utk-header-resources {
   width: 100%;
-  background-color: $white;
   z-index: 999;
   position: fixed;
   display: none;
-  padding: 0 0 $golden-ratio-3;
-  box-shadow: $box-shadow-float;
-
-  @include respond(xs, sm, md, lg, xl) {
-    box-shadow: inset $box-shadow;
-  }
+  max-height: calc(100% - 82px);
+  overflow: scroll;
 
   @include respond(xs) {
     padding-bottom: $golden-ratio-5;
   }
 
-  > .container {
+  &--inner {
+    position: relative;
+    height: 100%;
+    padding: 0 0 $golden-ratio-2;
+    background-color: $white;
+  }
+
+  .utk-header-main-menu > .container {
     display: flex;
 
     @include respond(md, xs) {
@@ -248,10 +250,10 @@
   bottom: calc(-#{$golden-ratio-4 / 2});
   border-radius: $golden-ratio-4;
   text-align: center;
-  box-shadow: $box-shadow;
   cursor: pointer;
   z-index: 1;
   box-shadow: $box-shadow-float;
+  display: none;
 
   span {
     font-size: $type-3;
