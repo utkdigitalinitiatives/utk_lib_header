@@ -14,7 +14,7 @@
 
   @include respond(xs, sm) {
     height: calc(100% - 66px);
-    padding-bottom: $golden-ratio-6;
+    padding-top: 92px;
   }
 
   &--inner {
@@ -153,9 +153,9 @@
     overflow-x: scroll;
     overflow-y: hidden;
     width: calc(100%);
-    box-shadow: $box-shadow-float-submenu;
-    position: fixed;
-    bottom: 0;
+    box-shadow: $box-shadow-float;
+    position: absolute;
+    top: 0;
     left: 0;
   }
 
