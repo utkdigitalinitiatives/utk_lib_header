@@ -218,14 +218,6 @@ body.utk-skip-open {
       box-shadow: $box-shadow;
       overflow: hidden;
 
-      .utk-menu-trigger {
-        padding: calc((47px - 6px - 15px) / 2) 11px;
-
-        @include respond(xs, sm, md) {
-          padding: calc((47px - 6px - 15px) / 2) 3px;
-        }
-      }
-
       .utk-logo-wrapper {
         height: 0;
         width: 304px;

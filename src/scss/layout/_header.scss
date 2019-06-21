@@ -43,6 +43,7 @@
   height: $golden-ratio-5;
   align-items: flex-end;
   flex-shrink: 1;
+  margin-right: -14.5px !important;
 
   @include respond(xs, sm) {
     padding-top: 0;
@@ -77,19 +78,21 @@
       }
 
       //@media only screen and (max-width: 500px) {
+
       @include respond(xs) {
         &.utk-header-actions--home {
           display: none;
         }
       }
 
-      @include respond(xs, sm) {
-        &.utk-header-actions--home {
-          > a {
-            border: none;
-            background: none;
-            box-shadow: none;
-          }
+
+      &.utk-header-actions--home {
+        > a {
+          font-weight: 400 !important;
+        }
+
+        @include respond(xs) {
+          display: none;
         }
       }
 
@@ -102,19 +105,19 @@
       }
 
       a {
-        display: inline-block;
         padding: calc((#{$golden-ratio-4} - #{$golden-ratio-0} - #{$type-2}) / 2) calc(#{$golden-ratio-3} / 2);
         color: $smokeyx !important;
+        font-weight: 700;
+        display: flex;
+        align-content: center;
+        align-items: center;
 
         @include respond(xs, sm) {
           height: 76px;
-          box-shadow: inset 1px 1px 2px $white;
-          padding: 33px 15px !important;
         }
 
         @include respond(xs) {
           height: 60px;
-          padding: 24px 15px 20px 15px !important;
           min-width: 60px;
           text-align: center;
           border-left: 1px solid $gray-0;
@@ -127,8 +130,8 @@
           }
         }
 
-        @media only screen and (max-width: 414px) {
-          display: flex;
+        @media only screen and (max-width: 500px) {
+          display: flex !important;
           flex-direction: column;
           justify-items: center;
           align-items: center;
@@ -149,11 +152,94 @@
             font-size: $type-0;
             flex-shrink: 1;
             min-height: $golden-ratio-2;
-            margin: 3px 0 6px;
+            margin: 6px 0 6px;
             color: $smokeyx;
+          }
+        }
+
+        @media only screen and (max-width: 400px) {
+          > span:not(.icon-cancel) {
+            font-size: $type-4;
+            flex-grow: 0;
+            align-self: center;
+          }
+
+          em {
+            display: none;
           }
         }
       }
     }
+  }
+
+  &--resources,
+  &--search {
+    .icon-menu,
+    .icon-search,
+    .icon-cancel {
+      font-size: $type-2;
+      margin-right: $golden-ratio-0;
+    }
+
+    .icon-cancel {
+      color: $torch !important;
+    }
+
+    .utk-header-collapse,
+    .utk-search-collapse {
+      display: none !important;
+    }
+  }
+}
+
+body {
+  .utk-menu-open,
+  .utk-search-open {
+    .utk-header-collapse,
+    .utk-search-collapse {
+      &::after {
+        width: 12px;
+        height: 12px;
+        display: block;
+        position: absolute;
+        right: 50%;
+        top: 0;
+        margin-right: -12px;
+        content: ' ';
+        border-left: 12px solid transparent;
+        border-right: 12px solid transparent;
+        border-top: 8px solid $orange;
+      }
+
+      @media only screen and (max-width: 414px) {
+        > span {
+          display: flex;
+          align-items: flex-end;
+          flex-grow: 1;
+          font-size: $type-3;
+          margin: 0;
+        }
+      }
+    }
+  }
+}
+
+body.utk-menu-open {
+  .utk-header-expand {
+    display: none !important;
+  }
+
+  .utk-header-collapse {
+    display: flex !important;
+  }
+}
+
+body.utk-search-open {
+  .utk-search-expand {
+    display: none !important;
+  }
+
+  .utk-search-collapse {
+    display: flex !important;
   }
 }

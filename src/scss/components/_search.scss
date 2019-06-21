@@ -11,59 +11,6 @@
   transition: $transition-all;
 }
 
-.utk-search-trigger.utk-search-expand {
-  display: inline-block !important;
-}
-
-.utk-search-trigger.utk-search-collapse {
-  display: none !important;
-}
-
-body.utk-search-open {
-
-  .utk-header-actions--search {
-    display: inline-block !important;
-    box-shadow: none;
-    position: relative;
-
-    .utk-search-trigger.utk-search-expand {
-      display: none !important;
-    }
-
-    .utk-search-trigger.utk-search-collapse {
-      display: inline-block !important;
-    }
-
-    @include respond(xs, sm) {
-      &::after {
-        width: 12px;
-        height: 12px;
-        display: block;
-        position: absolute;
-        right: 50%;
-        top: 0;
-        margin-right: -12px;
-        content: ' ';
-        border-left: 12px solid transparent;
-        border-right: 12px solid transparent;
-        border-top: 8px solid $orange;
-      }
-    }
-  }
-
-  .utk-header-search {
-    top: 82px;
-    opacity: 1;
-    height: $golden-ratio-5;
-    z-index: 96;
-
-    @include respond(xs) {
-      top: 66px;
-      height: auto !important;
-    }
-  }
-}
-
 .utk-search-wrapper {
   position: relative;
   width: 100%;
@@ -199,44 +146,6 @@ body.utk-search-open {
     border-bottom-right-radius: $golden-ratio-3;
     clip-path: polygon(0 0, 100% 0, 100% 100%, 6px 100%);
     cursor: pointer;
-  }
-}
-
-.utk-header-actions--search {
-
-  a,
-  a:visited,
-  a:hover,
-  a:focus {
-    color: $smokeyx !important;
-    font-weight: 700;
-  }
-
-  .icon-search {
-    opacity: 1;
-    font-size: 15px;
-    padding: 1px;
-    margin-right: 6px;
-  }
-
-  .icon-cancel {
-    opacity: 1;
-    font-size: 15px;
-    padding: 1px;
-    margin-right: 6px;
-    color: $torch !important;
-  }
-
-  .utk-header-expand-search {
-    .icon-cancel {
-      @media only screen and (max-width: 414px) {
-        display: flex;
-        align-items: flex-end;
-        flex-grow: 1;
-        font-size: $type-3;
-        margin: 0;
-      }
-    }
   }
 }
 
@@ -388,6 +297,20 @@ body.utk-search-open {
   .utk-search-options .utk-search-toggle {
     .utk-search-toggle-button {
       left: calc(#{(($golden-ratio-3 - $golden-ratio-2) / 2) + $golden-ratio-2});
+    }
+  }
+}
+
+body.utk-search-open {
+  .utk-header-search {
+    top: 82px;
+    opacity: 1;
+    height: $golden-ratio-5;
+    z-index: 96;
+
+    @include respond(xs) {
+      top: 66px;
+      height: auto !important;
     }
   }
 }
