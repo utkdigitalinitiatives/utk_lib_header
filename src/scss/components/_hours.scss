@@ -228,6 +228,8 @@
 
 @include respond(xs, sm) {
   #utk-lib-header .utk-hours {
+    margin-bottom: 0;
+
     .utk-hours-header {
       display: none;
     }
@@ -236,10 +238,80 @@
         display: flex;
         flex-direction: row;
         width: auto;
+        padding-left: 0 !important;
       }
 
       &--item {
         display: flex;
+        margin-bottom: 0;
+
+        &--child {
+          padding-left: 0 !important;
+          margin-top: 0;
+          margin-bottom: 0;
+
+          &::before,
+          &::after {
+            content: none;
+          }
+
+          a::after {
+            height: 29px;
+            content: ' ';
+            display: block;
+            padding: 6px 18px;
+            position: absolute;
+            background-color: $gray-1;
+            width: 100%;
+            font-size: 11px !important;
+            white-space: nowrap;
+            top: 0;
+            left: 0;
+            text-align: center;
+          }
+        }
+
+        a {
+          display: flex;
+          flex-grow: 1;
+          padding: 40px 18px 6px;
+          border-right: 1px solid $gray-1;
+          height: 100%;
+          position: relative;
+
+          figure {
+            width: 30px;
+            height: 30px;
+            margin-right: $golden-ratio-1;
+          }
+
+          .utk-hours--listing--item--meta {
+            padding-left: 0;
+
+            .library-title {
+              font-size: 13px !important;
+              white-space: nowrap;
+            }
+
+            .library-subtitle {
+              height: 29px;
+              padding: 6px 18px;
+              position: absolute;
+              background-color: $gray-1;
+              width: 100%;
+              font-weight: 700;
+              font-size: 11px !important;
+              white-space: nowrap;
+              top: 0;
+              left: 0;
+            }
+          }
+
+          .utk-hours--listing--item--hours {
+            font-size: $type-0;
+            white-space: nowrap;
+          }
+        }
       }
     }
   }
