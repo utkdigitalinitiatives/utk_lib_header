@@ -23,7 +23,7 @@
   .utk-header-main-menu > .container {
     display: flex;
 
-    @include respond(xs, sm, md) {
+    @include respond(xs, sm) {
       flex-wrap: wrap;
       flex-direction: column;
     }
@@ -63,7 +63,7 @@
     }
   }
 
-  @include respond(xs, sm, md) {
+  @include respond(xs, sm) {
     width: 100%;
     padding-bottom: $golden-ratio-3;
   }

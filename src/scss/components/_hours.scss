@@ -253,7 +253,7 @@
           margin-top: 0;
           margin-bottom: 0;
 
-          @include respond(xs) {
+          @include respond(xs, sm) {
             display: none;
           }
 
@@ -290,10 +290,14 @@
         a {
           display: flex;
           flex-grow: 1;
-          padding: 40px 18px 6px;
+          padding: 40px 29px 6px;
           border-right: 1px solid $gray-1;
           height: 100%;
           position: relative;
+
+          @include respond(xs) {
+            padding: 40px 18px 6px;
+          }
 
           figure {
             width: 30px;
@@ -311,7 +315,7 @@
 
             .library-subtitle {
               height: 29px;
-              padding: 6px 18px;
+              padding: 6px 29px;
               position: absolute;
               background-color: $gray-1;
               color: $smokeyx;
@@ -321,6 +325,10 @@
               white-space: nowrap;
               top: 0;
               left: 0;
+
+              @include respond(xs) {
+                padding: 6px 18px;
+              }
 
               &::before {
                 display: block;
