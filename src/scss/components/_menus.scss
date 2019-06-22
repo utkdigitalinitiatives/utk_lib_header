@@ -125,6 +125,11 @@
     padding: $golden-ratio-2 0 0 $golden-ratio-2;
     margin-right: $golden-ratio-3;
 
+    @include respond(sm) {
+      width: calc(67.777777%);
+      margin-right: 0;
+    }
+
     h3 {
       display: none;
       line-height: 1.47em;
@@ -172,7 +177,7 @@
     margin-left: calc(#{$golden-ratio-4 + $golden-ratio-1});
 
     @include respond(xs, sm) {
-      display: none;
+      //display: none;
     }
 
     &:before {

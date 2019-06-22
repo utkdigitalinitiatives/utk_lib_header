@@ -38,7 +38,7 @@ export class HoursLocationChild extends Component {
 
     render() {
 
-        const {id, data, title, subtitle} = this.props;
+        const {id, data, title} = this.props;
         const {name, url} = this.props.data;
 
         let hoursClass = this.getHoursIndicator(data, id);

@@ -77,15 +77,16 @@
           border-radius: $golden-ratio-3;
           margin-top: 3px;
           position: relative;
-          background-color: $gray-1;
+          background-color: $smokey;
           z-index: 1;
           flex-shrink: 0;
+          overflow: hidden;
 
           img {
-            filter: grayscale(1);
+            filter: grayscale(0.9);
             z-index: 0;
             opacity: 0.47;
-            background-color: $rock;
+            background-color: $smokey;
             border-radius: $golden-ratio-3;
             box-shadow: $box-shadow;
             width: 100%;
@@ -227,12 +228,35 @@
 
 @include respond(xs, sm) {
   #utk-lib-header .utk-hours {
+    background-color: $gray-1;
+    margin-top: 0;
+    border-left: 0;
+    width: calc(100%);
+    box-shadow: $box-shadow-float;
+    position: absolute;
+    top: 0;
+    left: 0;
     margin-bottom: 0;
 
     .utk-hours-header {
-      display: none;
+      width: 100%;
+
+      h3 {
+        font-size: $type-1;
+        color: $smokey;
+        margin: 6px 29px;
+
+        @include respond(xs) {
+          margin: 6px 18px;
+        }
+      }
     }
+
     .utk-hours--listing {
+      overflow-x: scroll;
+      overflow-y: hidden;
+      width: calc(100%);
+
       &--col {
         display: flex;
         flex-direction: row;
@@ -253,16 +277,11 @@
           margin-top: 0;
           margin-bottom: 0;
 
-          @include respond(xs, sm) {
-            display: none;
-          }
-
           > a {
             min-width: auto;
 
             .library-title {
               font-weight: 700;
-              font-size: $type-2 !important;
             }
           }
 
@@ -277,11 +296,10 @@
             display: block;
             padding: 6px 18px;
             position: absolute;
-            background-color: $gray-1;
             width: 100%;
             font-size: 11px !important;
             white-space: nowrap;
-            top: 0;
+            bottom: 0;
             left: 0;
             text-align: center;
           }
@@ -290,19 +308,22 @@
         a {
           display: flex;
           flex-grow: 1;
-          padding: 40px 29px 6px;
+          padding: 11px 29px;
           border-right: 1px solid $gray-1;
           height: 100%;
           position: relative;
+          background-color: $white;
+          align-items: flex-end;
 
           @include respond(xs) {
-            padding: 40px 18px 6px;
+            padding: 11px 18px;
           }
 
           figure {
             width: 30px;
             height: 30px;
             margin-right: $golden-ratio-1;
+            margin-bottom: 32px;
           }
 
           .utk-hours--listing--item--meta {
@@ -310,38 +331,15 @@
 
             .library-title {
               white-space: nowrap;
-              line-height: 18px;
             }
 
             .library-subtitle {
-              height: 29px;
-              padding: 6px 29px;
-              position: absolute;
-              background-color: $gray-1;
               color: $smokeyx;
-              width: 100%;
               font-weight: 400;
-              font-size: 11px !important;
+              font-size: 13px !important;
               white-space: nowrap;
-              top: 0;
+              bottom: 0;
               left: 0;
-
-              @include respond(xs) {
-                padding: 6px 18px;
-              }
-
-              &::before {
-                display: block;
-                width: 0;
-                height: 0;
-                position: absolute;
-                content: ' ';
-                top: 23px;
-                margin-left: 4px;
-                border-left: 11px solid transparent;
-                border-right: 11px solid transparent;
-                border-bottom: 6px solid $gray-0;
-              }
             }
           }
 
