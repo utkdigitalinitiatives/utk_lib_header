@@ -73,10 +73,12 @@
 
     @include respond(xs) {
       flex-wrap: wrap;
+      flex-direction: column;
+      margin-bottom: 0;
 
       &:first-child {
         h3 {
-          font-size: $type-1 !important;
+          font-size: $type-2 !important;
           border-bottom: 1px solid $gray-1;
         }
       }
@@ -86,6 +88,11 @@
   @include respond(xs, sm) {
     width: 100%;
     padding-bottom: $golden-ratio-3;
+  }
+
+  @include respond(xs) {
+    width: 100%;
+    padding-bottom: 0;
   }
 
   &--col {
