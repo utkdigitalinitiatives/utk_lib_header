@@ -128,7 +128,7 @@ export class Menu extends Component {
 
     render() {
 
-        const {active} = this.props;
+        const {active, libchat} = this.props;
         const {menuHeader, activeMenu, activeDepth, activeHelp, status} = this.state;
 
         let menuColumns, menuHelp = {};
@@ -178,7 +178,7 @@ export class Menu extends Component {
                                                 {/*<span className="icon-heart"></span>*/}
                                             {/*</div>*/}
                                         {/*</a>*/}
-                                        <Chat libchat={Globals.libChat} />
+                                        <Chat libchat={libchat} />
                                     </div>
                                 </div>
                             </div>

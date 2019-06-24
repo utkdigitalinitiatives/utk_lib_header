@@ -8,6 +8,7 @@ import findIndex from "lodash/findIndex"
 import {Menu} from "./components/Menu";
 import {Search} from "./components/Search";
 import {Skip} from "./components/Skip";
+import Globals from "./components/Globals";
 
 /* header component */
 class Header extends Component {
@@ -218,7 +219,10 @@ class Header extends Component {
                             </div>
                         </div>
                     </div>
-                    <Menu expanded={showResources} active={resourcesClass} helpExpand={showHelp}/>
+                    <Menu expanded={showResources}
+                          active={resourcesClass}
+                          libchat={Globals.libChat}
+                          helpExpand={showHelp}/>
                     <Search showSearch={showSearch} ref="search"/>
                 </header>
                 <div className="utk-body-overlay"></div>
