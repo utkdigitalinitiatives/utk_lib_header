@@ -159,13 +159,12 @@
         align-items: center;
 
         @include respond(xs) {
-          color: $white;
+          color: $summitt;
           font-weight: 400;
           font-size: $type-5;
           line-height: inherit;
           text-align: center;
           justify-content: center;
-          opacity: 0.18;
           margin-bottom: $golden-ratio-0;
         }
       }
@@ -198,7 +197,7 @@
           color: $globe;
 
           @include respond(xs) {
-            color: $white;
+            color: $white !important;
           }
         }
 
@@ -207,7 +206,7 @@
           color: $leconte;
 
           @include respond(xs) {
-            color: $white;
+            color: $white !important;
           }
         }
       }
