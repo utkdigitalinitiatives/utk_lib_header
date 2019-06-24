@@ -6,7 +6,16 @@
   .container {
     display: flex;
     justify-content: space-between;
+
+    @include respond(xs) {
+      justify-content: flex-start;
+    }
   }
+
+  @include respond(xs) {
+    margin-bottom: $golden-ratio-2;
+  }
+
 
   .utk-menu-options {
     position: relative;
