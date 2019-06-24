@@ -237,17 +237,16 @@
     top: 0;
     left: 0;
     margin-bottom: 0;
-    height: 90px;
+    height: 121px;
 
     .utk-hours-header {
       width: 100%;
       text-align: center;
-      display: none;
 
       h3 {
-        font-size: $type-0;
+        font-size: $type-1;
         color: $smokey;
-        margin: 6px 29px;
+        margin: 2px 29px;
 
         @include respond(xs) {
           margin: 6px 18px;
