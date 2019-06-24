@@ -32,7 +32,7 @@
         align-items: center;
         margin-top: -2px;
 
-        @include respond(xs, sm) {
+        @include respond(xs) {
           content: none;
         }
       }
@@ -181,7 +181,10 @@
     margin-left: calc(#{$golden-ratio-4 + $golden-ratio-1});
 
     @include respond(xs, sm) {
-      //display: none;
+      background-color: $smokeyx;
+      padding: $golden-ratio-3;
+      margin-left: -29px;
+      width: calc(100% + 58px);
     }
 
     &:before {
@@ -199,6 +202,12 @@
       color: $smokey;
       margin: 0 0 $golden-ratio-0;
       line-height: 1.47em;
+
+      @include respond(xs, sm) {
+        color: $rock;
+        font-weight: 400;
+        margin: 0 0 $golden-ratio-1;
+      }
     }
 
     ul {
@@ -207,6 +216,10 @@
       display: flex;
       flex-wrap: wrap;
 
+      @include respond(xs, sm) {
+        width: $gr-long;
+      }
+
       li {
         margin: 0;
         padding: 0;
@@ -214,14 +227,27 @@
         font-size: $type-1;
         width: 50%;
 
+        @include respond(xs, sm) {
+          font-weight: 700;
+          width: 33.333333%;
+        }
+
         a,
         a:visited {
           color: $globe;
+
+          @include respond(xs, sm) {
+            color: $white;
+          }
         }
 
         a:hover,
         a:focus {
           color: $leconte;
+
+          @include respond(xs, sm) {
+            color: $white;
+          }
         }
       }
     }

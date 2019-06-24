@@ -249,7 +249,7 @@
         margin: 2px 29px;
 
         @include respond(xs) {
-          margin: 6px 18px;
+          margin: 2px 18px;
         }
       }
     }
@@ -318,7 +318,7 @@
           border-right: 1px solid $gray-1;
           height: 100%;
           position: relative;
-          background-color: $gray-0;
+          background-color: $white;
           align-items: flex-end;
 
           @include respond(xs) {

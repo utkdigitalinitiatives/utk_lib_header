@@ -9,13 +9,21 @@
   background-color: $white;
 
   @include respond(md) {
-    max-height: calc(100% - 66px);
+    max-height: calc(100% - 82px);
   }
 
-  @include respond(xs, sm) {
+  @include respond(sm) {
+    height: calc(100% - 82px);
+    max-height: calc(100% - 82px);
+    padding-top: 121px;
+    padding-bottom: 0;
+  }
+
+  @include respond(xs) {
     height: calc(100% - 66px);
     max-height: calc(100% - 66px);
     padding-top: 121px;
+    padding-bottom: 0;
   }
 
   &--inner {
@@ -138,13 +146,16 @@
 
 .utk-resources-contact {
   width: $gr-short;
-  opacity: 0;
-  z-index: 1;
   height: auto;
   padding: 0;
   margin-top: $golden-ratio-2;
   display: flex;
   flex-direction: column;
+
+  @include respond(xs, sm) {
+    margin-top: 0;
+    width: 100%;
+  }
 
   p {
     margin: 0;
