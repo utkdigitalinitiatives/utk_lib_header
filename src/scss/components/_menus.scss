@@ -64,7 +64,7 @@
           width: 50%;
           margin: 0;
           display: block;
-          font-size: $type-1;
+          font-size: $type-2;
           margin-bottom: $golden-ratio-0;
 
           > a {
@@ -113,9 +113,10 @@
     margin-right: $golden-ratio-3;
 
     @include respond(xs) {
+      background-color: $globe;
       margin-right: 0;
       border-radius: 0;
-      padding: $golden-ratio-2;
+      padding: $golden-ratio-3 $golden-ratio-2;
       margin-left: -18px;
       width: calc(100% + 36px);
       margin-bottom: $golden-ratio-2;
@@ -131,8 +132,13 @@
       justify-content: space-between;
 
       @include respond(xs) {
+        color: $eureka;
+        font-weight: 400;
         font-size: $type-2;
         line-height: inherit;
+        text-align: center;
+        flex-direction: column-reverse;
+        justify-content: center;
       }
 
       &:after {
@@ -152,7 +158,12 @@
         align-items: center;
 
         @include respond(xs) {
-          content: none;
+          color: $eureka;
+          font-weight: 400;
+          font-size: $type-3;
+          line-height: inherit;
+          text-align: center;
+          justify-content: center;
         }
       }
     }
@@ -175,17 +186,26 @@
         font-weight: 700;
 
         @include respond(xs) {
-          width: 50%;
+          width: 100%;
+          text-align: center;
         }
 
         a,
         a:visited {
           color: $globe;
+
+          @include respond(xs) {
+            color: $white;
+          }
         }
 
         a:hover,
         a:focus {
           color: $leconte;
+
+          @include respond(xs) {
+            color: $white;
+          }
         }
       }
     }
@@ -229,6 +249,11 @@
         list-style: none;
         margin-bottom: $golden-ratio-2;
 
+        @include respond(xs) {
+          width: 100%;
+          margin-right: 0;
+        }
+
         a,
         a:visited {
           display: block;
@@ -239,6 +264,23 @@
 
           @include respond(xs) {
             font-size: $type-1;
+
+            &:before  {
+              content: "\e812";
+              font-family: fontello;
+              font-style: normal;
+              speak: none;
+              text-decoration: inherit;
+              text-align: center;
+              font-variant: normal;
+              text-transform: none;
+              -webkit-font-smoothing: antialiased;
+              font-size: $type-0;
+              align-content: center;
+              align-items: center;
+              margin-right: 6px;
+              color: $rock;
+            }
           }
 
           span {
