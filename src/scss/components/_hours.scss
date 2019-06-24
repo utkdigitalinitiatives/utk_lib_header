@@ -231,7 +231,7 @@
 }
 
 @include respond(xs, sm) {
-  #utk-lib-header .utk-hours {
+  .utk-hours {
     background-color: $gray-1;
     margin-top: 0;
     border-left: 0;
