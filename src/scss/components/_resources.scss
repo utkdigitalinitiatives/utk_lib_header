@@ -6,7 +6,7 @@
   max-height: calc(100% - 82px);
   overflow: scroll;
   padding: 0 0 $golden-ratio-2;
-  background-color: red;
+  background-color: $white;
 
   @include respond(md) {
     max-height: calc(100% - 66px);
