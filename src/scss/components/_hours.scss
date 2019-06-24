@@ -59,6 +59,10 @@
       width: auto;
       margin-bottom: $golden-ratio-1;
 
+      &--more {
+        display: none !important;
+      }
+
       &:last-child {
         margin-bottom: 0;
       }
@@ -284,6 +288,38 @@
       &--item {
         display: flex;
         margin-bottom: 0;
+
+        &--more {
+          width: $golden-ratio-6 !important;
+          min-width: $golden-ratio-6 !important;
+          padding: 0 $golden-ratio-2 !important;
+          line-height: 1.47em;
+          text-align: center;
+          font-weight: 700;
+          background-color: $white !important;
+          font-size: $type-0 !important;
+          display: flex !important;
+          align-content: center;
+          align-items: flex-end !important;
+          color: $smokeyx !important;
+          text-transform: uppercase;
+          flex-wrap: wrap;
+
+          @include respond(xs) {
+            width: $golden-ratio-5 !important;
+            min-width: $golden-ratio-5 !important;
+            padding: 0 !important;
+          }
+
+          span {
+            display: block;
+            text-align: center;
+            font-size: $type-2;
+            color: $globe;
+            background-color: $white;
+            margin: 0 auto $golden-ratio-1;
+          }
+        }
 
         > a {
           min-width: 175px;

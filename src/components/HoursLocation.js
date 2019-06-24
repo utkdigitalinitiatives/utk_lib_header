@@ -39,6 +39,14 @@ export class HoursLocation extends Component {
 
     };
 
+    renderChildTrigger(children, title) {
+        if (children) {
+            return <a className="utk-hours--listing--item--more"><span className="icon-plus"></span>More at {title}</a>
+        } else {
+            return null
+        }
+    }
+
     getChildren(children) {
         if (children) {
             return children.map((item, index) => {
@@ -68,6 +76,7 @@ export class HoursLocation extends Component {
                         <span className="utk-hours--listing--item--hours">{ hoursLabel }</span>
                     </div>
                 </a>
+                {this.renderChildTrigger(children, title)}
                 {this.getChildren(children)}
             </li>
         )
