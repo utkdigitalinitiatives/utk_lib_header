@@ -72,7 +72,14 @@
     }
 
     @include respond(xs) {
-      flex-direction: column;
+      flex-wrap: wrap;
+
+      &:first-child {
+        h3 {
+          font-size: $type-1 !important;
+          border-bottom: 1px solid $gray-1;
+        }
+      }
     }
   }
 
@@ -87,6 +94,18 @@
 
     @include respond(xs) {
       width: 100%;
+
+      .utk-resources-menu--submenu {
+        display: flex;
+        flex-wrap: wrap;
+
+        > a {
+          width: 50%;
+          font-size: $type-1 !important;
+          line-height: 1.47em;
+          margin-bottom: $golden-ratio-0;
+        }
+      }
     }
 
     .utk-resources-menu--section {
@@ -137,7 +156,6 @@
       }
     }
   }
-
 }
 
   .utk-header-expand-menu .utk-resources-contact {
