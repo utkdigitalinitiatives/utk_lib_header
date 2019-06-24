@@ -187,6 +187,12 @@
       width: calc(100% + 58px);
     }
 
+    @include respond(xs) {
+      padding: $golden-ratio-3 $golden-ratio-2 $golden-ratio-2;
+      margin-left: -18px;
+      width: calc(100% + 36px);
+    }
+
     &:before {
       display: block;
       width: $golden-ratio-5;
@@ -230,6 +236,14 @@
         @include respond(xs, sm) {
           font-weight: 700;
           width: 33.333333%;
+        }
+
+        @include respond(xs) {
+          width: 50%;
+        }
+
+        @media only screen and (max-width: 500px) {
+          width: 100%;
         }
 
         a,
