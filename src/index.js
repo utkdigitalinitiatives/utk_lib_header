@@ -5,6 +5,8 @@ import 'whatwg-fetch';
 import Skip from './components/Skip';
 import Header from './Header';
 import Home from './components/Home';
+import HomeHours from './components/HomeHours';
+
 
 import './scss/styles.scss';
 
@@ -18,3 +20,4 @@ document.body.insertBefore(skip, document.getElementById('utk-lib-header'));
 ReactDOM.render(<Skip />, document.getElementById('utk-lib-skip'));
 ReactDOM.render(<Header />, document.getElementById('utk-lib-header'));
 ReactDOM.render(<Home />, document.getElementById('utk-lib-home'));
+ReactDOM.render(<HomeHours />, document.getElementById('utk-lib-home-hours'));
