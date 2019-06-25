@@ -66,14 +66,16 @@
           display: block;
           font-size: $type-1;
           margin-bottom: $golden-ratio-0;
+          padding-left: $golden-ratio-2;
 
           > a {
             display: inline-flex;
             align-self: center;
+            line-height: 1.47em;
           }
 
           &:before {
-            content: "\F105";
+            content: "\E812";
             font-family: fontello;
             font-style: normal;
             speak: none;
@@ -84,11 +86,12 @@
             -webkit-font-smoothing: antialiased;
             margin-right: $golden-ratio-1;
             color: $rock;
-            font-size: 13px;
+            font-size: 11px;
             display: inline-flex;
             align-content: center;
             align-items: center;
-            margin-top: -2px;
+            position: absolute;
+            margin-left: -18px;
           }
         }
 
@@ -267,9 +270,10 @@
 
           @include respond(xs) {
             font-size: $type-1;
+            padding-left: $golden-ratio-2;
 
             &:before  {
-              content: "\e812";
+              content: "\E812";
               font-family: fontello;
               font-style: normal;
               speak: none;
@@ -283,6 +287,9 @@
               align-items: center;
               margin-right: 6px;
               color: $rock;
+              position: absolute;
+              margin-left: -18px;
+              font-size: 11px;
             }
           }
 
