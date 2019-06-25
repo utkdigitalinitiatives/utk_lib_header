@@ -263,6 +263,7 @@
           padding-right: $golden-ratio-2;
           font-weight: 700;
           line-height: 1.47em;
+          font-size: $type-2;
 
           @include respond(xs) {
             font-size: $type-1;

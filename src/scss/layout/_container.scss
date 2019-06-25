@@ -29,6 +29,25 @@ body {
   line-height: 1.5em;
   letter-spacing: -0.015em;
 
+  ::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 6px;
+    height: 2px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    cursor: pointer;
+    border-radius: 2px;
+    background: $rock;
+    -webkit-transition: color .2s ease;
+    transition: color .2s ease;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: $gray-2;
+    border-radius: 0;
+  }
+
   &.utk-menu-open {
     overflow: hidden;
 
@@ -89,9 +108,9 @@ body {
     top: 0;
     z-index: 0;
     opacity: 1;
-    background: -moz-linear-gradient(top, rgba($smokeyx,0) 70%, rgba($smokey,0.35) 100%); /* FF3.6-15 */
-    background: -webkit-linear-gradient(top, rgba($smokeyx,0) 70%,rgba($smokey,0.35) 100%); /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(to bottom, rgba($smokeyx,0) 70%,rgba($smokey,0.35) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    background: -moz-linear-gradient(top, rgba($smokeyx, 0) 70%, rgba($smokey, 0.35) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, rgba($smokeyx, 0) 70%, rgba($smokey, 0.35) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, rgba($smokeyx, 0) 70%, rgba($smokey, 0.35) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   }
 
   .utk-header-title {

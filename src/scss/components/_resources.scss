@@ -1,10 +1,10 @@
-.utk-header-resources {
+body .utk-header-resources {
   width: 100%;
   z-index: 999;
   position: fixed;
   display: none;
   max-height: calc(100% - 82px);
-  overflow: scroll;
+  overflow-y: scroll;
   padding: 0 0 $golden-ratio-2;
   background-color: $white;
 
