@@ -45,9 +45,12 @@ export class HoursLocation extends Component {
 
     };
 
-    renderChildTrigger(children, title) {
+    renderChildTrigger(children, title, showChildren) {
         if (children) {
-            return <a className="utk-hours--listing--item--more" onClick={this.toggleChildren}><span className="icon-plus"></span>More at {title}</a>
+            if (!showChildren)
+                return <a className="utk-hours--listing--item--more" onClick={this.toggleChildren}><span className="icon-plus">{children.length}</span> Show More at Hodges</a>
+            else
+                return <a className="utk-hours--listing--item--more utk-hours--listing--item--more-collapse" onClick={this.toggleChildren}><span className="icon-minus"></span> Hide All at Hodges</a>
         } else {
             return null
         }
@@ -96,8 +99,8 @@ export class HoursLocation extends Component {
                         <span className="utk-hours--listing--item--hours">{ hoursLabel }</span>
                     </div>
                 </a>
-                {this.renderChildTrigger(children, title)}
                 {this.getChildren(children)}
+                {this.renderChildTrigger(children, title, showChildren)}
             </li>
         )
     }
