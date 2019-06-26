@@ -38,17 +38,27 @@ export class HoursLocationChild extends Component {
 
     render() {
 
-        const {id, data, title} = this.props;
+        const {data} = this.props;
         const {name, url} = this.props.data;
 
-        let hoursClass = this.getHoursIndicator(data, id);
+        let hoursClass = this.getHoursIndicator(data);
         let hoursLabel = this.getHoursLabel(data.hours);
+
+        let subtitle = null
+
+        if (data.name === 'The Commons')
+            subtitle = 'Hodges 2nd Floor'
+        else if (data.name === 'The Studio')
+            subtitle = 'Hodges 235'
+        else if (data.name === 'Special Collections')
+            subtitle = 'Hodges 121'
 
         return (
             <li className="utk-hours--listing--item utk-hours--listing--item--child">
                 <a href={url} className={hoursClass}>
                     <div className="utk-hours--listing--item--meta">
                         <span className="library-title">{name}</span>
+                        <span className="library-subtitle">{subtitle}</span>
                         <span className="utk-hours--listing--item--hours">{ hoursLabel }</span>
                     </div>
                 </a>

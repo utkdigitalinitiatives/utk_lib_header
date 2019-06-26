@@ -1,9 +1,15 @@
 import React, {Component} from 'react';
-import {MenuColumns} from "./MenuColumns";
-import {MenuSecondary} from "./MenuSecondary";
 import {HoursLocationChild} from "./HoursLocationChild";
 
 export class HoursLocation extends Component {
+
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            showChildren : false
+        };
+    };
 
     /*
      * returns hours, 'Closed' if null.
@@ -41,7 +47,7 @@ export class HoursLocation extends Component {
 
     renderChildTrigger(children, title) {
         if (children) {
-            return <a className="utk-hours--listing--item--more"><span className="icon-plus"></span>More at {title}</a>
+            return <a className="utk-hours--listing--item--more" onClick={this.toggleChildren}><span className="icon-plus"></span>More at {title}</a>
         } else {
             return null
         }
@@ -57,15 +63,29 @@ export class HoursLocation extends Component {
         }
     }
 
+    toggleChildren = () => {
+        let {showChildren} = this.state
+
+        if (showChildren === true)
+            this.setState({showChildren: false})
+        else
+            this.setState({showChildren: true})
+    }
+
     render() {
 
         const {id, url, data, title, subtitle, formal, children, thumbnail} = this.props;
 
+        let {showChildren} = this.state
+        let hoursChildClass = ''
         let hoursClass = this.getHoursIndicator(data, id);
         let hoursLabel = this.getHoursLabel(data.hours);
 
+        if (showChildren === true)
+            hoursChildClass = 'utk-hours--listing--item-showchildren'
+
         return (
-            <li className="utk-hours--listing--item">
+            <li className={`utk-hours--listing--item ${hoursChildClass}`}>
                 <a href={url} className={hoursClass}>
                     <figure>
                         <img src={thumbnail} alt={formal} />
