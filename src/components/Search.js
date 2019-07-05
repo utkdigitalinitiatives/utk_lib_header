@@ -3,8 +3,8 @@ import {SearchForm} from "./SearchForm";
 
 const labelOnesearch = 'search one search catalog';
 const labelUTLibraries = 'search libraries website';
-const placeholderOnesearch = ' Search catalog for books and more...';
-const placeholderUTLibraries = ' Find hours, services, and more...';
+const placeholderOnesearch = ' Search for books, articles, and more...';
+const placeholderUTLibraries = ' Search our website for services and more...';
 
 export class Search extends Component {
 
@@ -95,7 +95,7 @@ export class Search extends Component {
                                     <path d="M158.69,12.15v-.07A11.77,11.77,0,0,1,170.5,0a12.15,12.15,0,0,1,9.11,3.7l-1.8,1.94a10.14,10.14,0,0,0-7.34-3.2c-5.17,0-9,4.2-9,9.57v.07c0,5.41,3.9,9.64,9,9.64,3.2,0,5.31-1.23,7.54-3.37l1.74,1.71a12.21,12.21,0,0,1-9.35,4.1A11.65,11.65,0,0,1,158.69,12.15Z"/>
                                     <path d="M181.25.4h2.63V10.78h13.48V.4H200V23.76h-2.64V13.25H183.88V23.76h-2.63Z"/>
                                 </svg>
-                                <span className="sr-only">Search within One Search catalog</span>
+                                <span className="sr-only">Search for books, articles, and more</span>
                             </label>
                             <div tabIndex="5"
                                  id="utk-search-toggle"
@@ -106,7 +106,7 @@ export class Search extends Component {
                             </div>
                             <label id="utk-search-toggle-libraries"
                                    onClick={this.setSearchOptionLibraries}>
-                                <span className="sr-only">Search within UT Libraries website</span>
+                                <span className="sr-only">Search our website for services and more</span>
                                 <span>Website</span>
                             </label>
                         </div>
