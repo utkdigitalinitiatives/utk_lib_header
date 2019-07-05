@@ -107,7 +107,7 @@ export class Search extends Component {
                             <label id="utk-search-toggle-libraries"
                                    onClick={this.setSearchOptionLibraries}>
                                 <span className="sr-only">Search within UT Libraries website</span>
-                                <span>lib.utk.edu</span>
+                                <span>Website</span>
                             </label>
                         </div>
                         <SearchForm inputRef={(searchFocus) => this.utkSearchField = searchFocus}
