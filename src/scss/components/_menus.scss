@@ -299,6 +299,7 @@
             color: $smokeyx !important;
             font-size: $type-1;
             margin-top: $golden-ratio-0;
+            line-height: 1.47em;
 
             @include respond(xs) {
               margin-top: 2px;
