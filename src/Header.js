@@ -141,6 +141,15 @@ class Header extends Component {
         }
     }, 5);
 
+    getPageTitle = (vars) => {
+        if (vars.pageTitle)
+            return  <h1 className={`utk-title`}>{vars.pageTitle}</h1>
+        else
+            return
+    }
+
+
+
     render() {
 
         const {showResources, showSearch, showHelp} = this.state;
@@ -152,6 +161,7 @@ class Header extends Component {
 
         return (
             <React.Fragment>
+                {this.getPageTitle(Globals)}
                 <div className={`utk-header`}>
                     <div className={`utk-header-main`}>
                         <div className="container">
