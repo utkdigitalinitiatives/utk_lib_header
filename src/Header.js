@@ -152,9 +152,7 @@ class Header extends Component {
 
         return (
             <React.Fragment>
-                <div id="utk-header-watch"></div>
-                <div id="utk-header-trigger"></div>
-                <header className={`utk-header`}>
+                <div className={`utk-header`}>
                     <div className={`utk-header-main`}>
                         <div className="container">
                             <div className="utk-logo-flex">
@@ -224,7 +222,7 @@ class Header extends Component {
                           libchat={Globals.libChat}
                           helpExpand={showHelp}/>
                     <Search showSearch={showSearch} ref="search"/>
-                </header>
+                </div>
                 <div className="utk-body-overlay"></div>
             </React.Fragment>
         );
