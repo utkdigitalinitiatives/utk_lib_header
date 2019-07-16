@@ -12,10 +12,11 @@ const productionUrl = 'https://www.lib.utk.edu/';
 const menuContainerElement = document.getElementById('utk-lib-header');
 const SubsiteGlobals = {
     'siteURL': menuContainerElement.getAttribute('data-url'),
+    'libChat': menuContainerElement.getAttribute('data-libchat')
 };
 
 Globals.URL = SubsiteGlobals.siteURL; // left null to force relative endpoint to wp instance
-
+Globals.libChat = SubsiteGlobals.libChat;
 
 /*
  * checks if local URL, if true just get production to avoid HTTPS cert issues.

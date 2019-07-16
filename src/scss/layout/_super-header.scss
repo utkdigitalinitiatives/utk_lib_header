@@ -1,134 +1,37 @@
-body.utk-menu-open .utk-header-super {
-  height: auto !important;
-}
-
 .utk-header-super {
-  @include respond(xs) {
-    display: none;
-    position: relative !important;
-    display: none;
-    width: 100%;
-    overflow: scroll !important;
-    background-color: $gray-1 !important;
+  width: 100%;
+  background-color: $gray-0;
+  padding: $golden-ratio-2 0;
 
-    &--menu {
-      float: none !important;
-      width: 100%;
-
-      a,
-      a:visited,
-      a:hover,
-      a:focus {
-        color: $smokeyx!important;
-        font-weight: 400 !important;
-      }
-
-      > li:first-child {
-        > a {
-          padding-left: 0;
-        }
-      }
-    }
-  }
-
-  &--url {
-    position: absolute;
-    left: -2000px;
-    transition: $transition-all;
-  }
-
-  &--menu {
-    float: right;
-    margin: 0;
-    padding: 0;
+  .container {
     display: flex;
-    position: relative;
-    margin-right: -$golden-ratio-1;
+    justify-content: space-between;
 
-
-    > li {
-      margin: 0;
-      padding: 0;
-      list-style: none;
-
-      &.utk-header-super--menu--options {
-        width: 0;
-        position: relative;
-        right: -200px;
-        opacity: 0;
-        overflow: hidden;
-        display: flex;
-      }
-
-      a,
-      a:visited {
-        height: $golden-ratio-4;
-        line-height: $golden-ratio-4;
-        padding: 0 $golden-ratio-1;
-        font-size: $type-2;
-        font-weight: 400;
-        display: block;
-        color: $smokey;
-        text-decoration: none !important;
-        transition: $transition-all;
-        position: relative;
-
-        &:after {
-          background-color: $orange;
-          opacity: 0;
-          padding: 0;
-          height: 2px;
-          content: ' ';
-          display: block;
-          position: absolute;
-          bottom: 13px;
-          width: 0;
-          transition: $transition-all;
-        }
-
-        &:hover,
-        &:focus {
-          color: $smokeyx !important;
-
-          &::after {
-            opacity: 1;
-            padding: 0 $golden-ratio-1;
-            width: calc(100% - 22px);
-          }
-        }
-      }
+    @include respond(xs) {
+      justify-content: flex-start;
     }
   }
 
-  .utk-header-super--menu--options {
+  @include respond(xs) {
+    background-color: $white;
+  }
 
-    .utk-header-actions--resources .icon-menu,
-    .utk-header-actions--resources .icon-cancel {
-      margin-top: 15px;
-      transition: none !important;
+
+  .utk-menu-options {
+    position: relative;
+
+    @include respond(xs, sm) {
+      position: fixed;
     }
 
-    .utk-header-actions--search .icon-search,
-    .utk-header-actions--search .icon-cancel {
-      transition: none !important;
+    @include respond(sm) {
+      bottom: 29px;
+      right: 29px;
     }
 
-    a,
-    a:visited {
-      color: $smokeyx !important;
-      text-transform: none;
-
-      &::after {
-        display: none !important;
-      }
-    }
-
-    a:hover,
-    a:focus {
-    }
-
-    em {
-      font-style: normal;
+    @include respond(xs) {
+      bottom: 18px;
+      right: 18px;
     }
   }
 }

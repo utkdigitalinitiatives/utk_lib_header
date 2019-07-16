@@ -1,14 +1,9 @@
 .utk-menu-open  {
 
   .utk-menu-options {
-    opacity: 1;
-    bottom: 0;
-    position: fixed;
-    right: 0;
-    z-index: 10;
-    background-color: $smokeyx;
-    width: 100%;
-    height: 69px;
+    display: flex;
+    justify-content: flex-end;
+
 
     .container {
 
@@ -53,6 +48,7 @@
     box-shadow: $box-shadow-float;
     border-radius: $golden-ratio-4;
     position: relative;
+    z-index: 0;
     line-height: $golden-ratio-4;
     border-radius: $golden-ratio-4;
     overflow: hidden;
@@ -88,7 +84,7 @@
       line-height: $golden-ratio-4;
       text-align: center;
       background-color: $rock;
-      clip-path: polygon(6px 0,100% 0,100% 100%,0 100%);
+      clip-path: polygon(0 0,100% 0,100% 100%,6px 100%);
 
       @include respond(xs) {
         height: 40px;
@@ -113,7 +109,7 @@
 
 .utk-menu-help--help-me {
   .utk-menu-help--item--icon {
-    background-color: $orange;
+    background-color: $rock;
   }
 }
 
@@ -123,13 +119,18 @@
   }
 }
 
+.utk-menu-help--give {
+  .utk-menu-help--item--icon {
+    background-color: $orange;
+  }
+}
+
 .utk-menu-help--help-me--back {
   display: none;
   width: 47px;
   text-align: center;
   background-color: $smokey;
   color: $white;
-  position: fixed;
   top: 158px;
 
   @include respond(xs) {
@@ -142,20 +143,12 @@
 
 .utk-header-resources.utk-help-expand {
 
-  .utk-menu-help {
+  .utk-resources-menu,
+  .utk-resources-contact {
     display: none;
   }
 
   .utk-menu-options {
-    height: calc(100vh - 129px);
-    padding-top: $golden-ratio-2;
-    overflow: scroll;
-
-    @include respond(xs) {
-      height: calc(100vh - 66px);
-      padding-top: 0;
-    }
-
     .utk-menu-help--help-me--back {
       display: block;
     }
@@ -167,15 +160,6 @@
       height: 100%;
     }
   }
-
-  .utk-resources-close {
-    position: relative !important;
-    top: $golden-ratio-4;
-
-    @include respond(xs) {
-      top: 40px;
-    }
-  }
 }
 
 .utk-help {
@@ -184,7 +168,7 @@
   margin: 0;
   color: $white;
   text-align: center;
-  padding: $golden-ratio-4 0 $golden-ratio-4 ;
+  padding: $golden-ratio-2 0 $golden-ratio-4 ;
   display: flex;
   align-items: center;
   height: 100%;
@@ -205,13 +189,13 @@
   h3 {
     color: inherit;
     font-size: $type-4;
-    margin: $golden-ratio-2 auto 0;
-    color: $white;
+    margin: 0 auto 0;
+    color: $smokey;
   }
 
   p {
     font-size: $type-2;
-    color: $gray-1;
+    color: $smokeyx;
 
     &::after {
       display: block;
@@ -220,7 +204,7 @@
       background-color: $orange;
       content: ' ';
       margin: $golden-ratio-3 auto 0;
-      max-width: 120px;
+      max-width: $golden-ratio-6;
     }
   }
 }

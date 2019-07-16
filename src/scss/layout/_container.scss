@@ -1,12 +1,23 @@
 html {
-  margin-top: 129px;
+  margin-top: 82px;
   font-size: $type-3;
+
+  @include respond(sm) {
+    margin-top: 82px;
+  }
+
+  @include respond(xs) {
+    margin-top: 66px;
+  }
 }
 
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
+  -webkit-font-smoothing: subpixel-antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
 #placeholder {
@@ -17,25 +28,43 @@ html {
 body {
   margin: 0;
   padding: 0;
+  font-weight: 400;
+  line-height: 1.5em;
+  letter-spacing: -0.015em;
+
+  ::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 6px;
+    height: 2px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    cursor: pointer;
+    border-radius: 2px;
+    background: $rock;
+    -webkit-transition: color .2s ease;
+    transition: color .2s ease;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: $gray-2;
+    border-radius: 0;
+  }
 
   &.utk-menu-open {
     overflow: hidden;
 
     .utk-body-overlay {
-      opacity: 1;
+      opacity: 0.76;
       height: 100%;
-    }
-
-    .utk-header-super {
-      background-color: $gray-1;
     }
   }
 }
 
 .utk-body-overlay {
+  background-color: $smokeyx;
   width: 100%;
   height: 0;
-  background-color: rgba($smokey, 1);
   position: fixed;
   z-index: 99;
   left: 0;
@@ -45,7 +74,6 @@ body {
 }
 
 #utk-lib-header .container {
-  position: relative;
 }
 
 #utk-header-trigger {
@@ -83,9 +111,9 @@ body {
     top: 0;
     z-index: 0;
     opacity: 1;
-    background: -moz-linear-gradient(top, rgba($smokeyx,0) 70%, rgba($smokey,0.35) 100%); /* FF3.6-15 */
-    background: -webkit-linear-gradient(top, rgba($smokeyx,0) 70%,rgba($smokey,0.35) 100%); /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(to bottom, rgba($smokeyx,0) 70%,rgba($smokey,0.35) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    background: -moz-linear-gradient(top, rgba($smokeyx, 0) 70%, rgba($smokey, 0.35) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, rgba($smokeyx, 0) 70%, rgba($smokey, 0.35) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, rgba($smokeyx, 0) 70%, rgba($smokey, 0.35) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   }
 
   .utk-header-title {
@@ -105,8 +133,6 @@ body {
       max-width: 50vw;
       text-transform: uppercase;
       margin-bottom: 4rem;
-      color: $limestone;
-      letter-spacing: 0.35em;
 
       > .font-script {
         text-transform: none;
@@ -114,7 +140,6 @@ body {
         font-size: 6.5rem;
         line-height: 1rem;
         display: block;
-        letter-spacing: 0;
       }
     }
 
@@ -139,7 +164,6 @@ body {
         cursor: pointer;
         color: $gray-0;
         font-size: 0.85rem;
-        letter-spacing: 0.05em;
         line-height: 3rem;
         font-weight: 500;
         text-align: center;

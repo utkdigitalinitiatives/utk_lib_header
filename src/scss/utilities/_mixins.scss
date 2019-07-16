@@ -4,13 +4,41 @@
 }
 
 @mixin filter-gradient($start, $start-percent, $end, $end-percent) {
-  background: -moz-linear-gradient(right, $start $start-percent, $end $end-percent);
-  background: -webkit-gradient(linear, right top, left top, color-stop($start-percent, $start), color-stop($end-percent, $end));
-  background: -webkit-linear-gradient(right, $start $start-percent, $end $end-percent);
-  background: -o-linear-gradient(right, $start $start-percent, $end $end-percent);
-  background: -ms-linear-gradient(right, $start $start-percent, $end $end-percent);
-  background: linear-gradient(to left, $start $start-percent, $end $end-percent);
-  filter: progid:dximagetransform.microsoft.gradient(startColorstr='$start', endColorstr='$end', GradientType=0);
+  background: -moz-linear-gradient(top, $start $start-percent, $end $end-percent);
+  background: -webkit-gradient(linear, top, bottom, color-stop($start-percent, $start), color-stop($end-percent, $end));
+  background: -webkit-linear-gradient(top, $start $start-percent, $end $end-percent);
+  background: -o-linear-gradient(top, $start $start-percent, $end $end-percent);
+  background: -ms-linear-gradient(top, $start $start-percent, $end $end-percent);
+  background: linear-gradient(to bottom, $start $start-percent, $end $end-percent);
+}
+
+@mixin filter-gradient-horizontal($start, $start-percent, $end, $end-percent) {
+  background: -moz-linear-gradient(left, $start $start-percent, $end $end-percent);
+  background: -webkit-gradient(linear, left, bottom, color-stop($start-percent, $start), color-stop($end-percent, $end));
+  background: -webkit-linear-gradient(left, $start $start-percent, $end $end-percent);
+  background: -o-linear-gradient(left, $start $start-percent, $end $end-percent);
+  background: -ms-linear-gradient(left, $start $start-percent, $end $end-percent);
+  background: linear-gradient(to right, $start $start-percent, $end $end-percent);
+}
+
+@mixin standard-body-link() {
+  a,
+  a:visited {
+    color: $globe !important;
+  }
+
+  a:hover,
+  a:focus {
+    color: $leconte !important;
+  }
+}
+
+@mixin serif-body-rendering() {
+  font-family: $serif;
+  font-size: 21px;
+  line-height: 1.58;
+  word-break: break-word;
+  letter-spacing: -0.003em;
 }
 
 @mixin background-2x($path, $ext: "png", $w: auto, $h: auto, $pos: left top, $repeat: no-repeat) {
@@ -95,21 +123,6 @@
     left: 0;
     right: 0;
     bottom: 0;
-  }
-}
-
-@keyframes blink {
-  0% {
-    opacity: 1.0;
-  }
-  25% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 1.0;
-  }
-  100% {
-    opacity: 1.0;
   }
 }
 

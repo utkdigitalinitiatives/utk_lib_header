@@ -1,22 +1,26 @@
 .utk-hours {
-  margin-bottom: 0;
+  margin-bottom: $golden-ratio-3;
 
-  @include respond(md, xs) {
-    padding-top: $golden-ratio-4;
-    border-top: 2px solid $gray-1;
+  &.utk-hours-map {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
   }
 
-  @include respond(xs) {
-    padding-top: $golden-ratio-0;
-    margin-bottom: $golden-ratio-2;
-    border-top: none;
-  }
+  .utk-hours-header {
+    display: flex;
+    justify-content: space-between;
 
-  h4 {
-    margin: 0 0 $golden-ratio-2;
-    text-transform: uppercase;
-    font-size: $type-2;
-    display: block;
+    h3 {
+      margin: 0 0 $golden-ratio-1;
+      padding: 0;
+      font-weight: 700;
+      text-transform: none;
+      font-size: $type-3;
+      color: $smokey;
+    }
   }
 
   &--loading {
@@ -34,17 +38,17 @@
 
   &--listing {
     margin: 0;
-    padding: 0 $golden-ratio-4 0 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    padding: 0;
 
-    @include respond(md) {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-around;
-      padding: 0;
-    }
+    &--col {
+      width: 50%;
 
-    @include respond(xs) {
-      padding: 0 0;
+      &:last-child {
+        padding-left: $golden-ratio-1;
+      }
     }
 
 
@@ -52,12 +56,11 @@
       list-style: none;
       margin: 0;
       padding: 0;
-      margin-bottom: $golden-ratio-2;
       width: auto;
+      margin-bottom: $golden-ratio-1;
 
-      @include respond(md) {
-        flex: 1 1 0;
-        padding-right: $golden-ratio-3;
+      &--more {
+        display: none !important;
       }
 
       &:last-child {
@@ -67,30 +70,126 @@
       a,
       a:visited {
         display: flex;
-        flex-flow: row wrap;
+        flex-direction: row;
         font-size: $type-2;
-        color: $smokeyx;
+        color: $globe;
 
-        &.library-open  .utk-hours--listing--item--hours::before {
-          border-color: $switchgrass;
-          background-color: $switchgrass;
+        figure {
+          margin: 0;
+          width: $golden-ratio-4;
+          height: $golden-ratio-4;
+          border-radius: $golden-ratio-3;
+          margin-top: 3px;
+          position: relative;
+          background-color: $smokey;
+          z-index: 1;
+          flex-shrink: 0;
+          overflow: hidden;
+
+          img {
+            filter: grayscale(0.9);
+            z-index: 0;
+            opacity: 0.47;
+            background-color: $smokey;
+            border-radius: $golden-ratio-3;
+            box-shadow: $box-shadow;
+            width: 100%;
+            height: 100%;
+            position: relative;
+          }
         }
 
-        h5 {
-          font-family: $sans;
-          width: 100%;
-          flex-grow: 0;
+        .utk-hours--listing--item--meta {
+          padding-left: $golden-ratio-1;
           flex-shrink: 1;
-          font-size: $type-2;
-          line-height: 1.5em;
-          font-weight: 400;
-          margin: 0;
-          padding: 0;
-          color: $smokeyx;
+          flex-grow: 0;
+          display: flex;
+          flex-direction: column;
 
-          @include respond(xs) {
-            font-size: $type-2;
-            font-weight: 400;
+          span.library-title {
+            margin: 0;
+            padding: 0;
+            display: block;
+            font-size: $type-2 !important;
+            font-weight: 700;
+            line-height: 1.5em;
+            word-break: break-word;
+          }
+
+          span.library-subtitle {
+            margin: 0;
+            padding: 0;
+            display: block;
+            color: $smokey !important;
+            font-size: $type-1;
+            line-height: 1.5em;
+          }
+        }
+
+        &.library-open {
+          figure{
+
+            img {
+              filter: grayscale(0);
+              opacity: 1;
+            }
+          }
+        }
+      }
+
+      a:hover,
+      a:focus {
+        span.library-title {
+          color: $leconte;
+        }
+      }
+
+      &--child {
+        padding-left: $golden-ratio-4;
+        margin-top: $golden-ratio-1;
+        position: relative;
+        z-index: 0;
+
+        &::before {
+          position: absolute;
+          left: 23px;
+          top: 8px;
+          content: '';
+          background-color: $gray-0;
+          height: 2px;
+          width: 23px;
+          position: absolute;
+          border-radius: 2px;
+        }
+
+        &::after {
+          position: absolute;
+          left: 23px;
+          top: -66px;
+          content: '';
+          background-color: $gray-0;
+          height: $golden-ratio-5;
+          width: 2px;
+          position: absolute;
+          border-radius: 2px;
+        }
+
+        a .utk-hours--listing--item--meta  {
+          span.library-title {
+            font-size: $type-1 !important;
+            font-weight: 700;
+
+            @include respond(xs, sm) {
+              font-size: $type-2 !important;
+            }
+          }
+
+          span.library-subtitle {
+            display: none;
+
+            @include respond(xs, sm) {
+              display: block !important;
+            }
           }
         }
       }
@@ -100,29 +199,32 @@
       }
 
       &--hours {
+        display: flex;
         font-weight: 700;
-        font-size: $type-2;
-        text-transform: uppercase;
-
-        @include respond(xs) {
-          display: block;
-          font-size: $type-2;
-          margin: $golden-ratio-0 0 0;
-        }
+        font-size: $type-1;
+        color: $smokeyx !important;
+        align-items: center;
 
         &::before {
-          width: 0.6em;
-          height: 0.6em;
-          margin-top: 0.2em;
-          content: ' ';
-          display: inline-block;
-          border-radius: 100%;
-          background-color: transparent;
+          margin-right: $golden-ratio-0;
+          z-index: 1;
+          display: block;
+          content: '';
+          width: 9px;
+          height: 9px;
+          border-radius: $golden-ratio-1;
           border: 2px solid $rock;
-          margin-right: 11px;
+          background-color: $white;
         }
       }
     }
+  }
+}
+
+.utk-hours--listing--item a.library-open {
+  .utk-hours--listing--item--hours::before {
+    background-color: $switchgrass;
+    border: 2px solid $switchgrass;
   }
 }
 
@@ -140,6 +242,200 @@
   animation: spinner 1s linear infinite;
 }
 
-@keyframes spinner {
-  to {transform: rotate(360deg);}
+@include respond(xs, sm) {
+  .utk-hours {
+    background-color: $gray-1;
+    margin-top: 0;
+    border-left: 0;
+    width: calc(100%);
+    box-shadow: $box-shadow-float;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-bottom: 0;
+    height: 121px;
+
+    .utk-hours-header {
+      width: 100%;
+      text-align: center;
+
+      h3 {
+        font-size: $type-1;
+        color: $smokey;
+        margin: 2px 29px;
+
+        @include respond(xs) {
+          margin: 2px 18px;
+        }
+      }
+    }
+
+    .utk-hours--listing {
+      overflow-x: scroll;
+      overflow-y: hidden;
+      width: calc(100%);
+      position: relative;
+
+      &--col {
+        display: flex;
+        flex-direction: row;
+        width: auto;
+        padding-left: 0 !important;
+      }
+
+      &--item {
+        display: flex;
+        margin-bottom: 0;
+
+        &--more {
+          width: $golden-ratio-5 !important;
+          min-width: $golden-ratio-5 !important;
+          line-height: 1.29em;
+          text-align: center;
+          font-size: $type-0 !important;
+          display: flex !important;
+          align-content: center;
+          align-items: flex-end !important;
+          color: $smokey !important;
+          flex-direction: column;
+          flex-wrap: wrap;
+          cursor: pointer !important;
+          justify-content: center;
+          padding: 0 !important;
+          background-color: $white !important;
+
+          span {
+            font-weight: 700;
+            display: block;
+            text-align: center;
+            font-size: $type-1;
+            color: $white;
+            background-color: $white;
+            margin: 0 auto $golden-ratio-0;
+            width: 30px;
+            height: 30px;
+            box-shadow: $box-shadow;
+            text-align: center;
+            padding-top: 2px;
+            line-height: 28px;
+            border-radius: 30px;
+            background-color: $globe;
+            transition: $transition-all;
+            margin-top: 7px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            &::before {
+              margin-right: 0;
+              margin-left: -2px;
+              font-size: $type-0;
+            }
+          }
+
+          &-collapse span {
+            background-color: $rock !important;
+          }
+        }
+
+        > a {
+        }
+
+        &--child {
+          padding-left: 0 !important;
+          margin-top: 0;
+          margin-bottom: 0;
+          max-width: 0;
+
+          &:first-of-type a {
+            box-shadow: inset $box-shadow-left !important;
+          }
+
+          &:last-of-type a {
+            box-shadow: inset $box-shadow-right!important;
+          }
+
+          @include respond(xs, sm) {
+            transition: $transition-all;
+          }
+
+          > a {
+            padding: 0 $golden-ratio-2;
+
+            .library-title {
+              font-weight: 700;
+            }
+          }
+
+          &::before,
+          &::after {
+            content: none;
+          }
+
+          a::after {
+            height: 29px;
+            content: ' ';
+            display: block;
+            padding: 6px 18px;
+            position: absolute;
+            width: 100%;
+            font-size: 11px !important;
+            white-space: nowrap;
+            bottom: 0;
+            left: 0;
+            text-align: center;
+          }
+        }
+
+        &-showchildren {
+          .utk-hours--listing--item--child {
+            max-width: 290px;
+          }
+        }
+
+        a {
+          display: flex;
+          flex-grow: 1;
+          padding: 11px 29px;
+          border-right: 1px solid $gray-1;
+          position: relative;
+          background-color: $white;
+          align-items: flex-end;
+
+          @include respond(xs) {
+            padding: 11px 18px;
+          }
+
+          figure {
+            width: 30px;
+            height: 30px;
+            margin-right: $golden-ratio-1;
+            margin-bottom: 32px;
+          }
+
+          .utk-hours--listing--item--meta {
+            padding-left: 0;
+
+            .library-title {
+              white-space: nowrap;
+            }
+
+            .library-subtitle {
+              color: $smokeyx;
+              font-weight: 400;
+              font-size: $type-1 !important;
+              white-space: nowrap;
+              bottom: 0;
+              left: 0;
+            }
+          }
+
+          .utk-hours--listing--item--hours {
+            font-size: $type-1;
+            white-space: nowrap;
+          }
+        }
+      }
+    }
+  }
 }

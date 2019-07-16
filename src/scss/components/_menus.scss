@@ -1,0 +1,408 @@
+.utk-resources-menu {
+  &--services-primary {
+    display: flex;
+    align-items: center;
+
+    @include respond(xs) {
+      align-content: center;
+      width: 100%;
+
+      > .utk-resources-menu--section {
+        width: 100%;
+      }
+    }
+
+    h3 {
+      display: none;
+    }
+
+    ul {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+
+      @include respond(xs) {
+        width: 100%;
+        padding: $golden-ratio-0 0 0;
+      }
+
+      &:before {
+        content: "\E812";
+        font-family: fontello;
+        font-style: normal;
+        speak: none;
+        text-decoration: inherit;
+        text-align: center;
+        font-variant: normal;
+        text-transform: none;
+        -webkit-font-smoothing: antialiased;
+        margin-right: $golden-ratio-3;
+        color: $rock;
+        font-size: 15px;
+        display: inline-flex;
+        align-content: center;
+        align-items: center;
+        margin-top: -2px;
+
+        @include respond(xs) {
+          content: none;
+        }
+      }
+
+      li {
+        padding: 0;
+        list-style: none;
+        font-size: $type-2;
+        font-weight: 700;
+        margin: 0 $golden-ratio-3 0 0;
+        display: flex;
+        align-items: center;
+
+        @include respond(xs) {
+          width: 50%;
+          margin: 0;
+          display: block;
+          font-size: $type-1;
+          margin-bottom: $golden-ratio-0;
+          padding-left: $golden-ratio-2;
+
+          > a {
+            display: inline-flex;
+            align-self: center;
+            line-height: 1.47em;
+          }
+
+          &:before {
+            content: "\E812";
+            font-family: fontello;
+            font-style: normal;
+            speak: none;
+            text-decoration: inherit;
+            text-align: center;
+            font-variant: normal;
+            text-transform: none;
+            -webkit-font-smoothing: antialiased;
+            margin-right: $golden-ratio-1;
+            color: $rock;
+            font-size: 11px;
+            display: inline-flex;
+            align-content: center;
+            align-items: center;
+            position: absolute;
+            margin-left: -18px;
+          }
+        }
+
+        a,
+        a:visited {
+          color: $globe;
+        }
+
+        a:hover,
+        a:focus {
+          color: $leconte;
+        }
+      }
+    }
+  }
+
+  &--help {
+    width: calc(33.333333% - #{$golden-ratio-3});
+    background-color: $gray-0;
+    padding: $golden-ratio-2;
+    border-radius: $golden-ratio-0;
+    margin-right: $golden-ratio-3;
+
+    @include respond(xs) {
+      background-color: $globe;
+      margin-right: 0;
+      border-radius: 0;
+      padding: $golden-ratio-3 $golden-ratio-2;
+      margin-left: -18px;
+      width: calc(100% + 36px);
+      margin-bottom: $golden-ratio-2;
+    }
+
+    h3 {
+      font-size: $type-2;
+      font-weight: 700;
+      color: $smokey;
+      margin: 0 0 $golden-ratio-0;
+      line-height: 1.47em;
+      display: flex;
+      justify-content: space-between;
+
+      @include respond(xs) {
+        color: $eureka;
+        font-weight: 700;
+        text-transform: uppercase;
+        font-size: $type-2;
+        line-height: inherit;
+        text-align: center;
+        flex-direction: column-reverse;
+        justify-content: center;
+      }
+
+      &:after {
+        content: "\E814";
+        font-family: fontello;
+        font-style: normal;
+        speak: none;
+        text-decoration: inherit;
+        text-align: center;
+        font-variant: normal;
+        text-transform: none;
+        -webkit-font-smoothing: antialiased;
+        color: $rock;
+        font-size: $type-4;
+        display: inline-flex;
+        align-content: center;
+        align-items: center;
+
+        @include respond(xs) {
+          color: $summitt;
+          font-weight: 400;
+          font-size: $type-5;
+          line-height: inherit;
+          text-align: center;
+          justify-content: center;
+          margin-bottom: $golden-ratio-0;
+        }
+      }
+    }
+
+    ul {
+      margin: 0;
+      padding: 0;
+
+      @include respond(xs) {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+      }
+
+      li {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        font-size: $type-1;
+        font-weight: 700;
+
+        @include respond(xs) {
+          width: 100%;
+          text-align: center;
+        }
+
+        a,
+        a:visited {
+          color: $globe;
+
+          @include respond(xs) {
+            color: $white !important;
+          }
+        }
+
+        a:hover,
+        a:focus {
+          color: $leconte;
+
+          @include respond(xs) {
+            color: $white !important;
+          }
+        }
+      }
+    }
+  }
+
+  &--services-speciality {
+    width: calc(67.777777% - #{$golden-ratio-3});
+    border: 2px solid $gray-0;
+    border-radius: $golden-ratio-0;
+    padding: $golden-ratio-2 0 0 $golden-ratio-2;
+    margin-right: $golden-ratio-3;
+
+    @include respond(sm) {
+      width: calc(67.777777%);
+      margin-right: 0;
+    }
+
+    @include respond(xs) {
+      width: 100%;
+      margin-right: 0;
+      padding: $golden-ratio-1 0;
+      border: none;
+      border-radius: 0;
+    }
+
+    h3 {
+      display: none;
+      line-height: 1.47em;
+    }
+
+    ul {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+
+      li {
+        margin: 0;
+        width: 50%;
+        padding: 0;
+        list-style: none;
+        margin-bottom: $golden-ratio-2;
+
+        @include respond(xs) {
+          width: 100%;
+          margin-right: 0;
+        }
+
+        a,
+        a:visited {
+          display: block;
+          color: $globe;
+          padding-right: $golden-ratio-2;
+          font-weight: 700;
+          line-height: 1.47em;
+          font-size: $type-2;
+
+          @include respond(xs) {
+            font-size: $type-1;
+            padding-left: $golden-ratio-2;
+
+            &:before  {
+              content: "\E812";
+              font-family: fontello;
+              font-style: normal;
+              speak: none;
+              text-decoration: inherit;
+              text-align: center;
+              font-variant: normal;
+              text-transform: none;
+              -webkit-font-smoothing: antialiased;
+              font-size: $type-0;
+              align-content: center;
+              align-items: center;
+              margin-right: 6px;
+              color: $rock;
+              position: absolute;
+              margin-left: -18px;
+              font-size: 11px;
+            }
+          }
+
+          span {
+            display: block;
+            font-weight: 400;
+            color: $smokeyx !important;
+            font-size: $type-1;
+            margin-top: $golden-ratio-0;
+            line-height: 1.47em;
+
+            @include respond(xs) {
+              margin-top: 2px;
+              color: $smokey !important;
+            }
+          }
+        }
+
+        a:hover,
+        a:focus {
+          color: $leconte;
+        }
+      }
+    }
+  }
+
+  &--about {
+    margin-left: calc(#{$golden-ratio-4 + $golden-ratio-1});
+
+    @include respond(xs, sm) {
+      background-color: $smokey;
+      padding: $golden-ratio-3;
+      margin-left: -29px;
+      width: calc(100% + 58px);
+    }
+
+    @include respond(xs) {
+      padding: $golden-ratio-3 $golden-ratio-2 $golden-ratio-2;
+      margin-left: -18px;
+      width: calc(100% + 36px);
+    }
+
+    &:before {
+      display: block;
+      width: $golden-ratio-5;
+      height: $golden-ratio-0;
+      content: '';
+      background-color: $orange;
+      margin: 0 0 $golden-ratio-1;
+    }
+
+    h3 {
+      font-size: $type-2;
+      font-weight: 700;
+      color: $smokey;
+      margin: 0 0 $golden-ratio-0;
+      line-height: 1.47em;
+
+      @include respond(xs, sm) {
+        color: $gray-1;
+        font-weight: 700;
+        margin: 0 0 $golden-ratio-1;
+      }
+    }
+
+    ul {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+
+      @include respond(xs, sm) {
+        width: $gr-long;
+      }
+
+      li {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        font-size: $type-1;
+        width: 50%;
+
+        @include respond(xs, sm) {
+          font-weight: 400;
+          width: 33.333333%;
+        }
+
+        @include respond(xs) {
+          width: 50%;
+        }
+
+        @media only screen and (max-width: 500px) {
+          width: 100%;
+        }
+
+        a,
+        a:visited {
+          color: $globe;
+
+          @include respond(xs, sm) {
+            color: $white;
+          }
+        }
+
+        a:hover,
+        a:focus {
+          color: $leconte;
+
+          @include respond(xs, sm) {
+            color: $white;
+          }
+        }
+      }
+    }
+  }
+}

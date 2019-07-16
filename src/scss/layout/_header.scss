@@ -5,7 +5,6 @@
   z-index: 100;
   width: 100%;
   border-top: 6px solid $orange;
-  box-shadow: $box-shadow;
   font-family: $sans;
   color: $smokeyx;
   font-size: 15px;
@@ -15,9 +14,14 @@
     height: 76px;
     width: 100%;
     top: 0;
-    z-index: 97;
-    transition: $transition-all;
-    margin-top: $golden-ratio-4;
+    z-index: 1000;
+    transition: $transition-all-fast;
+    position: relative;
+    box-shadow: $box-shadow;
+
+    @include respond(sm) {
+      margin-top: 0;
+    }
 
     @include respond(xs) {
       margin-top: 0;
@@ -25,36 +29,25 @@
     }
 
     > .container {
+      display: flex;
+      justify-content: space-between;
     }
-  }
-  .utk-header-super {
-    width: 100%;
-    background-color: $gray-1;
-    height: $golden-ratio-4;
-    position: absolute;
-    z-index: 96;
-    top: 0px;
-    overflow: hidden;
-    transition: $transition-all;
-  }
-}
-
-@include respond(xs, sm, md) {
-  .utk-header.utk-header-expand-menu .utk-header-actions {
-    right: 25px;
-    margin-top: 16px;
   }
 }
 
 .utk-header-actions {
-  position: absolute;
-  right: 0;
   display: flex;
   flex-direction: row;
   width: auto;
-  transition: $transition-all;
   padding-top: 3px;
   height: $golden-ratio-5;
+  align-items: flex-end;
+  flex-shrink: 1;
+  margin-right: -14.5px !important;
+
+  @include respond(xs, sm) {
+    padding-top: 0;
+  }
 
   @include respond(xs) {
     right: 0;
@@ -62,8 +55,15 @@
     height: 60px;
   }
 
+  @media only screen and (max-width: 460px) {
+    margin-right: -18px !important;
+  }
+
   .utk-header-actions {
+
     &--item {
+      flex-grow: 0;
+      flex-shrink: 1;
       display: block;
       width: auto;
       height: auto;
@@ -73,16 +73,29 @@
       font-size: $type-2;
       text-transform: uppercase;
 
+      > a > span {
+        color: $rock;
+      }
+
       &.utk-header-actions--home {
         text-transform: none;
       }
 
-      @include respond(xs, sm) {
-        &.utk-header-actions--utk {
+      //@media only screen and (max-width: 500px) {
+
+      @include respond(xs) {
+        &.utk-header-actions--home {
           display: none;
         }
+      }
 
-        &.utk-header-actions--home {
+
+      &.utk-header-actions--home {
+        > a {
+          font-weight: 400 !important;
+        }
+
+        @include respond(xs) {
           display: none;
         }
       }
@@ -91,22 +104,77 @@
         font-style: normal;
 
         @include respond(xs) {
-          display: none;
+          font-size: $type-2;
         }
       }
 
       a {
-        display: inline-block;
-        padding: calc((#{$golden-ratio-4} - #{$golden-ratio-0} - #{$type-2}) / 2) calc(#{$golden-ratio-3} / 2);
-        transition: $transition-all;
-        color: $smokeyx !important;;
+        margin-top: 2px;
+        padding: 0 calc(#{$golden-ratio-3} / 2);
+        color: $smokeyx !important;
+        font-weight: 700;
+        display: flex;
+        align-content: center;
+        align-items: center;
 
-        @include respond(xs) {
+        @media only screen and (max-width: 460px) {
+          flex-direction: column;
+          justify-items: center;
+          align-items: center;
+          align-content: center;
+          padding: 0 18px !important;
+          width: 60px;
+
           > span {
-            font-size: $type-4;
+            margin: 0;
+            color: $smokey;
+            font-size: 24px;
+          }
+
+          em {
+            display: none;
           }
         }
       }
     }
+  }
+
+  &--resources,
+  &--search {
+    .icon-menu,
+    .icon-search,
+    .icon-cancel {
+      font-size: $type-2;
+      margin-right: $golden-ratio-0;
+    }
+
+    .icon-cancel {
+      color: $torch !important;
+    }
+
+    .utk-header-collapse,
+    .utk-search-collapse {
+      display: none !important;
+    }
+  }
+}
+
+body.utk-menu-open {
+  .utk-header-expand {
+    display: none !important;
+  }
+
+  .utk-header-collapse {
+    display: flex !important;
+  }
+}
+
+body.utk-search-open {
+  .utk-search-expand {
+    display: none !important;
+  }
+
+  .utk-search-collapse {
+    display: flex !important;
   }
 }

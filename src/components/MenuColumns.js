@@ -1,9 +1,6 @@
 import React, {Component} from 'react';
 import {MenuItems} from './MenuItems';
 
-import uniqueId from "lodash/uniqueId"
-import debounce from "lodash/debounce";
-
 export class MenuColumns extends Component {
 
     constructor(props) {
@@ -26,26 +23,23 @@ export class MenuColumns extends Component {
 
         const {items} = this.props || {};
 
-        if (items) {
+        if (items.wpse_children) {
 
-            const menuSection = Object.entries(items).map((section, index) => {
+            const menuSection = Object.entries(items.wpse_children).map((section, index) => {
 
-                let {id, title, url, classes, target, dropdown} = section[1];
+                let {id, title, wpse_children} = section[1];
                 let dropdownItems = '';
-                if (dropdown) {
-                    dropdownItems = Object.entries(dropdown).map((link, index) => {
-
-                        let {title, url, classes, target} = link[1];
-
+                if (wpse_children) {
+                    dropdownItems = Object.entries(wpse_children).map((link, index) => {
+                        let {title, url} = link[1];
                         return (
-                            <a href={url} tabIndex="4">{title}</a>
+                            <a key={index} href={url} tabIndex="4">{title}</a>
                         );
-
                     });
                 }
 
                 return (
-                    <MenuItems menuId={id} title={title} dropdownItems={dropdownItems} setMenuAs={this.updateMenu} />
+                    <MenuItems key={index} menuId={id} title={title} dropdownItems={dropdownItems} setMenuAs={this.updateMenu} />
                 )
             });
             return (

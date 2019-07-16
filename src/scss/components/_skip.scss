@@ -1,0 +1,55 @@
+.utk-skip {
+  background-color: $sunsphere;
+  width: 100%;
+  margin: 0;
+  list-style: none;
+  position: fixed;
+  left: -5000px;
+  z-index: 99998;
+  min-height: 47px;
+  display: flex;
+  align-items: center;
+  align-content: flex-end;
+  top: 50px;
+
+  &:focus-within {
+    top: 82px;
+    left: auto;
+  }
+;
+
+  > ul {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    display: flex;
+
+    @include respond(xs, sm) {
+      flex-direction: column;
+      padding-top: $golden-ratio-1;
+      padding-bottom: $golden-ratio-1;
+    }
+
+    > li {
+      font-size: $type-2;
+      font-weight: 700;
+      list-style: none;
+      margin-right:  $golden-ratio-3;
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      a, a:visited {
+        color: $smokeyx;
+        text-decoration: none;
+
+        &:hover,
+        &:focus {
+          color: $smokeyx;
+        }
+      }
+    }
+  }
+}

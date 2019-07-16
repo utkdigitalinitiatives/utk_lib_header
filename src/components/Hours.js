@@ -2,6 +2,12 @@ import React, {Component} from 'react';
 import {HoursLocation} from "./HoursLocation";
 import Globals from "./Globals";
 
+import hodges from '../media/hodges.jpg';
+import pendergrass from '../media/pendergrass.jpg';
+import devine from '../media/devine.jpg';
+import hoskins from '../media/hoskins.jpg';
+// import {Locations} from "./Locations";
+
 const ENDPOINT = 'wp-json/libcal';
 const ROUTE = '/hours';
 
@@ -13,7 +19,8 @@ export class Hours extends Component {
         this.state = {
             locations: {},
             timestamp: 0,
-            grab: false
+            grab: false,
+            layout: 'default'
         };
     }
 
@@ -39,6 +46,13 @@ export class Hours extends Component {
 
     }
 
+    componentDidMount() {
+
+        if (this.props.expanded && !this.state.grab)
+            this.fetchLibCalHours()
+
+    }
+
     componentDidUpdate() {
 
         if (this.props.expanded && !this.state.grab)
@@ -46,41 +60,105 @@ export class Hours extends Component {
 
     }
 
+    theCommons = (hodges) => {
+        let commons = hodges
+        commons.name = 'The Commons'
+        commons.url = 'https://commons.utk.edu/'
+        return(commons)
+    }
+
+    // toggleDefault = () => {
+    //     this.setState({layout: 'default'});
+    // }
+    //
+    // toggleMap = () => {
+    //     this.setState({layout: 'map'});
+    // }
+
     render() {
 
         const {locations} = this.state;
 
         if (Object.keys(locations).length !== 0)
-            return (
-                <div className="utk-hours">
-                    <h4>Hours Today</h4>
-                    <ul className="utk-hours--listing">
-                        <HoursLocation
-                            data={locations[52]}
-                            id={52}
-                            label="John C. Hodges Library"/>
-                        <HoursLocation
-                            data={locations[225]}
-                            id={225}
-                            label="Pendergrass Agriculture & Veterinary Medicine Library"/>
-                        <HoursLocation
-                            data={locations[226]}
-                            id={226}
-                            label="George F. DeVine Music Library"/>
-                        <HoursLocation
-                            data={locations[227]}
-                            id={227}
-                            label="Hoskins Storage & Reading Room"/>
-                    </ul>
-                </div>
-            );
-
+            // if (this.state.layout === 'default')
+                return (
+                    <div>
+                        <div className="utk-hours">
+                            <div className="utk-hours-header">
+                                <h3>Libraries &amp; Locations</h3>
+                                {/*<div className="utk-resources-toggle">*/}
+                                    {/*<a className="utk-resources-toggle--map" onClick={this.toggleMap}>Show on Map</a>*/}
+                                {/*</div>*/}
+                            </div>
+                            <ul className="utk-hours--listing">
+                                <div className="utk-hours--listing--col">
+                                    <HoursLocation
+                                        url="https://lib.utk.edu"
+                                        data={locations[52]}
+                                        id={52}
+                                        children={[this.theCommons(locations[52]),locations[217],locations[224]]}
+                                        title="Hodges"
+                                        subtitle="Main Library"
+                                        formal="John C. Hodges Library"
+                                        thumbnail={hodges}
+                                    />
+                                </div>
+                                <div className="utk-hours--listing--col">
+                                    <HoursLocation
+                                        url="https://lib.utk.edu/agvet"
+                                        data={locations[225]}
+                                        id={225}
+                                        title="Pendergrass"
+                                        subtitle="AgVet Library"
+                                        formal="Pendergrass Agriculture & Veterinary Medicine Library"
+                                        thumbnail={pendergrass}
+                                    />
+                                    <HoursLocation
+                                        url="https://lib.utk.edu/music"
+                                        data={locations[226]}
+                                        id={226}
+                                        title="DeVine"
+                                        subtitle="Music Library"
+                                        formal="George F. DeVine Music Library"
+                                        thumbnail={devine}
+                                    />
+                                    <HoursLocation
+                                        url="https://lib.utk.edu/request/storage"
+                                        data={locations[227]}
+                                        id={227}
+                                        title="Hoskins"
+                                        subtitle="Storage & Reading Room"
+                                        formal="James D. Hoskins Library"
+                                        thumbnail={hoskins}
+                                    />
+                                </div>
+                            </ul>
+                        </div>
+                    </div>
+                )
+            // else if (this.state.layout === 'map')
+            //     return (
+            //         <div className="utk-hours utk-hours-map">
+            //             <div className="container">
+            //                 <div className="utk-hours-header">
+            //                     <div className="utk-resources-toggle">
+            //                         <a className="utk-resources-toggle--default" onClick={this.toggleDefault}>Close Map</a>
+            //                     </div>
+            //                 </div>
+            //             </div>
+            //             <Locations locations={locations} />
+            //         </div>
+            //     )
+            // else
+            //     return
         else
             return (
                 <div className="utk-hours">
-                    <h4>Hours Today</h4>
+                    <div className="utk-hours-header">
+                        <h3>Libraries &amp; Locations</h3>
+                    </div>
                     <ul className="utk-hours--listing">
-                        <h5 className="utk-hours--loading spinner">Loading...</h5>
+                        <h5 className="utk-hours--loading spinner">Loading today's hours...</h5>
                     </ul>
                 </div>
             )

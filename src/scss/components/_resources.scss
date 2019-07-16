@@ -1,28 +1,39 @@
-.utk-header-resources {
+body .utk-header-resources {
   width: 100%;
-  background-color: $white;
-  transition: none !important;
   z-index: 999;
   position: fixed;
   display: none;
-  padding: $golden-ratio-3 0 0;
-  overflow: scroll;
-  height: calc(100vh  - 66px);
-  padding-bottom: 176px;
+  max-height: calc(100% - 82px);
+  overflow-y: scroll;
+  padding: 0 0 $golden-ratio-2;
+  background-color: $white;
 
-  @include respond(xs, sm, md, lg, xl) {
-    background-color: $white;
-    box-shadow: inset $box-shadow;
+  @include respond(md) {
+    max-height: calc(100% - 82px);
+  }
+
+  @include respond(sm) {
+    height: calc(100% - 82px);
+    max-height: calc(100% - 82px);
+    padding-top: 121px;
+    padding-bottom: 0;
   }
 
   @include respond(xs) {
-    padding-bottom: $golden-ratio-5;
+    height: calc(100% - 66px);
+    max-height: calc(100% - 66px);
+    padding-top: 121px;
+    padding-bottom: 0;
   }
 
-  > .container {
+  &--inner {
+  }
+
+  .utk-header-main-menu > .container {
     display: flex;
 
-    @include respond(md, xs) {
+    @include respond(xs, sm) {
+      flex-wrap: wrap;
       flex-direction: column;
     }
   }
@@ -47,38 +58,66 @@
   width: auto;
   display: flex;
   flex-grow: 1;
-  flex-direction: row;
+  flex-direction: column;
   padding: 0;
+  width: $gr-long;
 
-  @include respond(md) {
+  &--row {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: $golden-ratio-2;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    @include respond(xs) {
+      flex-wrap: wrap;
+      flex-direction: column;
+      margin-bottom: 0;
+
+      &:first-child {
+        h3 {
+          font-size: $type-2 !important;
+          border-bottom: 1px solid $gray-1;
+        }
+      }
+    }
+  }
+
+  @include respond(xs, sm) {
     width: 100%;
     padding-bottom: $golden-ratio-3;
   }
 
-  @include respond(sm, xs) {
-    display: block;
-  }
-
   @include respond(xs) {
-    padding-bottom: $golden-ratio-2;
+    width: 100%;
+    padding-bottom: 0;
   }
 
   &--col {
     display: block;
-    flex-grow: 1;
+    width: 33.333333%;
 
-    @include respond(sm, xs) {
+    @include respond(xs) {
       width: 100%;
 
       .utk-resources-menu--submenu {
-        display: none;
-      }
+        display: flex;
+        flex-wrap: wrap;
 
+        > a {
+          width: 50%;
+          font-size: $type-1 !important;
+          line-height: 1.47em;
+          margin-bottom: $golden-ratio-0;
+        }
+      }
     }
 
     .utk-resources-menu--section {
       margin-top: $golden-ratio-2;
-      margin-bottom: $golden-ratio-2;
+      margin-bottom: $golden-ratio-1;
 
       @include respond(xs) {
         margin-top: 0;
@@ -92,7 +131,7 @@
         font-family: $sans;
         text-transform: none;
         font-size: $type-3;
-        color: $smokeyx;
+        color: $smokey;
 
         @include respond(md, sm, xs) {
           margin-top: 0;
@@ -124,7 +163,6 @@
       }
     }
   }
-
 }
 
   .utk-header-expand-menu .utk-resources-contact {
@@ -132,30 +170,16 @@
 }
 
 .utk-resources-contact {
-  max-width: 303px;
-  opacity: 0;
-  z-index: 1;
+  width: $gr-short;
   height: auto;
-  overflow: hidden;
-  padding: 0 0 0 $golden-ratio-4;
-  border-left: 2px solid $gray-1;
+  padding: 0;
   margin-top: $golden-ratio-2;
+  display: flex;
+  flex-direction: column;
 
-  @include respond(xs) {
+  @include respond(xs, sm) {
     margin-top: 0;
-    padding: $golden-ratio-2 15px !important;
-    background-color: $gray-1;
-    border-top: 2px solid $gray-1;
-    margin: -15px;
-    width: calc(100% + 30px) !important;
-  }
-
-  @include respond(md, xs) {
     width: 100%;
-    padding: 0;
-    border-left: 0;
-    flex: 1;
-    max-width: 200%;
   }
 
   p {
@@ -188,55 +212,6 @@
     > a:focus {
       color: $globe;
     }
-  }
-}
-
-.utk-header-actions--resources {
-
-  a,
-  a:visited,
-  a:hover,
-  a:focus {
-    font-weight: 700;
-    color: $smokeyx !important;
-  }
-
-  .icon-menu {
-    opacity: 1;
-    margin-right: 6px;
-    transition: $transition-all;
-    font-size: 15px;
-  }
-
-  .icon-cancel {
-    opacity: 0;
-    transition: $transition-all;
-    margin-right: 6px;
-    font-size: 15px;
-  }
-
-  .utk-header-collapse {
-    display: none !important;
-
-    .icon-menu {
-      opacity: 0;
-      transition: $transition-all;
-    }
-
-    .icon-cancel {
-      opacity: 1;
-      color: $torch;
-    }
-  }
-}
-
-.utk-menu-open {
-  .utk-header-collapse {
-    display: inline-block !important;
-  }
-
-  .utk-header-expand {
-    display: none !important;
   }
 }
 
@@ -286,14 +261,14 @@
   line-height: $golden-ratio-4;
   background-color: $torch;
   position: absolute;
-  right: 50%;
-  margin-left: calc(-#{$golden-ratio-4 / 2});
+  right:  calc(50% - #{$golden-ratio-4 / 2});
   bottom: calc(-#{$golden-ratio-4 / 2});
   border-radius: $golden-ratio-4;
   text-align: center;
-  box-shadow: $box-shadow;
   cursor: pointer;
   z-index: 1;
+  box-shadow: $box-shadow-float;
+  display: none;
 
   span {
     font-size: $type-3;
@@ -310,7 +285,6 @@
     bottom: 15px;
     left: -5px;
     right: auto;
-    position: fixed;
     width: auto;
 
     @include respond(sm, md, lg, xl) {
@@ -326,7 +300,6 @@
     padding-top: 7px;
     padding-left: 1px;
     left: auto;
-    position: fixed;
     bottom: 24px !important;
     right: 25px !important;
     z-index: 11;

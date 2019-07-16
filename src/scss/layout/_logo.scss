@@ -1,28 +1,40 @@
+.utk-logo-flex {
+  flex-grow: 1;
+}
+
 .utk-logo-wrapper {
   z-index: 998;
   padding: 0;
   width: auto;
   position: absolute;
-  transition: $transition-all;
   margin-top: calc(-63px / 2);
 
   .utk-logo {
-    padding: 47px;
+    margin: 46px 0 0;
     height: 47px;
     opacity: 1;
     box-sizing: content-box;
-    transition: $transition-all;
     position: relative;
-    background-color: $white;
     top: 0;
-    box-shadow: $box-shadow;
+    transition: $transition-all;
 
     @include respond(sm) {
-      margin-top: -100px;
       -webkit-transform: scale(0);
       -ms-transform: scale(0);
       transform: scale(0);
       opacity: 1;
+    }
+
+    &--orange {
+      fill: $orange;
+    }
+
+    &--white {
+      fill: $white;
+    }
+
+    &--smokey {
+      fill: $smokey;
     }
   }
 
@@ -33,13 +45,11 @@
     box-shadow: none;
     position: absolute;
     left: -2000px;
-    top: 46px;
 
     @include respond(xs) {
       width: 30px;
       height: 30px;
       left: 0;
-      margin-top: 0 !important;
       transform: scale(1) !important;
     }
 
@@ -47,7 +57,6 @@
       width: $golden-ratio-4;
       height: $golden-ratio-4;
       left: 0;
-      margin-top: 0 !important;
       transform: scale(1) !important;
     }
   }
@@ -57,40 +66,46 @@
   a.utk-logo-unit:hover,
   a.utk-logo-unit:focus {
     position: absolute;
-    top: calc(63px / 2);
+    display: block;
+    top: calc(60px / 2);
     height: $golden-ratio-5;
     line-height: $golden-ratio-5;
-    font-size: $type-5;
-    font-weight: 400;
+    font-size: $type-4;
+    font-weight: 700;
     padding: 3px $golden-ratio-3 0;
-    letter-spacing: -0.02em;
-    left: 303px;
-    transition: $transition-all;
+    left: 100%;
     color: $smokey !important;
-
-    @include respond(xs) {
-      left: $golden-ratio-2;
-      font-size: $type-4;
-      height: 60px;
-      line-height: 60px;
-    }
+    letter-spacing: -0.03em;
+    transition: $transition-all;
+    white-space: nowrap;
 
     @include respond(sm) {
-      left: 36px;
+      padding: 3px $golden-ratio-2 0;
+      left: 47px;
+    }
+
+    @include respond(xs) {
+      left: 30px;
+      font-size: $type-3;
+      height: 60px;
+      line-height: 60px;
+      padding: 3px $golden-ratio-1 0;
+    }
+
+    @media only screen and (max-width: 365px) {
+      > span {
+        display: none;
+      }
     }
   }
 }
 
-body.utk-menu-open {
-
-  .utk-header-super {
-    height: 47px !important;
-  }
+body.utk-menu-open,
+body.utk-search-open,
+body.utk-skip-open {
 
   .utk-header-main {
-    margin-top: 47px !important;
-
-    @include respond(xs) {
+    @include respond(xs, sm) {
       margin-top: 0 !important;
     }
   }
@@ -99,6 +114,8 @@ body.utk-menu-open {
     .utk-logo-primary {
       top: -3000px;
       box-shadow: none;
+      padding: 0;
+      height: 0;
     }
 
     .utk-logo-square {;
@@ -107,11 +124,11 @@ body.utk-menu-open {
 
     .utk-logo-unit {
       left: 47px !important;
-      padding-left: 18px !important;
+      padding-left: $golden-ratio-2 !important;
 
       @include respond(xs) {
         left: 30px !important;
-        padding-left: 17px !important;
+        padding-left: $golden-ratio-1 !important;
       }
     }
   }
@@ -124,7 +141,6 @@ body.utk-menu-open {
       padding: 0;
 
       @include respond(xs, sm, md) {
-        margin-top: -100px;
         transform: scale(0);
         opacity: 1;
       }
@@ -147,7 +163,6 @@ body.utk-menu-open {
         top: 25px;
         left: 25px;
         display: block;
-
       }
     }
   }
@@ -166,7 +181,6 @@ body.utk-menu-open {
     border-bottom: 0px solid $white;
 
     .utk-logo {
-      margin-top: -100px;
       transform: scale(0);
       opacity: 1;
     }
@@ -210,32 +224,6 @@ body.utk-menu-open {
       box-shadow: $box-shadow;
       overflow: hidden;
 
-      .utk-header-actions {
-        right: 11px;
-        margin-top: 13px;
-      }
-
-      .utk-menu-trigger {
-        padding: calc((47px - 6px - 15px) / 2) 11px;
-
-        @include respond(xs, sm, md) {
-          padding: calc((47px - 6px - 15px) / 2) 3px;
-        }
-
-        .icon-cancel {
-          margin-left: -32px;
-        }
-      }
-
-      .utk-header-actions--search > a,
-      .utk-header-actions--search > a:visited {
-        padding: calc((47px - 6px - 15px) / 2) 11px;
-
-        .icon-cancel {
-          margin-left: -40px;
-        }
-      }
-
       .utk-logo-wrapper {
         height: 0;
         width: 304px;
@@ -243,7 +231,6 @@ body.utk-menu-open {
         border-bottom: 0px solid $white;
 
         .utk-logo {
-          margin-top: -100px;
           transform: scale(0);
           opacity: 1;
         }

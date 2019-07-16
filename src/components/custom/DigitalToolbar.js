@@ -1,8 +1,6 @@
 import React, {Component} from 'react';
 import {Button, Select, Label, Input, Popup, Grid, Radio } from 'semantic-ui-react'
-import 'semantic-ui-css/semantic.min.css'
 import Nouislider from "nouislider-react";
-import "nouislider/distribute/nouislider.css";
 import debounce from "lodash/debounce";
 
 const collectionOptions = [
