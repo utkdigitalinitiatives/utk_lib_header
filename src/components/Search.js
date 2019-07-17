@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {SearchForm} from "./SearchForm";
 
-const labelOnesearch = 'search one search catalog';
+const labelOnesearch = 'search one search';
 const labelUTLibraries = 'search libraries website';
 const placeholderOnesearch = ' Search for books, articles, and more...';
 const placeholderUTLibraries = ' Search our website for services and more...';
