@@ -91,7 +91,7 @@ export class Hours extends Component {
                                 {/*</div>*/}
                             </div>
                             <div className="utk-hours--listing">
-                                <ul className="utk-hours--listing--col" aria-label="hodges library and locations inside">
+                                <ul className="utk-hours--listing--col" aria-label="main library and locations inside">
                                     <HoursLocation
                                         url="https://lib.utk.edu"
                                         data={locations[52]}
