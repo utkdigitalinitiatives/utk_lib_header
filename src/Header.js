@@ -201,12 +201,12 @@ class Header extends Component {
                                     <a href="https://www.lib.utk.edu">Libraries Home</a>
                                 </div>
                                 <div className="utk-header-actions--item utk-header-actions--search">
-                                    <a href="#search" onClick={this.toggleSearch}
+                                    <a href="#search" aria-label="Search" onClick={this.toggleSearch}
                                        className={`utk-search-trigger utk-search-expand`}>
                                         <span className="icon-search"></span>
                                         <em>Search</em>
                                     </a>
-                                    <a href="#search" onClick={this.closeSearch}
+                                    <a href="#search" aria-label="Close Search" onClick={this.closeSearch}
                                        className={`utk-search-trigger utk-search-collapse`}>
                                         <span className="icon-cancel"></span>
                                         <span className="sr-only">Close</span>
@@ -214,12 +214,12 @@ class Header extends Component {
                                     </a>
                                 </div>
                                 <div className="utk-header-actions--item utk-header-actions--resources">
-                                    <a href="#menuopen" onClick={this.toggleResources}
+                                    <a href="#menuopen" aria-label="Expand Main Menu" onClick={this.toggleResources}
                                        className={`utk-menu-trigger utk-header-expand`}>
                                         <span className="icon-menu"></span>
                                         <em>Menu</em>
                                     </a>
-                                    <a href="#menuclose" onClick={this.closeResourcesMenu}
+                                    <a href="#menuclose" aria-label="Close Main Menu" aria-label="Menu" onClick={this.closeResourcesMenu}
                                        className={`utk-menu-trigger utk-header-collapse`}>
                                         <span className="icon-cancel"></span>
                                         <span className="sr-only">Close</span>
