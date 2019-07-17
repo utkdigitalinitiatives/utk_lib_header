@@ -209,6 +209,7 @@ class Header extends Component {
                                     <a href="#search" onClick={this.closeSearch}
                                        className={`utk-search-trigger utk-search-collapse`}>
                                         <span className="icon-cancel"></span>
+                                        <span className="sr-only">Close</span>
                                         <em>Search</em>
                                     </a>
                                 </div>
@@ -221,6 +222,7 @@ class Header extends Component {
                                     <a href="#menuclose" onClick={this.closeResourcesMenu}
                                        className={`utk-menu-trigger utk-header-collapse`}>
                                         <span className="icon-cancel"></span>
+                                        <span className="sr-only">Close</span>
                                         <em>Menu</em>
                                     </a>
                                 </div>
