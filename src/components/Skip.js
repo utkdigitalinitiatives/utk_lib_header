@@ -21,28 +21,28 @@ class Skip extends Component {
                     <li>
                         <a onFocus={this._onFocus.bind(this)}
                            onBlur={this._onBlur.bind(this)}
-                           href='#'>
+                           href='#menu'>
                             Skip to Main Menu
                         </a>
                     </li>
                     <li>
                         <a onFocus={this._onFocus.bind(this)}
                            onBlur={this._onBlur.bind(this)}
-                           href='#'>
+                           href='#search'>
                             Skip to Search
                         </a>
                     </li>
                     <li>
                         <a onFocus={this._onFocus.bind(this)}
                            onBlur={this._onBlur.bind(this)}
-                           href='#'>
+                           href='#main'>
                             Skip to Main Content
                         </a>
                     </li>
                     <li>
                         <a onFocus={this._onFocus.bind(this)}
                            onBlur={this._onBlur.bind(this)}
-                           href='#'>
+                           href='#accessibility'>
                             Skip to the Accessibility Link
                         </a>
                     </li>
