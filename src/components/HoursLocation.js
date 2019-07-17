@@ -56,11 +56,15 @@ export class HoursLocation extends Component {
         }
     }
 
-    getChildren(children) {
+    mapChildren(children) {
+        return children.map((item, index) => {
+            return <HoursLocationChild key={index} data={item}/>
+        })
+    }
+
+    getChildren(children, title) {
         if (children) {
-            return children.map((item, index) => {
-                return <HoursLocationChild key={index} data={item}/>
-            })
+            return <ul className="utk-hours--listing--item--childmenu" aria-label={`locations within ${title}`}>{this.mapChildren(children)}</ul>
         } else {
             return null
         }
@@ -99,7 +103,7 @@ export class HoursLocation extends Component {
                         <span className="utk-hours--listing--item--hours">{ hoursLabel }</span>
                     </div>
                 </a>
-                {this.getChildren(children)}
+                {this.getChildren(children, title)}
                 {this.renderChildTrigger(children, title, showChildren)}
             </li>
         )

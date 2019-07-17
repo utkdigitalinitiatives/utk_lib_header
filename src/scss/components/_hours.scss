@@ -45,6 +45,8 @@
 
     &--col {
       width: 50%;
+      margin: 0;
+      padding: 0;
 
       &:last-child {
         padding-left: $golden-ratio-1;
@@ -58,6 +60,11 @@
       padding: 0;
       width: auto;
       margin-bottom: $golden-ratio-1;
+
+      &--childmenu {
+        margin: 0 !important;
+        padding: 0 !important;
+      }
 
       &--more {
         display: none !important;
@@ -287,6 +294,12 @@
         display: flex;
         margin-bottom: 0;
 
+        &--childmenu {
+          margin: 0 !important;
+          padding: 0 !important;
+          display: flex;
+        }
+
         &--more {
           width: $golden-ratio-5 !important;
           min-width: $golden-ratio-5 !important;
@@ -336,9 +349,6 @@
           &-collapse span {
             background-color: $rock !important;
           }
-        }
-
-        > a {
         }
 
         &--child {
