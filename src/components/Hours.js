@@ -90,8 +90,8 @@ export class Hours extends Component {
                                     {/*<a className="utk-resources-toggle--map" onClick={this.toggleMap}>Show on Map</a>*/}
                                 {/*</div>*/}
                             </div>
-                            <ul className="utk-hours--listing">
-                                <div className="utk-hours--listing--col">
+                            <div className="utk-hours--listing">
+                                <ul className="utk-hours--listing--col" aria-label="hodges library and locations inside">
                                     <HoursLocation
                                         url="https://lib.utk.edu"
                                         data={locations[52]}
@@ -102,8 +102,8 @@ export class Hours extends Component {
                                         formal="John C. Hodges Library"
                                         thumbnail={hodges}
                                     />
-                                </div>
-                                <div className="utk-hours--listing--col">
+                                </ul>
+                                <ul className="utk-hours--listing--col" aria-label="other libraries on campus">
                                     <HoursLocation
                                         url="https://lib.utk.edu/agvet"
                                         data={locations[225]}
@@ -131,8 +131,8 @@ export class Hours extends Component {
                                         formal="James D. Hoskins Library"
                                         thumbnail={hoskins}
                                     />
-                                </div>
-                            </ul>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 )
