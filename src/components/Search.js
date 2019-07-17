@@ -97,8 +97,7 @@ export class Search extends Component {
                                 </svg>
                                 <span className="sr-only">Search for books, articles, and more</span>
                             </label>
-                            <div tabIndex="5"
-                                 id="utk-search-toggle"
+                            <div id="utk-search-toggle"
                                  onKeyDown={ this.handleKeyDown() }
                                  onClick={ this.handleOnClick() }
                                  className="utk-search-toggle utk-search-toggle-onesearch">

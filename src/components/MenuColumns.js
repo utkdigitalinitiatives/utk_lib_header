@@ -33,7 +33,7 @@ export class MenuColumns extends Component {
                     dropdownItems = Object.entries(wpse_children).map((link, index) => {
                         let {title, url} = link[1];
                         return (
-                            <a key={index} href={url} tabIndex="4">{title}</a>
+                            <a key={index} href={url}>{title}</a>
                         );
                     });
                 }

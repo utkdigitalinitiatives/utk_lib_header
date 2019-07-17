@@ -14,7 +14,7 @@ export class MenuItemsSingle extends Component {
                 description = <span>{post_content}</span>
             return (
                 <li>
-                    <a key={index} href={url} tabIndex="4">
+                    <a key={index} href={url}>
                         {title}
                         {description}
                     </a>
