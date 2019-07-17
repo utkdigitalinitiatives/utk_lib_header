@@ -201,7 +201,7 @@ class Header extends Component {
                                     <a href="https://www.lib.utk.edu">Libraries Home</a>
                                 </div>
                                 <div className="utk-header-actions--item utk-header-actions--search">
-                                    <a href="#search" aria-label="Search" onClick={this.toggleSearch}
+                                    <a id="utk-lib-search" href="#search" aria-label="Search" onClick={this.toggleSearch}
                                        className={`utk-search-trigger utk-search-expand`}>
                                         <span className="icon-search"></span>
                                         <em>Search</em>
@@ -214,12 +214,12 @@ class Header extends Component {
                                     </a>
                                 </div>
                                 <div className="utk-header-actions--item utk-header-actions--resources">
-                                    <a href="#menuopen" aria-label="Expand Main Menu" onClick={this.toggleResources}
+                                    <a id="utk-lib-menu" href="#menu" aria-label="Expand Main Menu" onClick={this.toggleResources}
                                        className={`utk-menu-trigger utk-header-expand`}>
                                         <span className="icon-menu"></span>
                                         <em>Menu</em>
                                     </a>
-                                    <a href="#menuclose" aria-label="Close Main Menu" aria-label="Menu" onClick={this.closeResourcesMenu}
+                                    <a href="#menu" aria-label="Close Main Menu" aria-label="Menu" onClick={this.closeResourcesMenu}
                                        className={`utk-menu-trigger utk-header-collapse`}>
                                         <span className="icon-cancel"></span>
                                         <span className="sr-only">Close</span>
