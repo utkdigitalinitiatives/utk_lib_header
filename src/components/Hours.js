@@ -82,65 +82,55 @@ export class Hours extends Component {
         if (Object.keys(locations).length !== 0)
             // if (this.state.layout === 'default')
                 return (
-                    <div>
-                        <div className="utk-hours">
-                            <div className="utk-hours-header">
-                                <h3>Libraries &amp; Locations</h3>
-                            </div>
-                            <ul className="utk-hours--listing">
-                                <h5 className="utk-hours--loading spinner">Loading today's hours...</h5>
-                            </ul>
+                    <div className="utk-hours">
+                        <div className="utk-hours-header">
+                            <h3>Libraries &amp; Locations</h3>
+                            {/*<div className="utk-resources-toggle">*/}
+                                {/*<a className="utk-resources-toggle--map" onClick={this.toggleMap}>Show on Map</a>*/}
+                            {/*</div>*/}
                         </div>
-                        <div className="utk-hours">
-                            <div className="utk-hours-header">
-                                <h3>Libraries &amp; Locations</h3>
-                                {/*<div className="utk-resources-toggle">*/}
-                                    {/*<a className="utk-resources-toggle--map" onClick={this.toggleMap}>Show on Map</a>*/}
-                                {/*</div>*/}
-                            </div>
-                            <div className="utk-hours--listing">
-                                <ul className="utk-hours--listing--col" aria-label="hodges library and locations inside">
-                                    <HoursLocation
-                                        url="https://lib.utk.edu"
-                                        data={locations[52]}
-                                        id={52}
-                                        children={[this.theCommons(locations[52]),locations[217],locations[224]]}
-                                        title="Hodges"
-                                        subtitle="Main Library"
-                                        formal="John C. Hodges Library"
-                                        thumbnail={hodges}
-                                    />
-                                </ul>
-                                <ul className="utk-hours--listing--col" aria-label="other libraries on campus">
-                                    <HoursLocation
-                                        url="https://lib.utk.edu/agvet"
-                                        data={locations[225]}
-                                        id={225}
-                                        title="Pendergrass"
-                                        subtitle="AgVet Library"
-                                        formal="Pendergrass Agriculture & Veterinary Medicine Library"
-                                        thumbnail={pendergrass}
-                                    />
-                                    <HoursLocation
-                                        url="https://lib.utk.edu/music"
-                                        data={locations[226]}
-                                        id={226}
-                                        title="DeVine"
-                                        subtitle="Music Library"
-                                        formal="George F. DeVine Music Library"
-                                        thumbnail={devine}
-                                    />
-                                    <HoursLocation
-                                        url="https://lib.utk.edu/request/storage"
-                                        data={locations[227]}
-                                        id={227}
-                                        title="Hoskins"
-                                        subtitle="Storage & Reading Room"
-                                        formal="James D. Hoskins Library"
-                                        thumbnail={hoskins}
-                                    />
-                                </ul>
-                            </div>
+                        <div className="utk-hours--listing">
+                            <ul className="utk-hours--listing--col" aria-label="hodges library and locations inside">
+                                <HoursLocation
+                                    url="https://lib.utk.edu"
+                                    data={locations[52]}
+                                    id={52}
+                                    children={[this.theCommons(locations[52]),locations[217],locations[224]]}
+                                    title="Hodges"
+                                    subtitle="Main Library"
+                                    formal="John C. Hodges Library"
+                                    thumbnail={hodges}
+                                />
+                            </ul>
+                            <ul className="utk-hours--listing--col" aria-label="other libraries on campus">
+                                <HoursLocation
+                                    url="https://lib.utk.edu/agvet"
+                                    data={locations[225]}
+                                    id={225}
+                                    title="Pendergrass"
+                                    subtitle="AgVet Library"
+                                    formal="Pendergrass Agriculture & Veterinary Medicine Library"
+                                    thumbnail={pendergrass}
+                                />
+                                <HoursLocation
+                                    url="https://lib.utk.edu/music"
+                                    data={locations[226]}
+                                    id={226}
+                                    title="DeVine"
+                                    subtitle="Music Library"
+                                    formal="George F. DeVine Music Library"
+                                    thumbnail={devine}
+                                />
+                                <HoursLocation
+                                    url="https://lib.utk.edu/request/storage"
+                                    data={locations[227]}
+                                    id={227}
+                                    title="Hoskins"
+                                    subtitle="Storage & Reading Room"
+                                    formal="James D. Hoskins Library"
+                                    thumbnail={hoskins}
+                                />
+                            </ul>
                         </div>
                     </div>
                 )
