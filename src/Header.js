@@ -74,14 +74,6 @@ class Header extends Component {
         }
     };
 
-    isTop(el) {
-        return el.getBoundingClientRect().top;
-    }
-
-    isBottom(el) {
-        return el.getBoundingClientRect().bottom;
-    }
-
     optionListener = (e) => {
         if (e.srcElement.dataset.event === 'option-help-expand') {
             e.stopPropagation();
@@ -111,7 +103,6 @@ class Header extends Component {
     }
 
     componentDidMount() {
-        document.addEventListener('scroll', this.trackScrolling);
         window.addEventListener("click", this.optionListener);
         document.addEventListener("click", this.closeResourcesListener);
 
@@ -124,31 +115,12 @@ class Header extends Component {
         }
     }
 
-    componentWillUnmount() {
-
-        document.removeEventListener('scroll', this.trackScrolling);
-    }
-
-    trackScrolling = debounce((e) => {
-        const collapseWatch = document.getElementById('utk-header-watch');
-        const collapseTrigger = document.getElementById('utk-header-trigger');
-
-        if (this.isTop(collapseWatch) >= this.isBottom(collapseTrigger)) {
-            this.setState({shortcutLogo: true});
-            // document.removeEventListener('scroll', this.trackScrolling);
-        } else {
-            this.setState({shortcutLogo: false});
-        }
-    }, 5);
-
     getPageTitle = (vars) => {
         if (vars.pageTitle)
             return  <h1 className={`utk-title`}>{vars.pageTitle}</h1>
         else
             return
     }
-
-
 
     render() {
 
