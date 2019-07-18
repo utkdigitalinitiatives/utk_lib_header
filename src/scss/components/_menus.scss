@@ -64,9 +64,9 @@
           width: 50%;
           margin: 0;
           display: block;
-          font-size: $type-1;
           margin-bottom: $golden-ratio-0;
-          padding-left: $golden-ratio-2;
+          font-size: $type-1;
+          padding-left: $golden-ratio-1;
 
           > a {
             display: inline-flex;
@@ -74,8 +74,8 @@
             line-height: 1.47em;
           }
 
-          &:before {
-            content: "\E812";
+          &:before  {
+            content: "\F105";
             font-family: fontello;
             font-style: normal;
             speak: none;
@@ -84,14 +84,12 @@
             font-variant: normal;
             text-transform: none;
             -webkit-font-smoothing: antialiased;
-            margin-right: $golden-ratio-1;
-            color: $rock;
-            font-size: 11px;
-            display: inline-flex;
+            font-size: $type-0;
             align-content: center;
             align-items: center;
+            color: $rock;
             position: absolute;
-            margin-left: -18px;
+            margin-left: -11px;
           }
         }
 
@@ -116,7 +114,7 @@
     margin-right: $golden-ratio-3;
 
     @include respond(xs) {
-      background-color: $globe;
+      background-color: $gray-0;
       margin-right: 0;
       border-radius: 0;
       padding: $golden-ratio-3 $golden-ratio-2;
@@ -135,7 +133,6 @@
       justify-content: space-between;
 
       @include respond(xs) {
-        color: $eureka;
         font-weight: 700;
         text-transform: uppercase;
         font-size: $type-2;
@@ -155,15 +152,13 @@
         font-variant: normal;
         text-transform: none;
         -webkit-font-smoothing: antialiased;
-        color: $rock;
+        color: $gray-1;
         font-size: $type-4;
         display: inline-flex;
         align-content: center;
         align-items: center;
 
         @include respond(xs) {
-          color: $summitt;
-          font-weight: 400;
           font-size: $type-5;
           line-height: inherit;
           text-align: center;
@@ -188,7 +183,6 @@
         padding: 0;
         list-style: none;
         font-size: $type-1;
-        font-weight: 700;
 
         @include respond(xs) {
           width: 100%;
@@ -198,19 +192,11 @@
         a,
         a:visited {
           color: $globe;
-
-          @include respond(xs) {
-            color: $white !important;
-          }
         }
 
         a:hover,
         a:focus {
           color: $leconte;
-
-          @include respond(xs) {
-            color: $white !important;
-          }
         }
       }
     }
@@ -270,10 +256,10 @@
 
           @include respond(xs) {
             font-size: $type-1;
-            padding-left: $golden-ratio-2;
+            padding-left: $golden-ratio-1;
 
             &:before  {
-              content: "\E812";
+              content: "\F105";
               font-family: fontello;
               font-style: normal;
               speak: none;
@@ -285,11 +271,9 @@
               font-size: $type-0;
               align-content: center;
               align-items: center;
-              margin-right: 6px;
               color: $rock;
               position: absolute;
-              margin-left: -18px;
-              font-size: 11px;
+              margin-left: -11px;
             }
           }
 
@@ -332,26 +316,35 @@
       width: calc(100% + 36px);
     }
 
-    &:before {
-      display: block;
-      width: $golden-ratio-5;
-      height: $golden-ratio-0;
-      content: '';
-      background-color: $orange;
-      margin: 0 0 $golden-ratio-1;
-    }
-
     h3 {
       font-size: $type-2;
       font-weight: 700;
       color: $smokey;
-      margin: 0 0 $golden-ratio-0;
-      line-height: 1.47em;
+      margin: $golden-ratio-1 0;
+      line-height: 1.29em;
+      display: flex;
 
       @include respond(xs, sm) {
-        color: $gray-1;
+        color: $white;
         font-weight: 700;
         margin: 0 0 $golden-ratio-1;
+      }
+
+      &::before {
+        font-size: $type-0;
+        content: "\E812";
+        font-family: fontello, monospace;
+        -webkit-font-smoothing: antialiased;
+        display: block;
+        color: $orange;
+        margin-right: $golden-ratio-0;
+        position: absolute;
+        margin-left: -18px;
+
+        @include respond(xs, sm) {
+          margin-left: 0;
+          position: relative;
+        }
       }
     }
 
