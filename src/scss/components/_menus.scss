@@ -152,14 +152,14 @@
         font-variant: normal;
         text-transform: none;
         -webkit-font-smoothing: antialiased;
-        color: $gray-1;
-        font-size: $type-4;
+        color: $gray-2;
+        font-size: $type-3;
         display: inline-flex;
         align-content: center;
         align-items: center;
 
         @include respond(xs) {
-          font-size: $type-5;
+          font-size: $type-4;
           line-height: inherit;
           text-align: center;
           justify-content: center;
