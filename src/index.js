@@ -17,7 +17,18 @@ skip.setAttribute("class", "utk-skip");
 document.body.insertBefore(skip, document.getElementById('utk-lib-header'));
 
 // render skip, header and inline hours
-ReactDOM.render(<Skip />, document.getElementById('utk-lib-skip'));
-ReactDOM.render(<Header />, document.getElementById('utk-lib-header'));
-ReactDOM.render(<Home />, document.getElementById('utk-lib-home'));
-ReactDOM.render(<HomeHours />, document.getElementById('utk-lib-home-hours'));
+if (document.getElementById('utk-lib-skip')) {
+    ReactDOM.render(<Skip />, document.getElementById('utk-lib-skip'));
+}
+
+if (document.getElementById('utk-lib-header')) {
+    ReactDOM.render(<Header />, document.getElementById('utk-lib-header'));
+}
+
+if (document.getElementById('utk-lib-home')) {
+    ReactDOM.render(<Home />, document.getElementById('utk-lib-home'));
+}
+
+if (document.getElementById('utk-home-hours')) {
+    ReactDOM.render(<HomeHours />, document.getElementById('utk-lib-home-hours'));
+}
