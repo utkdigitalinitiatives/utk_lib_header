@@ -13,9 +13,9 @@
   }
 
   @include respond(xs) {
-    background-color: $white;
+    padding: $golden-ratio-1 0;
+    margin-bottom: $golden-ratio-2;
   }
-
 
   .utk-menu-options {
     position: relative;

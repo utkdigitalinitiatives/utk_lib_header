@@ -43,6 +43,9 @@
       font-weight: 700;
       font-size: $type-1;
       display: flex;
+      height: 90px;
+      align-items: center;
+      justify-content: center;
 
       &.spinner::before {
         position: relative !important;
@@ -51,11 +54,11 @@
     }
 
     @include respond(sm) {
-      padding: $golden-ratio-3 !important;
+      padding: 0 $golden-ratio-3 !important;
     }
 
     @include respond(xs) {
-      padding: $golden-ratio-3 $golden-ratio-2 !important;
+      padding: 0 $golden-ratio-2 !important;
     }
   }
 
@@ -279,7 +282,7 @@
 
 @include respond(xs, sm) {
   .utk-hours {
-    background-color: $gray-1;
+    background-color: $white;
     margin-top: 0;
     border-left: 0;
     width: calc(100%);
@@ -293,10 +296,11 @@
     .utk-hours-header {
       width: 100%;
       text-align: center;
+      background-color: $smokey;
 
       h3 {
         font-size: $type-1;
-        color: $smokey;
+        color: $gray-1;
         margin: 2px 29px;
 
         @include respond(xs) {

@@ -24,10 +24,10 @@ export class Hours extends Component {
         };
     }
 
-    fetchLibCalHours () {
+    fetchLibCalHours() {
 
         fetch(Globals.URL + ENDPOINT + ROUTE, {
-            headers : {
+            headers: {
                 'Content-Type': 'application/json',
                 'Accept': 'application/json'
             }
@@ -64,7 +64,7 @@ export class Hours extends Component {
         let commons = hodges
         commons.name = 'The Commons'
         commons.url = 'https://commons.utk.edu/'
-        return(commons)
+        return (commons)
     }
 
     // toggleDefault = () => {
@@ -80,13 +80,14 @@ export class Hours extends Component {
         const {locations} = this.state;
 
         if (Object.keys(locations).length !== 0)
-            // if (this.state.layout === 'default')
-                return (
+        // if (this.state.layout === 'default')
+            return (
+                <React.Fragment>
                     <div className="utk-hours">
                         <div className="utk-hours-header">
                             <h3>Libraries &amp; Locations</h3>
                             {/*<div className="utk-resources-toggle">*/}
-                                {/*<a className="utk-resources-toggle--map" onClick={this.toggleMap}>Show on Map</a>*/}
+                            {/*<a className="utk-resources-toggle--map" onClick={this.toggleMap}>Show on Map</a>*/}
                             {/*</div>*/}
                         </div>
                         <div className="utk-hours--listing">
@@ -95,7 +96,7 @@ export class Hours extends Component {
                                     url="https://lib.utk.edu"
                                     data={locations[52]}
                                     id={52}
-                                    children={[this.theCommons(locations[52]),locations[217],locations[224]]}
+                                    children={[this.theCommons(locations[52]), locations[217], locations[224]]}
                                     title="Hodges"
                                     subtitle="Main Library"
                                     formal="John C. Hodges Library"
@@ -133,22 +134,8 @@ export class Hours extends Component {
                             </ul>
                         </div>
                     </div>
-                )
-            // else if (this.state.layout === 'map')
-            //     return (
-            //         <div className="utk-hours utk-hours-map">
-            //             <div className="container">
-            //                 <div className="utk-hours-header">
-            //                     <div className="utk-resources-toggle">
-            //                         <a className="utk-resources-toggle--default" onClick={this.toggleDefault}>Close Map</a>
-            //                     </div>
-            //                 </div>
-            //             </div>
-            //             <Locations locations={locations} />
-            //         </div>
-            //     )
-            // else
-            //     return
+                </React.Fragment>
+            )
         else
             return (
                 <div className="utk-hours">
