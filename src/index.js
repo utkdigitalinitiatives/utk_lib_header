@@ -29,6 +29,6 @@ if (document.getElementById('utk-lib-home')) {
     ReactDOM.render(<Home />, document.getElementById('utk-lib-home'));
 }
 
-if (document.getElementById('utk-home-hours')) {
+if (document.getElementById('utk-lib-home-hours')) {
     ReactDOM.render(<HomeHours />, document.getElementById('utk-lib-home-hours'));
 }
