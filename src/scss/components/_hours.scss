@@ -34,6 +34,29 @@
     font-weight: 400;
     color: $smokey;
     position: relative;
+
+    @include respond(xs, sm) {
+      background: $white;
+      width: 100%;
+      position: relative;
+      color: $smokey;
+      font-weight: 700;
+      font-size: $type-1;
+      display: flex;
+
+      &.spinner::before {
+        position: relative !important;
+        margin-right: $golden-ratio-1;
+      }
+    }
+
+    @include respond(sm) {
+      padding: $golden-ratio-3 !important;
+    }
+
+    @include respond(xs) {
+      padding: $golden-ratio-3 $golden-ratio-2 !important;
+    }
   }
 
   &--listing {
@@ -244,9 +267,14 @@
   width: $golden-ratio-3;
   height: $golden-ratio-3;
   border-radius: 50%;
-  border: 2px solid $gray-1;
-  border-top-color: $rock;
+  border: 6px solid $gray-1;
+  border-top-color: $orange;
   animation: spinner 1s linear infinite;
+
+  @keyframes spinner {
+    from {transform:rotate(0deg);}
+    to {transform:rotate(360deg);}
+  }
 }
 
 @include respond(xs, sm) {

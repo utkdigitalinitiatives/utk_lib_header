@@ -86,6 +86,14 @@ export class Hours extends Component {
                         <div className="utk-hours">
                             <div className="utk-hours-header">
                                 <h3>Libraries &amp; Locations</h3>
+                            </div>
+                            <ul className="utk-hours--listing">
+                                <h5 className="utk-hours--loading spinner">Loading today's hours...</h5>
+                            </ul>
+                        </div>
+                        <div className="utk-hours">
+                            <div className="utk-hours-header">
+                                <h3>Libraries &amp; Locations</h3>
                                 {/*<div className="utk-resources-toggle">*/}
                                     {/*<a className="utk-resources-toggle--map" onClick={this.toggleMap}>Show on Map</a>*/}
                                 {/*</div>*/}
