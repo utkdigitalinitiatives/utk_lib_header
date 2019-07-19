@@ -42,8 +42,8 @@ class Skip extends Component {
                     <li>
                         <a onFocus={this._onFocus.bind(this)}
                            onBlur={this._onBlur.bind(this)}
-                           href='#utk-lib-accessibility'>
-                            Skip to the Accessibility Link
+                           href='https://www.lib.utk.edu/info/disabilities/'>
+                            Go to Accessibility Services Page
                         </a>
                     </li>
                 </ul>
