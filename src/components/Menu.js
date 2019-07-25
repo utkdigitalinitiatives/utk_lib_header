@@ -190,7 +190,7 @@ export class Menu extends Component {
                                         {menuColumns}
                                     </div>
                                     <div className="utk-resources-menu--row">
-                                        <MenuSingle title="Get Help"
+                                        <MenuSingle title={null}
                                                     items={menuHeader.help}
                                                     className="utk-resources-menu--help" />
                                         <MenuSingle title={null}

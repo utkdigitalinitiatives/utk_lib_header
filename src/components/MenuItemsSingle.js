@@ -23,12 +23,19 @@ export class MenuItemsSingle extends Component {
         });
     }
 
+    renderTitle = (title) => {
+        if (title)
+            return <h3 className="utk-resources-menu--trigger">{title}</h3>
+        else
+            return
+    }
+
     render() {
         const {title, items} = this.props;
 
         return (
             <div className="utk-resources-menu--section">
-                <h3 className="utk-resources-menu--trigger">{title}</h3>
+                {this.renderTitle(title)}
                 <ul className="utk-resources-menu--submenu utk-resources-menu--submenu-secondary">
                     {this.buildMenu(items)}
                 </ul>
