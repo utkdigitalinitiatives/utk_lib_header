@@ -156,28 +156,8 @@ export class Menu extends Component {
                                 <MenuSingle title={null}
                                             items={menuHeader.services_primary}
                                             className="utk-resources-menu--services-primary" />
-                                {/*<ul className="utk-header-super--menu">*/}
-                                    {/*<li><span className="icon-right-big"></span></li>*/}
-                                    {/*<li><a href="https://www.lib.utk.edu/hours/">Hours</a></li>*/}
-                                    {/*<li><a href="https://www.lib.utk.edu/hours/">Reserve a Room</a></li>*/}
-                                    {/*<li><a href="https://libguides.utk.edu/databases">Request Items</a></li>*/}
-                                    {/*<li><a href="https://www.lib.utk.edu/about/">Talk with a Librarian</a></li>*/}
-                                    {/*<li><a href="https://www.lib.utk.edu/about/">A-Z</a></li>*/}
-                                {/*</ul>*/}
                                 <div className='utk-menu-options'>
                                     <div className='utk-menu-help'>
-                                        {/*<a className="utk-menu-help--item utk-menu-help--help-me" onClick={this.enableHelp}>*/}
-                                            {/*<h4>Help</h4>*/}
-                                            {/*<div className="utk-menu-help--item--icon">*/}
-                                                {/*<span className="icon-shuffle"></span>*/}
-                                            {/*</div>*/}
-                                        {/*</a>*/}
-                                        {/*<a className="utk-menu-help--item utk-menu-help--give">*/}
-                                            {/*<h4>Give</h4>*/}
-                                            {/*<div className="utk-menu-help--item--icon">*/}
-                                                {/*<span className="icon-heart"></span>*/}
-                                            {/*</div>*/}
-                                        {/*</a>*/}
                                         <Chat libchat={libchat} />
                                     </div>
                                 </div>
@@ -204,9 +184,6 @@ export class Menu extends Component {
                                                 items={menuHeader.about}
                                                 className="utk-resources-menu--about" />
                                 </div>
-                                {/*<Help activeHelp={this.state.activeHelp} closeHelp={() => {*/}
-                                    {/*this.closeHelp();*/}
-                                {/*}} />*/}
                             </div>
                         </div>
                     </div>
