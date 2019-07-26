@@ -9,12 +9,15 @@ export class MenuItemsSingle extends Component {
     buildMenu = (items) => {
         return Object.entries(items).map((link, index) => {
             let description = null
-            let {title, url, post_content} = link[1];
+            let {title, url, xfn, post_content} = link[1];
+            let rel = null
+            if (xfn)
+                rel = xfn;
             if (post_content)
                 description = <span>{post_content}</span>
             return (
                 <li>
-                    <a key={index} href={url}>
+                    <a key={index} href={url} rel={rel}>
                         {title}
                         {description}
                     </a>
