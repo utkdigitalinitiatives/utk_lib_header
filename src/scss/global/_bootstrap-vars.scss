@@ -32,7 +32,7 @@ $utk-container-max-widths: (
 $grid-columns:                12 !default;
 $grid-gutter-width:           30px !default;
 
-$grid-breakpoints: (
+$grid-breakpoints-custom: (
         xs: 0,
         sm: 576px,
         md: 768px,
