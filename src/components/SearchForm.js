@@ -15,7 +15,7 @@ export class SearchForm extends Component {
         return (
             <form className="utk-search-wrapper--form-item"
                   method="post"
-                  action={searchEndpointDebug}>
+                  action={searchEndpoint}>
                 <span className="utk-search-wrapper--form-item--icon">
                     <span className="icon-search"></span>
                 </span>
