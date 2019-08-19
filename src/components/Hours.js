@@ -131,6 +131,15 @@ export class Hours extends Component {
                                     formal="James D. Hoskins Library"
                                     thumbnail={hoskins}
                                 />
+                                <HoursLocation
+                                    url="https://lib.utk.edu/request/storage"
+                                    data={locations[11314]}
+                                    id={11314}
+                                    title="Testing"
+                                    subtitle="No Location"
+                                    formal="James D. Hoskins Library"
+                                    thumbnail={hodges}
+                                />
                             </ul>
                         </div>
                     </div>

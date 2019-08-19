@@ -87,9 +87,20 @@ export class HoursLocation extends Component {
         let hoursChildClass = ''
         let hoursClass = this.getHoursIndicator(data, id);
         let hoursLabel = this.getHoursLabel(data.hours);
+        let specialCase = null
 
         if (showChildren === true)
             hoursChildClass = 'utk-hours--listing--item-showchildren'
+
+        if (data.hours_close === '11:59pm') {
+            hoursLabel = 'Opens at ' + data.hours_open
+            specialCase = 'This location is open all night continuing to the next next day.'
+        }
+
+        if (data.hours_open === '12am') {
+            hoursLabel = 'Closes at ' + data.hours_close
+            specialCase = 'This location is open all morning continuing from the previous day.'
+        }
 
         return (
             <li className={`utk-hours--listing--item ${hoursChildClass}`}>
@@ -100,7 +111,9 @@ export class HoursLocation extends Component {
                     <div className="utk-hours--listing--item--meta">
                         <span className="library-title">{title}</span>
                         <span className="library-subtitle">{subtitle}</span>
-                        <span className="utk-hours--listing--item--hours">{ hoursLabel }</span>
+                        <span className="utk-hours--listing--item--hours">
+                            { hoursLabel }
+                        </span>
                     </div>
                 </a>
                 {this.getChildren(children, title)}
