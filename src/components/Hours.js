@@ -86,8 +86,11 @@ export class Hours extends Component {
                     <div className="utk-hours">
                         <div className="utk-hours-header">
                             <h3>Libraries &amp; Locations</h3>
+                            <div className="utk-hours-header--date-select">
+                                Monday, 8/19 <span className="icon-angle-down"></span>
+                            </div>
                             {/*<div className="utk-resources-toggle">*/}
-                            {/*<a className="utk-resources-toggle--map" onClick={this.toggleMap}>Show on Map</a>*/}
+                                {/*<a className="utk-resources-toggle--map" onClick={this.toggleMap}>Show on Map</a>*/}
                             {/*</div>*/}
                         </div>
                         <div className="utk-hours--listing">
@@ -130,15 +133,6 @@ export class Hours extends Component {
                                     subtitle="Storage & Reading Room"
                                     formal="James D. Hoskins Library"
                                     thumbnail={hoskins}
-                                />
-                                <HoursLocation
-                                    url="https://lib.utk.edu/request/storage"
-                                    data={locations[11314]}
-                                    id={11314}
-                                    title="Testing"
-                                    subtitle="No Location"
-                                    formal="James D. Hoskins Library"
-                                    thumbnail={hodges}
                                 />
                             </ul>
                         </div>

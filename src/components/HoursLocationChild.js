@@ -53,6 +53,14 @@ export class HoursLocationChild extends Component {
         else if (data.name === 'Special Collections')
             subtitle = 'Hodges 121'
 
+        if (data.hours_close === '11:59pm') {
+            hoursLabel = 'Opens at ' + data.hours_open
+        }
+
+        if (data.hours_open === '12am') {
+            hoursLabel = 'Closes at ' + data.hours_close
+        }
+
         return (
             <li className="utk-hours--listing--item utk-hours--listing--item--child">
                 <a href={url} className={hoursClass}>

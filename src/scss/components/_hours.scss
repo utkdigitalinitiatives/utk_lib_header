@@ -21,6 +21,12 @@
       font-size: $type-3;
       color: $smokey;
     }
+
+    &--date-select {
+      font-size: $type-1;
+      cursor: pointer;
+      display: none;
+    }
   }
 
   &--loading {

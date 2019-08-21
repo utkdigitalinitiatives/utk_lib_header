@@ -94,12 +94,10 @@ export class HoursLocation extends Component {
 
         if (data.hours_close === '11:59pm') {
             hoursLabel = 'Opens at ' + data.hours_open
-            specialCase = 'This location is open all night continuing to the next next day.'
         }
 
         if (data.hours_open === '12am') {
             hoursLabel = 'Closes at ' + data.hours_close
-            specialCase = 'This location is open all morning continuing from the previous day.'
         }
 
         return (
