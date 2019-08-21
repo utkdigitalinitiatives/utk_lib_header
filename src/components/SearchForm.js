@@ -29,6 +29,17 @@ export class SearchForm extends Component {
         TagManager.initialize(tagManagerArgs)
     };
 
+    componentWillUpdate(nextProps, nextState) {
+        const tagManagerArgs = {
+            gtmId: 'GTM-MB99NS',
+            dataLayer: {
+                searchMethod: this.props.option,
+            }
+        }
+
+        TagManager.initialize(tagManagerArgs)
+    }
+
     render () {
         const {inputRef, placeholder, label, option} = this.props
 
