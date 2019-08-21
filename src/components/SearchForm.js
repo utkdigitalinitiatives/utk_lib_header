@@ -13,10 +13,6 @@ export class SearchForm extends Component {
         };
     }
 
-    onFormSubmit(e) {
-        e.preventDefault();
-    }
-
     handleInputChange = (e) => {
         this.setState({
             searchValue: e.target.value
@@ -39,7 +35,6 @@ export class SearchForm extends Component {
         return (
             <form className="utk-search-wrapper--form-item"
                   method="post"
-                  onSubmit={this.onFormSubmit}
                   action={searchEndpoint}>
                 <span className="utk-search-wrapper--form-item--icon">
                     <span className="icon-search"></span>
