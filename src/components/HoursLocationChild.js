@@ -31,8 +31,9 @@ export class HoursLocationChild extends Component {
             indicator = 'library-closed';
         else
             indicator = 'library-open';
-
-        if (data.hours_open === '12am')
+        
+        // apply human sensibility to affix 24 hour open status
+        if (data.hours_open === '12am' && data.hours_close == '12am')
             indicator = 'library-open';
 
         return indicator;
