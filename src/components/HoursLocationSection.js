@@ -4,7 +4,11 @@ import Globals from "./Globals";
 
 const ENDPOINT = 'wp-json/libcal';
 const ROUTE = '/hours';
-const lid = document.getElementById('utk-hours--location--lid').getAttribute('data-lid');
+
+const location = document.getElementById('utk-hours--location--lid');
+let lid = null
+if (location)
+    lid = location.getAttribute('data-lid');
 
 class HoursLocationSection extends Component {
 
