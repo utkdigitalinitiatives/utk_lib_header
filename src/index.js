@@ -6,6 +6,7 @@ import Skip from './components/Skip';
 import Header from './Header';
 import Home from './components/Home';
 import HomeHours from './components/HomeHours';
+import HoursLocationSection from "./components/HoursLocationSection";
 
 
 import './scss/styles.scss';
@@ -31,4 +32,8 @@ if (document.getElementById('utk-lib-home')) {
 
 if (document.getElementById('utk-lib-home-hours')) {
     ReactDOM.render(<HomeHours />, document.getElementById('utk-lib-home-hours'));
+}
+
+if (document.getElementById('utk-hours--location--lid')) {
+    ReactDOM.render(<HoursLocationSection />, document.getElementById('utk-hours--location--lid'));
 }
