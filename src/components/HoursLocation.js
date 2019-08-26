@@ -17,10 +17,13 @@ export class HoursLocation extends Component {
 
     getHoursLabel = (hours) => {
 
-        let label = hours;
+        let label = hours.hours_open + ' - ' + hours.hours_close;
 
-        if (!hours)
+        if (!hours.hours)
             label = 'Closed';
+        else if (hours.hours === '24 Hours')
+            label = hours.hours;
+
 
         return label;
 
@@ -90,7 +93,7 @@ export class HoursLocation extends Component {
         let {showChildren} = this.state
         let hoursChildClass = ''
         let hoursClass = this.getHoursIndicator(data, id);
-        let hoursLabel = this.getHoursLabel(data.hours);
+        let hoursLabel = this.getHoursLabel(data);
         let specialCase = null
 
         if (showChildren === true)
