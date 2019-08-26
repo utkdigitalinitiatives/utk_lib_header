@@ -8,10 +8,13 @@ export class HoursLocationChild extends Component {
 
     getHoursLabel = (hours) => {
 
-        let label = hours;
+        let label = hours.hours_open + ' - ' + hours.hours_close;
 
-        if (!hours)
+        if (!hours.hours)
             label = 'Closed';
+        else if (hours.hours === '24 Hours')
+            label = hours.hours;
+
 
         return label;
 
@@ -31,7 +34,7 @@ export class HoursLocationChild extends Component {
             indicator = 'library-closed';
         else
             indicator = 'library-open';
-        
+
         // apply human sensibility to affix 24 hour open status
         if (data.hours_open === '12am' && data.hours_close == '12am')
             indicator = 'library-open';
@@ -46,7 +49,7 @@ export class HoursLocationChild extends Component {
         const {name, url} = this.props.data;
 
         let hoursClass = this.getHoursIndicator(data);
-        let hoursLabel = this.getHoursLabel(data.hours);
+        let hoursLabel = this.getHoursLabel(data);
 
         let subtitle = null
 
