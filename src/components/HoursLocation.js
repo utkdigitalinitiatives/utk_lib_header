@@ -21,6 +21,8 @@ export class HoursLocation extends Component {
 
         if (!hours.hours)
             label = 'Closed';
+        if (hours.hours_open === null)
+            label = 'Closed';
         else if (hours.hours === '24 Hours')
             label = hours.hours;
 
@@ -117,7 +119,7 @@ export class HoursLocation extends Component {
                         <span className="library-title">{title}</span>
                         <span className="library-subtitle">{subtitle}</span>
                         <span className="utk-hours--listing--item--hours">
-                            { hoursLabel }
+                            {hoursLabel}
                         </span>
                     </div>
                 </a>
