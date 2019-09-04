@@ -12,7 +12,7 @@ export class HoursLocationChild extends Component {
 
         if (!hours.hours)
             label = 'Closed';
-        if (hours.hours_open === null)
+        else if (hours.hours_open === null && hours.hours !== '24 Hours')
             label = 'Closed';
         else if (hours.hours === '24 Hours')
             label = hours.hours;
