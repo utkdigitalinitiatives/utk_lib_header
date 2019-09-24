@@ -40,7 +40,7 @@ if (document.getElementById('utk-hours--location--lid')) {
 
 function dayPicker() {
     Array.prototype.forEach.call(
-        document.getElementsByClassName('utk-space--day-picker--select'),
+        document.getElementsByClassName('utk-space--hours'),
         function(el) {
             var daypicker = el.getAttribute('data-daypicker');
             var hours = el.getAttribute('data-hours');
