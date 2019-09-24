@@ -42,7 +42,11 @@ function dayPicker() {
     Array.prototype.forEach.call(
         document.getElementsByClassName('utk-space--day-picker--select'),
         function(el) {
-            ReactDOM.render(<SpaceHours />, el);
+            var daypicker = el.getAttribute('data-daypicker');
+            var hours = el.getAttribute('data-hours');
+            var message = el.getAttribute('data-hours-message');
+            var lid = el.getAttribute('data-hours-lid');
+            ReactDOM.render(<SpaceHours daypicker={daypicker} hours={hours} lid={lid} message={message} />, el);
         }
     );
 }
