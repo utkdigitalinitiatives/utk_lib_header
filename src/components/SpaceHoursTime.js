@@ -7,8 +7,10 @@ class SpaceHoursTime extends Component {
 
         return (
             <React.Fragment>
-                <p>{lid}</p>
-                <p>{day}</p>
+                <div className="utk-space--time">
+                    <span className="utk-space--time--indicator"></span>
+                    <span className="utk-space--time--span">8am - 6pm</span>
+                </div>
             </React.Fragment>
         )
     }

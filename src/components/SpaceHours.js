@@ -71,7 +71,7 @@ class SpaceHours extends Component {
         if (hours === 'inherit')
             return <SpaceHoursTime lid={lid} day={selectedDay} />
         else if (hours === 'message')
-            return <p>{message}</p>
+            return <div className="utk-space--time utk-space--time-message">{message}</div>
         else
             return null
     };
