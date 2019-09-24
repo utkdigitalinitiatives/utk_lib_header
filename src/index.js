@@ -39,7 +39,7 @@ if (document.getElementById('utk-hours--location--lid')) {
 }
 
 Array.prototype.forEach.call(
-    document.getElementsByClassName('utk-space--hours'),
+    document.getElementsByClassName('utk-space--date-picker--select'),
     function(el) {
         ReactDOM.render(<SpaceHours />, el);
     }
