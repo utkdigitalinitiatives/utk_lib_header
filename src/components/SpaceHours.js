@@ -48,42 +48,42 @@ class SpaceHours extends Component {
         }, 180);
     }
 
+    showPicker = (daypicker, selectedDay) => {
+        if (daypicker === 'show')
+            return <DayPickerInput
+                format={format}
+                value={selectedDay}
+                formatDate={formatDate}
+                parseDate={parseDate}
+                placeholder={`${formatDate(new Date())}`}
+                onDayChange={this.handleDayChange}
+                dayPickerProps={{
+                    showOutsideDays: true,
+                    selectedDays: selectedDay,
+                    todayButton: "Select Today"
+                }}
+            />
+        else
+            return null
+    };
+
+    spaceHours = (hours, lid, message, selectedDay) => {
+        if (hours === 'inherit')
+            return <SpaceHoursTime lid={lid} day={selectedDay} />
+        else if (hours === 'message')
+            return <p>{message}</p>
+        else
+            return null
+    };
+
     render() {
         const { daypicker, hours, lid, message } = this.props;
         const { selectedDay } = this.state;
 
-        const showPicker = (daypicker) => {
-            if (daypicker === 'show')
-                return <DayPickerInput
-                    format={format}
-                    value={selectedDay}
-                    formatDate={formatDate}
-                    parseDate={parseDate}
-                    placeholder={`${formatDate(new Date())}`}
-                    onDayChange={this.handleDayChange}
-                    dayPickerProps={{
-                        showOutsideDays: true,
-                        selectedDays: selectedDay,
-                        todayButton: "Select Today"
-                    }}
-                />
-            else
-                return null
-        };
-
-        const spaceHours = (hours, lid, message) => {
-            if (hours === 'inherit')
-                return <SpaceHoursTime lid={lid} />
-            else if (hours === 'message')
-                return <p>{message}</p>
-            else
-                return null
-        };
-
         return (
             <React.Fragment>
-                {showPicker(daypicker)}
-                {spaceHours(hours, lid, message)}
+                {this.showPicker(daypicker, selectedDay)}
+                {this.spaceHours(hours, lid, message, selectedDay)}
             </React.Fragment>
         )
     }

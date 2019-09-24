@@ -3,11 +3,12 @@ import React, {Component} from 'react';
 class SpaceHoursTime extends Component {
 
     render() {
-        const {lid} = this.props;
+        const {lid, day} = this.props;
 
         return (
             <React.Fragment>
-                {lid}
+                <p>{lid}</p>
+                <p>{day}</p>
             </React.Fragment>
         )
     }
