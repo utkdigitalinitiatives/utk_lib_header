@@ -38,9 +38,18 @@ if (document.getElementById('utk-hours--location--lid')) {
     ReactDOM.render(<HoursLocationSection />, document.getElementById('utk-hours--location--lid'));
 }
 
-Array.prototype.forEach.call(
-    document.getElementsByClassName('utk-space--day-picker--select'),
-    function(el) {
-        ReactDOM.render(<SpaceHours />, el);
-    }
-);
+function dayPicker() {
+    Array.prototype.forEach.call(
+        document.getElementsByClassName('utk-space--day-picker--select'),
+        function(el) {
+            ReactDOM.render(<SpaceHours />, el);
+        }
+    );
+}
+
+var watchDayPicker = function() {
+    dayPicker();
+};
+
+dayPicker();
+setInterval(watchDayPicker, 180);

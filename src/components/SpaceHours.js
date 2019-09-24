@@ -16,7 +16,7 @@ class SpaceHours extends Component {
 
         this.handleDayChange = this.handleDayChange.bind(this);
         this.state = {
-            selectedDay: undefined,
+            selectedDay: formatDate(JSON.parse(sessionStorage.getItem(session_day)), format),
             isEmpty: true,
             isDisabled: false,
         };
@@ -35,19 +35,16 @@ class SpaceHours extends Component {
     }
 
     componentDidMount() {
-        this.setState({
-            selectedDay: new Date()
-        });
-
-        if (sessionStorage.getItem(session_day) === null) {
-            const today = JSON.stringify(new Date());
-            sessionStorage.setItem(session_day, today);
-        } else {
-            this.setState({
-                selectedDay: formatDate(JSON.parse(sessionStorage.getItem(session_day)), format)
-            });
-        }
-
+        setInterval(() => {
+            if (sessionStorage.getItem(session_day) === null) {
+                const today = JSON.stringify(new Date());
+                sessionStorage.setItem(session_day, today);
+            } else {
+                this.setState({
+                    selectedDay: formatDate(JSON.parse(sessionStorage.getItem(session_day)), format)
+                });
+            }
+        }, 180);
     }
 
     render() {
