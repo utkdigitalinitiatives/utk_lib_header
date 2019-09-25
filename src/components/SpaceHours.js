@@ -49,6 +49,8 @@ class SpaceHours extends Component {
     }
 
     showPicker = (daypicker, selectedDay) => {
+        const today = new Date();
+
         if (daypicker === 'show')
             return <DayPickerInput
                 format={format}
@@ -58,7 +60,9 @@ class SpaceHours extends Component {
                 placeholder={`${formatDate(new Date())}`}
                 onDayChange={this.handleDayChange}
                 dayPickerProps={{
+                    disabledDays: { before: today },
                     showOutsideDays: true,
+                    enableOutsideDaysClick: true,
                     selectedDays: selectedDay,
                     todayButton: "Select Today"
                 }}
