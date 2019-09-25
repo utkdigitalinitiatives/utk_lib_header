@@ -10,6 +10,7 @@ class SpaceHoursTime extends Component {
         super(props);
 
         this.state = {
+            date: null,
             data: {},
             grab: false
         };
@@ -67,12 +68,26 @@ class SpaceHoursTime extends Component {
 
     componentDidMount() {
         const {lid, day} = this.props;
-        this.fetchSpaceHours(lid, day)
+
+        this.setState({
+            date:  day
+        });
+
+        this.fetchSpaceHours(lid, day);
     }
 
     componentWillReceiveProps() {
         const {lid, day} = this.props;
-        this.fetchSpaceHours(lid, day)
+
+        if (day !== this.state.date) {
+            console.log('switch');
+
+            this.fetchSpaceHours(lid, day);
+
+            this.setState({
+                date:  day
+            });
+        }
     }
 
     render() {

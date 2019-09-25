@@ -56,4 +56,4 @@ var watchDayPicker = function() {
 };
 
 dayPicker();
-setInterval(watchDayPicker, 2000);
+setInterval(watchDayPicker, 290);
