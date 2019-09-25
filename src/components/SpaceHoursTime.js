@@ -21,18 +21,12 @@ class SpaceHoursTime extends Component {
         let dayID = day.replace('-', '');
         dayID = parseInt(dayID.replace('-', ''));
 
-        console.log(dayID);
-
         if (Number.isInteger(dayID) === true) {
 
             const url = Globals.URL + ENDPOINT + ROUTE + '/' + lid + '/' + day;
             const sessionHours = 'utk_lib_day_hours_' + lid + '_' + dayID;
 
             if (sessionStorage.getItem(sessionHours) === null) {
-
-                this.setState({
-                    grab: true
-                });
 
                 fetch(url, {
                     headers: {
@@ -46,7 +40,8 @@ class SpaceHoursTime extends Component {
                         sessionStorage.setItem(sessionHours, JSON.stringify(data));
 
                         this.setState({
-                            data:  store
+                            data:  data,
+                            grab: true
                         });
 
                     })
@@ -57,7 +52,8 @@ class SpaceHoursTime extends Component {
                 const grabHours = sessionStorage.getItem(sessionHours);
 
                 this.setState({
-                    data: JSON.parse(grabHours)
+                    data: JSON.parse(grabHours),
+                    grab: true
                 });
 
             }
@@ -69,18 +65,17 @@ class SpaceHoursTime extends Component {
     componentDidMount() {
         const {lid, day} = this.props;
 
+        this.fetchSpaceHours(lid, day);
+
         this.setState({
             date:  day
         });
-
-        this.fetchSpaceHours(lid, day);
     }
 
     componentWillReceiveProps() {
         const {lid, day} = this.props;
 
         if (day !== this.state.date) {
-            console.log('switch');
 
             this.fetchSpaceHours(lid, day);
 

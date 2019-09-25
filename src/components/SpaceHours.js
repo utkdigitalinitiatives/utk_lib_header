@@ -45,7 +45,7 @@ class SpaceHours extends Component {
                     selectedDay: formatDate(JSON.parse(sessionStorage.getItem(session_day)), format)
                 });
             }
-        }, 290);
+        }, 180);
     }
 
     showPicker = (daypicker, selectedDay) => {
