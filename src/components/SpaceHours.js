@@ -45,7 +45,7 @@ class SpaceHours extends Component {
                     selectedDay: formatDate(JSON.parse(sessionStorage.getItem(session_day)), format)
                 });
             }
-        }, 180);
+        }, 2000);
     }
 
     showPicker = (daypicker, selectedDay) => {
@@ -69,7 +69,7 @@ class SpaceHours extends Component {
 
     spaceHours = (hours, lid, message, selectedDay) => {
         if (hours === 'inherit')
-            return <SpaceHoursTime lid={lid} day={selectedDay} />
+            return <SpaceHoursTime lid={lid} day={formatDate(selectedDay, 'YYYY-MM-DD')} />
         else if (hours === 'message')
             return <div className="utk-space--time utk-space--time-message">{message}</div>
         else
