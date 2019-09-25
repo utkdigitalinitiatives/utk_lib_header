@@ -11,8 +11,7 @@ class SpaceHoursTime extends Component {
 
         this.state = {
             date: null,
-            data: {},
-            grab: false
+            data: {}
         };
     }
 
@@ -40,8 +39,7 @@ class SpaceHoursTime extends Component {
                         sessionStorage.setItem(sessionHours, JSON.stringify(data));
 
                         this.setState({
-                            data:  data,
-                            grab: true
+                            data:  data
                         });
 
                     })
@@ -52,8 +50,7 @@ class SpaceHoursTime extends Component {
                 const grabHours = sessionStorage.getItem(sessionHours);
 
                 this.setState({
-                    data: JSON.parse(grabHours),
-                    grab: true
+                    data: JSON.parse(grabHours)
                 });
 
             }
