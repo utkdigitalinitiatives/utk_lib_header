@@ -6,6 +6,7 @@ import MomentLocaleUtils, {
     parseDate,
 } from 'react-day-picker/moment';
 import SpaceHoursTime from "./SpaceHoursTime";
+import DayPicker from "react-day-picker";
 
 const format = 'dddd, M/D/YYYY';
 const session_day = 'utk_lib_day_picker';
@@ -54,6 +55,7 @@ class SpaceHours extends Component {
         if (daypicker === 'show')
             return <DayPickerInput
                 format={format}
+                inputProps={{ readOnly: true }}
                 value={selectedDay}
                 formatDate={formatDate}
                 parseDate={parseDate}
@@ -83,6 +85,8 @@ class SpaceHours extends Component {
     render() {
         const { daypicker, hours, lid, message } = this.props;
         const { selectedDay } = this.state;
+
+        console.log(selectedDay);
 
         return (
             <React.Fragment>
