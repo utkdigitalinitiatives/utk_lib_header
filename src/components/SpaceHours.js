@@ -28,11 +28,12 @@ class SpaceHours extends Component {
         };
     }
 
-    handleDayChange(selectedDay, modifiers, dayPickerInput) {
+    handleDayChange(selectedDay) {
+
         sessionStorage.setItem(session_day, JSON.stringify(selectedDay));
 
         this.setState({
-            selectedDay: formatDate(JSON.parse(selectedDay), format)
+            selectedDay: formatDate(selectedDay, format)
         });
     }
 
