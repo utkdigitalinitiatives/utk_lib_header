@@ -6,7 +6,6 @@ import MomentLocaleUtils, {
     parseDate,
 } from 'react-day-picker/moment';
 import SpaceHoursTime from "./SpaceHoursTime";
-import DayPicker from "react-day-picker";
 
 const format = 'dddd, M/D/YYYY';
 const session_day = 'utk_lib_day_picker';
@@ -17,22 +16,23 @@ class SpaceHours extends Component {
         super(props);
 
         this.handleDayChange = this.handleDayChange.bind(this);
+
+        let initialDate = formatDate(new Date(), format);
+
+        if (sessionStorage.getItem(session_day) !== null) {
+            initialDate = formatDate(JSON.parse(sessionStorage.getItem(session_day)), format);
+        }
+
         this.state = {
-            selectedDay: formatDate(JSON.parse(sessionStorage.getItem(session_day)), format),
-            isEmpty: true,
-            isDisabled: false,
+            selectedDay: initialDate
         };
     }
 
     handleDayChange(selectedDay, modifiers, dayPickerInput) {
-        const input = dayPickerInput.getInput();
-
         sessionStorage.setItem(session_day, JSON.stringify(selectedDay));
 
         this.setState({
-            selectedDay,
-            isEmpty: !input.value.trim(),
-            isDisabled: modifiers.disabled === true,
+            selectedDay: formatDate(JSON.parse(selectedDay), format)
         });
     }
 
@@ -42,9 +42,12 @@ class SpaceHours extends Component {
                 const today = JSON.stringify(new Date());
                 sessionStorage.setItem(session_day, today);
             } else {
-                this.setState({
-                    selectedDay: formatDate(JSON.parse(sessionStorage.getItem(session_day)), format)
-                });
+                let day = formatDate(JSON.parse(sessionStorage.getItem(session_day)), format);
+                if (this.state.day !== day) {
+                    this.setState({
+                        selectedDay: day
+                    });
+                }
             }
         }, 180);
     }
@@ -65,7 +68,7 @@ class SpaceHours extends Component {
                     disabledDays: { before: today },
                     showOutsideDays: true,
                     enableOutsideDaysClick: true,
-                    selectedDays: selectedDay,
+                    selectedDays: new Date(selectedDay),
                     todayButton: "Select Today"
                 }}
             />
@@ -85,8 +88,6 @@ class SpaceHours extends Component {
     render() {
         const { daypicker, hours, lid, message } = this.props;
         const { selectedDay } = this.state;
-
-        console.log(selectedDay);
 
         return (
             <React.Fragment>
