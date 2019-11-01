@@ -193,7 +193,7 @@
           position: absolute;
           left: 23px;
           top: 8px;
-          content: '';
+          //content: '';
           background-color: $gray-0;
           height: 2px;
           width: 23px;
@@ -205,7 +205,7 @@
           position: absolute;
           left: 23px;
           top: -66px;
-          content: '';
+          //content: '';
           background-color: $gray-0;
           height: $golden-ratio-5;
           width: 2px;
@@ -242,7 +242,12 @@
         font-weight: 700;
         font-size: $type-1;
         color: $smokeyx !important;
-        align-items: center;
+        line-height: 1.29em;
+        align-content: flex-start;
+        align-items: flex-start;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        margin-top: 5px;
 
         &::before {
           margin-right: $golden-ratio-0;
@@ -254,6 +259,7 @@
           border-radius: $golden-ratio-1;
           border: 2px solid $rock;
           background-color: $white;
+          margin-top: 4px;
         }
       }
     }
