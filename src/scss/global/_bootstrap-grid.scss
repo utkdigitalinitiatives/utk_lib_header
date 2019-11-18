@@ -2,9 +2,6 @@
 //
 // Set the container width, and override it for fixed navbars in media queries.
 .container {
-  @include utk-make-container();
-  @include utk-make-container-max-widths();
-
   padding-left: $golden-ratio-4 !important;
   padding-right: $golden-ratio-4 !important;
 
@@ -23,6 +20,3 @@
 //
 // Utilizes the mixin meant for fixed width containers, but with 100% width for
 // fluid, full width layouts.
-.container-fluid {
-  @include make-container();
-}
