@@ -4,21 +4,16 @@ import {FooterUniversity} from "./components/FooterUniversity";
 import {FooterSystem} from "./components/FooterSystem";
 import Globals from "./components/Globals";
 
+const ENDPOINT = 'assets/wp-json/libmenu';
+const ROUTE = '/header';
+
 /* header component */
 class Footer extends Component {
 
     constructor(props) {
         super(props);
 
-        this.state = {
-            menuHeader : {
-                about : {},
-                drawer : {},
-                help : {},
-                services_primary : {},
-                services_speciality : {}
-            },
-        };
+        this.state = {};
     }
 
     componentDidMount() {
@@ -54,16 +49,24 @@ class Footer extends Component {
 
     render() {
 
-        return (
-            <React.Fragment>
-                <FooterLibraries main={this.state.menuHeader.drawer} help={this.state.menuHeader.help} />
-                <FooterUniversity university={this.state.menuHeader} />
-                <FooterSystem />
-                <div className="utk-lib-triggers">
-                    <span id="utk-trigger-header"></span>
-                </div>
-            </React.Fragment>
-        );
+        if (this.state.menuHeader) {
+
+            const {drawer, footer, university} = this.state.menuHeader;
+
+            return (
+                <React.Fragment>
+                    <FooterLibraries drawer={drawer} footer={footer} />
+                    <FooterUniversity university={university} />
+                    <FooterSystem />
+                    <div className="utk-lib-triggers">
+                        <span id="utk-trigger-header"></span>
+                    </div>
+                </React.Fragment>
+            );
+
+        } else {
+            return null
+        }
     }
 }
 

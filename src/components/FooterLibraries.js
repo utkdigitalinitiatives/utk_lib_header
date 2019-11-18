@@ -1,4 +1,6 @@
 import React, {Component} from 'react';
+import {MenuColumns} from "./MenuColumns";
+import {MenuSingle} from "./MenuSingle";
 
 export class FooterLibraries extends Component {
 
@@ -7,6 +9,14 @@ export class FooterLibraries extends Component {
     }
 
     render() {
+
+        const {drawer, footer} = this.props;
+
+        let menuColumns = Object.entries(drawer).map((columns, index) => {
+            return (
+                <MenuColumns key={index} items={columns[1]} activeMenu={this.setMenu}/>
+            );
+        });
 
         return (
             <section className="utk-footer footer-libraries">
@@ -26,11 +36,11 @@ export class FooterLibraries extends Component {
                                 </p>
                             </div>
                             <div className="footer-libraries--menu-extras">
-                                // help
+                                <MenuSingle items={footer} />
                             </div>
                         </div>
                         <div className="footer-libraries--menu">
-                            // main
+                            {menuColumns}
                         </div>
                     </div>
                 </div>

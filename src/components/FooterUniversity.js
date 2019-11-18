@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {MenuColumns} from "./MenuColumns";
 
 export class FooterUniversity extends Component {
 
@@ -9,6 +10,17 @@ export class FooterUniversity extends Component {
     }
 
     render() {
+
+        const {university} = this.props;
+
+        let menuColumns = Object.entries(university).map((columns, index) => {
+            return (
+                <MenuColumns key={index}
+                             items={columns[1]}
+                             activeMenu={this.setMenu}
+                             noTitle={true} />
+            );
+        });
 
         return (
             <section className="utk-footer footer-university">
@@ -96,7 +108,7 @@ export class FooterUniversity extends Component {
                                 </form>
                             </div>
                             <div className="footer-university--menu">
-                                // university
+                                {menuColumns}
                             </div>
                         </div>
                     </div>
