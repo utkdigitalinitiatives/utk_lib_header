@@ -97,8 +97,7 @@ export class FooterUniversity extends Component {
                                       action="//www.utk.edu/masthead/query.php">
                                     <div className="form-group">
                                         <input type="text" name="qt" placeholder="Search utk.edu"
-                                               onFocus="if(this.value == 'Search utk.edu') { this.value = ''; }"
-                                               value="Search utk.edu" className="form-control" title="search" speech=""
+                                               value="" className="form-control" title="search" speech=""
                                                x-webkit-speech=""/>
                                     </div>
                                     <input type="hidden" name="qtype" className="searchtext" value="utk"

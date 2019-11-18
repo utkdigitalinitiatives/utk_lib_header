@@ -23,8 +23,7 @@
     }
 
     @include respond(xs, sm) {
-      border-bottom: 2px solid $gray-0;
-      padding-bottom: $golden-ratio-1;
+      padding-bottom: $golden-ratio-2;
       margin-bottom: $golden-ratio-2;
     }
 
@@ -90,10 +89,19 @@
     flex-grow: 1;
     display: flex;
 
-    @include respond(xs, sm) {
+    @include respond(sm) {
+      width: 100%;
+    }
+
+    @include respond(xs) {
       width: 100%;
       flex-direction: column;
-      text-align: center;
+
+      h3 {
+        font-size: $type-2 !important;
+        border-bottom: 2px solid $gray-1;
+        margin-bottom: $golden-ratio-0;
+      }
     }
 
     .utk-resources-menu--section {
