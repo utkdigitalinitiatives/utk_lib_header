@@ -63,66 +63,36 @@
 
   &--menu {
     flex-grow: 1;
+    display: flex;
+    justify-content: space-between;
 
-    #menu-university {
+    @include respond(xs) {
+      flex-wrap: wrap;
+    }
+
+    .utk-resources-menu--col {
       display: flex;
-      justify-content: space-between;
+      flex-direction: column;
+      flex-grow: 1;
+      font-size: $type-1;
+      margin-right: $golden-ratio-4;
 
       @include respond(xs) {
-        flex-wrap: wrap;
+        width: 50%;
+        margin-right: 0;
+        flex-grow: 0;
       }
 
-      > li {
-        flex-grow: 1;
-        font-size: $type-1;
-        margin-right: $golden-ratio-4;
-
-        @include respond(xs) {
-          width: 50%;
-          margin-right: 0;
-          flex-grow: 0;
-        }
-
-        a,
-        a:visited,
-        a:focus,
-        a:hover {
-          color: $smokeyx;
-        }
-
-        &:last-child {
-          margin-right: 0;
-        }
+      a,
+      a:visited,
+      a:focus,
+      a:hover {
+        color: $smokeyx;
+        white-space: nowrap;
       }
 
-      /*
-       * fixes margins on first level lists
-       */
-      > li > ul {
-        margin-bottom: 0;
-      }
-    }
-
-    ul.menu {
-      margin: 0;
-      padding: 0;
-
-      li.menu-item {
-        margin: 0;
-        padding: 0;
-        list-style: none;
-      }
-    }
-
-    ul.dropdown-menu {
-      margin: 0;
-      padding: 0;
-      margin-bottom: $golden-ratio-2;
-
-      li.menu-item {
-        margin: 0;
-        padding: 0;
-        list-style: none;
+      &:last-child {
+        margin-right: 0;
       }
     }
   }

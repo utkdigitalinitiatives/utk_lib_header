@@ -71,11 +71,11 @@
       flex-grow: 1;
     }
 
-    ul.menu {
+    ul.utk-resources-menu--submenu  {
       padding: 0;
       margin: 0;
 
-      li.menu-item {
+      li {
         padding: 0;
         margin: 0;
         list-style: none;
@@ -88,91 +88,16 @@
 
   &--menu {
     flex-grow: 1;
+    display: flex;
 
     @include respond(xs, sm) {
       width: 100%;
+      flex-direction: column;
+      text-align: center;
     }
 
-    #menu-drawer {
-      display: flex;
-
-      @include respond(xs) {
-        flex-direction: column;
-        text-align: center;
-      }
-
-      > li {
-        flex-grow: 1;
-        flex-basis: 0;
-
-        @include respond(xs) {
-          width: 100%;
-          margin-bottom: $golden-ratio-2;
-          font-size: $type-2;
-        }
-      }
-
-      /*
-       * target second level item as title
-       */
-      > li > ul > li > a {
-        display: block;
-        font-weight: 700;
-        font-size: $type-3;
-        margin-bottom: $golden-ratio-0;
-        color: $smokeyx !important;
-
-        @include respond(xs, sm) {
-          font-size: $type-2;
-        }
-      }
-
-      /*
-       * fixes margins on first level lists
-       */
-      > li > ul {
-        margin-bottom: 0;
-      }
-
-      /*
-       * hide fourth level items and deeper
-       */
-      > li > ul > li > ul > li > ul {
-        display: none;
-      }
-
-      /*
-       * fixes margins on multiple lists in columns
-       */
-      > li > ul > li:last-child ul {
-        margin-bottom: 0;
-      }
-    }
-
-    ul.menu {
-      margin: 0;
-      padding: 0;
-
-      li.menu-item {
-        margin: 0;
-        padding: 0;
-        list-style: none;
-
-        @include standard-body-link();
-      }
-    }
-
-    ul.dropdown-menu {
-      margin: 0;
-      padding: 0;
-      margin-bottom: $golden-ratio-2;
-
-      li.menu-item {
-        margin: 0;
-        padding: 0;
-        list-style: none;
-        font-size: $type-2;
-      }
+    .utk-resources-menu--section {
+      margin-top: 0 !important;
     }
   }
 }
