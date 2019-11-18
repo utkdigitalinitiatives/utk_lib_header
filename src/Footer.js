@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {FooterSections} from "./components/FooterSections";
 
 /* header component */
 class Footer extends Component {
@@ -14,9 +15,10 @@ class Footer extends Component {
 
         return (
             <React.Fragment>
-                <section>libraries</section>
-                <section>university</section>
-                <section>system</section>
+                <FooterSections />
+                <div className="utk-lib-triggers">
+                    <span id="utk-trigger-header"></span>
+                </div>
             </React.Fragment>
         );
     }

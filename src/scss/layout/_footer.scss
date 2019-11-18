@@ -1,0 +1,21 @@
+.footer-libraries {
+  padding: $golden-ratio-4 0;
+  background-color: $white;
+  color: $smokeyx;
+  border-top: 6px solid $orange;
+  font-family: $sans;
+
+  @include respond(xs, sm) {
+    padding: $golden-ratio-3 0;
+  }
+}
+
+.footer-university {
+  padding: $golden-ratio-4 0;
+  background-color: $gray-0;
+}
+
+.footer-system {
+  background-color: $smokeyx;
+  color: $gray-1;
+}
