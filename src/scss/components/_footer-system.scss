@@ -1,0 +1,32 @@
+.footer-system {
+  &--inner {
+    display: flex;
+    flex-direction: row;
+    font-size: $type-1;
+
+    p {
+      font-size: inherit;
+      margin: $golden-ratio-1 0;
+
+      a,
+      a:visited,
+      a:hover,
+      a:focus {
+        color: $white;
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &--logo {
+    font-size: inherit;
+    line-height: 1.5em;
+    margin-top: 2px;
+
+    img {
+      width: 25px;
+      height: auto;
+      margin: $golden-ratio-1 $golden-ratio-1 $golden-ratio-1 0;
+    }
+  }
+}

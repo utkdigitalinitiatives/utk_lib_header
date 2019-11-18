@@ -57,8 +57,8 @@ class Footer extends Component {
         return (
             <React.Fragment>
                 <FooterLibraries main={this.state.menuHeader.drawer} help={this.state.menuHeader.help} />
-                {/*<FooterUniversity university={} />*/}
-                {/*<FooterSystem system={} />*/}
+                <FooterUniversity university={this.state.menuHeader} />
+                <FooterSystem />
                 <div className="utk-lib-triggers">
                     <span id="utk-trigger-header"></span>
                 </div>

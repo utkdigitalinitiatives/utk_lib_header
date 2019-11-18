@@ -52,7 +52,7 @@ export class FooterUniversity extends Component {
                                 </form>
                             </div>
                             <div className="footer-university--menu">
-                                @include('partials.components.footer-university-menu')
+                                // university
                             </div>
                         </div>
                     </div>
