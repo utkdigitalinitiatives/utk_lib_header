@@ -26,7 +26,7 @@ class SpaceHoursWeek extends Component {
         };
     }
 
-    buildWeek (date) {
+    buildWeek = (date) => {
 
         const selected = moment(date);
         const dayOfWeek = selected.weekday();
@@ -136,20 +136,26 @@ class SpaceHoursWeek extends Component {
         }
     }
 
+    buildWeekGrid = (dates) => {
+        let grid = null;
+
+        if (Array.isArray(dates)) {
+            if (dates.length === 7) {
+                grid = dates.map((date, index) => {
+                    return <div>{date.rendered}</div>;
+                });
+            }
+        }
+
+        return grid;
+    }
+
     render() {
+        const {data} = this.state;
+
         return (
             <React.Fragment>
-                <div>
-                    <div>
-                        <div>ok</div>
-                        <div>ok</div>
-                        <div>ok</div>
-                        <div>ok</div>
-                        <div>ok</div>
-                        <div>ok</div>
-                        <div>ok</div>
-                    </div>
-                </div>
+                {this.buildWeekGrid(data)}
             </React.Fragment>
         )
     }
