@@ -10,6 +10,7 @@ import MomentLocaleUtils, {
     parseDate,
     getFirstDayOfWeek,
 } from 'react-day-picker/moment';
+import {MenuColumns} from "./MenuColumns";
 
 const format = 'dddd, M/D/YYYY';
 const session_day = 'utk_lib_day_picker';
@@ -63,12 +64,17 @@ class SpaceHoursWeek extends Component {
             startOfWeek: startOfWeek
         });
 
+        let weekString = '';
+        week.map((day, index) => {
+            weekString = weekString + moment(day).format('YYYY-MM-DD') + ',';
+        });
+
         let dayID = startOfWeek.replace('-', '');
         dayID = parseInt(dayID.replace('-', ''));
 
         if (Number.isInteger(dayID) === true) {
 
-            const url = Globals.URL + ENDPOINT + ROUTE + '/' + lid + '/' + startOfWeek;
+            const url = Globals.URL + ENDPOINT + ROUTE + '/' + lid + '/' + weekString.slice(0, -1);
             const sessionHours = 'utk_lib_week_hours_' + lid + '_' + dayID;
 
             if (sessionStorage.getItem(sessionHours) === null) {
