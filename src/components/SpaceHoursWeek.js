@@ -204,7 +204,7 @@ class SpaceHoursWeek extends Component {
         } else {
             label = data.rendered
         }
-        
+
         return label;
     };
 

@@ -84,12 +84,40 @@ class SpaceHoursTime extends Component {
         }
     }
 
+    /*
+     * returns hours, 'Closed' if null.
+     */
+
+    getHoursLabel = (data) => {
+
+        let label = ''
+
+        if (data.hours) {
+            if (!data.hours)
+                label = 'Closed';
+            else if (data.hours.from === null && data.hours !== '24 Hours')
+                label = 'Closed';
+            else if (data.hours === '24 Hours')
+                label = data.hours;
+            else if (data.hours[0].to === '11:59pm')
+                label = 'Opens at ' + data.hours[0].from
+            else if (data.hours[0].from === '12am')
+                label = 'Closes at ' + data.hours[0].to
+            else
+                label = data.hours[0].from + ' - ' + data.hours[0].to
+        } else {
+            label = data.rendered
+        }
+
+        return label;
+    };
+
     render() {
         return (
             <React.Fragment>
                 <div className="utk-space--time">
                     {/*<span className="utk-space--time--indicator"></span>*/}
-                    <span className="utk-space--time--span">{this.state.data.rendered}</span>
+                    <span className="utk-space--time--span">{this.getHoursLabel(this.state.data)}</span>
                 </div>
             </React.Fragment>
         )
