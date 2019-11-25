@@ -6,6 +6,7 @@ import MomentLocaleUtils, {
     parseDate,
 } from 'react-day-picker/moment';
 import SpaceHoursTime from "./SpaceHoursTime";
+import SpaceHoursWeek from "./SpaceHoursWeek";
 
 const format = 'dddd, M/D/YYYY';
 const session_day = 'utk_lib_day_picker';
@@ -77,9 +78,11 @@ class SpaceHours extends Component {
             return null
     };
 
-    spaceHours = (hours, lid, message, selectedDay) => {
-        if (hours === 'inherit')
+    spaceHours = (hours, lid, message, selectedDay, view) => {
+        if (hours === 'inherit' && view !== "week")
             return <SpaceHoursTime lid={lid} day={formatDate(selectedDay, 'YYYY-MM-DD')} />
+        if (hours === 'inherit' && view === "week")
+            return <SpaceHoursWeek lid={lid} day={formatDate(selectedDay, 'YYYY-MM-DD')} />
         else if (hours === 'message')
             return <div className="utk-space--time utk-space--time-message">{message}</div>
         else
@@ -87,13 +90,13 @@ class SpaceHours extends Component {
     };
 
     render() {
-        const { daypicker, hours, lid, message } = this.props;
+        const { daypicker, hours, lid, message, view } = this.props;
         const { selectedDay } = this.state;
 
         return (
             <React.Fragment>
                 {this.showPicker(daypicker, selectedDay)}
-                {this.spaceHours(hours, lid, message, selectedDay)}
+                {this.spaceHours(hours, lid, message, selectedDay, view)}
             </React.Fragment>
         )
     }
