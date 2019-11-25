@@ -264,6 +264,19 @@
       }
     }
   }
+
+  &--week {
+    display: flex;
+
+    &--dayofweek {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .active {
+      font-weight: 700;
+    }
+  }
 }
 
 .utk-hours--listing--item a.library-open {

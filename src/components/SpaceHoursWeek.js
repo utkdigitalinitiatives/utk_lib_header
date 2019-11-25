@@ -137,13 +137,41 @@ class SpaceHoursWeek extends Component {
     }
 
     buildWeekGrid = (dates) => {
+
         let grid = null;
 
-        if (Array.isArray(dates)) {
-            if (dates.length === 7) {
-                grid = dates.map((date, index) => {
-                    return <div>{date.rendered}</div>;
-                });
+        if (this.props.header === 'daysofweek') {
+
+            if (Array.isArray(dates)) {
+                if (dates.length === 7) {
+                    grid = dates.map((date, index) => {
+                        let classes = ['utk-hours--week--dayofweek'];
+
+                        if (date.date === this.state.date)
+                            classes.push('active')
+
+                        return (
+                            <div className={classes.join(' ')}>
+                                {moment(date.date).format('ddd')}
+                                <span>{moment(date.date).format('MMM D')}</span>
+                            </div>
+                        )
+                    });
+                }
+            }
+        } else {
+
+            if (Array.isArray(dates)) {
+                if (dates.length === 7) {
+                    grid = dates.map((date, index) => {
+                        let classes = ['utk-hours--week--hours'];
+
+                        if (date.date === this.state.date)
+                            classes.push('active')
+
+                        return <div className={classes.join(' ')}>{date.rendered}</div>;
+                    });
+                }
             }
         }
 
@@ -154,9 +182,9 @@ class SpaceHoursWeek extends Component {
         const {data} = this.state;
 
         return (
-            <React.Fragment>
+            <div className="utk-hours--week">
                 {this.buildWeekGrid(data)}
-            </React.Fragment>
+            </div>
         )
     }
 }
