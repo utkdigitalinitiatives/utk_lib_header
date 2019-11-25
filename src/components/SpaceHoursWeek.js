@@ -166,10 +166,12 @@ class SpaceHoursWeek extends Component {
                     grid = dates.map((date, index) => {
                         let classes = ['utk-hours--week--hours'];
 
+                        let hoursLabel = this.getHoursLabel(date);
+
                         if (date.date === this.state.date)
                             classes.push('active')
 
-                        return <div className={classes.join(' ')}>{date.rendered}</div>;
+                        return <div className={classes.join(' ')}>{hoursLabel}</div>;
                     });
                 }
             }
@@ -177,6 +179,34 @@ class SpaceHoursWeek extends Component {
 
         return grid;
     }
+
+    /*
+     * returns hours, 'Closed' if null.
+     */
+
+    getHoursLabel = (data) => {
+
+        let label = ''
+
+        if (data.hours) {
+            if (!data.hours)
+                label = 'Closed';
+            else if (data.hours.from === null && data.hours !== '24 Hours')
+                label = 'Closed';
+            else if (data.hours === '24 Hours')
+                label = data.hours;
+            else if (data.hours[0].to === '11:59pm')
+                label = 'Opens at ' + data.hours[0].from
+            else if (data.hours[0].from === '12am')
+                label = 'Closes at ' + data.hours[0].to
+            else
+                label = data.hours[0].from + ' - ' + data.hours[0].to
+        } else {
+            label = data.rendered
+        }
+        
+        return label;
+    };
 
     render() {
         const {data} = this.state;
