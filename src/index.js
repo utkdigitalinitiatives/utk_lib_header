@@ -52,7 +52,8 @@ function dayPicker() {
             var message = el.getAttribute('data-hours-message');
             var lid = el.getAttribute('data-hours-lid');
             var view = el.getAttribute('data-hours-view');
-            ReactDOM.render(<SpaceHours daypicker={daypicker} hours={hours} lid={lid} message={message} view={view} />, el);
+            var header = el.getAttribute('data-hours-header');
+            ReactDOM.render(<SpaceHours daypicker={daypicker} hours={hours} lid={lid} message={message} view={view} header={header} />, el);
         }
     );
 }

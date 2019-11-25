@@ -78,11 +78,12 @@ class SpaceHours extends Component {
             return null
     };
 
-    spaceHours = (hours, lid, message, selectedDay, view) => {
+    spaceHours = (hours, lid, message, selectedDay, view, header) => {
+
         if (hours === 'inherit' && view !== "week")
-            return <SpaceHoursTime lid={lid} day={formatDate(selectedDay, 'YYYY-MM-DD')} />
+            return <SpaceHoursTime lid={lid} day={formatDate(selectedDay, 'YYYY-MM-DD')} header={header} />
         if (hours === 'inherit' && view === "week")
-            return <SpaceHoursWeek lid={lid} day={formatDate(selectedDay, 'YYYY-MM-DD')} />
+            return <SpaceHoursWeek lid={lid} day={formatDate(selectedDay, 'YYYY-MM-DD')} header={header} />
         else if (hours === 'message')
             return <div className="utk-space--time utk-space--time-message">{message}</div>
         else
@@ -90,13 +91,13 @@ class SpaceHours extends Component {
     };
 
     render() {
-        const { daypicker, hours, lid, message, view } = this.props;
+        const { daypicker, hours, lid, message, view, header } = this.props;
         const { selectedDay } = this.state;
 
         return (
             <React.Fragment>
                 {this.showPicker(daypicker, selectedDay)}
-                {this.spaceHours(hours, lid, message, selectedDay, view)}
+                {this.spaceHours(hours, lid, message, selectedDay, view, header)}
             </React.Fragment>
         )
     }
