@@ -11,6 +11,19 @@ import SpaceHoursWeek from "./SpaceHoursWeek";
 const format = 'dddd, M/D/YYYY';
 const session_day = 'utk_lib_day_picker';
 
+const INTERACTIONS = {
+    ESC: 27,
+    TAB: 9
+};
+
+const DIRECTIONS = {
+    LEFT: 37,
+    UP: 38,
+    RIGHT: 39,
+    DOWN: 40,
+    TAB: 9
+};
+
 class SpaceHours extends Component {
 
     constructor(props) {
@@ -27,6 +40,26 @@ class SpaceHours extends Component {
         this.state = {
             selectedDay: initialDate
         };
+    }
+
+    handleKeyDown(e) {
+        const { keyCode, shiftKey } = e;
+
+        if (
+            !shiftKey &&
+            (keyCode === INTERACTIONS.TAB || keyCode === DIRECTIONS.DOWN)
+        ) {
+            setTimeout(() => {
+                this.inputInstance.showDayPicker();
+            }, 25);
+            setTimeout(() => {
+                this.pickerInstance.dayPicker.childNodes[0].focus();
+            }, 50);
+        }
+
+        if (keyCode === INTERACTIONS.ESC) {
+            this.hideDayPicker();
+        }
     }
 
     handleDayChange(selectedDay) {
@@ -54,13 +87,20 @@ class SpaceHours extends Component {
         }, 180);
     }
 
+    hideDayPicker() {
+        this.inputInstance.hideDayPicker();
+    }
+
     showPicker = (daypicker, selectedDay) => {
         const today = new Date();
 
         if (daypicker === 'show')
             return <DayPickerInput
                 format={format}
-                inputProps={{ readOnly: true }}
+                inputProps={{
+                    readOnly: true,
+                    onKeyDown: this.handleKeyDown.bind(this)
+                }}
                 value={selectedDay}
                 formatDate={formatDate}
                 parseDate={parseDate}
@@ -71,7 +111,14 @@ class SpaceHours extends Component {
                     showOutsideDays: true,
                     enableOutsideDaysClick: true,
                     selectedDays: new Date(selectedDay),
-                    todayButton: "Select Today"
+                    todayButton: "Select Today",
+                    ref: ref => {
+                        this.pickerInstance = ref;
+                    }
+                }}
+                keepFocus={false}
+                ref={ref => {
+                    this.inputInstance = ref;
                 }}
             />
         else
