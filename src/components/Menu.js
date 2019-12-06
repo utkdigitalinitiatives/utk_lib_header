@@ -169,20 +169,20 @@ export class Menu extends Component {
                                     <div className="utk-resources-menu--row">
                                         {menuColumns}
                                     </div>
-                                    <div className="utk-resources-menu--row">
-                                        <MenuSingle title={null}
+                                    <div className="utk-resources-menu--row utk-resources-menu--row-wrap">
+                                        <MenuSingle title="More from Libraries"
                                                     items={menuHeader.help}
                                                     className="utk-resources-menu--help" />
-                                        <MenuSingle title={null}
+                                        <MenuSingle title="Speciality Services"
                                                     items={menuHeader.services_speciality}
                                                     className="utk-resources-menu--services-speciality" />
+                                        <MenuSingle title="About University Libraries"
+                                                    items={menuHeader.about}
+                                                    className="utk-resources-menu--about" />
                                     </div>
                                 </div>
                                 <div className="utk-resources-contact">
                                     <Hours layout={this.setLayout()} expanded={this.props.expanded}/>
-                                    <MenuSingle title="About University Libraries"
-                                                items={menuHeader.about}
-                                                className="utk-resources-menu--about" />
                                 </div>
                             </div>
                         </div>

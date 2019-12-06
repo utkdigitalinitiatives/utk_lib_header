@@ -60,11 +60,16 @@ export class Hours extends Component {
 
     }
 
-    theCommons = (hodges) => {
-        let commons = hodges
-        commons.name = 'The Commons'
-        commons.url = 'https://commons.utk.edu/'
-        return (commons)
+    cloneLocationData(data, name, url) {
+
+        const clone = JSON.parse(JSON.stringify(data))
+        const update = {
+            'name' : name,
+            'url' : url
+        }
+
+        return Object.assign(clone, update)
+
     }
 
     // toggleDefault = () => {
@@ -79,8 +84,9 @@ export class Hours extends Component {
 
         const {locations} = this.state;
 
-        if (Object.keys(locations).length !== 0)
-        // if (this.state.layout === 'default')
+        if (Object.keys(locations).length !== 0) {
+
+            // if (this.state.layout === 'default')
             return (
                 <React.Fragment>
                     <div className="utk-hours">
@@ -90,23 +96,27 @@ export class Hours extends Component {
                                 Monday, 8/19 <span className="icon-angle-down"></span>
                             </div>
                             {/*<div className="utk-resources-toggle">*/}
-                                {/*<a className="utk-resources-toggle--map" onClick={this.toggleMap}>Show on Map</a>*/}
+                            {/*<a className="utk-resources-toggle--map" onClick={this.toggleMap}>Show on Map</a>*/}
                             {/*</div>*/}
                         </div>
                         <div className="utk-hours--listing">
-                            <ul className="utk-hours--listing--col" aria-label="hodges library and locations inside">
+                            <ul className="utk-hours--listing--col" aria-label="libraries and locations">
                                 <HoursLocation
                                     url="https://lib.utk.edu"
                                     data={locations[52]}
                                     id={52}
-                                    children={[this.theCommons(locations[52]), locations[217], locations[224]]}
+                                    children={
+                                        [
+                                            this.cloneLocationData(locations[52], 'The Commons', 'https://commons.utk.edu'),
+                                            this.cloneLocationData(locations[52], 'Graduate Commons', 'https://lib.utk.edu'),
+                                            locations[217],
+                                            locations[224]
+                                        ]}
                                     title="Hodges"
                                     subtitle="Main Library"
                                     formal="John C. Hodges Library"
                                     thumbnail={hodges}
                                 />
-                            </ul>
-                            <ul className="utk-hours--listing--col" aria-label="other libraries on campus">
                                 <HoursLocation
                                     url="https://lib.utk.edu/agvet"
                                     data={locations[225]}
@@ -139,7 +149,7 @@ export class Hours extends Component {
                     </div>
                 </React.Fragment>
             )
-        else
+        } else {
             return (
                 <div className="utk-hours">
                     <div className="utk-hours-header">
@@ -150,5 +160,6 @@ export class Hours extends Component {
                     </ul>
                 </div>
             )
+        }
     }
 }

@@ -1,5 +1,6 @@
 .utk-hours {
   margin-bottom: $golden-ratio-3;
+  font-family: $sans;
 
   &.utk-hours-map {
     position: absolute;
@@ -17,9 +18,9 @@
       margin: 0 0 $golden-ratio-1;
       padding: 0;
       font-weight: 700;
-      text-transform: none;
-      font-size: $type-3;
       color: $smokey;
+      font-size: $type-2;
+      letter-spacing: -0.018em;
     }
 
     &--date-select {
@@ -71,12 +72,12 @@
   &--listing {
     margin: 0;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: nowrap;
     padding: 0;
 
     &--col {
-      width: 50%;
+      width: 100%;
       margin: 0;
       padding: 0;
 
@@ -91,19 +92,23 @@
       margin: 0;
       padding: 0;
       width: auto;
-      margin-bottom: $golden-ratio-1;
+      margin-bottom: $golden-ratio-2;
 
       &--childmenu {
-        margin: 0 !important;
+        margin: $golden-ratio-2 0 0 !important;
         padding: 0 !important;
+        display: flex;
+        flex-wrap: wrap;
+
+        li {
+          width: 50%;
+          margin-top: 0;
+          margin-bottom: $golden-ratio-2;
+        }
       }
 
       &--more {
         display: none !important;
-      }
-
-      &:last-child {
-        margin-bottom: 0;
       }
 
       a,

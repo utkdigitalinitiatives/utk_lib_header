@@ -67,6 +67,10 @@ body .utk-header-resources {
     flex-direction: row;
     margin-bottom: $golden-ratio-2;
 
+    &-wrap {
+      flex-wrap: wrap;
+    }
+
     &:last-child {
       margin-bottom: 0;
     }
@@ -116,7 +120,7 @@ body .utk-header-resources {
     }
 
     .utk-resources-menu--section {
-      margin-top: $golden-ratio-2;
+      margin-top: $golden-ratio-3;
       margin-bottom: $golden-ratio-1;
 
       @include respond(xs) {
@@ -129,9 +133,9 @@ body .utk-header-resources {
         padding: 0;
         font-weight: 700;
         font-family: $sans;
-        text-transform: none;
-        font-size: $type-3;
+        font-size: $type-2;
         color: $smokey;
+        letter-spacing: -0.018em;
 
         @include respond(md, sm, xs) {
           margin-top: 0;
@@ -149,8 +153,9 @@ body .utk-header-resources {
       a:visited {
         color: $globe;
         display: block;
-        font-size: $type-2;
+        font-size: $type-1;
         font-family: $sans;
+        line-height: 1.95em;
       }
 
       a:focus,
@@ -173,7 +178,7 @@ body .utk-header-resources {
   width: $gr-short;
   height: auto;
   padding: 0;
-  margin-top: $golden-ratio-2;
+  margin-top: $golden-ratio-3;
   display: flex;
   flex-direction: column;
 
