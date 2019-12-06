@@ -101,7 +101,7 @@
 
         a:hover,
         a:focus {
-          color: $leconte;
+          color: $leconte
         }
       }
     }
@@ -272,10 +272,10 @@
 
   &--about {
     font-family: $sans;
-    width: calc(100% - 29px);
+    width: calc(100% - 47px);
     margin-top: $golden-ratio-2;
-    background-color: $smokey;
-    padding: $golden-ratio-3;
+    background-color: $gray-0;
+    padding: $golden-ratio-4;
     border-radius: $golden-ratio-0;
 
     @include respond(xs, sm) {
@@ -296,14 +296,8 @@
       margin: 0 0 6px;
       font-size: $type-2;
       font-weight: 700;
-      color: $white;
+      color: $smokey;
       letter-spacing: -0.018em;
-
-      @include respond(xs, sm) {
-        color: $gray-1;
-        font-weight: 700;
-        margin: 0 0 $golden-ratio-1;
-      }
     }
 
     ul {
@@ -311,18 +305,15 @@
       padding: 0;
       display: flex;
       flex-wrap: wrap;
+      width: $gr-long;
 
       li {
         margin: 0;
         padding: 0;
         list-style: none;
         font-size: $type-1;
-        width: 33%;
+        width: 50%;
         line-height: 1.95em;
-
-        @include respond(xs) {
-          width: 50%;
-        }
 
         @media only screen and (max-width: 500px) {
           width: 100%;
@@ -330,12 +321,12 @@
 
         a,
         a:visited {
-          color: $gray-1;
+          color: $globe;
         }
 
         a:hover,
         a:focus {
-          color: $white;
+          color: $leconte;
         }
       }
     }
