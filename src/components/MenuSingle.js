@@ -19,13 +19,26 @@ export class MenuSingle extends Component {
         }
     }
 
+    static getMedia (src) {
+        if (src)
+            return (
+                <div className="utk-resources-menu--media">
+                    <div className="utk-resources-menu--media--image"><img src={src} /></div>
+                    <div className="utk-resources-menu--media--background"><img src={src} /></div>
+                </div>
+            )
+    }
+
     render() {
 
-        const {items, title, className} = this.props || {};
+        const {items, title, className, media} = this.props || {};
+
+        console.log(media)
 
         if (items) {
             return (
                 <div className={className}>
+                    {MenuSingle.getMedia(media)}
                     <MenuItemsSingle title={title} items={items} setMenuAs={this.updateMenu} />
                 </div>
             )

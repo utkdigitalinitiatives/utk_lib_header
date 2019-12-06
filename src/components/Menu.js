@@ -11,6 +11,8 @@ import {Chat} from "./Chat";
 const ENDPOINT = 'assets/wp-json/libmenu';
 const ROUTE = '/header';
 
+import about from '../media/studentslaptop.jpg';
+
 
 export class Menu extends Component {
 
@@ -178,6 +180,7 @@ export class Menu extends Component {
                                                     className="utk-resources-menu--services-speciality" />
                                         <MenuSingle title="About University Libraries"
                                                     items={menuHeader.about}
+                                                    media={about}
                                                     className="utk-resources-menu--about" />
                                     </div>
                                 </div>

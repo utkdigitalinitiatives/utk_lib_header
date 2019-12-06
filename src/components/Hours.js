@@ -95,9 +95,10 @@ export class Hours extends Component {
                             <div className="utk-hours-header--date-select">
                                 Monday, 8/19 <span className="icon-angle-down"></span>
                             </div>
-                            {/*<div className="utk-resources-toggle">*/}
-                            {/*<a className="utk-resources-toggle--map" onClick={this.toggleMap}>Show on Map</a>*/}
-                            {/*</div>*/}
+                            <div className="utk-hours-header--links">
+                                <a className="utk-resources-toggle--map">Hours</a>
+                                <a className="utk-resources-toggle--map">Explore Spaces</a>
+                            </div>
                         </div>
                         <div className="utk-hours--listing">
                             <ul className="utk-hours--listing--col" aria-label="libraries and locations">
