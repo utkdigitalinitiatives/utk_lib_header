@@ -11,6 +11,8 @@ import hoskins from '../media/hoskins.jpg';
 const ENDPOINT = 'wp-json/libcal';
 const ROUTE = '/hours';
 
+import tease from '../media/bluesky-gr.jpg';
+
 export class Hours extends Component {
 
     constructor(props) {
@@ -90,14 +92,25 @@ export class Hours extends Component {
             return (
                 <React.Fragment>
                     <div className="utk-hours">
+                        <div className="utk-hours-teaser">
+                            <span className="utk-hours-teaser--title">Find Your Place</span>
+                            <div className="utk-hours-teaser--menu">
+                                <a href="https://www.lib.utk.edu/hours/locations">Locations</a>
+                                <a href="https://www.lib.utk.edu/hours/spaces">Explore Spaces</a>
+                                <a href="https://www.lib.utk.edu/hours/maps-directions">Maps & Directions</a>
+                            </div>
+                            <img src={tease} />
+                        </div>
                         <div className="utk-hours-header">
-                            <h3>Libraries &amp; Locations</h3>
+                            <h3>Today's Hours</h3>
                             <div className="utk-hours-header--date-select">
                                 Monday, 8/19 <span className="icon-angle-down"></span>
                             </div>
                             <div className="utk-hours-header--links">
-                                <a className="utk-resources-toggle--map">Hours</a>
-                                <a className="utk-resources-toggle--map">Explore Spaces</a>
+                                <a href="https://www.lib.utk.edu/hours/locations/?view=week"
+                                   className="utk-resources-toggle--map">Weekly Hours</a>
+                                <a href="https://www.lib.utk.edu/hours/spaces?fwp_reservable=yes"
+                                   className="utk-resources-toggle--map">Reserve a Room</a>
                             </div>
                         </div>
                         <div className="utk-hours--listing">
