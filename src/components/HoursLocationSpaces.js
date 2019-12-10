@@ -19,7 +19,10 @@ export class HoursLocationSpaces extends Component {
 
     fetchLocationSpaces() {
 
-        fetch(Globals.URL + ENDPOINT + ROUTE + this.props.location, {
+        let spacesURL = Globals.URL + ENDPOINT + ROUTE
+        spacesURL = spacesURL + this.props.location + '/2'
+
+        fetch(spacesURL, {
             headers: {
                 'Content-Type': 'application/json',
                 'Accept': 'application/json'
@@ -50,17 +53,15 @@ export class HoursLocationSpaces extends Component {
 
     renderSpaces = (spaces) => {
         return spaces.map((item, index) => {
-            while (index < 2) {
-                let image = null
-                if (item.image) {
-                    image = <img src={item.image.sizes.gr_thumb}/>
-                }
-                return (
-                    <a href={item.url}>
-                        {image}
-                    </a>
-                );
+            let image = null
+            if (item.image) {
+                image = <img src={item.image.sizes.gr_thumb}/>
             }
+            return (
+                <a href={item.url}>
+                    {image}
+                </a>
+            );
         });
     }
 
