@@ -14,7 +14,7 @@
 
   .utk-hours-teaser {
     background-color: $smokeyx;
-    margin-bottom: $golden-ratio-3;
+    margin-bottom: $golden-ratio-2;
     border-radius: $golden-ratio-0;
     overflow: hidden;
     position: relative;
@@ -51,10 +51,14 @@
       justify-content: center;
       font-size: $type-1;
       font-weight: 700;
-      margin: 0 0 $golden-ratio-2;
+      margin: 0 $golden-ratio-1 $golden-ratio-2;
       position: relative;
       z-index: 1;
       line-height: 1.7em;
+
+      @include respond(md) {
+        margin: 0 $golden-ratio-1 $golden-ratio-1;
+      }
 
       a,
       a:visited {
@@ -62,9 +66,12 @@
         display: inline-flex;
         padding: $golden-ratio-0 $golden-ratio-1;
         border: 2px solid rgba($white, 0.11);
-        margin-right: $golden-ratio-2;
+        margin-right: $golden-ratio-1;
         transition: $transition-all-fast;
         box-shadow: none;
+        text-align: center;
+        align-items: center;
+        line-height: 1.29em;
 
         &:hover,
         &:focus {
@@ -197,9 +204,11 @@
       margin: 0;
       padding: 0;
       width: auto;
-      margin-bottom: $golden-ratio-3;
+      margin-bottom: $golden-ratio-2;
       display: flex;
       flex-wrap: wrap;
+      border-top: 2px solid $gray-0;
+      padding-top: $golden-ratio-2;
 
       figure {
         margin: 0;
@@ -284,7 +293,6 @@
         &--links {
           display: flex;
           flex-direction: column;
-          width: 246px;
           font-size: $type-1;
           line-height: 2em;
           flex-shrink: 0;
@@ -302,14 +310,13 @@
 
           &--spaces {
             display: flex;
-            flex-wrap: wrap;
             margin-top: 3px;
             margin-bottom: 9px;
             overflow: hidden;
 
             a {
-              width: 76px;
-              height: 47px;
+              width: $golden-ratio-5;
+              height: $golden-ratio-4;
               background-color: $gray-0;
               overflow: hidden;
               display: inline-flex;
@@ -323,8 +330,19 @@
               line-height: 1.29em;
               -webkit-font-smoothing: antialiased;
 
+              @include respond(md) {
+                &:first-child {
+                  display: none;
+                }
+              }
+
+              &:last-child {
+                margin-right: 0;
+              }
+
               img {
                 width: 100%;
+                height: 100%;
                 object-fit: cover;
                 object-position: center;
               }
@@ -344,6 +362,8 @@
           width: 50%;
           margin-top: $golden-ratio-2;
           margin-bottom: 0;
+          border-top: 0;
+          padding-top: 0;
 
           > a,
           > a:visited {
