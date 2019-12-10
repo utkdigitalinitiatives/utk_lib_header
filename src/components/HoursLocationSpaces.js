@@ -22,23 +22,37 @@ export class HoursLocationSpaces extends Component {
         let spacesURL = Globals.URL + ENDPOINT + ROUTE
         spacesURL = spacesURL + this.props.location + '/2'
 
-        fetch(spacesURL, {
-            headers: {
-                'Content-Type': 'application/json',
-                'Accept': 'application/json'
-            }
-        })
-            .then(response => response.json())
-            .then(data => {
-                this.setState({
-                    spaces: data,
-                    grab: true
-                });
+        const sessionSpaces = 'utk_lib_spaces_' + this.props.location;
+
+        if (sessionStorage.getItem(sessionSpaces) === null) {
+
+            fetch(spacesURL, {
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                }
             })
-            .catch(err => console.error(this.props.url, err.toString()));
+                .then(response => response.json())
+                .then(data => {
+                    sessionStorage.setItem(sessionSpaces, JSON.stringify(data));
+                    this.setState({
+                        spaces: data,
+                        grab: true
+                    });
+                })
+                .catch(err => console.error(this.props.url, err.toString()));
 
-        return null
+            return null
 
+        } else {
+
+            this.setState({
+                    spaces: JSON.parse(sessionStorage.getItem(sessionSpaces)),
+                    grab: true
+                }
+            );
+
+        }
     }
 
     componentDidMount() {
@@ -55,7 +69,7 @@ export class HoursLocationSpaces extends Component {
         return spaces.map((item, index) => {
             let image = null
             if (item.image) {
-                image = <img alt={item.title} src={item.image.sizes.gr_thumb}/>
+                image = <img alt={item.title} src={item.image}/>
             }
             return (
                 <a href={item.url}>
