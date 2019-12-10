@@ -33,8 +33,6 @@ export class MenuSingle extends Component {
 
         const {items, title, className, media} = this.props || {};
 
-        console.log(media)
-
         if (items) {
             return (
                 <div className={className}>

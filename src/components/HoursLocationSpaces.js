@@ -4,6 +4,8 @@ import Globals from "./Globals";
 const ENDPOINT = 'hours/wp-json/spaces';
 const ROUTE = '/location/';
 
+import placeholder from '../media/placeholderimage.jpg';
+
 export class HoursLocationSpaces extends Component {
 
     constructor(props) {
@@ -46,18 +48,27 @@ export class HoursLocationSpaces extends Component {
             this.fetchLocationSpaces()
     }
 
+    renderSpaces = (spaces) => {
+        return spaces.map((item, index) => {
+            let image = null
+            if (item.image) {
+                image = <img src={item.image.sizes.thumbnail}/>
+            }
+            return (
+                <span>{image}</span>
+            );
+        });
+    }
+
     render() {
 
         const {spaces} = this.state;
 
         if (spaces) {
-
-            console.log(spaces)
-
             return (
-                <React.Fragment>
-                    x
-                </React.Fragment>
+                <div className="utk-hours--listing--item--meta--links--spaces">
+                    {this.renderSpaces(spaces)}
+                </div>
             )
         } else {
             return null
