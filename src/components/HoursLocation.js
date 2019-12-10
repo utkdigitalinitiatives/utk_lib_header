@@ -7,7 +7,7 @@ export class HoursLocation extends Component {
         super(props);
 
         this.state = {
-            showChildren : false
+            showChildren: false
         };
     };
 
@@ -57,9 +57,11 @@ export class HoursLocation extends Component {
     renderChildTrigger(children, title, showChildren) {
         if (children) {
             if (!showChildren)
-                return <a className="utk-hours--listing--item--more" onClick={this.toggleChildren}><span className="icon-plus">{children.length}</span> Show More at Hodges</a>
+                return <a className="utk-hours--listing--item--more" onClick={this.toggleChildren}><span
+                    className="icon-plus">{children.length}</span> Show More at Hodges</a>
             else
-                return <a className="utk-hours--listing--item--more utk-hours--listing--item--more-collapse" onClick={this.toggleChildren}><span className="icon-minus"></span> Hide All at Hodges</a>
+                return <a className="utk-hours--listing--item--more utk-hours--listing--item--more-collapse"
+                          onClick={this.toggleChildren}><span className="icon-minus"></span> Hide All at Hodges</a>
         } else {
             return null
         }
@@ -73,7 +75,8 @@ export class HoursLocation extends Component {
 
     getChildren(children, title) {
         if (children) {
-            return <ul className="utk-hours--listing--item--childmenu" aria-label={`locations within ${title}`}>{this.mapChildren(children)}</ul>
+            return <ul className="utk-hours--listing--item--childmenu"
+                       aria-label={`locations within ${title}`}>{this.mapChildren(children)}</ul>
         } else {
             return null
         }
@@ -113,16 +116,25 @@ export class HoursLocation extends Component {
             <li className={`utk-hours--listing--item ${hoursChildClass}`}>
                 <a href={url} className={hoursClass}>
                     <figure>
-                        <img src={thumbnail} alt={formal} />
+                        <img src={thumbnail} alt={formal}/>
                     </figure>
-                    <div className="utk-hours--listing--item--meta">
+                </a>
+                <div className="utk-hours--listing--item--meta">
+                    <a href={url} className={hoursClass}>
                         <span className="library-title">{title}</span>
                         <span className="library-subtitle">{subtitle}</span>
                         <span className="utk-hours--listing--item--hours">
-                            {hoursLabel}
+                                {hoursLabel}
+                            </span>
+                    </a>
+                    <div className="utk-hours--listing--item--meta--links">
+                        <div>&nbsp;</div>
+                        <span>
+                            <a href="#">Learn More</a>
+                            <a href="#">Map</a>
                         </span>
                     </div>
-                </a>
+                </div>
                 {this.getChildren(children, title)}
                 {this.renderChildTrigger(children, title, showChildren)}
             </li>
