@@ -55,7 +55,7 @@ export class HoursLocationSpaces extends Component {
         return spaces.map((item, index) => {
             let image = null
             if (item.image) {
-                image = <img src={item.image.sizes.gr_thumb}/>
+                image = <img alt={item.title} src={item.image.sizes.gr_thumb}/>
             }
             return (
                 <a href={item.url}>
