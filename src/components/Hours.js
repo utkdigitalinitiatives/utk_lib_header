@@ -106,12 +106,12 @@ export class Hours extends Component {
                             <div className="utk-hours-header--date-select">
                                 Monday, 8/19 <span className="icon-angle-down"></span>
                             </div>
-                            <div className="utk-hours-header--links">
-                                <a href="https://www.lib.utk.edu/hours/locations/?view=week"
-                                   className="utk-resources-toggle--map">Weekly Hours</a>
-                                <a href="https://www.lib.utk.edu/hours/spaces?fwp_reservable=yes"
-                                   className="utk-resources-toggle--map">Reserve a Room</a>
-                            </div>
+                            {/*<div className="utk-hours-header--links">*/}
+                                {/*<a href="https://www.lib.utk.edu/hours/locations/?view=week"*/}
+                                   {/*className="utk-resources-toggle--map">Weekly Hours</a>*/}
+                                {/*<a href="https://www.lib.utk.edu/hours/spaces?fwp_reservable=yes"*/}
+                                   {/*className="utk-resources-toggle--map">Reserve a Room</a>*/}
+                            {/*</div>*/}
                         </div>
                         <div className="utk-hours--listing">
                             <ul className="utk-hours--listing--col" aria-label="libraries and locations">

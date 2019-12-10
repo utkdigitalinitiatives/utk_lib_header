@@ -50,13 +50,17 @@ export class HoursLocationSpaces extends Component {
 
     renderSpaces = (spaces) => {
         return spaces.map((item, index) => {
-            let image = null
-            if (item.image) {
-                image = <img src={item.image.sizes.thumbnail}/>
+            while (index < 2) {
+                let image = null
+                if (item.image) {
+                    image = <img src={item.image.sizes.gr_thumb}/>
+                }
+                return (
+                    <a href={item.url}>
+                        {image}
+                    </a>
+                );
             }
-            return (
-                <span>{image}</span>
-            );
         });
     }
 
@@ -68,6 +72,9 @@ export class HoursLocationSpaces extends Component {
             return (
                 <div className="utk-hours--listing--item--meta--links--spaces">
                     {this.renderSpaces(spaces)}
+                    <a href={`https://www.lib.utk.edu/hours/spaces/?fwp_location=${this.props.location}`}>
+                        View <br/>Spaces <span className="sr-only">at {this.props.location}</span>
+                    </a>
                 </div>
             )
         } else {

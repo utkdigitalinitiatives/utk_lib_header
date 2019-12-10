@@ -92,6 +92,11 @@ export class HoursLocation extends Component {
             this.setState({showChildren: true})
     }
 
+    websiteLink = (url, slug) => {
+        if (slug !== 'hodges')
+            return <a href={url}>Website</a>
+    }
+
     render() {
 
         const {id, url, data, title, slug, subtitle, formal, children, thumbnail} = this.props;
@@ -130,10 +135,10 @@ export class HoursLocation extends Component {
                     </a>
                     <div className="utk-hours--listing--item--meta--links">
                         <HoursLocationSpaces location={slug} />
-                        <span>
-                            <a href="#">Learn More</a>
-                            <a href="#">Map</a>
-                        </span>
+                        {/*<span>*/}
+                            {/*<a href="#">Find on Map</a>*/}
+                            {/*{this.websiteLink(url, slug)}*/}
+                        {/*</span>*/}
                     </div>
                 </div>
                 {this.getChildren(children, title)}
