@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {HoursLocationChild} from "./HoursLocationChild";
+import {HoursLocationSpaces} from "./HoursLocationSpaces";
 
 export class HoursLocation extends Component {
 
@@ -93,7 +94,7 @@ export class HoursLocation extends Component {
 
     render() {
 
-        const {id, url, data, title, subtitle, formal, children, thumbnail} = this.props;
+        const {id, url, data, title, slug, subtitle, formal, children, thumbnail} = this.props;
 
         let {showChildren} = this.state
         let hoursChildClass = ''
@@ -128,7 +129,7 @@ export class HoursLocation extends Component {
                             </span>
                     </a>
                     <div className="utk-hours--listing--item--meta--links">
-                        <div>&nbsp;</div>
+                        <HoursLocationSpaces location={slug} />
                         <span>
                             <a href="#">Learn More</a>
                             <a href="#">Map</a>

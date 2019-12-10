@@ -127,6 +127,7 @@ export class Hours extends Component {
                                             locations[224]
                                         ]}
                                     title="Hodges"
+                                    slug="hodges"
                                     subtitle="Main Library"
                                     formal="John C. Hodges Library"
                                     thumbnail={hodges}
@@ -136,6 +137,7 @@ export class Hours extends Component {
                                     data={locations[225]}
                                     id={225}
                                     title="Pendergrass"
+                                    slug="pendergrass"
                                     subtitle="AgVet Library"
                                     formal="Pendergrass Agriculture & Veterinary Medicine Library"
                                     thumbnail={pendergrass}
@@ -145,6 +147,7 @@ export class Hours extends Component {
                                     data={locations[226]}
                                     id={226}
                                     title="DeVine"
+                                    slug="devine"
                                     subtitle="Music Library"
                                     formal="George F. DeVine Music Library"
                                     thumbnail={devine}
@@ -154,6 +157,7 @@ export class Hours extends Component {
                                     data={locations[227]}
                                     id={227}
                                     title="Hoskins"
+                                    slug="hoskins"
                                     subtitle="Storage & Reading Room"
                                     formal="James D. Hoskins Library"
                                     thumbnail={hoskins}
