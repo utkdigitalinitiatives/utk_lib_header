@@ -14,7 +14,7 @@
 
   .utk-hours-teaser {
     background-color: $smokeyx;
-    margin-bottom: $golden-ratio-2;
+    margin-bottom: $golden-ratio-3;
     border-radius: $golden-ratio-0;
     overflow: hidden;
     position: relative;
@@ -204,11 +204,9 @@
       margin: 0;
       padding: 0;
       width: auto;
-      margin-bottom: $golden-ratio-2;
+      margin-bottom: $golden-ratio-3;
       display: flex;
       flex-wrap: wrap;
-      border-top: 2px solid $gray-0;
-      padding-top: $golden-ratio-2;
 
       figure {
         margin: 0;
