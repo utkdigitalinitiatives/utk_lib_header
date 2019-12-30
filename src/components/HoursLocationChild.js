@@ -57,6 +57,8 @@ export class HoursLocationChild extends Component {
 
         if (data.name === 'The Commons')
             subtitle = 'Hodges 2nd Floor'
+        else if (data.name === 'Graduate Commons')
+            subtitle = 'Hodges 131'
         else if (data.name === 'The Studio')
             subtitle = 'Hodges 235'
         else if (data.name === 'Special Collections')

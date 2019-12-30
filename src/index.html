@@ -23,7 +23,8 @@
         data-url="https://utklibrary.test/"
         data-libchat="e98ae2539f2bd5d1659cc53d7de2812b"></header>
 <main style="background-color: white;">
-    <div id="utk-lib-home"></div>
+    <div id="utk-lib-home-hours"></div>
+    <section class="utk-home" id="utk-lib-home"></section>
     <!--<div class="utk-space&#45;&#45;hours"-->
          <!--data-daypicker="show"-->
          <!--data-hours="hide"-->
@@ -44,3 +45,23 @@
 <footer id="utk-lib-footer"></footer>
 </body>
 </html>
+<style>
+
+    #utk-lib-home-hours {
+        display: none;
+    }
+
+    @media (max-width: 991px) and (min-width: 768px) {
+        .utk-home .utk-header-resources .utk-hours {
+            display: none;
+        }
+
+        #utk-lib-home-hours {
+            display: block;
+            position: relative;
+            z-index: 0;
+            top: auto;
+            left: auto;
+        }
+    }
+</style>

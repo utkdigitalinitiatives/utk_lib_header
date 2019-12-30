@@ -24,6 +24,10 @@
     justify-content: flex-end;
     box-shadow: $box-shadow;
 
+    @include respond(sm, xs) {
+      display: none;
+    }
+
     &--title {
       font-size: $type-3;
       color: $white;
@@ -101,6 +105,13 @@
     display: flex;
     justify-content: space-between;
 
+    @include respond(md) {
+      flex-wrap: wrap;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: $golden-ratio-1 !important;
+    }
+
     h3 {
       margin: 0 0 $golden-ratio-1;
       padding: 0;
@@ -108,6 +119,10 @@
       color: $smokey;
       font-size: $type-2;
       letter-spacing: -0.018em;
+
+      @include respond(md) {
+        margin-bottom: 0 !important;
+      }
     }
 
     &--date-select {
@@ -117,11 +132,24 @@
     }
 
     &--links {
+      @include respond(md) {
+        display: flex;
+        justify-content: space-between;
+      }
+
       > a {
         font-size: $type-0;
         margin-left: 18px;
         font-weight: 700;
         text-transform: uppercase;
+
+        @include respond(md) {
+          margin: 0 9px;
+        }
+
+        @include respond(sm, xs) {
+          color: $white !important;
+        }
 
         &::after {
           content: "\E812";
@@ -207,6 +235,10 @@
       margin-bottom: $golden-ratio-3;
       display: flex;
       flex-wrap: wrap;
+
+      @include respond(sm, xs) {
+        flex-wrap: nowrap;
+      }
 
       figure {
         margin: 0;
@@ -328,7 +360,7 @@
               line-height: 1.29em;
               -webkit-font-smoothing: antialiased;
 
-              @include respond(md) {
+              @include respond(md, sm, xs) {
                 &:nth-child(2) {
                   display: none;
                 }
@@ -544,25 +576,75 @@
       overflow-y: hidden;
       width: calc(100%);
       position: relative;
+      display: flex;
+      flex-wrap: nowrap;
 
       &--col {
         display: flex;
         flex-direction: row;
         width: auto;
         padding-left: 0 !important;
+
+        > .utk-hours--listing--item {
+          display: flex;
+          margin-bottom: 0;
+          height: 121px;
+          flex-shrink: 0;
+          padding: 11px 18px;
+          border-right: 2px solid $gray-1;
+
+          &:last-child {
+            margin-right: 0;
+          }
+
+          .library-title,
+          .library-subtitle,
+          .utk-hours--listing--item--hours {
+            white-space: nowrap;
+          }
+
+          figure {
+            width: 30px;
+            height: 30px;
+          }
+        }
       }
 
       &--item {
-        display: flex;
-        margin-bottom: 0;
-
         &--childmenu {
-          margin: 0 !important;
-          padding: 0 !important;
           display: flex;
+          flex-wrap: nowrap;
+          margin-top: -11px !important;
+          padding-left: 18px;
+
+          > .utk-hours--listing--item--child {
+            width: auto;
+            max-width: 0;
+            margin: 0;
+            flex-shrink: 0;
+            overflow: hidden;
+            transition: $transition-all;
+
+            > a {
+              padding: 11px 18px;
+              border-right: 2px solid $gray-1;
+            }
+
+            &:first-child {
+              box-shadow: inset $box-shadow-left !important;
+            }
+
+            &:last-child {
+              box-shadow: inset $box-shadow-right !important;
+              border-right: none;
+            }
+          }
         }
 
         &--more {
+          margin-top: -11px;
+          margin-right: -18px;
+          height: 89px;
           width: $golden-ratio-5 !important;
           min-width: $golden-ratio-5 !important;
           line-height: 1.29em;
@@ -578,6 +660,7 @@
           justify-content: center;
           padding: 0 !important;
           background-color: $white !important;
+          border-left: 2px solid $gray-1;
 
           span {
             font-weight: 700;
@@ -613,101 +696,173 @@
           }
         }
 
-        &--child {
-          padding-left: 0 !important;
-          margin-top: 0;
-          margin-bottom: 0;
-          max-width: 0;
-
-          &:first-of-type a {
-            box-shadow: inset $box-shadow-left !important;
-          }
-
-          &:last-of-type a {
-            box-shadow: inset $box-shadow-right!important;
-          }
-
-          @include respond(xs, sm) {
-            transition: $transition-all;
-          }
-
-          > a {
-            padding: 0 $golden-ratio-2;
-
-            .library-title {
-              font-weight: 700;
-            }
-          }
-
-          &::before,
-          &::after {
-            content: none;
-          }
-
-          a::after {
-            height: 29px;
-            content: ' ';
-            display: block;
-            padding: 6px 18px;
-            position: absolute;
-            width: 100%;
-            font-size: 11px !important;
-            white-space: nowrap;
-            bottom: 0;
-            left: 0;
-            text-align: center;
-          }
-        }
-
-        &-showchildren {
+        &.utk-hours--listing--item-showchildren {
           .utk-hours--listing--item--child {
             max-width: 290px;
           }
         }
-
-        a {
-          display: flex;
-          flex-grow: 1;
-          padding: 11px 29px;
-          border-right: 1px solid $gray-1;
-          position: relative;
-          background-color: $white;
-          align-items: flex-end;
-
-          @include respond(xs) {
-            padding: 11px 18px;
-          }
-
-          figure {
-            width: 30px;
-            height: 30px;
-            margin-right: $golden-ratio-1;
-            margin-bottom: 32px;
-          }
-
-          .utk-hours--listing--item--meta {
-            padding-left: 0;
-
-            .library-title {
-              white-space: nowrap;
-            }
-
-            .library-subtitle {
-              color: $smokeyx;
-              font-weight: 400;
-              font-size: $type-1 !important;
-              white-space: nowrap;
-              bottom: 0;
-              left: 0;
-            }
-          }
-
-          .utk-hours--listing--item--hours {
-            font-size: $type-1;
-            white-space: nowrap;
-          }
-        }
       }
+
+      //&--item {
+      //  display: flex;
+      //  margin-bottom: 0;
+      //  height: 121px;
+      //  flex-shrink: 0;
+      //  padding: 11px 18px;
+      //
+      //  a {
+      //    align-items: flex-start !important;
+      //  }
+      //
+      //  &--childmenu {
+      //    margin: 0 !important;
+      //    padding: 0 !important;
+      //    display: flex;
+      //    flex-wrap: nowrap;
+      //
+      //    a {
+      //      align-items: flex-start !important;
+      //    }
+      //  }
+      //
+      //  &--more {
+      //    width: $golden-ratio-5 !important;
+      //    min-width: $golden-ratio-5 !important;
+      //    line-height: 1.29em;
+      //    text-align: center;
+      //    font-size: $type-0 !important;
+      //    display: flex !important;
+      //    align-content: center;
+      //    align-items: flex-end !important;
+      //    color: $smokey !important;
+      //    flex-direction: column;
+      //    flex-wrap: wrap;
+      //    cursor: pointer !important;
+      //    justify-content: center;
+      //    padding: 0 !important;
+      //    background-color: $white !important;
+      //
+      //    span {
+      //      font-weight: 700;
+      //      display: block;
+      //      text-align: center;
+      //      font-size: $type-1;
+      //      color: $white;
+      //      background-color: $white;
+      //      margin: 0 auto $golden-ratio-0;
+      //      width: 30px;
+      //      height: 30px;
+      //      box-shadow: $box-shadow;
+      //      text-align: center;
+      //      padding-top: 2px;
+      //      line-height: 28px;
+      //      border-radius: 30px;
+      //      background-color: $globe;
+      //      transition: $transition-all;
+      //      margin-top: 7px;
+      //      display: flex;
+      //      align-items: center;
+      //      justify-content: center;
+      //
+      //      &::before {
+      //        margin-right: 0;
+      //        margin-left: -2px;
+      //        font-size: $type-0;
+      //      }
+      //    }
+      //
+      //    &-collapse span {
+      //      background-color: $rock !important;
+      //    }
+      //  }
+      //
+      //  &--child {
+      //    padding-left: 0 !important;
+      //    margin-top: 0;
+      //    margin-bottom: 0;
+      //    max-width: 0 !important;
+      //    flex-shrink: 1;
+      //    width: auto;
+      //    padding: 0;
+      //
+      //    &:first-of-type a {
+      //      box-shadow: inset $box-shadow-left !important;
+      //    }
+      //
+      //    &:last-of-type a {
+      //      box-shadow: inset $box-shadow-right!important;
+      //    }
+      //
+      //    @include respond(xs, sm) {
+      //      transition: $transition-all;
+      //    }
+      //
+      //    > a {
+      //      padding: 0 $golden-ratio-2;
+      //
+      //      .library-title {
+      //        font-weight: 700;
+      //      }
+      //    }
+      //
+      //    &::before,
+      //    &::after {
+      //      content: none;
+      //    }
+      //
+      //    a::after {
+      //      height: 29px;
+      //      content: ' ';
+      //      display: block;
+      //      padding: 6px 18px;
+      //      position: absolute;
+      //      width: 100%;
+      //      font-size: 11px !important;
+      //      white-space: nowrap;
+      //      bottom: 0;
+      //      left: 0;
+      //      text-align: center;
+      //    }
+      //  }
+      //
+      //  &-showchildren {
+      //    .utk-hours--listing--item--child {
+      //      max-width: 290px;
+      //    }
+      //  }
+      //
+      //  a {
+      //
+      //    figure {
+      //      width: 30px;
+      //      height: 30px;
+      //      margin-right: $golden-ratio-0 !important;
+      //      margin-bottom: 32px;
+      //    }
+      //
+      //    .utk-hours--listing--item--meta {
+      //      padding-left: 0;
+      //
+      //      .library-title {
+      //        white-space: nowrap;
+      //      }
+      //
+      //      .library-subtitle {
+      //        color: $smokeyx;
+      //        font-weight: 400;
+      //        font-size: $type-1 !important;
+      //        white-space: nowrap;
+      //        bottom: 0;
+      //        left: 0;
+      //      }
+      //    }
+      //
+      //    .utk-hours--listing--item--hours {
+      //      font-size: $type-1;
+      //      white-space: nowrap;
+      //    }
+      //  }
+      //}
     }
   }
 }
