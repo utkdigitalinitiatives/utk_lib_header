@@ -329,8 +329,11 @@
               -webkit-font-smoothing: antialiased;
 
               @include respond(md) {
-                &:first-child {
+                &:nth-child(2) {
                   display: none;
+                }
+                &:last-child {
+                  display: flex;
                 }
               }
 
