@@ -24,10 +24,6 @@
     justify-content: flex-end;
     box-shadow: $box-shadow;
 
-    @include respond(sm, xs) {
-      display: none;
-    }
-
     &--title {
       font-size: $type-3;
       color: $white;
@@ -135,6 +131,10 @@
       @include respond(md) {
         display: flex;
         justify-content: space-between;
+      }
+
+      @include respond(xs, sm) {
+        display: none;
       }
 
       > a {
@@ -553,7 +553,51 @@
     top: 0;
     left: 0;
     margin-bottom: 0;
-    height: 121px;
+    height: 168px;
+
+    .utk-hours-teaser {
+      width: 100%;
+      border-radius: 0;
+      margin-bottom: 0;
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      height: $golden-ratio-4;
+      order: 3;
+      background-color: $gray-0;
+
+      img {
+        display: none;
+      }
+
+      .utk-hours-teaser--title {
+        display: none;
+      }
+
+      .utk-hours-teaser--menu {
+        width: 100%;
+        flex-grow: 1;
+        flex-shrink: 0;
+        margin: 0;
+        justify-content: space-evenly;
+
+        a,
+        a:visited {
+          border: 0;
+          color: $smokey;
+          font-size: $type-0;
+          text-transform: uppercase;
+          padding: 0;
+        }
+
+        a:hover,
+        a:focus {
+          border: 0;
+          color: $globe;
+          box-shadow: none;
+        }
+      }
+    }
 
     .utk-hours-header {
       width: 100%;
@@ -578,6 +622,7 @@
       position: relative;
       display: flex;
       flex-wrap: nowrap;
+      height: 89px;
 
       &--col {
         display: flex;
@@ -585,10 +630,14 @@
         width: auto;
         padding-left: 0 !important;
 
+        @include respond(sm) {
+          padding-left: $golden-ratio-1 !important;
+        }
+
         > .utk-hours--listing--item {
           display: flex;
           margin-bottom: 0;
-          height: 121px;
+          height: 89px;
           flex-shrink: 0;
           padding: 11px 18px;
           border-right: 2px solid $gray-1;
@@ -606,6 +655,27 @@
           figure {
             width: 30px;
             height: 30px;
+          }
+
+          .utk-hours--listing--item--meta--links--spaces {
+            margin-left: $golden-ratio-0;
+            display: none;
+
+            > a {
+              position: relative;
+              margin-right: 0;
+
+              &:first-child,
+              &:nth-child(1){
+                margin-left: 0;
+              }
+
+              &:last-child {
+                margin-left: -76px;
+                background-color: rgba($smokeyx, 0.72) !important;
+                color: $white;
+              }
+            }
           }
         }
       }

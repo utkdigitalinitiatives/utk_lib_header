@@ -15,14 +15,14 @@ body .utk-header-resources {
   @include respond(sm) {
     height: calc(100% - 82px);
     max-height: calc(100% - 82px);
-    padding-top: 121px;
+    padding-top: 168px;
     padding-bottom: 0;
   }
 
   @include respond(xs) {
     height: calc(100% - 66px);
     max-height: calc(100% - 66px);
-    padding-top: 121px;
+    padding-top: 168px;
     padding-bottom: 0;
   }
 
