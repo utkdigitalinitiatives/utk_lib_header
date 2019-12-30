@@ -8,6 +8,13 @@ import devine from '../media/devine.jpg';
 import hoskins from '../media/hoskins.jpg';
 // import {Locations} from "./Locations";
 
+import MomentLocaleUtils, {
+    formatDate,
+    parseDate,
+} from 'react-day-picker/moment';
+
+import moment from 'moment';
+
 const ENDPOINT = 'wp-json/libcal';
 const ROUTE = '/hours';
 
@@ -102,15 +109,13 @@ export class Hours extends Component {
                             <img src={tease} />
                         </div>
                         <div className="utk-hours-header">
-                            <h3>Today's Hours</h3>
+                            <h3>Hours for {moment.unix(this.state.timestamp).format('MMMM D, YYYY')}</h3>
                             <div className="utk-hours-header--date-select">
                                 Monday, 8/19 <span className="icon-angle-down"></span>
                             </div>
                             <div className="utk-hours-header--links">
                                 <a href="https://www.lib.utk.edu/hours/locations/?view=week"
-                                   className="utk-resources-toggle--map">Weekly Hours</a>
-                                <a href="https://www.lib.utk.edu/hours/spaces?fwp_reservable=yes"
-                                   className="utk-resources-toggle--map">Reserve a Room</a>
+                                   className="utk-resources-toggle--map">More Hours</a>
                             </div>
                         </div>
                         <div className="utk-hours--listing">
