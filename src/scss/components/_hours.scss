@@ -568,7 +568,7 @@
       justify-content: flex-start;
       height: $golden-ratio-4;
       order: 3;
-      background-color: $gray-0;
+      background-color: $globe;
 
       img {
         display: none;
@@ -588,7 +588,7 @@
         a,
         a:visited {
           border: 0;
-          color: $smokey;
+          color: $white;
           font-size: $type-1;
           padding: 0;
           margin: 0 5.5px;
@@ -598,7 +598,7 @@
         a:hover,
         a:focus {
           border: 0;
-          color: $globe;
+          color: $white;
           box-shadow: none;
         }
       }
