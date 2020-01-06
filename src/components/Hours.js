@@ -102,9 +102,9 @@ export class Hours extends Component {
                         <div className="utk-hours-teaser">
                             <span className="utk-hours-teaser--title">Find Your Place</span>
                             <div className="utk-hours-teaser--menu">
-                                <a href="https://www.lib.utk.edu/hours/locations">Locations</a>
-                                <a href="https://www.lib.utk.edu/hours/spaces">Explore Spaces</a>
-                                <a href="https://www.lib.utk.edu/hours/maps-directions">Maps & Directions</a>
+                                <a href="https://www.lib.utk.edu/hours/">Locations</a>
+                                <a href="https://www.lib.utk.edu/hours/spaces/">Explore Spaces</a>
+                                <a href="https://www.lib.utk.edu/hours/maps-directions/">Maps & Directions</a>
                             </div>
                             <img src={tease} />
                         </div>
