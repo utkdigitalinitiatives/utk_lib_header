@@ -135,10 +135,6 @@ export class HoursLocation extends Component {
                     </a>
                     <div className="utk-hours--listing--item--meta--links">
                         <HoursLocationSpaces location={slug} />
-                        {/*<span>*/}
-                            {/*<a href="#">Find on Map</a>*/}
-                            {/*{this.websiteLink(url, slug)}*/}
-                        {/*</span>*/}
                     </div>
                 </div>
                 {this.getChildren(children, title)}

@@ -110,11 +110,8 @@ export class Hours extends Component {
                         </div>
                         <div className="utk-hours-header">
                             <h3>Hours for {moment.unix(this.state.timestamp).format('MMMM D, YYYY')}</h3>
-                            <div className="utk-hours-header--date-select">
-                                Monday, 8/19 <span className="icon-angle-down"></span>
-                            </div>
                             <div className="utk-hours-header--links">
-                                <a href="https://www.lib.utk.edu/hours/locations/?view=week"
+                                <a href="https://www.lib.utk.edu/hours/"
                                    className="utk-resources-toggle--map">More Hours</a>
                             </div>
                         </div>
