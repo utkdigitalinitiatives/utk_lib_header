@@ -132,6 +132,10 @@
       font-size: $type-2;
       color: $smokey;
       letter-spacing: -0.018em;
+
+      @include respond(xs) {
+        text-align: center;
+      }
     }
 
     ul {
@@ -175,7 +179,7 @@
     font-family: $sans;
 
     @include respond(sm) {
-      width: calc(67.777777%);
+      width: calc(67.777777% - 37px);
       margin-right: 0;
     }
 
@@ -294,6 +298,11 @@
         background-color: $smokey;
         clip-path: polygon(0 0, calc(100% - 18px) 0, 100% 100%, 0 100%);
 
+        @include respond(xs) {
+          border-radius: 0 !important;
+          width: 123px;
+        }
+
         img {
           width: 100%;
           height: 100%;
@@ -312,6 +321,10 @@
         left: $golden-ratio-3;
         top: $golden-ratio-3;
 
+        @include respond(xs) {
+          width: 123px;
+        }
+
         img {
           width: 100%;
           height: 100%;
@@ -329,19 +342,26 @@
       margin-left: $gr-short;
       padding: $golden-ratio-4;
       padding-left: $golden-ratio-5;
+
+      @include respond(xs) {
+        width: auto;
+        margin-left: 123px;
+        padding: 0;
+        padding-left: $golden-ratio-4;
+      }
+
     }
 
     @include respond(xs, sm) {
-      background-color: $smokey;
       padding: $golden-ratio-3;
-      margin-left: -29px;
-      width: calc(100% + 58px);
-      box-shadow: inset $box-shadow;
+      width: 100%;
+      box-shadow: $box-shadow;
     }
 
     @include respond(xs) {
       padding: $golden-ratio-3 $golden-ratio-2 $golden-ratio-2;
       margin-left: -18px;
+      border-radius: 0 !important;
       width: calc(100% + 36px);
     }
 
@@ -351,6 +371,7 @@
       font-weight: 700;
       color: $smokey;
       letter-spacing: -0.018em;
+      line-height: 1.47em;
     }
 
     ul {
@@ -367,7 +388,7 @@
         width: 50%;
         line-height: 1.95em;
 
-        @media only screen and (max-width: 500px) {
+        @include respond(xs) {
           width: 100%;
         }
 

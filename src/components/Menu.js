@@ -11,7 +11,7 @@ import {Chat} from "./Chat";
 const ENDPOINT = 'assets/wp-json/libmenu';
 const ROUTE = '/header';
 
-import about from '../media/studentslaptop.jpg';
+import about from '../media/student-studying.jpg';
 
 
 export class Menu extends Component {
