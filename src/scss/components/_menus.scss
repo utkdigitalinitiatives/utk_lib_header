@@ -283,6 +283,10 @@
     position: relative;
     box-shadow: $box-shadow;
 
+    @include respond(xs) {
+      flex-direction: column;
+    }
+
     .utk-resources-menu--media {
       &--background {
         position: absolute;
@@ -300,7 +304,11 @@
 
         @include respond(xs) {
           border-radius: 0 !important;
-          width: 123px;
+          height: 123px;
+          position: relative;
+          margin-left: -18px;
+          clip-path: none;
+          width: calc(100% + 36px);
         }
 
         img {
@@ -311,6 +319,10 @@
           filter: blur(18px);
           opacity: 1;
           clip-path: polygon(0 0, calc(100% - 18px) 0, 100% 100%, 0 100%);
+
+          @include respond(xs) {
+            clip-path: none;
+          }
         }
       }
 
@@ -322,7 +334,10 @@
         top: $golden-ratio-3;
 
         @include respond(xs) {
-          width: 123px;
+          left: $golden-ratio-2;
+          width: 199px;
+          height: 123px;
+          margin-top: 18px;
         }
 
         img {
@@ -344,10 +359,11 @@
       padding-left: $golden-ratio-5;
 
       @include respond(xs) {
-        width: auto;
-        margin-left: 123px;
+        width: 100%;
+        margin-left: 0;
         padding: 0;
-        padding-left: $golden-ratio-4;
+        padding-top: 47px;
+        padding-bottom: 11px;
       }
 
     }
@@ -387,10 +403,6 @@
         font-size: $type-1;
         width: 50%;
         line-height: 1.95em;
-
-        @include respond(xs) {
-          width: 100%;
-        }
 
         a,
         a:visited {

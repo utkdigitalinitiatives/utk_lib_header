@@ -156,6 +156,10 @@ body .utk-header-resources {
         font-size: $type-1;
         font-family: $sans;
         line-height: 1.95em;
+
+        @include respond(xs) {
+          line-height: 1.47em;
+        }
       }
 
       a:focus,
