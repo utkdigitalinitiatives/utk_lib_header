@@ -175,7 +175,7 @@ export class Menu extends Component {
                                         <MenuSingle title="More from Libraries"
                                                     items={menuHeader.help}
                                                     className="utk-resources-menu--help" />
-                                        <MenuSingle title="Speciality Services"
+                                        <MenuSingle title="Specialty Services"
                                                     items={menuHeader.services_speciality}
                                                     className="utk-resources-menu--services-speciality" />
                                         <MenuSingle title="About University Libraries"
