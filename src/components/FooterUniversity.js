@@ -1,13 +1,22 @@
 import React, {Component} from 'react';
 import {MenuColumns} from "./MenuColumns";
+import TagManager from "react-gtm-module";
 
 export class FooterUniversity extends Component {
 
     constructor(props) {
         super(props);
 
-        this.state = {};
+        this.state = {
+            searchValue: ''
+        };
     }
+
+    handleInputChange = (e) => {
+        this.setState({
+            searchValue: e.target.value
+        })
+    };
 
     render() {
 
@@ -103,8 +112,14 @@ export class FooterUniversity extends Component {
                                       method="post" accept-charset="iso-8859-1"
                                       action="//www.utk.edu/masthead/query.php">
                                     <div className="form-group">
-                                        <input type="text" name="qt" placeholder="Search utk.edu"
-                                               value="" className="form-control" title="search" speech=""
+                                        <input type="text"
+                                               name="qt"
+                                               placeholder="Search utk.edu"
+                                               value={this.state.searchValue}
+                                               onChange={e => this.handleInputChange(e)}
+                                               className="form-control"
+                                               title="search"
+                                               speech=""
                                                x-webkit-speech=""/>
                                     </div>
                                     <input type="hidden" name="qtype" className="searchtext" value="utk"
