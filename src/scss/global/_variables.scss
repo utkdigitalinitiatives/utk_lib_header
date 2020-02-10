@@ -4,7 +4,7 @@
 
 // primary
 $orange:      #ff8200;
-$white:       #fff;
+$white:       #ffffff;
 $smokey:      #58595b;
 
 // secondary
@@ -25,7 +25,7 @@ $fountain:    #2197a9;
 $eureka:      #ebea64;
 
 // alt grays
-$smokeyx:    #333;
+$smokeyx:     #333333;
 $gray-0:      #f6f6f6;
 $gray-1:      #e0e0e0;
 $gray-2:      #cacaca;
@@ -56,14 +56,14 @@ $gr-short : calc(100% - (100% / #{$gr}));
  * font-size for typography
  */
 
-$type-0: 11px; // extra extra small
-$type-1: 13px; // extra small
-$type-2: 15px; // small
-$type-3: 18px; // standard
-$type-4: 23px; // medium
-$type-5: 29px; // large
-$type-6: 39px; // large
-$type-7: 47px; // extra large
+$type-0: 0.6111rem; // extra extra small
+$type-1: 0.7222rem; // extra small
+$type-2: 0.8333rem; // small
+$type-3: 1rem;      // standard
+$type-4: 1.2777rem; // medium
+$type-5: 1.6111rem; // large
+$type-6: 2.2166rem; // large
+$type-7: 2.6111rem; // extra large
 
 /*
  * incremental spacers by golden ratio

@@ -1,6 +1,6 @@
 html {
   margin-top: 82px;
-  font-size: $type-3 !important;
+  font-size: 1.125em !important;
 
   @include respond(sm) {
     margin-top: 82px;
