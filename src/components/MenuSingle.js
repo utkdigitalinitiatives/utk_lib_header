@@ -23,8 +23,8 @@ export class MenuSingle extends Component {
         if (src)
             return (
                 <div className="utk-resources-menu--media">
-                    <div className="utk-resources-menu--media--image"><img src={src} /></div>
-                    <div className="utk-resources-menu--media--background"><img src={src} /></div>
+                    <div className="utk-resources-menu--media--image"><img src={src} alt="Students studying at Hodges Library." /></div>
+                    <div className="utk-resources-menu--media--background"><img src={src} alt="Students studying at Hodges Library." /></div>
                 </div>
             )
     }
