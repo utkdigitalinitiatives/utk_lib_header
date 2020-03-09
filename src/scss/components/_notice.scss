@@ -20,7 +20,9 @@
       -webkit-font-smoothing: antialiased;
 
       a,
-      a:visited {
+      a:visited,
+      a:hover,
+      a:focus {
         color: $white;
         font-weight: 700;
         display: inline-flex;
