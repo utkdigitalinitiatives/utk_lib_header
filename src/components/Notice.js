@@ -4,13 +4,16 @@ import Globals from "./Globals";
 const ENDPOINT = '/wp-json/notice';
 const ROUTE = '/new';
 
+const Entities = require('html-entities').AllHtmlEntities;
+const entities = new Entities();
+
 class Notice extends Component {
 
     constructor(props) {
         super(props);
 
         this.state = {
-            data: null
+            data: {}
         }
     }
 
@@ -19,7 +22,7 @@ class Notice extends Component {
     }
 
     fetchNotices() {
-        fetch(Globals.URL + ENDPOINT + ROUTE, {
+        fetch('https://utklibrary.test' + ENDPOINT + ROUTE, {
             headers: {
                 'Content-Type': 'application/json',
                 'Accept': 'application/json'
@@ -28,7 +31,7 @@ class Notice extends Component {
             .then(response => response.json())
             .then(data => {
                 this.setState({
-                    notice: data
+                    data: data
                 });
             })
             .catch(err => console.error(this.props.url, err.toString()));
@@ -37,11 +40,26 @@ class Notice extends Component {
     }
 
     render() {
-        return (
-            <div>
 
-            </div>
-        )
+        let {data} = this.state
+
+        if (Object.entries(data).length !== 0) {
+
+            let {id, title, content} = data.notice;
+
+            return (
+                <div className={`utk-notice utk-notice-${id}`}>
+                    <div className='container'>
+                        <span className="utk-notice--title">
+                            {title}
+                        </span>
+                        <div className='utk-notice--content' dangerouslySetInnerHTML={{__html: entities.decode(content)}} />
+                    </div>
+                </div>
+            )
+        } else {
+            return null
+        }
     }
 }
 
