@@ -9,6 +9,7 @@ import {Menu} from "./components/Menu";
 import {Search} from "./components/Search";
 import {Skip} from "./components/Skip";
 import Globals from "./components/Globals";
+import Notice from "./components/Notice";
 
 /* header component */
 class Header extends Component {
@@ -207,6 +208,7 @@ class Header extends Component {
                           helpExpand={showHelp}/>
                     <Search showSearch={showSearch} ref="search"/>
                 </div>
+                <Notice/>
                 <div className="utk-body-overlay"></div>
             </React.Fragment>
         );
