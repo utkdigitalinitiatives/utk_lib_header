@@ -22,7 +22,7 @@ class Notice extends Component {
     }
 
     fetchNotices() {
-        fetch('https://utklibrary.test' + ENDPOINT + ROUTE, {
+        fetch(Globals.URL + ENDPOINT + ROUTE, {
             headers: {
                 'Content-Type': 'application/json',
                 'Accept': 'application/json'
