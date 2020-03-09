@@ -1,8 +1,7 @@
 .utk-notice {
   background-color: $smokeyx;
   font-family: $sans;
-  padding: $golden-ratio-3 0;
-  display: none;
+  padding: $golden-ratio-4 0;
 
   &--title {
     display: flex;
@@ -14,25 +13,11 @@
     line-height: 1.29em;
 
     &::before {
-      position: absolute;
-      content: "\E815";
-      width: 18px;
-      height: 18px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-left: -23px;
-      font-family: fontello, monospace;
-      font-style: normal;
-      speak: none;
-      text-decoration: inherit;
-      text-align: center;
-      font-variant: normal;
-      text-transform: none;
-      -webkit-font-smoothing: antialiased;
-      color: $smokey;
-      font-size: $type-2;
-      margin-top: 2px;
+      content: "";
+      width: $golden-ratio-6;
+      height: $golden-ratio-0;
+      background-color: $orange;
+      margin-bottom: $golden-ratio-2;
     }
   }
 
