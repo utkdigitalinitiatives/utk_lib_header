@@ -1,21 +1,45 @@
 .utk-notice {
-  background-color: $smokeyx;
+  background-color: $smokey;
   font-family: $sans;
-  padding: $golden-ratio-4 0;
+  padding: $golden-ratio-3 0;
+  border-bottom: 1px solid lighten($smokey, 5);
 
   &--title {
     display: flex;
     flex-direction: column;
-    font-size: $type-4;
+    font-size: $type-3;
     font-weight: 700;
     color: $white;
     -webkit-font-smoothing: antialiased;
+    line-height: 1.29em;
+
+    &::before {
+      position: absolute;
+      content: "\E815";
+      width: 18px;
+      height: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-left: -23px;
+      font-family: fontello, monospace;
+      font-style: normal;
+      speak: none;
+      text-decoration: inherit;
+      text-align: center;
+      font-variant: normal;
+      text-transform: none;
+      -webkit-font-smoothing: antialiased;
+      color: $rock;
+      font-size: $type-2;
+      margin-top: 2px;
+    }
   }
 
   &--content {
     p {
       color: $white;
-      font-size: $type-3;
+      font-size: $type-2;
       line-height: 1.47em;
       -webkit-font-smoothing: antialiased;
 
@@ -35,6 +59,10 @@
           content: '';
           margin-top: -2px;
         }
+      }
+
+      &:first-child {
+        margin-top: $golden-ratio-0;
       }
 
       &:last-child {
