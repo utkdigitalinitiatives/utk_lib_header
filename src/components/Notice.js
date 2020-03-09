@@ -6,14 +6,19 @@ const ROUTE = '/new';
 
 class Notice extends Component {
 
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            data: null
+        }
+    }
+
     componentDidMount() {
-
         this.fetchNotices()
-
     }
 
     fetchNotices() {
-
         fetch(Globals.URL + ENDPOINT + ROUTE, {
             headers: {
                 'Content-Type': 'application/json',
@@ -29,7 +34,6 @@ class Notice extends Component {
             .catch(err => console.error(this.props.url, err.toString()));
 
         return null
-
     }
 
     render() {
