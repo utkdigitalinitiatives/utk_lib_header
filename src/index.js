@@ -13,10 +13,11 @@ import SpaceHours from './components/SpaceHours';
 import './scss/styles.scss';
 
 // build skip
+let insert = document.body.firstChild;
 const skip = document.createElement("div");
 skip.setAttribute("id", "utk-lib-skip");
 skip.setAttribute("class", "utk-skip");
-// document.body.insertBefore(skip, document.getElementById('utk-lib-header'));
+document.body.insertBefore(skip, insert);
 
 // render skip, header and inline hours
 if (document.getElementById('utk-lib-skip')) {
