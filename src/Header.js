@@ -47,6 +47,17 @@ class Header extends Component {
         });
     };
 
+    renderSearch(settings) {
+
+        console.log(settings);
+
+        if (settings.disableSearch != 'true') {
+            return <Search showSearch={this.state.showSearch} ref="search"/>
+        } else {
+            return null
+        }
+    }
+
     toggleSearch(e) {
         e.stopPropagation();
         e.preventDefault();
@@ -206,7 +217,7 @@ class Header extends Component {
                           active={resourcesClass}
                           libchat={Globals.libChat}
                           helpExpand={showHelp}/>
-                    <Search showSearch={showSearch} ref="search"/>
+                    {this.renderSearch(Globals)}
                 </div>
                 <Notice/>
                 <div className="utk-body-overlay"></div>
