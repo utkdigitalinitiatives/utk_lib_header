@@ -63,12 +63,15 @@
   .notice-button {
     border: 2px solid $smokey;
     background-color: transparent;
-    padding: $golden-ratio-0 $golden-ratio-2;
+    padding: $golden-ratio-1 $golden-ratio-2;
     display: inline-flex;
     font-size: $type-1;
     font-weight: 700;
     color: $white !important;
     margin-right: 1rem;
+    margin-top: $golden-ratio-1;
+    line-height: 1.47em;
+    flex-grow: 0;
 
     &.covid19 {
       border-color: $sunsphere !important;
