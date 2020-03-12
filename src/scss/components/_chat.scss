@@ -9,9 +9,15 @@
     box-shadow: $box-shadow-float;
     background-color: $white !important;
     color: $smokeyx !important;
-    padding: 0 calc(#{$golden-ratio-2 - 1px + $golden-ratio-4}) 0 $golden-ratio-2 !important;
+    padding: 0 calc(#{$golden-ratio-1 + $golden-ratio-4}) 0 $golden-ratio-2 !important;
     position: relative !important;
     z-index: 0;
+
+    @include respond(xs) {
+      height: 40px !important;
+      line-height: 40px !important;
+      padding: 0 calc(#{$golden-ratio-1 + 40px}) 0 $golden-ratio-2 !important;
+    }
 
     &::after {
       content: "\E808";
@@ -32,6 +38,12 @@
       border-top-right-radius: $golden-ratio-4 !important;
       border-bottom-right-radius: $golden-ratio-4 !important;
       -webkit-font-smoothing: antialiased;
+
+      @include respond(xs) {
+        height: 40px !important;
+        width: 40px !important;
+        line-height: 40px !important;
+      }
     }
 
     &.libchat_online::after {
