@@ -47,11 +47,33 @@ class Header extends Component {
         });
     };
 
+
+
+
+    renderSearchButton(settings) {
+        if (settings && !settings.hasOwnProperty('disableSearch')) {
+            return (
+                <div className="utk-header-actions--item utk-header-actions--search">
+                    <a id="utk-lib-search" href="#search" aria-label="Search" onClick={this.toggleSearch}
+                       className={`utk-search-trigger utk-search-expand`}>
+                        <span className="icon-search"></span>
+                        <em>Search</em>
+                    </a>
+                    <a href="#search" aria-label="Close Search" onClick={this.closeSearch}
+                       className={`utk-search-trigger utk-search-collapse`}>
+                        <span className="icon-cancel"></span>
+                        <span className="sr-only">Close</span>
+                        <em>Search</em>
+                    </a>
+                </div>
+            )
+        } else {
+            return null
+        }
+    }
+
     renderSearch(settings) {
-
-        console.log(settings);
-
-        if (settings.disableSearch != 'true') {
+        if (settings && !settings.hasOwnProperty('disableSearch')) {
             return <Search showSearch={this.state.showSearch} ref="search"/>
         } else {
             return null
@@ -184,19 +206,7 @@ class Header extends Component {
                                 <div className="utk-header-actions--item utk-header-actions--home">
                                     <a href="https://www.lib.utk.edu">Libraries Home</a>
                                 </div>
-                                <div className="utk-header-actions--item utk-header-actions--search">
-                                    <a id="utk-lib-search" href="#search" aria-label="Search" onClick={this.toggleSearch}
-                                       className={`utk-search-trigger utk-search-expand`}>
-                                        <span className="icon-search"></span>
-                                        <em>Search</em>
-                                    </a>
-                                    <a href="#search" aria-label="Close Search" onClick={this.closeSearch}
-                                       className={`utk-search-trigger utk-search-collapse`}>
-                                        <span className="icon-cancel"></span>
-                                        <span className="sr-only">Close</span>
-                                        <em>Search</em>
-                                    </a>
-                                </div>
+                                {this.renderSearchButton(Globals)}
                                 <div className="utk-header-actions--item utk-header-actions--resources">
                                     <a id="utk-lib-menu" href="#menu" aria-label="Expand Main Menu" onClick={this.toggleResources}
                                        className={`utk-menu-trigger utk-header-expand`}>
