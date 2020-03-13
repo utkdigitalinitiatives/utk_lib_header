@@ -103,6 +103,16 @@ export class Hours extends Component {
                         <div className="utk-hours-teaser">
                             <span className="utk-hours-teaser--title">Classes are online and so are we!</span>
                             <span className="utk-hours-teaser--subtitle">The Libraries will continue to serve our patrons online while access to buildings is restricted.</span>
+                            <div className="utk-hours-teaser--hours">
+                                <dl>
+                                    <dt>Monday – Friday</dt>
+                                    <dd>8am – Midnight</dd>
+                                </dl>
+                                <dl>
+                                    <dt>Saturday and Sunday</dt>
+                                    <dd>10am – Midnight</dd>
+                                </dl>
+                            </div>
                             {/*<div className="utk-hours-teaser--menu">*/}
                             {/*    <a href="https://www.lib.utk.edu/hours/">Locations</a>*/}
                             {/*    <a href="https://www.lib.utk.edu/hours/spaces/">Explore Spaces</a>*/}
@@ -132,9 +142,9 @@ export class Hours extends Component {
                                     children={
                                         [
                                             locations[217],
-                                            locations[224],
-                                            this.cloneLocationData(locations[52], 'The Commons', 'https://commons.utk.edu', true),
-                                            this.cloneLocationData(locations[52], 'Graduate Commons', 'https://lib.utk.edu', true)
+                                            locations[224]
+                                            // this.cloneLocationData(locations[52], 'The Commons', 'https://commons.utk.edu', true),
+                                            // this.cloneLocationData(locations[52], 'Graduate Commons', 'https://lib.utk.edu', true)
                                         ]}
                                     title="Hodges"
                                     slug="hodges"

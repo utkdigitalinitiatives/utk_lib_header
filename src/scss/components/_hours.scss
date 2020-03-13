@@ -24,7 +24,7 @@
     justify-content: flex-end;
     box-shadow: $box-shadow;
     z-index: 0;
-    border-top: $golden-ratio-2 solid $switchgrass;
+    border-top: $golden-ratio-1 solid $switchgrass;
 
     &--title {
       font-size: $type-3;
@@ -46,6 +46,33 @@
       //  background-color: $switchgrass;
       //  margin: auto auto $golden-ratio-1;
       //}
+    }
+
+    &--hours {
+      display: flex;
+      flex-direction: row;
+      font-size: $type-2;
+      color: $white;
+      justify-content: space-evenly;
+      position: relative;
+      z-index: 2;
+      margin-bottom: $golden-ratio-2;
+
+      dl {
+        margin: 0;
+
+        dt {
+          margin: 0;
+          padding: 0;
+          font-weight: 700;
+          text-align: center;
+        }
+        dd {
+          margin: 0;
+          padding: 0;
+          text-align: center;
+        }
+      }
     }
 
     &--badge {
@@ -125,7 +152,7 @@
       height: auto;
       filter: blur(6px);
       z-index: 0;
-      opacity: 0.24;
+      opacity: 0.11;
     }
   }
 
