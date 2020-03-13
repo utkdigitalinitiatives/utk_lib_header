@@ -14,7 +14,7 @@
 
   .utk-hours-teaser {
     background-color: $smokeyx;
-    margin-bottom: $golden-ratio-2;
+    margin-bottom: 0;
     border-radius: $golden-ratio-0;
     overflow: hidden;
     position: relative;
@@ -24,6 +24,7 @@
     justify-content: flex-end;
     box-shadow: $box-shadow;
     z-index: 0;
+    border-top: $golden-ratio-2 solid $switchgrass;
 
     &--title {
       font-size: $type-3;
@@ -37,20 +38,50 @@
       position: relative;
       letter-spacing: -0.029em;
 
-      &::before {
-        content: "";
-        width: $golden-ratio-5;
-        height: $golden-ratio-0;
-        display: block;
-        background-color: $orange;
-        margin: auto auto $golden-ratio-1;
-      }
+      //&::before {
+      //  content: "";
+      //  width: $golden-ratio-5;
+      //  height: $golden-ratio-0;
+      //  display: block;
+      //  background-color: $switchgrass;
+      //  margin: auto auto $golden-ratio-1;
+      //}
+    }
+
+    &--badge {
+      display: block;
+      background-color: $gray-0;
+      color: $smokey;
+      margin: auto auto 0;
+      padding: $golden-ratio-2;
+      width: 100%;
+      font-size: $type-1;
+      font-weight: 400;
+      text-align: center;
+      line-height: 1.65em;
+      z-index: 2;
+      border-radius: $golden-ratio-0;
+      margin-bottom: $golden-ratio-1;
+      margin-top: $golden-ratio-2;
+    }
+
+    &--subtitle {
+      font-size: $type-2;
+      color: $white;
+      z-index: 1;
+      font-weight: 400;
+      text-align: center;
+      line-height: 1.47em;
+      display: block;
+      margin: 0 $golden-ratio-3 $golden-ratio-2;
+      position: relative;
+      letter-spacing: -0.029em;
     }
 
     &--menu {
       display: flex;
       justify-content: center;
-      font-size: $type-1;
+      font-size: $type-2;
       font-weight: 700;
       margin: 0 $golden-ratio-1 $golden-ratio-2;
       position: relative;
@@ -66,7 +97,7 @@
         color: $white;
         display: inline-flex;
         padding: $golden-ratio-0 $golden-ratio-1;
-        border: 2px solid rgba($white, 0.11);
+        border: 2px solid rgba($rock, 0.11);
         margin-right: $golden-ratio-1;
         transition: $transition-all-fast;
         box-shadow: none;

@@ -99,7 +99,7 @@ export class HoursLocation extends Component {
 
     render() {
 
-        const {id, url, data, title, slug, subtitle, formal, children, thumbnail} = this.props;
+        const {id, url, data, title, slug, subtitle, formal, children, thumbnail, chat, phone, contingency} = this.props;
 
         let {showChildren} = this.state
         let hoursChildClass = ''
@@ -118,6 +118,10 @@ export class HoursLocation extends Component {
             hoursLabel = 'Closes at ' + data.hours_close
         }
 
+        if (contingency) {
+            hoursLabel = 'Closed'
+        }
+
         return (
             <li className={`utk-hours--listing--item ${hoursChildClass}`}>
                 <a href={url} className={hoursClass}>
@@ -130,11 +134,11 @@ export class HoursLocation extends Component {
                         <span className="library-title">{title}</span>
                         <span className="library-subtitle">{subtitle}</span>
                         <span className="utk-hours--listing--item--hours">
-                                {hoursLabel}
-                            </span>
+                            {hoursLabel}
+                        </span>
                     </a>
                     <div className="utk-hours--listing--item--meta--links">
-                        <HoursLocationSpaces location={slug} />
+                        <HoursLocationSpaces location={slug} chat={chat} phone={phone} />
                     </div>
                 </div>
                 {this.getChildren(children, title)}

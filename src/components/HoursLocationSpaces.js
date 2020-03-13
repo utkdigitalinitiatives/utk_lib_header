@@ -5,6 +5,7 @@ const ENDPOINT = 'hours/wp-json/spaces';
 const ROUTE = '/location/';
 
 import placeholder from '../media/placeholderimage.jpg';
+import {Chat} from "./Chat";
 
 export class HoursLocationSpaces extends Component {
 
@@ -79,6 +80,12 @@ export class HoursLocationSpaces extends Component {
         });
     }
 
+    renderChat(hash) {
+        return (
+            <Chat libchat={hash} />
+        )
+    }
+
     render() {
 
         const {spaces} = this.state;
@@ -86,10 +93,18 @@ export class HoursLocationSpaces extends Component {
         if (spaces) {
             return (
                 <div className="utk-hours--listing--item--meta--links--spaces">
-                    {this.renderSpaces(spaces)}
-                    <a href={`https://www.lib.utk.edu/hours/spaces/?fwp_location=${this.props.location}`}>
-                        View <br/>Spaces <span className="sr-only">at {this.props.location}</span>
-                    </a>
+                    <div className="utk-hours-contingency">
+                        <div className="utk-hours-contingency--chat">
+                            {this.renderChat(this.props.chat)}
+                        </div>
+                        <div className="utk-hours-contingency--phone">
+                            <a href={`tel:${this.props.phone}`}>{this.props.phone}</a>
+                        </div>
+                    </div>
+                    {/*{this.renderSpaces(spaces)}*/}
+                    {/*<a href={`https://www.lib.utk.edu/hours/spaces/?fwp_location=${this.props.location}`}>*/}
+                    {/*    View <br/>Spaces <span className="sr-only">at {this.props.location}</span>*/}
+                    {/*</a>*/}
                 </div>
             )
         } else {

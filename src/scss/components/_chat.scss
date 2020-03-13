@@ -55,3 +55,57 @@
     }
   }
 }
+
+.utk-hours-contingency {
+  display: flex;
+  padding: $golden-ratio-0;
+  margin-top: -$golden-ratio-0;
+
+  &--phone a {
+    margin: 0;
+    padding: 0;
+    background-color: unset !important;
+    height: unset !important;
+    width: unset !important;
+    font-size: inherit !important;
+    color: $smokey !important;
+  }
+
+  .utk-libchat {
+    button {
+      font-weight: 400 !important;
+      font-size: $type-1 !important;
+      height: $golden-ratio-3 !important;
+      line-height: $golden-ratio-3 !important;
+      padding: 0 calc(#{$golden-ratio-1 + $golden-ratio-3}) 0 $golden-ratio-1 !important;
+      margin-right: $golden-ratio-2;
+
+      &::after {
+        content: "\E808";
+        font-family: fontello, monospace;
+        color: $white !important;
+        font-style: normal;
+        font-size: $type-1;
+        speak: none;
+        font-weight: 400;
+        display: block;
+        position: absolute;
+        right: -1px;
+        top: -1px;
+        height: $golden-ratio-3 !important;
+        width: $golden-ratio-3 !important;
+        background-color: $rock;
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 6px 100%) !important;
+        border-top-right-radius: $golden-ratio-4 !important;
+        border-bottom-right-radius: $golden-ratio-4 !important;
+        -webkit-font-smoothing: antialiased;
+
+        @include respond(xs) {
+          height: $golden-ratio-3 !important;
+          width: $golden-ratio-3 !important;
+          line-height: $golden-ratio-3 !important;
+        }
+      }
+    }
+  }
+}

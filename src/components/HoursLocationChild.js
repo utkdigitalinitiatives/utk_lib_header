@@ -48,7 +48,9 @@ export class HoursLocationChild extends Component {
     render() {
 
         const {data} = this.props;
-        const {name, url} = this.props.data;
+        const {name, url, contingency} = this.props.data;
+
+        console.log(contingency)
 
         let hoursClass = this.getHoursIndicator(data);
         let hoursLabel = this.getHoursLabel(data);
@@ -70,6 +72,11 @@ export class HoursLocationChild extends Component {
 
         if (data.hours_open === '12am') {
             hoursLabel = 'Closes at ' + data.hours_close
+        }
+
+        if (contingency) {
+            hoursClass = 'library-closed'
+            hoursLabel = 'Closed'
         }
 
         return (

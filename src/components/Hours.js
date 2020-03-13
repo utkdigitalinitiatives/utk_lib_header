@@ -69,12 +69,13 @@ export class Hours extends Component {
 
     }
 
-    cloneLocationData(data, name, url) {
+    cloneLocationData(data, name, url, contingency) {
 
         const clone = JSON.parse(JSON.stringify(data))
         const update = {
             'name' : name,
-            'url' : url
+            'url' : url,
+            'contingency' : contingency
         }
 
         return Object.assign(clone, update)
@@ -100,19 +101,26 @@ export class Hours extends Component {
                 <React.Fragment>
                     <div className="utk-hours">
                         <div className="utk-hours-teaser">
-                            <span className="utk-hours-teaser--title">Find Your Place</span>
+                            <span className="utk-hours-teaser--title">Classes are online and so are we!</span>
+                            <span className="utk-hours-teaser--subtitle">The Libraries will continue to serve our patrons online while access to buildings is restricted.</span>
+                            {/*<div className="utk-hours-teaser--menu">*/}
+                            {/*    <a href="https://www.lib.utk.edu/hours/">Locations</a>*/}
+                            {/*    <a href="https://www.lib.utk.edu/hours/spaces/">Explore Spaces</a>*/}
+                            {/*    <a href="https://www.lib.utk.edu/hours/maps-directions/">Maps & Directions</a>*/}
+                            {/*</div>*/}
                             <div className="utk-hours-teaser--menu">
-                                <a href="https://www.lib.utk.edu/hours/">Locations</a>
-                                <a href="https://www.lib.utk.edu/hours/spaces/">Explore Spaces</a>
-                                <a href="https://www.lib.utk.edu/hours/maps-directions/">Maps & Directions</a>
+                                <a href="https://www.lib.utk.edu/askusnow">AskUsNow</a>
+                                <a href="https://www.lib.utk.edu/askusnow/subject-librarians/">Find a Librarian</a>
+                                <a href="https://www.lib.utk.edu/contact/">Feedback</a>
                             </div>
                             <img src={tease} />
                         </div>
+                        <span className="utk-hours-teaser--badge">Building access is currently restricted, hours listed indicate digital and remote availability of our public services desks.</span>
                         <div className="utk-hours-header">
-                            <h3>Hours for {moment.unix(this.state.timestamp).format('MMMM D, YYYY')}</h3>
+                            <h3>Availability for {moment.unix(this.state.timestamp).format('MMMM D, YYYY')}</h3>
                             <div className="utk-hours-header--links">
-                                <a href="https://www.lib.utk.edu/hours/"
-                                   className="utk-resources-toggle--map">More Hours</a>
+                                <a href="https://www.lib.utk.edu/contingency"
+                                   className="utk-resources-toggle--map">More Details</a>
                             </div>
                         </div>
                         <div className="utk-hours--listing">
@@ -123,16 +131,18 @@ export class Hours extends Component {
                                     id={52}
                                     children={
                                         [
-                                            this.cloneLocationData(locations[52], 'The Commons', 'https://commons.utk.edu'),
-                                            this.cloneLocationData(locations[52], 'Graduate Commons', 'https://lib.utk.edu'),
                                             locations[217],
-                                            locations[224]
+                                            locations[224],
+                                            this.cloneLocationData(locations[52], 'The Commons', 'https://commons.utk.edu', true),
+                                            this.cloneLocationData(locations[52], 'Graduate Commons', 'https://lib.utk.edu', true)
                                         ]}
                                     title="Hodges"
                                     slug="hodges"
                                     subtitle="Main Library"
                                     formal="John C. Hodges Library"
                                     thumbnail={hodges}
+                                    chat="36f013b9caf90b6da607ee2e49612d6c"
+                                    phone="865-974-4351"
                                 />
                                 <HoursLocation
                                     url="https://lib.utk.edu/agvet"
@@ -143,6 +153,8 @@ export class Hours extends Component {
                                     subtitle="AgVet Library"
                                     formal="Pendergrass Agriculture & Veterinary Medicine Library"
                                     thumbnail={pendergrass}
+                                    chat="37e2cd14d82e1d34a6a00df6ac7215a0"
+                                    phone="865-974-7338"
                                 />
                                 <HoursLocation
                                     url="https://lib.utk.edu/music"
@@ -153,17 +165,20 @@ export class Hours extends Component {
                                     subtitle="Music Library"
                                     formal="George F. DeVine Music Library"
                                     thumbnail={devine}
+                                    chat="6356592de428f11b5e8ea54ccdecfc0a"
+                                    phone="865-974-3474"
                                 />
-                                <HoursLocation
-                                    url="https://lib.utk.edu/request/storage"
-                                    data={locations[227]}
-                                    id={227}
-                                    title="Hoskins"
-                                    slug="hoskins"
-                                    subtitle="Storage & Reading Room"
-                                    formal="James D. Hoskins Library"
-                                    thumbnail={hoskins}
-                                />
+                                {/*<HoursLocation*/}
+                                {/*    url="https://lib.utk.edu/request/storage"*/}
+                                {/*    data={locations[227]}*/}
+                                {/*    id={227}*/}
+                                {/*    title="Hoskins"*/}
+                                {/*    slug="hoskins"*/}
+                                {/*    subtitle="Storage & Reading Room"*/}
+                                {/*    formal="James D. Hoskins Library"*/}
+                                {/*    thumbnail={hoskins}*/}
+                                {/*    contingency={true}*/}
+                                {/*/>*/}
                             </ul>
                         </div>
                     </div>
