@@ -1,7 +1,7 @@
 .utk-notice {
   background-color: $smokeyx;
   font-family: $sans;
-  padding: $golden-ratio-4 0;
+  padding: $golden-ratio-3 0;
 
   &--title {
     display: flex;
@@ -13,7 +13,7 @@
     line-height: 1.29em;
 
     &::before {
-      content: "";
+      content: unset;
       width: $golden-ratio-6;
       height: $golden-ratio-0;
       background-color: $sunsphere;
