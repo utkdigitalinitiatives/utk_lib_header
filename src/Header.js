@@ -51,7 +51,10 @@ class Header extends Component {
 
 
     renderSearchButton(settings) {
-        if (settings && !settings.hasOwnProperty('disableSearch')) {
+
+        console.log(settings)
+
+        if (settings && !settings.disableSearch) {
             return (
                 <div className="utk-header-actions--item utk-header-actions--search">
                     <a id="utk-lib-search" href="#search" aria-label="Search" onClick={this.toggleSearch}
@@ -73,7 +76,7 @@ class Header extends Component {
     }
 
     renderSearch(settings) {
-        if (settings && !settings.hasOwnProperty('disableSearch')) {
+        if (settings && !settings.disableSearch) {
             return <Search showSearch={this.state.showSearch} ref="search"/>
         } else {
             return null
