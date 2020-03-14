@@ -50,8 +50,6 @@ export class HoursLocationChild extends Component {
         const {data} = this.props;
         const {name, url, contingency} = this.props.data;
 
-        console.log(contingency)
-
         let hoursClass = this.getHoursIndicator(data);
         let hoursLabel = this.getHoursLabel(data);
 

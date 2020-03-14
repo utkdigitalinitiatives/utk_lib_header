@@ -99,7 +99,7 @@ export class HoursLocation extends Component {
 
     render() {
 
-        const {id, url, data, title, slug, subtitle, formal, children, thumbnail, chat, phone, contingency} = this.props;
+        const {id, url, data, title, slug, subtitle, formal, children, thumbnail, chat, hideChat, phone, contingency} = this.props;
 
         let {showChildren} = this.state
         let hoursChildClass = ''
@@ -138,7 +138,7 @@ export class HoursLocation extends Component {
                         </span>
                     </a>
                     <div className="utk-hours--listing--item--meta--links">
-                        <HoursLocationSpaces location={slug} chat={chat} phone={phone} />
+                        <HoursLocationSpaces hideChat={hideChat} location={slug} chat={chat} phone={phone} />
                     </div>
                 </div>
                 {this.getChildren(children, title)}

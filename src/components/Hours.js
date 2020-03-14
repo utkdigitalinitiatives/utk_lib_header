@@ -152,6 +152,7 @@ export class Hours extends Component {
                                     formal="John C. Hodges Library"
                                     thumbnail={hodges}
                                     chat="36f013b9caf90b6da607ee2e49612d6c"
+                                    hideChat={this.props.hideChat}
                                     phone="865-974-4351"
                                 />
                                 <HoursLocation
@@ -164,6 +165,7 @@ export class Hours extends Component {
                                     formal="Pendergrass Agriculture & Veterinary Medicine Library"
                                     thumbnail={pendergrass}
                                     chat="37e2cd14d82e1d34a6a00df6ac7215a0"
+                                    hideChat={this.props.hideChat}
                                     phone="865-974-7338"
                                 />
                                 <HoursLocation
@@ -176,6 +178,7 @@ export class Hours extends Component {
                                     formal="George F. DeVine Music Library"
                                     thumbnail={devine}
                                     chat="6356592de428f11b5e8ea54ccdecfc0a"
+                                    hideChat={this.props.hideChat}
                                     phone="865-974-3474"
                                 />
                                 {/*<HoursLocation*/}

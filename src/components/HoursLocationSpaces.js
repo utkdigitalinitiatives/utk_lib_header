@@ -80,22 +80,25 @@ export class HoursLocationSpaces extends Component {
         });
     }
 
-    renderChat(hash) {
-        return (
-            <Chat libchat={hash} />
-        )
+    renderChat(hash, hide) {
+        if (!hide)
+            return (
+                <Chat libchat={hash} />
+            )
     }
 
     render() {
 
         const {spaces} = this.state;
 
+        const {chat, hideChat} = this.props;
+
         if (spaces) {
             return (
                 <div className="utk-hours--listing--item--meta--links--spaces">
                     <div className="utk-hours-contingency">
                         <div className="utk-hours-contingency--chat">
-                            {this.renderChat(this.props.chat)}
+                            {this.renderChat(chat, hideChat)}
                         </div>
                         <div className="utk-hours-contingency--phone">
                             <a href={`tel:${this.props.phone}`}>{this.props.phone}</a>

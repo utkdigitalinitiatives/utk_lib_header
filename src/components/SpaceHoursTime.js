@@ -27,8 +27,6 @@ class SpaceHoursTime extends Component {
 
             if (sessionStorage.getItem(sessionHours) === null) {
 
-                console.log(sessionHours);
-
                 fetch(url, {
                     headers: {
                         'Content-Type': 'application/json',

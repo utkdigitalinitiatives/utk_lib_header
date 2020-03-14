@@ -4,7 +4,7 @@ import {Hours} from "./Hours";
 class HomeHours extends Component {
     render() {
         return (
-            <Hours expanded={true} />
+            <Hours hideChat={true} expanded={true} />
         )
     }
 }
