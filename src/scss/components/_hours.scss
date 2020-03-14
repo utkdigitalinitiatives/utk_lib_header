@@ -115,6 +115,10 @@
         justify-content: center;
         line-height: 1.47em;
         background-color: $gray-1;
+
+        @include respond(xs) {
+          font-size: $type-0;
+        }
       }
     }
 
