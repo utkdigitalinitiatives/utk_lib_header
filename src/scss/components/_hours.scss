@@ -25,6 +25,7 @@
     box-shadow: $box-shadow;
     z-index: 0;
     border-top: $golden-ratio-1 solid $switchgrass;
+    -webkit-font-smoothing: antialiased;
 
     &--title {
       font-size: $type-3;
@@ -73,7 +74,7 @@
           margin: 0;
           padding: 0;
           text-align: center;
-          font-size: $type-3;
+          font-size: $type-2;
         }
       }
     }
