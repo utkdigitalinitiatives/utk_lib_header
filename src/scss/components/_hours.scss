@@ -99,10 +99,11 @@
       font-weight: 400;
       text-align: center;
       line-height: 1.65em;
-      z-index: 2;
       border-radius: $golden-ratio-0;
       margin-bottom: $golden-ratio-1;
       margin-top: $golden-ratio-2;
+      position: relative;
+      z-index: 0;
 
       @include respond(xs, sm) {
         order: 3;
