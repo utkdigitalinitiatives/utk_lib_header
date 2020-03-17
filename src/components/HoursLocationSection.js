@@ -61,7 +61,7 @@ class HoursLocationSection extends Component {
         return (
             <React.Fragment>
                 <span className="utk-hours--today--label">
-                    Hours Today
+                    Availability Today
                 </span>
                 <span className={hoursRangeClass}>
                     &nbsp;{this.state.location.hours}
