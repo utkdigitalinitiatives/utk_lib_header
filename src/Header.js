@@ -52,8 +52,6 @@ class Header extends Component {
 
     renderSearchButton(settings) {
 
-        console.log(settings)
-
         if (settings && !settings.disableSearch) {
             return (
                 <div className="utk-header-actions--item utk-header-actions--search">
