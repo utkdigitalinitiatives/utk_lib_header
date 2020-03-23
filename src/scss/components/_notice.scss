@@ -1,7 +1,15 @@
 .utk-notice {
   background-color: $smokeyx;
   font-family: $sans;
-  padding: $golden-ratio-3 0;
+  padding: $golden-ratio-2 0;
+
+  &--main {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 0;
+    padding-right: $golden-ratio-6;
+  }
 
   &--title {
     display: flex;
@@ -22,6 +30,9 @@
   }
 
   &--content {
+    transition: $transition-all-fast;
+    height: auto;
+
     p {
       color: $white;
       font-size: $type-2;
@@ -55,37 +66,92 @@
       }
     }
   }
-}
-.notice-actions {
-  display: flex;
-  flex-wrap: wrap;
 
-  .notice-button {
-    border: 2px solid $smokey;
-    background-color: transparent;
-    padding: $golden-ratio-1 $golden-ratio-2;
-    display: inline-flex;
-    font-size: $type-1;
-    font-weight: 700;
-    color: $white !important;
-    margin-right: 1rem;
-    margin-top: $golden-ratio-1;
-    line-height: 1.47em;
-    flex-grow: 0;
+  &--toggle {
+    background-color: $smokey;
+    border: none;
+    height: $golden-ratio-4;
+    width: $golden-ratio-4;
+    cursor: pointer;
+    border-radius: $golden-ratio-4;
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 0;
+    margin: 0;
+    transform: rotate(0);
+    transition: $transition-all;
 
-    &.covid19 {
-      border-color: $sunsphere !important;
-      background-color: $sunsphere !important;
-      color: $smokeyx !important;
+    &::before {
+      content: "\E801";
+      font-family: fontello, monospace;
+      color: $white !important;
+      font-style: normal;
+      font-size: $type-3;
+      speak: none;
+      font-weight: 400;
+      display: flex;
+      height: $golden-ratio-4 !important;
+      width: $golden-ratio-4 !important;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      -webkit-font-smoothing: antialiased;
+    }
+  }
+
+  .notice-actions {
+    display: flex;
+    flex-wrap: wrap;
+
+    .notice-button {
+      border: 2px solid $smokey;
+      background-color: transparent;
+      padding: $golden-ratio-1 $golden-ratio-2;
+      display: inline-flex;
+      font-size: $type-1;
+      font-weight: 700;
+      color: $white !important;
+      margin-right: 1rem;
+      margin-top: $golden-ratio-1;
+      line-height: 1.47em;
+      flex-grow: 0;
+
+      &.covid19 {
+        border-color: $sunsphere !important;
+        background-color: $sunsphere !important;
+        color: $smokeyx !important;
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      &:after {
+        content: unset !important;
+        display: none !important;
+      }
+    }
+  }
+
+  &-false {
+    .utk-notice--title {
+      display: none;
     }
 
-    &:last-child {
-      margin-right: 0;
+    .utk-notice--content {
+      p,
+      ul {
+        display: none;
+      }
     }
 
-    &:after {
-      content: unset !important;
-      display: none !important;
+    .utk-notice--toggle {
+      transform: rotate(45deg);
+    }
+
+    .notice-actions {
+      margin-top: -$golden-ratio-1;
     }
   }
 }

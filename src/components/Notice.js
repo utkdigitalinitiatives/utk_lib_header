@@ -13,7 +13,8 @@ class Notice extends Component {
         super(props);
 
         this.state = {
-            data: {}
+            data: {},
+            display: true
         }
     }
 
@@ -39,21 +40,53 @@ class Notice extends Component {
         return null
     }
 
+    toggleCloseButton = (e) => {
+        if (this.state.display) {
+            this.setState({ display: false })
+        } else {
+            this.setState({ display: true })
+        }
+    }
+
+    closeButton(display) {
+        if (display) {
+            return (
+                <button id="utk-notice--toggle"
+                        onClick={this.toggleCloseButton}
+                        className="utk-notice--toggle utk-notice--toggle-collapse">
+                    <span className="sr-only">Hide Notice</span>
+                </button>
+            )
+        } else {
+            return (
+                <button id="utk-notice--toggle"
+                        onClick={this.toggleCloseButton}
+                        className="utk-notice--toggle utk-notice--toggle-expand">
+                    <span className="sr-only">Show Notice</span>
+                </button>
+            )
+        }
+    }
+
     render() {
 
-        let {data} = this.state
+        let {data, display} = this.state
 
         if (data.status) {
 
             let {id, title, content} = data.notice;
 
             return (
-                <div className={`utk-notice utk-notice-${id}`}>
+                <div className={`utk-notice utk-notice-${id} utk-notice-${display}`}>
                     <div className='container'>
-                        <span className="utk-notice--title">
-                            {title}
-                        </span>
-                        <div className='utk-notice--content' dangerouslySetInnerHTML={{__html: entities.decode(content)}} />
+                        <div className="utk-notice--main">
+                            <span className="utk-notice--title">
+                                {title}
+                            </span>
+                            <div className='utk-notice--content'
+                                 dangerouslySetInnerHTML={{__html: entities.decode(content)}} />
+                            {this.closeButton(display)}
+                        </div>
                     </div>
                 </div>
             )
