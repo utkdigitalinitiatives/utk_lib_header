@@ -6,6 +6,7 @@ const ROUTE = '/new';
 
 const Entities = require('html-entities').AllHtmlEntities;
 const entities = new Entities();
+const noticeSession = 'utk_lib_notice';
 
 class Notice extends Component {
 
@@ -14,12 +15,14 @@ class Notice extends Component {
 
         this.state = {
             data: {},
-            display: true
+            display: true,
+            timestamp: null
         }
     }
 
     componentDidMount() {
         this.fetchNotices()
+        this.formatNoticeDisplay()
     }
 
     fetchNotices() {
@@ -40,11 +43,64 @@ class Notice extends Component {
         return null
     }
 
+    /*
+     * formats display of notice by checking session
+     * storage for stored display state and timestamps
+     */
+    formatNoticeDisplay() {
+
+        const setNotice = {
+            display: true,
+            timestamp: Date.now()
+        }
+
+        const interval =  6 * 3600 * 1000 // calc. number of milliseconds in 6 hours
+
+        if (sessionStorage.getItem(noticeSession) === null) {
+
+            sessionStorage.setItem(noticeSession, JSON.stringify(setNotice));
+
+        } else {
+
+            const storedNotice = JSON.parse(sessionStorage.getItem(noticeSession));
+            let updateNotice  = parseInt(storedNotice.timestamp) + interval;
+
+            if ( updateNotice < setNotice.timestamp ) {
+
+                sessionStorage.setItem(noticeSession, JSON.stringify(setNotice));
+
+            } else {
+
+                if (storedNotice.display === false) {
+                    this.setState({
+                        display: false
+                    })
+                }
+
+            }
+        }
+    }
+
+    /*
+     * toggles notice display, default = true
+     */
     toggleCloseButton = (e) => {
         if (this.state.display) {
-            this.setState({ display: false })
+
+            let updateNoticeDisplay = JSON.parse(sessionStorage.getItem(noticeSession));
+            updateNoticeDisplay.display = false
+            sessionStorage.setItem(noticeSession, JSON.stringify(updateNoticeDisplay));
+
+            this.setState({
+                display: false
+            })
+
         } else {
-            this.setState({ display: true })
+
+            this.setState({
+                display: true
+            })
+
         }
     }
 
@@ -71,6 +127,8 @@ class Notice extends Component {
     render() {
 
         let {data, display} = this.state
+
+        console.log(data);
 
         if (data.status) {
 
