@@ -128,8 +128,6 @@ class Notice extends Component {
 
         let {data, display} = this.state
 
-        console.log(data);
-
         if (data.status) {
 
             let {id, title, content} = data.notice;
