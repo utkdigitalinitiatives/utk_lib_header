@@ -81,6 +81,9 @@ class Notice extends Component {
         }
     }
 
+    /*
+     * toggles notice session data for display
+     */
     toggleNoticeDisplayData = (status) => {
         let updateNoticeDisplay = JSON.parse(sessionStorage.getItem(noticeSession));
         updateNoticeDisplay.display = status
