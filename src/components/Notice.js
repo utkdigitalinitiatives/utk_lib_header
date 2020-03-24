@@ -81,22 +81,26 @@ class Notice extends Component {
         }
     }
 
+    toggleNoticeDisplayData = (status) => {
+        let updateNoticeDisplay = JSON.parse(sessionStorage.getItem(noticeSession));
+        updateNoticeDisplay.display = status
+        sessionStorage.setItem(noticeSession, JSON.stringify(updateNoticeDisplay));
+    }
+
     /*
      * toggles notice display, default = true
      */
     toggleCloseButton = (e) => {
         if (this.state.display) {
 
-            let updateNoticeDisplay = JSON.parse(sessionStorage.getItem(noticeSession));
-            updateNoticeDisplay.display = false
-            sessionStorage.setItem(noticeSession, JSON.stringify(updateNoticeDisplay));
-
+            this.toggleNoticeDisplayData(false);
             this.setState({
                 display: false
             })
 
         } else {
 
+            this.toggleNoticeDisplayData(true);
             this.setState({
                 display: true
             })
