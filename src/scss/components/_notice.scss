@@ -2,6 +2,8 @@
   background-color: $smokeyx;
   font-family: $sans;
   padding: $golden-ratio-2 0;
+  position: relative;
+  z-index: 1;
 
   @include respond(xs) {
     padding-bottom: $golden-ratio-3;
@@ -53,6 +55,7 @@
       color: $white;
       line-height: 1.47em;
       -webkit-font-smoothing: antialiased;
+      font-size: $type-2;
 
       @include respond(xs) {
         font-size: $type-1;
