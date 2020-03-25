@@ -145,6 +145,7 @@
       margin-top: $golden-ratio-1;
       line-height: 1.47em;
       flex-grow: 0;
+      box-shadow: $box-shadow-float;
 
       @include respond(xs) {
         display: flex;
@@ -152,6 +153,7 @@
         margin-right: 0;
         text-align: center;
         justify-content: center;
+        background-color: $torch;
       }
 
       &.covid19 {
