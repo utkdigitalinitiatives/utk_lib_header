@@ -9,6 +9,14 @@
     position: relative;
     z-index: 0;
     padding-right: $golden-ratio-6;
+
+    @include respond(sm, md) {
+      padding-right: $golden-ratio-5;
+    }
+
+    @include respond(xs) {
+      padding-right: 0;
+    }
   }
 
   &--title {
@@ -35,7 +43,6 @@
 
     p {
       color: $white;
-      font-size: $type-2;
       line-height: 1.47em;
       -webkit-font-smoothing: antialiased;
 
