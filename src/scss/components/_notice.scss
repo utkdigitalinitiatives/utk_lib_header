@@ -3,6 +3,10 @@
   font-family: $sans;
   padding: $golden-ratio-2 0;
 
+  @include respond(xs) {
+    padding-bottom: $golden-ratio-3;
+  }
+
   &--main {
     display: flex;
     flex-direction: column;
@@ -96,6 +100,13 @@
     margin: 0;
     transform: rotate(0);
     transition: $transition-all;
+
+    @include respond(xs) {
+      top: unset;
+      bottom: calc(-#{$golden-ratio-3} + (-#{$golden-ratio-4} / 2));
+      right: 50%;
+      margin-right: calc(-#{$golden-ratio-4 / 2});
+    }
 
     &::before {
       content: "\E801";
