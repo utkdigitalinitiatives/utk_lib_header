@@ -132,6 +132,14 @@
       line-height: 1.47em;
       flex-grow: 0;
 
+      @include respond(xs) {
+        display: flex;
+        width: 100%;
+        margin-right: 0;
+        text-align: center;
+        justify-content: center;
+      }
+
       &.covid19 {
         border-color: $sunsphere !important;
         background-color: $sunsphere !important;
