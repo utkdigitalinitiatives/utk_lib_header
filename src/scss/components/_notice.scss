@@ -126,6 +126,7 @@
       align-items: center;
       text-align: center;
       -webkit-font-smoothing: antialiased;
+      background-color: $torch;
     }
   }
 
@@ -153,7 +154,6 @@
         margin-right: 0;
         text-align: center;
         justify-content: center;
-        background-color: $torch;
       }
 
       &.covid19 {
