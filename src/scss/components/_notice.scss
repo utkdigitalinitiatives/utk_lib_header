@@ -109,6 +109,7 @@
       bottom: calc(-#{$golden-ratio-3} + (-#{$golden-ratio-4} / 2));
       right: 50%;
       margin-right: calc(-#{$golden-ratio-4 / 2});
+      background-color: $torch;
     }
 
     &::before {
@@ -126,7 +127,6 @@
       align-items: center;
       text-align: center;
       -webkit-font-smoothing: antialiased;
-      background-color: $torch;
     }
   }
 
