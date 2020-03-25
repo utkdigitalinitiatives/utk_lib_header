@@ -28,6 +28,10 @@
     -webkit-font-smoothing: antialiased;
     line-height: 1.29em;
 
+    @include respond(xs) {
+      font-size: $type-2;
+    }
+
     &::before {
       content: unset;
       width: $golden-ratio-6;
@@ -45,6 +49,10 @@
       color: $white;
       line-height: 1.47em;
       -webkit-font-smoothing: antialiased;
+
+      @include respond(xs) {
+        font-size: $type-1;
+      }
 
       a,
       a:visited,
