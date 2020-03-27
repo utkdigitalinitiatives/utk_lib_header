@@ -105,11 +105,14 @@ export class Hours extends Component {
                             <span className="utk-hours-teaser--subtitle">The Libraries will continue to serve our patrons online while access to buildings is restricted.</span>
                             <div className="utk-hours-teaser--hours">
                                 <dl>
-                                    <dt>Monday – Friday</dt>
+                                    <dt>Sunday-Thursday</dt>
+                                    <dd>8am – 2am</dd>
+                                </dl><dl>
+                                    <dt>Friday</dt>
                                     <dd>8am – Midnight</dd>
                                 </dl>
                                 <dl>
-                                    <dt>Saturday and Sunday</dt>
+                                    <dt>Saturday</dt>
                                     <dd>10am – Midnight</dd>
                                 </dl>
                             </div>

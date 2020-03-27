@@ -388,6 +388,10 @@
       color: $smokey;
       letter-spacing: -0.018em;
       line-height: 1.47em;
+
+      @include respond(md) {
+        margin-bottom: $golden-ratio-1 !important;
+      }
     }
 
     ul {
@@ -403,6 +407,10 @@
         font-size: $type-1;
         width: 50%;
         line-height: 1.95em;
+
+        @include respond(md) {
+          width: 100%;
+        }
 
         a,
         a:visited {

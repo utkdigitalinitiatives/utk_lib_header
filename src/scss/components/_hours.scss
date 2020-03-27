@@ -67,16 +67,18 @@
         display: none;
       }
 
+      @include respond(md) {
+        flex-direction: column;
+      }
+
       dl {
         margin: 0;
 
         dt {
           margin: 0;
           padding: 0;
-          font-weight: 700;
           text-align: center;
-          font-size: $type-0;
-          text-transform: uppercase;
+          font-size: $type-1;
           color: $gray-1;
         }
         dd {
@@ -84,6 +86,7 @@
           padding: 0;
           text-align: center;
           font-size: $type-2;
+          font-weight: 700;
         }
       }
     }
@@ -116,10 +119,10 @@
         justify-content: center;
         line-height: 1.47em;
         background-color: $gray-1;
+      }
 
-        @include respond(xs) {
-          font-size: $type-0;
-        }
+      @include respond(xs, sm, md) {
+        font-size: $type-0;
       }
     }
 
