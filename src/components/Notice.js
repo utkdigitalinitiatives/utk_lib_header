@@ -54,16 +54,25 @@ class Notice extends Component {
             timestamp: Date.now()
         }
 
-        const interval =  6 * 3600 * 1000 // calc. number of milliseconds in 6 hours
+        // const interval =  6 * 3600 * 1000 // calc. number of milliseconds in 6 hours
+        const interval =  1000 // calc. number of milliseconds in 6 hours
 
         if (sessionStorage.getItem(noticeSession) === null) {
 
             sessionStorage.setItem(noticeSession, JSON.stringify(setNotice));
 
+            this.setState({
+                timestamp: setNotice.timestamp
+            })
+
         } else {
 
             const storedNotice = JSON.parse(sessionStorage.getItem(noticeSession));
             let updateNotice  = parseInt(storedNotice.timestamp) + interval;
+
+            this.setState({
+                timestamp: storedNotice.timestamp
+            })
 
             if ( updateNotice < setNotice.timestamp ) {
 
@@ -88,6 +97,22 @@ class Notice extends Component {
         let updateNoticeDisplay = JSON.parse(sessionStorage.getItem(noticeSession));
         updateNoticeDisplay.display = status
         sessionStorage.setItem(noticeSession, JSON.stringify(updateNoticeDisplay));
+    }
+
+
+    /*
+     * checks if wordpress post updated date is greater
+     * than stored interval, if yes, forces display
+     */
+    forceNoticeDisplay = (data, timestamp) => {
+        const updated = new Date(data.timestamp).getTime();
+
+        if (updated > timestamp) {
+            this.toggleNoticeDisplayData(true);
+            this.setState({
+                display: true
+            })
+        }
     }
 
     /*
@@ -133,9 +158,11 @@ class Notice extends Component {
 
     render() {
 
-        let {data, display} = this.state
+        let {data, display, timestamp} = this.state
 
         if (data.status) {
+
+            this.forceNoticeDisplay(data, timestamp);
 
             let {id, title, content} = data.notice;
 
