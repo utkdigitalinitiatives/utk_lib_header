@@ -106,14 +106,14 @@ export class Hours extends Component {
                             <div className="utk-hours-teaser--hours">
                                 <dl>
                                     <dt>Sunday-Thursday</dt>
-                                    <dd>8am – 2am</dd>
+                                    <dd>8am–2am</dd>
                                 </dl><dl>
                                     <dt>Friday</dt>
-                                    <dd>8am – Midnight</dd>
+                                    <dd>8am–Midnight</dd>
                                 </dl>
                                 <dl>
                                     <dt>Saturday</dt>
-                                    <dd>10am – Midnight</dd>
+                                    <dd>10am–Midnight</dd>
                                 </dl>
                             </div>
                             {/*<div className="utk-hours-teaser--menu">*/}
