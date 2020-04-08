@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-export class HoursTeaser extends Component {
+export class HoursWeekly extends Component {
 
     constructor(props) {
         super(props);

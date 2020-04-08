@@ -19,7 +19,7 @@ const ENDPOINT = 'wp-json/libcal';
 const ROUTE = '/hours';
 
 import tease from '../media/hodges-clock.jpg';
-import {HoursTeaser} from "./HoursContingency";
+import {HoursWeekly} from "./HoursWeekly";
 
 export class Hours extends Component {
 
@@ -104,7 +104,7 @@ export class Hours extends Component {
                         <div className="utk-hours-teaser">
                             <span className="utk-hours-teaser--title">Classes are online and so are we!</span>
                             {/*<span className="utk-hours-teaser--title">The Libraries will continue to serve our patrons online while access to buildings is restricted.</span>*/}
-                            <HoursTeaser />
+                            <HoursWeekly />
                             {/*<div className="utk-hours-teaser--menu">*/}
                             {/*    <a href="https://www.lib.utk.edu/hours/">Locations</a>*/}
                             {/*    <a href="https://www.lib.utk.edu/hours/spaces/">Explore Spaces</a>*/}
