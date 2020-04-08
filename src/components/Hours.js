@@ -102,12 +102,17 @@ export class Hours extends Component {
                     <div className="utk-hours">
                         <div className="utk-hours-teaser">
                             <span className="utk-hours-teaser--title">Classes are online and so are we!</span>
-                            <span className="utk-hours-teaser--subtitle">The Libraries will continue to serve our patrons online while access to buildings is restricted.</span>
+                            {/*<span className="utk-hours-teaser--title">The Libraries will continue to serve our patrons online while access to buildings is restricted.</span>*/}
                             <div className="utk-hours-teaser--hours">
                                 <dl>
-                                    <dt>Sunday-Thursday</dt>
+                                    <dt>Sunday</dt>
+                                    <dd>10am–2am</dd>
+                                </dl>
+                                <dl>
+                                    <dt>Monday-Thursday</dt>
                                     <dd>8am–2am</dd>
-                                </dl><dl>
+                                </dl>
+                                <dl>
                                     <dt>Friday</dt>
                                     <dd>8am–Midnight</dd>
                                 </dl>
@@ -126,7 +131,7 @@ export class Hours extends Component {
                                 <a href="https://www.lib.utk.edu/askusnow/subject-librarians/">Find a Librarian</a>
                                 <a href="https://www.lib.utk.edu/contact/">Feedback</a>
                             </div>
-                            <img src={tease} />
+                            {/*<img src={tease} />*/}
                         </div>
                         <span className="utk-hours-teaser--badge">Building access is currently restricted, hours listed indicate digital and remote availability of our public services desks.</span>
                         <div className="utk-hours-header">
