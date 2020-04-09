@@ -54,6 +54,30 @@ class SpaceHoursWeek extends Component {
 
     }
 
+    buildFutureWeek = (date) => {
+
+        const selected = moment(date);
+        const timeback = moment().subtract(5, 'h').format('d')
+
+        let days = [];
+        let day = selected;
+
+        if (timeback !== moment(date).format('d')) {
+            day = day.subtract(1, 'd');
+        }
+
+        let dayCount = 0
+
+        while (dayCount <= 6) {
+            days.push(day.toDate());
+            day = day.clone().add(1, 'd');
+            dayCount = dayCount + 1;
+        }
+
+        return days;
+
+    }
+
     fetchSpaceHoursByWeek(lid, day) {
 
         let week = this.buildWeek(day);
@@ -111,30 +135,100 @@ class SpaceHoursWeek extends Component {
         return null
     }
 
+    fetchFutureHours(lid, day) {
+
+        let week = this.buildFutureWeek(day);
+        let startOfWeek = moment(week[0]).format('YYYY-MM-DD')
+
+        this.setState({
+            week:  week,
+            startOfWeek: startOfWeek
+        });
+
+        let weekString = '';
+        week.map((day, index) => {
+            weekString = weekString + moment(day).format('YYYY-MM-DD') + ',';
+        });
+
+        let dayID = startOfWeek.replace('-', '');
+        dayID = parseInt(dayID.replace('-', ''));
+
+        if (Number.isInteger(dayID) === true) {
+
+            const url = Globals.URL + ENDPOINT + ROUTE + '/' + lid + '/' + weekString.slice(0, -1);
+            const sessionHours = 'utk_lib_week_hours_' + lid + '_' + dayID;
+
+            if (sessionStorage.getItem(sessionHours) === null) {
+
+                fetch(url, {
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    }
+                })
+                    .then(response => response.json())
+                    .then(data => {
+
+                        sessionStorage.setItem(sessionHours, JSON.stringify(data));
+
+                        this.setState({
+                            data:  data
+                        });
+
+                    })
+                    .catch(err => console.error(this.props.url, err.toString()));
+
+            } else {
+
+                const grabHours = sessionStorage.getItem(sessionHours);
+
+                this.setState({
+                    future: JSON.parse(grabHours)
+                });
+
+            }
+        }
+
+        return null
+    }
+
     componentDidMount() {
         const {lid, day} = this.props;
 
-        this.fetchSpaceHoursByWeek(lid, day);
+        let setDate = day
+
+        if (day === null) {
+            setDate = moment().format('YYYY-MM-DD')
+        }
+
+        this.fetchSpaceHoursByWeek(lid, setDate);
+        this.fetchFutureHours(lid, setDate);
 
         this.setState({
-            date:  day
+            date: setDate
         });
     }
 
     componentWillReceiveProps() {
         const {lid, day} = this.props;
 
+        let setDate = day
+
+        if (day === null) {
+            setDate = moment().format('YYYY-MM-DD')
+        }
+
         if (day !== this.state.date) {
 
-            this.fetchSpaceHoursByWeek(lid, day);
+            this.fetchSpaceHoursByWeek(lid, setDate);
 
             this.setState({
-                date:  day
+                date:  setDate
             });
         }
     }
 
-    buildWeekGrid = (dates) => {
+    buildWeekGrid = (dates, futureDates) => {
 
         let grid = null;
 
@@ -157,6 +251,30 @@ class SpaceHoursWeek extends Component {
                     });
                 }
             }
+        } else if (this.props.header === 'future') {
+
+            if (Array.isArray(futureDates)) {
+                if (futureDates.length === 7) {
+                    grid = futureDates.map((date, index) => {
+                        let classes = ['utk-hours--week--hours'];
+
+                        let hoursLabel = this.getHoursLabel(date);
+
+                        if (date.date === this.state.date)
+                            classes.push('active')
+
+                        return (
+                            <div className="utk-hours--week-future">
+                                <div className="utk-hours--week--dayofweek">
+                                    {moment(date.date).format('dddd')}, {moment(date.date).format('MMMM D')}
+                                </div>
+                                <div className="utk-hours--week--hours">{hoursLabel}</div>
+                            </div>
+                        )
+                    });
+                }
+            }
+
         } else {
 
             if (Array.isArray(dates)) {
@@ -207,11 +325,11 @@ class SpaceHoursWeek extends Component {
     };
 
     render() {
-        const {data} = this.state;
+        const {data, future} = this.state;
 
         return (
             <div className="utk-hours--week">
-                {this.buildWeekGrid(data)}
+                {this.buildWeekGrid(data, future)}
             </div>
         )
     }

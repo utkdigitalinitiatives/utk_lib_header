@@ -33,14 +33,13 @@
     }
 
     &--title {
-      font-size: $type-3;
+      font-size: $type-2;
       color: $smokey;
       z-index: 1;
       font-weight: 700;
-      text-align: center;
       display: block;
       width: 100%;
-      margin: $golden-ratio-3 0 $golden-ratio-1;
+      margin: $golden-ratio-2 $golden-ratio-3 $golden-ratio-0;
       position: relative;
       letter-spacing: -0.029em;
 
@@ -70,6 +69,40 @@
 
       @include respond(md) {
         flex-direction: column;
+        flex-wrap: nowrap;
+      }
+
+      &--weekly {
+        padding: 0$golden-ratio-3;
+        flex-grow: 1;
+
+        .utk-hours--week {
+          display: flex;
+          flex-direction: column;
+
+          &-future {
+            display: flex;
+          }
+
+          div {
+            font-size: $type-1;
+            line-height: 1.47em;
+            flex-grow: 1;
+            margin-top: 2px;
+          }
+
+          &--dayofweek {
+            font-weight: 400;
+            flex-basis: 50%;
+            flex-grow: 1;
+          }
+
+          &--hours {
+            font-weight: 700;
+            flex-basis: 50%;
+            flex-grow: 1;
+          }
+        }
       }
 
       dl {
@@ -97,9 +130,10 @@
       display: block;
       color: $smokey;
       margin: auto auto 0;
-      padding: $golden-ratio-2;
+      padding:  $golden-ratio-1 $golden-ratio-3;
       width: 100%;
-      font-size: $type-1;
+      font-size: $type-0;
+      font-style: italic;
       font-weight: 400;
       text-align: center;
       line-height: 1.65em;
@@ -149,13 +183,13 @@
       justify-content: center;
       font-size: $type-2;
       font-weight: 700;
-      margin: 0 $golden-ratio-1 $golden-ratio-2;
+      margin: 0 $golden-ratio-3 $golden-ratio-2;
       position: relative;
       z-index: 1;
       line-height: 1.7em;
 
       @include respond(md) {
-        margin: 0 $golden-ratio-1 $golden-ratio-1;
+        margin: 0 $golden-ratio-3 $golden-ratio-2;
       }
 
       @include respond(xs, sm) {
@@ -172,9 +206,11 @@
         margin-right: $golden-ratio-2;
         transition: $transition-all-fast;
         box-shadow: none;
-        text-align: center;
         align-items: center;
         line-height: 1.29em;
+        flex-grow: 1;
+        text-align: center;
+        justify-content: center;
 
         &:hover,
         &:focus {
