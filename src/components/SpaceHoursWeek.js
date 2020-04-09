@@ -155,8 +155,6 @@ class SpaceHoursWeek extends Component {
 
         const url = Globals.URL + ENDPOINT + ROUTE + '/' + lid + '/' + weekString.slice(0, -1);
 
-        console.log(url)
-
         if (Number.isInteger(dayID) === true) {
             fetch(url, {
                 headers: {
