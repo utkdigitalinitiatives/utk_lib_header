@@ -153,40 +153,26 @@ class SpaceHoursWeek extends Component {
         let dayID = startOfWeek.replace('-', '');
         dayID = parseInt(dayID.replace('-', ''));
 
+        const url = Globals.URL + ENDPOINT + ROUTE + '/' + lid + '/' + weekString.slice(0, -1);
+
+        console.log(url)
+
         if (Number.isInteger(dayID) === true) {
+            fetch(url, {
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                }
+            })
+                .then(response => response.json())
+                .then(data => {
 
-            const url = Globals.URL + ENDPOINT + ROUTE + '/' + lid + '/' + weekString.slice(0, -1);
-            const sessionHours = 'utk_lib_week_hours_' + lid + '_' + dayID;
+                    this.setState({
+                        future: data
+                    });
 
-            if (sessionStorage.getItem(sessionHours) === null) {
-
-                fetch(url, {
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'Accept': 'application/json'
-                    }
                 })
-                    .then(response => response.json())
-                    .then(data => {
-
-                        sessionStorage.setItem(sessionHours, JSON.stringify(data));
-
-                        this.setState({
-                            data:  data
-                        });
-
-                    })
-                    .catch(err => console.error(this.props.url, err.toString()));
-
-            } else {
-
-                const grabHours = sessionStorage.getItem(sessionHours);
-
-                this.setState({
-                    future: JSON.parse(grabHours)
-                });
-
-            }
+                .catch(err => console.error(this.props.url, err.toString()));
         }
 
         return null
@@ -221,6 +207,7 @@ class SpaceHoursWeek extends Component {
         if (day !== this.state.date) {
 
             this.fetchSpaceHoursByWeek(lid, setDate);
+            this.fetchFutureHours(lid, setDate);
 
             this.setState({
                 date:  setDate
