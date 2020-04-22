@@ -104,14 +104,6 @@
     transform: rotate(0);
     transition: $transition-all;
 
-    @include respond(xs) {
-      top: unset;
-      bottom: calc(-#{$golden-ratio-3} + (-#{$golden-ratio-4} / 2));
-      right: 50%;
-      margin-right: calc(-#{$golden-ratio-4 / 2});
-      background-color: $torch;
-    }
-
     &::before {
       content: "\E801";
       font-family: fontello, monospace;
