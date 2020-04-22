@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import Globals from "./Globals";
+import {MenuColumns} from "./MenuColumns";
 
 const ENDPOINT = '/wp-json/notice';
 const ROUTE = '/new';
@@ -26,7 +27,7 @@ class Notice extends Component {
     }
 
     fetchNotices() {
-        fetch('https://utklibrary.test' + ENDPOINT + ROUTE, {
+        fetch(Globals.URL + ENDPOINT + ROUTE, {
             headers: {
                 'Content-Type': 'application/json',
                 'Accept': 'application/json'
@@ -167,6 +168,24 @@ class Notice extends Component {
         return <span className={titleClasses}>Classes are online and so are we!</span>
     }
 
+    renderButtons = (buttons) =>{
+
+        if (buttons) {
+            let buttonListing = buttons.map((button, index) => {
+                return (
+                    <a href={button.notice_button_text} className="notice-button">
+                        {button.notice_button_text}
+                    </a>
+                );
+            });
+
+            return <div className="notice-actions">{buttonListing}</div>
+
+        } else {
+            return null
+        }
+    }
+
     render() {
 
         let {data, display, timestamp} = this.state
@@ -178,12 +197,14 @@ class Notice extends Component {
             let {id, title, hide_title, type, content, buttons} = data.notice;
 
             return (
-                <div className={`utk-notice utk-notice-${id} utk-notice-${display}`}>
+                <div className={`utk-notice utk-notice-${type} utk-notice-${id} utk-notice-${display}`}>
                     <div className='container'>
                         <div className="utk-notice--main">
                             {this.renderTitle(title, hide_title)}
                             <div className='utk-notice--content'
                                  dangerouslySetInnerHTML={{__html: entities.decode(content)}} />
+
+                            {this.renderButtons(buttons)}
                             {this.closeButton(display)}
                         </div>
                     </div>
