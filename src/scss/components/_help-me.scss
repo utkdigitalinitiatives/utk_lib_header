@@ -67,6 +67,7 @@
       font-size: $type-2;
       color: $smokeyx;
       text-transform: none !important;
+      font-family: $sans;
 
       @include respond(xs) {
         padding: 0 $golden-ratio-1 0 $golden-ratio-2;
