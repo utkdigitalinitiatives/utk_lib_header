@@ -173,7 +173,7 @@ class Notice extends Component {
         if (buttons) {
             let buttonListing = buttons.map((button, index) => {
                 return (
-                    <a href={button.notice_button_text} className="notice-button">
+                    <a href={button.notice_button_url} className="notice-button">
                         {button.notice_button_text}
                     </a>
                 );
