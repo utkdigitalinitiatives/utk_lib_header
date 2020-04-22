@@ -26,7 +26,7 @@ class Notice extends Component {
     }
 
     fetchNotices() {
-        fetch(Globals.URL + ENDPOINT + ROUTE, {
+        fetch('https://utklibrary.test' + ENDPOINT + ROUTE, {
             headers: {
                 'Content-Type': 'application/json',
                 'Accept': 'application/json'
@@ -156,6 +156,17 @@ class Notice extends Component {
         }
     }
 
+    renderTitle = (title, hide) =>{
+
+        let titleClasses = 'utk-notice--title'
+
+        if (hide === true) {
+            titleClasses = titleClasses + ' sr-only'
+        }
+
+        return <span className={titleClasses}>Classes are online and so are we!</span>
+    }
+
     render() {
 
         let {data, display, timestamp} = this.state
@@ -164,15 +175,13 @@ class Notice extends Component {
 
             this.forceNoticeDisplay(data, timestamp);
 
-            let {id, title, content} = data.notice;
+            let {id, title, hide_title, type, content, buttons} = data.notice;
 
             return (
                 <div className={`utk-notice utk-notice-${id} utk-notice-${display}`}>
                     <div className='container'>
                         <div className="utk-notice--main">
-                            <span className="utk-notice--title">
-                                {title}
-                            </span>
+                            {this.renderTitle(title, hide_title)}
                             <div className='utk-notice--content'
                                  dangerouslySetInnerHTML={{__html: entities.decode(content)}} />
                             {this.closeButton(display)}
