@@ -205,7 +205,10 @@ class Header extends Component {
                             </div>
                             <div className="utk-header-actions">
                                 <div className="utk-header-actions--item utk-header-actions--home">
-                                    <a href="https://www.lib.utk.edu">Libraries Home</a>
+                                    <a href="https://utk.primo.exlibrisgroup.com/discovery/account?vid=01UTN_KNOXVILLE:01UTK&section=overview&lang=en">
+                                        <span className="icon-key"></span>
+                                        <em>My Account</em>
+                                    </a>
                                 </div>
                                 {this.renderSearchButton(Globals)}
                                 <div className="utk-header-actions--item utk-header-actions--resources">

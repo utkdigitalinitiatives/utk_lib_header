@@ -83,33 +83,9 @@
       font-weight: 400;
       line-height: $type-3;
       font-size: $type-2;
-      text-transform: uppercase;
 
       > a > span {
         color: $rock;
-      }
-
-      &.utk-header-actions--home {
-        text-transform: none;
-      }
-
-      //@media only screen and (max-width: 500px) {
-
-      @include respond(xs) {
-        &.utk-header-actions--home {
-          display: none;
-        }
-      }
-
-
-      &.utk-header-actions--home {
-        > a {
-          font-weight: 400 !important;
-        }
-
-        @include respond(xs) {
-          display: none;
-        }
       }
 
       em {
@@ -123,8 +99,7 @@
       a {
         margin-top: 2px;
         padding: 0 calc(#{$golden-ratio-3} / 2);
-        color: $smokeyx !important;
-        font-weight: 700;
+        color: $smokey !important;
         display: flex;
         align-content: center;
         align-items: center;
@@ -151,11 +126,13 @@
     }
   }
 
+  &--home,
   &--resources,
   &--search {
     .icon-menu,
     .icon-search,
-    .icon-cancel {
+    .icon-cancel,
+    .icon-key {
       font-size: $type-2;
       margin-right: $golden-ratio-0;
     }

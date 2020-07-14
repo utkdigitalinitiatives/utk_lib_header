@@ -305,6 +305,12 @@
       "css": "calendar",
       "code": 59420,
       "src": "fontawesome"
+    },
+    {
+      "uid": "upidp9k72x66utj5w89oyq65tp6r2tpe",
+      "css": "key",
+      "code": 59421,
+      "src": "typicons"
     }
   ]
 }
