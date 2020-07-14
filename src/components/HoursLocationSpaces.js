@@ -96,18 +96,18 @@ export class HoursLocationSpaces extends Component {
         if (spaces) {
             return (
                 <div className="utk-hours--listing--item--meta--links--spaces">
-                    <div className="utk-hours-contingency">
-                        <div className="utk-hours-contingency--chat">
-                            {this.renderChat(chat, hideChat)}
-                        </div>
-                        <div className="utk-hours-contingency--phone">
-                            <a href={`tel:${this.props.phone}`}>{this.props.phone}</a>
-                        </div>
-                    </div>
-                    {/*{this.renderSpaces(spaces)}*/}
-                    {/*<a href={`https://www.lib.utk.edu/hours/spaces/?fwp_location=${this.props.location}`}>*/}
-                    {/*    View <br/>Spaces <span className="sr-only">at {this.props.location}</span>*/}
-                    {/*</a>*/}
+                    {/*<div className="utk-hours-contingency">*/}
+                    {/*    <div className="utk-hours-contingency--chat">*/}
+                    {/*        {this.renderChat(chat, hideChat)}*/}
+                    {/*    </div>*/}
+                    {/*    <div className="utk-hours-contingency--phone">*/}
+                    {/*        <a href={`tel:${this.props.phone}`}>{this.props.phone}</a>*/}
+                    {/*    </div>*/}
+                    {/*</div>*/}
+                    {this.renderSpaces(spaces)}
+                    <a href={`https://www.lib.utk.edu/hours/spaces/?fwp_location=${this.props.location}`}>
+                        View <br/>Spaces <span className="sr-only">at {this.props.location}</span>
+                    </a>
                 </div>
             )
         } else {
