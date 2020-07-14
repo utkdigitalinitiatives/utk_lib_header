@@ -255,7 +255,7 @@
             display: block;
             font-weight: 400;
             color: $smokey !important;
-            font-size: $type-1;
+            font-size: $type-0;
             margin-top: 2px;
             line-height: 1.47em;
 
@@ -276,87 +276,89 @@
 
   &--about {
     font-family: $sans;
-    width: calc(100% - 47px);
-    margin-top: $golden-ratio-2;
+    //width: calc(100% - 47px);
+    margin-top: $golden-ratio-0;
     background-color: $white;
     border-radius: $golden-ratio-0;
     position: relative;
     box-shadow: $box-shadow;
+    border-top: $golden-ratio-0 solid $gray-1;
 
     @include respond(xs) {
       flex-direction: column;
     }
 
-    .utk-resources-menu--media {
-      &--background {
-        position: absolute;
-        left: 0;
-        top: 0;
-        border-radius: $golden-ratio-0;
-        border-top-right-radius: 0;
-        border-bottom-right-radius: 0;
-        width: $gr-short;
-        height: 100%;
-        overflow: hidden;
-        z-index: 0;
-        background-color: $smokey;
-        clip-path: polygon(0 0, calc(100% - 18px) 0, 100% 100%, 0 100%);
-
-        @include respond(xs) {
-          border-radius: 0 !important;
-          height: 123px;
-          position: relative;
-          margin-left: -18px;
-          clip-path: none;
-          width: calc(100% + 36px);
-        }
-
-        img {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-          object-position: center;
-          filter: blur(18px);
-          opacity: 1;
-          clip-path: polygon(0 0, calc(100% - 18px) 0, 100% 100%, 0 100%);
-
-          @include respond(xs) {
-            clip-path: none;
-          }
-        }
-      }
-
-      &--image {
-        position: absolute;
-        width: $gr-short;
-        z-index: 1;
-        left: $golden-ratio-3;
-        top: $golden-ratio-3;
-
-        @include respond(xs) {
-          left: $golden-ratio-2;
-          width: 199px;
-          height: 123px;
-          margin-top: 18px;
-        }
-
-        img {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-          object-position: center;
-          box-shadow: $box-shadow-float;
-        }
-      }
-    }
+    //.utk-resources-menu--media {
+    //  &--background {
+    //    position: absolute;
+    //    left: 0;
+    //    top: 0;
+    //    border-radius: $golden-ratio-0;
+    //    border-top-right-radius: 0;
+    //    border-bottom-right-radius: 0;
+    //    width: $gr-short;
+    //    height: 100%;
+    //    overflow: hidden;
+    //    z-index: 0;
+    //    background-color: $smokey;
+    //    clip-path: polygon(0 0, calc(100% - 18px) 0, 100% 100%, 0 100%);
+    //
+    //    @include respond(xs) {
+    //      border-radius: 0 !important;
+    //      height: 123px;
+    //      position: relative;
+    //      margin-left: -18px;
+    //      clip-path: none;
+    //      width: calc(100% + 36px);
+    //    }
+    //
+    //    img {
+    //      width: 100%;
+    //      height: 100%;
+    //      object-fit: cover;
+    //      object-position: center;
+    //      filter: blur(18px);
+    //      opacity: 1;
+    //      clip-path: polygon(0 0, calc(100% - 18px) 0, 100% 100%, 0 100%);
+    //
+    //      @include respond(xs) {
+    //        clip-path: none;
+    //      }
+    //    }
+    //  }
+    //
+    //  &--image {
+    //    position: absolute;
+    //    width: $gr-short;
+    //    z-index: 1;
+    //    left: $golden-ratio-3;
+    //    top: $golden-ratio-3;
+    //
+    //    @include respond(xs) {
+    //      left: $golden-ratio-2;
+    //      width: 199px;
+    //      height: 123px;
+    //      margin-top: 18px;
+    //    }
+    //
+    //    img {
+    //      width: 100%;
+    //      height: 100%;
+    //      object-fit: cover;
+    //      object-position: center;
+    //      box-shadow: $box-shadow-float;
+    //    }
+    //  }
+    //}
 
     .utk-resources-menu--section {
       position: relative;
       z-index: 1;
-      width: $gr-long;
-      margin-left: $gr-short;
-      padding: $golden-ratio-4;
-      padding-left: $golden-ratio-5;
+      //width: $gr-long;
+      //margin-left: $gr-short;
+      //padding: $golden-ratio-4;
+      //padding-left: $golden-ratio-5;
+      padding: $golden-ratio-3;
 
       @include respond(xs) {
         width: 100%;
@@ -382,7 +384,7 @@
     }
 
     h3 {
-      margin: 0 0 6px;
+      margin: 0 0 11px;
       font-size: $type-2;
       font-weight: 700;
       color: $smokey;

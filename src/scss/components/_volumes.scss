@@ -1,0 +1,13 @@
+.utk-resources-menu--volumes {
+  width: calc(100% - 47px);
+  height: calc(200px - 29px);
+  margin-top: $golden-ratio-3;
+  margin-right: $golden-ratio-4;
+  background-color: $gray-0;
+  color: $rock;
+  font-family: $sans;
+  text-align: center;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}

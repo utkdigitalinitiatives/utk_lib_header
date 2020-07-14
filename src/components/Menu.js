@@ -175,6 +175,9 @@ export class Menu extends Component {
                         <div className="utk-header-main-menu">
                             <div className="container">
                                 <div className="utk-resources-menu">
+                                    <div className="utk-resources-menu--volumes">
+                                        News
+                                    </div>
                                     <div className="utk-resources-menu--row">
                                         {menuColumns}
                                     </div>
@@ -185,14 +188,14 @@ export class Menu extends Component {
                                         <MenuSingle title="Specialty Services"
                                                     items={menuHeader.services_speciality}
                                                     className="utk-resources-menu--services-speciality" />
-                                        <MenuSingle title="About University Libraries"
-                                                    items={menuHeader.about}
-                                                    media={about}
-                                                    className="utk-resources-menu--about" />
                                     </div>
                                 </div>
                                 <div className="utk-resources-contact">
                                     <Hours layout={this.setLayout()} expanded={this.props.expanded}/>
+                                    <MenuSingle title="About University Libraries"
+                                                items={menuHeader.about}
+                                                // media={about}
+                                                className="utk-resources-menu--about" />
                                 </div>
                             </div>
                         </div>
