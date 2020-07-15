@@ -12,6 +12,7 @@ const ENDPOINT = 'assets/wp-json/libmenu';
 const ROUTE = '/header';
 
 import about from '../media/student-studying.jpg';
+import {Volumes} from "./Volumes";
 
 
 export class Menu extends Component {
@@ -175,9 +176,7 @@ export class Menu extends Component {
                         <div className="utk-header-main-menu">
                             <div className="container">
                                 <div className="utk-resources-menu">
-                                    <div className="utk-resources-menu--volumes">
-                                        News
-                                    </div>
+                                    <Volumes />
                                     <div className="utk-resources-menu--row">
                                         {menuColumns}
                                     </div>
