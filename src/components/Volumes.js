@@ -11,7 +11,7 @@ import {Chat} from "./Chat";
 const ENDPOINT = 'assets/wp-json/libmenu';
 const ROUTE = '/header';
 
-import about from '../media/student-studying.jpg';
+import fall20020 from '../media/fall2020.jpg';
 
 
 export class Volumes extends Component {
@@ -26,7 +26,19 @@ export class Volumes extends Component {
     render() {
         return (
             <div className="utk-resources-menu--volumes">
-
+                <a className="utk-volumes--feature">
+                    <div>
+                        <strong>Donec dictum turpis nisi vel  fermentum tempus</strong>
+                        <em>Etiam lobortis exo arcu semper imperdiet, faucibus sed ad amet</em>
+                        <span>Vitae Mauris</span>
+                    </div>
+                    <img src={fall20020} />
+                </a>
+                <div>
+                </div>
+                <div>
+                    this
+                </div>
             </div>
         )
     }
