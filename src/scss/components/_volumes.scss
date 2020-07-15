@@ -1,6 +1,7 @@
 .utk-resources-menu--volumes {
   width: calc(100% - 76px);
   margin-top: $golden-ratio-4;
+  margin-bottom: $golden-ratio-1;
   margin-right: $golden-ratio-4;
   color: $rock;
   font-family: $sans;
@@ -8,6 +9,7 @@
   justify-content: center;
   display: flex;
   flex-wrap: wrap;
+  -webkit-font-smoothing: antialiased;
 
   .utk-volumes--feature {
     display: flex;
@@ -29,7 +31,6 @@
       margin-right: -$golden-ratio-5;
       padding-bottom: $golden-ratio-3;
       height: 0%;
-      -webkit-font-smoothing: antialiased;
 
       strong {
         display: block;
@@ -63,6 +64,32 @@
         border-left: 6px solid $orange;
       }
 
+    }
+  }
+
+  .utk-volumes--extras {
+    display: flex;
+    margin-top: $golden-ratio-3;
+
+    &--item {
+      display: flex;
+      padding-right: $golden-ratio-3;
+
+      &:last-child {
+        padding-right: 0;
+      }
+
+      img {
+        width: $golden-ratio-5;
+        height: $golden-ratio-5;
+      }
+
+      span {
+        font-size: $type-2;
+        line-height: 1.35em;
+        margin-left: $golden-ratio-2;
+        margin-top: $golden-ratio-1;
+      }
     }
   }
 }
