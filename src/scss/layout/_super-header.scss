@@ -1,7 +1,8 @@
 .utk-header-super {
   width: 100%;
   height: $golden-ratio-4;
-  background-color: $smokey;
+  background-color: $gray-0;
+  box-shadow: inset $box-shadow;
 
   .container {
     display: flex;
