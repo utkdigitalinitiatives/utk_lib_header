@@ -20,6 +20,7 @@
 
   .utk-menu-options {
     position: relative;
+    margin-top: 18px;
 
     @include respond(xs, sm) {
       position: fixed;
