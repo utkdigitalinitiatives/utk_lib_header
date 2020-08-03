@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {MenuColumns} from "./MenuColumns";
 import {MenuSingle} from "./MenuSingle";
+import request from "superagent";
 
 import {Hours} from "./Hours";
 // import {Help} from "./Help";
@@ -20,34 +21,70 @@ export class Volumes extends Component {
 
     constructor(props) {
         super(props);
-
         this.state = {
-        };
+            data: null
+        }
+    }
+
+    componentWillMount() {
+        this.fetchHomepage()
+    }
+
+    fetchHomepage() {
+        request
+            .get('https://volumes.lib.utk.edu/wp-json/volumes/homepage')
+            .then((result) => {
+                this.setState({
+                    data: result.body
+                })
+            })
+    }
+
+    renderFeatured = (item) => {
+        return (
+            <a className="utk-volumes--feature">
+                <div>
+                    <strong>{item.homepage_featured_heading}</strong>
+                    <em>{item.homepage_featured_subheading}</em>
+                    <span>Read More</span>
+                </div>
+                <img src={item.homepage_featured_image.sizes.card_image} />
+            </a>
+        )
+    }
+
+    renderSecondary = (item) => {
+        return (
+            <a className="utk-volumes--extras--item">
+                <img src={item.homepage_secondary_image.sizes['post-thumbnail']} />
+                <span>{item.homepage_secondary_heading}</span>
+            </a>
+        )
     }
 
     render() {
-        return (
-            <div className="utk-resources-menu--volumes">
-                <a className="utk-volumes--feature">
-                    <div>
-                        <strong>Donec dictum turpis nisi vel  fermentum tempus</strong>
-                        <em>Etiam faucibus exo arcu semper imperdiet, faucibus sed ad amet</em>
-                        <span>Vitae Mauris</span>
+
+
+        if (this.state.data) {
+
+            let {featured, secondary} = this.state.data
+
+            return (
+                <div className="utk-resources-menu--volumes">
+                    {this.renderFeatured(featured[0])}
+
+                    <div className="utk-volumes--extras">
+                        {this.renderSecondary(secondary[0])}
+                        {this.renderSecondary(secondary[1])}
                     </div>
-                    <img src={fall20020} />
-                </a>
-                <div className="utk-volumes--extras">
-                    <a className="utk-volumes--extras--item">
-                        <img src={extra1} />
-                        <span>Pellentesque luctus sit amet maximus lobortis</span>
-                    </a>
-                    <a className="utk-volumes--extras--item">
-                        <img src={extra2} />
-                        <span>Pretium accumsan ante pellentesque cras placerat</span>
-                    </a>
                 </div>
-            </div>
-        )
+            )
+
+        } else {
+
+            return null
+
+        }
     }
 
 }
