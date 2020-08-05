@@ -133,7 +133,7 @@ export class HoursLocation extends Component {
 
     render() {
 
-        const {id, url, data, title, alt, altID, altData, altTitle, slug, subtitle, formal, children, thumbnail, chat, hideChat, phone, contingency} = this.props;
+        const {id, url, data, title, mainLabel, alt, altID, altData, altTitle, slug, subtitle, formal, children, thumbnail, chat, hideChat, phone, contingency} = this.props;
 
         let {showChildren} = this.state
         let hoursChildClass = ''
@@ -167,7 +167,7 @@ export class HoursLocation extends Component {
                         </div>
                         <div className="utk-hours--listing--item--locations">
                             <div className={hoursClass}>
-                                <span className="library-location">Service Desk</span>
+                                <span className="library-location">{mainLabel}</span>
                                 <span className="utk-hours--listing--item--hours">
                                     {hoursLabel}
                                 </span>

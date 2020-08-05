@@ -133,6 +133,7 @@ export class Hours extends Component {
                                     data={locations[52]}
                                     title="Hodges"
                                     subtitle="Main Library"
+                                    mainLabel="Building"
                                     alt={true}
                                     altID={13793}
                                     altData={locations[13793]}
@@ -157,6 +158,7 @@ export class Hours extends Component {
                                     id={225}
                                     title="Pendergrass"
                                     slug="pendergrass"
+                                    mainLabel="Building"
                                     subtitle="AgVet Library"
                                     formal="Pendergrass Agriculture & Veterinary Medicine Library"
                                     thumbnail={pendergrass}
@@ -175,6 +177,7 @@ export class Hours extends Component {
                                     title="DeVine"
                                     slug="devine"
                                     subtitle="Music Library"
+                                    mainLabel="Building"
                                     formal="George F. DeVine Music Library"
                                     thumbnail={devine}
                                     chat="6356592de428f11b5e8ea54ccdecfc0a"
@@ -189,6 +192,7 @@ export class Hours extends Component {
                                     url="https://lib.utk.edu/studio"
                                     data={locations[217]}
                                     id={217}
+                                    mainLabel="Workstations"
                                     title="The Studio"
                                     slug="studio"
                                     subtitle="235 Hodges"
@@ -206,6 +210,7 @@ export class Hours extends Component {
                                     url="https://lib.utk.edu/special"
                                     data={locations[224]}
                                     id={224}
+                                    mainLabel="Service Desk"
                                     title="Special Collections"
                                     slug="devine"
                                     subtitle="Music Library"
