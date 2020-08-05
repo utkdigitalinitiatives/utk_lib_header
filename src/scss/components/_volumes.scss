@@ -13,16 +13,16 @@
 
   .utk-volumes--feature {
     display: flex;
-
-    img {
-      width: $gr-long;
-    }
+    position: relative;
+    z-index: 0;
+    width: 100%;
+    overflow: hidden;
+    justify-content: right;
+    height: 270px;
 
     div {
       display: block;
-      font-weight: 400;
-      position: relative;
-      padding-top: 33px;
+      font-weight: 400;      padding-top: 33px;
       padding-left: 33px;
       padding-right: $golden-ratio-3;
       line-height: 1.25em;
@@ -30,7 +30,13 @@
       background-color: $white;
       margin-right: -$golden-ratio-5;
       padding-bottom: $golden-ratio-3;
-      height: 0%;
+      margin-top: $golden-ratio-3;
+      margin-bottom: $golden-ratio-3;
+      position: relative;
+      width: calc(38.2% + 47px);
+      z-index: 1;
+      position: absolute;
+      left: 0;
 
       strong {
         display: block;
@@ -96,8 +102,12 @@
 
 .utk-volumes--feature {
   img {
-    max-width: 100%;
+    position: absolute;
+    height: 270px;
+    right: 0;
+    top: 0;
   }
+
   span {
     font-weight: 700;
   }
