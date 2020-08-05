@@ -2,6 +2,7 @@
   font-family: $sans;
   display: flex;
   flex-direction: column;
+  margin-bottom: $golden-ratio-1;
 
   &.utk-hours-map {
     position: absolute;
