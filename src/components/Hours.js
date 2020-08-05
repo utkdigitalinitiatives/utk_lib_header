@@ -195,7 +195,7 @@ export class Hours extends Component {
                                     mainLabel="Workstations"
                                     title="The Studio"
                                     slug="studio"
-                                    subtitle="235 Hodges"
+                                    subtitle="Hodges 235"
                                     formal="The Studio"
                                     thumbnail={pendergrass}
                                     chat="37e2cd14d82e1d34a6a00df6ac7215a0"
@@ -213,7 +213,7 @@ export class Hours extends Component {
                                     mainLabel="Service Desk"
                                     title="Special Collections"
                                     slug="devine"
-                                    subtitle="Music Library"
+                                    subtitle="Hodges 121"
                                     formal="George F. DeVine Music Library"
                                     thumbnail={devine}
                                     chat="6356592de428f11b5e8ea54ccdecfc0a"
