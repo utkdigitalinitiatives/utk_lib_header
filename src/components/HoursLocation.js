@@ -20,7 +20,9 @@ export class HoursLocation extends Component {
 
         let label = hours.hours_open + ' - ' + hours.hours_close;
 
-        if (!hours.hours)
+        if (hours.hours === 'By Appointment')
+            label = 'By Appointment';
+        else if (!hours.hours)
             label = 'Closed';
         else if (hours.hours_open === null && hours.hours !== '24 Hours')
             label = 'Closed';
@@ -41,9 +43,13 @@ export class HoursLocation extends Component {
 
         let indicator = '';
 
+        console.log(data)
+
         // checks for null hours
-        if (!data.open)
+        if (!data.open && data.hours !== 'By Appointment')
             indicator = 'library-closed';
+        else if (data.hours === 'By Appointment')
+            indicator = 'library-appointment';
         else
             indicator = 'library-open';
 
@@ -144,10 +150,6 @@ export class HoursLocation extends Component {
 
         if (data.hours_open === '12am') {
             hoursLabel = 'Closes at ' + data.hours_close
-        }
-
-        if (contingency) {
-            hoursLabel = 'Closed'
         }
 
         return (

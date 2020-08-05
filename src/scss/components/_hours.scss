@@ -702,6 +702,13 @@
   }
 }
 
+.utk-hours--listing--item .library-appointment {
+  .utk-hours--listing--item--hours::before {
+    background-color: $summitt;
+    border: 2px solid $summitt;
+  }
+}
+
 .spinner::before {
   content: '';
   box-sizing: border-box;
