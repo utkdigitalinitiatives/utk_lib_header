@@ -374,9 +374,17 @@
       margin: 0;
       padding: 0;
       width: auto;
-      margin-bottom: $golden-ratio-3;
+      margin-bottom: $golden-ratio-2;
       display: flex;
       flex-wrap: wrap;
+      border-bottom: 2px solid $gray-0;
+      padding-bottom: $golden-ratio-2;
+
+      &:last-child {
+        padding-bottom: 0;
+        border-bottom: none;
+      }
+
 
       @include respond(sm, xs) {
         flex-wrap: nowrap;
@@ -384,8 +392,8 @@
 
       figure {
         margin: 0;
-        width: $golden-ratio-4;
-        height: $golden-ratio-4;
+        width: 34px;
+        height: 34px;
         border-radius: $golden-ratio-4;
         margin-top: 3px;
         position: relative;
@@ -396,9 +404,7 @@
         box-shadow: $box-shadow-float;
 
         img {
-          filter: grayscale(0.9);
           z-index: 0;
-          opacity: 0.47;
           background-color: $smokey;
           border-radius: $golden-ratio-3;
           box-shadow: $box-shadow;
@@ -423,22 +429,27 @@
         flex-shrink: 1;
         flex-grow: 0;
         display: flex;
-        flex-direction: row;
-        width: calc(100% - 47px);
+        width: calc(100% - 34px);
 
         > a,
         > a:visited {
           display: flex;
-          flex-direction: column;
           font-size: $type-2;
           color: $globe;
           flex-grow: 1;
           padding-right: $golden-ratio-1;
+          justify-content: space-between;
+
+          .utk-hours--listing--item--title {
+            flex-grow: 0;
+            flex-shrink: 1;
+          }
         }
 
         > a:hover,
         > a:focus {
-          span.library-title {
+          span.library-title,
+          span.library-subtitle {
             color: $leconte;
           }
         }
@@ -447,7 +458,7 @@
           margin: 0;
           padding: 0;
           display: block;
-          font-size: $type-2 !important;
+          font-size: $type-1 !important;
           font-weight: 700;
           line-height: 1.47em;
           word-break: break-word;
@@ -457,9 +468,9 @@
           margin: 0;
           padding: 0;
           display: block;
-          color: $smokey !important;
           font-size: $type-1;
           line-height: 1.47em;
+          margin-top: 4px !important;
         }
 
         &--links {
@@ -528,9 +539,9 @@
 
       &--childmenu {
         margin: 0 !important;
+        padding: 0;
         display: flex;
         flex-wrap: wrap;
-        padding-left: calc(#{$golden-ratio-4 + $golden-ratio-1});
         width: 100%;
 
         li {
@@ -539,6 +550,8 @@
           margin-bottom: 0;
           border-top: 0;
           padding-top: 0;
+          padding-bottom: 0 !important;
+          border-bottom: none !important;
 
           > a,
           > a:visited {
@@ -595,7 +608,8 @@
         a .utk-hours--listing--item--meta  {
           span.library-title {
             font-size: $type-1 !important;
-            font-weight: 700;
+            font-weight: 400;
+            color: $smokey;
 
             @include respond(xs, sm) {
               font-size: $type-2 !important;
@@ -614,6 +628,28 @@
 
       &--simple {
         margin-right: 1em;
+      }
+
+      &--locations {
+        display: flex;
+        flex-wrap: wrap;
+        width: 266px;
+        flex-grow: 0;
+        flex-shrink: 0;
+
+        > div {
+          width: 50%;
+        }
+      }
+
+      .library-location {
+        font-style: normal;
+        display: flex;
+        font-size: $type-1;
+        line-height: 1.47em;
+        font-weight: 400;
+        color: $smokey !important;
+        white-space: nowrap;
       }
 
       &--hours {
@@ -658,7 +694,7 @@
   }
 }
 
-.utk-hours--listing--item a.library-open {
+.utk-hours--listing--item .library-open {
   .utk-hours--listing--item--hours::before {
     background-color: $switchgrass;
     border: 2px solid $switchgrass;

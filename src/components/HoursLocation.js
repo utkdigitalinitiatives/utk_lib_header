@@ -97,9 +97,37 @@ export class HoursLocation extends Component {
             return <a href={url}>Website</a>
     }
 
+    renderAlt = (status, id, data, title) => {
+
+        if (status) {
+
+            let hoursClass = this.getHoursIndicator(data, id);
+            let hoursLabel = this.getHoursLabel(data);
+
+            if (data.hours_close === '11:59pm') {
+                hoursLabel = 'Opens at ' + data.hours_open
+            }
+
+            if (data.hours_open === '12am') {
+                hoursLabel = 'Closes at ' + data.hours_close
+            }
+
+            return (
+                <div className={hoursClass}>
+                    <span className="library-location">{title}</span>
+                    <span className="utk-hours--listing--item--hours">
+                        {hoursLabel}
+                    </span>
+                </div>
+            )
+
+        }
+
+    }
+
     render() {
 
-        const {id, url, data, title, slug, subtitle, formal, children, thumbnail, chat, hideChat, phone, contingency} = this.props;
+        const {id, url, data, title, alt, altID, altData, altTitle, slug, subtitle, formal, children, thumbnail, chat, hideChat, phone, contingency} = this.props;
 
         let {showChildren} = this.state
         let hoursChildClass = ''
@@ -130,18 +158,26 @@ export class HoursLocation extends Component {
                     </figure>
                 </a>
                 <div className="utk-hours--listing--item--meta">
-                    <a href={url} className={hoursClass}>
-                        <span className="library-title">{title}</span>
-                        <span className="library-subtitle">{subtitle}</span>
-                        <span className="utk-hours--listing--item--hours">
-                            {hoursLabel}
-                        </span>
+                    <a href={url}>
+                        <div className="utk-hours--listing--item--title">
+                            <span className="library-title">{title}</span>
+                            <span className="library-subtitle">{subtitle}</span>
+                        </div>
+                        <div className="utk-hours--listing--item--locations">
+                            <div className={hoursClass}>
+                                <span className="library-location">Service Desk</span>
+                                <span className="utk-hours--listing--item--hours">
+                                    {hoursLabel}
+                                </span>
+                            </div>
+                            {this.renderAlt(alt, altID, altData, altTitle)}
+                            {this.getChildren(children, title)}
+                        </div>
                     </a>
-                    <div className="utk-hours--listing--item--meta--links">
-                        <HoursLocationSpaces hideChat={hideChat} location={slug} chat={chat} phone={phone} />
-                    </div>
+                    {/*<div className="utk-hours--listing--item--meta--links">*/}
+                        {/*<HoursLocationSpaces hideChat={hideChat} location={slug} chat={chat} phone={phone} />*/}
+                    {/*</div>*/}
                 </div>
-                {this.getChildren(children, title)}
                 {this.renderChildTrigger(children, title, showChildren)}
             </li>
         )

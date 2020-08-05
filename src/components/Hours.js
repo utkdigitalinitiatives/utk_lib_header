@@ -121,26 +121,30 @@ export class Hours extends Component {
                         <div className="utk-hours-header">
                             <h3>{moment.unix(this.state.timestamp).format('MMMM D, YYYY')}</h3>
                             <div className="utk-hours-header--links">
-                                <a href="https://www.lib.utk.edu/contingency"
-                                   className="utk-resources-toggle--map">More Details</a>
+                                {/*<a href="https://www.lib.utk.edu/contingency"*/}
+                                {/*   className="utk-resources-toggle--map">More Details</a>*/}
                             </div>
                         </div>
                         <div className="utk-hours--listing">
                             <ul className="utk-hours--listing--col" aria-label="libraries and locations">
                                 <HoursLocation
                                     url="https://lib.utk.edu"
-                                    data={locations[52]}
                                     id={52}
+                                    data={locations[52]}
+                                    title="Hodges"
+                                    subtitle="Main Library"
+                                    alt={true}
+                                    altID={13793}
+                                    altData={locations[13793]}
+                                    altTitle="Online Support"
                                     children={
                                         [
-                                            locations[217],
-                                            locations[224],
+                                            // locations[217],
+                                            // locations[224],
                                             this.cloneLocationData(locations[52], 'The Commons', 'https://commons.utk.edu', true),
                                             this.cloneLocationData(locations[52], 'Graduate Commons', 'https://lib.utk.edu', true)
                                         ]}
-                                    title="Hodges"
                                     slug="hodges"
-                                    subtitle="Main Library"
                                     formal="John C. Hodges Library"
                                     thumbnail={hodges}
                                     chat="36f013b9caf90b6da607ee2e49612d6c"
@@ -159,12 +163,50 @@ export class Hours extends Component {
                                     chat="37e2cd14d82e1d34a6a00df6ac7215a0"
                                     hideChat={this.props.hideChat}
                                     phone="865-974-7338"
+                                    alt={true}
+                                    altID={13784}
+                                    altData={locations[13784]}
+                                    altTitle="Online Support"
                                 />
                                 <HoursLocation
                                     url="https://lib.utk.edu/music"
                                     data={locations[226]}
                                     id={226}
                                     title="DeVine"
+                                    slug="devine"
+                                    subtitle="Music Library"
+                                    formal="George F. DeVine Music Library"
+                                    thumbnail={devine}
+                                    chat="6356592de428f11b5e8ea54ccdecfc0a"
+                                    hideChat={this.props.hideChat}
+                                    phone="865-974-3474"
+                                    alt={true}
+                                    altID={13785}
+                                    altData={locations[13785]}
+                                    altTitle="Online Support"
+                                />
+                                <HoursLocation
+                                    url="https://lib.utk.edu/studio"
+                                    data={locations[217]}
+                                    id={217}
+                                    title="The Studio"
+                                    slug="studio"
+                                    subtitle="235 Hodges"
+                                    formal="The Studio"
+                                    thumbnail={pendergrass}
+                                    chat="37e2cd14d82e1d34a6a00df6ac7215a0"
+                                    hideChat={this.props.hideChat}
+                                    phone="865-974-7338"
+                                    alt={true}
+                                    altID={13783}
+                                    altData={locations[13783]}
+                                    altTitle="Online Support"
+                                />
+                                <HoursLocation
+                                    url="https://lib.utk.edu/special"
+                                    data={locations[224]}
+                                    id={224}
+                                    title="Special Collections"
                                     slug="devine"
                                     subtitle="Music Library"
                                     formal="George F. DeVine Music Library"
