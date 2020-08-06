@@ -13,12 +13,6 @@
     z-index: 0;
     border-radius: 0 !important;
 
-    @include respond(xs) {
-      height: 40px !important;
-      line-height: 40px !important;
-      padding: 0 calc(#{$golden-ratio-1 + 40px}) 0 $golden-ratio-2 !important;
-    }
-
     &::after {
       content: "\E808";
       font-family: fontello, monospace;
@@ -35,12 +29,6 @@
       width: $golden-ratio-4 !important;
       background-color: $rock;
       -webkit-font-smoothing: antialiased;
-
-      @include respond(xs) {
-        height: 40px !important;
-        width: 40px !important;
-        line-height: 40px !important;
-      }
     }
 
     &.libchat_online::after {
@@ -97,12 +85,6 @@
         border-top-right-radius: $golden-ratio-4 !important;
         border-bottom-right-radius: $golden-ratio-4 !important;
         -webkit-font-smoothing: antialiased;
-
-        @include respond(xs) {
-          height: $golden-ratio-3 !important;
-          width: $golden-ratio-3 !important;
-          line-height: $golden-ratio-3 !important;
-        }
       }
     }
   }

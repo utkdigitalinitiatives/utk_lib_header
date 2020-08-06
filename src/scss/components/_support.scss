@@ -12,11 +12,38 @@
     display: flex;
     margin-top: $golden-ratio-3;
 
+    @include respond(xs, sm) {
+      flex-direction: column-reverse;
+    }
+
     &--lead {
       width: 50%;
       display: flex;
       flex-direction: column;
       justify-content: center;
+
+      @include respond(md) {
+        width: $gr-long;
+      }
+
+      @include respond(xs, sm) {
+        width: 100%;
+      }
+
+      @include respond(sm) {
+        width: 80%;
+        padding: $golden-ratio-4 $golden-ratio-3 0;
+        margin-top: -$golden-ratio-7;
+        margin-left: -$golden-ratio-3;
+        position: relative;
+        z-index: 1;
+        background-color: $gray-0;
+      }
+
+      @include respond(xs) {
+        padding: $golden-ratio-4 0;
+        text-align: center;
+      }
 
       h2 {
         font-weight: 700;
@@ -24,26 +51,53 @@
         margin: 0 0 $golden-ratio-2;
         color: $smokey;
         font-size: $type-6;
+
+        @include respond(xs) {
+          font-size: $type-5;
+        }
       }
 
       p {
         font-size: $type-3;
         margin: 0 $golden-ratio-6 0 0;
         color: $smokey;
+
+        @include respond(xs) {
+          font-size: $type-2;
+        }
+
+        @include respond(xs) {
+          margin: 0;
+          padding: 0 $golden-ratio-3;
+          text-align: center;
+        }
       }
 
       &--buttons {
         margin-top: $golden-ratio-3;
         display: flex;
 
+        @include respond(xs) {
+          justify-content: center;
+          flex-wrap: wrap;
+        }
+
         .utk-libchat {
           margin-right: $golden-ratio-3;
+
+          @include respond(xs) {
+            margin: 14.5px;
+          }
         }
 
         .btn-faq {
           text-transform: none;
           box-shadow: $box-shadow-float;
           height: 47px !important;
+
+          @include respond(xs) {
+            margin: 14.5px;
+          }
 
           span {
             background-color: $regalia !important;
@@ -57,6 +111,24 @@
       width: 50%;
       padding: 0;
       margin: 0;
+
+      @include respond(md) {
+        width: $gr-short;
+      }
+
+      @include respond(xs, sm) {
+        width: 100%;
+      }
+
+      @include respond(sm) {
+        width: calc(100% + #{$golden-ratio-3 * 2});
+        margin-left: -$golden-ratio-3;
+      }
+
+      @include respond(xs) {
+        width: calc(100% + #{$golden-ratio-2 * 2});
+        margin-left: -$golden-ratio-2;
+      }
 
       img {
         width: 100%;
@@ -72,6 +144,18 @@
     margin-bottom: -$golden-ratio-4;
     display: flex;
 
+    @include respond(sm) {
+      height: auto;
+    }
+
+    @include respond(xs) {
+      flex-direction: column;
+      height: auto;
+      margin-top: 0;
+      margin-bottom: 0;
+      padding: $golden-ratio-2 0 $golden-ratio-4;
+    }
+
     &--item {
       flex-grow: 1;
       background-color: $white;
@@ -86,6 +170,26 @@
       transform: scale3d(1, 1, 1);
       width: calc((100% - (#{$golden-ratio-3} * 4)) / 5);
 
+      @include respond(sm) {
+        margin-right: $golden-ratio-2;
+        width: calc((100% - (#{$golden-ratio-2} * 4)) / 5);
+        padding: $golden-ratio-2 0;
+        transition: unset;
+      }
+
+      @include respond(xs) {
+        width: 100%;
+        justify-content: flex-start;
+        flex-direction: row;
+        padding: $golden-ratio-2 $golden-ratio-3;
+        transition: unset;
+        margin-bottom: $golden-ratio-1;
+        margin-right: 0;
+        padding: 0;
+        background-color: transparent;
+        box-shadow: none;
+      }
+
       &::after {
         position: absolute;
         height: $golden-ratio-0;
@@ -95,6 +199,10 @@
         bottom: 0;
         z-index: 1;
         background-color: $gray-2;
+
+        @include respond(xs) {
+          display: none;
+        }
       }
 
       &::before {
@@ -107,12 +215,26 @@
         z-index: 2;
         background-color: $orange;
         transition: $transition-all-fast;
+
+        @include respond(xs) {
+          display: none;
+        }
       }
 
       &:hover,
       &:focus {
         transform: scale3d(1.06, 1.06, 1.06);
         box-shadow: $box-shadow-float;
+
+        @include respond(xs) {
+          box-shadow: unset;
+          transform: unset;
+        }
+
+        @include respond(sm) {
+          box-shadow: $box-shadow;
+          transform: unset;
+        }
 
         &::before {
           width: 100%;
@@ -128,9 +250,27 @@
         flex-direction: column;
         text-align: center;
 
+        @include respond(xs, sm) {
+          font-size: $type-2;
+        }
+
+        @include respond(xs) {
+          justify-content: center;
+          flex-direction: row;
+          display: block;
+          text-align: center;
+          width: 100%;
+          color: $globe !important;
+          text-decoration: underline;
+        }
+
         span {
           font-weight: 400;
           font-size: $type-2;
+
+          @include respond(xs, sm) {
+            font-size: $type-2;
+          }
         }
       }
 
