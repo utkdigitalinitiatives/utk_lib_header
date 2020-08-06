@@ -19,7 +19,6 @@ import moment from 'moment';
 const ENDPOINT = 'wp-json/libcal';
 const ROUTE = '/hours';
 
-import tease from '../media/hodges-clock.jpg';
 import {HoursWeekly} from "./HoursWeekly";
 
 export class Hours extends Component {

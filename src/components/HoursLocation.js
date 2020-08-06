@@ -43,8 +43,6 @@ export class HoursLocation extends Component {
 
         let indicator = '';
 
-        console.log(data)
-
         // checks for null hours
         if (!data.open && data.hours !== 'By Appointment')
             indicator = 'library-closed';
