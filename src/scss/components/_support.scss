@@ -94,6 +94,7 @@
           text-transform: none;
           box-shadow: $box-shadow-float;
           height: 47px !important;
+          border-radius: $golden-ratio-3;
 
           @include respond(xs) {
             margin: 14.5px;
@@ -101,7 +102,10 @@
 
           span {
             background-color: $regalia !important;
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 6px 100%) !important;
             top: -2px !important;
+            border-top-right-radius: $golden-ratio-3;
+            border-bottom-right-radius: $golden-ratio-3;
           }
         }
       }
