@@ -471,7 +471,7 @@
           display: block;
           font-size: $type-1;
           line-height: 1.47em;
-          margin-top: 4px !important;
+          margin-top: 3px !important;
         }
 
         &--links {
@@ -739,7 +739,10 @@
     top: 0;
     left: 0;
     margin-bottom: 0;
-    height: 168px;
+
+    .utk-hours--listing--item--childmenu {
+      display: none !important;
+    }
 
     .utk-hours-teaser {
       width: 100%;
@@ -813,7 +816,6 @@
       position: relative;
       display: flex;
       flex-wrap: nowrap;
-      height: 89px;
 
       &--col {
         display: flex;
@@ -828,7 +830,6 @@
         > .utk-hours--listing--item {
           display: flex;
           margin-bottom: 0;
-          height: 89px;
           flex-shrink: 0;
           padding: 11px 18px;
           border-right: 2px solid $gray-1;
@@ -872,12 +873,20 @@
       }
 
       &--item {
+        &--locations {
+          width: auto;
+          flex-wrap: nowrap;
+
+          > div {
+            margin-left: $golden-ratio-2;
+          }
+        }
+
         &--childmenu {
           display: flex;
           flex-wrap: nowrap;
           margin-top: -11px !important;
           padding-left: 18px;
-          height: 89px;
 
           > .utk-hours--listing--item--child {
             width: auto;

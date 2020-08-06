@@ -180,7 +180,7 @@ export class HoursLocation extends Component {
                         {/*<HoursLocationSpaces hideChat={hideChat} location={slug} chat={chat} phone={phone} />*/}
                     {/*</div>*/}
                 </div>
-                {this.renderChildTrigger(children, title, showChildren)}
+                {/*{this.renderChildTrigger(children, title, showChildren)}*/}
             </li>
         )
     }

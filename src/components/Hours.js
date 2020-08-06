@@ -142,8 +142,8 @@ export class Hours extends Component {
                                         [
                                             // locations[217],
                                             // locations[224],
-                                            this.cloneLocationData(locations[52], 'The Commons', 'https://commons.utk.edu', true),
-                                            this.cloneLocationData(locations[52], 'Graduate Commons', 'https://lib.utk.edu', true)
+                                            this.cloneLocationData(locations[52], 'The Commons', 'https://commons.utk.edu', false),
+                                            this.cloneLocationData(locations[52], 'Graduate Commons', 'https://lib.utk.edu', false)
                                         ]}
                                     slug="hodges"
                                     formal="John C. Hodges Library"
