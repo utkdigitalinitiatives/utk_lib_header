@@ -2,16 +2,16 @@
   button {
     height: $golden-ratio-4 !important;
     line-height: $golden-ratio-4 !important;
-    border-radius: $golden-ratio-4 !important;
     font-size: $type-2 !important;
     font-weight: 700 !important;
     font-family: $sans !important;
     box-shadow: $box-shadow-float;
     background-color: $white !important;
     color: $smokeyx !important;
-    padding: 0 calc(#{$golden-ratio-1 + $golden-ratio-4}) 0 $golden-ratio-2 !important;
+    padding: 0 calc(#{$golden-ratio-3 + $golden-ratio-4}) 0 $golden-ratio-2 !important;
     position: relative !important;
     z-index: 0;
+    border-radius: 0 !important;
 
     @include respond(xs) {
       height: 40px !important;
@@ -34,9 +34,6 @@
       height: $golden-ratio-4 !important;
       width: $golden-ratio-4 !important;
       background-color: $rock;
-      clip-path: polygon(0 0, 100% 0, 100% 100%, 6px 100%) !important;
-      border-top-right-radius: $golden-ratio-4 !important;
-      border-bottom-right-radius: $golden-ratio-4 !important;
       -webkit-font-smoothing: antialiased;
 
       @include respond(xs) {

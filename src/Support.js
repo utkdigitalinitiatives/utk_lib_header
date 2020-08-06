@@ -26,7 +26,7 @@ class Support extends Component {
                             <h2>We're here to help</h2>
                             <p>UT Libraries always has your back. Connect with us now - from wherever you are.</p>
                             <div className="utk-support--header--lead--buttons">
-                                <Chat hash="8a9fa354ff9adc8c085107bc41e587c8" />
+                                <Chat libchat="8a9fa354ff9adc8c085107bc41e587c8" />
                                 <a className="btn btn-md btn-with-icon btn-faq">
                                     Browse FAQ
                                     <span className="icon-down-open"></span>

@@ -34,12 +34,20 @@
 
       &--buttons {
         margin-top: $golden-ratio-3;
+        display: flex;
+
+        .utk-libchat {
+          margin-right: $golden-ratio-3;
+        }
 
         .btn-faq {
           text-transform: none;
+          box-shadow: $box-shadow-float;
+          height: 47px !important;
 
           span {
             background-color: $regalia !important;
+            top: -2px !important;
           }
         }
       }
