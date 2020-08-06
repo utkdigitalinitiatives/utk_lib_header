@@ -5,7 +5,8 @@ import Globals from "./Globals";
 import hodges from '../media/hodges.jpg';
 import pendergrass from '../media/pendergrass.jpg';
 import devine from '../media/devine.jpg';
-import hoskins from '../media/hoskins.jpg';
+import studio from '../media/studio.jpg';
+import sc from '../media/special-collections.jpg';
 // import {Locations} from "./Locations";
 
 import MomentLocaleUtils, {
@@ -197,7 +198,7 @@ export class Hours extends Component {
                                     slug="studio"
                                     subtitle="Hodges 235"
                                     formal="The Studio"
-                                    thumbnail={pendergrass}
+                                    thumbnail={studio}
                                     chat="37e2cd14d82e1d34a6a00df6ac7215a0"
                                     hideChat={this.props.hideChat}
                                     phone="865-974-7338"
@@ -215,7 +216,7 @@ export class Hours extends Component {
                                     slug="devine"
                                     subtitle="Hodges 121"
                                     formal="George F. DeVine Music Library"
-                                    thumbnail={devine}
+                                    thumbnail={sc}
                                     chat="6356592de428f11b5e8ea54ccdecfc0a"
                                     hideChat={this.props.hideChat}
                                     phone="865-974-3474"
