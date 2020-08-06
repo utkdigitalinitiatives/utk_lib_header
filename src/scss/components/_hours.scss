@@ -391,8 +391,8 @@
 
       figure {
         margin: 0;
-        width: 34px;
-        height: 34px;
+        height: $golden-ratio-3;
+        width: $golden-ratio-3;
         border-radius: $golden-ratio-4;
         margin-top: 3px;
         position: relative;
@@ -403,7 +403,8 @@
         box-shadow: $box-shadow-float;
 
         @include respond(md) {
-          display: none;
+          position: absolute;
+          margin-left: -40px;
         }
 
         img {
