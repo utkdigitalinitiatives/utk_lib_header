@@ -47,8 +47,75 @@
   &--actions {
     height: $golden-ratio-6;
     width: 100%;
-    background-color: red;
+    background-color: transparent;
     margin-top: $golden-ratio-3;
     margin-bottom: -$golden-ratio-4;
+    display: flex;
+
+    &--item {
+      flex-grow: 1;
+      background-color: $white;
+      margin-right: $golden-ratio-4;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      box-shadow: $box-shadow;
+      position: relative;
+      z-index: 0;
+      transition: $transition-all-fast;
+      transform: scale3d(1, 1, 1);
+
+      &::after {
+        position: absolute;
+        height: $golden-ratio-0;
+        width: 100%;
+        display: block;
+        content: '';
+        bottom: 0;
+        z-index: 1;
+        background-color: $gray-2;
+      }
+
+      &::before {
+        position: absolute;
+        height: $golden-ratio-0;
+        width: 0;
+        display: block;
+        content: '';
+        bottom: 0;
+        z-index: 2;
+        background-color: $orange;
+        transition: $transition-all-fast;
+      }
+
+      &:hover,
+      &:focus {
+        transform: scale3d(1.06, 1.06, 1.06);
+        box-shadow: $box-shadow-float;
+
+        &::before {
+          width: 100%;
+        }
+      }
+
+      h3 {
+        margin: 0;
+        padding: 0;
+        font-size: $type-3;
+        font-weight: 700;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+
+        span {
+          font-weight: 400;
+          font-size: $type-2;
+        }
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
   }
 }

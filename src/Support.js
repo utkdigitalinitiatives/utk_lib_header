@@ -22,7 +22,7 @@ class Support extends Component {
                 <div className="utk-support container">
                     <div className="utk-support--header">
                         <div className="utk-support--header--lead">
-                            <h1>We're here to help</h1>
+                            <h2>We're here to help</h2>
                             <p>UT Libraries always has your back. Connect with us now - from wherever you are.</p>
                         </div>
                         <figure>
@@ -30,7 +30,21 @@ class Support extends Component {
                         </figure>
                     </div>
                     <div className="utk-support--actions">
-
+                        <a href="#" className="utk-support--actions--item">
+                            <h3>Call <span>865-940-0821</span></h3>
+                        </a>
+                        <a href="#" className="utk-support--actions--item">
+                            <h3>Text <span>865-940-0821</span></h3>
+                        </a>
+                        <a href="#" className="utk-support--actions--item">
+                            <h3>Request <span>Consultation</span></h3>
+                        </a>
+                        <a href="#" className="utk-support--actions--item">
+                            <h3>Provide <span>Feedback</span></h3>
+                        </a>
+                        <a href="#" className="utk-support--actions--item">
+                            <h3>Visit <span>Service Desk</span></h3>
+                        </a>
                     </div>
                 </div>
             );
