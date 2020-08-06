@@ -11,11 +11,27 @@
   flex-wrap: wrap;
   -webkit-font-smoothing: antialiased;
 
+  @include respond(xs, sm) {
+    width: 100%;
+    margin-top: $golden-ratio-3;
+  }
+
+  @include respond(xs) {
+    width: calc(100% + 36px);
+    margin-top: -$golden-ratio-2;
+    margin-left: -$golden-ratio-2;
+  }
+
   .utk-volumes--feature {
     position: relative;
     z-index: 0;
     width: 100%;
     overflow: hidden;
+
+    @include respond(xs) {
+      display: flex;
+      flex-direction: column-reverse;
+    }
 
     div {
       display: block;
@@ -23,7 +39,7 @@
       padding-top: 35px;
       padding-left: 35px;
       padding-right: $golden-ratio-3;
-      padding-bottom: $golden-ratio-2;
+      padding-bottom: $golden-ratio-3;
       margin: $golden-ratio-3 0;
       line-height: 1.25em;
       font-size: $type-3;
@@ -34,6 +50,14 @@
       z-index: 1;
       position: relative;
       left: 0;
+
+      @include respond(sm) {
+        margin: $golden-ratio-4 0 $golden-ratio-6 $golden-ratio-1;
+      }
+
+      @include respond(xs) {
+        margin: -$golden-ratio-6 0 $golden-ratio-0 $golden-ratio-2;
+      }
 
       strong {
         display: block;
@@ -72,26 +96,43 @@
 
   .utk-volumes--extras {
     display: flex;
-    margin-top: $golden-ratio-3;
+    margin-top: $golden-ratio-4;
+
+    @include respond(xs) {
+      margin-top: 0;
+      padding: 0 $golden-ratio-2;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      align-self: flex-start;
+      width: 100%;
+    }
 
     &--item {
       display: flex;
       padding-right: $golden-ratio-3;
+      width: 50%;
+
+      @include respond(xs) {
+        max-width: 100%;
+        width: 375px;
+        margin-bottom: $golden-ratio-3;
+      }
 
       &:last-child {
         padding-right: 0;
       }
 
       img {
-        width: $golden-ratio-5;
+        width: $golden-ratio-6;
         height: $golden-ratio-5;
+        flex-shrink: 0;
+        flex-grow: 0;
       }
 
       span {
         font-size: $type-2;
         line-height: 1.35em;
         margin-left: $golden-ratio-2;
-        margin-top: $golden-ratio-1;
       }
     }
   }
@@ -103,6 +144,18 @@
     height: 100%;
     right: 0;
     top: 0;
+
+    @include respond(sm) {
+      height: $golden-ratio-8;
+    }
+
+    @include respond(xs) {
+      height: auto;
+      left: 0;
+      right: unset;
+      width: 100%;
+      position: relative;
+    }
   }
 
   span {

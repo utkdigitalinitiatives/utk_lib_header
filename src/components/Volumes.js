@@ -56,7 +56,7 @@ export class Volumes extends Component {
     renderSecondary = (item) => {
         return (
             <a className="utk-volumes--extras--item">
-                <img src={item.homepage_secondary_image.sizes['post-thumbnail']} />
+                <img src={item.homepage_secondary_image.sizes['card_image']} />
                 <span>{item.homepage_secondary_heading}</span>
             </a>
         )
