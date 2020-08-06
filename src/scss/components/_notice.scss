@@ -6,9 +6,6 @@
   z-index: 1;
   color: $smokeyx;
 
-  /* remove this */
-  display: none;
-
   @include respond(xs) {
     padding: 0;
   }
