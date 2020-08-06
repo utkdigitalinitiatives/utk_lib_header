@@ -4,6 +4,10 @@
   background-color: $gray-0;
   box-shadow: inset $box-shadow;
 
+  @include respond(xs) {
+    height: auto;
+  }
+
   .container {
     display: flex;
     justify-content: space-between;
