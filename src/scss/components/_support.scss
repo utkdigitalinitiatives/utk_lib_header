@@ -1,0 +1,52 @@
+#utk-support {
+  background-color: $gray-0;
+  margin-bottom: $golden-ratio-6;
+  box-shadow: inset $box-shadow;
+}
+
+.utk-support {
+  display: flex;
+  flex-direction: column;
+
+  &--header {
+    display: flex;
+    margin-top: $golden-ratio-3;
+
+    &--lead {
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      h1 {
+        font-weight: 700;
+        letter-spacing: -0.03em;
+        margin: 0 0 $golden-ratio-2;
+        color: $smokey;
+        font-size: $type-6;
+      }
+
+      p {
+        font-size: $type-3;
+        margin: 0 $golden-ratio-6 0 0;
+        color: $smokey;
+      }
+    }
+
+    > figure {
+      width: 50%;
+
+      img {
+        width: 100%;
+      }
+    }
+  }
+
+  &--actions {
+    height: $golden-ratio-6;
+    width: 100%;
+    background-color: red;
+    margin-top: $golden-ratio-3;
+    margin-bottom: -$golden-ratio-4;
+  }
+}

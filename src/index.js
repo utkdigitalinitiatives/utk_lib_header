@@ -5,6 +5,7 @@ import 'whatwg-fetch';
 import Skip from './components/Skip';
 import Header from './Header';
 import Footer from './Footer';
+import Support from "./Support";
 import Home from './components/Home';
 import HomeHours from './components/HomeHours';
 import HoursLocationSection from "./components/HoursLocationSection";
@@ -42,6 +43,10 @@ if (document.getElementById('utk-hours--location--lid')) {
 
 if (document.getElementById('utk-lib-footer')) {
     ReactDOM.render(<Footer />, document.getElementById('utk-lib-footer'));
+}
+
+if (document.getElementById('utk-support')) {
+    ReactDOM.render(<Support />, document.getElementById('utk-support'));
 }
 
 function dayPicker() {
