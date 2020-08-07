@@ -38,19 +38,19 @@ class Support extends Component {
                         </figure>
                     </div>
                     <div className="utk-support--actions">
-                        <a href="#" className="utk-support--actions--item">
+                        <a href="tel:18659400821" className="utk-support--actions--item">
                             <h3>Call <span>865-940-0821</span></h3>
                         </a>
-                        <a href="#" className="utk-support--actions--item">
+                        <a href="sms:+18659400821&body=Hi%21%20I%27m%20needing%20help%20with..." className="utk-support--actions--item">
                             <h3>Text <span>865-940-0821</span></h3>
                         </a>
-                        <a href="#" className="utk-support--actions--item">
+                        <a href="https://www.lib.utk.edu/askusnow/appointment/" className="utk-support--actions--item">
                             <h3>Request <span>Consultation</span></h3>
                         </a>
-                        <a href="#" className="utk-support--actions--item">
+                        <a href="https://www.lib.utk.edu/contact/" className="utk-support--actions--item">
                             <h3>Provide <span>Feedback</span></h3>
                         </a>
-                        <a href="#" className="utk-support--actions--item">
+                        <a href="https://www.lib.utk.edu/hours/spaces/?fwp_type=service-desk" className="utk-support--actions--item">
                             <h3>Visit <span>Service Desk</span></h3>
                         </a>
                     </div>
