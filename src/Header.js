@@ -206,7 +206,7 @@ class Header extends Component {
                             <div className="utk-header-actions">
                                 <div className="utk-header-actions--item utk-header-actions--home">
                                     <a href="https://utk.primo.exlibrisgroup.com/discovery/account?vid=01UTN_KNOXVILLE:01UTK&section=overview&lang=en">
-                                        <span className="icon-key"></span>
+                                        <span className="icon-street-view"></span>
                                         <em>My Account</em>
                                     </a>
                                 </div>
