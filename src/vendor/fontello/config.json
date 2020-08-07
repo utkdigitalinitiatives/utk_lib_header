@@ -163,12 +163,6 @@
       "src": "fontawesome"
     },
     {
-      "uid": "ede2ea0a583f662b79fbb181b428c20d",
-      "css": "building-filled",
-      "code": 61869,
-      "src": "fontawesome"
-    },
-    {
       "uid": "6fe95ffc3c807e62647d4f814a96e0d7",
       "css": "sitemap",
       "code": 61672,
@@ -307,10 +301,16 @@
       "src": "fontawesome"
     },
     {
-      "uid": "upidp9k72x66utj5w89oyq65tp6r2tpe",
-      "css": "key",
-      "code": 59421,
-      "src": "typicons"
+      "uid": "3c7eb0c1678e6fa93cc4264bad3150d6",
+      "css": "street-view",
+      "code": 61981,
+      "src": "fontawesome"
+    },
+    {
+      "uid": "ede2ea0a583f662b79fbb181b428c20d",
+      "css": "building-filled",
+      "code": 61869,
+      "src": "fontawesome"
     }
   ]
 }

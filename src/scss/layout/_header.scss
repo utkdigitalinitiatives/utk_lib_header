@@ -109,17 +109,36 @@
           justify-items: center;
           align-items: center;
           align-content: center;
-          padding: 0 18px !important;
-          width: 60px;
+          width: 50px;
 
           > span {
             margin: 0;
             color: $smokey;
-            font-size: 24px;
+            font-size: 18px;
+
+            &.icon-key {
+              font-size: 23px;
+              margin-top: 1px;
+            }
           }
 
           em {
             display: none;
+          }
+        }
+      }
+
+      &.utk-header-actions--home {
+        @media only screen and (max-width: 460px) {
+          a {
+            width: auto;
+            display: flex;
+            flex-direction: row;
+
+            em {
+              display: inline;
+              font-size: $type-1;
+            }
           }
         }
       }

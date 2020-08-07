@@ -39,7 +39,6 @@
 .icon-th-list { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe81a;&nbsp;'); }
 .icon-th { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe81b;&nbsp;'); }
 .icon-calendar { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe81c;&nbsp;'); }
-.icon-key { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe81d;&nbsp;'); }
 .icon-twitter { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xf099;&nbsp;'); }
 .icon-facebook { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xf09a;&nbsp;'); }
 .icon-rss { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xf09e;&nbsp;'); }
@@ -61,3 +60,4 @@
 .icon-graduation-cap { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xf19d;&nbsp;'); }
 .icon-building-filled { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xf1ad;&nbsp;'); }
 .icon-chart-pie { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xf200;&nbsp;'); }
+.icon-street-view { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xf21d;&nbsp;'); }
