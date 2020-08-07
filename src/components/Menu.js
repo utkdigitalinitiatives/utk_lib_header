@@ -180,7 +180,7 @@ export class Menu extends Component {
                                         {menuColumns}
                                     </div>
                                     <div className="utk-resources-menu--row utk-resources-menu--row-wrap">
-                                        <MenuSingle title="More from Libraries"
+                                        <MenuSingle title="Resources"
                                                     items={menuHeader.help}
                                                     className="utk-resources-menu--help" />
                                         <MenuSingle title="Specialty Services"
