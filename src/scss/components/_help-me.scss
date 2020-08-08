@@ -55,15 +55,9 @@
     background-color: $white;
     margin-right: $golden-ratio-2;
 
-    @include respond(xs) {
-      height: 40px;
-      line-height: 40px;
-      margin-right: $golden-ratio-1;
-    }
-
     > h4 {
       margin: 0;
-      padding: 0 $golden-ratio-1 0 $golden-ratio-2;
+      padding: 0 $golden-ratio-2 0 $golden-ratio-2;
       font-size: $type-2;
       color: $smokeyx;
       text-transform: none !important;
@@ -87,30 +81,20 @@
       background-color: $rock;
       clip-path: polygon(0 0,100% 0,100% 100%,6px 100%);
 
-      @include respond(xs) {
-        height: 40px;
-        width: 40px;
-        line-height: 40px;
-      }
-
       > span {
         display: block;
         color: $white;
         align-content: center;
         text-align: center;
         font-size: $type-3;
-
-        @include respond(xs) {
-          font-size: $type-2 !important;
-        }
       }
     }
   }
 }
 
-.utk-menu-help--contingency {
+.utk-menu-help--libanswers {
   .utk-menu-help--item--icon {
-    background-color: $rock;
+    background-color: $fountain;
   }
 }
 

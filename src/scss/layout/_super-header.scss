@@ -28,6 +28,49 @@
 
     @include respond(xs, sm) {
       position: fixed;
+
+      .utk-menu-help--item {
+        margin-left: $golden-ratio-2;
+        margin-right: 0;
+
+        h4 {
+          display: none;
+        }
+
+        &--icon {
+          clip-path: unset;
+        }
+      }
+
+      .utk-menu-help {
+        flex-direction: row-reverse;
+        justify-content: flex-end !important;
+        width: auto;
+      }
+
+      .utk-libchat {
+        width: $golden-ratio-4;
+        overflow: hidden;
+        background-color: transparent !important;
+        border-radius: $golden-ratio-4 !important;
+
+        button {
+          border-radius: $golden-ratio-4 !important;
+          overflow: hidden;
+          background-color: transparent !important;
+
+          &.libchat_offline {
+            display: none !important;
+          }
+        }
+
+        button::after {
+          right: unset;
+          left: -1px;
+          clip-path: unset !important;
+          border-radius: $golden-ratio-4;
+        }
+      }
     }
 
     @include respond(sm) {

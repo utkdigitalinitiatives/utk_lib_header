@@ -160,13 +160,13 @@ export class Menu extends Component {
                                             className="utk-resources-menu--services-primary" />
                                 <div className='utk-menu-options'>
                                     <div className='utk-menu-help'>
-                                        {/*<a href="https://www.lib.utk.edu/contingency"*/}
-                                        {/*   className="utk-menu-help--item utk-menu-help--contingency">*/}
-                                        {/*    <h4>Updates</h4>*/}
-                                        {/*    <div className="utk-menu-help--item--icon">*/}
-                                        {/*        <span className="icon-info-circled"></span>*/}
-                                        {/*    </div>*/}
-                                        {/*</a>*/}
+                                        <a href="https://libanswers.utk.edu/"
+                                           className="utk-menu-help--item utk-menu-help--libanswers">
+                                            <h4>Get Help</h4>
+                                            <div className="utk-menu-help--item--icon">
+                                                <span className="icon-info-circled"></span>
+                                            </div>
+                                        </a>
                                         <Chat libchat={libchat} />
                                     </div>
                                 </div>
