@@ -30,8 +30,10 @@ export class Volumes extends Component {
     }
 
     renderFeatured = (item) => {
+        console.log(item)
         return (
-            <a className="utk-volumes--feature">
+            <a className="utk-volumes--feature"
+               href={`https://volumes.lib.utk.edu/?p=${item.homepage_featured_relative_post.ID}`}>
                 <div>
                     <strong>{item.homepage_featured_heading}</strong>
                     <em>{item.homepage_featured_subheading}</em>
@@ -44,7 +46,8 @@ export class Volumes extends Component {
 
     renderSecondary = (item) => {
         return (
-            <a className="utk-volumes--extras--item">
+            <a className="utk-volumes--extras--item"
+               href={`https://volumes.lib.utk.edu/?p=${item.homepage_secondary_relative_post.ID}`}>
                 <img src={item.homepage_secondary_image.sizes['card_image']} />
                 <span>{item.homepage_secondary_heading}</span>
             </a>
