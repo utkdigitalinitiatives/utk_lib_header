@@ -190,8 +190,8 @@ export class Hours extends Component {
                                 />
                                 <HoursLocation
                                     url="https://lib.utk.edu/studio"
-                                    data={locations[217]}
-                                    id={217}
+                                    data={locations[52]}
+                                    id={52}
                                     mainLabel="Workstations"
                                     title="The Studio"
                                     slug="studio"
