@@ -39,7 +39,8 @@ export class Volumes extends Component {
                     <em>{item.homepage_featured_subheading}</em>
                     <span>Read More</span>
                 </div>
-                <img src={item.homepage_featured_image.sizes.card_image} />
+                <img alt={item.homepage_featured_image.sizes.alt}
+                     src={item.homepage_featured_image.sizes.card_image} />
             </a>
         )
     }
