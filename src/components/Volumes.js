@@ -39,7 +39,7 @@ export class Volumes extends Component {
                     <em>{item.homepage_featured_subheading}</em>
                     <span>Read More</span>
                 </div>
-                <img alt={item.homepage_featured_image.sizes.alt}
+                <img alt={item.homepage_featured_image.alt}
                      src={item.homepage_featured_image.sizes.card_image} />
             </a>
         )
@@ -49,7 +49,8 @@ export class Volumes extends Component {
         return (
             <a className="utk-volumes--extras--item"
                href={`https://volumes.lib.utk.edu/?p=${item.homepage_secondary_relative_post.ID}`}>
-                <img src={item.homepage_secondary_image.sizes['card_image']} />
+                <img alt={item.homepage_secondary_image.alt}
+                     src={item.homepage_secondary_image.sizes['card_image']} />
                 <span>{item.homepage_secondary_heading}</span>
             </a>
         )
