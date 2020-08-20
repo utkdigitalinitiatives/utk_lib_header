@@ -52,7 +52,7 @@ class Header extends Component {
 
     renderSearchButton(settings) {
 
-        if (settings && !settings.disableSearch) {
+        if (settings) {
             return (
                 <div className="utk-header-actions--item utk-header-actions--search">
                     <a id="utk-lib-search" href="#search" aria-label="Search" onClick={this.toggleSearch}
@@ -74,7 +74,7 @@ class Header extends Component {
     }
 
     renderSearch(settings) {
-        if (settings && !settings.disableSearch) {
+        if (settings) {
             return <Search showSearch={this.state.showSearch} ref="search"/>
         } else {
             return null
