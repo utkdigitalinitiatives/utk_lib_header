@@ -120,10 +120,10 @@ export class Hours extends Component {
                         {/*<span className="utk-hours-teaser--badge">Building access is currently restricted, hours listed indicate digital and remote availability of our public services desks.</span>*/}
                         <div className="utk-hours-header">
                             <h3>{moment.unix(this.state.timestamp).format('MMMM D, YYYY')}</h3>
-                            {/*<div className="utk-hours-header--links">*/}
-                            {/*    <a href="https://www.lib.utk.edu/contingency"*/}
-                            {/*       className="utk-resources-toggle--map">Weekly</a>*/}
-                            {/*</div>*/}
+                            <div className="utk-hours-header--links">
+                                <a href="https://www.lib.utk.edu/hours"
+                                   className="utk-resources-toggle--map">More Hours</a>
+                            </div>
                         </div>
                         <div className="utk-hours--listing">
                             <ul className="utk-hours--listing--col" aria-label="libraries and locations">
