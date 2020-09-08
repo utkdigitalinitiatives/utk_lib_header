@@ -7,6 +7,7 @@ import pendergrass from '../media/pendergrass.jpg';
 import devine from '../media/devine.jpg';
 import studio from '../media/studio.jpg';
 import sc from '../media/special-collections.jpg';
+import hoskins from '../media/hoskins.jpg';
 // import {Locations} from "./Locations";
 
 import MomentLocaleUtils, {
@@ -214,9 +215,23 @@ export class Hours extends Component {
                                     title="Special Collections"
                                     slug="devine"
                                     subtitle="Hodges 121"
-                                    formal="George F. DeVine Music Library"
+                                    formal="Betsey B. Creekmore Special Collections and University Archives"
                                     thumbnail={sc}
                                     chat="6356592de428f11b5e8ea54ccdecfc0a"
+                                    hideChat={this.props.hideChat}
+                                    phone="865-974-3474"
+                                />
+                                <HoursLocation
+                                    url="https://www.lib.utk.edu/request/storage/"
+                                    data={locations[14545]}
+                                    id={14545}
+                                    mainLabel="Map Reading Room"
+                                    title="Hoskins"
+                                    slug="devine"
+                                    subtitle="Storage"
+                                    formal="John D. Hoskins Library"
+                                    thumbnail={hoskins}
+                                    chat="36f013b9caf90b6da607ee2e49612d6c"
                                     hideChat={this.props.hideChat}
                                     phone="865-974-3474"
                                 />
